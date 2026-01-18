@@ -135,30 +135,57 @@ def crawl_homepage_history(session):
     Crawl historical versions of the homepage to discover links.
     """
     print("Starting Homepage Timeline Crawl...")
-    # Fetch homepage snapshots only
-    # yinwang.org and www.yinwang.org
-    # yinwang.org and www.yinwang.org
-    records_root = fetch_cdx_records(session, "yinwang.org")
-    records_www = fetch_cdx_records(session, "www.yinwang.org")
-    all_records = records_root + records_www
     
-    # Dedup by digest to avoid downloading identical homepages
+    print("Starting Homepage Timeline Crawl...")
+    
     unique_digests = {}
-    for rec in all_records:
-        if rec.get("length", 0) < 500: continue # skip empty shells
-        
-        # Filter: Skip snapshots before 2010
-        ts = rec.get("timestamp", "")
-        if ts < "2010": 
-            continue
-            
-        digest = rec.get("digest")
-        if digest not in unique_digests:
-            unique_digests[digest] = rec
-            
-    print(f"Found {len(unique_digests)} unique homepage versions to crawl.")
     
+    # 1. Load cached snapshots if valid
+    if os.path.exists("homepage_snapshots.json"):
+        try:
+            with open("homepage_snapshots.json", "r") as f:
+                saved_snapshots = json.load(f)
+                for rec in saved_snapshots:
+                    unique_digests[rec['digest']] = rec
+            print(f"Loaded {len(unique_digests)} snapshots from cache.")
+        except Exception as e:
+            print(f"Error loading cache: {e}")
+
+    # 2. Always fetch fresh CDX to find new updates
+    print("Fetching fresh CDX records...")
+    try:
+        records_root = fetch_cdx_records(session, "yinwang.org")
+        records_www = fetch_cdx_records(session, "www.yinwang.org")
+        all_records = records_root + records_www
+        
+        new_count = 0
+        for rec in all_records:
+            if rec.get("length", 0) < 500: continue
+            ts = rec.get("timestamp", "")
+            if ts < "2010": continue
+                
+            digest = rec.get("digest")
+            if digest not in unique_digests:
+                unique_digests[digest] = rec
+                new_count += 1
+        
+        print(f"Merged {new_count} new snapshots from API.")
+            
+        # 3. Update cache
+        with open("homepage_snapshots.json", "w") as f:
+            json.dump(list(unique_digests.values()), f)
+            
+    except Exception as e:
+        print(f"Error fetching/merging CDX: {e}")
+            
+    print(f"Total {len(unique_digests)} unique homepage versions to crawl.")
+    
+    # 2. Load existing discovered URLs
     discovered_urls = set()
+    if os.path.exists("discovered_urls.json"):
+        print("Loading discovered URLs from cache...")
+        with open("discovered_urls.json", "r") as f:
+            discovered_urls = set(json.load(f))
     
     sorted_snapshots = sorted(unique_digests.values(), key=lambda x: x['timestamp'])
     
@@ -279,11 +306,34 @@ def main():
         json.dump(final_snapshots, f, indent=2)
         
     # 6. Download
-    success_count = 0
-    fail_count = 0
+    # 6. Download with Multi-threading
+    # 6. Download with Multi-threading
+    print(f"Starting download with 10 threads...")
     
-    for i, snapshot in enumerate(final_snapshots):
-        # Existing logic...
+    import concurrent.futures
+    import threading
+    
+    success_count = [0]
+    fail_count = [0]
+    lock = threading.Lock()
+    total_files = len(final_snapshots)
+    
+    # Timeout configuration (5.5 hours = 19800 seconds to be safe within 6h limit)
+    TIMELIMIT = 19800 
+    start_time = time.time()
+    stop_event = threading.Event()
+    
+    def download_wrapper(snapshot):
+        if stop_event.is_set():
+            return
+
+        # Check timeout
+        if time.time() - start_time > TIMELIMIT:
+            if not stop_event.is_set():
+                stop_event.set()
+                print("\n!!! TIME LIMIT REACHED. Stopping new downloads to save progress. !!!\n")
+            return
+
         original_url = snapshot.get("original")
         timestamp = snapshot.get("timestamp")
         target_url = WAYBACK_URL_TEMPLATE.format(timestamp=timestamp, original=original_url)
@@ -299,25 +349,31 @@ def main():
                 pass
         
         if should_download:
-             print(f"[{i+1}/{len(final_snapshots)}] Downloading {original_url} ({timestamp}) len={snapshot.get('length')}...")
              try:
                 res = session.get(target_url, timeout=30)
                 if res.status_code == 200:
                     with open(filename, "w", encoding="utf-8") as f:
                         f.write(res.text)
-                    success_count += 1
-                    time.sleep(0.5)
+                    with lock:
+                        success_count[0] += 1
+                        print(f"[{success_count[0] + fail_count[0]}/{total_files}] Downloaded {original_url} ({timestamp})")
+                    time.sleep(0.1) # Be nice
                 else:
-                    print(f"Failed: {res.status_code}")
-                    fail_count += 1
+                    with lock:
+                        fail_count[0] += 1
+                        print(f"[{success_count[0] + fail_count[0]}/{total_files}] Failed: {res.status_code} for {original_url}")
              except Exception as e:
-                 print(f"Error: {e}")
-                 fail_count += 1
+                 with lock:
+                     fail_count[0] += 1
+                     print(f"Error downloading {original_url}: {e}")
         else:
-            # print(f"Skipping {filename}")
-            success_count += 1
+            with lock:
+                success_count[0] += 1
 
-    print(f"Process complete. Total: {len(final_snapshots)}, Success: {success_count}, Failed: {fail_count}")
+    with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
+        executor.map(download_wrapper, final_snapshots)
+
+    print(f"Process complete. Total: {total_files}, Success: {success_count[0]}, Failed: {fail_count[0]}")
 
 if __name__ == "__main__":
     main()

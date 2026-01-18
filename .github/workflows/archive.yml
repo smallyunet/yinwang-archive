@@ -1,0 +1,46 @@
+name: Archive Yinwang Blog
+
+on:
+  schedule:
+    # Run at 00:00 every Sunday (UTC)
+    - cron: '0 0 * * 0'
+  workflow_dispatch:
+    # Allow manual triggering
+
+jobs:
+  archive-and-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360 # 6 hours timeout
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run Archive Script
+        run: python archive_yinwang.py
+        
+      - name: Localize Images
+        run: python localize_images.py
+        
+      - name: Generate Site
+        run: python generate_site.py
+
+      - name: Commit and Push Changes
+        if: always()
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add archives/ docs/ discovered_urls.json homepage_snapshots.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: auto-archive update $(date +'%Y-%m-%d')" && git push)
