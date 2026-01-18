@@ -1,0 +1,143 @@
+<html>
+    <head>
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <link href="http://www.yinwang.org/main.css" rel="stylesheet" type="text/css">
+        <link rel="alternate" type="application/atom+xml" href="/atom.xml" title="Atom feed">
+        <link rel="shortcut icon" href="http://www.yinwang.org/images/Yc.jpg">
+
+        <title>Kotlin 和 Checked Exception</title>
+
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                                    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-45586344-1', 'yinwang.org');
+            ga('send', 'pageview');
+
+        </script>
+        
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-1331524016319584",
+            enable_page_level_ads: true
+          });
+        </script>
+    </head>
+
+    <body>
+        <div style="margin: 2% 5% 2% 5%">
+            <table>
+                <tr>
+                    <td width="60%">
+                        <div style="margin-bottom: 5px">
+                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                            <ins class="adsbygoogle"
+                                 style="display:inline-block;width:728px;height:90px"
+                                 data-ad-client="ca-pub-1331524016319584"
+                                 data-ad-slot="6657867155"></ins>
+                            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                        </div>
+
+                        <div style="padding: 2% 8% 5% 8%; border: 1px solid LightGrey;">
+                            <h2>Kotlin 和 Checked Exception</h2>
+                            <p>最近 JetBrains 的 Kotlin 语言忽然成了热门话题。国内小编们传言说，Kotlin 成为了 Android 的“钦定语言”，很多人听了之后热血沸腾。初学者们也开始注意到 Kotlin，问出各种“傻问题”，很“功利”的问题，比如“现在学 Kotlin 是不是太早了一点？” 结果引起一些 Kotlin 老鸟们的鄙视。当然也有人来信，请求我评价 Kotlin。</p>
+
+<p>对于这种评价语言的请求，我一般都不予理睬的。作为一个专业的语言研究者，我的职责不应该是去评价别人设计的语言。然而浏览了 Kotlin 的文档之后，我发现 Kotlin 的设计者误解了一个重要的问题——关于是否需要 checked exception。对于这个话题我已经憋了很久，觉得有必要分享一下我对此的看法，避免误解的传播，所以我还是决定写一篇文章。</p>
+
+<p>可以说我这篇文章针对的是 checked exception，而不是 Kotlin，因为同样的问题也存在于 C# 和其它一些语言。</p>
+
+<h3 id="冷静一下">冷静一下</h3>
+
+<p>在进入主题之前，我想先纠正一些人的误解，让他们先冷静下来。我们首先应该搞清楚的是，Kotlin 并不是像有些小编传言的那样，要取代 Java 成为 Android 的“官方语言”。准确的说，Kotlin 只是得到了 Android 的“官方支持”，所以你可以用 Kotlin 顺利地开发 Android 程序，而不需要绕过很多限制。</p>
+
+<p>Android 显然不可能抛弃 Java 而拥抱 Kotlin。毕竟现有的 Android 代码绝大部分都是 Java 写的，绝大部分程序员都在用 Java。很多人都知道 Java 的好处，所以他们不会愿意换用一个新的，未经时间考验的语言。所以虽然 Kotlin 在 Android 上得到了和 Java 平起平坐的地位，想要程序员们从 Java 转到 Kotlin，却不是一件容易的事情。</p>
+
+<p>我不明白为什么每当出现一个 JVM 的语言，就有人欢呼雀跃的，希望它会取代 Java，似乎这些人跟 Java 有什么深仇大恨。他们已经为很多新语言热血沸腾过了，不是吗？这里面包括了红极一时，但很快衰落了的 Scala 和 Clojure…… Kotlin 的主页也把“drastically reduce the amount of boilerplate code”作为了自己的一大特色，仿佛是在暗示大家 Java 有很多“boilerplate code”。</p>
+
+<p>如果你真的理解编程的精髓，就会发现 Java 并不是那么的讨厌。正好相反，Java 的有些设计看起来“繁复多余”，实际上却是经过深思熟虑的好设计。Java 的设计者有时候知道有些东西可以简化，却故意把它做成多余的。不理解语言“可用性”的人，往往以为简短就是好，却忽视了很多实际的问题。关于 Java 的良好设计，你可以参考我之前的文章《<a href="http://www.yinwang.org/blog-cn/2016/01/18/java">为 Java 说句公道话</a>》。另外在《<a href="http://www.yinwang.org/blog-cn/2016/09/18/rust">对 Rust 语言的分析</a>》里面，我也提到一些容易被误解的“语言可用性”问题。我希望这些文章对人们有所帮助，避免他们因为头脑发热而扔掉好的东西。</p>
+
+<p>实际上我很早以前就发现了 Kotlin，看过它的文档，当时并没有引起我很大的兴趣。现在它忽然火了起来，我再次浏览它的新版文档，却发现自己还是会继续使用 Java 或者 C++。虽然我觉得 Kotlin 比起 Java 在某些小地方设计相对优雅，一致性稍好一些，然而我并没有发现它可以让我兴奋到愿意丢掉 Java 的地步。实际上 Kotlin 的好些小改进，我在设计自己语言的时候都已经想到了，然而我并不觉得它们可以成为人们换用一个新语言的理由。</p>
+
+<h3 id="checked-exceptionce的重要性">Checked Exception（CE）的重要性</h3>
+
+<p>有几个我觉得很重要的，具有突破性的语言特性，Kotlin 并没有实现。另外我还发现一个很重要的 Java 特性，被 Kotlin 的设计者给盲目抛弃了。这就是我今天要讲的主题：checked exception。我不知道这个术语有什么标准的中文翻译，为了避免引起定义混乱，下文我就把它简称为“CE”好了。</p>
+
+<p><a href="https://kotlinlang.org/docs/reference/exceptions.html#checked-exceptions">Kotlin 的文档</a>明确说明它不支持类似 Java 的 checked exception（CE），指出了 CE 的缺点是“繁琐”，并且列举了几个普通程序员眼中“大牛”的文章，想以此来证明为什么 Java 的 CE 是一个错误，为什么它不解决问题，却带来了麻烦。这些大牛包括了 Bruce Eckel 和 C# 的设计者 <a href="http://www.artima.com/intv/handcuffs.html">Anders Hejlsberg</a>。</p>
+
+<p>很早的时候我就看过 Hejlsberg 的这些言论。他的话看似有道理，然而通过自己编程和设计语言的实际经验，我发现他并没有抓住问题的关键。他的论述里有好几处逻辑错误，一些自相矛盾，还有一些盲目的臆断，所以这些言论并没能说服我。正好相反，实在的项目经验告诉我，CE 是 C# 缺少的一项重要特性，没有了 CE 会带来相当麻烦的后果。在微软写 C# 的时候，我已经深刻体会到了缺少 CE 所带来的困扰。</p>
+
+<p>现在我就来讲一下，CE 为什么是很重要的语言特性，然后讲一下为什么 Hejlsberg 对它的批评是站不住脚的。</p>
+
+<p>首先，写 C# 代码时最让我头痛的事情之一，就是 C# 没有 CE。每调用一个函数（不管是标准库函数，第三方库函数，还是队友写的函数，甚至我自己写的函数），我都会疑惑这个函数是否会抛出异常。由于 C# 的函数类型上没有 throws 标记它可能抛出的异常，为了确保一个函数不会抛出异常，你就需要检查这个函数的源代码，以及它调用的那些函数的源代码……</p>
+
+<p>也就是说，你必须检查这个函数的整个“调用树”的代码，才能确信这个函数不会抛出异常。这样的调用树可以是非常大的。说白了，这就是在用人工对代码进行“全局静态分析”，遍历整个调用树。这不但费时费力，看得你眼花缭乱，还容易漏掉出错。显然让人做这种事情是不现实的，所以绝大部分时候，程序员都不能确信这个函数调用不会出现异常。</p>
+
+<p>在这种疑虑的情况下，你就不得不做最坏的打算，你就得把代码写成：</p>
+
+<div class="language-c# highlighter-rouge"><pre class="highlight"><code><span class="k">try</span>
+<span class="p">{</span>
+    <span class="nf">foo</span><span class="p">();</span>
+<span class="p">}</span> 
+<span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>注意到了吗，这也就是你写 Java 代码时，能写出的最糟糕的异常处理代码！因为不知道这里面会有什么异常出现，所以你的 catch 语句里面也不知道该做什么。大部分人只能在里面放一条 log，记录异常的发生。这是一种非常糟糕的写法，不但繁复，而且还有掩盖运行时错误的危险，如果你忘了写 catch (Exception) 那么你的代码可能运行了一段时间之后当掉，因为忽然出现一个测试时没出现过的异常……</p>
+
+<p>所以对于 C# 这样没有 CE 的语言，很多时候你必须莫名其妙这样写，这种做法也就是我在微软的 C# 代码里经常看到的。问原作者为什么那里要包一层 try-catch，答曰：“因为之前这地方出现了某种异常，所以加了个 try-catch，然后就忘了当时出现的是什么异常，总之就是会出现异常……” 如此写代码，自己心虚，看的人也糊涂，软件质量又如何保证？</p>
+
+<p>那么 Java 呢？因为 Java 有 CE，所以当你看到一个函数没有“throws”标记异常，就可以放心的省掉 try-catch。所以这个 C# 的问题，自然而然就被避免了，你不需要在很多地方疑惑是否需要写 try-catch。Java 编译器的静态类型检查会告诉你，在什么地方必须写 try-catch，或者加上 throws 声明。</p>
+
+<p>这看起来很麻烦，似乎只是为了“让编译器开心”，然而这其实是每个程序员必须理解的事情。出错处理并不是 Java 所特有的东西，就算你用 C 语言，也会遇到本质一样的问题。使用任何语言，你都无法逃脱这个“出错处理”的问题，你必须把它想清楚。在《<a href="http://www.yinwang.org/blog-cn/2015/11/21/programming-philosophy">编程的智慧</a>》一文中，我已经讲述了如何正确的使用 Java 的异常和 throws 声明。如果你滥用它，当然会有不好的后果，然而如果你使用得当，就会起到事半功倍，提高代码可靠性的效果。</p>
+
+<p>Java 的 CE 其实对应着一种强大的逻辑概念，一种根本性的语言特性，它叫做“union type”。这个特性只存在于 Typed Racket 等一两个不怎么流行的语言里。Union type 也存在于 PySonar 类型推导和 Yin 语言里面。你可以把 Java 的 CE 看成是对 union type 的一种不完美的，丑陋的实现。虽然实现丑陋，写法麻烦，CE 却仍然有着 union type 的基本功能。如果使用得当，union type 不但会让代码的出错处理无懈可击，还可以完美的解决 null 指针等头痛的问题。通过实际使用 Java 的 CE 和 Typed Racket 的 union type 来构建复杂项目，我很确信 CE 的可行性和它带来的好处。</p>
+
+<p>现在我来讲一下为什么 Anders Hejlsberg 对于 CE 的<a href="http://www.artima.com/intv/handcuffs.html">批评</a>是站不住脚的。他的第一个错误，俗话说就是“人笨怪刀钝”。他把程序员对于出错处理的无知，不谨慎和误用，怪罪在 CE 这个无辜的语言特性身上。他的话翻译过来就是：“因为大部分程序员都很傻，没有经过严格的训练，不小心又懒惰，所以没法正确使用 CE。所以这个特性不好，是没用的！” 他的论据里面充满了这样的语言：“大部分程序员不会处理这些 throws 声明的异常，所以他们就给自己的每个函数都加上 throws Exception。这使得 Java 的 CE 完全失效。” “大部分程序员根本不在乎这异常是什么，所以他们在程序的最上层加上 catch (Exception)，捕获所有的异常。” ……</p>
+
+<p>注意到了吗，这种给每个函数加上 <code class="highlighter-rouge">throws Exception</code> 或者 <code class="highlighter-rouge">catch (Exception)</code> 的做法，也就是我在《<a href="http://www.yinwang.org/blog-cn/2015/11/21/programming-philosophy">编程的智慧</a>》里面指出的经典错误做法。要让 CE 可以起到良好的作用，你必须避免这样的用法，你必须知道你到底在干什么，你必须知道被调用的函数抛出的 exception 是什么意义，你必须思考如何正确的处理它们。</p>
+
+<p>Hejlsberg 对此使用了荒谬的逻辑。如果你假设程序员都是糊里糊涂写代码，那么你可以得出无比惊人的结论：所有用于防止错误的语言特性都是没用的！因为总有人可以懒到不理解这些特性的用法，所以他总是可以滥用它们，绕过它们，写出错误百出的代码，所以静态类型没用，CE 没用，…… 有这些特性的语言都是垃圾，大家都写 PHP 就行了！;)</p>
+
+<p>Hejlsberg 把这些不理解 CE 用法，懒惰，滥用它的人作为依据，以至于得出 CE 是没用的特性，以至于不把它放到 C# 里面。由于某些人会误用 CE，结果就让真正理解它的好处人也不能用它。最后所有人都退化到最笨的情况，大家都只好写 <code class="highlighter-rouge">catch (Exception)</code>。在 Java 里，至少有少数人知道应该怎么做，在 C# 里，所有人都被迫退化成最差的 Java 程序员 ;)</p>
+
+<p>另外，Hejlsberg 还指出 C# 代码里没有被 catch 的异常，应该可以用“静态分析”检查出来。可以看出来，他并不理解这种静态检查是什么规模的问题。要能用静态分析发现 C# 代码里被忽略的异常，你必须进行“全局静态分析”，也就是说你必须分析你自己的代码，它调用的代码，它调用的代码调用的代码，所有的库代码…… 所以你需要分析超乎想象的代码量，而且很多时候你没有源代码。所以对于大型的项目，这显然是不现实的。</p>
+
+<p>相比之下，Java 要求你对异常进行 throws 显式声明，实质上把这个“全局静态分析”的过程给分解成了一个个模块化（modular）的小问题。每个函数作者完成其中的一部分，调用它的人完成另外一部分。大家合力帮助编译器，高效的完成静态检查，防止漏掉异常处理，避免不必要的 try-catch。实际上，像 <a href="https://github.com/CSharpAnalyzers/ExceptionalReSharper">Exceptional</a> 一类的 C# 静态检查工具，会要求你在注释里写上可能抛出的异常的名字，这样它们才能发现被忽略的异常。所以 Exceptional 其实是重新发明了 Java 的 CE，只不过 throws 声明被写成了一个注释而已。</p>
+
+<p>说到 C#，其实它还有另外一个特别讨厌的设计错误，引起了很多不必要的麻烦。感兴趣的人可以看看我这篇文章：《<a href="http://www.yinwang.org/blog-cn/2016/10/13/c-sharp-disposable">可恶的 C# IDisposable 接口</a>》。所以我觉得 Hejlsberg 等人的思维局限性相当大，我们应该小心的分析和论证他们的言论，不应该作为权威而盲目接受，以至于让一个优秀的语言特性被误解，不能进入到新的语言里。</p>
+
+<h3 id="结论">结论？</h3>
+
+<p>所以我对 Kotlin 是什么“结论”呢？我没有结论……</p>
+
+<p>当然 Kotlin 不会因为没有 CE 而完全失去意义，显然它有的地方做得比 Java 好，所以我还是鼓励有时间的人去试试看。我知道很多人希望我给他们一个结论，到底是用一个语言，还是不用它，这样他们就不用纠结了，然而我并不想给人们一个结论。一来是因为我还没有时间和机会，去用它来做实际的项目。二来是因为我早就厌倦了试用新的语言，如果一个大众化的语言没有特别讨厌，不可原谅的设计失误，我是不会轻易换用新语言的。我宁愿让其他人做我的小白鼠，去试用这些新语言。到最后我有空了，再去看看他们的成功或者失败经历 :P</p>
+
+<p>所以对我个人而言，我至少现在不会去用 Kotlin，但我并不想让其他人也跟我一样保守。因为 Java，C++ 和 C 已经能满足我的需求，它们相当稳定，而且我对它们已经很熟悉，所以我为什么要花精力去学一个新的语言，去折腾不成熟的工具，放下我真正感兴趣的算法和数据结构等问题呢？实际上不管我用什么语言，我的头脑里都是同一个语言。我写代码只不过是在为我脑子里的“Yin 语言代码”找到对应的表达方式而已。</p>
+
+<p>（本文建议零售价 ￥15）</p>
+
+                        </div>
+                    </td>
+
+                    <td width="16%" valign="top">
+                        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                        <ins class="adsbygoogle"
+                             style="display:block"
+                             data-ad-client="ca-pub-1331524016319584"
+                             data-ad-slot="2703393155"
+                             data-ad-format="auto"></ins>
+                        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </body>
+
+</html>

@@ -1,0 +1,185 @@
+<html><head title="/Users/yinwang/Code/cpython/Lib/email/base64mime.py"><style type='text/css'>
+body { color: #666666; }
+a {
+    text-decoration: none; color: #5AA2A7;
+    border: solid 1px white;
+}
+a.active {
+    background: -webkit-linear-gradient(top,rgba(255, 255, 200, 0.35) 0,rgba(255, 255, 200, 0.55) 100%);
+    border: solid 1px #E5E600;
+}
+table, th, td { border: 1px solid lightgrey; padding: 5px; corner: rounded; }
+.builtin {color: #B17E41;}
+.comment, .block-comment {color: #aaaaaa; font-style: italic;}
+.constant {color: #888888;}
+.decorator {color: #778899;}
+.doc-string {color: #aaaaaa;}
+.error {border-bottom: 1px solid red;}
+.field-name {color: #2e8b57;}
+.function {color: #4682b4;}
+.identifier {color: #8b7765;}
+.info {border-bottom: 1px dotted RoyalBlue;}
+.keyword {color: #0000cd;}
+.lineno {color: #cccccc;}
+.number {color: #483d8b;}
+.parameter {color: #777777;}
+.string {color: #999999;}
+.type-name {color: #4682b4;}
+.warning {border-bottom: 1px dotted orange;}</style>
+<script language="JavaScript" type="text/javascript">
+var highlighted;
+
+function highlight(xid)
+{
+    var elms = document.querySelectorAll('[xid="' + xid + '"]');
+    for (k in elms) {
+        v = elms[k]
+        v.className = "active";
+    }
+    highlighted = xid;
+}
+
+function clearHighlight() {
+    var elms = document.querySelectorAll('[xid="' + highlighted + '"]');
+    for (k in elms) {
+        v = elms[k]
+        v.className = "";
+    }
+}
+
+window.onload =
+    function (e) {
+        var tags = document.getElementsByTagName("A")
+        for (var i = 0; i < tags.length; i++) {
+            tags[i].onmouseover =
+                function (e) {
+                    clearHighlight();
+                    var xid = e.toElement.getAttribute('xid');
+                    highlight(xid);
+                }
+        }
+    }</script>
+</head>
+<body>
+<table width=100% border='1px solid gray'><tr><td valign='top'><ul>
+<li><a href='#.Users.yinwang.Code.cpython.Lib.email.base64mime.__all__', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_base64mime___all__")'><span class='identifier'>__all__</span></a></li><li><a href='#.Users.yinwang.Code.cpython.Lib.base64', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_base64")'><span class='identifier'>base64</span></a></li><li><a href='#.Users.yinwang.Code.cpython.Lib.email.base64mime.CRLF', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_base64mime_CRLF")'><span class='identifier'>CRLF</span></a></li><li><a href='#.Users.yinwang.Code.cpython.Lib.email.base64mime.NL', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_base64mime_NL")'><span class='identifier'>NL</span></a></li><li><a href='#.Users.yinwang.Code.cpython.Lib.email.base64mime.EMPTYSTRING', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_base64mime_EMPTYSTRING")'><span class='identifier'>EMPTYSTRING</span></a></li><li><a href='#.Users.yinwang.Code.cpython.Lib.email.base64mime.MISC_LEN', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_base64mime_MISC_LEN")'><span class='identifier'>MISC_LEN</span></a></li><li><a href='#.Users.yinwang.Code.cpython.Lib.email.base64mime.header_length', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_base64mime_header_length")'><span class='function'>header_length</span></a></li><li><a href='#.Users.yinwang.Code.cpython.Lib.email.base64mime.header_encode', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_base64mime_header_encode")'><span class='function'>header_encode</span></a></li><li><a href='#.Users.yinwang.Code.cpython.Lib.email.base64mime.body_encode', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_base64mime_body_encode")'><span class='function'>body_encode</span></a></li><li><a href='#.Users.yinwang.Code.cpython.Lib.email.base64mime.decode', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_base64mime_decode")'><span class='function'>decode</span></a></li><li><a href='#.Users.yinwang.Code.cpython.Lib.email.base64mime.body_decode', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_base64mime_body_decode")'><span class='identifier'>body_decode</span></a></li><li><a href='#.Users.yinwang.Code.cpython.Lib.email.base64mime.decodestring', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_base64mime_decodestring")'><span class='identifier'>decodestring</span></a></li></ul>
+</td><td><pre><span class='lineno'>   1</span> </a><a href='../base64.py.html#.Users.yinwang.Code.cpython.Lib.base64.b64encode', xid ='.Users.yinwang.Code.cpython.Lib.base64.b64encode', title='{(str, None) -> str | (array, None) -> str | ? -> str}'># Copyright (C) 2002-2007 Python Software Foundation
+<span class='lineno'>   2</span> # Author: Ben Gertzfield
+<span class='lineno'>   3</span> # Contact: email-sig@python.org
+<span class='lineno'>   4</span> 
+<span class='lineno'>   5</span> &quot;&quot;&quot;Base64 content transfer encoding per RFCs 2045-2047.
+<span class='lineno'>   6</span> 
+<span class='lineno'>   7</span> This module handles the content transfer encoding method defined in RFC 2045
+<span class='lineno'>   8</span> to encode arbitrary 8-bit data using the three 8-bit bytes in four 7-bit
+<span class='lineno'>   9</span> characters encoding known as Base64.
+<span class='lineno'>  10</span> 
+<span class='lineno'>  11</span> It is used in the MIME standards for email to attach images, audio, and text
+<span class='lineno'>  12</span> using some 8-bit character sets to messages.
+<span class='lineno'>  13</span> 
+<span class='lineno'>  14</span> This module provides an interface to encode and decode both headers and bodies
+<span class='lineno'>  15</span> with Base64 encoding.
+<span class='lineno'>  16</span> 
+<span class='lineno'>  17</span> RFC 2045 defines a method for including character set information in an
+<span class='lineno'>  18</span> `encoded-word&#39; in a header.  This method is commonly used for 8-bit real names
+<span class='lineno'>  19</span> in To:, From:, Cc:, etc. fields, as well as Subject: lines.
+<span class='lineno'>  20</span> 
+<span class='lineno'>  21</span> This module does not do the line wrapping or end-of-line character conversion
+<span class='lineno'>  22</span> necessary for proper internationalized headers; it only does dumb encoding and
+<span class='lineno'>  23</span> decoding.  To deal with the various line wrapping issues, use the email.header
+<span class='lineno'>  24</span> module.
+<span class='lineno'>  25</span> &quot;&quot;&quot;
+<span class='lineno'>  26</span> 
+<span class='lineno'>  27</span> <a name='.Users.yinwang.Code.cpython.Lib.email.base64mime.__all__', xid ='.Users.yinwang.Code.cpython.Lib.email.base64mime.__all__', title='[str]'>__all__</a> = [
+<span class='lineno'>  28</span>     &#39;body_decode&#39;,
+<span class='lineno'>  29</span>     &#39;body_encode&#39;,
+<span class='lineno'>  30</span>     &#39;decode&#39;,
+<span class='lineno'>  31</span>     &#39;decodestring&#39;,
+<span class='lineno'>  32</span>     &#39;header_encode&#39;,
+<span class='lineno'>  33</span>     &#39;header_length&#39;,
+<span class='lineno'>  34</span>     ]
+<span class='lineno'>  35</span> 
+<span class='lineno'>  36</span> 
+<span class='lineno'>  37</span> from <a name='.Users.yinwang.Code.cpython.Lib.base64', xid ='.Users.yinwang.Code.cpython.Lib.base64', title='base64'>base64</a> import b64encode
+<span class='lineno'>  38</span> from binascii import b2a_base64, a2b_base64
+<span class='lineno'>  39</span> 
+<span class='lineno'>  40</span> <a name='.Users.yinwang.Code.cpython.Lib.email.base64mime.CRLF', xid ='.Users.yinwang.Code.cpython.Lib.email.base64mime.CRLF', title='str'>CRLF</a> = &#39;\r\n&#39;
+<span class='lineno'>  41</span> <a name='.Users.yinwang.Code.cpython.Lib.email.base64mime.NL', xid ='.Users.yinwang.Code.cpython.Lib.email.base64mime.NL', title='str'>NL</a> = &#39;\n&#39;
+<span class='lineno'>  42</span> <a name='.Users.yinwang.Code.cpython.Lib.email.base64mime.EMPTYSTRING', xid ='.Users.yinwang.Code.cpython.Lib.email.base64mime.EMPTYSTRING', title='str'>EMPTYSTRING</a> = &#39;&#39;
+<span class='lineno'>  43</span> 
+<span class='lineno'>  44</span> # See also Charset.py
+<span class='lineno'>  45</span> <a name='.Users.yinwang.Code.cpython.Lib.email.base64mime.MISC_LEN', xid ='.Users.yinwang.Code.cpython.Lib.email.base64mime.MISC_LEN', title='int'>MISC_LEN</a> = 7
+<span class='lineno'>  46</span> 
+<span class='lineno'>  47</span> 
+<span class='lineno'>  48</span> 
+<span class='lineno'>  49</span> # Helpers
+<span class='lineno'>  50</span> def <a name='.Users.yinwang.Code.cpython.Lib.email.base64mime.header_length', xid ='.Users.yinwang.Code.cpython.Lib.email.base64mime.header_length', title='str -> int'>header_length</a>(<a name='.Users.yinwang.Code.cpython.Lib.email.base64mime.header_length.bytearray', xid ='.Users.yinwang.Code.cpython.Lib.email.base64mime.header_length.bytearray', title='?'>bytearray</a>):
+<span class='lineno'>  51</span>     &quot;&quot;&quot;Return the length of s when it is encoded with base64.&quot;&quot;&quot;
+<span class='lineno'>  52</span>     groups_of_3, leftover = divmod(len(<a href='#.Users.yinwang.Code.cpython.Lib.email.base64mime.header_length.bytearray', xid ='.Users.yinwang.Code.cpython.Lib.email.base64mime.header_length.bytearray', title='?'>bytearray</a>), 3)
+<span class='lineno'>  53</span>     # 4 bytes out for each 3 bytes (or nonzero fraction thereof) in.
+<span class='lineno'>  54</span>     <a name='.Users.yinwang.Code.cpython.Lib.email.base64mime.header_length.n', xid ='.Users.yinwang.Code.cpython.Lib.email.base64mime.header_length.n', title='int'>n</a> = groups_of_3 * 4
+<span class='lineno'>  55</span>     if leftover:
+<span class='lineno'>  56</span>         <a href='#.Users.yinwang.Code.cpython.Lib.email.base64mime.header_length.n', xid ='.Users.yinwang.Code.cpython.Lib.email.base64mime.header_length.n', title='int'><a name='.Users.yinwang.Code.cpython.Lib.email.base64mime.header_length.n', xid ='.Users.yinwang.Code.cpython.Lib.email.base64mime.header_length.n', title='int'>n</a></a> += 4
+<span class='lineno'>  57</span>     return <a href='#.Users.yinwang.Code.cpython.Lib.email.base64mime.header_length.n', xid ='.Users.yinwang.Code.cpython.Lib.email.base64mime.header_length.n', title='int'>n</a>
+<span class='lineno'>  58</span> 
+<span class='lineno'>  59</span> 
+<span class='lineno'>  60</span> 
+<span class='lineno'>  61</span> def <a name='.Users.yinwang.Code.cpython.Lib.email.base64mime.header_encode', xid ='.Users.yinwang.Code.cpython.Lib.email.base64mime.header_encode', title='(str, str) -> str'>header_encode</a>(<a name='.Users.yinwang.Code.cpython.Lib.email.base64mime.header_encode.header_bytes', xid ='.Users.yinwang.Code.cpython.Lib.email.base64mime.header_encode.header_bytes', title='?'>header_bytes</a>, <a name='.Users.yinwang.Code.cpython.Lib.email.base64mime.header_encode.charset', xid ='.Users.yinwang.Code.cpython.Lib.email.base64mime.header_encode.charset', title='str'>charset</a>=&#39;iso-8859-1&#39;):
+<span class='lineno'>  62</span>     &quot;&quot;&quot;Encode a single header line with Base64 encoding in a given charset.
+<span class='lineno'>  63</span> 
+<span class='lineno'>  64</span>     charset names the character set to use to encode the header.  It defaults
+<span class='lineno'>  65</span>     to iso-8859-1.  Base64 encoding is defined in RFC 2045.
+<span class='lineno'>  66</span>     &quot;&quot;&quot;
+<span class='lineno'>  67</span>     if not <a href='#.Users.yinwang.Code.cpython.Lib.email.base64mime.header_encode.header_bytes', xid ='.Users.yinwang.Code.cpython.Lib.email.base64mime.header_encode.header_bytes', title='?'>header_bytes</a>:
+<span class='lineno'>  68</span>         return &quot;&quot;
+<span class='lineno'>  69</span>     if isinstance(<a href='#.Users.yinwang.Code.cpython.Lib.email.base64mime.header_encode.header_bytes', xid ='.Users.yinwang.Code.cpython.Lib.email.base64mime.header_encode.header_bytes', title='?'>header_bytes</a>, str):
+<span class='lineno'>  70</span>         <a name='.Users.yinwang.Code.cpython.Lib.email.base64mime.header_encode.header_bytes', xid ='.Users.yinwang.Code.cpython.Lib.email.base64mime.header_encode.header_bytes', title='?'>header_bytes</a> = <a href='#.Users.yinwang.Code.cpython.Lib.email.base64mime.header_encode.header_bytes', xid ='.Users.yinwang.Code.cpython.Lib.email.base64mime.header_encode.header_bytes', title='?'>header_bytes</a>.encode(<a href='#.Users.yinwang.Code.cpython.Lib.email.base64mime.header_encode.charset', xid ='.Users.yinwang.Code.cpython.Lib.email.base64mime.header_encode.charset', title='str'>charset</a>)
+<span class='lineno'>  71</span>     <a name='.Users.yinwang.Code.cpython.Lib.email.base64mime.header_encode.encoded', xid ='.Users.yinwang.Code.cpython.Lib.email.base64mime.header_encode.encoded', title='str'>encoded</a> = <a href='../base64.py.html#.Users.yinwang.Code.cpython.Lib.base64.b64encode', xid ='.Users.yinwang.Code.cpython.Lib.base64.b64encode', title='(str, None) -> str | (array, None) -> str'>b64encode</a>(<a href='#.Users.yinwang.Code.cpython.Lib.email.base64mime.header_encode.header_bytes', xid ='.Users.yinwang.Code.cpython.Lib.email.base64mime.header_encode.header_bytes', title='?'>header_bytes</a>).decode(&quot;ascii&quot;)
+<span class='lineno'>  72</span>     return &#39;=?%s?b?%s?=&#39; % (<a href='#.Users.yinwang.Code.cpython.Lib.email.base64mime.header_encode.charset', xid ='.Users.yinwang.Code.cpython.Lib.email.base64mime.header_encode.charset', title='str'>charset</a>, <a href='#.Users.yinwang.Code.cpython.Lib.email.base64mime.header_encode.encoded', xid ='.Users.yinwang.Code.cpython.Lib.email.base64mime.header_encode.encoded', title='str'>encoded</a>)
+<span class='lineno'>  73</span> 
+<span class='lineno'>  74</span> 
+<span class='lineno'>  75</span> 
+<span class='lineno'>  76</span> def <a name='.Users.yinwang.Code.cpython.Lib.email.base64mime.body_encode', xid ='.Users.yinwang.Code.cpython.Lib.email.base64mime.body_encode', title='(str, int, str) -> str'>body_encode</a>(<a name='.Users.yinwang.Code.cpython.Lib.email.base64mime.body_encode.s', xid ='.Users.yinwang.Code.cpython.Lib.email.base64mime.body_encode.s', title='str'>s</a>, <a name='.Users.yinwang.Code.cpython.Lib.email.base64mime.body_encode.maxlinelen', xid ='.Users.yinwang.Code.cpython.Lib.email.base64mime.body_encode.maxlinelen', title='int'>maxlinelen</a>=76, <a name='.Users.yinwang.Code.cpython.Lib.email.base64mime.body_encode.eol', xid ='.Users.yinwang.Code.cpython.Lib.email.base64mime.body_encode.eol', title='str'>eol</a>=<a href='#.Users.yinwang.Code.cpython.Lib.email.base64mime.NL', xid ='.Users.yinwang.Code.cpython.Lib.email.base64mime.NL', title='str'>NL</a>):
+<span class='lineno'>  77</span>     r&quot;&quot;&quot;Encode a string with base64.
+<span class='lineno'>  78</span> 
+<span class='lineno'>  79</span>     Each line will be wrapped at, at most, maxlinelen characters (defaults to
+<span class='lineno'>  80</span>     76 characters).
+<span class='lineno'>  81</span> 
+<span class='lineno'>  82</span>     Each line of encoded text will end with eol, which defaults to &quot;\n&quot;.  Set
+<span class='lineno'>  83</span>     this to &quot;\r\n&quot; if you will be using the result of this function directly
+<span class='lineno'>  84</span>     in an email.
+<span class='lineno'>  85</span>     &quot;&quot;&quot;
+<span class='lineno'>  86</span>     if not <a href='#.Users.yinwang.Code.cpython.Lib.email.base64mime.body_encode.s', xid ='.Users.yinwang.Code.cpython.Lib.email.base64mime.body_encode.s', title='str'>s</a>:
+<span class='lineno'>  87</span>         return <a href='#.Users.yinwang.Code.cpython.Lib.email.base64mime.body_encode.s', xid ='.Users.yinwang.Code.cpython.Lib.email.base64mime.body_encode.s', title='str'>s</a>
+<span class='lineno'>  88</span> 
+<span class='lineno'>  89</span>     <a name='.Users.yinwang.Code.cpython.Lib.email.base64mime.body_encode.encvec', xid ='.Users.yinwang.Code.cpython.Lib.email.base64mime.body_encode.encvec', title='[?]'>encvec</a> = []
+<span class='lineno'>  90</span>     <a name='.Users.yinwang.Code.cpython.Lib.email.base64mime.body_encode.max_unencoded', xid ='.Users.yinwang.Code.cpython.Lib.email.base64mime.body_encode.max_unencoded', title='int'>max_unencoded</a> = <a href='#.Users.yinwang.Code.cpython.Lib.email.base64mime.body_encode.maxlinelen', xid ='.Users.yinwang.Code.cpython.Lib.email.base64mime.body_encode.maxlinelen', title='int'>maxlinelen</a> * 3 // 4
+<span class='lineno'>  91</span>     for <a name='.Users.yinwang.Code.cpython.Lib.email.base64mime.body_encode.i', xid ='.Users.yinwang.Code.cpython.Lib.email.base64mime.body_encode.i', title='int'>i</a> in range(0, len(<a href='#.Users.yinwang.Code.cpython.Lib.email.base64mime.body_encode.s', xid ='.Users.yinwang.Code.cpython.Lib.email.base64mime.body_encode.s', title='str'>s</a>), <a href='#.Users.yinwang.Code.cpython.Lib.email.base64mime.body_encode.max_unencoded', xid ='.Users.yinwang.Code.cpython.Lib.email.base64mime.body_encode.max_unencoded', title='int'>max_unencoded</a>):
+<span class='lineno'>  92</span>         # BAW: should encode() inherit b2a_base64()&#39;s dubious behavior in
+<span class='lineno'>  93</span>         # adding a newline to the encoded string?
+<span class='lineno'>  94</span>         <a name='.Users.yinwang.Code.cpython.Lib.email.base64mime.body_encode.enc', xid ='.Users.yinwang.Code.cpython.Lib.email.base64mime.body_encode.enc', title='str'>enc</a> = b2a_base64(<a href='#.Users.yinwang.Code.cpython.Lib.email.base64mime.body_encode.s', xid ='.Users.yinwang.Code.cpython.Lib.email.base64mime.body_encode.s', title='str'>s</a>[<a href='#.Users.yinwang.Code.cpython.Lib.email.base64mime.body_encode.i', xid ='.Users.yinwang.Code.cpython.Lib.email.base64mime.body_encode.i', title='int'>i</a>:<a href='#.Users.yinwang.Code.cpython.Lib.email.base64mime.body_encode.i', xid ='.Users.yinwang.Code.cpython.Lib.email.base64mime.body_encode.i', title='int'>i</a> + <a href='#.Users.yinwang.Code.cpython.Lib.email.base64mime.body_encode.max_unencoded', xid ='.Users.yinwang.Code.cpython.Lib.email.base64mime.body_encode.max_unencoded', title='int'>max_unencoded</a>]).decode(&quot;ascii&quot;)
+<span class='lineno'>  95</span>         if <a href='#.Users.yinwang.Code.cpython.Lib.email.base64mime.body_encode.enc', xid ='.Users.yinwang.Code.cpython.Lib.email.base64mime.body_encode.enc', title='str'>enc</a>.endswith(<a href='#.Users.yinwang.Code.cpython.Lib.email.base64mime.NL', xid ='.Users.yinwang.Code.cpython.Lib.email.base64mime.NL', title='str'>NL</a>) and <a href='#.Users.yinwang.Code.cpython.Lib.email.base64mime.body_encode.eol', xid ='.Users.yinwang.Code.cpython.Lib.email.base64mime.body_encode.eol', title='str'>eol</a> != <a href='#.Users.yinwang.Code.cpython.Lib.email.base64mime.NL', xid ='.Users.yinwang.Code.cpython.Lib.email.base64mime.NL', title='str'>NL</a>:
+<span class='lineno'>  96</span>             <a name='.Users.yinwang.Code.cpython.Lib.email.base64mime.body_encode.enc', xid ='.Users.yinwang.Code.cpython.Lib.email.base64mime.body_encode.enc', title='str'>enc</a> = <a href='#.Users.yinwang.Code.cpython.Lib.email.base64mime.body_encode.enc', xid ='.Users.yinwang.Code.cpython.Lib.email.base64mime.body_encode.enc', title='str'>enc</a>[:-1] + <a href='#.Users.yinwang.Code.cpython.Lib.email.base64mime.body_encode.eol', xid ='.Users.yinwang.Code.cpython.Lib.email.base64mime.body_encode.eol', title='str'>eol</a>
+<span class='lineno'>  97</span>         <a href='#.Users.yinwang.Code.cpython.Lib.email.base64mime.body_encode.encvec', xid ='.Users.yinwang.Code.cpython.Lib.email.base64mime.body_encode.encvec', title='[?]'>encvec</a>.append(<a href='#.Users.yinwang.Code.cpython.Lib.email.base64mime.body_encode.enc', xid ='.Users.yinwang.Code.cpython.Lib.email.base64mime.body_encode.enc', title='str'>enc</a>)
+<span class='lineno'>  98</span>     return <a href='#.Users.yinwang.Code.cpython.Lib.email.base64mime.EMPTYSTRING', xid ='.Users.yinwang.Code.cpython.Lib.email.base64mime.EMPTYSTRING', title='str'>EMPTYSTRING</a>.join(<a href='#.Users.yinwang.Code.cpython.Lib.email.base64mime.body_encode.encvec', xid ='.Users.yinwang.Code.cpython.Lib.email.base64mime.body_encode.encvec', title='[?]'>encvec</a>)
+<span class='lineno'>  99</span> 
+<span class='lineno'> 100</span> 
+<span class='lineno'> 101</span> 
+<span class='lineno'> 102</span> def <a name='.Users.yinwang.Code.cpython.Lib.email.base64mime.decode', xid ='.Users.yinwang.Code.cpython.Lib.email.base64mime.decode', title='str -> str'>decode</a>(<a name='.Users.yinwang.Code.cpython.Lib.email.base64mime.decode.string', xid ='.Users.yinwang.Code.cpython.Lib.email.base64mime.decode.string', title='str'>string</a>):
+<span class='lineno'> 103</span>     &quot;&quot;&quot;Decode a raw base64 string, returning a bytes object.
+<span class='lineno'> 104</span> 
+<span class='lineno'> 105</span>     This function does not parse a full MIME header value encoded with
+<span class='lineno'> 106</span>     base64 (like =?iso-8895-1?b?bmloISBuaWgh?=) -- please use the high
+<span class='lineno'> 107</span>     level email.header class for that functionality.
+<span class='lineno'> 108</span>     &quot;&quot;&quot;
+<span class='lineno'> 109</span>     if not <a href='#.Users.yinwang.Code.cpython.Lib.email.base64mime.decode.string', xid ='.Users.yinwang.Code.cpython.Lib.email.base64mime.decode.string', title='str'>string</a>:
+<span class='lineno'> 110</span>         return bytes()
+<span class='lineno'> 111</span>     elif isinstance(<a href='#.Users.yinwang.Code.cpython.Lib.email.base64mime.decode.string', xid ='.Users.yinwang.Code.cpython.Lib.email.base64mime.decode.string', title='str'>string</a>, str):
+<span class='lineno'> 112</span>         return a2b_base64(<a href='#.Users.yinwang.Code.cpython.Lib.email.base64mime.decode.string', xid ='.Users.yinwang.Code.cpython.Lib.email.base64mime.decode.string', title='str'>string</a>.encode(&#39;raw-unicode-escape&#39;))
+<span class='lineno'> 113</span>     else:
+<span class='lineno'> 114</span>         return a2b_base64(<a href='#.Users.yinwang.Code.cpython.Lib.email.base64mime.decode.string', xid ='.Users.yinwang.Code.cpython.Lib.email.base64mime.decode.string', title='str'>string</a>)
+<span class='lineno'> 115</span> 
+<span class='lineno'> 116</span> 
+<span class='lineno'> 117</span> # For convenience and backwards compatibility w/ standard base64 module
+<span class='lineno'> 118</span> <a name='.Users.yinwang.Code.cpython.Lib.email.base64mime.body_decode', xid ='.Users.yinwang.Code.cpython.Lib.email.base64mime.body_decode', title='str -> str'>body_decode</a> = <a href='#.Users.yinwang.Code.cpython.Lib.email.base64mime.decode', xid ='.Users.yinwang.Code.cpython.Lib.email.base64mime.decode', title='str -> str'>decode</a>
+<span class='lineno'> 119</span> <a name='.Users.yinwang.Code.cpython.Lib.email.base64mime.decodestring', xid ='.Users.yinwang.Code.cpython.Lib.email.base64mime.decodestring', title='str -> str'>decodestring</a> = <a href='#.Users.yinwang.Code.cpython.Lib.email.base64mime.decode', xid ='.Users.yinwang.Code.cpython.Lib.email.base64mime.decode', title='str -> str'>decode</a>
+</pre></td></tr></table></body></html>

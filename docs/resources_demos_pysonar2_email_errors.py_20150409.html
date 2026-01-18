@@ -1,0 +1,221 @@
+<html><head title="/Users/yinwang/Code/cpython/Lib/email/errors.py"><style type='text/css'>
+body { color: #666666; }
+a {
+    text-decoration: none; color: #5AA2A7;
+    border: solid 1px white;
+}
+a.active {
+    background: -webkit-linear-gradient(top,rgba(255, 255, 200, 0.35) 0,rgba(255, 255, 200, 0.55) 100%);
+    border: solid 1px #E5E600;
+}
+table, th, td { border: 1px solid lightgrey; padding: 5px; corner: rounded; }
+.builtin {color: #B17E41;}
+.comment, .block-comment {color: #aaaaaa; font-style: italic;}
+.constant {color: #888888;}
+.decorator {color: #778899;}
+.doc-string {color: #aaaaaa;}
+.error {border-bottom: 1px solid red;}
+.field-name {color: #2e8b57;}
+.function {color: #4682b4;}
+.identifier {color: #8b7765;}
+.info {border-bottom: 1px dotted RoyalBlue;}
+.keyword {color: #0000cd;}
+.lineno {color: #cccccc;}
+.number {color: #483d8b;}
+.parameter {color: #777777;}
+.string {color: #999999;}
+.type-name {color: #4682b4;}
+.warning {border-bottom: 1px dotted orange;}</style>
+<script language="JavaScript" type="text/javascript">
+var highlighted;
+
+function highlight(xid)
+{
+    var elms = document.querySelectorAll('[xid="' + xid + '"]');
+    for (k in elms) {
+        v = elms[k]
+        v.className = "active";
+    }
+    highlighted = xid;
+}
+
+function clearHighlight() {
+    var elms = document.querySelectorAll('[xid="' + highlighted + '"]');
+    for (k in elms) {
+        v = elms[k]
+        v.className = "";
+    }
+}
+
+window.onload =
+    function (e) {
+        var tags = document.getElementsByTagName("A")
+        for (var i = 0; i < tags.length; i++) {
+            tags[i].onmouseover =
+                function (e) {
+                    clearHighlight();
+                    var xid = e.toElement.getAttribute('xid');
+                    highlight(xid);
+                }
+        }
+    }</script>
+</head>
+<body>
+<table width=100% border='1px solid gray'><tr><td valign='top'><ul>
+<li><a href='#.Users.yinwang.Code.cpython.Lib.email.errors.MessageError', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_errors_MessageError")'><span class='type-name'>MessageError</span></a><ul>
+</ul>
+</li><li><a href='#.Users.yinwang.Code.cpython.Lib.email.errors.MessageParseError', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_errors_MessageParseError")'><span class='type-name'>MessageParseError</span></a><ul>
+</ul>
+</li><li><a href='#.Users.yinwang.Code.cpython.Lib.email.errors.HeaderParseError', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_errors_HeaderParseError")'><span class='type-name'>HeaderParseError</span></a><ul>
+</ul>
+</li><li><a href='#.Users.yinwang.Code.cpython.Lib.email.errors.BoundaryError', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_errors_BoundaryError")'><span class='type-name'>BoundaryError</span></a><ul>
+</ul>
+</li><li><a href='#.Users.yinwang.Code.cpython.Lib.email.errors.MultipartConversionError', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_errors_MultipartConversionError")'><span class='type-name'>MultipartConversionError</span></a><ul>
+</ul>
+</li><li><a href='#.Users.yinwang.Code.cpython.Lib.email.errors.CharsetError', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_errors_CharsetError")'><span class='type-name'>CharsetError</span></a><ul>
+</ul>
+</li><li><a href='#.Users.yinwang.Code.cpython.Lib.email.errors.MessageDefect', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_errors_MessageDefect")'><span class='type-name'>MessageDefect</span></a><ul>
+<li><a href='#.Users.yinwang.Code.cpython.Lib.email.errors.MessageDefect.__init__', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_errors_MessageDefect___init__")'><span class='function'>__init__</span></a></li></ul>
+</li><li><a href='#.Users.yinwang.Code.cpython.Lib.email.errors.NoBoundaryInMultipartDefect', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_errors_NoBoundaryInMultipartDefect")'><span class='type-name'>NoBoundaryInMultipartDefect</span></a><ul>
+</ul>
+</li><li><a href='#.Users.yinwang.Code.cpython.Lib.email.errors.StartBoundaryNotFoundDefect', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_errors_StartBoundaryNotFoundDefect")'><span class='type-name'>StartBoundaryNotFoundDefect</span></a><ul>
+</ul>
+</li><li><a href='#.Users.yinwang.Code.cpython.Lib.email.errors.CloseBoundaryNotFoundDefect', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_errors_CloseBoundaryNotFoundDefect")'><span class='type-name'>CloseBoundaryNotFoundDefect</span></a><ul>
+</ul>
+</li><li><a href='#.Users.yinwang.Code.cpython.Lib.email.errors.FirstHeaderLineIsContinuationDefect', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_errors_FirstHeaderLineIsContinuationDefect")'><span class='type-name'>FirstHeaderLineIsContinuationDefect</span></a><ul>
+</ul>
+</li><li><a href='#.Users.yinwang.Code.cpython.Lib.email.errors.MisplacedEnvelopeHeaderDefect', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_errors_MisplacedEnvelopeHeaderDefect")'><span class='type-name'>MisplacedEnvelopeHeaderDefect</span></a><ul>
+</ul>
+</li><li><a href='#.Users.yinwang.Code.cpython.Lib.email.errors.MissingHeaderBodySeparatorDefect', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_errors_MissingHeaderBodySeparatorDefect")'><span class='type-name'>MissingHeaderBodySeparatorDefect</span></a><ul>
+</ul>
+</li><li><a href='#.Users.yinwang.Code.cpython.Lib.email.errors.MalformedHeaderDefect', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_errors_MalformedHeaderDefect")'><span class='identifier'>MalformedHeaderDefect</span></a></li><li><a href='#.Users.yinwang.Code.cpython.Lib.email.errors.MultipartInvariantViolationDefect', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_errors_MultipartInvariantViolationDefect")'><span class='type-name'>MultipartInvariantViolationDefect</span></a><ul>
+</ul>
+</li><li><a href='#.Users.yinwang.Code.cpython.Lib.email.errors.InvalidMultipartContentTransferEncodingDefect', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_errors_InvalidMultipartContentTransferEncodingDefect")'><span class='type-name'>InvalidMultipartContentTransferEncodingDefect</span></a><ul>
+</ul>
+</li><li><a href='#.Users.yinwang.Code.cpython.Lib.email.errors.UndecodableBytesDefect', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_errors_UndecodableBytesDefect")'><span class='type-name'>UndecodableBytesDefect</span></a><ul>
+</ul>
+</li><li><a href='#.Users.yinwang.Code.cpython.Lib.email.errors.InvalidBase64PaddingDefect', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_errors_InvalidBase64PaddingDefect")'><span class='type-name'>InvalidBase64PaddingDefect</span></a><ul>
+</ul>
+</li><li><a href='#.Users.yinwang.Code.cpython.Lib.email.errors.InvalidBase64CharactersDefect', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_errors_InvalidBase64CharactersDefect")'><span class='type-name'>InvalidBase64CharactersDefect</span></a><ul>
+</ul>
+</li><li><a href='#.Users.yinwang.Code.cpython.Lib.email.errors.HeaderDefect', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_errors_HeaderDefect")'><span class='type-name'>HeaderDefect</span></a><ul>
+<li><a href='#.Users.yinwang.Code.cpython.Lib.email.errors.HeaderDefect.__init__', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_errors_HeaderDefect___init__")'><span class='function'>__init__</span></a></li></ul>
+</li><li><a href='#.Users.yinwang.Code.cpython.Lib.email.errors.InvalidHeaderDefect', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_errors_InvalidHeaderDefect")'><span class='type-name'>InvalidHeaderDefect</span></a><ul>
+</ul>
+</li><li><a href='#.Users.yinwang.Code.cpython.Lib.email.errors.HeaderMissingRequiredValue', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_errors_HeaderMissingRequiredValue")'><span class='type-name'>HeaderMissingRequiredValue</span></a><ul>
+</ul>
+</li><li><a href='#.Users.yinwang.Code.cpython.Lib.email.errors.NonPrintableDefect', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_errors_NonPrintableDefect")'><span class='type-name'>NonPrintableDefect</span></a><ul>
+<li><a href='#.Users.yinwang.Code.cpython.Lib.email.errors.NonPrintableDefect.__init__', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_errors_NonPrintableDefect___init__")'><span class='function'>__init__</span></a></li><li><a href='#.Users.yinwang.Code.cpython.Lib.email.errors.NonPrintableDefect.__str__', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_errors_NonPrintableDefect___str__")'><span class='function'>__str__</span></a></li></ul>
+</li><li><a href='#.Users.yinwang.Code.cpython.Lib.email.errors.ObsoleteHeaderDefect', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_errors_ObsoleteHeaderDefect")'><span class='type-name'>ObsoleteHeaderDefect</span></a><ul>
+</ul>
+</li><li><a href='#.Users.yinwang.Code.cpython.Lib.email.errors.NonASCIILocalPartDefect', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_errors_NonASCIILocalPartDefect")'><span class='type-name'>NonASCIILocalPartDefect</span></a><ul>
+</ul>
+</li></ul>
+</td><td><pre><span class='lineno'>   1</span> # Copyright (C) 2001-2006 Python Software Foundation
+<span class='lineno'>   2</span> # Author: Barry Warsaw
+<span class='lineno'>   3</span> # Contact: email-sig@python.org
+<span class='lineno'>   4</span> 
+<span class='lineno'>   5</span> &quot;&quot;&quot;email package exception classes.&quot;&quot;&quot;
+<span class='lineno'>   6</span> 
+<span class='lineno'>   7</span> 
+<span class='lineno'>   8</span> class <a name='.Users.yinwang.Code.cpython.Lib.email.errors.MessageError', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.MessageError', title='<MessageError>'>MessageError</a>(Exception):
+<span class='lineno'>   9</span>     &quot;&quot;&quot;Base class for errors in the email package.&quot;&quot;&quot;
+<span class='lineno'>  10</span> 
+<span class='lineno'>  11</span> 
+<span class='lineno'>  12</span> class <a name='.Users.yinwang.Code.cpython.Lib.email.errors.MessageParseError', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.MessageParseError', title='<MessageParseError>'>MessageParseError</a>(<a href='#.Users.yinwang.Code.cpython.Lib.email.errors.MessageError', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.MessageError', title='<MessageError>'>MessageError</a>):
+<span class='lineno'>  13</span>     &quot;&quot;&quot;Base class for message parsing errors.&quot;&quot;&quot;
+<span class='lineno'>  14</span> 
+<span class='lineno'>  15</span> 
+<span class='lineno'>  16</span> class <a name='.Users.yinwang.Code.cpython.Lib.email.errors.HeaderParseError', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.HeaderParseError', title='<HeaderParseError>'>HeaderParseError</a>(<a href='#.Users.yinwang.Code.cpython.Lib.email.errors.MessageParseError', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.MessageParseError', title='<MessageParseError>'>MessageParseError</a>):
+<span class='lineno'>  17</span>     &quot;&quot;&quot;Error while parsing headers.&quot;&quot;&quot;
+<span class='lineno'>  18</span> 
+<span class='lineno'>  19</span> 
+<span class='lineno'>  20</span> class <a name='.Users.yinwang.Code.cpython.Lib.email.errors.BoundaryError', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.BoundaryError', title='<BoundaryError>'>BoundaryError</a>(<a href='#.Users.yinwang.Code.cpython.Lib.email.errors.MessageParseError', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.MessageParseError', title='<MessageParseError>'>MessageParseError</a>):
+<span class='lineno'>  21</span>     &quot;&quot;&quot;Couldn&#39;t find terminating boundary.&quot;&quot;&quot;
+<span class='lineno'>  22</span> 
+<span class='lineno'>  23</span> 
+<span class='lineno'>  24</span> class <a name='.Users.yinwang.Code.cpython.Lib.email.errors.MultipartConversionError', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.MultipartConversionError', title='<MultipartConversionError>'>MultipartConversionError</a>(<a href='#.Users.yinwang.Code.cpython.Lib.email.errors.MessageError', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.MessageError', title='<MessageError>'>MessageError</a>, TypeError):
+<span class='lineno'>  25</span>     &quot;&quot;&quot;Conversion to a multipart is prohibited.&quot;&quot;&quot;
+<span class='lineno'>  26</span> 
+<span class='lineno'>  27</span> 
+<span class='lineno'>  28</span> class <a name='.Users.yinwang.Code.cpython.Lib.email.errors.CharsetError', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.CharsetError', title='<CharsetError>'>CharsetError</a>(<a href='#.Users.yinwang.Code.cpython.Lib.email.errors.MessageError', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.MessageError', title='<MessageError>'>MessageError</a>):
+<span class='lineno'>  29</span>     &quot;&quot;&quot;An illegal charset was given.&quot;&quot;&quot;
+<span class='lineno'>  30</span> 
+<span class='lineno'>  31</span> 
+<span class='lineno'>  32</span> # These are parsing defects which the parser was able to work around.
+<span class='lineno'>  33</span> class <a name='.Users.yinwang.Code.cpython.Lib.email.errors.MessageDefect', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.MessageDefect', title='<MessageDefect>'>MessageDefect</a>(ValueError):
+<span class='lineno'>  34</span>     &quot;&quot;&quot;Base class for a message defect.&quot;&quot;&quot;
+<span class='lineno'>  35</span> 
+<span class='lineno'>  36</span>     def <a name='.Users.yinwang.Code.cpython.Lib.email.errors.MessageDefect.__init__', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.MessageDefect.__init__', title='(MessageDefect, None) -> None | (MessageDefect, ?) -> None'>__init__</a>(<a name='.Users.yinwang.Code.cpython.Lib.email.errors.MessageDefect.__init__.self', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.MessageDefect.__init__.self', title='MissingHeaderBodySeparatorDefect'>self</a>, <a name='.Users.yinwang.Code.cpython.Lib.email.errors.MessageDefect.__init__.line', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.MessageDefect.__init__.line', title='None'>line</a>=None):
+<span class='lineno'>  37</span>         if <a href='#.Users.yinwang.Code.cpython.Lib.email.errors.MessageDefect.__init__.line', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.MessageDefect.__init__.line', title='None'>line</a> is not None:
+<span class='lineno'>  38</span>             super().__init__(<a href='#.Users.yinwang.Code.cpython.Lib.email.errors.MessageDefect.__init__.line', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.MessageDefect.__init__.line', title='None'>line</a>)
+<span class='lineno'>  39</span>         <a href='#.Users.yinwang.Code.cpython.Lib.email.errors.MessageDefect.__init__.self', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.MessageDefect.__init__.self', title='MissingHeaderBodySeparatorDefect'>self</a>.<a name='.Users.yinwang.Code.cpython.Lib.email.errors.MissingHeaderBodySeparatorDefect.line', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.MissingHeaderBodySeparatorDefect.line', title='None'>line</a> = <a href='#.Users.yinwang.Code.cpython.Lib.email.errors.MessageDefect.__init__.line', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.MessageDefect.__init__.line', title='None'>line</a>
+<span class='lineno'>  40</span> 
+<span class='lineno'>  41</span> class <a name='.Users.yinwang.Code.cpython.Lib.email.errors.NoBoundaryInMultipartDefect', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.NoBoundaryInMultipartDefect', title='<NoBoundaryInMultipartDefect>'>NoBoundaryInMultipartDefect</a>(<a href='#.Users.yinwang.Code.cpython.Lib.email.errors.MessageDefect', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.MessageDefect', title='<MessageDefect>'>MessageDefect</a>):
+<span class='lineno'>  42</span>     &quot;&quot;&quot;A message claimed to be a multipart but had no boundary parameter.&quot;&quot;&quot;
+<span class='lineno'>  43</span> 
+<span class='lineno'>  44</span> class <a name='.Users.yinwang.Code.cpython.Lib.email.errors.StartBoundaryNotFoundDefect', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.StartBoundaryNotFoundDefect', title='<StartBoundaryNotFoundDefect>'>StartBoundaryNotFoundDefect</a>(<a href='#.Users.yinwang.Code.cpython.Lib.email.errors.MessageDefect', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.MessageDefect', title='<MessageDefect>'>MessageDefect</a>):
+<span class='lineno'>  45</span>     &quot;&quot;&quot;The claimed start boundary was never found.&quot;&quot;&quot;
+<span class='lineno'>  46</span> 
+<span class='lineno'>  47</span> class <a name='.Users.yinwang.Code.cpython.Lib.email.errors.CloseBoundaryNotFoundDefect', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.CloseBoundaryNotFoundDefect', title='<CloseBoundaryNotFoundDefect>'>CloseBoundaryNotFoundDefect</a>(<a href='#.Users.yinwang.Code.cpython.Lib.email.errors.MessageDefect', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.MessageDefect', title='<MessageDefect>'>MessageDefect</a>):
+<span class='lineno'>  48</span>     &quot;&quot;&quot;A start boundary was found, but not the corresponding close boundary.&quot;&quot;&quot;
+<span class='lineno'>  49</span> 
+<span class='lineno'>  50</span> class <a name='.Users.yinwang.Code.cpython.Lib.email.errors.FirstHeaderLineIsContinuationDefect', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.FirstHeaderLineIsContinuationDefect', title='<FirstHeaderLineIsContinuationDefect>'>FirstHeaderLineIsContinuationDefect</a>(<a href='#.Users.yinwang.Code.cpython.Lib.email.errors.MessageDefect', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.MessageDefect', title='<MessageDefect>'>MessageDefect</a>):
+<span class='lineno'>  51</span>     &quot;&quot;&quot;A message had a continuation line as its first header line.&quot;&quot;&quot;
+<span class='lineno'>  52</span> 
+<span class='lineno'>  53</span> class <a name='.Users.yinwang.Code.cpython.Lib.email.errors.MisplacedEnvelopeHeaderDefect', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.MisplacedEnvelopeHeaderDefect', title='<MisplacedEnvelopeHeaderDefect>'>MisplacedEnvelopeHeaderDefect</a>(<a href='#.Users.yinwang.Code.cpython.Lib.email.errors.MessageDefect', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.MessageDefect', title='<MessageDefect>'>MessageDefect</a>):
+<span class='lineno'>  54</span>     &quot;&quot;&quot;A &#39;Unix-from&#39; header was found in the middle of a header block.&quot;&quot;&quot;
+<span class='lineno'>  55</span> 
+<span class='lineno'>  56</span> class <a name='.Users.yinwang.Code.cpython.Lib.email.errors.MissingHeaderBodySeparatorDefect', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.MissingHeaderBodySeparatorDefect', title='<MissingHeaderBodySeparatorDefect>'>MissingHeaderBodySeparatorDefect</a>(<a href='#.Users.yinwang.Code.cpython.Lib.email.errors.MessageDefect', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.MessageDefect', title='<MessageDefect>'>MessageDefect</a>):
+<span class='lineno'>  57</span>     &quot;&quot;&quot;Found line with no leading whitespace and no colon before blank line.&quot;&quot;&quot;
+<span class='lineno'>  58</span> # XXX: backward compatibility, just in case (it was never emitted).
+<span class='lineno'>  59</span> <a name='.Users.yinwang.Code.cpython.Lib.email.errors.MalformedHeaderDefect', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.MalformedHeaderDefect', title='<MissingHeaderBodySeparatorDefect>'>MalformedHeaderDefect</a> = <a href='#.Users.yinwang.Code.cpython.Lib.email.errors.MissingHeaderBodySeparatorDefect', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.MissingHeaderBodySeparatorDefect', title='<MissingHeaderBodySeparatorDefect>'>MissingHeaderBodySeparatorDefect</a>
+<span class='lineno'>  60</span> 
+<span class='lineno'>  61</span> class <a name='.Users.yinwang.Code.cpython.Lib.email.errors.MultipartInvariantViolationDefect', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.MultipartInvariantViolationDefect', title='<MultipartInvariantViolationDefect>'>MultipartInvariantViolationDefect</a>(<a href='#.Users.yinwang.Code.cpython.Lib.email.errors.MessageDefect', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.MessageDefect', title='<MessageDefect>'>MessageDefect</a>):
+<span class='lineno'>  62</span>     &quot;&quot;&quot;A message claimed to be a multipart but no subparts were found.&quot;&quot;&quot;
+<span class='lineno'>  63</span> 
+<span class='lineno'>  64</span> class <a name='.Users.yinwang.Code.cpython.Lib.email.errors.InvalidMultipartContentTransferEncodingDefect', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.InvalidMultipartContentTransferEncodingDefect', title='<InvalidMultipartContentTransferEncodingDefect>'>InvalidMultipartContentTransferEncodingDefect</a>(<a href='#.Users.yinwang.Code.cpython.Lib.email.errors.MessageDefect', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.MessageDefect', title='<MessageDefect>'>MessageDefect</a>):
+<span class='lineno'>  65</span>     &quot;&quot;&quot;An invalid content transfer encoding was set on the multipart itself.&quot;&quot;&quot;
+<span class='lineno'>  66</span> 
+<span class='lineno'>  67</span> class <a name='.Users.yinwang.Code.cpython.Lib.email.errors.UndecodableBytesDefect', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.UndecodableBytesDefect', title='<UndecodableBytesDefect>'>UndecodableBytesDefect</a>(<a href='#.Users.yinwang.Code.cpython.Lib.email.errors.MessageDefect', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.MessageDefect', title='<MessageDefect>'>MessageDefect</a>):
+<span class='lineno'>  68</span>     &quot;&quot;&quot;Header contained bytes that could not be decoded&quot;&quot;&quot;
+<span class='lineno'>  69</span> 
+<span class='lineno'>  70</span> class <a name='.Users.yinwang.Code.cpython.Lib.email.errors.InvalidBase64PaddingDefect', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.InvalidBase64PaddingDefect', title='<InvalidBase64PaddingDefect>'>InvalidBase64PaddingDefect</a>(<a href='#.Users.yinwang.Code.cpython.Lib.email.errors.MessageDefect', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.MessageDefect', title='<MessageDefect>'>MessageDefect</a>):
+<span class='lineno'>  71</span>     &quot;&quot;&quot;base64 encoded sequence had an incorrect length&quot;&quot;&quot;
+<span class='lineno'>  72</span> 
+<span class='lineno'>  73</span> class <a name='.Users.yinwang.Code.cpython.Lib.email.errors.InvalidBase64CharactersDefect', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.InvalidBase64CharactersDefect', title='<InvalidBase64CharactersDefect>'>InvalidBase64CharactersDefect</a>(<a href='#.Users.yinwang.Code.cpython.Lib.email.errors.MessageDefect', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.MessageDefect', title='<MessageDefect>'>MessageDefect</a>):
+<span class='lineno'>  74</span>     &quot;&quot;&quot;base64 encoded sequence had characters not in base64 alphabet&quot;&quot;&quot;
+<span class='lineno'>  75</span> 
+<span class='lineno'>  76</span> # These errors are specific to header parsing.
+<span class='lineno'>  77</span> 
+<span class='lineno'>  78</span> class <a name='.Users.yinwang.Code.cpython.Lib.email.errors.HeaderDefect', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.HeaderDefect', title='<HeaderDefect>'>HeaderDefect</a>(<a href='#.Users.yinwang.Code.cpython.Lib.email.errors.MessageDefect', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.MessageDefect', title='<MessageDefect>'>MessageDefect</a>):
+<span class='lineno'>  79</span>     &quot;&quot;&quot;Base class for a header defect.&quot;&quot;&quot;
+<span class='lineno'>  80</span> 
+<span class='lineno'>  81</span>     def <a name='.Users.yinwang.Code.cpython.Lib.email.errors.HeaderDefect.__init__', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.HeaderDefect.__init__', title='HeaderDefect -> None'>__init__</a>(<a name='.Users.yinwang.Code.cpython.Lib.email.errors.HeaderDefect.__init__.self', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.HeaderDefect.__init__.self', title='InvalidHeaderDefect'>self</a>, *args, **kw):
+<span class='lineno'>  82</span>         super().__init__(*args, **kw)
+<span class='lineno'>  83</span> 
+<span class='lineno'>  84</span> class <a name='.Users.yinwang.Code.cpython.Lib.email.errors.InvalidHeaderDefect', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.InvalidHeaderDefect', title='<InvalidHeaderDefect>'>InvalidHeaderDefect</a>(<a href='#.Users.yinwang.Code.cpython.Lib.email.errors.HeaderDefect', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.HeaderDefect', title='<HeaderDefect>'>HeaderDefect</a>):
+<span class='lineno'>  85</span>     &quot;&quot;&quot;Header is not valid, message gives details.&quot;&quot;&quot;
+<span class='lineno'>  86</span> 
+<span class='lineno'>  87</span> class <a name='.Users.yinwang.Code.cpython.Lib.email.errors.HeaderMissingRequiredValue', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.HeaderMissingRequiredValue', title='<HeaderMissingRequiredValue>'>HeaderMissingRequiredValue</a>(<a href='#.Users.yinwang.Code.cpython.Lib.email.errors.HeaderDefect', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.HeaderDefect', title='<HeaderDefect>'>HeaderDefect</a>):
+<span class='lineno'>  88</span>     &quot;&quot;&quot;A header that must have a value had none&quot;&quot;&quot;
+<span class='lineno'>  89</span> 
+<span class='lineno'>  90</span> class <a name='.Users.yinwang.Code.cpython.Lib.email.errors.NonPrintableDefect', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.NonPrintableDefect', title='<NonPrintableDefect>'>NonPrintableDefect</a>(<a href='#.Users.yinwang.Code.cpython.Lib.email.errors.HeaderDefect', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.HeaderDefect', title='<HeaderDefect>'>HeaderDefect</a>):
+<span class='lineno'>  91</span>     &quot;&quot;&quot;ASCII characters outside the ascii-printable range found&quot;&quot;&quot;
+<span class='lineno'>  92</span> 
+<span class='lineno'>  93</span>     def <a name='.Users.yinwang.Code.cpython.Lib.email.errors.NonPrintableDefect.__init__', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.NonPrintableDefect.__init__', title='(NonPrintableDefect, ?) -> None'>__init__</a>(<a name='.Users.yinwang.Code.cpython.Lib.email.errors.NonPrintableDefect.__init__.self', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.NonPrintableDefect.__init__.self', title='NonPrintableDefect'>self</a>, <a name='.Users.yinwang.Code.cpython.Lib.email.errors.NonPrintableDefect.__init__.non_printables', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.NonPrintableDefect.__init__.non_printables', title='?'>non_printables</a>):
+<span class='lineno'>  94</span>         super().__init__(<a href='#.Users.yinwang.Code.cpython.Lib.email.errors.NonPrintableDefect.__init__.non_printables', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.NonPrintableDefect.__init__.non_printables', title='?'>non_printables</a>)
+<span class='lineno'>  95</span>         <a href='#.Users.yinwang.Code.cpython.Lib.email.errors.NonPrintableDefect.__init__.self', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.NonPrintableDefect.__init__.self', title='NonPrintableDefect'>self</a>.<a name='.Users.yinwang.Code.cpython.Lib.email.errors.NonPrintableDefect.non_printables', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.NonPrintableDefect.non_printables', title='?'>non_printables</a> = <a href='#.Users.yinwang.Code.cpython.Lib.email.errors.NonPrintableDefect.__init__.non_printables', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.NonPrintableDefect.__init__.non_printables', title='?'>non_printables</a>
+<span class='lineno'>  96</span> 
+<span class='lineno'>  97</span>     def <a name='.Users.yinwang.Code.cpython.Lib.email.errors.NonPrintableDefect.__str__', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.NonPrintableDefect.__str__', title='NonPrintableDefect -> str'>__str__</a>(<a name='.Users.yinwang.Code.cpython.Lib.email.errors.NonPrintableDefect.__str__.self', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.NonPrintableDefect.__str__.self', title='NonPrintableDefect'>self</a>):
+<span class='lineno'>  98</span>         return (&quot;the following ASCII non-printables found in header: &quot;
+<span class='lineno'>  99</span>             &quot;{}&quot;.format(<a href='#.Users.yinwang.Code.cpython.Lib.email.errors.NonPrintableDefect.__str__.self', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.NonPrintableDefect.__str__.self', title='NonPrintableDefect'>self</a>.<a href='#.Users.yinwang.Code.cpython.Lib.email.errors.NonPrintableDefect.non_printables', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.NonPrintableDefect.non_printables', title='?'>non_printables</a>))
+<span class='lineno'> 100</span> 
+<span class='lineno'> 101</span> class <a name='.Users.yinwang.Code.cpython.Lib.email.errors.ObsoleteHeaderDefect', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.ObsoleteHeaderDefect', title='<ObsoleteHeaderDefect>'>ObsoleteHeaderDefect</a>(<a href='#.Users.yinwang.Code.cpython.Lib.email.errors.HeaderDefect', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.HeaderDefect', title='<HeaderDefect>'>HeaderDefect</a>):
+<span class='lineno'> 102</span>     &quot;&quot;&quot;Header uses syntax declared obsolete by RFC 5322&quot;&quot;&quot;
+<span class='lineno'> 103</span> 
+<span class='lineno'> 104</span> class <a name='.Users.yinwang.Code.cpython.Lib.email.errors.NonASCIILocalPartDefect', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.NonASCIILocalPartDefect', title='<NonASCIILocalPartDefect>'>NonASCIILocalPartDefect</a>(<a href='#.Users.yinwang.Code.cpython.Lib.email.errors.HeaderDefect', xid ='.Users.yinwang.Code.cpython.Lib.email.errors.HeaderDefect', title='<HeaderDefect>'>HeaderDefect</a>):
+<span class='lineno'> 105</span>     &quot;&quot;&quot;local_part contains non-ASCII characters&quot;&quot;&quot;
+<span class='lineno'> 106</span>     # This defect only occurs during unicode parsing, not when
+<span class='lineno'> 107</span>     # parsing messages decoded from binary.
+</pre></td></tr></table></body></html>
