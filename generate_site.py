@@ -132,6 +132,24 @@ def normalize_html(text):
     """Removes whitespace for robust comparison."""
     return re.sub(r'\s+', '', text)
 
+def clean_html_attributes(content):
+    # Remove <style> blocks
+    content = re.sub(r'<style.*?>.*?</style>', '', content, flags=re.DOTALL | re.IGNORECASE)
+    
+    # Remove style="..." attributes
+    content = re.sub(r'\s+style\s*=\s*(["\']).*?\1', '', content, flags=re.IGNORECASE)
+    
+    # Remove width and border from table attributes
+    def clean_tag(match):
+        tag_text = match.group(0)
+        tag_text = re.sub(r'\s+width\s*=\s*(["\']).*?\1', '', tag_text, flags=re.IGNORECASE)
+        tag_text = re.sub(r'\s+border\s*=\s*(["\']).*?\1', '', tag_text, flags=re.IGNORECASE)
+        return tag_text
+
+    content = re.sub(r'<(table|td|th|tr|tbody|thead|tfoot)\b[^>]*>', clean_tag, content, flags=re.IGNORECASE)
+    
+    return content
+
 
 def process_archives():
     if not os.path.exists(OUTPUT_DIR):
@@ -193,6 +211,7 @@ def process_archives():
                         content = f.read()
                     
                     content = try_fix_mojibake(content)
+                    content = clean_html_attributes(content)
                     body_content = get_body_content(content)
                     norm_body = normalize_html(body_content)
                     content_hash = hashlib.sha256(norm_body.encode('utf-8')).hexdigest()

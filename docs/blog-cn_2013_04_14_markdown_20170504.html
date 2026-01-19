@@ -55,11 +55,11 @@
 
     <div class="inner">
         <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2013_04_14_markdown_20130418.html" >2013-04-18</a> <a href="blog-cn_2013_04_14_markdown_20140803.html" >2014-08-03</a> <a href="blog-cn_2013_04_14_markdown_20160926.html" >2016-09-26</a> <a href="blog-cn_2013_04_14_markdown_20170504.html" class="current">2017-05-04</a> <a href="blog-cn_2013_04_14_markdown_20170605.html" >2017-06-05</a> <a href="blog-cn_2013_04_14_markdown_20180311.html" >2018-03-11</a> <a href="blog-cn_2013_04_14_markdown_20191228.html" >2019-12-28</a> <a href="blog-cn_2013_04_14_markdown_20200228.html" >2020-02-28</a> <a href="blog-cn_2013_04_14_markdown_20240508.html" >2024-05-08</a></div>
-        <div style="margin: 2% 5% 2% 5%">
+        <div>
             <table>
                 <tr>
-                    <td width="60%">
-                        <div style="padding: 2% 8% 5% 8%; border: 1px solid LightGrey;">
+                    <td>
+                        <div>
                             <h2>Markdown 的一些问题</h2>
                             <p>把我之前的博文基本上转换成了 markdown 格式。我发现 markdown 虽然在编辑器里看起来比 HTML 清晰一些，但也有一些不足。</p>
 
@@ -71,7 +71,7 @@
 
     <p>我已经在一篇<a href="http://en.yinwang.org/blog-en/2011/05/08/layout">英文博文</a>里提到了 layout 语法的多种问题。因为空格的数量决定了文档的结构，这种文档格式相当的“脆弱”。稍微少打一两个空格，就会出现不可预测的结果。这种现象在“itemize”内部的代码块最容易出现。因为每个 item 带来了缩进，所以内部的代码必须比 item 的缩进多4个空格，才能被排到正确的位置。比如我转换博文的时候多次出现以下的情况：</p>
 
-    <p><img src="images/markdown-mistake.png" width="90%" style="border: 2px solid green;" /></p>
+    <p><img src="images/markdown-mistake.png" width="90%" /></p>
 
     <p>这里的问题是，代码里的第一行 <code class="highlighter-rouge">helloworld z = let x = 1</code> 因为缩进不够，被放到了代码块外面。但是为了准确的缩进所耗费的精力，其实比直接打 <code class="highlighter-rouge">&lt;pre&gt;</code> 这样的 tag 还要多。</p>
   </li>
@@ -93,20 +93,18 @@
 
                         </div>
 
-                        <div style="margin-top: 5px">
+                        <div>
                             <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                             <ins class="adsbygoogle"
-                                 style="display:inline-block;width:728px;height:90px"
                                  data-ad-client="ca-pub-1331524016319584"
                                  data-ad-slot="6657867155"></ins>
                             <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                         </div>
                     </td>
 
-                    <td width="16%" valign="top">
+                    <td valign="top">
                         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                         <ins class="adsbygoogle"
-                             style="display:block"
                              data-ad-client="ca-pub-1331524016319584"
                              data-ad-slot="2703393155"
                              data-ad-format="auto"></ins>

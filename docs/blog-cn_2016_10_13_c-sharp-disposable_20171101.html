@@ -55,20 +55,19 @@
 
     <div class="inner">
         <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2016_10_13_c-sharp-disposable_20161017.html" >2016-10-17</a> <a href="blog-cn_2016_10_13_c-sharp-disposable_20161101.html" >2016-11-01</a> <a href="blog-cn_2016_10_13_c-sharp-disposable_20170510.html" >2017-05-10</a> <a href="blog-cn_2016_10_13_c-sharp-disposable_20170531.html" >2017-05-31</a> <a href="blog-cn_2016_10_13_c-sharp-disposable_20171101.html" class="current">2017-11-01</a> <a href="blog-cn_2016_10_13_c-sharp-disposable_20171202.html" >2017-12-02</a> <a href="blog-cn_2016_10_13_c-sharp-disposable_20180305.html" >2018-03-05</a> <a href="blog-cn_2016_10_13_c-sharp-disposable_20191118.html" >2019-11-18</a> <a href="blog-cn_2016_10_13_c-sharp-disposable_20200217.html" >2020-02-17</a> <a href="blog-cn_2016_10_13_c-sharp-disposable_20240416.html" >2024-04-16</a></div>
-        <div style="margin: 2% 5% 2% 5%">
+        <div>
             <table>
                 <tr>
-                    <td width="60%">
-                        <div style="margin-bottom: 5px">
+                    <td>
+                        <div>
                             <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                             <ins class="adsbygoogle"
-                                 style="display:inline-block;width:728px;height:90px"
                                  data-ad-client="ca-pub-1331524016319584"
                                  data-ad-slot="6657867155"></ins>
                             <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                         </div>
 
-                        <div style="padding: 2% 8% 5% 8%; border: 1px solid LightGrey;">
+                        <div>
                             <h2>可恶的 C# IDisposable 接口</h2>
                             <p>我们 team 快被 C# 里面的各种 <a href="https://msdn.microsoft.com/en-us/library/system.idisposable(v=vs.110).aspx">IDisposable</a> 对象给折腾疯了…… 故事比较长，先来科普一下。如果你没有用过 C#，IDisposable 是 C# 针对“资源管理”设计的一个接口，它类似于 Java 的 <a href="https://docs.oracle.com/javase/7/docs/api/java/io/Closeable.html">Closeable</a> 接口。这类接口一般提供一个“方法”（比如叫 Dispose 或者 Close），你的资源（比如文件流）实现这个接口。使用资源的人先“打开资源”，用完之后调用这个方法，表示“关闭资源”。比如，文件打开，读写完了之后，调用 close 关掉，就是这个原理。</p>
 
@@ -218,10 +217,9 @@
                         </div>
                     </td>
 
-                    <td width="16%" valign="top">
+                    <td valign="top">
                         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                         <ins class="adsbygoogle"
-                             style="display:block"
                              data-ad-client="ca-pub-1331524016319584"
                              data-ad-slot="2703393155"
                              data-ad-format="auto"></ins>

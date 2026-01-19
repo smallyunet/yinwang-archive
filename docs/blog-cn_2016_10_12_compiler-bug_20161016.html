@@ -55,11 +55,11 @@
 
     <div class="inner">
         <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2016_10_12_compiler-bug_20161016.html" class="current">2016-10-16</a> <a href="blog-cn_2016_10_12_compiler-bug_20170307.html" >2017-03-07</a> <a href="blog-cn_2016_10_12_compiler-bug_20170506.html" >2017-05-06</a> <a href="blog-cn_2016_10_12_compiler-bug_20170608.html" >2017-06-08</a> <a href="blog-cn_2016_10_12_compiler-bug_20171116.html" >2017-11-16</a> <a href="blog-cn_2016_10_12_compiler-bug_20180319.html" >2018-03-19</a> <a href="blog-cn_2016_10_12_compiler-bug_20181224.html" >2018-12-24</a> <a href="blog-cn_2016_10_12_compiler-bug_20191025.html" >2019-10-25</a> <a href="blog-cn_2016_10_12_compiler-bug_20200223.html" >2020-02-23</a> <a href="blog-cn_2016_10_12_compiler-bug_20240508.html" >2024-05-08</a></div>
-        <div style="margin: 2% 5% 2% 5%">
+        <div>
             <table>
                 <tr>
-                    <td width="60%">
-                        <div style="padding: 2% 8% 5% 8%; border: 1px solid LightGrey;">
+                    <td>
+                        <div>
                             <h2>C 编译器优化过程中的 Bug</h2>
                             <p>一个朋友向我指出一个最近他们发现的 GCC 编译器优化过程（加上 -O3 选项）里的 bug，导致他们的产品出现非常诡异的行为。这使我想起以前见过的一个 GCC bug。当时很多人死活认为那种做法是正确的，跟他们说不清楚。简言之，这种有问题的优化，喜欢利用 C 语言的“未定义行为”（undefined behavior）进行推断，最后得到奇怪的结果。</p>
 
@@ -110,20 +110,18 @@
 
                         </div>
 
-                        <div style="margin-top: 5px">
+                        <div>
                             <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                             <ins class="adsbygoogle"
-                                 style="display:inline-block;width:728px;height:90px"
                                  data-ad-client="ca-pub-1331524016319584"
                                  data-ad-slot="6657867155"></ins>
                             <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                         </div>
                     </td>
 
-                    <td width="16%" valign="top">
+                    <td valign="top">
                         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                         <ins class="adsbygoogle"
-                             style="display:block"
                              data-ad-client="ca-pub-1331524016319584"
                              data-ad-slot="2703393155"
                              data-ad-format="auto"></ins>
