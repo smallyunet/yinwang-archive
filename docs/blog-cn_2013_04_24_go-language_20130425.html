@@ -1,33 +1,88 @@
+<!DOCTYPE html>
 <html>
 <head>
-
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link href="http://www.yinwang.org/main.css" rel="stylesheet" type="text/css">
-<link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
-<link rel="shortcut icon" href="http://www.yinwang.org/images/Yc.jpg">
-
-<title>å³äº Go è¯­è¨</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <title>关于 Go 语言</title>
+    <link rel="stylesheet" href="css/highlight/xcode.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-tooltips.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/home.css"> <!-- Need home for navbar -->
+    <link rel="stylesheet" href="css/post.css">
+    <script src="js/jquery.min.js"></script>
+    <style>
+        /* Switcher Fixes */
+        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
+        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
+        .version-switcher a.current { font-weight: bold; color: #333; }
+        /* Inner override for posts */
+        .inner { margin-top: 80px; } 
+    </style>
 </head>
-ãã
 <body>
+    <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-bs">
+                    <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+                <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='aboutcmec_aboutcmec_01.jsp_20060213.html'>About</a></li><li><a href='aboutess_aboutess_01.jsp_20060213.html'>About</a></li><li><a href='aboutinfo_aboutinfo_01.jsp_20060106.html'>About</a></li><li><a href='tweet_20170605.html'>微勃 (Tweets)</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='homepage_20250719.html'>当然我在扯淡 (None)</a></li><li><a href='index.jsp_20060213.html'>中国中小企业竞争力工程 (None)</a></li><li><a href='index_20260110.html'>Surely I am Joking (None)</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Posts <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='posts_air-freshener-nightmare_20251129.html'>Surely I am Joking</a></li><li><a href='posts_american-english-problems_20251030.html'>Surely I am Joking</a></li><li><a href='posts_authority_20251221.html'>Surely I am Joking</a></li><li><a href='posts_cello-technique_20251102.html'>Surely I am Joking</a></li><li><a href='posts_continuation-course_20251206.html'>Surely I am Joking</a></li><li><a href='posts_cs-class2_20251105.html'>Surely I am Joking</a></li><li><a href='posts_cs-course-5_20251208.html'>Surely I am Joking</a></li><li><a href='posts_cs-video-course_20251101.html'>Surely I am Joking</a></li><li><a href='posts_cs3_20251102.html'>Surely I am Joking</a></li><li><a href='posts_cs4_20251102.html'>Surely I am Joking</a></li><li><a href='posts_cs5-completed_20251031.html'>Surely I am Joking</a></li><li><a href='posts_entry-level-class_20251102.html'>Surely I am Joking</a></li><li><a href='posts_learning-philosophy_20251211.html'>Surely I am Joking</a></li><li><a href='posts_oberon_20260113.html'>Surely I am Joking</a></li><li><a href='posts_reading-course_20251102.html'>Surely I am Joking</a></li><li><a href='posts_super-human-level-vision_20251104.html'>Surely I am Joking</a></li><li><a href='posts_tuition-for-covid_20251103.html'>Surely I am Joking</a></li><li><a href='posts_wisdom-of-intelligence_20251102.html'>Surely I am Joking</a></li><li><a href='posts_youth-cs-student_20251102.html'>Surely I am Joking</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='resources_d8-3404-d8-8424_20130614.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_base64mime.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_charset.py_20150506.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_encoders.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_errors.py_20150409.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_header.py_20140305.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_quoprimime.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_re.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_compile.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_constants.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_parse.py_20160822.html'>Untitled</a></li><li><a href='resources_diff1-diff2_20200728.html'>Untitled</a></li><li><a href='resources_mk1-mk2_20130627.html'>Untitled</a></li><li><a href='resources_nav1-nav2_20200728.html'>Untitled</a></li><li><a href='resources_paredit20-paredit23_20200728.html'>Untitled</a></li><li><a href='resources_pydiff1-pydiff2_20130711.html'>Untitled</a></li><li><a href='resources_simulator-mips-simulator-arm_20200728.html'>Untitled</a></li><li><a href='resources_typed-clojure1-typed-clojure2_20200728.html'>Untitled</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tags <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='tags_ai_20251103.html'>Surely I am Joking</a></li><li><a href='tags_education_20251031.html'>Surely I am Joking</a></li><li><a href='tags_english_20251101.html'>Surely I am Joking</a></li><li><a href='tags_health_20251102.html'>Surely I am Joking</a></li><li><a href='tags_life_20251129.html'>Surely I am Joking</a></li><li><a href='tags_lifestyle_20251101.html'>Surely I am Joking</a></li><li><a href='tags_philosophy_20251101.html'>Surely I am Joking</a></li><li><a href='tags_programming-language_20260113.html'>Surely I am Joking</a></li><li><a href='tags_travel_20251129.html'>Surely I am Joking</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Misc <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='.well-known_dnt-policy.txt_20251211.html'>Surely I am Joking</a></li><li><a href='_5C_20251205.html'>Surely I am Joking</a></li><li><a href='_5Cu003c_a_5Cu003e_5Cu003c_td_5Cu003e_5Cn_5Cu003ctd_5Cu003e_E7_BC_96_E7_A8_8B_5Cu003c_td_5Cu003e_5Cn_5Cu003c_tr_5Cu003e_5Cn_5Cu003ctr_5Cu003e_5Cn_5Cu003ctd_5Cu003e_5Cu003ca_20251204.html'>Surely I am Joking</a></li><li><a href='ads.txt_20251013.html'>Surely I am Joking</a></li><li><a href='afficheAction.do_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='apply_dcb.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='apply_twsqb.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='common_casetoyota.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='common_casexhx.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='common_courseBase_main.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='common_courseBase_tch_grzl.jsp_20060106.html'>Untitled</a></li><li><a href='contactus.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='datadownload.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='dljm.jsp_20060516.html'>竞争力工程</a></li><li><a href='fwjs.jsp_20060516.html'>竞争力工程</a></li><li><a href='hd_qgjx.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='laws_laws_01.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='lianxi.jsp_20060428.html'>竞争力工程</a></li><li><a href='more.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='neirong.jsp_20060516.html'>详细内容</a></li><li><a href='newsPublishAction.do_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='servicecenter_servicecenter_01.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='tongzhi.jsp_20060428.html'>竞争力工程</a></li><li><a href='tongzhi_tongzhi1.htm_20060428.html'>ÎÞ±êÌâÎÄµµ</a></li><li><a href='tongzhi_tongzhi2.htm_20060428.html'>ÎÞ±êÌâÎÄµµ</a></li><li><a href='units_gjfz.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='units_jstg.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='units_zgzx.jsp_20060213.html'>中国中小企业竞争力工程</a></li></ul></li></ul>
+            </div>
+        </div>
+    </nav>
 
-<h2>å³äº Go è¯­è¨</h2>
+    <div class="inner">
+        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2013_04_24_go-language_20130425.html" class="current">2013-04-25</a> <a href="blog-cn_2013_04_24_go-language_20130428.html" >2013-04-28</a></div>
+        <h2>关于 Go 语言</h2>
 
-<p>ææºå¤äººé®è¿æå¯¹ Google ç <a href="http://golang.org">Go è¯­è¨</a>ççæ³ï¼æä¸ç´é½æ²¡æç´æ¥åç­ãå¶å®å¾æ©ä»¥åçè¿ä¸ä¸ Go çä»ç»ï¼å½æ¶æå°±è§å¾æ¯ä¸äºé¨å¤æ±è®¾è®¡çè¹©èç©å·ãï¼å¯¹ï¼Rob Pike ç¡®å®æ¯ä¸ªé¨å¤æ±ãï¼é£è¯­æ³è®¾è®¡å¾å°±åæ¯æææ³è¦æ¾å¾è·å¶å®è¯­è¨ï¼Cï¼Javaï¼ä¸åï¼å´æå®ä»¬å·²æçå¾å¤è¯­æ³ä¸çä¼ç¹é½ä¸¢æäºãå½æ¶æå°±è§å¾ï¼Google è®¾è®¡è¿è¯­è¨è²ä¼¼å¹¶ä¸æ¯æ³æå®æå¥å®ç¨ï¼èåªä¸è¿æ¯æ³æ¾ç¤ºç»ä¸äººï¼âçï¼Google ä¹ä¼è®¾è®¡ç¨åºè¯­è¨äºãâ</p>
+<p>有挺多人问过我对 Google 的 <a href="http://golang.org">Go 语言</a>的看法，我一直都没有直接回答。其实很早以前看过一下 Go 的介绍，当时我就觉得是一些门外汉设计的蹩脚玩具。（对，Rob Pike 确实是个门外汉。）那语法设计得就像是故意想要显得跟其它语言（C，Java）不同，却把它们已有的很多语法上的优点都丢掉了。当时我就觉得，Google 设计这语言貌似并不是想把它投入实用，而只不过是想显示给世人：“看，Google 也会设计程序语言了。”</p>
 
-<p>å¯¹ Go æèµåæåº¦çäººï¼ä¸è¬é½æ²¡è§è¯è¿çæ­£å¥½çè¯­è¨ï¼æä»¥æå°±æå¾è·äººè¯´å®çç³ç³ä¹å¤äºï¼åå¾æçä¹è®²ä¸æ¸ãå°±ç®è¦æ¹è¯ä¹åºè¯¥æ¹è¯å C++ï¼Common Lisp å Haskell è¿æ ·çæ­£æç¹ä¸è¥¿çè¯­è¨ãGo è¯­è¨è¿è¾¹é½æ²¡æ¦å°ï¼æä»¥ä¸å¼å¾è´¹å£èãè¿å°±åæ°å­¦ççä¸å®¶ç»å¸¸æ¶å°ä¸äºâæ°é´æ°å­¦å®¶âçå¥å¾·å·´èµ«çæ³è¯æãä»ä»¬æ ¹æ¬çé½ä¸çï¼å ä¸ºä»ä»¬ç¥éè¿äºäººè¿æåºæ¬çåçé½æ²¡ææ¸æ¥ã</p>
+<p>对 Go 持赞同态度的人，一般都没见识过真正好的语言，所以我就懒得跟人说它的糟糕之处了，免得有理也讲不清。就算要批评也应该批评像 C++，Common Lisp 和 Haskell 这样真正有点东西的语言。Go 语言连边都没擦到，所以不值得费口舌。这就像数学界的专家经常收到一些“民间数学家”的哥德巴赫猜想证明。他们根本看都不看，因为他们知道这些人连最基本的原理都没搞清楚。</p>
 
-<p>å¯¹è¯­è¨çåå³å¾åå¯¹é³ä¹çåå³ãå¦æä½ æ¯å¤©é½å¬çæ­£å¥½çé³ä¹ï¼ä½ ä¸éè¦çççè§£å®ä»¬ï¼è¿ä¸æ®µæ¶é´ä½ å°±ä¼è§å¾å¤§é¨åçâæµè¡é³ä¹âé½å³åå¼è¡ï¼æèä¸å ªå¥è³ãå½æäººé®ä½ âè¿é³ä¹åªéä¸å¥½äºï¼âä½ å´æ²¡æ³è¯´åºå®åªéä¸å¥½ï¼ä½ åªç¥éå®è·å¥½çé³ä¹å¾ä¸ä¸æ ·ãä½ ä¹ä¸æ³å»è¿½ç©¶å®å·ä½åªéä¸å¥½ï¼å ä¸ºä½ ä¸ä¼åå»ä»ç»å¬å®ä»¬ï¼ä½ çå¿éåªçè§ç¾å¥½çä¸è¥¿ãä¸çä¸æå¤ªå¤ç³ç³çè®¾è®¡ï¼å¯¹å¾å®ä»¬çæå¥½åæ³å«åâå¿½ç¥âãç¨åºè¯­è¨ä¹æ¯å·®ä¸å¤çï¼å½ä½ ç¨ä¸ä¸ªè®¾è®¡è¯å¥½çè¯­è¨ä¸æ®µæ¶é´ä¹åï¼ä½ å°±ä¼åç°æäºå¶å®è¯­è¨çè¹©èä¹å¤ãç¶èæ²¡ç¨è¿çæ­£å¥½çè¯­è¨çäººï¼æ°¸è¿é½ä¸ä¼çè§£ä½ å¨è¯´ä»ä¹ãä½ ä¹æå¾ç®¡ä»ä»¬æ¯å¦åæä½ çè¯´æ³ï¼å°±åä½ æå¾è·é£äºâè¿½ææâçé«ä¸­çè¯´è¯ä¸æ ·ã</p>
+<p>对语言的品味很像对音乐的品味。如果你每天都听真正好的音乐，你不需要真的理解它们，过一段时间你就会觉得大部分的“流行音乐”都味同嚼蜡，或者不堪入耳。当有人问你“这音乐哪里不好了？”你却没法说出它哪里不好，你只知道它跟好的音乐很不一样。你也不想去追究它具体哪里不好，因为你不会再去仔细听它们，你的心里只看见美好的东西。世界上有太多糟糕的设计，对待它们的最好办法叫做“忽略”。程序语言也是差不多的，当你用一个设计良好的语言一段时间之后，你就会发现某些其它语言的蹩脚之处。然而没用过真正好的语言的人，永远都不会理解你在说什么。你也懒得管他们是否同意你的说法，就像你懒得跟那些“追星族”的高中生说话一样。</p>
 
-<p>å¯æ¯ç°å¨æåç°è²ä¼¼æç¨å¾®ç¹è¯ä¸ä¸ Go è¯­è¨çå¿è¦äºï¼å ä¸º Google ä¼¼ä¹æ»æ¯ä»çèªå·±çåæ°ï¼é¼å¹å®çä¸äºä¸å ªå¥ç®çè¯­è¨è®¾è®¡ï¼å¹¶è¯å¾è®©å®ä»¬âæµè¡âãç¹å«æ¯è¿ä¸ª Go è¯­è¨ï¼å±ç¶èµ·äºä¸ä¸ªå¦æ­¤æ²¡ææ³è±¡åçåå­ï¼ç®ç´å°±æ¯å¨è Google çå±è¡ãå¦ææ¯äº§åä¹è®¸è¿æ æè°ï¼Gmail ççé¢ç»å¸¸ä¼è®¾è®¡ä¸äºæè ¢çâæ¹è¿âï¼æé½å¿äºãå¯æ¯è¯­è¨è¿ä¸ªä¸è¥¿ä¸ä¸æ ·ãå¦æä½ å¯¹è®¾è®¡å·®çè¯­è¨ä¸æ¹è¯ï¼è¿ä¸ªä¸ççç¨åºåçåå³å°±ä¼éä½ãå°æ¶åä¸äºä»æèªå·±ä¼ææâææ°è¯­è¨âçäººå°±ä¼èæ­¦æ¬å¨ï¼çè³éªå°ä½ å¤´ä¸ãæè§å¾ Google åæäºå¶å®âäºèç½å¬å¸âï¼ä¸ºäºæ¾ç¤ºèªå·±çâå®åâï¼æ­£å¨è®©æ¬æ¥å°±æ··ä¹±çè®¡ç®æºè¡ä¸åå¾æ´å æ··ä¹±ã</p>
+<p>可是现在我发现貌似有稍微点评一下 Go 语言的必要了，因为 Google 似乎总是仗着自己的名气，鼓吹它的一些不堪入目的语言设计，并试图让它们“流行”。特别是这个 Go 语言，居然起了一个如此没有想象力的名字，简直就是在舔 Google 的屁股。如果是产品也许还无所谓，Gmail 的界面经常会设计一些愚蠢的“改进”，我都忍了。可是语言这个东西不一样。如果你对设计差的语言不批评，这个世界的程序员的品味就会降低。到时候一些仗恃自己会某某“最新语言”的人就会耀武扬威，甚至骑到你头上。我觉得 Google 和某些其它“互联网公司”，为了显示自己的“实力”，正在让本来就混乱的计算机行业变得更加混乱。</p>
 
-<p>æä»¥ä»å¤©æå°±ç» Go è¯­è¨ä¸ä¸ªåççè¯ä»·å§ï¼</p>
+<p>所以今天我就给 Go 语言一个合理的评价吧：</p>
 
-<blockquote><p>Go è¯­è¨éé¢æå¾å¤æ°çåå¥½çä¸è¥¿ãå¯ææ°çä¸è¥¿é½ä¸æ¯å¥½çï¼å¥½çä¸è¥¿é½ä¸æ¯æ°çã</p></blockquote>
+<blockquote><p>Go 语言里面有很多新的和好的东西。可惜新的东西都不是好的，好的东西都不是新的。</p></blockquote>
 
-<p>å¦æä½ æ³ç¥éä¸äºç»èï¼å¯ä»¥ççæç<a href="http://www.mindomo.com/view.htm?m=9d8e168a65ea44ee88ec69f8d11727d3">æç»´å¯¼å¾</a>å³äº Go è¯­è¨çé¨åï¼ä¸è¿æä¸æ³åä¸ºè¿ä¸ªè¯­è¨ï¼ä»¥åå¶å®ä¸äºä¸çè¾¹éçä¸è¥¿å¤è´¹å£èäºã</p>
-
-
+<p>如果你想知道一些细节，可以看看我的<a href="http://www.mindomo.com/view.htm?m=9d8e168a65ea44ee88ec69f8d11727d3">思维导图</a>关于 Go 语言的部分，不过我不想再为这个语言，以及其它一些不着边际的东西多费口舌了。</p>
+    </div>
+    
+    <script src="js/highlight.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script>
+        if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
+            document.body.classList.add('mobile');
+            var navbar = document.querySelector('nav.navbar');
+            if (navbar) { navbar.classList.remove('navbar-fixed-top'); }
+        }
+    </script>
 </body>
-
 </html>

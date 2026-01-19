@@ -1,44 +1,118 @@
+<!DOCTYPE html>
 <html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <title>PyDiff - Python 结构化程序比较工具</title>
+    <link rel="stylesheet" href="css/highlight/xcode.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-tooltips.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/home.css"> <!-- Need home for navbar -->
+    <link rel="stylesheet" href="css/post.css">
+    <script src="js/jquery.min.js"></script>
+    <style>
+        /* Switcher Fixes */
+        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
+        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
+        .version-switcher a.current { font-weight: bold; color: #333; }
+        /* Inner override for posts */
+        .inner { margin-top: 80px; } 
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-bs">
+                    <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+                <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='aboutcmec_aboutcmec_01.jsp_20060213.html'>About</a></li><li><a href='aboutess_aboutess_01.jsp_20060213.html'>About</a></li><li><a href='aboutinfo_aboutinfo_01.jsp_20060106.html'>About</a></li><li><a href='tweet_20170605.html'>微勃 (Tweets)</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='homepage_20250719.html'>当然我在扯淡 (None)</a></li><li><a href='index.jsp_20060213.html'>中国中小企业竞争力工程 (None)</a></li><li><a href='index_20260110.html'>Surely I am Joking (None)</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Posts <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='posts_air-freshener-nightmare_20251129.html'>Surely I am Joking</a></li><li><a href='posts_american-english-problems_20251030.html'>Surely I am Joking</a></li><li><a href='posts_authority_20251221.html'>Surely I am Joking</a></li><li><a href='posts_cello-technique_20251102.html'>Surely I am Joking</a></li><li><a href='posts_continuation-course_20251206.html'>Surely I am Joking</a></li><li><a href='posts_cs-class2_20251105.html'>Surely I am Joking</a></li><li><a href='posts_cs-course-5_20251208.html'>Surely I am Joking</a></li><li><a href='posts_cs-video-course_20251101.html'>Surely I am Joking</a></li><li><a href='posts_cs3_20251102.html'>Surely I am Joking</a></li><li><a href='posts_cs4_20251102.html'>Surely I am Joking</a></li><li><a href='posts_cs5-completed_20251031.html'>Surely I am Joking</a></li><li><a href='posts_entry-level-class_20251102.html'>Surely I am Joking</a></li><li><a href='posts_learning-philosophy_20251211.html'>Surely I am Joking</a></li><li><a href='posts_oberon_20260113.html'>Surely I am Joking</a></li><li><a href='posts_reading-course_20251102.html'>Surely I am Joking</a></li><li><a href='posts_super-human-level-vision_20251104.html'>Surely I am Joking</a></li><li><a href='posts_tuition-for-covid_20251103.html'>Surely I am Joking</a></li><li><a href='posts_wisdom-of-intelligence_20251102.html'>Surely I am Joking</a></li><li><a href='posts_youth-cs-student_20251102.html'>Surely I am Joking</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='resources_d8-3404-d8-8424_20130614.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_base64mime.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_charset.py_20150506.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_encoders.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_errors.py_20150409.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_header.py_20140305.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_quoprimime.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_re.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_compile.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_constants.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_parse.py_20160822.html'>Untitled</a></li><li><a href='resources_diff1-diff2_20200728.html'>Untitled</a></li><li><a href='resources_mk1-mk2_20130627.html'>Untitled</a></li><li><a href='resources_nav1-nav2_20200728.html'>Untitled</a></li><li><a href='resources_paredit20-paredit23_20200728.html'>Untitled</a></li><li><a href='resources_pydiff1-pydiff2_20130711.html'>Untitled</a></li><li><a href='resources_simulator-mips-simulator-arm_20200728.html'>Untitled</a></li><li><a href='resources_typed-clojure1-typed-clojure2_20200728.html'>Untitled</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tags <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='tags_ai_20251103.html'>Surely I am Joking</a></li><li><a href='tags_education_20251031.html'>Surely I am Joking</a></li><li><a href='tags_english_20251101.html'>Surely I am Joking</a></li><li><a href='tags_health_20251102.html'>Surely I am Joking</a></li><li><a href='tags_life_20251129.html'>Surely I am Joking</a></li><li><a href='tags_lifestyle_20251101.html'>Surely I am Joking</a></li><li><a href='tags_philosophy_20251101.html'>Surely I am Joking</a></li><li><a href='tags_programming-language_20260113.html'>Surely I am Joking</a></li><li><a href='tags_travel_20251129.html'>Surely I am Joking</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Misc <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='.well-known_dnt-policy.txt_20251211.html'>Surely I am Joking</a></li><li><a href='_5C_20251205.html'>Surely I am Joking</a></li><li><a href='_5Cu003c_a_5Cu003e_5Cu003c_td_5Cu003e_5Cn_5Cu003ctd_5Cu003e_E7_BC_96_E7_A8_8B_5Cu003c_td_5Cu003e_5Cn_5Cu003c_tr_5Cu003e_5Cn_5Cu003ctr_5Cu003e_5Cn_5Cu003ctd_5Cu003e_5Cu003ca_20251204.html'>Surely I am Joking</a></li><li><a href='ads.txt_20251013.html'>Surely I am Joking</a></li><li><a href='afficheAction.do_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='apply_dcb.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='apply_twsqb.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='common_casetoyota.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='common_casexhx.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='common_courseBase_main.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='common_courseBase_tch_grzl.jsp_20060106.html'>Untitled</a></li><li><a href='contactus.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='datadownload.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='dljm.jsp_20060516.html'>竞争力工程</a></li><li><a href='fwjs.jsp_20060516.html'>竞争力工程</a></li><li><a href='hd_qgjx.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='laws_laws_01.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='lianxi.jsp_20060428.html'>竞争力工程</a></li><li><a href='more.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='neirong.jsp_20060516.html'>详细内容</a></li><li><a href='newsPublishAction.do_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='servicecenter_servicecenter_01.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='tongzhi.jsp_20060428.html'>竞争力工程</a></li><li><a href='tongzhi_tongzhi1.htm_20060428.html'>ÎÞ±êÌâÎÄµµ</a></li><li><a href='tongzhi_tongzhi2.htm_20060428.html'>ÎÞ±êÌâÎÄµµ</a></li><li><a href='units_gjfz.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='units_jstg.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='units_zgzx.jsp_20060213.html'>中国中小企业竞争力工程</a></li></ul></li></ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="inner">
+        
+        <html>
 <head>
 
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link href="http://www.yinwang.org/main.css" rel="stylesheet" type="text/css">
+
 <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
 <link rel="shortcut icon" href="http://www.yinwang.org/images/Yc.jpg">
 
-<title>PyDiff - Python ç»æåç¨åºæ¯è¾å·¥å·</title>
+<title>PyDiff - Python 结构化程序比较工具</title>
 </head>
-ãã
+　　
 <body>
 
-<h2>PyDiff - Python ç»æåç¨åºæ¯è¾å·¥å·</h2>
+<h2>PyDiff - Python 结构化程序比较工具</h2>
 
-<p>å¨ä¹åçä¸ç¯åæéï¼æä»ç»äº <a href="http://www.yinwang.org/blog-cn/2013/04/21/ydiff-%E7%BB%93%E6%9E%84%E5%8C%96%E7%9A%84%E7%A8%8B%E5%BA%8F%E6%AF%94%E8%BE%83/">ydiff</a>ï¼ä¸ä¸ªéç¨çç»æåç¨åºæ¯è¾å·¥å·ãå¶å®å¨è®¾è®¡ ydiff ä¹åï¼è¿ä¸ªå·¥å·æ¯ç¨ Python å®ç°çï¼å¹¶ä¸åªå¤ç Python ç¨åºãå¨è®¾è®¡äº ydiff ä¹åï¼æåç°å¶å®æä¸æ³è´¹å¾å¤ç²¾åæ¥å Python ç parserï¼æä»¥å¯¹ Python çæ¯æå°±æ¥æ¸çå¿½äºãåæ¥ææé£åä»£ç æ¾å¨äº ydiff ç repo éé¢ï¼å«å pydiff.pyï¼ï¼ç¶èå ä¹æ²¡æäººæ³¨æå°å®ã
+<p>在之前的一篇博文里，我介绍了 <a href="http://www.yinwang.org/blog-cn/2013/04/21/ydiff-%E7%BB%93%E6%9E%84%E5%8C%96%E7%9A%84%E7%A8%8B%E5%BA%8F%E6%AF%94%E8%BE%83/">ydiff</a>，一个通用的结构化程序比较工具。其实在设计 ydiff 之前，这个工具是用 Python 实现的，并且只处理 Python 程序。在设计了 ydiff 之后，我发现其实我不想费很多精力来写 Python 的 parser，所以对 Python 的支持就日渐疏忽了。后来我把那块代码放在了 ydiff 的 repo 里面（叫做 pydiff.py），然而几乎没有人注意到它。
 
-<p>ç°å¨æåç° Python å¶å®æ¯ä¸ä¸ªæºéè¦èä¸æè¶£çè¯­è¨ãè¯´å®éè¦æ¯å ä¸ºå®ç®åèä¸å¨æç§ç¨åº¦ä¸æ¯ä¼éçï¼æä»¥æå¾å¤äººç¨å®ãè¯´å®æè¶£æ¯å ä¸ºå®çä¸äºè®¾è®¡å¶å®æ¯èµ·å¾å¤æ´å âä¸¥è°¨âçè¯­è¨è¦æ¥å¾åçãè¯­è¨çè®¾è®¡ä¸åªè¦æé»è¾çä¸¥è°¨åæçï¼èä¸éè¦æâæç¨æ§âï¼usabilityï¼ãPython å¨æç¨æ§ä¸é¢æ¯åçæ¯è¾å¥½çãæè¿ä»ç»çäºä¸ä¸ <a href="http://www.python.org/dev/peps/pep-0008/">PEP 8</a> (Python ç "Style Guide"ï¼ï¼åç°å®æå¾å¤å°æ¹æ¯èµ· Java, Scheme, Haskell é½æè®©ç¨åºæ´å âæè¯»âçç¹ç¹ã
+<p>现在我发现 Python 其实是一个挺重要而且有趣的语言。说它重要是因为它简单而且在某种程度上是优雅的，所以有很多人用它。说它有趣是因为它的一些设计其实比起很多更加“严谨”的语言要来得合理。语言的设计不只要有逻辑的严谨和效率，而且需要有“易用性”（usability）。Python 在易用性上面是做的比较好的。最近仔细看了一下 <a href="http://www.python.org/dev/peps/pep-0008/">PEP 8</a> (Python 的 "Style Guide"），发现它有很多地方比起 Java, Scheme, Haskell 都有让程序更加“易读”的特点。
 
-<p>æä»¥ï¼ç°å¨æä¸ºè¿ä¸ª Python çç»æåæ¯è¾ç¨åºéæ°å»ºç«äºå®èªå·±ç GitHub é¡¹ç®ãä½ å¯ä»¥å¨è¿éå¾å°å®çä»£ç ï¼
+<p>所以，现在我为这个 Python 的结构化比较程序重新建立了它自己的 GitHub 项目。你可以在这里得到它的代码：
 
 <a href="http://github.com/yinwang0/pydiff">https://github.com/yinwang0/pydiff</a>
 
-<p>å¯¹æ¯å¤§åæä»¶çæ¶åå¯è½éåº¦ä¼æä¸å®çé®é¢ãä¸è¿ææç®ä»¥åå¯¹ç®æ³åä¸ä¸ªæ¯è¾å¤§çæ¹è¿ãå¦æåç° bug è¯·å¨ GitHub ä¸­åææ¥åãè°¢è°¢ã
+<p>对比大型文件的时候可能速度会成一定的问题。不过我打算以后对算法做一个比较大的改进。如果发现 bug 请在 GitHub 中向我报告。谢谢。
 
 
 <h3>Demo</h3>
 
-<p>ä½ å¯ä»¥å¨ä¸é¢ççªå£ä¸­çå° PyDiff çè¾åºç»æï¼æ¯ PyDiff å¯¹æ¯å®èªå·±çä»£ç ï¼ææè¿ä¸¤å¤©å¯¹å®çä¿®æ¹ï¼ã
+<p>你可以在下面的窗口中看到 PyDiff 的输出结果，是 PyDiff 对比它自己的代码（我最近两天对它的修改）。
 
 <p><iframe src="http://www.yinwang.org/resources/pydiff1-pydiff2.html" width="96%" height="50%"></iframe>
 
-<br><a href="http://www.yinwang.org/resources/pydiff1-pydiff2.html">(åç¬æµè§)</a>
+<br><a href="http://www.yinwang.org/resources/pydiff1-pydiff2.html">(单独浏览)</a>
 
-<p>ä¸é¢ççé¢æå¦ä¸ç¹ç¹ï¼
+<p>上面的界面有如下特点：
 
 <ol>
-<li>çº¢è²è¡¨ç¤ºâå é¤âï¼ç»¿è²è¡¨ç¤ºâæå¥âï¼ç½è²è¡¨ç¤ºâç§»å¨âæèæ²¡æååï¼èè²è¡¨ç¤ºæå°å¹åº¦âä¿®æ¹âã
-<li>å·¦å³çªå£åæ­¥æ»å¨ã
-<li>ç¹å»ç½è²æ¹æ¡ï¼å°±å¯ä»¥ä¾æ®æ¡éçåéè¿è¡å¯¹é½ã
-<li>ç¹å»ä¹åï¼å·¦å³çªå£æ ¹æ®å¯¹é½çåééæ°âè¦åâï¼åæ­¥æ»å¨ã
+<li>红色表示“删除”，绿色表示“插入”，白色表示“移动”或者没有变化，蓝色表示有小幅度“修改”。
+<li>左右窗口同步滚动。
+<li>点击白色方框，就可以依据框里的变量进行对齐。
+<li>点击之后，左右窗口根据对齐的变量重新“耦合”，同步滚动。
 </ol>
 
+</html>
+
+    </div>
+    
+    <script src="js/highlight.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script>
+        if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
+            document.body.classList.add('mobile');
+            var navbar = document.querySelector('nav.navbar');
+            if (navbar) { navbar.classList.remove('navbar-fixed-top'); }
+        }
+    </script>
+</body>
 </html>

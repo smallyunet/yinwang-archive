@@ -1,29 +1,63 @@
+<!DOCTYPE html>
 <html>
-  <head>
-
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <link href="http://www.yinwang.org/main.css" rel="stylesheet" type="text/css">
-    <link rel="alternate" type="application/atom+xml" href="/atom.xml" title="Atom feed">
-    <link rel="shortcut icon" href="http://www.yinwang.org/images/Yc.jpg">
-
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
     <title>怎样成为一个天才</title>
+    <link rel="stylesheet" href="css/highlight/xcode.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-tooltips.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/home.css"> <!-- Need home for navbar -->
+    <link rel="stylesheet" href="css/post.css">
+    <script src="js/jquery.min.js"></script>
+    <style>
+        /* Switcher Fixes */
+        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
+        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
+        .version-switcher a.current { font-weight: bold; color: #333; }
+        /* Inner override for posts */
+        .inner { margin-top: 80px; } 
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-bs">
+                    <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+                <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='aboutcmec_aboutcmec_01.jsp_20060213.html'>About</a></li><li><a href='aboutess_aboutess_01.jsp_20060213.html'>About</a></li><li><a href='aboutinfo_aboutinfo_01.jsp_20060106.html'>About</a></li><li><a href='tweet_20170605.html'>微勃 (Tweets)</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='homepage_20250719.html'>当然我在扯淡 (None)</a></li><li><a href='index.jsp_20060213.html'>中国中小企业竞争力工程 (None)</a></li><li><a href='index_20260110.html'>Surely I am Joking (None)</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Posts <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='posts_air-freshener-nightmare_20251129.html'>Surely I am Joking</a></li><li><a href='posts_american-english-problems_20251030.html'>Surely I am Joking</a></li><li><a href='posts_authority_20251221.html'>Surely I am Joking</a></li><li><a href='posts_cello-technique_20251102.html'>Surely I am Joking</a></li><li><a href='posts_continuation-course_20251206.html'>Surely I am Joking</a></li><li><a href='posts_cs-class2_20251105.html'>Surely I am Joking</a></li><li><a href='posts_cs-course-5_20251208.html'>Surely I am Joking</a></li><li><a href='posts_cs-video-course_20251101.html'>Surely I am Joking</a></li><li><a href='posts_cs3_20251102.html'>Surely I am Joking</a></li><li><a href='posts_cs4_20251102.html'>Surely I am Joking</a></li><li><a href='posts_cs5-completed_20251031.html'>Surely I am Joking</a></li><li><a href='posts_entry-level-class_20251102.html'>Surely I am Joking</a></li><li><a href='posts_learning-philosophy_20251211.html'>Surely I am Joking</a></li><li><a href='posts_oberon_20260113.html'>Surely I am Joking</a></li><li><a href='posts_reading-course_20251102.html'>Surely I am Joking</a></li><li><a href='posts_super-human-level-vision_20251104.html'>Surely I am Joking</a></li><li><a href='posts_tuition-for-covid_20251103.html'>Surely I am Joking</a></li><li><a href='posts_wisdom-of-intelligence_20251102.html'>Surely I am Joking</a></li><li><a href='posts_youth-cs-student_20251102.html'>Surely I am Joking</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='resources_d8-3404-d8-8424_20130614.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_base64mime.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_charset.py_20150506.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_encoders.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_errors.py_20150409.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_header.py_20140305.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_quoprimime.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_re.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_compile.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_constants.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_parse.py_20160822.html'>Untitled</a></li><li><a href='resources_diff1-diff2_20200728.html'>Untitled</a></li><li><a href='resources_mk1-mk2_20130627.html'>Untitled</a></li><li><a href='resources_nav1-nav2_20200728.html'>Untitled</a></li><li><a href='resources_paredit20-paredit23_20200728.html'>Untitled</a></li><li><a href='resources_pydiff1-pydiff2_20130711.html'>Untitled</a></li><li><a href='resources_simulator-mips-simulator-arm_20200728.html'>Untitled</a></li><li><a href='resources_typed-clojure1-typed-clojure2_20200728.html'>Untitled</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tags <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='tags_ai_20251103.html'>Surely I am Joking</a></li><li><a href='tags_education_20251031.html'>Surely I am Joking</a></li><li><a href='tags_english_20251101.html'>Surely I am Joking</a></li><li><a href='tags_health_20251102.html'>Surely I am Joking</a></li><li><a href='tags_life_20251129.html'>Surely I am Joking</a></li><li><a href='tags_lifestyle_20251101.html'>Surely I am Joking</a></li><li><a href='tags_philosophy_20251101.html'>Surely I am Joking</a></li><li><a href='tags_programming-language_20260113.html'>Surely I am Joking</a></li><li><a href='tags_travel_20251129.html'>Surely I am Joking</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Misc <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='.well-known_dnt-policy.txt_20251211.html'>Surely I am Joking</a></li><li><a href='_5C_20251205.html'>Surely I am Joking</a></li><li><a href='_5Cu003c_a_5Cu003e_5Cu003c_td_5Cu003e_5Cn_5Cu003ctd_5Cu003e_E7_BC_96_E7_A8_8B_5Cu003c_td_5Cu003e_5Cn_5Cu003c_tr_5Cu003e_5Cn_5Cu003ctr_5Cu003e_5Cn_5Cu003ctd_5Cu003e_5Cu003ca_20251204.html'>Surely I am Joking</a></li><li><a href='ads.txt_20251013.html'>Surely I am Joking</a></li><li><a href='afficheAction.do_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='apply_dcb.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='apply_twsqb.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='common_casetoyota.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='common_casexhx.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='common_courseBase_main.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='common_courseBase_tch_grzl.jsp_20060106.html'>Untitled</a></li><li><a href='contactus.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='datadownload.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='dljm.jsp_20060516.html'>竞争力工程</a></li><li><a href='fwjs.jsp_20060516.html'>竞争力工程</a></li><li><a href='hd_qgjx.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='laws_laws_01.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='lianxi.jsp_20060428.html'>竞争力工程</a></li><li><a href='more.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='neirong.jsp_20060516.html'>详细内容</a></li><li><a href='newsPublishAction.do_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='servicecenter_servicecenter_01.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='tongzhi.jsp_20060428.html'>竞争力工程</a></li><li><a href='tongzhi_tongzhi1.htm_20060428.html'>ÎÞ±êÌâÎÄµµ</a></li><li><a href='tongzhi_tongzhi2.htm_20060428.html'>ÎÞ±êÌâÎÄµµ</a></li><li><a href='units_gjfz.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='units_jstg.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='units_zgzx.jsp_20060213.html'>中国中小企业竞争力工程</a></li></ul></li></ul>
+            </div>
+        </div>
+    </nav>
 
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-45586344-1', 'yinwang.org');
-      ga('send', 'pageview');
-
-    </script>
-
-  </head>
-  　　
-  <body>
-
-    <h2>怎样成为一个天才</h2>
+    <div class="inner">
+        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2014_08_11_genius_20140814.html" >2014-08-14</a> <a href="blog-cn_2014_08_11_genius_20141001.html" class="current">2014-10-01</a> <a href="blog-cn_2014_08_11_genius_20141226.html" >2014-12-26</a> <a href="blog-cn_2014_08_11_genius_20150204.html" >2015-02-04</a> <a href="blog-cn_2014_08_11_genius_20160922.html" >2016-09-22</a> <a href="blog-cn_2014_08_11_genius_20170506.html" >2017-05-06</a> <a href="blog-cn_2014_08_11_genius_20170606.html" >2017-06-06</a> <a href="blog-cn_2014_08_11_genius_20180404.html" >2018-04-04</a></div>
+        <h2>怎样成为一个天才</h2>
 
     <p>（王垠 yinwang.org 版权所有，未经许可，请勿转载）</p>
 
@@ -66,8 +100,17 @@
 <p>为了得到直觉，你必须去接近自然界，必须出去寻找灵感。这就像作家需要出去“采风”，画家需要出去“写生”一样。蹲在家里看书，思考，会让你的思维局限于文字和符号所能表示的东西，没法达到突破。如果你能看到我的头脑如何思考，你就会发现，当我的眼睛看到代码或者公式的时候，我的头脑看到的并不是代码和公式，而是自动把它们翻译成了一些电路，流体导管一类的东西，它们存在于一个具有多重现实和历史的，像 Matrix 一样的世界里。这些直觉都不是从书里来的，也不是老师教的，而是通过观察身边的事物得到的。这就是为什么你听说有位古人洗了一个澡，然后发现了重大的物理学规律。Nash 在酒吧看到一个绝色美女，然后想出了他最著名的成果。</p>
 
 <p>另外，你还需要休息。很多人一天学到晚，一天想到晚，以为这样就可以有所成就。可是人脑需要足够的休息和间歇的时间，才能从你想过的，看过的东西里面提取出精华的东西。Feynman 有个方法我觉得很管用。他说，如果你想成为天才，就在你的头脑里随时准备好12个需要解决的问题。每当你的生活中发生一件事，就把这些问题拿出来检查一下，看其中是否有问题会得到进展。当然，你不一定要准备12个之多，也不需要刻意的去回忆它们，否则你就会很累。这个过程应该是由“潜意识”来完成，而不需要你做出努力。如果经过了比较深入的思考还没有得到结果，你可以出去放松一下，然后说不定忽然间你的问题就被解决掉了！这是因为一旦你启动了有意识的思维，当你停下来去做其他事情的时候，你的头脑并不会停止思考，而会把这问题转交给潜意识。潜意识有一种神奇的力量，它会在接受到外界的某种微妙的激发之后，忽然间顿悟。</p>
-
+    </div>
     
-  </body>
-
+    <script src="js/highlight.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script>
+        if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
+            document.body.classList.add('mobile');
+            var navbar = document.querySelector('nav.navbar');
+            if (navbar) { navbar.classList.remove('navbar-fixed-top'); }
+        }
+    </script>
+</body>
 </html>

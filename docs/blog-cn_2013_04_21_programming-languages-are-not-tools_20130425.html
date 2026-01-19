@@ -1,63 +1,118 @@
+<!DOCTYPE html>
 <html>
 <head>
-
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link href="http://www.yinwang.org/main.css" rel="stylesheet" type="text/css">
-<link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
-<link rel="shortcut icon" href="http://www.yinwang.org/images/Yc.jpg">
-
-<title>ç¨åºè¯­è¨ä¸æ¯å·¥å·</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <title>程序语言不是工具</title>
+    <link rel="stylesheet" href="css/highlight/xcode.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-tooltips.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/home.css"> <!-- Need home for navbar -->
+    <link rel="stylesheet" href="css/post.css">
+    <script src="js/jquery.min.js"></script>
+    <style>
+        /* Switcher Fixes */
+        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
+        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
+        .version-switcher a.current { font-weight: bold; color: #333; }
+        /* Inner override for posts */
+        .inner { margin-top: 80px; } 
+    </style>
 </head>
-ãã
 <body>
+    <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-bs">
+                    <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+                <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='aboutcmec_aboutcmec_01.jsp_20060213.html'>About</a></li><li><a href='aboutess_aboutess_01.jsp_20060213.html'>About</a></li><li><a href='aboutinfo_aboutinfo_01.jsp_20060106.html'>About</a></li><li><a href='tweet_20170605.html'>微勃 (Tweets)</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='homepage_20250719.html'>当然我在扯淡 (None)</a></li><li><a href='index.jsp_20060213.html'>中国中小企业竞争力工程 (None)</a></li><li><a href='index_20260110.html'>Surely I am Joking (None)</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Posts <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='posts_air-freshener-nightmare_20251129.html'>Surely I am Joking</a></li><li><a href='posts_american-english-problems_20251030.html'>Surely I am Joking</a></li><li><a href='posts_authority_20251221.html'>Surely I am Joking</a></li><li><a href='posts_cello-technique_20251102.html'>Surely I am Joking</a></li><li><a href='posts_continuation-course_20251206.html'>Surely I am Joking</a></li><li><a href='posts_cs-class2_20251105.html'>Surely I am Joking</a></li><li><a href='posts_cs-course-5_20251208.html'>Surely I am Joking</a></li><li><a href='posts_cs-video-course_20251101.html'>Surely I am Joking</a></li><li><a href='posts_cs3_20251102.html'>Surely I am Joking</a></li><li><a href='posts_cs4_20251102.html'>Surely I am Joking</a></li><li><a href='posts_cs5-completed_20251031.html'>Surely I am Joking</a></li><li><a href='posts_entry-level-class_20251102.html'>Surely I am Joking</a></li><li><a href='posts_learning-philosophy_20251211.html'>Surely I am Joking</a></li><li><a href='posts_oberon_20260113.html'>Surely I am Joking</a></li><li><a href='posts_reading-course_20251102.html'>Surely I am Joking</a></li><li><a href='posts_super-human-level-vision_20251104.html'>Surely I am Joking</a></li><li><a href='posts_tuition-for-covid_20251103.html'>Surely I am Joking</a></li><li><a href='posts_wisdom-of-intelligence_20251102.html'>Surely I am Joking</a></li><li><a href='posts_youth-cs-student_20251102.html'>Surely I am Joking</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='resources_d8-3404-d8-8424_20130614.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_base64mime.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_charset.py_20150506.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_encoders.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_errors.py_20150409.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_header.py_20140305.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_quoprimime.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_re.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_compile.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_constants.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_parse.py_20160822.html'>Untitled</a></li><li><a href='resources_diff1-diff2_20200728.html'>Untitled</a></li><li><a href='resources_mk1-mk2_20130627.html'>Untitled</a></li><li><a href='resources_nav1-nav2_20200728.html'>Untitled</a></li><li><a href='resources_paredit20-paredit23_20200728.html'>Untitled</a></li><li><a href='resources_pydiff1-pydiff2_20130711.html'>Untitled</a></li><li><a href='resources_simulator-mips-simulator-arm_20200728.html'>Untitled</a></li><li><a href='resources_typed-clojure1-typed-clojure2_20200728.html'>Untitled</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tags <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='tags_ai_20251103.html'>Surely I am Joking</a></li><li><a href='tags_education_20251031.html'>Surely I am Joking</a></li><li><a href='tags_english_20251101.html'>Surely I am Joking</a></li><li><a href='tags_health_20251102.html'>Surely I am Joking</a></li><li><a href='tags_life_20251129.html'>Surely I am Joking</a></li><li><a href='tags_lifestyle_20251101.html'>Surely I am Joking</a></li><li><a href='tags_philosophy_20251101.html'>Surely I am Joking</a></li><li><a href='tags_programming-language_20260113.html'>Surely I am Joking</a></li><li><a href='tags_travel_20251129.html'>Surely I am Joking</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Misc <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='.well-known_dnt-policy.txt_20251211.html'>Surely I am Joking</a></li><li><a href='_5C_20251205.html'>Surely I am Joking</a></li><li><a href='_5Cu003c_a_5Cu003e_5Cu003c_td_5Cu003e_5Cn_5Cu003ctd_5Cu003e_E7_BC_96_E7_A8_8B_5Cu003c_td_5Cu003e_5Cn_5Cu003c_tr_5Cu003e_5Cn_5Cu003ctr_5Cu003e_5Cn_5Cu003ctd_5Cu003e_5Cu003ca_20251204.html'>Surely I am Joking</a></li><li><a href='ads.txt_20251013.html'>Surely I am Joking</a></li><li><a href='afficheAction.do_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='apply_dcb.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='apply_twsqb.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='common_casetoyota.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='common_casexhx.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='common_courseBase_main.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='common_courseBase_tch_grzl.jsp_20060106.html'>Untitled</a></li><li><a href='contactus.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='datadownload.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='dljm.jsp_20060516.html'>竞争力工程</a></li><li><a href='fwjs.jsp_20060516.html'>竞争力工程</a></li><li><a href='hd_qgjx.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='laws_laws_01.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='lianxi.jsp_20060428.html'>竞争力工程</a></li><li><a href='more.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='neirong.jsp_20060516.html'>详细内容</a></li><li><a href='newsPublishAction.do_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='servicecenter_servicecenter_01.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='tongzhi.jsp_20060428.html'>竞争力工程</a></li><li><a href='tongzhi_tongzhi1.htm_20060428.html'>ÎÞ±êÌâÎÄµµ</a></li><li><a href='tongzhi_tongzhi2.htm_20060428.html'>ÎÞ±êÌâÎÄµµ</a></li><li><a href='units_gjfz.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='units_jstg.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='units_zgzx.jsp_20060213.html'>中国中小企业竞争力工程</a></li></ul></li></ul>
+            </div>
+        </div>
+    </nav>
 
-<h2>ç¨åºè¯­è¨ä¸æ¯å·¥å·</h2>
+    <div class="inner">
+        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2013_04_21_programming-languages-are-not-tools_20130425.html" class="current">2013-04-25</a> <a href="blog-cn_2013_04_21_programming-languages-are-not-tools_20140701.html" >2014-07-01</a> <a href="blog-cn_2013_04_21_programming-languages-are-not-tools_20140717.html" >2014-07-17</a> <a href="blog-cn_2013_04_21_programming-languages-are-not-tools_20161006.html" >2016-10-06</a> <a href="blog-cn_2013_04_21_programming-languages-are-not-tools_20170510.html" >2017-05-10</a> <a href="blog-cn_2013_04_21_programming-languages-are-not-tools_20170616.html" >2017-06-16</a> <a href="blog-cn_2013_04_21_programming-languages-are-not-tools_20171129.html" >2017-11-29</a> <a href="blog-cn_2013_04_21_programming-languages-are-not-tools_20180301.html" >2018-03-01</a> <a href="blog-cn_2013_04_21_programming-languages-are-not-tools_20200228.html" >2020-02-28</a></div>
+        <h2>程序语言不是工具</h2>
 
-<p>å¨è°è®ºå°ç¨åºè¯­è¨çå¥½åçæ¶åï¼æ»æ¯æäººè¯´ï¼âç¨åºè¯­è¨åªæ¯ä¸ç§å·¥å·ãåªè¦ä½ çç®æ³å¥½ï¼ä¸ç®¡ç¨ä»ä¹è¯­è¨é½è½ååºä¸æ ·å¥½çç¨åºãâå¨æ¬ç§ç¬¬ä¸å ç¼ç¨è¯¾ä¸ï¼æçææå°±è¿ä¹å¯¹æä»¬è¯´ãå¯æ¯ç°å¨æå´åç°ï¼è¿æ¯ä¸ä¸ªæ ¹æ¬éè¯¯çè¯´æ³ã</p>
+<p>在谈论到程序语言的好坏的时候，总是有人说：“程序语言只是一种工具。只要你的算法好，不管用什么语言都能写出一样好的程序。”在本科第一堂编程课上，我的教授就这么对我们说。可是现在我却发现，这是一个根本错误的说法。</p>
 
-<p>æä¸ç¥éè¿ç§è¯´æ³ç¡®åçæ¥æºï¼ç¶èæ¨å¤©å¨æµè§ç½é¡µçæ¶åï¼å¶ç¶åç°äº C++ çè®¾è®¡è Bjarne Stroustrup çä¸äºç±»ä¼¼çè¯´æ³ãè¿äºè¯´æ³æ¥èªäº 2007 å¹´ MIT Technology Review å¯¹ Stroustrup ç<a href="http://www.technologyreview.com/qa/407076/bjarne-stroustrup">éè®¿</a>ã</p>
+<p>我不知道这种说法确切的来源，然而昨天在浏览网页的时候，偶然发现了 C++ 的设计者 Bjarne Stroustrup 的一些类似的说法。这些说法来自于 2007 年 MIT Technology Review 对 Stroustrup 的<a href="http://www.technologyreview.com/qa/407076/bjarne-stroustrup">采访</a>。</p>
 
 <ul>
-<li><p>é®ï¼ä¸ä¸ªå¥½çè¯­è¨æ¯ä»ä¹æ ·çï¼<br>
-Stroustrupï¼ææè½å¸®å©äººä»¬è¡¨è¾¾ä»ä»¬çæ³æ³çä¸è¥¿é½ä¼è®©è¯­è¨æ´å¥½ãä¸ä¸ªè¯­è¨å¨ä¸ä¸ªå¥½çå·¥å æéåºè¯¥è½èä»»æ¯å¤©çä»»å¡ãè¯­è¨æ¯å¦ä¼ç¾æ¯æ¬¡è¦çé®é¢ãè¢«è®¤ä¸ºæ¯ä¸éçè¯­è¨å¼ååºæ¥çæç¨çç³»ç»ï¼æ¯ä¼ç¾çè¯­è¨å¼ååºæ¥çç³»ç»è¦å¤å¾å¤ã</p></li>
-<li><p>é®ï¼ä¼éé¾éä¸éè¦åï¼<br>
-Stroustrupï¼ä¼éå¾éè¦ï¼å¯æ¯ä½ å¦ä½è¡¡éâä¼éâï¼å¯ä»¥è¡¨è¾¾é®é¢ç­æ¡çæå°å­æ°ï¼æè§å¾æä»¬åºè¯¥çæé åºæ¥çåºç¨ç¨åºçä¼éç¨åº¦ï¼èä¸æ¯è¯­è¨èªèº«çä¼éç¨åº¦ãå°±åä½ ä¸è½ææ¨å·¥çä¸å¥å¤æçå·¥å·ï¼å¾å¤æ¯å±é©çå·¥å·ï¼å«åâä¼éâä¸æ ·ãä½æ¯æçé¤æ¡åæ¤å­å´ççå¾ä¼éï¼å¾ç¾ãå½ç¶ï¼å¦æä¸ä¸ªè¯­è¨æ¬èº«ä¹å¾ç¾ï¼é£å½ç¶æå¥½ã</p></li>
+<li><p>问：一个好的语言是什么样的？<br>
+Stroustrup：所有能帮助人们表达他们的想法的东西都会让语言更好。一个语言在一个好的工匠手里应该能胜任每天的任务。语言是否优美是次要的问题。被认为是丑陋的语言开发出来的有用的系统，比优美的语言开发出来的系统要多得多。</p></li>
+<li><p>问：优雅难道不重要吗？<br>
+Stroustrup：优雅很重要，可是你如何衡量“优雅”？可以表达问题答案的最少字数？我觉得我们应该看构造出来的应用程序的优雅程度，而不是语言自身的优雅程度。就像你不能把木工的一套复杂的工具（很多是危险的工具）叫做“优雅”一样。但是我的餐桌和椅子却真的很优雅，很美。当然，如果一个语言本身也很美，那当然最好。</p></li>
 </ul>
 
 
-<h3>ä¸äºåºæ¬çéè¯¯</h3>
+<h3>一些基本的错误</h3>
 
-<p>å¯¹è¿ä¸¤ä¸ªåç­ï¼æé½ä¸æ»¡æï¼æè§å¾è¿åªæ¯ä»å¯¹äº C++ çæ¶å£è®¾è®¡çåå£èå·²ãä¸é¢æå¯¹å¶ä¸­å ä¸ªè¯´æ³è¿è¡è´¨çï¼</p>
+<p>对这两个回答，我都不满意，我觉得这只是他对于 C++ 的恶劣设计的借口而已。下面我对其中几个说法进行质疑：</p>
 
-<blockquote><p>ææè½å¸®å©äººä»¬è¡¨è¾¾ä»ä»¬çæ³æ³çä¸è¥¿é½ä¼è®©è¯­è¨æ´å¥½ã</p></blockquote>
+<blockquote><p>所有能帮助人们表达他们的想法的东西都会让语言更好。</p></blockquote>
 
-<p>ä½ä¸ºä¸ä¸ªç¨åºè¯­è¨ï¼å¹¶ä¸æ¯å¥½å¿æ³âå¸®å©äººâå°±å¯ä»¥è¯´æ¯å¥½çãå¦ææ¯è¿æ ·çè¯ï¼é£ä¹æå°±å¯ä»¥æææå½å®¶çèè¯é½å å°ä½ çè¯­è¨éé¢ï¼å ä¸ºå®ä»¬å¯ä»¥å¸®å©æä»¬éªäººã</p>
+<p>作为一个程序语言，并不是好心想“帮助人”就可以说是好的。如果是这样的话，那么我就可以把所有国家的脏话都加到你的语言里面，因为它们可以帮助我们骂人。</p>
 
-<blockquote><p>è¢«è®¤ä¸ºæ¯ä¸éçè¯­è¨å¼ååºæ¥çæç¨çç³»ç»ï¼æ¯ä¼ç¾çè¯­è¨å¼ååºæ¥çç³»ç»è¦å¤å¾å¤ã</p></blockquote>
+<blockquote><p>被认为是丑陋的语言开发出来的有用的系统，比优美的语言开发出来的系统要多得多。</p></blockquote>
 
-<p>ç³»ç»çæ°éåå¤ä¹ä¸è½è¯´æè¿ä¸ªè¯­è¨å¥½ãæ­£å¥½ç¸åï¼ä¼å¤çç³»ç»ç±äºè¯­è¨çä¸äºè®¾è®¡å¤±è¯¯ï¼æäººä»¬ççå½ç½®äºå±é©ä¹ä¸­ï¼è¿è¯´æäºè¿ä¸ªè¯­è¨çå±å®³æ§ä¹å¤§ãä¸ç§åç¸è¯ä¸æ ·çè¯­è¨ï¼ç¨çäººè¶å¤è¶æ¯å±é©ã</p>
+<p>系统的数量再多也不能说明这个语言好。正好相反，众多的系统由于语言的一些设计失误，把人们的生命置于危险之中，这说明了这个语言的危害性之大。一种像炸药一样的语言，用的人越多越是危险。</p>
 
-<h3>è¯­è¨ä¸æ¯å·¥å·ï¼èæ¯ææ</h3>
+<h3>语言不是工具，而是材料</h3>
 
-<p>æè¿ç¯æç« æ³è¯´çæå³é®çé¨åï¼å¶å®æ¯ä»ææ¯æçâè¯­è¨å·¥å·è®ºâçéè¯¯ã</p>
+<p>我这篇文章想说的最关键的部分，其实是他所支持的“语言工具论”的错误。</p>
 
-<p>Stroustrup è¯´ï¼</p>
+<p>Stroustrup 说：</p>
 
-<blockquote><p>æè§å¾æä»¬åºè¯¥çæé åºæ¥çåºç¨ç¨åºçä¼éç¨åº¦ï¼èä¸æ¯è¯­è¨èªèº«çä¼éç¨åº¦ãå°±åä½ ä¸è½ææ¨å·¥çä¸å¥å¤æçå·¥å·ï¼å¾å¤æ¯å±é©çå·¥å·ï¼å«åâä¼éâä¸æ ·ãä½æ¯æçé¤æ¡åæ¤å­å´å¾ä¼éï¼å¾ç¾ã</p></blockquote>
+<blockquote><p>我觉得我们应该看构造出来的应用程序的优雅程度，而不是语言自身的优雅程度。就像你不能把木工的一套复杂的工具（很多是危险的工具）叫做“优雅”一样。但是我的餐桌和椅子却很优雅，很美。</p></blockquote>
 
-<p>ä»çè¨ä¸ä¹æå°±æ¯æç¨åºè¯­è¨æ¯ä½æ¨å·¥çå·¥å·ï¼èé¤æ¡ä¹æ¤å­å°±æ¯è¿äºå·¥å·ååºæ¥çäº§åãæ¯æ¹çå¨åæ¯å¾å¤§çï¼å¾å¤äººä¸è§å°å¤§çç»åºè¿ä¹å½¢è±¡çæ¯æ¹ï¼æ³é½ä¸ç¨æ³å°±æ¥åäºãå¦æä½ ä¸ä»ç»åæçè¯ï¼è¿è²ä¼¼ä¸ä¸ªæ°å½çæ¯æ¹ï¼ç¶èç»è¿ä»ç»æ¨æ²ï¼è¿å´æ¯éè¯¯çæ¯æ¹ãè¿æ¯å ä¸ºç¨åºè¯­è¨å¶å®ä¸æ¯ä¸ç§âå·¥å·âï¼èæ¯ä¸ç§âææâã</p>
+<p>他的言下之意就是把程序语言比作木工的工具，而餐桌也椅子就是这些工具做出来的产品。比方的威力是很大的，很多人一见到大牛给出这么形象的比方，想都不用想就接受了。如果你不仔细分析的话，这貌似一个恰当的比方，然而经过仔细推敲，这却是错误的比方。这是因为程序语言其实不是一种“工具”，而是一种“材料”。</p>
 
-<p>æ¨å·¥ä¸ä¼æèªå·±çé¯å­ï¼å¢¨çº¿ç­ä¸è¥¿æ¾è¿é¤æ¡åæ¤å­éé¢ï¼èç¨åºåå´éè¦æè¯­è¨çä»£ç æ¾å°åºç¨ç¨åºéé¢ãè½ç¶è¿äºç¨åºç»è¿äºç¼è¯å¨çè½¬åï¼ä½æ¯ç¨åºæ¬èº«å´ä»ç¶å¸¦æè¯­è¨çç¹å¾ãè¿å°±åä¸ç§æ¨æç»è¿å¢¨çº¿åé¯å­çå å·¥ï¼ä»ç¶æ¯åæ ·çæ¨æãä¸ä¸ª C++ çç¨åºå¨ç¼è¯ä¹åæå¯è½äº§çåå­æ³æ¼åä¸æ è¶çç­ä½çº§éè¯¯ï¼èæ´å å®å¨çè¯­è¨å´ä¸ä¼åºç°è¿ä¸ªé®é¢ã</p>
+<p>木工不会把自己的锯子，墨线等东西放进餐桌和椅子里面，而程序员却需要把语言的代码放到应用程序里面。虽然这些程序经过了编译器的转化，但是程序本身却仍然带有语言的特征。这就像一种木材经过墨线和锯子的加工，仍然是同样的木材。一个 C++ 的程序在编译之后有可能产生内存泄漏和下标越界等低级错误，而更加安全的语言却不会出现这个问题。</p>
 
-<p>æä»¥å¨è¿ä¸ªæ¯æ¹éé¢ï¼ç¨åºè¯­è¨æå¯¹åºçåºè¯¥æ¯æ¨å·¥æç¨çæ¨æï¼éå­åç²è¶ç­âææâï¼èä¸æ¯é¯å­åå¢¨çº¿ç­âå·¥å·âãè¿äºææå¶å®éçåºç¨ç¨åºä¸èµ·ï¼å°äºç¨æ·çæéãé£ä¹å¯¹åºæ¨å·¥å·¥å·çæ¯ä»ä¹å¢ï¼æ¯ Emacs, vi, Eclipseï¼Visual Studio ç­ç¼ç¨ç¯å¢ï¼ä»¥ååç§ç¼è¯å¨ï¼è°è¯å¨ï¼makeï¼çé¢è®¾è®¡å·¥å·ï¼ç­ç­ãè¿äºçæ­£çâå·¥å·âä¸ä¸ç¹ï¼ççææ¶æ æè°ã</p>
+<p>所以在这个比方里面，程序语言所对应的应该是木工所用的木料，钉子和粘胶等“材料”，而不是锯子和墨线等“工具”。这些材料其实随着应用程序一起，到了用户的手里。那么对应木工工具的是什么呢？是 Emacs, vi, Eclipse，Visual Studio 等编程环境，以及各种编译器，调试器，make，界面设计工具，等等。这些真正的“工具”丑一点，真的暂时无所谓。</p>
 
-<p>ç°å¨ä½ è¿è§å¾ç¨åºè¯­è¨çä¼éç¨åº¦æ¯æ¬¡è¦çé®é¢åï¼ä¸ä¸ªå¤æèä¸å®å¨çè¯­è¨å°±åå£è´¨çæ¨æåç²è¶ãå®ä¸ä½ä¼è®©é¤æ¡åæ¤å­çç¾è§ç¨åº¦å¤§æææ£ï¼èä¸ä¼é æå®ä»¬ç»æçä¸ç¢é ï¼ä»¥è³äºå¨èå°ç¨æ·ççå½å®å¨ãåæ¶å®è¿å¯è½ä¼é ææ¨å·¥çå·¥ä½æçä½ä¸ä»¥åå·¥ä¼¤çäº§çã</p>
+<p>现在你还觉得程序语言的优雅程度是次要的问题吗？一个复杂而不安全的语言就像劣质的木料和粘胶。它不但会让餐桌和椅子的美观程度大打折扣，而且会造成它们结构的不牢靠，以至于威胁到用户的生命安全。同时它还可能会造成木工的工作效率低下以及工伤的产生。</p>
 
-<p>è¿ä¹è®¸å°±æ¯ä¸ºä»ä¹æçä¸ä¸ªåäºè¯´ï¼ä»ç C++ ä»£ç çæ¶åé½ä¼å¸¦ä¸ OSHAï¼ç¾å½èä¸å®å¨ä¸å¥åº·ç®¡çå±ï¼æ¹åçæ¤ç®éã</p>
+<p>这也许就是为什么我的一个同事说，他看 C++ 代码的时候都会带上 OSHA（美国职业安全与健康管理局）批准的护目镜。</p>
 
 <p><img src="images/osha-goggle.jpg"></p>
-
-
+    </div>
+    
+    <script src="js/highlight.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script>
+        if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
+            document.body.classList.add('mobile');
+            var navbar = document.querySelector('nav.navbar');
+            if (navbar) { navbar.classList.remove('navbar-fixed-top'); }
+        }
+    </script>
 </body>
-
 </html>

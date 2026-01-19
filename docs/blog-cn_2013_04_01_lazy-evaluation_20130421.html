@@ -1,53 +1,108 @@
+<!DOCTYPE html>
 <html>
 <head>
-
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link href="http://www.yinwang.org/main.css" rel="stylesheet" type="text/css">
-<link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
-<link rel="shortcut icon" href="http://www.yinwang.org/images/Yc.jpg">
-
-<title>è°æ°æ§æ±å¼</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <title>谈惰性求值</title>
+    <link rel="stylesheet" href="css/highlight/xcode.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-tooltips.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/home.css"> <!-- Need home for navbar -->
+    <link rel="stylesheet" href="css/post.css">
+    <script src="js/jquery.min.js"></script>
+    <style>
+        /* Switcher Fixes */
+        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
+        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
+        .version-switcher a.current { font-weight: bold; color: #333; }
+        /* Inner override for posts */
+        .inner { margin-top: 80px; } 
+    </style>
 </head>
-ãã
 <body>
+    <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-bs">
+                    <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+                <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='aboutcmec_aboutcmec_01.jsp_20060213.html'>About</a></li><li><a href='aboutess_aboutess_01.jsp_20060213.html'>About</a></li><li><a href='aboutinfo_aboutinfo_01.jsp_20060106.html'>About</a></li><li><a href='tweet_20170605.html'>微勃 (Tweets)</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='homepage_20250719.html'>当然我在扯淡 (None)</a></li><li><a href='index.jsp_20060213.html'>中国中小企业竞争力工程 (None)</a></li><li><a href='index_20260110.html'>Surely I am Joking (None)</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Posts <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='posts_air-freshener-nightmare_20251129.html'>Surely I am Joking</a></li><li><a href='posts_american-english-problems_20251030.html'>Surely I am Joking</a></li><li><a href='posts_authority_20251221.html'>Surely I am Joking</a></li><li><a href='posts_cello-technique_20251102.html'>Surely I am Joking</a></li><li><a href='posts_continuation-course_20251206.html'>Surely I am Joking</a></li><li><a href='posts_cs-class2_20251105.html'>Surely I am Joking</a></li><li><a href='posts_cs-course-5_20251208.html'>Surely I am Joking</a></li><li><a href='posts_cs-video-course_20251101.html'>Surely I am Joking</a></li><li><a href='posts_cs3_20251102.html'>Surely I am Joking</a></li><li><a href='posts_cs4_20251102.html'>Surely I am Joking</a></li><li><a href='posts_cs5-completed_20251031.html'>Surely I am Joking</a></li><li><a href='posts_entry-level-class_20251102.html'>Surely I am Joking</a></li><li><a href='posts_learning-philosophy_20251211.html'>Surely I am Joking</a></li><li><a href='posts_oberon_20260113.html'>Surely I am Joking</a></li><li><a href='posts_reading-course_20251102.html'>Surely I am Joking</a></li><li><a href='posts_super-human-level-vision_20251104.html'>Surely I am Joking</a></li><li><a href='posts_tuition-for-covid_20251103.html'>Surely I am Joking</a></li><li><a href='posts_wisdom-of-intelligence_20251102.html'>Surely I am Joking</a></li><li><a href='posts_youth-cs-student_20251102.html'>Surely I am Joking</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='resources_d8-3404-d8-8424_20130614.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_base64mime.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_charset.py_20150506.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_encoders.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_errors.py_20150409.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_header.py_20140305.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_quoprimime.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_re.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_compile.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_constants.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_parse.py_20160822.html'>Untitled</a></li><li><a href='resources_diff1-diff2_20200728.html'>Untitled</a></li><li><a href='resources_mk1-mk2_20130627.html'>Untitled</a></li><li><a href='resources_nav1-nav2_20200728.html'>Untitled</a></li><li><a href='resources_paredit20-paredit23_20200728.html'>Untitled</a></li><li><a href='resources_pydiff1-pydiff2_20130711.html'>Untitled</a></li><li><a href='resources_simulator-mips-simulator-arm_20200728.html'>Untitled</a></li><li><a href='resources_typed-clojure1-typed-clojure2_20200728.html'>Untitled</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tags <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='tags_ai_20251103.html'>Surely I am Joking</a></li><li><a href='tags_education_20251031.html'>Surely I am Joking</a></li><li><a href='tags_english_20251101.html'>Surely I am Joking</a></li><li><a href='tags_health_20251102.html'>Surely I am Joking</a></li><li><a href='tags_life_20251129.html'>Surely I am Joking</a></li><li><a href='tags_lifestyle_20251101.html'>Surely I am Joking</a></li><li><a href='tags_philosophy_20251101.html'>Surely I am Joking</a></li><li><a href='tags_programming-language_20260113.html'>Surely I am Joking</a></li><li><a href='tags_travel_20251129.html'>Surely I am Joking</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Misc <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='.well-known_dnt-policy.txt_20251211.html'>Surely I am Joking</a></li><li><a href='_5C_20251205.html'>Surely I am Joking</a></li><li><a href='_5Cu003c_a_5Cu003e_5Cu003c_td_5Cu003e_5Cn_5Cu003ctd_5Cu003e_E7_BC_96_E7_A8_8B_5Cu003c_td_5Cu003e_5Cn_5Cu003c_tr_5Cu003e_5Cn_5Cu003ctr_5Cu003e_5Cn_5Cu003ctd_5Cu003e_5Cu003ca_20251204.html'>Surely I am Joking</a></li><li><a href='ads.txt_20251013.html'>Surely I am Joking</a></li><li><a href='afficheAction.do_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='apply_dcb.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='apply_twsqb.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='common_casetoyota.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='common_casexhx.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='common_courseBase_main.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='common_courseBase_tch_grzl.jsp_20060106.html'>Untitled</a></li><li><a href='contactus.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='datadownload.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='dljm.jsp_20060516.html'>竞争力工程</a></li><li><a href='fwjs.jsp_20060516.html'>竞争力工程</a></li><li><a href='hd_qgjx.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='laws_laws_01.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='lianxi.jsp_20060428.html'>竞争力工程</a></li><li><a href='more.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='neirong.jsp_20060516.html'>详细内容</a></li><li><a href='newsPublishAction.do_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='servicecenter_servicecenter_01.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='tongzhi.jsp_20060428.html'>竞争力工程</a></li><li><a href='tongzhi_tongzhi1.htm_20060428.html'>ÎÞ±êÌâÎÄµµ</a></li><li><a href='tongzhi_tongzhi2.htm_20060428.html'>ÎÞ±êÌâÎÄµµ</a></li><li><a href='units_gjfz.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='units_jstg.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='units_zgzx.jsp_20060213.html'>中国中小企业竞争力工程</a></li></ul></li></ul>
+            </div>
+        </div>
+    </nav>
 
-<h2>è°æ°æ§æ±å¼</h2>
+    <div class="inner">
+        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2013_04_01_lazy-evaluation_20130421.html" class="current">2013-04-21</a> <a href="blog-cn_2013_04_01_lazy-evaluation_20140701.html" >2014-07-01</a> <a href="blog-cn_2013_04_01_lazy-evaluation_20160307.html" >2016-03-07</a> <a href="blog-cn_2013_04_01_lazy-evaluation_20160929.html" >2016-09-29</a> <a href="blog-cn_2013_04_01_lazy-evaluation_20170224.html" >2017-02-24</a> <a href="blog-cn_2013_04_01_lazy-evaluation_20170510.html" >2017-05-10</a> <a href="blog-cn_2013_04_01_lazy-evaluation_20170531.html" >2017-05-31</a> <a href="blog-cn_2013_04_01_lazy-evaluation_20171202.html" >2017-12-02</a> <a href="blog-cn_2013_04_01_lazy-evaluation_20180102.html" >2018-01-02</a> <a href="blog-cn_2013_04_01_lazy-evaluation_20191206.html" >2019-12-06</a> <a href="blog-cn_2013_04_01_lazy-evaluation_20200228.html" >2020-02-28</a> <a href="blog-cn_2013_04_01_lazy-evaluation_20240416.html" >2024-04-16</a></div>
+        <h2>谈惰性求值</h2>
 
-<p>ä»ä¹åçå ç¯åæéé¢ä½ ä¹è®¸å·²ç»çå°äºï¼Haskell å¶å®æ¯é®é¢ç¸å½ä¸¥éçè¯­è¨ï¼ç¶èè¿äºé®é¢å´æ²¡æå¼èµ·è¶³å¤çéè§ãæè½çå°ç Haskell çé®é¢å¨äºï¼</p>
+<p>从之前的几篇博文里面你也许已经看到了，Haskell 其实是问题相当严重的语言，然而这些问题却没有引起足够的重视。我能看到的 Haskell 的问题在于：</p>
 
 <ul>
-<li><p>å¤æçåºäºç¼©è¿çè¯­æ³ï¼ä½¿å¾ä»»ä½ç¼è¾å¨é½ä¸è½é«æçç¼è¾ Haskell ç¨åºï¼å¹¶ä¸ä½¿å¾è¯­æ³åæé¾åº¦å åãå¯¹è¿ä¸ªè§ç¹ï¼è¯·åèæçåæãè°è¯­æ³ãä»¥åæçè±æåæãLayout Syntax Considered Harmfulãã</p></li>
-<li><p>âçº¯å½æ°å¼âçè¯­ä¹ä»¥å monad å¶å®ä¸æ¯å¥½ä¸è¥¿ãå¯¹æ­¤è¯·åèåæãå¯¹å½æ°å¼è¯­è¨çè¯¯è§£ãã</p></li>
-<li><p>Haskell æç¨ç Hindley-Milner ç±»åç³»ç»ï¼å¶å®å«æä¸ä¸ªæ ¹æ¬æ§çéè¯¯ãå¯¹æ­¤è¯·åèãHindley-Milner ç±»åç³»ç»çæ ¹æ¬æ§éè¯¯ãã</p></li>
-<li><p>Haskell æç¨ç type classï¼å¶å®è·ä¸è¬è¯­è¨ï¼æ¯å¦ Javaï¼éé¢çéè½½ï¼overloadingï¼å¹¶æ²¡ææ¬è´¨åºå«ãä½ çå°çåºå«é½æ¯å ä¸º Hindley-Milner ç³»ç»åéè½½æ··åå¨ä¸èµ·äº§ççææãtype class å¹¶ä¸è½æ¯å¶å®è¯­è¨éçéè½½åæ´å¤çäºã</p></li>
+<li><p>复杂的基于缩进的语法，使得任何编辑器都不能高效的编辑 Haskell 程序，并且使得语法分析难度加倍。对这个观点，请参考我的博文《谈语法》以及我的英文博文《Layout Syntax Considered Harmful》。</p></li>
+<li><p>“纯函数式”的语义以及 monad 其实不是好东西。对此请参考博文《对函数式语言的误解》。</p></li>
+<li><p>Haskell 所用的 Hindley-Milner 类型系统，其实含有一个根本性的错误。对此请参考《Hindley-Milner 类型系统的根本性错误》。</p></li>
+<li><p>Haskell 所用的 type class，其实跟一般语言（比如 Java）里面的重载（overloading）并没有本质区别。你看到的区别都是因为 Hindley-Milner 系统和重载混合在一起产生的效果。type class 并不能比其它语言里的重载做更多的事。</p></li>
 </ul>
 
 
-<p>è¿æ ·ä¸æ¥ï¼å¥½å Haskell çâç¹å¾âï¼è¦ä¹æ¯éè¯¯çï¼è¦ä¹å°±ä¸æ¯èªå·±çãå¯æ¯ç°å¨æåç»å®å ä¸ä¸æ£µç¨»èï¼Haskell çæ°æ§æ±å¼ï¼lazy evaluationï¼æ¹å¼ï¼å¶å®å¤§å¤§çéå¶äºå®çè¿è¡æçï¼å¹¶ä¸ä½¿å¾å®è·å¹¶è¡è®¡ç®çç®æ ç¸çç¾ã</p>
+<p>这样一来，好像 Haskell 的“特征”，要么是错误的，要么就不是自己的。可是现在我再给它加上一棵稻草：Haskell 的惰性求值（lazy evaluation）方式，其实大大的限制了它的运行效率，并且使得它跟并行计算的目标相矛盾。</p>
 
-<p>è¿æ¯ä¸ä¸ªå¯¹æå·²ç»éå¸¸ææ¾çé®é¢ï¼æä»¥æåªç®è¦çè¯´æä¸ä¸ãæ°æ§æ±å¼çæ¹å¼ï¼ä½¿å¾æä»¬å¨âéè¦âä¸ä¸ªåéçå¼çæ¶åï¼æ»æ¯æä¸¤ç§å¯è½æ§ï¼1ï¼è¿ä¸ªåéå¨è¿ä¹åå·²ç»è¢«æ±å¼ï¼æä»¥å¯ä»¥ç´æ¥åå¼ 2ï¼è¿ä¸ªåéè¿æ²¡æè¢«æ±å¼ï¼ä¹å°±æ¯è¯´å®è¿æ¯ä¸ä¸ª thunkï¼æä»¬å¿é¡»å¯å¨å¯¹å®çæ±å¼ã</p>
+<p>这是一个对我已经非常明显的问题，所以我只简要的说明一下。惰性求值的方式，使得我们在“需要”一个变量的值的时候，总是有两种可能性：1）这个变量在这之前已经被求值，所以可以直接取值 2）这个变量还没有被求值，也就是说它还是一个 thunk，我们必须启动对它的求值。</p>
 
-<p>å¯è½ä½ å·²ç»åç°äºï¼è¿å¶å®å¸¦æ¥äºç±»åç³»ç»çæ··ä¹±ãä»»ä½ç±»åï¼ä¸ç®¡æ¯ Int, Bool, List, ... æèèªå®ä¹æ°æ®ç±»åï¼é½å¤åºäºè¿ä¹ä¸ä¸ªä¸è¥¿ï¼thunkãå®è¡¨ç¤ºçæ¯âè¿æ²¡ææ±å¼çè®¡ç®âãHaskell ç¨åºåä¸è¬æå®å«åâbottomâï¼åä½ <em>|</em>ãå®çæææ¯ï¼æ­»å¾ªç¯ãå ä¸ºä»»ä½ thunk é½æå¯è½ 1ï¼è¿åä¸ä¸ªé¢å®çç±»åçå¼ï¼æè 2ï¼å¯¼è´æ­»å¾ªç¯ã</p>
+<p>可能你已经发现了，这其实带来了类型系统的混乱。任何类型，不管是 Int, Bool, List, ... 或者自定义数据类型，都多出了这么一个东西：thunk。它表示的是“还没有求值的计算”。Haskell 程序员一般把它叫做“bottom”，写作 <em>|</em>。它的意思是：死循环。因为任何 thunk 都有可能 1）返回一个预定的类型的值，或者 2）导致死循环。</p>
 
-<p>è¿æç¹å C++ å Java éç null æéï¼å ä¸º null å¯ä»¥è¢«ä½ä¸ºä»»ä½å¶ä»ç±»åä½¿ç¨ï¼å´åä¸å·æé£ç§ç±»åçç¹å¾ï¼æä»¥ä¼äº§çææ³ä¸å°çé®é¢ã<em>|</em> ç» Haskell å¸¦æ¥çé®é¢æ²¡é£ä¹ä¸¥éï¼ä½å´ä¸æ ·çä¸å¯é¢æï¼é¾ä»¥åæåè°è¯ãå¯¹äº Haskell æ¥è¯´ï¼æå¯è½åºç°è¿æ ·çäºæï¼ææåäºä¸ä¸ªå¾å°çå½æ°ï¼è§å¾åºè¯¥ä¸ä¼è±å¾å¤æ¶é´ãç»æå¢ï¼å ä¸ºå®å¯¹æä¸ªåéåå¼ï¼é´æ¥çè§¦åäºä¸æ®µå¾èæ¶é´çä»£ç ï¼æä»¥ç­äºèåå¤©è¿æ²¡è¿åãæ³ç¥éæ¯åªéåºäºé®é¢ï¼å´é¾ä»¥åç°çº¿ç´¢ï¼å ä¸ºè¿å½æ°å¹¶æ²¡æç´æ¥æèé´æ¥çè°ç¨é£æ®µèæ¶é´çä»£ç ï¼èæ¯è¿ä¸ªåéç thunk å¯å¨äºé£æ®µä»£ç ãè¿å°±å¯¼è´äºç¨åºçæçé¾ä»¥åæï¼è¢«âæ°æ§âæå¨é£éçè®¡ç®ï¼æå¯è½å¨åºä¹ä½ ææçå°æ¹çåãè¿å°±æ¯æè°âå¹³æ¶ä¸ç§é¦ï¼ä¸´æ¶æ±ä½èãâ</p>
+<p>这有点像 C++ 和 Java 里的 null 指针，因为 null 可以被作为任何其他类型使用，却又不具有那种类型的特征，所以会产生意想不到的问题。<em>|</em> 给 Haskell 带来的问题没那么严重，但却一样的不可预料，难以分析和调试。对于 Haskell 来说，有可能出现这样的事情：明明写了一个很小的函数，觉得应该不会花很多时间。结果呢，因为它对某个变量取值，间接的触发了一段很耗时间的代码，所以等了老半天还没返回。想知道是哪里出了问题，却难以发现线索，因为这函数并没有直接或者间接的调用那段耗时间的代码，而是这个变量的 thunk 启动了那段代码。这就导致了程序的效率难以分析：被“惰性”搁在那里的计算，有可能在出乎你意料的地方爆发。这就是所谓“平时不烧香，临时抱佛脚。”</p>
 
-<p>è¿ç§ä¸ç¡®å®æ§ï¼å¹¶æ²¡æå¸¦æ¥æ»ä½è®¡ç®å¼éçå¢å ãç¶èâæ°æ§âå´å¨å¦å¤ä¸æ¹é¢å¸¦æ¥äºå·¨å¤§çå¼éï¼è¿å°±æ¯âé®é®é¢âçå¼éãæ¯å½çå°ä¸ä¸ªåéï¼Haskell é½ä¼é®å®ä¸ä¸ªé®é¢ï¼âä½ è¢«æ±å¼äºæ²¡æï¼âå³ä½¿è¿åéå·²ç»è¢«æ±å¼ï¼èä¸å·²ç»è¢«åå¼ä¸ç¾ä¸æ¬¡ï¼Haskell ä»ç¶ä¼é®è¿ä¸ªé®é¢ï¼âä½ è¢«æ±å¼äºæ²¡æï¼âé®ä¸ä¸ªåéè¿é®é¢å¯è½ä¸è¦ç´§ï¼å¯æ¯ Haskell ä¼é®å ä¹ææçåéè¿ä¸ªé®é¢ï¼åå¤çé®è¿ä¸ªé®é¢ãè¿å°±ç´¯ç§¯æäºå·¨å¤§çå¼éãè·æå¨å¦ä¸ç¯åæéè°å°çâè§£éå¼éâå·®ä¸å¤ï¼è¿ç§é®é¢æ¯âè¿è¡æ¶âçï¼æä»¥æ²¡æ³è¢«ç¼è¯å¨âä¼åâæã</p>
+<p>这种不确定性，并没有带来总体计算开销的增加。然而“惰性”却在另外一方面带来了巨大的开销，这就是“问问题”的开销。每当看到一个变量，Haskell 都会问它一个问题：“你被求值了没有？”即使这变量已经被求值，而且已经被取值一百万次，Haskell 仍然会问这个问题：“你被求值了没有？”问一个变量这问题可能不要紧，可是 Haskell 会问几乎所有的变量这个问题，反复的问这个问题。这就累积成了巨大的开销。跟我在另一篇博文里谈到的“解释开销”差不多，这种问题是“运行时”的，所以没法被编译器“优化”掉。</p>
 
-<p>å·æè®½åºæå³çæ¯ï¼Haskell è¿ç§âçº¯å½æ°å¼è¯­è¨âçæ°æ§æ±å¼æéè¦ç thunkï¼å¨é½éè¦âå¯ä½ç¨âæå¯ä»¥æ´æ°ï¼æä»¥å®ä»¬å¿é¡»è¢«æ¾å¨åå­éé¢ï¼èä¸æ¯å¯å­å¨éé¢ãå¦æä½ çè§£äºæåçãå¯¹å½æ°å¼è¯­è¨çè¯¯è§£ãï¼ä½ å°±ä¼åç°è¿ C ç¨åºéé¢çâå¯ä½ç¨âä¹æ²¡æ Haskell è¿ä¹å¤ãè¿æ ·ä¸æ¥ï¼å¤çå¨çå¯å­å¨å¶å®å¾ä¸å°ææçå©ç¨ï¼ä»èå¤§å¤§å¢å äºåå­çè®¿é®ãæä¸ºä»ä¹å¯ä»¥å¾ç¡®ä¿¡çåè¯ä½ è¿ä¸ªå¢ï¼å ä¸ºææ¾ç»è®¾è®¡äºä¸ä¸ªå¯å­å¨åéç®æ³ï¼äºæ¯å¼ä¼çæ¶åæé® GHC çå®ç°èä»¬ï¼ä½ ä»¬ä¼ä¸ä¼å¯¹ä¸ä¸ªæ°çå¯å­å¨åéç®æ³æå´è¶£ï¼æå¯ä»¥å¸®ä½ ä»¬å å° GHC éé¢ãç»æä»ä»¬è¯´ï¼æä»¬ä¸éè¦ï¼å ä¸º Haskell å°å¤é½æ¯ thunkï¼æ ¹æ¬å°±æ²¡ä»ä¹æºä¼ç¨å¯å­å¨ã</p>
+<p>具有讽刺意味的是，Haskell 这种“纯函数式语言”的惰性求值所需要的 thunk，全都需要“副作用”才可以更新，所以它们必须被放在内存里面，而不是寄存器里面。如果你理解了我写的《对函数式语言的误解》，你就会发现连 C 程序里面的“副作用”也没有 Haskell 这么多。这样一来，处理器的寄存器其实得不到有效的利用，从而大大增加了内存的访问。我为什么可以很确信的告诉你这个呢？因为我曾经设计了一个寄存器分配算法，于是开会的时候我问 GHC 的实现者们，你们会不会对一个新的寄存器分配算法感兴趣，我可以帮你们加到 GHC 里面。结果他们说，我们不需要，因为 Haskell 到处都是 thunk，根本就没什么机会用寄存器。</p>
 
-<p>æä»¥ï¼é®å¤ªå¤é®é¢ï¼æ²¡æ³ååå©ç¨å¯å­å¨ï¼è¿ä½¿å¾ Haskell å¨æçä¸å¤§æææ£ã</p>
+<p>所以，问太多问题，没法充分利用寄存器，这使得 Haskell 在效率上大打折扣。</p>
 
-<p>ç¶åæä»¬æ¥ççï¼ä¸ºä»ä¹æ°æ§æ±å¼ä¼è·å¹¶è¡è®¡ç®çç®æ ç¸å²çªãè¿å¶å®å¾ææ¾ï¼å®çåå å°±å¨äºâæ°æ§æ±å¼âçå®ä¹ãæ°æ§æ±å¼è¯´ï¼âå°éè¦æçæ¶ååæ¥è®¡ç®æãâèå¹¶è¡è®¡ç®è¯´ï¼âå°éè¦ä½ çæ¶åï¼ä½ æå¥½å·²ç»è¢«æä¸ªå¤çå¨ç®åºæ¥äºãâæä»¥ä½ çå°äºï¼å¹¶è¡è®¡ç®è¦æ±ä½ âå¤å¥âï¼è¦æ±ä½ äºååå¥½åå¤ãèæ°æ§æ±å¼æ¬æ¥å°±æ¯å¾âæâï¼æä¹å¯è½æ²¡äºæ¾äºï¼åæèªå·±ç®åºæ¥å¢ï¼ç±äºè¿ä¸ªé®é¢æ¥èªäºâæ°æ§æ±å¼âçå®ä¹ï¼æä»¥è¿æ¯ä¸å¯è°åççç¾ã</p>
+<p>然后我们来看看，为什么惰性求值会跟并行计算的目标相冲突。这其实很明显，它的原因就在于“惰性求值”的定义。惰性求值说：“到需要我的时候再来计算我。”而并行计算说：“到需要你的时候，你最好已经被某个处理器算出来了。”所以你看到了，并行计算要求你“勤奋”，要求你事先做好准备。而惰性求值本来就是很“懒”，怎么可能没事找事，先把自己算出来呢？由于这个问题来自于“惰性求值”的定义，所以这是不可调和的矛盾。</p>
 
-<p>æä»¥ï¼æ°æ§æ±å¼ä¸ç®¡æ¯å¨ä¸²è¡å¤çè¿æ¯å¨å¹¶è¡å¤ççæ¶åï¼é½ä¼å¸¦æ¥æçä¸çå¤§æææ£ãå®æ¯ä¸ä¸ªå¾é¸¡èçè¯­è¨ç¹å¾ã</p>
+<p>所以，惰性求值不管是在串行处理还是在并行处理的时候，都会带来效率上的大打折扣。它是一个很鸡肋的语言特征。</p>
 
-<p>è½ç¶æ°æ§æ±å¼ä¸è½ç»æä»¬å¸¦æ¥ç´æ¥ççå¤ï¼ä½å®èåççè®ºææ³å´å¯ä»¥å¯åå¦å¤çè®¾è®¡ãå¦æä½ æ³ççäºè§£æ°æ§æ±å¼çåçï¼å¯ä»¥åçä¸ä¸æåçä¸ä¸ªæ°æ§æ±å¼çè§£éå¨ãççå¦ä½å¨ä¸å° 40 è¡ä»£ç ä¹åï¼å®ç° Haskell è¯­ä¹çç²¾é«ï¼</p>
+<p>虽然惰性求值不能给我们带来直接的益处，但它背后的理论思想却可以启发另外的设计。如果你想真的了解惰性求值的原理，可以先看一下我写的一个惰性求值的解释器。看看如何在不到 40 行代码之内，实现 Haskell 语义的精髓：</p>
 
 <p><a href="https://github.com/yinwang0/gems/blob/master/interp-lazy.rkt">https://github.com/yinwang0/gems/blob/master/interp-lazy.rkt</a></p>
 
-<p>è¿æ®µä»£ç çå·¥ä½åçï¼æä»¥ååä¸é¨åæç« è®²è§£ã</p>
-
-
+<p>这段代码的工作原理，我以后再专门写文章讲解。</p>
+    </div>
+    
+    <script src="js/highlight.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script>
+        if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
+            document.body.classList.add('mobile');
+            var navbar = document.querySelector('nav.navbar');
+            if (navbar) { navbar.classList.remove('navbar-fixed-top'); }
+        }
+    </script>
 </body>
-
 </html>

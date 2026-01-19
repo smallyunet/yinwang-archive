@@ -1,60 +1,105 @@
+<!DOCTYPE html>
 <html>
 <head>
-
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link href="http://www.yinwang.org/main.css" rel="stylesheet" type="text/css">
-<link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
-<link rel="shortcut icon" href="http://www.yinwang.org/images/Yc.jpg">
-
-<title>ydiff - ç»æåçç¨åºæ¯è¾</title>
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <title>ydiff - 结构化的程序比较</title>
+    <link rel="stylesheet" href="css/highlight/xcode.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-tooltips.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/home.css"> <!-- Need home for navbar -->
+    <link rel="stylesheet" href="css/post.css">
+    <script src="js/jquery.min.js"></script>
+    <style>
+        /* Switcher Fixes */
+        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
+        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
+        .version-switcher a.current { font-weight: bold; color: #333; }
+        /* Inner override for posts */
+        .inner { margin-top: 80px; } 
+    </style>
 </head>
-ãã
 <body>
+    <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-bs">
+                    <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+                <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='aboutcmec_aboutcmec_01.jsp_20060213.html'>About</a></li><li><a href='aboutess_aboutess_01.jsp_20060213.html'>About</a></li><li><a href='aboutinfo_aboutinfo_01.jsp_20060106.html'>About</a></li><li><a href='tweet_20170605.html'>微勃 (Tweets)</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='homepage_20250719.html'>当然我在扯淡 (None)</a></li><li><a href='index.jsp_20060213.html'>中国中小企业竞争力工程 (None)</a></li><li><a href='index_20260110.html'>Surely I am Joking (None)</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Posts <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='posts_air-freshener-nightmare_20251129.html'>Surely I am Joking</a></li><li><a href='posts_american-english-problems_20251030.html'>Surely I am Joking</a></li><li><a href='posts_authority_20251221.html'>Surely I am Joking</a></li><li><a href='posts_cello-technique_20251102.html'>Surely I am Joking</a></li><li><a href='posts_continuation-course_20251206.html'>Surely I am Joking</a></li><li><a href='posts_cs-class2_20251105.html'>Surely I am Joking</a></li><li><a href='posts_cs-course-5_20251208.html'>Surely I am Joking</a></li><li><a href='posts_cs-video-course_20251101.html'>Surely I am Joking</a></li><li><a href='posts_cs3_20251102.html'>Surely I am Joking</a></li><li><a href='posts_cs4_20251102.html'>Surely I am Joking</a></li><li><a href='posts_cs5-completed_20251031.html'>Surely I am Joking</a></li><li><a href='posts_entry-level-class_20251102.html'>Surely I am Joking</a></li><li><a href='posts_learning-philosophy_20251211.html'>Surely I am Joking</a></li><li><a href='posts_oberon_20260113.html'>Surely I am Joking</a></li><li><a href='posts_reading-course_20251102.html'>Surely I am Joking</a></li><li><a href='posts_super-human-level-vision_20251104.html'>Surely I am Joking</a></li><li><a href='posts_tuition-for-covid_20251103.html'>Surely I am Joking</a></li><li><a href='posts_wisdom-of-intelligence_20251102.html'>Surely I am Joking</a></li><li><a href='posts_youth-cs-student_20251102.html'>Surely I am Joking</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='resources_d8-3404-d8-8424_20130614.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_base64mime.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_charset.py_20150506.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_encoders.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_errors.py_20150409.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_header.py_20140305.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_quoprimime.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_re.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_compile.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_constants.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_parse.py_20160822.html'>Untitled</a></li><li><a href='resources_diff1-diff2_20200728.html'>Untitled</a></li><li><a href='resources_mk1-mk2_20130627.html'>Untitled</a></li><li><a href='resources_nav1-nav2_20200728.html'>Untitled</a></li><li><a href='resources_paredit20-paredit23_20200728.html'>Untitled</a></li><li><a href='resources_pydiff1-pydiff2_20130711.html'>Untitled</a></li><li><a href='resources_simulator-mips-simulator-arm_20200728.html'>Untitled</a></li><li><a href='resources_typed-clojure1-typed-clojure2_20200728.html'>Untitled</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tags <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='tags_ai_20251103.html'>Surely I am Joking</a></li><li><a href='tags_education_20251031.html'>Surely I am Joking</a></li><li><a href='tags_english_20251101.html'>Surely I am Joking</a></li><li><a href='tags_health_20251102.html'>Surely I am Joking</a></li><li><a href='tags_life_20251129.html'>Surely I am Joking</a></li><li><a href='tags_lifestyle_20251101.html'>Surely I am Joking</a></li><li><a href='tags_philosophy_20251101.html'>Surely I am Joking</a></li><li><a href='tags_programming-language_20260113.html'>Surely I am Joking</a></li><li><a href='tags_travel_20251129.html'>Surely I am Joking</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Misc <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='.well-known_dnt-policy.txt_20251211.html'>Surely I am Joking</a></li><li><a href='_5C_20251205.html'>Surely I am Joking</a></li><li><a href='_5Cu003c_a_5Cu003e_5Cu003c_td_5Cu003e_5Cn_5Cu003ctd_5Cu003e_E7_BC_96_E7_A8_8B_5Cu003c_td_5Cu003e_5Cn_5Cu003c_tr_5Cu003e_5Cn_5Cu003ctr_5Cu003e_5Cn_5Cu003ctd_5Cu003e_5Cu003ca_20251204.html'>Surely I am Joking</a></li><li><a href='ads.txt_20251013.html'>Surely I am Joking</a></li><li><a href='afficheAction.do_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='apply_dcb.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='apply_twsqb.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='common_casetoyota.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='common_casexhx.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='common_courseBase_main.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='common_courseBase_tch_grzl.jsp_20060106.html'>Untitled</a></li><li><a href='contactus.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='datadownload.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='dljm.jsp_20060516.html'>竞争力工程</a></li><li><a href='fwjs.jsp_20060516.html'>竞争力工程</a></li><li><a href='hd_qgjx.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='laws_laws_01.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='lianxi.jsp_20060428.html'>竞争力工程</a></li><li><a href='more.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='neirong.jsp_20060516.html'>详细内容</a></li><li><a href='newsPublishAction.do_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='servicecenter_servicecenter_01.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='tongzhi.jsp_20060428.html'>竞争力工程</a></li><li><a href='tongzhi_tongzhi1.htm_20060428.html'>ÎÞ±êÌâÎÄµµ</a></li><li><a href='tongzhi_tongzhi2.htm_20060428.html'>ÎÞ±êÌâÎÄµµ</a></li><li><a href='units_gjfz.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='units_jstg.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='units_zgzx.jsp_20060213.html'>中国中小企业竞争力工程</a></li></ul></li></ul>
+            </div>
+        </div>
+    </nav>
 
-<h2>ydiff - ç»æåçç¨åºæ¯è¾</h2>
+    <div class="inner">
+        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2013_04_21_ydiff-_E7_BB_93_E6_9E_84_E5_8C_96_E7_9A_84_E7_A8_8B_E5_BA_8F_E6_AF_94_E8_BE_83_20130424.html" >2013-04-24</a> <a href="blog-cn_2013_04_21_ydiff-_E7_BB_93_E6_9E_84_E5_8C_96_E7_9A_84_E7_A8_8B_E5_BA_8F_E6_AF_94_E8_BE_83_20130725.html" class="current">2013-07-25</a></div>
+        <h2>ydiff - 结构化的程序比较</h2>
 
-<p><a href="https://github.com/yinwang0/ydiff">ydiff</a> æ¯æçä¸ä¸ªå¼æºé¡¹ç®ï¼ç¨ä»¥æ¢ç´¢ä¸ç§å¨æ°çç¨åºæ¯è¾ä»¥åçæ¬æ§å¶ç³»ç»ã
+<p><a href="https://github.com/yinwang0/ydiff">ydiff</a> 是我的一个开源项目，用以探索一种全新的程序比较以及版本控制系统。
 
-<p>ä¹è®¸ææ ¹æ¬ä¸åºè¯¥ç»å®èµ·åå«âydiffâï¼è®©äººæè§å®åªä¸è¿æ¯å¯¹ diff çå¾®å°æ¹è¿ãç¶èï¼ydiff è· diff æ¯ææ¬è´¨åºå«çãå®ä»¬çåºå«å¨äºï¼diff åªæ¯å¯¹ç¨åºè¿è¡åºäºâææ¬âçå¯¹æ¯ï¼å®æ ¹æ¬ä¸å¯¹ç¨åºè¿è¡ parseãè ydiff å«æå®æ´çéå¯¹ç¨åºè¯­è¨ç parserï¼å¨å¾å°äº AST ä¹åï¼æå¯¹ AST è¿è¡âç»æåçæ¯è¾âã
+<p>也许我根本不应该给它起名叫“ydiff”，让人感觉它只不过是对 diff 的微小改进。然而，ydiff 跟 diff 是有本质区别的。它们的区别在于，diff 只是对程序进行基于“文本”的对比，它根本不对程序进行 parse。而 ydiff 含有完整的针对程序语言的 parser，在得到了 AST 之后，才对 AST 进行“结构化的比较”。
 
-<p>è¿ç§ç»æåçç¨åºæ¯è¾ï¼ä¸ä½å¯ä»¥é¿åæä»¶éçâç©ºç½å­ç¬¦âå¼èµ·çè¤æµåºå«ï¼èä¸å¯ä»¥æ ¹æ®ç¨åºçç»æï¼è¿è¡æ´å ææä¹çå¯¹æ¯ãæ¯å¦ï¼ydiff ä¸ä¼è®¤ä¸ºå­ç¬¦ä¸² "1000" åæ°å­ 1000 çåºå«åªæ¯å¤äºä¸å¯¹å¼å·ãydiff å¨æ¯è¾å½æ°çæ¶åï¼é¦åå¯»æ¾åå­ç¸åçå½æ°ï¼èä¸åªæ¯å¯¹ç¸åä½ç½®çå½æ°è¿è¡æ è°çå¯¹æ¯ã
+<p>这种结构化的程序比较，不但可以避免文件里的“空白字符”引起的肤浅区别，而且可以根据程序的结构，进行更加有意义的对比。比如，ydiff 不会认为字符串 "1000" 和数字 1000 的区别只是多了一对引号。ydiff 在比较函数的时候，首先寻找名字相同的函数，而不只是对相同位置的函数进行无谓的对比。
 
-<p>ydiff å«æ C++, JavaScript å Lisp ç parserãè¿äº parserï¼åæ¬ç¨äºæ¯æè¿äº parser çåºä»£ç ï¼é½æ¯æèªå·±å®æçãydiff ä¸å«æä»»ä½ç¬¬ä¸æ¹ä»£ç ãydiff ç parser ææ¯ä¸ä¾èµäºä»»ä½ç¬¬ä¸æ¹å·¥å·ï¼æ¯å¦ ANTLR æè YACCï¼ã
+<p>ydiff 含有 C++, JavaScript 和 Lisp 的 parser。这些 parser，包括用于支持这些 parser 的库代码，都是我自己完成的。ydiff 不含有任何第三方代码。ydiff 的 parser 技术不依赖于任何第三方工具（比如 ANTLR 或者 YACC）。
 
 
-<h3>çé¢</h3>
+<h3>界面</h3>
 
-è·æ®é diff ç¨åºçè¾åºä¸ä¸æ ·ï¼ydiff çæç¾è§çå«æ JavaScript ç HTML æä»¶ï¼å¯ä»¥ç´æ¥ä½¿ç¨æµè§å¨æµè§ï¼å¹¶ä¸å¯ä»¥åµå¥å¶å®ç½é¡µï¼æ¯å¦åä¸é¢è¿æ ·ï¼
+跟普通 diff 程序的输出不一样，ydiff 生成美观的含有 JavaScript 的 HTML 文件，可以直接使用浏览器浏览，并且可以嵌入其它网页，比如像下面这样：
 
 <p><iframe src="http://www.yinwang.org/resources/mk1-mk2.html" width="96%" height="50%"></iframe>
 
-<br><a href="http://www.yinwang.org/resources/mk1-mk2.html">(åç¬æµè§)</a>
+<br><a href="http://www.yinwang.org/resources/mk1-mk2.html">(单独浏览)</a>
 
-<p>ä¸é¢ççé¢æå¦ä¸ç¹ç¹ï¼
+<p>上面的界面有如下特点：
 
 <ol>
-<li>çº¢è²è¡¨ç¤ºâå é¤âï¼ç»¿è²è¡¨ç¤ºâæå¥âï¼ç½è²è¡¨ç¤ºâç§»å¨âæèæ²¡æåå
-<li>å·¦å³çªå£åæ­¥æ»å¨
-<li>ç¹å»ç½è²æ¹æ¡ï¼å°±å¯ä»¥ä¾æ®æ¡éçåéè¿è¡å¯¹é½
-<li>ç¹å»ä¹åï¼å·¦å³çªå£æ ¹æ®å¯¹é½çåééæ°âè¦åâï¼åæ­¥æ»å¨
+<li>红色表示“删除”，绿色表示“插入”，白色表示“移动”或者没有变化
+<li>左右窗口同步滚动
+<li>点击白色方框，就可以依据框里的变量进行对齐
+<li>点击之后，左右窗口根据对齐的变量重新“耦合”，同步滚动
 </ol>
 
-<h3>ææ¯</h3>
+<h3>技术</h3>
 
-ydiff éé¢å«æä¸äºæ¯è¾ç¬ç¹çææ¯ã
+ydiff 里面含有一些比较独特的技术。
 
-<h4>å¼ºå¤§èç®åç parser combinator library</h4>
+<h4>强大而简单的 parser combinator library</h4>
 
-<p>ä¸è¬ç¼è¯å¨ç parser é½ä½¿ç¨å YACC å ANTLR ä¸æ ·ç parser generatorãè¿ç§æ¹æ³è½ç¶å¯è¡ï¼ä½æ¯å®æä¸ä¸ªå¾å¤§çé®é¢ï¼å°±æ¯ä½ éè¦ä½¿ç¨å¦å¤ä¸ç§è¯­è¨åå¦å¤ä¸ä¸ªå·¥å·ï¼è¿æ ·å°±å¤äºä¸å±âè¯­ä¹âãå½ä½ ç parser åºäºé®é¢çæ¶åï¼ä½ ä¸è½ä½¿ç¨å·²æçç¼ç¨å·¥å·è¿è¡è°è¯ï¼èåªè½ä¾é è¿ç§ parser å·¥å·ææä¾çä¿¡æ¯ãè¿å°±æ¯ä¸ºä»ä¹äººä»¬é½è§å¾ parser å¾é¾åãæä¸å®¶å« <a href="http://www.edg.com">EDG</a> çå¬å¸ï¼ä¸é¨éå® C++ ç parser ä»£ç ãä½ å¯ä»¥ç±æ­¤çåº parser çææ¯æ¯å¤ä¹çå¤æåæ··ä¹±ã
+<p>一般编译器的 parser 都使用像 YACC 和 ANTLR 一样的 parser generator。这种方法虽然可行，但是它有一个很大的问题，就是你需要使用另外一种语言和另外一个工具，这样就多了一层“语义”。当你的 parser 出了问题的时候，你不能使用已有的编程工具进行调试，而只能依靠这种 parser 工具所提供的信息。这就是为什么人们都觉得 parser 很难写。有一家叫 <a href="http://www.edg.com">EDG</a> 的公司，专门销售 C++ 的 parser 代码。你可以由此看出 parser 的技术是多么的复杂和混乱。
 
-<p>ç±äºè¿ä¸ªåå ï¼å¾å¤äººç parser é½æ¯èªå·±æåçãå¯æ¯æå parser ç¸å½çè´¹äºï¼èä¸ä¸æ¨¡ååãæä»¥å½æ°å¼è¯­è¨çç¤¾åºå°±åºç°äº <a href="http://www.haskell.org/haskellwiki/Parsec">Parsec</a> è¿æ ·çâparser combinator libraryâãå®çåçæ¯ï¼æ¯ä¸ä¸ª parser é½æ¯ä¸ä¸ªå½æ°ï¼å®æ¥åä¸ä¸ªå­ç¬¦ä¸²ï¼è¾åºä¸ç§ç¹å®ç AST ç»æãæ¯å¦ä½ å¯ä»¥ååºä¸ä¸ªå¾ç®åç parserï¼å®åªè½ä»å­ç¬¦ä¸²éæåä¸ä¸ªåéï¼æèä¸ä¸ªæ°å­ãç±äºå½æ°å¼è¯­è¨å¯ä»¥æå½æ°ä½ä¸ºæ°æ®ï¼è¿ç§å°ç parser å¯ä»¥è¢«ä¸äºå«å parser combinator çâé«é¶å½æ°âä½ä¸ºè¾å¥ï¼ç¶åæå®ä»¬âç»åâå¨ä¸èµ·ï¼å½¢ææ´å¤§ç parserãå½ææè¿äº parser ç»åå¨ä¸èµ·ï¼å®ä»¬å°±å¯ä»¥æ¥æåææ´ä¸ªç¨åºææ¬çå¨åï¼å°±åâç»åéåå¤§åç¥âä¸æ ·ã
+<p>由于这个原因，很多人的 parser 都是自己手写的。可是手写 parser 相当的费事，而且不模块化。所以函数式语言的社区就出现了 <a href="http://www.haskell.org/haskellwiki/Parsec">Parsec</a> 这样的“parser combinator library”。它的原理是，每一个 parser 都是一个函数，它接受一个字符串，输出一种特定的 AST 结构。比如你可以写出一个很简单的 parser，它只能从字符串里提取一个变量，或者一个数字。由于函数式语言可以把函数作为数据，这种小的 parser 可以被一些叫做 parser combinator 的“高阶函数”作为输入，然后把它们“组合”在一起，形成更大的 parser。当所有这些 parser 组合在一起，它们就可以拥有分析整个程序文本的威力，就像“组合金刚大力神”一样。
 
 <img src="images/devastator_tf2.jpg" width="50%">
 
-<p>æç parser åºå°±æ¯åå°äº Parsec çå¯åãç¶èæçåºå¨æç§ç¨åº¦ä¸æ¯ parsec è¿å¥½ç¨ãå®ä¸ä½æ´å ç®åçµæ´»ï¼èä¸è½å¤æ£æµå¹¶ä¸æ¥åâå·¦éå½âçä½ç½®ãè¿æ¯ Parsec æ²¡æçåè½ãå¦å¤ï¼æç parser åºéé¢å«æå¾æ¹ä¾¿çå®ï¼ä½¿å¾å parser å°±åå BNF èå¼ä¸æ ·ç®åï¼ä½å´åä¸éè¦ä½¿ç¨å YACC ä¸æ ·çéº»ç¦çå·¥å·ã
+<p>我的 parser 库就是受到了 Parsec 的启发。然而我的库在某种程度上比 parsec 还好用。它不但更加简单灵活，而且能够检测并且报告“左递归”的位置。这是 Parsec 没有的功能。另外，我的 parser 库里面含有很方便的宏，使得写 parser 就像写 BNF 范式一样简单，但却又不需要使用像 YACC 一样的麻烦的工具。
 
-<p>æ¯å¦ï¼C++ å½æ°ç parser æ¯è¿æ ·å®ä¹çï¼
+<p>比如，C++ 函数的 parser 是这样定义的：
 
 <pre>
 (::= $function-definition 'function
@@ -67,9 +112,9 @@ ydiff éé¢å«æä¸äºæ¯è¾ç¬ç¹çææ
 </pre>
 
 
-<p>å¨åé äºè¿ä¸ªåºä¹åï¼æå¨ä¸å¤©ä¹åååºäºä¸ä¸ª JavaScript ç parserãä¸¤å¤©ä¹åï¼å¨è¿ä¸ª JS parser åºç¡ä¸ï¼åååºäºä¸ä¸ª C++ ç parserãä¸¤å¤©ä¹åååº C++ ç parser å¯¹äºå¾å¤äººæ¥è¯´é½æ¯ä¸å¯æè®®çäºæï¼ä½ææ²¡ææè§è¿æä»ä¹é¾åº¦ãå¤§é¨åçäººåªä¸è¿é«ä¼°äºé®é¢çé¾åº¦ï¼ä¸ç¶å°±æ¯æé®é¢å¤æåäºã
+<p>在创造了这个库之后，我在一天之内写出了一个 JavaScript 的 parser。两天之后，在这个 JS parser 基础上，又写出了一个 C++ 的 parser。两天之内写出 C++ 的 parser 对于很多人来说都是不可思议的事情，但我没有感觉这有什么难度。大部分的人只不过高估了问题的难度，不然就是把问题复杂化了。
 
-<p>æåç C++ parser åªæ 600 è¡ä»£ç ï¼ä¸åæ¬ç©ºè¡ï¼ï¼è JS ç parser åªæ 470 è¡ä»£ç ãæä»¤äººæå¥çäºææ¯ï¼Lisp (S-expression) ç parser åªæ 11 è¡ä»£ç ï¼ä»¥è³äºæå¯ä»¥æå®å®æ´çè´´å¨è¿éï¼
+<p>最后的 C++ parser 只有 600 行代码（不包括空行），而 JS 的 parser 只有 470 行代码。最令人惊奇的事情是，Lisp (S-expression) 的 parser 只有 11 行代码，以至于我可以把它完整的贴在这里：
 
 <pre>
 (:: $open
@@ -86,16 +131,16 @@ ydiff éé¢å«æä¸äºæ¯è¾ç¬ç¹çææ
 </pre>
 
 
-<h4>ç²¾ç¡®çæ¢æµâä»£ç ç§»å¨â</h4>
+<h4>精确的探测“代码移动”</h4>
 
-<p>ä¸ç®¡ä½ å¨ä»»ä½ä½ç½®åªåäºä¸æ®µä»£ç å°å¦å¤ä¸ä¸ªå°æ¹ï¼ydiff é½è½åç¡®çæ¢æµå°è¿ä¸ªå¨ä½ãæ¯å¦å¨ä¸é¢çä»£ç éé¢ï¼ä½ ä¹è®¸åç°äºå½æ° <code>unify</code> çä¸»ä½è¢«ç§»å¨å°äºå¦ä¸ä¸ªå«å <code>unify-good</code> çå½æ°éé¢ãydiff è½å¤ç²¾ç¡®å°æ¾ç¤ºåºè¿ä¸ªäºå®ï¼
+<p>不管你在任何位置剪切了一段代码到另外一个地方，ydiff 都能准确的探测到这个动作。比如在上面的代码里面，你也许发现了函数 <code>unify</code> 的主体被移动到了另一个叫做 <code>unify-good</code> 的函数里面。ydiff 能够精确地显示出这个事实：
 
 <img src="images/unify-ydiff.png" width="95%">
 
 
-<p>è¿ç§å¯¹äºä»£ç ç§»å¨çæ£æµï¼å¯ä»¥è®©äººæ¾å°å¾é¿æ¶é´æ®µåå¯¹ä»£ç çä¸åä¿®æ¹ãä¸ºæ­¤æåäºä¸ä¸ªå®éªï¼æç¨ ydiff å¯¹æ¯äº <a href="https://developers.google.com/v8">V8</a> ç¼è¯å¨çä¸ä¸ªæä»¶ç¸è·ä¸¤å¹´çååï¼å¾å°äºç´è§å¯è¯»çç»æãå¦æä½ ç¨æ®éç diff æ¥å¯¹æ¯å®ä»¬ï¼ææä¸ä¼çåºå¾å¤æç¨çä¿¡æ¯ï¼å ä¸ºè¿ä¸ªæä»¶éçæäºå½æ°è¢«ååæäºå¥½å ä¸ªå°çâå¸®å©å½æ°âãydiff è½å¤åç¡®çæ¾å°è¿äºè¢«ååçä»£ç æå¨çä½ç½®ã
+<p>这种对于代码移动的检测，可以让人找到很长时间段内对代码的一切修改。为此我做了一个实验，我用 ydiff 对比了 <a href="https://developers.google.com/v8">V8</a> 编译器的一个文件相距两年的变化，得到了直观可读的结果。如果你用普通的 diff 来对比它们，恐怕不会看出很多有用的信息，因为这个文件里的有些函数被切分成了好几个小的“帮助函数”。ydiff 能够准确的找到这些被切分的代码所在的位置。
 
-æ¯å¦æè½»èæä¸¾ççå°ï¼<code>Shell::Initialize</code> è¿ä¸ªå½æ°è¢«ååæäºå¦ä¸ä¸äºå½æ°ï¼
+比如我轻而易举的看到，<code>Shell::Initialize</code> 这个函数被切分成了如下一些函数：
 
 <pre>
 Shell::Initialize
@@ -105,23 +150,21 @@ Shell::InstallUtilityScript
 </pre>
 
 
-<p>ä½ å¯ä»¥å¨ä»¥ä¸ç ydiff è¾åºä¸­ç´è§ççå°è¿ä¸ªäºå®ï¼æç´¢ <code>Shell::Initialize</code> ç¶åå°±å¯ä»¥ç¹å»æ¯ä¸è¡ï¼çå®ä»¬å°ä»ä¹å°æ¹å»äºï¼ï¼
+<p>你可以在以下的 ydiff 输出中直观的看到这个事实（搜索 <code>Shell::Initialize</code> 然后就可以点击每一行，看它们到什么地方去了）：
 
 <p><iframe src="http://www.yinwang.org/resources/d8-3404-d8-8424.html" width="96%" height="50%"></iframe>
-<br><a href="http://www.yinwang.org/resources/d8-3404-d8-8424.html">(åç¬æµè§)</a>
-
+<br><a href="http://www.yinwang.org/resources/d8-3404-d8-8424.html">(单独浏览)</a>
+    </div>
+    
+    <script src="js/highlight.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script>
+        if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
+            document.body.classList.add('mobile');
+            var navbar = document.querySelector('nav.navbar');
+            if (navbar) { navbar.classList.remove('navbar-fixed-top'); }
+        }
+    </script>
 </body>
-
-<p>è¿éæä¸ä¸ªå¯è½çæ¹è¿ä¹å¤ï¼å°±æ¯è®©è¿ç§ä»£ç ç§»å¨çç°è±¡è¢«æ´å ç´æ¥çæ¾ç¤ºåºæ¥ï¼èä¸éè¦ç¨æ·æ¨ä¸ªçç¹å»è¿äºä»£ç ã
-
-<h3>æªæ¥</h3>
-<p>ydiff åªæ¯ä¸ä¸ªå¼ç«¯ï¼æå¸æç±å®çå¯åï¼å½¢æåºä¸ç§å¨æ°çâçæ¬æ§å¶ç³»ç»âãè¿ç§ç³»ç»å°ä»æ¬è´¨ä¸è¶è¶ç°æçåºäºææ¬ççæ¬æ§å¶ç³»ç»ãå³äºè¿ç³»ç»çç»èï¼æå·²ç»å¨ä¸ç¯<a href="http://yinwang0.wordpress.com/2012/02/12/structural-version-control/">è±æåæ</a>ä¸­æåºæ¬çæè¿°ã
-
-
-<h3>æºä»£ç </h3>
-
-ydiff æ¯å®å¨å¼æºçé¡¹ç®ï¼å®å¯ä»¥ä»æç GitHub åè´¹è·å¾ã
-
-<p><a href="https://github.com/yinwang0/ydiff">https://github.com/yinwang0/ydiff</a>
-
 </html>

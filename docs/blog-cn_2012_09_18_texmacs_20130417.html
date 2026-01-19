@@ -1,44 +1,99 @@
+<!DOCTYPE html>
 <html>
 <head>
-
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link href="http://www.yinwang.org/main.css" rel="stylesheet" type="text/css">
-<link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
-<link rel="shortcut icon" href="http://www.yinwang.org/images/Yc.jpg">
-
-<title>TeXmacsï¼ä¸ä¸ªçæ­£âæè§å³æå¾âçæçç³»ç»</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <title>TeXmacs：一个真正“所见即所得”的排版系统</title>
+    <link rel="stylesheet" href="css/highlight/xcode.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-tooltips.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/home.css"> <!-- Need home for navbar -->
+    <link rel="stylesheet" href="css/post.css">
+    <script src="js/jquery.min.js"></script>
+    <style>
+        /* Switcher Fixes */
+        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
+        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
+        .version-switcher a.current { font-weight: bold; color: #333; }
+        /* Inner override for posts */
+        .inner { margin-top: 80px; } 
+    </style>
 </head>
-ãã
 <body>
+    <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-bs">
+                    <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+                <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='aboutcmec_aboutcmec_01.jsp_20060213.html'>About</a></li><li><a href='aboutess_aboutess_01.jsp_20060213.html'>About</a></li><li><a href='aboutinfo_aboutinfo_01.jsp_20060106.html'>About</a></li><li><a href='tweet_20170605.html'>微勃 (Tweets)</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='homepage_20250719.html'>当然我在扯淡 (None)</a></li><li><a href='index.jsp_20060213.html'>中国中小企业竞争力工程 (None)</a></li><li><a href='index_20260110.html'>Surely I am Joking (None)</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Posts <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='posts_air-freshener-nightmare_20251129.html'>Surely I am Joking</a></li><li><a href='posts_american-english-problems_20251030.html'>Surely I am Joking</a></li><li><a href='posts_authority_20251221.html'>Surely I am Joking</a></li><li><a href='posts_cello-technique_20251102.html'>Surely I am Joking</a></li><li><a href='posts_continuation-course_20251206.html'>Surely I am Joking</a></li><li><a href='posts_cs-class2_20251105.html'>Surely I am Joking</a></li><li><a href='posts_cs-course-5_20251208.html'>Surely I am Joking</a></li><li><a href='posts_cs-video-course_20251101.html'>Surely I am Joking</a></li><li><a href='posts_cs3_20251102.html'>Surely I am Joking</a></li><li><a href='posts_cs4_20251102.html'>Surely I am Joking</a></li><li><a href='posts_cs5-completed_20251031.html'>Surely I am Joking</a></li><li><a href='posts_entry-level-class_20251102.html'>Surely I am Joking</a></li><li><a href='posts_learning-philosophy_20251211.html'>Surely I am Joking</a></li><li><a href='posts_oberon_20260113.html'>Surely I am Joking</a></li><li><a href='posts_reading-course_20251102.html'>Surely I am Joking</a></li><li><a href='posts_super-human-level-vision_20251104.html'>Surely I am Joking</a></li><li><a href='posts_tuition-for-covid_20251103.html'>Surely I am Joking</a></li><li><a href='posts_wisdom-of-intelligence_20251102.html'>Surely I am Joking</a></li><li><a href='posts_youth-cs-student_20251102.html'>Surely I am Joking</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='resources_d8-3404-d8-8424_20130614.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_base64mime.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_charset.py_20150506.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_encoders.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_errors.py_20150409.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_header.py_20140305.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_quoprimime.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_re.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_compile.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_constants.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_parse.py_20160822.html'>Untitled</a></li><li><a href='resources_diff1-diff2_20200728.html'>Untitled</a></li><li><a href='resources_mk1-mk2_20130627.html'>Untitled</a></li><li><a href='resources_nav1-nav2_20200728.html'>Untitled</a></li><li><a href='resources_paredit20-paredit23_20200728.html'>Untitled</a></li><li><a href='resources_pydiff1-pydiff2_20130711.html'>Untitled</a></li><li><a href='resources_simulator-mips-simulator-arm_20200728.html'>Untitled</a></li><li><a href='resources_typed-clojure1-typed-clojure2_20200728.html'>Untitled</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tags <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='tags_ai_20251103.html'>Surely I am Joking</a></li><li><a href='tags_education_20251031.html'>Surely I am Joking</a></li><li><a href='tags_english_20251101.html'>Surely I am Joking</a></li><li><a href='tags_health_20251102.html'>Surely I am Joking</a></li><li><a href='tags_life_20251129.html'>Surely I am Joking</a></li><li><a href='tags_lifestyle_20251101.html'>Surely I am Joking</a></li><li><a href='tags_philosophy_20251101.html'>Surely I am Joking</a></li><li><a href='tags_programming-language_20260113.html'>Surely I am Joking</a></li><li><a href='tags_travel_20251129.html'>Surely I am Joking</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Misc <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='.well-known_dnt-policy.txt_20251211.html'>Surely I am Joking</a></li><li><a href='_5C_20251205.html'>Surely I am Joking</a></li><li><a href='_5Cu003c_a_5Cu003e_5Cu003c_td_5Cu003e_5Cn_5Cu003ctd_5Cu003e_E7_BC_96_E7_A8_8B_5Cu003c_td_5Cu003e_5Cn_5Cu003c_tr_5Cu003e_5Cn_5Cu003ctr_5Cu003e_5Cn_5Cu003ctd_5Cu003e_5Cu003ca_20251204.html'>Surely I am Joking</a></li><li><a href='ads.txt_20251013.html'>Surely I am Joking</a></li><li><a href='afficheAction.do_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='apply_dcb.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='apply_twsqb.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='common_casetoyota.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='common_casexhx.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='common_courseBase_main.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='common_courseBase_tch_grzl.jsp_20060106.html'>Untitled</a></li><li><a href='contactus.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='datadownload.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='dljm.jsp_20060516.html'>竞争力工程</a></li><li><a href='fwjs.jsp_20060516.html'>竞争力工程</a></li><li><a href='hd_qgjx.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='laws_laws_01.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='lianxi.jsp_20060428.html'>竞争力工程</a></li><li><a href='more.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='neirong.jsp_20060516.html'>详细内容</a></li><li><a href='newsPublishAction.do_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='servicecenter_servicecenter_01.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='tongzhi.jsp_20060428.html'>竞争力工程</a></li><li><a href='tongzhi_tongzhi1.htm_20060428.html'>ÎÞ±êÌâÎÄµµ</a></li><li><a href='tongzhi_tongzhi2.htm_20060428.html'>ÎÞ±êÌâÎÄµµ</a></li><li><a href='units_gjfz.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='units_jstg.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='units_zgzx.jsp_20060213.html'>中国中小企业竞争力工程</a></li></ul></li></ul>
+            </div>
+        </div>
+    </nav>
 
-<h2>TeXmacsï¼ä¸ä¸ªçæ­£âæè§å³æå¾âçæçç³»ç»</h2>
+    <div class="inner">
+        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2012_09_18_texmacs_20130417.html" class="current">2013-04-17</a> <a href="blog-cn_2012_09_18_texmacs_20140701.html" >2014-07-01</a> <a href="blog-cn_2012_09_18_texmacs_20140817.html" >2014-08-17</a> <a href="blog-cn_2012_09_18_texmacs_20161016.html" >2016-10-16</a> <a href="blog-cn_2012_09_18_texmacs_20170507.html" >2017-05-07</a> <a href="blog-cn_2012_09_18_texmacs_20170709.html" >2017-07-09</a> <a href="blog-cn_2012_09_18_texmacs_20171208.html" >2017-12-08</a> <a href="blog-cn_2012_09_18_texmacs_20171216.html" >2017-12-16</a> <a href="blog-cn_2012_09_18_texmacs_20200217.html" >2020-02-17</a> <a href="blog-cn_2012_09_18_texmacs_20240508.html" >2024-05-08</a></div>
+        <h2>TeXmacs：一个真正“所见即所得”的排版系统</h2>
 
 <p><img src="images/texmacs.png" width="95%"></p>
 
-<p>å¥½ä¹æ²¡ææ¨èè¿èªå·±åæ¬¢çè½¯ä»¶äºï¼ç°å¨æ¨èä¸æ¬¾æå¨ç¾å½åæ°å­¦ä½ä¸çç§å®¶æ³å®ï¼TeXmacsãæææä¸å¯è½è·ä»¥åé£ä¹æé²å¿åä¸ªé¿ç¯ç TeXmacs è¯´æææ¡£äºï¼ä¸è¿è¿ä¸è¥¿å¦æ­¤çç®åå¥½ç¨ï¼æä»¥åºæ¬ä¸ä¸ç¨æåä»ä¹ææ¡£äºãé´äºç¥éçäººå¾å°ï¼ä¸çè§£å®çäººå¾å¤ï¼è¿éåªæ¯å¸®å®æä¸ªå¹¿åï¼åä¸ä¸èå£ã</p>
+<p>好久没有推荐过自己喜欢的软件了，现在推荐一款我在美国做数学作业的私家法宝：TeXmacs。我恐怕不可能跟以前那么有闲心写个长篇的 TeXmacs 说明文档了，不过这东西如此的简单好用，所以基本上不用我写什么文档了。鉴于知道的人很少，不理解它的人很多，这里只是帮它打个广告，吊一下胃口。</p>
 
-<p>TeXmacs çä¸»è¦ç¹ç¹æ¯ï¼</p>
+<p>TeXmacs 的主要特点是：</p>
 
 <ul>
-<li><p>è· Lyx ç­ä¸åï¼å®ä¸æ¯ä¸ä¸ª TeX çâåç«¯âï¼èæ¯ä¸ä¸ªå®å¨ç¬ç«çï¼è¶è¶ TeX çç³»ç»ãTeXmacs æ¥æè· TeX ç¸åï¼çè³æ´å¥½çæçç¾è§ç¨åº¦ãè¿æ¯å ä¸ºå®éç¨è· TeX ä¸æ ·çæçç®æ³ï¼å¹¶ä¸ç¨ C++ éæ°å®ç°ãæ®è¯´åé¡µçç®æ³æ¯ TeX çè¿è¦å¥½äºã</p></li>
-<li><p>æ¥æè¶è¶ Word ï¼æèä»»ä½ä¸æ¬¾å­å¤çè½¯ä»¶ï¼çï¼çæ­£çâæè§å³æå¾â (WYSIWYG)ãWord æè°çâæè§å³æå¾âå¶å®æ¯åçãæè§å³æå¾çå«ä¹åºè¯¥æ¯ï¼å±å¹ä¸æ¾ç¤ºçåå®¹ï¼è·æå°ä¸æ¥çå®å¨ä¸æ ·ãå¯æ¯ Word è½åå°åï¼æå°ä¸ä¸ªææ¡£åºæ¥ä½ å°±åç°è·å±å¹ä¸æ¾ç¤ºçæå¾å¤§åºå«ï¼ä¸è¬æ¥è¯´å±å¹ä¸æ¾ç¤ºçè¦ç²ç³ä¸äºãä¸äº TeX çåç«¯ï¼æ¯å¦ Lyx, Scientific Workspace ç­ä¹æ¯ç±»ä¼¼çï¼å®ä»¬é½ä¸è½è¾¾å°çæ­£çæè§å³æå¾ã</p></li>
-<li><p>ç´æ¥å¯å¨å±å¹ææ¡£éç»å¾ãå®å¨å¯è§åçè¡¨æ ¼ï¼å¬å¼ç¼è¾ç¯å¢ãè¿äºé½æ¯æ¯ TeX æ¹ä¾¿é«æå¾å¤çæ¹å¼ãéè¦å½å¿çæ¯ï¼ç¨è¿ TeXmacs ä¸æ®µæ¶é´ä¹åï¼ä½ ä¼åç°åå° TeX çå¬å¼ç¼è¾æ¹å¼ç®ç´å°±ååå°åå§ç¤¾ä¼ã</p></li>
-<li><p>éå¸¸äººæ§åçæé®è®¾è®¡ãæ¯å¦ï¼å¨æ°å­¦å¬å¼ç¯å¢ä¸ï¼ä½ æä»»æä¸ä¸ªå­ç¬¦ï¼ç¶åå°±å¯ä»¥ç¨å¤æ¬¡ TAB é®ç¸ç»§éæ©âææç¸åâçå­ç¬¦ãä¸¾ä¸ªä¾å­ï¼å¦æä½ æ @ï¼ç¶ååæå ä¸ TABï¼å°±ä¼åç°è¿ä¸ªå­ç¬¦åæåç§åæ ·çååå½¢çå­ç¬¦ãå¦æä½ æ >ï¼åæ =ï¼å°±ä¼åºç°å¤§äºç­äºå·ï¼ä¹ååæ TABï¼å°±ä¼ç¸ç»§åºç°å¤§äºç­äºå·çåç§åä½ã</p></li>
-<li><p>å¨ç´è§çåæ¶ä¸å¤±å»å¯¹åºå±ç»æçæ§å¶ãæ¯å¦ï¼ï¼è§ä¸å¾ï¼çªå£å³ä¸è§çç¶ææ ï¼æ¾ç¤ºåºå½ååæ ä½ç½®çâä¸ä¸æâæ¯âproof eqnarry* (1,1) startâï¼è¿è¡¨ç¤ºçæ¯è¿æ¯å¨ä¸ä¸ª proof ç¯å¢éç eqnarry çåæ  (1,1) çå¼å§å¤ãå½ä½ ä½¿ç¨ Ctrl-Backspaceï¼æé è¿åæ çé£å±âç¯å¢âä¼è¢«å é¤ãæ¯å¦ï¼å¦æä½ ç°å¨çå­ä½æ¯æä½ï¼é£ä¹å¨ Ctrl-Backspace ä¹åï¼å­ä½å°±ç«å³è¿åææ­£ä½ã</p>
+<li><p>跟 Lyx 等不同，它不是一个 TeX 的“前端”，而是一个完全独立的，超越 TeX 的系统。TeXmacs 拥有跟 TeX 相同，甚至更好的排版美观程度。这是因为它采用跟 TeX 一样的排版算法，并且用 C++ 重新实现。据说分页的算法比 TeX 的还要好些。</p></li>
+<li><p>拥有超越 Word （或者任何一款字处理软件）的，真正的“所见即所得” (WYSIWYG)。Word 所谓的“所见即所得”其实是假的。所见即所得的含义应该是，屏幕上显示的内容，跟打印下来的完全一样。可是 Word 能做到吗？打印一个文档出来你就发现跟屏幕上显示的有很大区别，一般来说屏幕上显示的要粗糙一些。一些 TeX 的前端，比如 Lyx, Scientific Workspace 等也是类似的，它们都不能达到真正的所见即所得。</p></li>
+<li><p>直接可在屏幕文档里绘图。完全可视化的表格，公式编辑环境。这些都是比 TeX 方便高效很多的方式。需要当心的是，用过 TeXmacs 一段时间之后，你会发现回到 TeX 的公式编辑方式简直就像回到原始社会。</p></li>
+<li><p>非常人性化的按键设计。比如，在数学公式环境下，你按任意一个字符，然后就可以用多次 TAB 键相继选择“拓扑相同”的字符。举个例子，如果你按 @，然后再按几下 TAB，就会发现这个字符变成各种各样的圆圈形的字符。如果你按 >，再按 =，就会出现大于等于号，之后再按 TAB，就会相继出现大于等于号的各种变体。</p></li>
+<li><p>在直观的同时不失去对底层结构的控制。比如，（见下图）窗口右下角的状态栏，显示出当前光标位置的“上下文”是“proof eqnarry* (1,1) start”，这表示的是这是在一个 proof 环境里的 eqnarry 的坐标 (1,1) 的开始处。当你使用 Ctrl-Backspace，最靠近光标的那层“环境”会被删除。比如，如果你现在的字体是斜体，那么在 Ctrl-Backspace 之后，字体就立即还原成正体。</p>
 
 <p><img src="images/texmacs-context.png" width="90%"></p></li>
-<li><p>ç»æåçæµè§åè½ãæ¯å¦ï¼æ Ctrl-PgUp, Ctrl-PgDn å°±å¯ä»¥å¨âç¸åç±»åâçç»æéä¸ä¸è·³è½¬ãæ¯å¦ï¼å¦æä½ å¨å°èæ é¢éæè¿ä¸ªé®ï¼å°±å¯ä»¥è¿éçæµè§ææçå°èæ é¢ãå¦æä½ å¨æ°å­¦å¬å¼éæè¿ä¸ªé®ï¼å°±å¯ä»¥è¿éæµè§ææçæ°å­¦å¬å¼ã</p></li>
-<li><p>ä¸äº¤äºå¼ç¨åºæ¥å£ãæ¯æå¾å¤ç§è®¡ç®æºä»£æ°ç³»ç»ï¼åäº¤äºå¼è½¯ä»¶ï¼æ¯å¦ MAXIMAï¼Octaveï¼â¦â¦ è¿äºç³»ç»è¿åçæ°å­¦å¬å¼ä¼ç´æ¥è¢« TeXmacs æ¾ç¤ºä¸ºâTeX ææâãä½¿ç¨ Scheme ä½ä¸ºåµå¥å¼è¯­è¨ï¼å¹¶ä¸å¯ä»¥ä½¿ç¨å®æ¥æ©å±ç³»ç»ãè¿æ¯èµ· TeX çè¯­è¨æ¯éå¸¸å¤§çè¿æ­¥ã</p></li>
+<li><p>结构化的浏览功能。比如，按 Ctrl-PgUp, Ctrl-PgDn 就可以在“相同类型”的结构里上下跳转。比如，如果你在小节标题里按这个键，就可以迅速的浏览所有的小节标题。如果你在数学公式里按这个键，就可以迅速浏览所有的数学公式。</p></li>
+<li><p>与交互式程序接口。支持很多种计算机代数系统，和交互式软件，比如 MAXIMA，Octave，…… 这些系统返回的数学公式会直接被 TeXmacs 显示为“TeX 效果”。使用 Scheme 作为嵌入式语言，并且可以使用它来扩展系统。这比起 TeX 的语言是非常大的进步。</p></li>
 </ul>
 
 
-<p>ç®åç±äº TeX çåæ­å°ä½ï¼ä»¥åç±äº TeXmacs æ¯æ³å½äººåçï¼è¿ä¸ªç³»ç»å¨ç¾å½è¿ä¸æ¯å¾æµè¡ï¼å¾å¤äººé½æ²¡å¬è¯´è¿æè¿ç§ä¸è¥¿å­å¨ãå­¦æ¯åçå¾å¤äººç±äºåå°æç§éè¯¯ææ³çâæ´èâï¼é½ä¸çè§£è¿ç§å¾å½¢åç¼è¾è½¯ä»¶çä»·å¼ãå¸æä¸­å½äººæ°åæ³å½äººæ°ä¸æ ·åæ¥å±ä¸ï¼è¶è¶ç¾å½ã</p>
+<p>目前由于 TeX 的垄断地位，以及由于 TeXmacs 是法国人做的，这个系统在美国还不是很流行，很多人都没听说过有这种东西存在。学术圈的很多人由于受到某种错误思想的“洗脑”，都不理解这种图形化编辑软件的价值。希望中国人民和法国人民一样后来居上，超越美国。</p>
 
-<p>æ³è¦è¿éçææ¡ TeXmacs çåºæ¬ç¨æ³ï¼å¯ä»¥åèæç»å¶ç <a href="http://www.mindomo.com/view.htm?m=b207992c90c046bdbe4053cbdf88b5d5">TeXmacs æç»´å¯¼å¾</a>ï¼</p>
+<p>想要迅速的掌握 TeXmacs 的基本用法，可以参考我绘制的 <a href="http://www.mindomo.com/view.htm?m=b207992c90c046bdbe4053cbdf88b5d5">TeXmacs 思维导图</a>：</p>
 
 <p><a href="http://www.mindomo.com/view.htm?m=b207992c90c046bdbe4053cbdf88b5d5"><img src="images/texmacs-mindmap.png" width="90%"></a></p>
-
-
+    </div>
+    
+    <script src="js/highlight.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script>
+        if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
+            document.body.classList.add('mobile');
+            var navbar = document.querySelector('nav.navbar');
+            if (navbar) { navbar.classList.remove('navbar-fixed-top'); }
+        }
+    </script>
 </body>
-
 </html>

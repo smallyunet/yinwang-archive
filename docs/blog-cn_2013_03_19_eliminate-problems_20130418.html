@@ -1,63 +1,118 @@
+<!DOCTYPE html>
 <html>
 <head>
-
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link href="http://www.yinwang.org/main.css" rel="stylesheet" type="text/css">
-<link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
-<link rel="shortcut icon" href="http://www.yinwang.org/images/Yc.jpg">
-
-<title>âè§£å³é®é¢âä¸âæ¶ç­é®é¢â</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <title>“解决问题”与“消灭问题”</title>
+    <link rel="stylesheet" href="css/highlight/xcode.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-tooltips.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/home.css"> <!-- Need home for navbar -->
+    <link rel="stylesheet" href="css/post.css">
+    <script src="js/jquery.min.js"></script>
+    <style>
+        /* Switcher Fixes */
+        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
+        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
+        .version-switcher a.current { font-weight: bold; color: #333; }
+        /* Inner override for posts */
+        .inner { margin-top: 80px; } 
+    </style>
 </head>
-ãã
 <body>
+    <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-bs">
+                    <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+                <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='aboutcmec_aboutcmec_01.jsp_20060213.html'>About</a></li><li><a href='aboutess_aboutess_01.jsp_20060213.html'>About</a></li><li><a href='aboutinfo_aboutinfo_01.jsp_20060106.html'>About</a></li><li><a href='tweet_20170605.html'>微勃 (Tweets)</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='homepage_20250719.html'>当然我在扯淡 (None)</a></li><li><a href='index.jsp_20060213.html'>中国中小企业竞争力工程 (None)</a></li><li><a href='index_20260110.html'>Surely I am Joking (None)</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Posts <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='posts_air-freshener-nightmare_20251129.html'>Surely I am Joking</a></li><li><a href='posts_american-english-problems_20251030.html'>Surely I am Joking</a></li><li><a href='posts_authority_20251221.html'>Surely I am Joking</a></li><li><a href='posts_cello-technique_20251102.html'>Surely I am Joking</a></li><li><a href='posts_continuation-course_20251206.html'>Surely I am Joking</a></li><li><a href='posts_cs-class2_20251105.html'>Surely I am Joking</a></li><li><a href='posts_cs-course-5_20251208.html'>Surely I am Joking</a></li><li><a href='posts_cs-video-course_20251101.html'>Surely I am Joking</a></li><li><a href='posts_cs3_20251102.html'>Surely I am Joking</a></li><li><a href='posts_cs4_20251102.html'>Surely I am Joking</a></li><li><a href='posts_cs5-completed_20251031.html'>Surely I am Joking</a></li><li><a href='posts_entry-level-class_20251102.html'>Surely I am Joking</a></li><li><a href='posts_learning-philosophy_20251211.html'>Surely I am Joking</a></li><li><a href='posts_oberon_20260113.html'>Surely I am Joking</a></li><li><a href='posts_reading-course_20251102.html'>Surely I am Joking</a></li><li><a href='posts_super-human-level-vision_20251104.html'>Surely I am Joking</a></li><li><a href='posts_tuition-for-covid_20251103.html'>Surely I am Joking</a></li><li><a href='posts_wisdom-of-intelligence_20251102.html'>Surely I am Joking</a></li><li><a href='posts_youth-cs-student_20251102.html'>Surely I am Joking</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='resources_d8-3404-d8-8424_20130614.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_base64mime.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_charset.py_20150506.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_encoders.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_errors.py_20150409.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_header.py_20140305.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_quoprimime.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_re.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_compile.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_constants.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_parse.py_20160822.html'>Untitled</a></li><li><a href='resources_diff1-diff2_20200728.html'>Untitled</a></li><li><a href='resources_mk1-mk2_20130627.html'>Untitled</a></li><li><a href='resources_nav1-nav2_20200728.html'>Untitled</a></li><li><a href='resources_paredit20-paredit23_20200728.html'>Untitled</a></li><li><a href='resources_pydiff1-pydiff2_20130711.html'>Untitled</a></li><li><a href='resources_simulator-mips-simulator-arm_20200728.html'>Untitled</a></li><li><a href='resources_typed-clojure1-typed-clojure2_20200728.html'>Untitled</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tags <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='tags_ai_20251103.html'>Surely I am Joking</a></li><li><a href='tags_education_20251031.html'>Surely I am Joking</a></li><li><a href='tags_english_20251101.html'>Surely I am Joking</a></li><li><a href='tags_health_20251102.html'>Surely I am Joking</a></li><li><a href='tags_life_20251129.html'>Surely I am Joking</a></li><li><a href='tags_lifestyle_20251101.html'>Surely I am Joking</a></li><li><a href='tags_philosophy_20251101.html'>Surely I am Joking</a></li><li><a href='tags_programming-language_20260113.html'>Surely I am Joking</a></li><li><a href='tags_travel_20251129.html'>Surely I am Joking</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Misc <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='.well-known_dnt-policy.txt_20251211.html'>Surely I am Joking</a></li><li><a href='_5C_20251205.html'>Surely I am Joking</a></li><li><a href='_5Cu003c_a_5Cu003e_5Cu003c_td_5Cu003e_5Cn_5Cu003ctd_5Cu003e_E7_BC_96_E7_A8_8B_5Cu003c_td_5Cu003e_5Cn_5Cu003c_tr_5Cu003e_5Cn_5Cu003ctr_5Cu003e_5Cn_5Cu003ctd_5Cu003e_5Cu003ca_20251204.html'>Surely I am Joking</a></li><li><a href='ads.txt_20251013.html'>Surely I am Joking</a></li><li><a href='afficheAction.do_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='apply_dcb.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='apply_twsqb.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='common_casetoyota.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='common_casexhx.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='common_courseBase_main.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='common_courseBase_tch_grzl.jsp_20060106.html'>Untitled</a></li><li><a href='contactus.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='datadownload.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='dljm.jsp_20060516.html'>竞争力工程</a></li><li><a href='fwjs.jsp_20060516.html'>竞争力工程</a></li><li><a href='hd_qgjx.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='laws_laws_01.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='lianxi.jsp_20060428.html'>竞争力工程</a></li><li><a href='more.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='neirong.jsp_20060516.html'>详细内容</a></li><li><a href='newsPublishAction.do_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='servicecenter_servicecenter_01.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='tongzhi.jsp_20060428.html'>竞争力工程</a></li><li><a href='tongzhi_tongzhi1.htm_20060428.html'>ÎÞ±êÌâÎÄµµ</a></li><li><a href='tongzhi_tongzhi2.htm_20060428.html'>ÎÞ±êÌâÎÄµµ</a></li><li><a href='units_gjfz.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='units_jstg.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='units_zgzx.jsp_20060213.html'>中国中小企业竞争力工程</a></li></ul></li></ul>
+            </div>
+        </div>
+    </nav>
 
-<h2>âè§£å³é®é¢âä¸âæ¶ç­é®é¢â</h2>
+    <div class="inner">
+        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2013_03_19_eliminate-problems_20130418.html" class="current">2013-04-18</a> <a href="blog-cn_2013_03_19_eliminate-problems_20140701.html" >2014-07-01</a> <a href="blog-cn_2013_03_19_eliminate-problems_20141020.html" >2014-10-20</a> <a href="blog-cn_2013_03_19_eliminate-problems_20141226.html" >2014-12-26</a> <a href="blog-cn_2013_03_19_eliminate-problems_20150127.html" >2015-01-27</a> <a href="blog-cn_2013_03_19_eliminate-problems_20161011.html" >2016-10-11</a> <a href="blog-cn_2013_03_19_eliminate-problems_20170506.html" >2017-05-06</a> <a href="blog-cn_2013_03_19_eliminate-problems_20170608.html" >2017-06-08</a> <a href="blog-cn_2013_03_19_eliminate-problems_20171108.html" >2017-11-08</a> <a href="blog-cn_2013_03_19_eliminate-problems_20171216.html" >2017-12-16</a> <a href="blog-cn_2013_03_19_eliminate-problems_20191120.html" >2019-11-20</a> <a href="blog-cn_2013_03_19_eliminate-problems_20200219.html" >2020-02-19</a> <a href="blog-cn_2013_03_19_eliminate-problems_20240416.html" >2024-04-16</a></div>
+        <h2>“解决问题”与“消灭问题”</h2>
 
-<p>ä¸ç´ä»¥æ¥ï¼äººä»¬é½éè§âè§£å³é®é¢âçè½åï¼å´å¿½è§äºå¦ä¸ç§éè¦çè½åï¼âæ¶ç­é®é¢âçè½åãåç§åæ ·çç«èµï¼åæ°åæåï¼è®©å¾å¤äººä»å°å°±çé¢çè®¤ä¸ºï¼è½âè§£å³é®é¢âçäººï¼å°±æ¯æåå®³çäººãæ¿å°ä¸ä¸ªé®é¢å°±åå¤´æ±è§£ï¼å¾å°èèè¿é®é¢å°åºæä»ä¹æä¹ãè¿ç§åæ¿çæç»´æ¹å¼ï¼ä¸ä»å­å¨äºä½çº§çâåºè¯âåâè§£é¢âè¿ç¨ï¼èä¸èå»¶å°äºå¾å¤è°æ·±çç ç©¶é¢åã</p>
+<p>一直以来，人们都重视“解决问题”的能力，却忽视了另一种重要的能力：“消灭问题”的能力。各种各样的竞赛，分数和排名，让很多人从小就片面的认为，能“解决问题”的人，就是最厉害的人。拿到一个问题就埋头求解，很少考虑这问题到底有什么意义。这种呆板的思维方式，不仅存在于低级的“应试”和“解题”过程，而且蔓延到了很多艰深的研究领域。</p>
 
-<p>å¦æä½ ä»ç»è§å¯å°±ä¼åç°ï¼å¾å¤âé¾é¢âï¼å¶å®æ¯âäººé âåºæ¥çï¼èä¸æ¯âå¿ç¶âçãå®ä»¬çå­å¨ï¼å¾å¾æ¯ç±äºä¸äºæ©æçâè®¾è®¡éè¯¯âãäººé çä¸è¥¿éé¢å¾å¾æè®¾è®¡ä¸çéè¯¯ï¼å¦æä½ æè¿äºä¸è¥¿çææ¯ä¸å¯æ¹åçä¸è¥¿ï¼é£ä½ å°±ä¼éå°å¾å¤ä¸å¿è¦çé®é¢ãæä¸ªæ¯æ¹ï¼å¦æå½åè½®å­è¢«è®¾è®¡ææ¹å½¢çï¼èæ²¡æäººè´¨çè¿æ ·åçâå¿è¦æ§âï¼é£ä¹ä¹è®¸äººç±»æ©å°±å ä¸ºâè½æºé®é¢âèç­ç»äºãæç¹å¤¸å¼ ï¼ä½å®å´å½¢è±¡çè¯´æäºï¼ä¸ºä»ä¹éè¯¯çè®¾è®¡ä¼å¯¼è´ä¸å¿è¦çé¾é¢ã</p>
+<p>如果你仔细观察就会发现，很多“难题”，其实是“人造”出来的，而不是“必然”的。它们的存在，往往是由于一些早期的“设计错误”。人造的东西里面往往有设计上的错误，如果你把这些东西看成是不可改变的东西，那你就会遇到很多不必要的问题。打个比方，如果当初轮子被设计成方形的，而没有人质疑这样做的“必要性”，那么也许人类早就因为“能源问题”而灭绝了。有点夸张，但它却形象的说明了，为什么错误的设计会导致不必要的难题。</p>
 
-<p>å¶å®å¦ææä»¬è½¬æ¢ä¸ä¸æè·¯ï¼æèæ¹åä¸ä¸âè®¾è®¡âï¼å¾å¤é®é¢å°±å¯ä»¥ä¸è§£èªæ¶ãè¿å°±æ¯ææè°çâæ¶ç­é®é¢âçè½åãè¿ç§âæ¶ç­é®é¢âçè½åï¼è¡¨é¢ä¸å®¹æå¶å®é¾ï¼æç¹åèç»æ¥è½¬å¼¯ï¼æä»¥ç»å¸¸åå°äººä»¬çå¿½è§ãçå°ä¸ä¸ªé®é¢è½»èæä¸¾çæ¶å¤±äºï¼æ»æäººæ»¡ä¸å¨ä¹çè¯´ï¼âè¿ä¸ªå®¹æãæä¹è½åå°ãâ å¯é®é¢å°±å¨äºï¼ä½ æä¹æ²¡æ³å°ï¼è¯´è¿ç§è¯çäººï¼å®å¨æ²¡ææè¯å°ï¼ä»ä»¬çæç»´éé¢å¶å®ç¼ºå°äºéå¸¸éè¦çä¸è¥¿ãç±äºåæ¬¢ç«èèªå·±çâå¤´èæ´åâï¼ä»ä»¬ç»å¸¸è§£å³ï¼çè³å¶é ï¼éè¯¯çé®é¢ã</p>
+<p>其实如果我们转换一下思路，或者改变一下“设计”，很多问题就可以不解自消。这就是我所谓的“消灭问题”的能力。这种“消灭问题”的能力，表面上容易其实难，有点像脑经急转弯，所以经常受到人们的忽视。看到一个问题轻而易举的消失了，总有人满不在乎的说：“这个容易。我也能做到。” 可问题就在于，你怎么没想到？说这种话的人，完全没有意识到，他们的思维里面其实缺少了非常重要的东西。由于喜欢炫耀自己的“头脑暴力”，他们经常解决（甚至制造）错误的问题。</p>
 
-<p>æä»¥ï¼å¨è§£å³é®é¢ä¹åï¼æä»¬åºè¯¥åé®èªå·±ä¸ä¸ªé®é¢ï¼</p>
+<p>所以，在解决问题之前，我们应该先问自己三个问题：</p>
 
 <ol>
-<li>è¿é®é¢æ¯å¦ççâå­å¨âï¼</li>
+<li>这问题是否真的“存在”？</li>
 </ol>
 
 
-<p>ä¹è®¸ä½ å·²ç»çåºæ¥äºï¼å¾å¤é®é¢ï¼å³ä½¿ä¼äººé½è®¤ä¸ºå®å­å¨ï¼å¶å®ä¹å¯è½æ¯ä¸å­å¨çãå¨è¿ä¸ç¹ä¸ä¸è½ç¸ä¿¡ä»»ä½äººæèæºæï¼ä¸ç®¡ä»æå¤ä¹çâæå¨âãå°±åå°é©¬è¿æ²³çéçï¼åªæé èªå·±çå®è·µã</p>
+<p>也许你已经看出来了，很多问题，即使众人都认为它存在，其实也可能是不存在的。在这一点上不能相信任何人或者机构，不管他有多么的“权威”。就像小马过河的道理，只有靠自己的实践。</p>
 
 <ol>
-<li>å¦æè§£å³äºè¿ä¸ªé®é¢ï¼ä¼ç»æåä»äººå¸¦æ¥ä»ä¹å®éçå¥½å¤ï¼</li>
+<li>如果解决了这个问题，会给我和他人带来什么实际的好处？</li>
 </ol>
 
 
-<p>ä¸çä¸ä¸å­å¨âæ°¸è¿âï¼ä¹ä¸å­å¨âæ ç©·âãå¦æä¸ä¸ªâç§å­¦ç®å½å®¶âè±100å¹´æè½ç®åºæçæªæ¥ï¼é£æè¿ä¸å¦åç­âæªæ¥âçå°æ¥ãææçäººï¼é½ä¸è¿æ¯æ¥è¿ä¸çä¸åç­æçæè¡ãæä»¥ï¼é®é¢çç­æ¡ï¼åºè¯¥è½å¨åççæ¶é´ä¹åç»äººå¸¦æ¥å®éçå¥½å¤ã</p>
+<p>世界上不存在“永远”，也不存在“无穷”。如果一个“科学算命家”花100年才能算出我的未来，那我还不如坐等“未来”的到来。所有的人，都不过是来这世界上做短暂的旅行。所以，问题的答案，应该能在合理的时间之内给人带来实际的好处。</p>
 
 <ol>
-<li>è¿é®é¢æ¯å¦å¯ä»¥å¨ç®åçæ¹åæäºâè®¾è®¡âæèâæè·¯âä¹åï¼ä¸å¤å­å¨ï¼</li>
+<li>这问题是否可以在简单的改变某些“设计”或者“思路”之后，不复存在？</li>
 </ol>
 
 
-<p>å¾å¤é®é¢çâå­å¨âï¼å¶å®æ¯å ä¸ºäººä»¬çâæç»´å®å¿âãä»ä»¬çä¸å°é®é¢çâæ ¹æºâåå æå³ç³»ï¼èæ¯ç»å¸¸å¨ä¸æè¯éåå®æç§âåå³æ¡ä»¶âï¼Aï¼çå­å¨ï¼ç¶ååå®ä¸ç§»çç¸ä¿¡ç±æ­¤âå¯¼è´âçé®é¢ï¼Bï¼çå­å¨ï¼å¦ä¸å¾ï¼</p>
+<p>很多问题的“存在”，其实是因为人们的“思维定势”。他们看不到问题的“根源”和因果关系，而是经常在下意识里假定某种“先决条件”（A）的存在，然后坚定不移的相信由此“导致”的问题（B）的存在，如下图：</p>
 
 <pre><code>        A -----&gt; B
 </code></pre>
 
-<p>ç¶åï¼ä»ä»¬å¼å§åå¤´åèçè§£å³ Bï¼å®å¨å¿è®°äºè´¨ç A å­å¨çå¿è¦æ§ãä»ä»¬ä»æ¥æ²¡ææ³è¿ï¼å¦ä½æ¶é¤ Aï¼æèåæ­ A ä¸ B ä¹é´çå³ç³»ãä»ä»¬æ²¡æåç°ï¼ä¸æ¦è¿åæ A ä¸å¤å­å¨ï¼é®é¢ B å°±å¯ä»¥ä¸è§£èªæ¶ã</p>
+<p>然后，他们开始呆头呆脑的解决 B，完全忘记了质疑 A 存在的必要性。他们从来没有想过，如何消除 A，或者切断 A 与 B 之间的关系。他们没有发现，一旦这前提 A 不复存在，问题 B 就可以不解自消。</p>
 
-<p>å¯¹è¿ä¸ç¹ï¼ææ³èµ·ä¸ä¸ªæè¶£çæäºãæäººå¨é¥­æ¡ä¸ç»å¤§å®¶åºäºä¸éâé¾é¢âï¼è¦ä»ä»¬æèªå·±çå­éçé¸¡èç«èµ·æ¥ï¼æååªæä¸ä¸ªäººåå°äºãè¿ä¸ªäººæèå£³æç ´äºãææå¶ä»äººé½æ²¡ææ³å°è¿ä¸ªåæ³ï¼å´è¯´ä»âç¯è§âãå¯æ¯åºè¯¥æ£è®¨çå¶å®åºè¯¥æ¯ä»ä»¬èªå·±ï¼å ä¸ºåºé¢çäººæ ¹æ¬æ²¡æè¯´ä¸è½æç ´èå£³ï¼ä»ä»¬å´å¯¹æ­¤ååºäºéè¯¯çåè®¾ã</p>
+<p>对这一点，我想起一个有趣的故事。有人在饭桌上给大家出了一道“难题”，要他们把自己盘子里的鸡蛋立起来，最后只有一个人做到了。这个人把蛋壳打破了。所有其他人都没有想到这个做法，却说他“犯规”。可是应该检讨的其实应该是他们自己，因为出题的人根本没有说不能打破蛋壳，他们却对此做出了错误的假设。</p>
 
-<p>æç»å¸¸åç°è®¡ç®æºç§å­¦çå­å¨è¿æ ·çé®é¢ãç ç©¶äºå åå¹´ï¼ç»æå°æåæåç°ï¼è¾è¾è¦è¦è§£å³çé®é¢ï¼å¶å®åå«äºéè¯¯çåè®¾ãå¦ææ¢ä¸ä¸ªè§åº¦æ¥çï¼æèç¨å¾®æ¹ä¸æ¹è®¾è®¡ï¼è¿é®é¢å°±åºæ¬ä¸å­å¨äºãå¶ä¸­ä¸ä¸ªä¾å­ï¼å°±æ¯ç¼è¯å¨éé¢çâè¯­æ³åæâï¼parsingï¼é®é¢ã</p>
+<p>我经常发现计算机科学界存在这样的问题。研究了几十年，结果到最后才发现，辛辛苦苦解决的问题，其实包含了错误的假设。如果换一个角度来看，或者稍微改一改设计，这问题就基本不存在了。其中一个例子，就是编译器里面的“语法分析”（parsing）问题。</p>
 
-<p>è¯­æ³åææä¸ºä¸ä¸ªé®é¢çåå ï¼å°±å¨äºå¾å¤äººéè¯¯çä»¥ä¸ºç¨åºè¯­è¨åºè¯¥æå¤æçè¯­æ³ãæ­£æ¯è¿äºå¤æçè¯­æ³ï¼é æäºè¿ä¸ªé®é¢ç ç©¶äºå¾å¤å¹´ï¼ä»ç¶æ²¡æä¸ä¸ªå¾å¥½çè§£å³æ¹æ¡ãå¯æ¯ä¸æ¦è¯­æ³è®¾è®¡è¢«ç®åï¼æ¯å¦å Lisp é£æ ·ï¼ï¼è¯­æ³åæå°±åæä¸ä¸ªéå¸¸å®¹æçé®é¢ãå®éä¸è®¡ç®æºç³»ç»ï¼æ¯å¦ Unixï¼éçå¾å¤é®é¢é½æ¯ç±æ­¤å¼åçï¼æ³è¦å©ç¨å­ç¬¦ä¸²æ¥è¿è¡æ°æ®äº¤æ¢ï¼å´åè®¾è®¡äºä¸äºéå¸¸ä¸æ¹ä¾¿çâæ°æ®æ ¼å¼âãç®åçè¯­æ³è®¾è®¡ï¼ä¼è®©è¿äºé®é¢ä¸å¹¶æ¶å¤±æãå³äºè¿ä¸ªé®é¢ï¼æä¸æ³éå¤åæï¼ç»èè¯·è§å¦ä¸ç¯åæã<a href="http://www.yinwang.org/blog-cn/2013/03/08/on-syntax">è°è¯­æ³</a>)ãã</p>
+<p>语法分析成为一个问题的原因，就在于很多人错误的以为程序语言应该有复杂的语法。正是这些复杂的语法，造成了这个问题研究了很多年，仍然没有一个很好的解决方案。可是一旦语法设计被简化（比如像 Lisp 那样），语法分析就变成一个非常容易的问题。实际上计算机系统（比如 Unix）里的很多问题都是由此引发的，想要利用字符串来进行数据交换，却又设计了一些非常不方便的“数据格式”。简单的语法设计，会让这些问题一并消失掉。关于这个问题，我不想重复发文，细节请见另一篇博文《<a href="http://www.yinwang.org/blog-cn/2013/03/08/on-syntax">谈语法</a>)》。</p>
 
-<p>ç±å æ¯å¦è¯´âæ³è±¡åæ¯ç¥è¯æ´éè¦âï¼ä¹è®¸å°±æ¯è¿ä¸ªéçãæ²¡ææ³è±¡åçäººï¼ç»å¸¸é»çè§å°ï¼èµ°æ­»è¡åï¼å¿è®°äºèªå·±å¶å®è¿æå¦å¤çè·¯å¯èµ°ã</p>
+<p>爱因斯坦说“想象力比知识更重要”，也许就是这个道理。没有想象力的人，经常钻牛角尖，走死胡同，忘记了自己其实还有另外的路可走。</p>
 
-<p>ï¼åè®°ï¼å¨åæéé¢æä¸¾äºâP=NP?âé®é¢ä½ä¸ºâæ¶ç­é®é¢âçä¾å­ãä½æ¯ä»ç»ä¸æ³ï¼å¶å®å®ä¸æ¯ä¸ä¸ªå¥½çä¾å­ãè¦âæ¶ç­âçé®é¢éè¦é¦åå­å¨ï¼å¹¶ä¸æå¿è¦æ¶ç­ãâæ¶ç­é®é¢âå¹¶ä¸æå³çåè¯´ä¸åï¼ç¸åï¼å®å¯è½åå«å·¨å¤§çå·¥ä½éãâP=NP?âä¸ç¬¦åâè¢«æ¶ç­é®é¢âçèç´ï¼å ä¸ºå®å¶å®åºæ¬ä¸æ¯ä¸ä¸ªé®é¢ï¼æä»¥è¿æ¶ç­çå¿è¦é½æ²¡æãæä¼æ´çä¹ååå¦å¤ä¸ç¯åæï¼ä¸é¨è®¨è®ºâP=NP?âçé®é¢ãï¼</p>
-
-
+<p>（后记：在原文里面我举了“P=NP?”问题作为“消灭问题”的例子。但是仔细一想，其实它不是一个好的例子。要“消灭”的问题需要首先存在，并且有必要消灭。“消灭问题”并不意味着光说不做，相反，它可能包含巨大的工作量。“P=NP?”不符合“被消灭问题”的范畴，因为它其实基本不是一个问题，所以连消灭的必要都没有。我会整理之后发另外一篇博文，专门讨论“P=NP?”的问题。）</p>
+    </div>
+    
+    <script src="js/highlight.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script>
+        if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
+            document.body.classList.add('mobile');
+            var navbar = document.querySelector('nav.navbar');
+            if (navbar) { navbar.classList.remove('navbar-fixed-top'); }
+        }
+    </script>
 </body>
-
 </html>

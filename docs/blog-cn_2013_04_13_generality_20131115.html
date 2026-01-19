@@ -1,68 +1,111 @@
+<!DOCTYPE html>
 <html>
 <head>
-
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link href="http://www.yinwang.org/main.css" rel="stylesheet" type="text/css">
-<link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
-<link rel="shortcut icon" href="http://www.yinwang.org/images/Yc.jpg">
-
-<title>è°ç¨åºçâéç¨æ§â</title>
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-45586344-1', 'yinwang.org');
-  ga('send', 'pageview');
-
-</script>
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <title>谈程序的“通用性”</title>
+    <link rel="stylesheet" href="css/highlight/xcode.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-tooltips.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/home.css"> <!-- Need home for navbar -->
+    <link rel="stylesheet" href="css/post.css">
+    <script src="js/jquery.min.js"></script>
+    <style>
+        /* Switcher Fixes */
+        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
+        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
+        .version-switcher a.current { font-weight: bold; color: #333; }
+        /* Inner override for posts */
+        .inner { margin-top: 80px; } 
+    </style>
 </head>
-ãã
 <body>
+    <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-bs">
+                    <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+                <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='aboutcmec_aboutcmec_01.jsp_20060213.html'>About</a></li><li><a href='aboutess_aboutess_01.jsp_20060213.html'>About</a></li><li><a href='aboutinfo_aboutinfo_01.jsp_20060106.html'>About</a></li><li><a href='tweet_20170605.html'>微勃 (Tweets)</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='homepage_20250719.html'>当然我在扯淡 (None)</a></li><li><a href='index.jsp_20060213.html'>中国中小企业竞争力工程 (None)</a></li><li><a href='index_20260110.html'>Surely I am Joking (None)</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Posts <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='posts_air-freshener-nightmare_20251129.html'>Surely I am Joking</a></li><li><a href='posts_american-english-problems_20251030.html'>Surely I am Joking</a></li><li><a href='posts_authority_20251221.html'>Surely I am Joking</a></li><li><a href='posts_cello-technique_20251102.html'>Surely I am Joking</a></li><li><a href='posts_continuation-course_20251206.html'>Surely I am Joking</a></li><li><a href='posts_cs-class2_20251105.html'>Surely I am Joking</a></li><li><a href='posts_cs-course-5_20251208.html'>Surely I am Joking</a></li><li><a href='posts_cs-video-course_20251101.html'>Surely I am Joking</a></li><li><a href='posts_cs3_20251102.html'>Surely I am Joking</a></li><li><a href='posts_cs4_20251102.html'>Surely I am Joking</a></li><li><a href='posts_cs5-completed_20251031.html'>Surely I am Joking</a></li><li><a href='posts_entry-level-class_20251102.html'>Surely I am Joking</a></li><li><a href='posts_learning-philosophy_20251211.html'>Surely I am Joking</a></li><li><a href='posts_oberon_20260113.html'>Surely I am Joking</a></li><li><a href='posts_reading-course_20251102.html'>Surely I am Joking</a></li><li><a href='posts_super-human-level-vision_20251104.html'>Surely I am Joking</a></li><li><a href='posts_tuition-for-covid_20251103.html'>Surely I am Joking</a></li><li><a href='posts_wisdom-of-intelligence_20251102.html'>Surely I am Joking</a></li><li><a href='posts_youth-cs-student_20251102.html'>Surely I am Joking</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='resources_d8-3404-d8-8424_20130614.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_base64mime.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_charset.py_20150506.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_encoders.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_errors.py_20150409.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_header.py_20140305.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_quoprimime.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_re.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_compile.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_constants.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_parse.py_20160822.html'>Untitled</a></li><li><a href='resources_diff1-diff2_20200728.html'>Untitled</a></li><li><a href='resources_mk1-mk2_20130627.html'>Untitled</a></li><li><a href='resources_nav1-nav2_20200728.html'>Untitled</a></li><li><a href='resources_paredit20-paredit23_20200728.html'>Untitled</a></li><li><a href='resources_pydiff1-pydiff2_20130711.html'>Untitled</a></li><li><a href='resources_simulator-mips-simulator-arm_20200728.html'>Untitled</a></li><li><a href='resources_typed-clojure1-typed-clojure2_20200728.html'>Untitled</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tags <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='tags_ai_20251103.html'>Surely I am Joking</a></li><li><a href='tags_education_20251031.html'>Surely I am Joking</a></li><li><a href='tags_english_20251101.html'>Surely I am Joking</a></li><li><a href='tags_health_20251102.html'>Surely I am Joking</a></li><li><a href='tags_life_20251129.html'>Surely I am Joking</a></li><li><a href='tags_lifestyle_20251101.html'>Surely I am Joking</a></li><li><a href='tags_philosophy_20251101.html'>Surely I am Joking</a></li><li><a href='tags_programming-language_20260113.html'>Surely I am Joking</a></li><li><a href='tags_travel_20251129.html'>Surely I am Joking</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Misc <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='.well-known_dnt-policy.txt_20251211.html'>Surely I am Joking</a></li><li><a href='_5C_20251205.html'>Surely I am Joking</a></li><li><a href='_5Cu003c_a_5Cu003e_5Cu003c_td_5Cu003e_5Cn_5Cu003ctd_5Cu003e_E7_BC_96_E7_A8_8B_5Cu003c_td_5Cu003e_5Cn_5Cu003c_tr_5Cu003e_5Cn_5Cu003ctr_5Cu003e_5Cn_5Cu003ctd_5Cu003e_5Cu003ca_20251204.html'>Surely I am Joking</a></li><li><a href='ads.txt_20251013.html'>Surely I am Joking</a></li><li><a href='afficheAction.do_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='apply_dcb.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='apply_twsqb.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='common_casetoyota.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='common_casexhx.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='common_courseBase_main.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='common_courseBase_tch_grzl.jsp_20060106.html'>Untitled</a></li><li><a href='contactus.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='datadownload.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='dljm.jsp_20060516.html'>竞争力工程</a></li><li><a href='fwjs.jsp_20060516.html'>竞争力工程</a></li><li><a href='hd_qgjx.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='laws_laws_01.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='lianxi.jsp_20060428.html'>竞争力工程</a></li><li><a href='more.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='neirong.jsp_20060516.html'>详细内容</a></li><li><a href='newsPublishAction.do_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='servicecenter_servicecenter_01.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='tongzhi.jsp_20060428.html'>竞争力工程</a></li><li><a href='tongzhi_tongzhi1.htm_20060428.html'>ÎÞ±êÌâÎÄµµ</a></li><li><a href='tongzhi_tongzhi2.htm_20060428.html'>ÎÞ±êÌâÎÄµµ</a></li><li><a href='units_gjfz.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='units_jstg.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='units_zgzx.jsp_20060213.html'>中国中小企业竞争力工程</a></li></ul></li></ul>
+            </div>
+        </div>
+    </nav>
 
-<h2>è°ç¨åºçâéç¨æ§â</h2>
+    <div class="inner">
+        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2013_04_13_generality_20130417.html" >2013-04-17</a> <a href="blog-cn_2013_04_13_generality_20131115.html" class="current">2013-11-15</a> <a href="blog-cn_2013_04_13_generality_20140701.html" >2014-07-01</a> <a href="blog-cn_2013_04_13_generality_20141009.html" >2014-10-09</a> <a href="blog-cn_2013_04_13_generality_20150321.html" >2015-03-21</a> <a href="blog-cn_2013_04_13_generality_20161001.html" >2016-10-01</a> <a href="blog-cn_2013_04_13_generality_20170510.html" >2017-05-10</a> <a href="blog-cn_2013_04_13_generality_20170526.html" >2017-05-26</a> <a href="blog-cn_2013_04_13_generality_20171127.html" >2017-11-27</a> <a href="blog-cn_2013_04_13_generality_20171228.html" >2017-12-28</a> <a href="blog-cn_2013_04_13_generality_20200228.html" >2020-02-28</a> <a href="blog-cn_2013_04_13_generality_20240421.html" >2024-04-21</a></div>
+        <h2>谈程序的“通用性”</h2>
 
-<p>å¨ç°å®çè½¯ä»¶å·¥ç¨ä¸­ï¼æç»å¸¸åç°è¿æ ·çä¸ç§ç°è±¡ãæ¬æ¥ç¨å¾ç®åçä»£ç å°±å¯ä»¥è§£å³çé®é¢ï¼å´å ä¸ºè®¾è®¡èå¯¹âéç¨æ§âï¼âå¯ç»´æ¤æ§âåâå¯æ©å±æ§âçç²ç®æ¨å´ï¼è¢«æå¾ç»äºå éå¼¯ï¼è®©äººç¢ç£¨ä¸éã</p>
+<p>在现实的软件工程中，我经常发现这样的一种现象。本来用很简单的代码就可以解决的问题，却因为设计者对“通用性”，“可维护性”和“可扩展性”的盲目推崇，被搞得绕了几道弯，让人琢磨不透。</p>
 
-<p>è¿äºäººçæç»´æ¹å¼æ¯è¿æ ·çï¼âå°æ¥è¿æ®µä»£ç å¯è½ä¼è¢«ç¨å°æ´å¤çåºåï¼æä»¥æç°å¨å°±èèå°æ©å±é®é¢ãâäºæ¯ä¹ï¼ä»ä»¬å¨ä»£ç ä¸­å å¥äºåç§åæ ·çâæ¡æ¶ç»æâï¼ç®çæ¯ä¸ºäºå¨å°æ¥ææ°çéè¦çæ¶åï¼ä»£ç è½å¤âä¸å ä¿®æ¹âå°±è¢«ç¨å°æ°çå°æ¹ã</p>
+<p>这些人的思维方式是这样的：“将来这段代码可能会被用到更多的场合，所以我现在就考虑到扩展问题。”于是乎，他们在代码中加入了各种各样的“框架结构”，目的是为了在将来有新的需要的时候，代码能够“不加修改”就被用到新的地方。</p>
 
-<p>æå¹¶ä¸å¦è®¤âéç¨æ§âçä»·å¼ï¼å®éä¸æçæäºç¨åºéç¨æ§éå¸¸ä¹å¼ºãå¯æ¯å¾å¤äººæè°çâéç¨æ§âï¼å¶å®è¾¾å°çæ¯éå¾å¶åçææãè¿ç§ç°è±¡éå¸¸è¢«ç§°ä¸ºâè¿åº¦å·¥ç¨â (over-engineer)ãå³äºè¿åº¦å·¥ç¨ï¼æä¸ä¸ªæè¶£çæäºï¼</p>
+<p>我并不否认“通用性”的价值，实际上我的某些程序通用性非常之强。可是很多人所谓的“通用性”，其实达到的是适得其反的效果。这种现象通常被称为“过度工程” (over-engineer)。关于过度工程，有一个有趣的故事：</p>
 
 <p><a href="http://www.snopes.com/business/genius/spacepen.asp">http://www.snopes.com/business/genius/spacepen.asp</a></p>
 
-<blockquote><p>ä¼ è¯´ 1960 å¹´ä»£ç¾ä¿âå¤ªç©ºç«èµâçæ¶åï¼NASA éå°ä¸ä¸ªä¸¥éçææ¯é®é¢ï¼å®èªåéè¦ä¸æ¯å¯ä»¥å¨å¤å¤ªç©ºççç©ºä¸­åå­çé¢ç¬ãæå NASA èèµ150ä¸ç¾åç å¶åºäºè¿æ ·çé¢ç¬ãå¯æè¿ç§é¢ç¬å¨å¸åºä¸å¹¶ä¸è¡éã</p>
+<blockquote><p>传说 1960 年代美俄“太空竞赛”的时候，NASA 遇到一个严重的技术问题：宇航员需要一支可以在外太空的真空中写字的钢笔。最后 NASA 耗资150万美元研制出了这样的钢笔。可惜这种钢笔在市场上并不行销。</p>
 
-<p>ä¿å½äººä¹éå°åæ ·çé®é¢ãä»ä»¬ä½¿ç¨äºéç¬ã</p></blockquote>
+<p>俄国人也遇到同样的问题。他们使用了铅笔。</p></blockquote>
 
-<p>è¿ä¸ªæäºè½ç¶æ¯åçï¼ä½æ¯å´å·æä¼ç´¢å¯è¨çå¨åãç°å¨åæ¥çæä»¬çè½¯ä»¶è¡ä¸ï¼ä½ ä¹è®¸ä¼åç°ï¼</p>
+<p>这个故事虽然是假的，但是却具有伊索寓言的威力。现在再来看我们的软件行业，你也许会发现：</p>
 
 <ol>
-<li><p>ä»£ç éè¦è¢«âéç¨âçåºåï¼å®éä¸æ¯ä½ æ³è±¡çè¦å°</p>
+<li><p>代码需要被“重用”的场合，实际上比你想象的要少</p>
 
-<p>æåç°å¾å¤äººåç¨åºçæ¶åè¿âç¼åç¹ä¾âé½æ²¡åå¥½ï¼å°±å¨å¼å§âå±æå°æ¥âãä»ä»¬æ»æ¯è®¾æ³å«äººä¼âéç¨âè¿æ®µä»£ç ãèå®éä¸ï¼ç±äºä»ä»¬çè®¾è®¡è¿äºå¤æï¼çè§£è¿è®¾è®¡æéçèåå¼éï¼å·²ç»é«äºä»å¤´å¼å§çä»£ä»·ãæä»¥å¤§é¨åäººå¶å®æ ¹æ¬ä¸ä¼å»ç¨ä»ä»¬çä»£ç ï¼èªå·±éæ°åä¸ä¸ªå°±æ¯äºãä¹æäººå°åæ¥åç°ï¼ä¹ååçé£æ®µä»£ç ï¼è¿èªå·±é½çä¸ä¸å»äºï¼æ¨ä¸å¾å äºéæ¥ï¼å°±ä¸è¦è°ä»ä¹éç¨äºã</p></li>
-<li><p>ä¿®æ¹ä»£ç æéè¦çå·¥ä½ï¼å®éä¸æ¯ä½ æ³è±¡çè¦å°</p>
+<p>我发现很多人写程序的时候连“眼前特例”都没做好，就在开始“展望将来”。他们总是设想别人会“重用”这段代码。而实际上，由于他们的设计过于复杂，理解这设计所需的脑力开销，已经高于从头开始的代价。所以大部分人其实根本不会去用他们的代码，自己重新写一个就是了。也有人到后来发现，之前写的那段代码，连自己都看不下去了，恨不得删了重来，就不要谈什么重用了。</p></li>
+<li><p>修改代码所需要的工作，实际上比你想象的要少</p>
 
-<p>è¿æä¸ç§æåµæ¯ï¼è¿äºè¢«è®¾è®¡æ¥âå±äº«âçä»£ç ï¼å¶å®æ ¹æ¬æ²¡æè¢«ç¨å¨å¾å¤çå°æ¹ï¼æä»¥å³ä½¿ä½ å®å¨æå¨çä¿®æ¹å®ä»¬ä¹è±ä¸äºå¾å¤æ¶é´ãç°å¨åå ä¸ IDE ææ¯çåå±ååç§åè¿ç refactor å·¥å·ï¼æ¹éçä¿®æ¹ä»£ç å·²ç»ä¸æ¯ç¹å«éº»ç¦çäºæãæ¾ç»éè¦å¨âé»è¾å±é¢âä¸è¿è¡çâå¯ç»´æ¤æ§âè®¾è®¡ï¼ç°å¨æå¯è½åªéè¦å¨ IDE éé¢ç¹å ä¸é¼ æ å°±è½»æ¾å®æãæä»¥å¨èèè®¾è®¡ä¸ä¸ªæ¡æ¶ä¹åï¼ä½ åºè¯¥åæ¶èèå°è¿äºå ç´ ã</p></li>
-<li><p>âèèâå°äºéç¨æ§ï¼å¹¶ä¸ç­äºä½ å°±åç¡®å°âææ¡âä½äºéç¨æ§</p>
+<p>还有一种情况是，这些被设计来“共享”的代码，其实根本没有被用在很多的地方，所以即使你完全手动的修改它们也花不了很多时间。现在再加上 IDE 技术的发展和各种先进的 refactor 工具，批量的修改代码已经不是特别麻烦的事情。曾经需要在“逻辑层面”上进行的“可维护性”设计，现在有可能只需要在 IDE 里面点几下鼠标就轻松完成。所以在考虑设计一个框架之前，你应该同时考虑到这些因素。</p></li>
+<li><p>“考虑”到了通用性，并不等于你就准确地“把握”住了通用性</p>
 
-<p>å¾å¤äººèèå°äºéç¨æ§ï¼å´æ²¡æåç¡®ççå°ï¼å°åºæ¯åªä¸ä¸ªé¨åå°æ¥å¯è½éè¦ä¿®æ¹ï¼æä»¥ä»ä»¬çè®¾è®¡ç»å¸¸æä¸ä½å³é®ãå½ææ°çéè¦åºç°çæ¶åï¼æåç°åæ¥è®¾æ³çå¯è½ååçé¨åï¼å¶å®æ ¹æ¬æ²¡æåï¼èåæ¥ä»¥ä¸ºä¸ä¼åçå°æ¹å´åäºã</p>
+<p>很多人考虑到了通用性，却没有准确的看到，到底是哪一个部分将来可能需要修改，所以他们的设计经常抓不住关键。当有新的需要出现的时候，才发现原来设想的可能变化的部分，其实根本没有变，而原来以为不会变的地方却变了。</p>
 
-<p>è½å¤åç¡®çé¢æµå°æ¥çéè¦ï¼è½å¤ä»ä»£ç ä¸­âæ½è±¡âåºçæ­£éç¨çæ¡æ¶ï¼æ¯ä¸ä»¶éå¸¸å°é¾çäºæãå®ä¸æ­¢éè¦æç¼ç¨çè½åï¼èä¸éè¦å¯¹çå®ä¸çéçäºç©æå¼ºå¤§çè§å¯è½åãå¾å¤äººè®¾è®¡åºæ¥çæ¡æ¶ï¼å¶å®åªæ¯ç§æ¬å«äººçç»éªï¼å´ä¸è½éåºå®éçéè¦ãå¨ Java ä¸çéçå¾å¤ design patternï¼å°±æ¯è¿äºä¸ç¥åè§£çäººè®¾è®¡åºæ¥çã</p></li>
-<li><p>åæè®¾è®¡çå¤ææ§</p>
+<p>能够准确的预测将来的需要，能够从代码中“抽象”出真正通用的框架，是一件非常困难的事情。它不止需要有编程的能力，而且需要对真实世界里的事物有强大的观察能力。很多人设计出来的框架，其实只是照搬别人的经验，却不能适应实际的需要。在 Java 世界里的很多 design pattern，就是这些一知半解的人设计出来的。</p></li>
+<li><p>初期设计的复杂性</p>
 
-<p>å¦æå¨ç¬¬ä¸æ¬¡çè®¾è®¡ä¸­å°±è¿æ©çèèå°âå°æ¥âï¼ç±æ­¤å¸¦æ¥çå¤ä½çå¤ææ§ï¼æå¯è½è®©åæçè®¾è®¡å°±åºç°é®é¢ãæä»¥è¿ç§å¯¹äºå°æ¥çååçèèï¼å®éä¸å¸®äºåå¿ãæ¬æ¥å¦æä¸æ³¨äºè§£å³ç°å¨çé®é¢ï¼è½å¤å¾å°éå¸¸å¥½çç»æãä½æ¯ç±äºâéç¨æ§âå¸¦æ¥çå¤æåº¦ï¼è®¾è®¡èçå¤´èæ¯æ¬¡é½è¦å¤è½¬å éå¼¯ï¼æä»¥å®æ æ³è®¾è®¡åºä¼éçç¨åºã</p></li>
-<li><p>çè§£åç»´æ¤æ¡æ¶æ§ä»£ç çå¼é</p>
+<p>如果在第一次的设计中就过早的考虑到“将来”，由此带来的多余的复杂性，有可能让初期的设计就出现问题。所以这种对于将来的变化的考虑，实际上帮了倒忙。本来如果专注于解决现在的问题，能够得到非常好的结果。但是由于“通用性”带来的复杂度，设计者的头脑每次都要多转几道弯，所以它无法设计出优雅的程序。</p></li>
+<li><p>理解和维护框架性代码的开销</p>
 
-<p>å¦æä½ è®¾è®¡äºæ¡æ¶æ§çä»£ç ï¼æ¯ä¸ªç¨åºåä¸ºäºå¨è¿ä¸ªæ¡æ¶ä¸ç¼åä»£ç ï¼é½éè¦çè§£è¿ç§æ¡æ¶çæé ï¼è¿å¸¦æ¥äºå­¦ä¹ çå¼éãä¸æ¦åç°è¿æ¡æ¶æè®¾è®¡é®é¢ï¼ä¾èµäºå®çä»£ç å¾æå¯è½éè¦ä¿®æ¹ï¼è¿åå¸¦æ¥äºä¿®æ¹çå¼éãæä»¥å å¥âéç¨æ§âä¹åï¼å¶å®å¸¦æ¥äºæ´å¤çå·¥ä½ãè¿ç§å¼éè½ä¸è½å¾å°åæ¥ï¼ä¾èµäºä»¥ä¸çå¤ç§å ç´ ã</p></li>
+<p>如果你设计了框架性的代码，每个程序员为了在这个框架下编写代码，都需要理解这种框架的构造，这带来了学习的开销。一旦发现这框架有设计问题，依赖于它的代码很有可能需要修改，这又带来了修改的开销。所以加入“通用性”之后，其实带来了更多的工作。这种开销能不能得到回报，依赖于以上的多种因素。</p></li>
 </ol>
 
 
-<p>æä»¥å¨è®¾è®¡ç¨åºçæ¶åï¼æä»¬æå¥½æ¯åææä¸çé®é¢è§£å³å¥½ãå¦æåç°è¿æ®µä»£ç è¿å¯ä»¥è¢«ç¨å¨å¾å¤å«çå°æ¹ï¼å°æ¶ååæâæ¡æ¶âä»ä¸­æ½è±¡åºæ¥ä¹ä¸è¿ã</p>
-
-
+<p>所以在设计程序的时候，我们最好是先把手上的问题解决好。如果发现这段代码还可以被用在很多别的地方，到时候再把“框架”从中抽象出来也不迟。</p>
+    </div>
+    
+    <script src="js/highlight.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script>
+        if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
+            document.body.classList.add('mobile');
+            var navbar = document.querySelector('nav.navbar');
+            if (navbar) { navbar.classList.remove('navbar-fixed-top'); }
+        }
+    </script>
 </body>
-
 </html>

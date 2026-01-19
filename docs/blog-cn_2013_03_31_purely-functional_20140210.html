@@ -1,35 +1,69 @@
+<!DOCTYPE html>
 <html>
 <head>
-
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link href="http://www.yinwang.org/main.css" rel="stylesheet" type="text/css">
-<link rel="alternate" type="application/atom+xml" href="/atom.xml" title="Atom feed">
-<link rel="shortcut icon" href="http://www.yinwang.org/images/Yc.jpg">
-
-<title>å¯¹å½æ°å¼è¯­è¨çè¯¯è§£</title>
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-45586344-1', 'yinwang.org');
-  ga('send', 'pageview');
-
-</script>
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <title>对函数式语言的误解</title>
+    <link rel="stylesheet" href="css/highlight/xcode.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-tooltips.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/home.css"> <!-- Need home for navbar -->
+    <link rel="stylesheet" href="css/post.css">
+    <script src="js/jquery.min.js"></script>
+    <style>
+        /* Switcher Fixes */
+        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
+        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
+        .version-switcher a.current { font-weight: bold; color: #333; }
+        /* Inner override for posts */
+        .inner { margin-top: 80px; } 
+    </style>
 </head>
-ãã
 <body>
+    <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-bs">
+                    <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+                <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='aboutcmec_aboutcmec_01.jsp_20060213.html'>About</a></li><li><a href='aboutess_aboutess_01.jsp_20060213.html'>About</a></li><li><a href='aboutinfo_aboutinfo_01.jsp_20060106.html'>About</a></li><li><a href='tweet_20170605.html'>微勃 (Tweets)</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='homepage_20250719.html'>当然我在扯淡 (None)</a></li><li><a href='index.jsp_20060213.html'>中国中小企业竞争力工程 (None)</a></li><li><a href='index_20260110.html'>Surely I am Joking (None)</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Posts <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='posts_air-freshener-nightmare_20251129.html'>Surely I am Joking</a></li><li><a href='posts_american-english-problems_20251030.html'>Surely I am Joking</a></li><li><a href='posts_authority_20251221.html'>Surely I am Joking</a></li><li><a href='posts_cello-technique_20251102.html'>Surely I am Joking</a></li><li><a href='posts_continuation-course_20251206.html'>Surely I am Joking</a></li><li><a href='posts_cs-class2_20251105.html'>Surely I am Joking</a></li><li><a href='posts_cs-course-5_20251208.html'>Surely I am Joking</a></li><li><a href='posts_cs-video-course_20251101.html'>Surely I am Joking</a></li><li><a href='posts_cs3_20251102.html'>Surely I am Joking</a></li><li><a href='posts_cs4_20251102.html'>Surely I am Joking</a></li><li><a href='posts_cs5-completed_20251031.html'>Surely I am Joking</a></li><li><a href='posts_entry-level-class_20251102.html'>Surely I am Joking</a></li><li><a href='posts_learning-philosophy_20251211.html'>Surely I am Joking</a></li><li><a href='posts_oberon_20260113.html'>Surely I am Joking</a></li><li><a href='posts_reading-course_20251102.html'>Surely I am Joking</a></li><li><a href='posts_super-human-level-vision_20251104.html'>Surely I am Joking</a></li><li><a href='posts_tuition-for-covid_20251103.html'>Surely I am Joking</a></li><li><a href='posts_wisdom-of-intelligence_20251102.html'>Surely I am Joking</a></li><li><a href='posts_youth-cs-student_20251102.html'>Surely I am Joking</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='resources_d8-3404-d8-8424_20130614.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_base64mime.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_charset.py_20150506.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_encoders.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_errors.py_20150409.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_header.py_20140305.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_quoprimime.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_re.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_compile.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_constants.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_parse.py_20160822.html'>Untitled</a></li><li><a href='resources_diff1-diff2_20200728.html'>Untitled</a></li><li><a href='resources_mk1-mk2_20130627.html'>Untitled</a></li><li><a href='resources_nav1-nav2_20200728.html'>Untitled</a></li><li><a href='resources_paredit20-paredit23_20200728.html'>Untitled</a></li><li><a href='resources_pydiff1-pydiff2_20130711.html'>Untitled</a></li><li><a href='resources_simulator-mips-simulator-arm_20200728.html'>Untitled</a></li><li><a href='resources_typed-clojure1-typed-clojure2_20200728.html'>Untitled</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tags <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='tags_ai_20251103.html'>Surely I am Joking</a></li><li><a href='tags_education_20251031.html'>Surely I am Joking</a></li><li><a href='tags_english_20251101.html'>Surely I am Joking</a></li><li><a href='tags_health_20251102.html'>Surely I am Joking</a></li><li><a href='tags_life_20251129.html'>Surely I am Joking</a></li><li><a href='tags_lifestyle_20251101.html'>Surely I am Joking</a></li><li><a href='tags_philosophy_20251101.html'>Surely I am Joking</a></li><li><a href='tags_programming-language_20260113.html'>Surely I am Joking</a></li><li><a href='tags_travel_20251129.html'>Surely I am Joking</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Misc <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='.well-known_dnt-policy.txt_20251211.html'>Surely I am Joking</a></li><li><a href='_5C_20251205.html'>Surely I am Joking</a></li><li><a href='_5Cu003c_a_5Cu003e_5Cu003c_td_5Cu003e_5Cn_5Cu003ctd_5Cu003e_E7_BC_96_E7_A8_8B_5Cu003c_td_5Cu003e_5Cn_5Cu003c_tr_5Cu003e_5Cn_5Cu003ctr_5Cu003e_5Cn_5Cu003ctd_5Cu003e_5Cu003ca_20251204.html'>Surely I am Joking</a></li><li><a href='ads.txt_20251013.html'>Surely I am Joking</a></li><li><a href='afficheAction.do_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='apply_dcb.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='apply_twsqb.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='common_casetoyota.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='common_casexhx.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='common_courseBase_main.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='common_courseBase_tch_grzl.jsp_20060106.html'>Untitled</a></li><li><a href='contactus.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='datadownload.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='dljm.jsp_20060516.html'>竞争力工程</a></li><li><a href='fwjs.jsp_20060516.html'>竞争力工程</a></li><li><a href='hd_qgjx.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='laws_laws_01.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='lianxi.jsp_20060428.html'>竞争力工程</a></li><li><a href='more.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='neirong.jsp_20060516.html'>详细内容</a></li><li><a href='newsPublishAction.do_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='servicecenter_servicecenter_01.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='tongzhi.jsp_20060428.html'>竞争力工程</a></li><li><a href='tongzhi_tongzhi1.htm_20060428.html'>ÎÞ±êÌâÎÄµµ</a></li><li><a href='tongzhi_tongzhi2.htm_20060428.html'>ÎÞ±êÌâÎÄµµ</a></li><li><a href='units_gjfz.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='units_jstg.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='units_zgzx.jsp_20060213.html'>中国中小企业竞争力工程</a></li></ul></li></ul>
+            </div>
+        </div>
+    </nav>
 
-<h2>å¯¹å½æ°å¼è¯­è¨çè¯¯è§£</h2>
+    <div class="inner">
+        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2013_03_31_purely-functional_20130421.html" >2013-04-21</a> <a href="blog-cn_2013_03_31_purely-functional_20140210.html" class="current">2014-02-10</a> <a href="blog-cn_2013_03_31_purely-functional_20140421.html" >2014-04-21</a> <a href="blog-cn_2013_03_31_purely-functional_20140621.html" >2014-06-21</a> <a href="blog-cn_2013_03_31_purely-functional_20151205.html" >2015-12-05</a> <a href="blog-cn_2013_03_31_purely-functional_20160922.html" >2016-09-22</a> <a href="blog-cn_2013_03_31_purely-functional_20170504.html" >2017-05-04</a> <a href="blog-cn_2013_03_31_purely-functional_20170603.html" >2017-06-03</a> <a href="blog-cn_2013_03_31_purely-functional_20171203.html" >2017-12-03</a> <a href="blog-cn_2013_03_31_purely-functional_20180222.html" >2018-02-22</a> <a href="blog-cn_2013_03_31_purely-functional_20191208.html" >2019-12-08</a> <a href="blog-cn_2013_03_31_purely-functional_20200228.html" >2020-02-28</a> <a href="blog-cn_2013_03_31_purely-functional_20240416.html" >2024-04-16</a></div>
+        <h2>对函数式语言的误解</h2>
 
-<p>å¾æ©çæ¶åï¼âå½æ°å¼è¯­è¨âå¯¹äºææ¥è¯´å°±æ¯ Lispï¼å ä¸º Lisp å¯ä»¥å¨ç¨åºçå ä¹ä»»ä½ä½ç½®å®ä¹å½æ°ï¼å¹¶ä¸æå®ä»¬ä½ä¸ºå¼æ¥ä¼ éï¼è¿å«å first-class functionï¼ãåæ¥æäººåè¯æï¼Lisp å¶å®ä¸ç®æ¯âå½æ°å¼è¯­è¨âï¼å ä¸º Lisp çå½æ°å¹¶ä¸âçº¯âï¼pureï¼ãæè°âçº¯å½æ°âçææï¼å°±æ¯åæ°å­¦çå½æ°ä¸æ ·ï¼å¦æä½ ç»å®åæ ·çè¾å¥ï¼å®å°±ç»ä½ åæ ·çè¾åºãç¶åä½ å°±åç°å¨è¿ç§å®ä¹ä¸ï¼å ä¹ææç¨åºè¯­è¨éé¢å¸¸è§çéæºæ°å½æ°ï¼<code>random</code>ï¼ï¼å¶å®é½ä¸æ¯âçº¯å½æ°âãå ä¸ºæ¯ä¸æ¬¡è°ç¨ <code>random()</code>ï¼ä½ é½ä¼å¾å°ä¸åçéæºæ°ã</p>
+<p>很早的时候，“函数式语言”对于我来说就是 Lisp，因为 Lisp 可以在程序的几乎任何位置定义函数，并且把它们作为值来传递（这叫做 first-class function）。后来有人告诉我，Lisp 其实不算是“函数式语言”，因为 Lisp 的函数并不“纯”（pure）。所谓“纯函数”的意思，就是像数学的函数一样，如果你给它同样的输入，它就给你同样的输出。然后你就发现在这种定义下，几乎所有程序语言里面常见的随机数函数（<code>random</code>），其实都不是“纯函数”。因为每一次调用 <code>random()</code>，你都会得到不同的随机数。</p>
 
-<p>å¨è¿ç§å®³æèªå·±æç¨çè¯­è¨âä¸çº¯âçææä¹ä¸ï¼æå¼å§æ¥è§¦ Haskellï¼ä¸ç§å·ç§°âçº¯å½æ°å¼âçè¯­è¨ãHaskell çç¤¾åºåæ¬¢å¨ä»ä»¬çæ¦å¿µéçæâçº¯âè¿ä¸ªå­ï¼æ Haskell å«åâå½æ°å¼è¯­è¨âãä»ä»¬åæ¬¢âçº æ­£âå«äººçæ¦å¿µãä»ä»¬åè¯äººä»¬ï¼âä¸çº¯âçå½æ°å¼è¯­è¨ï¼å¶å®é½ä¸éå«åâå½æ°å¼è¯­è¨âãå¨ä»ä»¬çè¿ç§å®ä¹ä¸ï¼Lisp è¿ä¹èççå½æ°å¼è¯­è¨ï¼å±ç¶é½ä¸è½å«âå½æ°å¼è¯­è¨âäºãä½æ¯çå®è¿ç¯æç« ä½ å°±ä¼åç°ï¼å¶å®ä»ä»¬çè¿ç§å®ä¹æ¯ç­éåéè¯¯çã</p>
+<p>在这种害怕自己所用的语言“不纯”的恐慌之下，我开始接触 Haskell，一种号称“纯函数式”的语言。Haskell 的社区喜欢在他们的概念里省掉“纯”这个字，把 Haskell 叫做“函数式语言”。他们喜欢“纠正”别人的概念。他们告诉人们，“不纯”的函数式语言，其实都不配叫做“函数式语言”。在他们的这种定义下，Lisp 这么老牌的函数式语言，居然都不能叫“函数式语言”了。但是看完这篇文章你就会发现，其实他们的这种定义是狭隘和错误的。</p>
 
-<p>å¨ Haskell éé¢ï¼ä½ ä¸è½ä½¿ç¨éå¸¸è¯­è¨éé¢é½æçèµå¼è¯­å¥ï¼æ¯å¦ Pascal éç <code>x:=1</code>ï¼C å Java éç <code>x=1</code>ï¼æè Scheme éç <code>(set! x 1)</code>ï¼Common Lisp éç <code>(setq x 1)</code>ãè¿æ ·ä¸æ¥ï¼ä½ å°±ä¸å¯è½ä¿çâç¶æâï¼stateï¼ãæè°âç¶æâï¼å°±æ¯æâéæºæ°ç§å­âé£æ ·çä¸è¥¿ï¼å¶å®æ¬è´¨ä¸å°±æ¯âå¨å±åéâãæ¯å¦ï¼å¨ C è¯­è¨éå®ä¹ <code>random()</code> å½æ°ï¼ä½ å¯ä»¥è¿ä¹åï¼</p>
+<p>在 Haskell 里面，你不能使用通常语言里面都有的赋值语句，比如 Pascal 里的 <code>x:=1</code>，C 和 Java 里的 <code>x=1</code>，或者 Scheme 里的 <code>(set! x 1)</code>，Common Lisp 里的 <code>(setq x 1)</code>。这样一来，你就不可能保留“状态”（state）。所谓“状态”，就是指“随机数种子”那样的东西，其实本质上就是“全局变量”。比如，在 C 语言里定义 <code>random()</code> 函数，你可以这么做：</p>
 
 <pre><code>int random()
 {
@@ -39,28 +73,28 @@
 }    
 </code></pre>
 
-<p>è¿éç <code>seed</code> æ¯ä¸ä¸ªâstatic åéâï¼å¶æ¬è´¨å°±æ¯ä¸ä¸ªå¨å±åéï¼åªä¸è¿è¿ä¸ªå¨å±åéåªè½è¢« <code>random</code> è¿ä¸ä¸ªå½æ°è®¿é®ãæ¯æ¬¡è°ç¨ <code>random()</code>ï¼å®é½ä¼ä½¿ç¨ <code>next_random(seed)</code> çæä¸ä¸ä¸ªéæºæ°ï¼å¹¶ä¸æ <code>seed</code> çå¼æ´æ°ä¸ºè¿ä¸ªæ°çéæºæ°ãå¨ <code>random()</code> çæ§è¡ç»æä¹åï¼<code>seed</code> ä¼ä¸ç´ä¿å­è¿ä¸ªå¼ãä¸ä¸æ¬¡è°ç¨ <code>random()</code>ï¼å®å°±ä¼æ ¹æ® <code>seed</code> ä¿å­çå¼ï¼ç®åºä¸ä¸ä¸ªéæºæ°ï¼ç¶ååæ¬¡æ´æ° <code>seed</code>ï¼å¦æ­¤ç»§ç»­ãè¿å°±æ¯ä¸ºä»ä¹æ¯ä¸æ¬¡è°ç¨ <code>random()</code>ï¼ä½ é½ä¼å¾å°ä¸åçéæºæ°ã</p>
+<p>这里的 <code>seed</code> 是一个“static 变量”，其本质就是一个全局变量，只不过这个全局变量只能被 <code>random</code> 这一个函数访问。每次调用 <code>random()</code>，它都会使用 <code>next_random(seed)</code> 生成下一个随机数，并且把 <code>seed</code> 的值更新为这个新的随机数。在 <code>random()</code> 的执行结束之后，<code>seed</code> 会一直保存这个值。下一次调用 <code>random()</code>，它就会根据 <code>seed</code> 保存的值，算出下一个随机数，然后再次更新 <code>seed</code>，如此继续。这就是为什么每一次调用 <code>random()</code>，你都会得到不同的随机数。</p>
 
-<p>å¯æ¯å¨ Haskell éé¢æåµå°±å¾ä¸ä¸æ ·äºãç±äº Haskell ä¸è½ä¿çç¶æï¼æä»¥åä¸ä¸ªâåéâå¨å®ä½ç¨åçä»»ä½ä½ç½®é½å·æç¸åçå¼ãæ¯ä¸ä¸ªå½æ°åªè¦è¾å¥ç¸åï¼å°±ä¼è¾åºåæ ·çç»æãæä»¥å¨ Haskell éé¢ï¼ä½ ä¸è½è½»æ¾çè¡¨è¾¾ <code>random</code> è¿æ ·çâä¸çº¯å½æ°âãä¸ºäºè®© <code>random</code> å¨æ¯æ¬¡è°ç¨å¾å°ä¸åçè¾åºï¼ä½ å¿é¡»ç»å®âä¸åçè¾å¥âãé£æä¹æè½ç»å®ä¸åçè¾å¥å¢ï¼Haskell éç¨çåæ³ï¼å°±æ¯æâç§å­âä½ä¸ºè¾å¥ï¼ç¶åè¿åä¸¤ä¸ªå¼ï¼æ°çéæºæ°åæ°çç§å­ï¼ç¶åæ³åæ³æè¿ä¸ªæ°çç§å­ä¼ éç»ä¸ä¸æ¬¡ç <code>random</code> è°ç¨ãæä»¥ Haskell ç <code>random</code> çâçº¿è·¯âçèµ·æ¥åè¿ä¸ªæ ·å­ï¼</p>
+<p>可是在 Haskell 里面情况就很不一样了。由于 Haskell 不能保留状态，所以同一个“变量”在它作用域的任何位置都具有相同的值。每一个函数只要输入相同，就会输出同样的结果。所以在 Haskell 里面，你不能轻松的表达 <code>random</code> 这样的“不纯函数”。为了让 <code>random</code> 在每次调用得到不同的输出，你必须给它“不同的输入”。那怎么才能给它不同的输入呢？Haskell 采用的办法，就是把“种子”作为输入，然后返回两个值：新的随机数和新的种子，然后想办法把这个新的种子传递给下一次的 <code>random</code> 调用。所以 Haskell 的 <code>random</code> 的“线路”看起来像这个样子：</p>
 
-<pre><code>ï¼æ§ç§å­ï¼---&gt; ï¼æ°éæºæ°ï¼æ°ç§å­ï¼
+<pre><code>（旧种子）---&gt; （新随机数，新种子）
 </code></pre>
 
-<p>ç°å¨é®é¢æ¥äºãå¾å°çè¿ä¸ªæ°ç§å­ï¼å¿é¡»è¢«åç¡®æ è¯¯çä¼ éå°ä¸ä¸ä¸ªä½¿ç¨ <code>random</code> çå°æ¹ï¼å¦åä½ å°±æ²¡æ³çæä¸ä¸ä¸ªéæºæ°ãå ä¸ºæ²¡æå°æ¹å¯ä»¥è®©ä½ âæå­âè¿ä¸ªç§å­ï¼æä»¥ä¸ºäºæç§å­ä¼ éå°ä¸ä¸ä¸ªä½¿ç¨å®çå°æ¹ï¼ä½ ç»å¸¸éè¦è®©ç§å­âç©¿è¿âä¸ç³»åçå½æ°ï¼æè½å°è¾¾ç®çå°ãç§å­ç»è¿çâè·¯å¾âä¸çææå½æ°ï¼å¿é¡»å¢å ä¸ä¸ªåæ°ï¼æ§ç§å­ï¼ï¼å¹¶ä¸å¢å ä¸ä¸ªè¿åå¼ï¼æ°ç§å­ï¼ãè¿å°±åæ¯ç¨ä¸æ ¹å¸ç®¡æç©¿è¿ä¸ªå½æ°ï¼ä¸¤å¤´éé£ï¼è¿æ ·ç§å­å°±å¯ä»¥ä¸åå¹²æ°çéè¿ã</p>
+<p>现在问题来了。得到的这个新种子，必须被准确无误的传递到下一个使用 <code>random</code> 的地方，否则你就没法生成下一个随机数。因为没有地方可以让你“暂存”这个种子，所以为了把种子传递到下一个使用它的地方，你经常需要让种子“穿过”一系列的函数，才能到达目的地。种子经过的“路径”上的所有函数，必须增加一个参数（旧种子），并且增加一个返回值（新种子）。这就像是用一根吸管扎穿这个函数，两头通风，这样种子就可以不受干扰的通过。</p>
 
-<p>æä»¥ä½ çå°äºï¼ä¸ºäºè¾¾å°âçº¯å½æ°âçç®æ ï¼æä»¬éè¦åå¾å¤âç®¡éå·¥âçå·¥ä½ï¼è¿å¢å äºç¨åºçå¤ææ§åå·¥ä½éãå¦ææä»¬å¯ä»¥æç§å­å­æ¾å¨ä¸ä¸ªå¨å±åééï¼å°éè¦çæ¶åæå»åï¼é£å°±æ ¹æ¬ä¸éè¦æå®ä¼ æ¥ä¼ å»çãé¤ <code>random()</code> ä¹å¤çä»£ç ï¼é½ä¸éè¦ç¥éç§å­çå­å¨ã</p>
+<p>所以你看到了，为了达到“纯函数”的目标，我们需要做很多“管道工”的工作，这增加了程序的复杂性和工作量。如果我们可以把种子存放在一个全局变量里，到需要的时候才去取，那就根本不需要把它传来传去的。除 <code>random()</code> 之外的代码，都不需要知道种子的存在。</p>
 
-<p>ä¸ºäºåè½»è§è§è´æåç»´æ¤è¿äºè¿è¿åºåºçâç¶æâï¼Haskell å¼å¥äºä¸ç§å« monad çæ¦å¿µãå®çæ¬è´¨æ¯ä½¿ç¨ç±»åç³»ç»çâéè½½âï¼overloadingï¼ï¼æè¿äºå¤åºæ¥çåæ°åè¿åå¼ï¼æ©çå¨ç±»åéé¢ãè¿å°±åæä¹±ä¸å«ç³ççµçº¿å¡è¿äºæ¥çº¿çä¼¼çï¼è½ç¶è¡¨é¢ä¸çèµ·æ¥æ¸ç½äºä¸äºï¼åºä¸çå¤ææ§å´æ¯ä¸å¯è½æ¶é¤çãææ¶åæå¾çº³é·ï¼å¨å¶å®è¯­è¨éæå¦åæçäºæï¼ä¸ºä»ä¹å° Haskell éé¢å°±åæäºâç ç©¶æ§é®é¢âï¼å¾å¤æ¶åå°±æ¯ monad è¿ä¸è¥¿å¨æ£é¬¼ãç¹å«æ¯å½ä½ æå¤ä¸ªâç¶æâçæ¶åï¼ä½ å°±éè¦ä½¿ç¨å monad transformer è¿æ ·çä¸è¥¿ãè monad transformer å¨æ¬è´¨ä¸å¶å®æ¯ä¸ä¸ªä¸éç hackï¼å®å¹¶ä¸è½ä»æ ¹æ¬ä¸è§£å³é®é¢ï¼å´å¯ä»¥è®©ä½ ä¼¤éèç­ä¹åä¸åºæ¥ãæäºäººä»¥ä¸ºä¼ç¨ monad å monad transformer å°±è¯´æä»æ°´å¹³é«ï¼å¶å®è¿æ ¹æ¬å°±æ¯èªå·±è·èªå·±è¿ä¸å»èå·²ã</p>
+<p>为了减轻视觉负担和维护这些进进出出的“状态”，Haskell 引入了一种叫 monad 的概念。它的本质是使用类型系统的“重载”（overloading），把这些多出来的参数和返回值，掩盖在类型里面。这就像把乱七八糟的电线塞进了接线盒似的，虽然表面上看起来清爽了一些，底下的复杂性却是不可能消除的。有时候我很纳闷，在其它语言里易如反掌的事情，为什么到 Haskell 里面就变成了“研究性问题”，很多时候就是 monad 这东西在捣鬼。特别是当你有多个“状态”的时候，你就需要使用像 monad transformer 这样的东西。而 monad transformer 在本质上其实是一个丑陋的 hack，它并不能从根本上解决问题，却可以让你伤透脑筋也写不出来。有些人以为会用 monad 和 monad transformer 就说明他水平高，其实这根本就是自己跟自己过不去而已。</p>
 
-<p>å½è°å° monad çæ¶åï¼æåæ¬¢æè¿æ ·ä¸ä¸ªæ¯æ¹ï¼</p>
+<p>当谈到 monad 的时候，我喜欢打这样一个比方：</p>
 
-<blockquote><p>ä½¿ç¨å«æ monad çâçº¯å½æ°å¼è¯­è¨âï¼å°±åçæ´»å¨ä¸ä¸ªæ²¡æçµç£æ³¢çä¸çã</p>
+<blockquote><p>使用含有 monad 的“纯函数式语言”，就像生活在一个没有电磁波的世界。</p>
 
-<p>å¨è¿ä¸ªä¸çéé¢æ²¡ææ¶é³æºï¼æ²¡æææºï¼æ²¡æå«æçµè§ï¼æ²¡ææ çº¿ç½ï¼çè³æ²¡æåï¼è¿ä¸ªä¸çéçææä¸è¥¿é½æ¯âæçº¿âçãä½ éè¦ç»å°½èæ±ï¼æè¿äºçµçº¿åç¡®æ è¯¯çéè¿ç¹æ®çâæ¥çº¿å¨âï¼monadï¼è¿æ¥èµ·æ¥ï¼æè½è®©ä½ çåç§ä¿¡æ¯å¤çè®¾å¤è½å¤æ­£å¸¸å·¥ä½ï¼æè½è®©ä½ èªå·±è½å¤çè§ä¸è¥¿ãå¦æä½ æ³çæ´»å¨è¿æ ·çä¸çéçè¯ï¼é£å°±è¯·ç»§ç»­ä½¿ç¨ Haskellã</p></blockquote>
+<p>在这个世界里面没有收音机，没有手机，没有卫星电视，没有无线网，甚至没有光！这个世界里的所有东西都是“有线”的。你需要绞尽脑汁，把这些电线准确无误的通过特殊的“接线器”（monad）连接起来，才能让你的各种信息处理设备能够正常工作，才能让你自己能够看见东西。如果你想生活在这样的世界里的话，那就请继续使用 Haskell。</p></blockquote>
 
-<p>å¶å®è¦è¾¾å°çº¯å½æ°å¼è¯­è¨çè¿ç§âçº¯âçææï¼ä½ æ ¹æ¬ä¸éè¦ä½¿ç¨å Haskell è¿æ ·å®å¨ææ¥âèµå¼è¯­å¥âçè¯­è¨ãä½ çè³ä¸éè¦ä½¿ç¨ Lisp è¿æ ·çâéçº¯âå½æ°å¼è¯­è¨ãä½ å®å¨å¯ä»¥ç¨ C è¯­è¨ï¼çè³æ±ç¼è¯­è¨ï¼è¾¾å°åæ ·çææã</p>
+<p>其实要达到纯函数式语言的这种“纯”的效果，你根本不需要使用像 Haskell 这样完全排斥“赋值语句”的语言。你甚至不需要使用 Lisp 这样的“非纯”函数式语言。你完全可以用 C 语言，甚至汇编语言，达到同样的效果。</p>
 
-<p>æåªä¸¾ä¸ä¸ªéå¸¸ç®åçä¾å­ï¼å¨ C è¯­è¨éé¢å®ä¹å¦ä¸çå½æ°ãè½ç¶å½æ°ä½éé¢å«æèµå¼è¯­å¥ï¼å®å´æ¯ä¸ä¸ªçæ­£æä¹ä¸çâçº¯å½æ°âï¼</p>
+<p>我只举一个非常简单的例子，在 C 语言里面定义如下的函数。虽然函数体里面含有赋值语句，它却是一个真正意义上的“纯函数”：</p>
 
 <pre><code>int f(int x) {
     int y = 0;
@@ -71,9 +105,9 @@
 }    
 </code></pre>
 
-<p>è¿æ¯ä¸ºä»ä¹å¢ï¼å ä¸ºå®è®¡ç®çæ¯æ°å­¦å½æ° <code>f(x) = (2x+1)/3</code> ãä½ ç»å®åæ ·çè¾å¥ï¼è¯å®ä¼å¾å°åæ ·çè¾åºãå½æ°éè½ç¶å¯¹ <code>y</code> å <code>z</code> è¿è¡äºèµå¼ï¼ä½è¿ç§èµå¼é½æ¯âå±é¨âçï¼å®ä»¬ä¸ä¼çä¸âç¶æâãæä»¥è¿ä¸ªå½æ°è½ç¶ä½¿ç¨äºè¢«âçº¯å½æ°ç¨åºåâä»¬å¾å¼çèµå¼è¯­å¥ï¼å´ä»ç¶å®å¨çç¬¦åâçº¯å½æ°âçå®ä¹ã</p>
+<p>这是为什么呢？因为它计算的是数学函数 <code>f(x) = (2x+1)/3</code> 。你给它同样的输入，肯定会得到同样的输出。函数里虽然对 <code>y</code> 和 <code>z</code> 进行了赋值，但这种赋值都是“局部”的，它们不会留下“状态”。所以这个函数虽然使用了被“纯函数程序员”们唾弃的赋值语句，却仍然完全的符合“纯函数”的定义。</p>
 
-<p>å¦æä½ ç ç©¶è¿ç¼è¯å¨ï¼å°±ä¼çè§£å¶ä¸­çéçãå ä¸ºè¿ä¸ªå½æ°éç <code>y</code> å <code>z</code>ï¼ä¸è¿æ¯å½æ°çâæ°æ®æµâéçä¸äºâä¸­é´èç¹âï¼å®ä»¬çç¨éæ¯ç¨æ¥æå­ä¸äºâä¸­é´ç»æâãè¿äºå±é¨çèµå¼æä½ï¼è·å½æ°è°ç¨æ¶çâåæ°ä¼ éâæ²¡ææ¬è´¨çåºå«ï¼å®ä»¬ä¸è¿é½æ¯æä¿¡æ¯ä¼ éå°æå®çèç¹èå·²ãå¦æä½ ä¸ç¸ä¿¡çè¯ï¼æç°å¨å°±å¯ä»¥æè¿äºèµå¼è¯­å¥å¨é½æ¹åæå½æ°è°ç¨ï¼</p>
+<p>如果你研究过编译器，就会理解其中的道理。因为这个函数里的 <code>y</code> 和 <code>z</code>，不过是函数的“数据流”里的一些“中间节点”，它们的用途是用来暂存一些“中间结果”。这些局部的赋值操作，跟函数调用时的“参数传递”没有本质的区别，它们不过都是把信息传送到指定的节点而已。如果你不相信的话，我现在就可以把这些赋值语句全都改写成函数调用：</p>
 
 <pre><code>int f(int x) {
     return g(2 * x);
@@ -88,19 +122,28 @@ int h(int z) {
 }    
 </code></pre>
 
-<p>å¾æ¾ç¶ï¼è¿ä¸¤ä¸ª f çå®ä¹æ¯å®å¨ç­ä»·çï¼ç¶èç¬¬äºä¸ªå®ä¹å´æ²¡æä»»ä½èµå¼è¯­å¥ãç¬¬ä¸ä¸ªå½æ°éå¯¹ <code>y</code> å <code>z</code> çâèµå¼è¯­å¥âï¼è¢«è½¬æ¢æäºç­ä»·çâåæ°ä¼ éâãè¿ä¸¤ä¸ªç¨åºå¦æç»è¿æåçç¼è¯å¨ï¼ä¼çæä¸æ¨¡ä¸æ ·çæºå¨ä»£ç ãæä»¥å¦æä½ è¯´èµå¼è¯­å¥æ¯éè¯¯çè¯ï¼é£ä¹å½æ°è°ç¨ä¹åºè¯¥æ¯éè¯¯çäºãé£æä»¬è¿è¦ä¸è¦åç¨åºäºï¼</p>
+<p>很显然，这两个 f 的定义是完全等价的，然而第二个定义却没有任何赋值语句。第一个函数里对 <code>y</code> 和 <code>z</code> 的“赋值语句”，被转换成了等价的“参数传递”。这两个程序如果经过我写的编译器，会生成一模一样的机器代码。所以如果你说赋值语句是错误的话，那么函数调用也应该是错误的了。那我们还要不要写程序了？</p>
 
-<h2>ç²ç®çææ¥èµå¼è¯­å¥ï¼æ¥èªäºå¯¹âçº¯å½æ°âè¿ä¸ªæ¦å¿µççé¢çè§£ãå¾å¤ç ç©¶å Haskellï¼ML ä¸ç±»è¯­è¨çä¸å®¶ï¼å¶å®å¹¶ä¸æç½æä¸é¢è®²çéçãä»ä»¬ä»¿ä½è§å¾å¦æä½¿ç¨äºèµå¼ï¼å½æ°å°±è¯å®ä¸âçº¯âäºä¼¼çãCMU çææ Robert Harper å°±æ¯è¿æ ·ä¸ä¸ªæç«¯ãä»å¨ä¸ç¯åæéæåºï¼äººä»¬ä¸åºè¯¥æç¨åºéçâåéâå«åâåéâï¼å ä¸ºå®è·æ°å­¦åé»è¾å­¦éæè°çâåéâä¸æ¯ä¸åäºï¼å®å¯ä»¥è¢«èµå¼ãç¶èï¼å¶æçå¦ä»æè¯´çé£æ ·åï¼å¦æä½ çè§£äºæå¯¹ä¸é¢çä¾å­çåæï¼ä½ å°±ä¼åç°å¶å®ç¨åºéçâåéâï¼è·æ°å­¦åé»è¾å­¦éé¢çâåéâç¸æ¯ï¼å¶å®å¹¶æ²¡ææ¬è´¨çä¸åã</h2>
+<h2>盲目的排斥赋值语句，来自于对“纯函数”这个概念的片面理解。很多研究像 Haskell，ML 一类语言的专家，其实并不明白我上面讲的道理。他们仿佛觉得如果使用了赋值，函数就肯定不“纯”了似的。CMU 的教授 Robert Harper 就是这样一个极端。他在一篇博文里指出，人们不应该把程序里的“变量”叫做“变量”，因为它跟数学和逻辑学里所谓的“变量”不是一回事，它可以被赋值。然而，其果真如他所说的那样吗？如果你理解了我对上面的例子的分析，你就会发现其实程序里的“变量”，跟数学和逻辑学里面的“变量”相比，其实并没有本质的不同。</h2>
 
-<p>ç¨åºéçåéçè³æ´å ä¸¥æ ¼ä¸äºãå¦æä½ ææ°å­¦çä½ä¸ç§ç¨åºè¯­è¨çè¯ï¼æææ²¡æä¸æ¬æ°å­¦ä¹¦å¯ä»¥ç¼è¯éè¿ãå ä¸ºå®ä»¬éé¢åæ»¡äºåéåå²çªï¼æªå®ä¹åéï¼ç±»åéè¯¯ç­ç¨åºè®¾è®¡çä½çº§éè¯¯ãä½ åªéè¦æ³¨ææ¦çè®ºéè¡¨ç¤ºéæºæ°çå¤§ååéï¼æ¯å¦ Xï¼ï¼å°±ä¼åç°æ°å­¦æè°çâåéâå¶å®æ¯å¤ä¹çä¸ä¸¥è°¨ãè¿åé X æ ¹æ¬ä¸éè¦è¢«èµå¼ï¼å®èªå·±èº«ä¸å°±å¸¦âå¯ä½ç¨âï¼å®éä¸ï¼90%ä»¥ä¸çæ°å­¦å®¶é½åä¸åºåæ ·çç¨åºæ¥ãæä»¥æ¿æ°å­¦çâåéâæ¥è¡¡éç¨åºè¯­è¨çâåéâï¼å¶å®æ¯é¢ åäºãæä»¬åºè¯¥ç¨ç¨åºçâåéâæ¥è¡¡éæ°å­¦çâåéâï¼è¿æ ·æ°å­¦çè¯­è¨æä¼æææ¹åã</p>
+<p>程序里的变量甚至更加严格一些。如果你把数学看作一种程序语言的话，恐怕没有一本数学书可以编译通过。因为它们里面充满了变量名冲突，未定义变量，类型错误等程序设计的低级错误。你只需要注意概率论里表示随机数的大写变量（比如 X），就会发现数学所谓的“变量”其实是多么的不严谨。这变量 X 根本不需要被赋值，它自己身上就带“副作用”！实际上，90%以上的数学家都写不出像样的程序来。所以拿数学的“变量”来衡量程序语言的“变量”，其实是颠倒了。我们应该用程序的“变量”来衡量数学的“变量”，这样数学的语言才会有所改善。</p>
 
-<p>é»è¾å­¦å®¶è½ç¶æä»ä»¬çä»·å¼ï¼ä½ä»ä»¬å¹¶ä¸æ¯åç¥ï¼å¹¶ä¸æ»æ¯å¯¹çãç±äºæ²è¿·äºå¯¹ç¬¦å·çç­ç±ï¼ä»ä»¬ç»å¸¸çä¸å°äºç©çæ¬è´¨ãè½ç¶ä»ä»¬çè§£å¾å¤ç¬¦å·å¬å¼åæ¨çè§åï¼ä½ä»ä»¬å´ç»å¸¸ä¸æç½è¿äºç¬¦å·åæ¨çè§åï¼å°åºä»£è¡¨çèªç¶çä¸­çä»ä¹ç©ä½ï¼æä»¥ææ¶åä»ä»¬è¿æåºæ¬çé®é¢é½ä¼æéï¼æ¯å¦ä»ä»¬ææ¶åä¼æ··æ·âå¨ç§°éè¯ââçä½ç¨åï¼ãé»è¾å­¦å®¶ä»¬çææ¡ä¸»ä¹åå´å¤ä½é£ï¼ä¹è®¸å°±æ¯å¾çµå½å¹´å¨ Church æä¸åå­¦çé£ä¹å­¤ç«ï¼é£ä¹çè¦çåå ãä¹å°±æ¯è¿ä¸ªå¾çµï¼å¨æç§ç¨åº¦ä¸è¶è¶äº Churchï¼æä¸é¨åäººä»é»è¾å­¦çæ­»æ¿æç»´æ¨¡å¼ä¸è§£æ¾äºåºæ¥ï¼åæäºâè®¡ç®æºç§å­¦å®¶âãå½ç¶å¶ä¸­æäºè®¡ç®æºç§å­¦å®¶å å¥äºå¦å¤ä¸ç§æç«¯ï¼ä»ä»¬å¯¹é»è¾å­¦å·²æçç²¾åä¸æ æç¥ï¼æä»¥æåºä¸äºå®å¨æ²¡æååçè®¾è®¡ï¼ç¶èè¿ä¸æ¯è¿ç¯æç« çä¸»é¢ã</p>
+<p>逻辑学家虽然有他们的价值，但他们并不是先知，并不总是对的。由于沉迷于对符号的热爱，他们经常看不到事物的本质。虽然他们理解很多符号公式和推理规则，但他们却经常不明白这些符号和推理规则，到底代表着自然界中的什么物体，所以有时候他们连最基本的问题都会搞错（比如他们有时候会混淆“全称量词”∀的作用域）。逻辑学家们的教条主义和崇古作风，也许就是图灵当年在 Church 手下做学生那么孤立，那么痛苦的原因。也就是这个图灵，在某种程度上超越了 Church，把一部分人从逻辑学的死板思维模式下解放了出来，变成了“计算机科学家”。当然其中某些计算机科学家堕入了另外一种极端，他们对逻辑学已有的精华一无所知，所以搞出一些完全没有原则的设计，然而这不是这篇文章的主题。</p>
 
-<p>æä»¥ç»¼ä¸æè¿°ï¼æä»¬å®å¨æ²¡æå¿è¦è¿½æ±ä»ä¹âçº¯å½æ°å¼è¯­è¨âï¼å ä¸ºæä»¬å¯ä»¥å¨ä¸å¼èµ·æ··æ·çåæä¸ä½¿ç¨èµå¼è¯­å¥ï¼èååºçæ­£çâçº¯å½æ°âæ¥ãå¯ä»¥èªç±çå¯¹åéè¿è¡èµå¼çè¯­è¨ï¼å¶å®è¶è¶äºéå¸¸çæ°çé»è¾çè¡¨è¾¾è½åãå¦æä½ ä¸ç¸ä¿¡è¿ä¸ç¹ï¼å°±è¯·æ³ä¸æ³ï¼æ°çé»è¾çå¬å¼ææ²¡æè½åæ¨æ­åºæå¤©çå¤©æ°ï¼ä¸ºä»ä¹å¤©æ°é¢æ¥é½æ¯ç¨ç¨åºç®åºæ¥çï¼èä¸æ¯ç¨é»è¾å¬å¼æ¨åºæ¥çï¼æä»¥æè®¤ä¸ºï¼ç¨åºå¶å®å¨æç§ç¨åº¦ä¸å·²ç»æä¸ºæ¯æ°çé»è¾æ´å å¼ºå¤§çé»è¾ãå®å¨ç¨æ°çé»è¾çæç»´æ¹å¼æ¥å¯¹ç¨åºè¯­è¨ååºè¯ä»·ï¼å¶å®æ¯å¾çé¢çã</p>
+<p>所以综上所述，我们完全没有必要追求什么“纯函数式语言”，因为我们可以在不引起混淆的前提下使用赋值语句，而写出真正的“纯函数”来。可以自由的对变量进行赋值的语言，其实超越了通常的数理逻辑的表达能力。如果你不相信这一点，就请想一想，数理逻辑的公式有没有能力推断出明天的天气？为什么天气预报都是用程序算出来的，而不是用逻辑公式推出来的？所以我认为，程序其实在某种程度上已经成为比数理逻辑更加强大的逻辑。完全用数理逻辑的思维方式来对程序语言做出评价，其实是很片面的。</p>
 
-<p>è¯´äºè¿ä¹å¤ï¼å¯¹äºâå½æ°å¼è¯­è¨âè¿ä¸æ¦å¿µçè¯¯è§£ï¼åºè¯¥æ¶é¤å¾å·®ä¸å¤äºãå¶å®âå½æ°å¼è¯­è¨âå¯ä¸çè¦æ±ï¼åºè¯¥æ¯è½å¤å¨ä»»æä½ç½®å®ä¹å½æ°ï¼å¹¶ä¸è½å¤æå½æ°ä½ä¸ºå¼ä¼ éï¼ä¸ç®¡è¿å½æ°æ¯âçº¯âçè¿æ¯âä¸çº¯âçãæä»¥å Lisp å ML è¿æ ·çè¯­è¨ï¼å¶å®å®å¨ç¬¦åâå½æ°å¼è¯­è¨âè¿ä¸ç§°å·ã</p>
-
-
+<p>说了这么多，对于“函数式语言”这一概念的误解，应该消除得差不多了。其实“函数式语言”唯一的要求，应该是能够在任意位置定义函数，并且能够把函数作为值传递，不管这函数是“纯”的还是“不纯”的。所以像 Lisp 和 ML 这样的语言，其实完全符合“函数式语言”这一称号。</p>
+    </div>
+    
+    <script src="js/highlight.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script>
+        if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
+            document.body.classList.add('mobile');
+            var navbar = document.querySelector('nav.navbar');
+            if (navbar) { navbar.classList.remove('navbar-fixed-top'); }
+        }
+    </script>
 </body>
-
 </html>

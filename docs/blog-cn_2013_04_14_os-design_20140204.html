@@ -1,50 +1,93 @@
+<!DOCTYPE html>
 <html>
 <head>
-
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link href="http://www.yinwang.org/main.css" rel="stylesheet" type="text/css">
-<link rel="alternate" type="application/atom+xml" href="/atom.xml" title="Atom feed">
-<link rel="shortcut icon" href="http://www.yinwang.org/images/Yc.jpg">
-
-<title>ä¸ç§æ°çæä½ç³»ç»è®¾è®¡</title>
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-45586344-1', 'yinwang.org');
-  ga('send', 'pageview');
-
-</script>
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <title>一种新的操作系统设计</title>
+    <link rel="stylesheet" href="css/highlight/xcode.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-tooltips.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/home.css"> <!-- Need home for navbar -->
+    <link rel="stylesheet" href="css/post.css">
+    <script src="js/jquery.min.js"></script>
+    <style>
+        /* Switcher Fixes */
+        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
+        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
+        .version-switcher a.current { font-weight: bold; color: #333; }
+        /* Inner override for posts */
+        .inner { margin-top: 80px; } 
+    </style>
 </head>
-ãã
 <body>
+    <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-bs">
+                    <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+                <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='aboutcmec_aboutcmec_01.jsp_20060213.html'>About</a></li><li><a href='aboutess_aboutess_01.jsp_20060213.html'>About</a></li><li><a href='aboutinfo_aboutinfo_01.jsp_20060106.html'>About</a></li><li><a href='tweet_20170605.html'>微勃 (Tweets)</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='homepage_20250719.html'>当然我在扯淡 (None)</a></li><li><a href='index.jsp_20060213.html'>中国中小企业竞争力工程 (None)</a></li><li><a href='index_20260110.html'>Surely I am Joking (None)</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Posts <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='posts_air-freshener-nightmare_20251129.html'>Surely I am Joking</a></li><li><a href='posts_american-english-problems_20251030.html'>Surely I am Joking</a></li><li><a href='posts_authority_20251221.html'>Surely I am Joking</a></li><li><a href='posts_cello-technique_20251102.html'>Surely I am Joking</a></li><li><a href='posts_continuation-course_20251206.html'>Surely I am Joking</a></li><li><a href='posts_cs-class2_20251105.html'>Surely I am Joking</a></li><li><a href='posts_cs-course-5_20251208.html'>Surely I am Joking</a></li><li><a href='posts_cs-video-course_20251101.html'>Surely I am Joking</a></li><li><a href='posts_cs3_20251102.html'>Surely I am Joking</a></li><li><a href='posts_cs4_20251102.html'>Surely I am Joking</a></li><li><a href='posts_cs5-completed_20251031.html'>Surely I am Joking</a></li><li><a href='posts_entry-level-class_20251102.html'>Surely I am Joking</a></li><li><a href='posts_learning-philosophy_20251211.html'>Surely I am Joking</a></li><li><a href='posts_oberon_20260113.html'>Surely I am Joking</a></li><li><a href='posts_reading-course_20251102.html'>Surely I am Joking</a></li><li><a href='posts_super-human-level-vision_20251104.html'>Surely I am Joking</a></li><li><a href='posts_tuition-for-covid_20251103.html'>Surely I am Joking</a></li><li><a href='posts_wisdom-of-intelligence_20251102.html'>Surely I am Joking</a></li><li><a href='posts_youth-cs-student_20251102.html'>Surely I am Joking</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='resources_d8-3404-d8-8424_20130614.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_base64mime.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_charset.py_20150506.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_encoders.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_errors.py_20150409.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_header.py_20140305.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_quoprimime.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_re.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_compile.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_constants.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_parse.py_20160822.html'>Untitled</a></li><li><a href='resources_diff1-diff2_20200728.html'>Untitled</a></li><li><a href='resources_mk1-mk2_20130627.html'>Untitled</a></li><li><a href='resources_nav1-nav2_20200728.html'>Untitled</a></li><li><a href='resources_paredit20-paredit23_20200728.html'>Untitled</a></li><li><a href='resources_pydiff1-pydiff2_20130711.html'>Untitled</a></li><li><a href='resources_simulator-mips-simulator-arm_20200728.html'>Untitled</a></li><li><a href='resources_typed-clojure1-typed-clojure2_20200728.html'>Untitled</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tags <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='tags_ai_20251103.html'>Surely I am Joking</a></li><li><a href='tags_education_20251031.html'>Surely I am Joking</a></li><li><a href='tags_english_20251101.html'>Surely I am Joking</a></li><li><a href='tags_health_20251102.html'>Surely I am Joking</a></li><li><a href='tags_life_20251129.html'>Surely I am Joking</a></li><li><a href='tags_lifestyle_20251101.html'>Surely I am Joking</a></li><li><a href='tags_philosophy_20251101.html'>Surely I am Joking</a></li><li><a href='tags_programming-language_20260113.html'>Surely I am Joking</a></li><li><a href='tags_travel_20251129.html'>Surely I am Joking</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Misc <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='.well-known_dnt-policy.txt_20251211.html'>Surely I am Joking</a></li><li><a href='_5C_20251205.html'>Surely I am Joking</a></li><li><a href='_5Cu003c_a_5Cu003e_5Cu003c_td_5Cu003e_5Cn_5Cu003ctd_5Cu003e_E7_BC_96_E7_A8_8B_5Cu003c_td_5Cu003e_5Cn_5Cu003c_tr_5Cu003e_5Cn_5Cu003ctr_5Cu003e_5Cn_5Cu003ctd_5Cu003e_5Cu003ca_20251204.html'>Surely I am Joking</a></li><li><a href='ads.txt_20251013.html'>Surely I am Joking</a></li><li><a href='afficheAction.do_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='apply_dcb.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='apply_twsqb.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='common_casetoyota.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='common_casexhx.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='common_courseBase_main.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='common_courseBase_tch_grzl.jsp_20060106.html'>Untitled</a></li><li><a href='contactus.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='datadownload.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='dljm.jsp_20060516.html'>竞争力工程</a></li><li><a href='fwjs.jsp_20060516.html'>竞争力工程</a></li><li><a href='hd_qgjx.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='laws_laws_01.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='lianxi.jsp_20060428.html'>竞争力工程</a></li><li><a href='more.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='neirong.jsp_20060516.html'>详细内容</a></li><li><a href='newsPublishAction.do_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='servicecenter_servicecenter_01.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='tongzhi.jsp_20060428.html'>竞争力工程</a></li><li><a href='tongzhi_tongzhi1.htm_20060428.html'>ÎÞ±êÌâÎÄµµ</a></li><li><a href='tongzhi_tongzhi2.htm_20060428.html'>ÎÞ±êÌâÎÄµµ</a></li><li><a href='units_gjfz.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='units_jstg.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='units_zgzx.jsp_20060213.html'>中国中小企业竞争力工程</a></li></ul></li></ul>
+            </div>
+        </div>
+    </nav>
 
-<h2>ä¸ç§æ°çæä½ç³»ç»è®¾è®¡</h2>
+    <div class="inner">
+        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2013_04_14_os-design_20130418.html" >2013-04-18</a> <a href="blog-cn_2013_04_14_os-design_20140204.html" class="current">2014-02-04</a> <a href="blog-cn_2013_04_14_os-design_20140507.html" >2014-05-07</a> <a href="blog-cn_2013_04_14_os-design_20140701.html" >2014-07-01</a> <a href="blog-cn_2013_04_14_os-design_20150320.html" >2015-03-20</a> <a href="blog-cn_2013_04_14_os-design_20161016.html" >2016-10-16</a> <a href="blog-cn_2013_04_14_os-design_20170608.html" >2017-06-08</a> <a href="blog-cn_2013_04_14_os-design_20170708.html" >2017-07-08</a> <a href="blog-cn_2013_04_14_os-design_20171127.html" >2017-11-27</a> <a href="blog-cn_2013_04_14_os-design_20180311.html" >2018-03-11</a> <a href="blog-cn_2013_04_14_os-design_20200217.html" >2020-02-17</a> <a href="blog-cn_2013_04_14_os-design_20240417.html" >2024-04-17</a></div>
+        <h2>一种新的操作系统设计</h2>
 
-<p>æä¸ç´å¨è¯å¾å©ç¨ç¨åºè¯­è¨çè®¾è®¡åçï¼è®¾è®¡ä¸ç§è¶è¶âUnix å²å­¦âçæä½ç³»ç»ãè¿éæ¯æçè®¾æ³ï¼</p>
+<p>我一直在试图利用程序语言的设计原理，设计一种超越“Unix 哲学”的操作系统。这里是我的设想：</p>
 
 <ul>
-<li><p>è¿ç§ç³»ç»éé¢çç¨åºé´éä¿¡ä¸ä½¿ç¨æ ç»æçå­ç¬¦ä¸²ï¼èæ¯ä½¿ç¨å¸¦æç±»ååç»æçæ°æ®ãå¨è¿æ ·çç³»ç»éé¢ï¼Unix åå¶å®ç±»ä¼¼æä½ç³»ç»ï¼æ¯å¦ Windowsï¼éçæè°âåºç¨ç¨åºâçæ¦å¿µåºæ¬ä¸å®å¨æ¶å¤±ãç³»ç»ç±ä¸ä¸ªä¸ªå¾å°çâå½æ°âç»æï¼æ¯ä¸ªå½æ°é½å¯ä»¥è°ç¨å¦å¤ä¸ä¸ªå½æ°ï¼éè¿åæ°ä¼ éæ°æ®ãæ¯ä¸ªå½æ°é½å¯ä»¥æå¨æèèªå¨å¹¶åæ§è¡ãç¨ç°å¨çç³»ç»æ¯è¯­æä¸ªæ¯æ¹ï¼è¿å°±åæ¯ææä»£ç é½æ¯âåºâä»£ç ï¼èä¸å­å¨ç¬ç«çâå¯æ§è¡âæä»¶ã</p></li>
-<li><p>ç±äºåæ°æ¯ä¸ä¸ªæ°æ®ç»æï¼èä¸æ¯å­ç¬¦ä¸²ï¼è¿é¿åäºç¨åºé´éä¿¡ç¹ççâç¼ç âåâè§£ç âè¿ç¨ãä½¿å¾âè¿ç¨é´éä¿¡âåå¾è½»èæä¸¾ãä»»ä½å½æ°é½å¯ä»¥è°ç¨å¦ä¸ä¸ªå½æ°æ¥å¤çç¹å®ç±»åçæ°æ®ï¼è¿ä½¿å¾å âOLE åµå¥âè¿æ ·çæºå¶åå¾æå¶ç®åã</p></li>
-<li><p>ææå½æ°ç±åä¸ç§åè¿çé«çº§ç¨åºè¯­è¨åæï¼æä»¥å½æ°é´çè°ç¨å®å¨ä¸éè¦âç¿»è¯âã</p></li>
-<li><p>ç±äºè¿ç§è¯­è¨ä¸åè®¸åºç¨ç¨åºä½¿ç¨âæéè¿ç®âï¼åºç¨ç¨åºä¸å¯è½äº§ç segfault ä¸ç±»æè ¢çéè¯¯ã</p></li>
-<li><p>ç±äºæ²¡ææéè¿ç®ï¼ç³»ç»ä¸åéè¦ç°ä»£å¤çå¨æä¾çâåå­æ å°âæºå¶ï¼ä»¥å TLBãè¿ä½¿å¾åå­è®¿é®æçå¤§å¹æé«ãèä¸ç®åäºå¤çå¨çè®¾è®¡ã</p></li>
-<li><p>æä½ç³»ç»ä½¿ç¨ä¸åºç¨ç¨åºç¸åçé«çº§è¯­è¨åæï¼å¯è½éè¦æ¯æä¸äºâç¹ææä½âï¼ï¼è³äºâç³»ç»è°ç¨âï¼åªä¸è¿æ¯è°ç¨å¦å¤ä¸ä¸ªå½æ°ã</p></li>
-<li><p>æä½ç³»ç»çâshellâï¼ä¸è¿æ¯ä¸ä¸ªè¿ç§é«çº§è¯­è¨ç REPLãç¨æ·å¯ä»¥å¨ç»ç«¯è¾å¥åç§å½æ°è°ç¨ï¼ä»èå¯å¨è¿ç¨çè¿è¡ã</p></li>
-<li><p>ç³»ç»ä¸éè¦ SQLï¼ä¸éè¦å³ç³»å¼æ°æ®åºãææçæ°æ®é½ä½ä¸ºâå¯¹è±¡âï¼ä¿å­å¨ä¸ä¸ªåå¸å¼çæ°æ®ç©ºé´ã</p></li>
-<li><p>ç³»ç»ä¸éè¦âæä»¶ç³»ç»âãææçæ°æ®ï¼å¨åéçæ¶åè¢«èªå¨åæ­¥å°ç£çï¼å¹¶ä¸è¿è¡å®¹éå¤çï¼æä»¥å³ä½¿å¨æºå¨æçµçæåµï¼ç»å¤§é¨åçæ°æ®åè¿ç¨è½å¤å¨çµæºæ¢å¤åèªå¨ç»§ç»­è¿è¡ã</p></li>
-<li><p>ç¨åºååç¨æ·å®å¨ä¸éè¦ç¥éâæ°æ®åºâæèâæä»¶ç³»ç»âçå­å¨ãç¨åºåè®¾èªå·±æ¥ææ ç©·å¤§çç©ºé´ï¼å¯ä»¥ä»»æçæé æ°æ®ã</p></li>
-<li><p>ä¸ºäºåå°æ°æ®çç§»å¨ï¼ç³»ç»æ ¹æ®æ°æ®çä½ç½®ï¼éæ©ï¼ 1ï¼è¿ç§»æ°æ®ï¼æè 2ï¼è¿ç§»å¤çæ°æ®çâè¿ç¨âãç¨åºåä¸éè¦ä½¿ç¨ MapReduceï¼Hadoop ç­ï¼å°±è½è¿è¡å¤§è§æ¨¡å¹¶è¡è®¡ç®ã</p></li>
+<li><p>这种系统里面的程序间通信不使用无结构的字符串，而是使用带有类型和结构的数据。在这样的系统里面，Unix 和其它类似操作系统（比如 Windows）里的所谓“应用程序”的概念基本上完全消失。系统由一个个很小的“函数”组成，每个函数都可以调用另外一个函数，通过参数传递数据。每个函数都可以手动或者自动并发执行。用现在的系统术语打个比方，这就像是所有代码都是“库”代码，而不存在独立的“可执行”文件。</p></li>
+<li><p>由于参数是一个数据结构，而不是字符串，这避免了程序间通信繁琐的“编码”和“解码”过程。使得“进程间通信”变得轻而易举。任何函数都可以调用另一个函数来处理特定类型的数据，这使得像 “OLE 嵌入”这样的机制变得极其简单。</p></li>
+<li><p>所有函数由同一种先进的高级程序语言写成，所以函数间的调用完全不需要“翻译”。</p></li>
+<li><p>由于这种语言不允许应用程序使用“指针运算”，应用程序不可能产生 segfault 一类愚蠢的错误。</p></li>
+<li><p>由于没有指针运算，系统不再需要现代处理器提供的“内存映射”机制，以及 TLB。这使得内存访问效率大幅提高。而且简化了处理器的设计。</p></li>
+<li><p>操作系统使用与应用程序相同的高级语言写成（可能需要支持一些“特权操作”），至于“系统调用”，只不过是调用另外一个函数。</p></li>
+<li><p>操作系统的“shell”，不过是一个这种高级语言的 REPL。用户可以在终端输入各种函数调用，从而启动进程的运行。</p></li>
+<li><p>系统不需要 SQL，不需要关系式数据库。所有的数据都作为“对象”，保存在一个分布式的数据空间。</p></li>
+<li><p>系统不需要“文件系统”。所有的数据，在合适的时候被自动同步到磁盘，并且进行容错处理，所以即使在机器掉电的情况，绝大部分的数据和进程能够在电源恢复后自动继续运行。</p></li>
+<li><p>程序员和用户完全不需要知道“数据库”或者“文件系统”的存在。程序假设自己拥有无穷大的空间，可以任意的构造数据。</p></li>
+<li><p>为了减少数据的移动，系统根据数据的位置，选择： 1）迁移数据，或者 2）迁移处理数据的“进程”。程序员不需要使用 MapReduce，Hadoop 等，就能进行大规模并行计算。</p></li>
 </ul>
 
 
-<p>ææ¾ç»ä»¥ä¸ºææ¯ç¬¬ä¸ä¸ªæ³å°è¿ä¸ªåæ³çäººãå¯æçæ¯è°æ¥ä¹ååç°ï¼å¾å¤äººæ©å°±å·²ç»ååºäºç±»ä¼¼çç³»ç»ï¼è½ç¶éäºåºç¨åºæ¯ï¼æ²¡æå¯¹æå®ç¨äºåå¸å¼è®¡ç®ï¼ãLisp Machine ä¼¼ä¹æ¯å¶ä¸­ææ¥è¿çä¸ä¸ªã<a href="http://www.yinwang.org/blog-cn/2013/03/07/oberon/">Oberon</a> æ¯å¦å¤ä¸ä¸ªãIBM System/38 æ¯ç±»ä¼¼ç³»ç»éé¢æèçä¸ä¸ªã</p>
-
-
+<p>我曾经以为我是第一个想到这个做法的人。可惜的是调查之后发现，很多人早就已经做出了类似的系统（虽然限于应用场景，没有对把它用于分布式计算）。Lisp Machine 似乎是其中最接近的一个。<a href="http://www.yinwang.org/blog-cn/2013/03/07/oberon/">Oberon</a> 是另外一个。IBM System/38 是类似系统里面最老的一个。</p>
+    </div>
+    
+    <script src="js/highlight.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script>
+        if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
+            document.body.classList.add('mobile');
+            var navbar = document.querySelector('nav.navbar');
+            if (navbar) { navbar.classList.remove('navbar-fixed-top'); }
+        }
+    </script>
 </body>
-
 </html>

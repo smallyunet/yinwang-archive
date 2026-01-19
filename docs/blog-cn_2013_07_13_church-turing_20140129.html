@@ -1,72 +1,115 @@
+<!DOCTYPE html>
 <html>
 <head>
-
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link href="http://www.yinwang.org/main.css" rel="stylesheet" type="text/css">
-<link rel="alternate" type="application/atom+xml" href="/atom.xml" title="Atom feed">
-<link rel="shortcut icon" href="http://www.yinwang.org/images/Yc.jpg">
-
-<title>ä¸å¥åå¾çµ</title>
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-45586344-1', 'yinwang.org');
-  ga('send', 'pageview');
-
-</script>
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <title>丘奇和图灵</title>
+    <link rel="stylesheet" href="css/highlight/xcode.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-tooltips.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/home.css"> <!-- Need home for navbar -->
+    <link rel="stylesheet" href="css/post.css">
+    <script src="js/jquery.min.js"></script>
+    <style>
+        /* Switcher Fixes */
+        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
+        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
+        .version-switcher a.current { font-weight: bold; color: #333; }
+        /* Inner override for posts */
+        .inner { margin-top: 80px; } 
+    </style>
 </head>
-ãã
 <body>
+    <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-bs">
+                    <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+                <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='aboutcmec_aboutcmec_01.jsp_20060213.html'>About</a></li><li><a href='aboutess_aboutess_01.jsp_20060213.html'>About</a></li><li><a href='aboutinfo_aboutinfo_01.jsp_20060106.html'>About</a></li><li><a href='tweet_20170605.html'>微勃 (Tweets)</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='homepage_20250719.html'>当然我在扯淡 (None)</a></li><li><a href='index.jsp_20060213.html'>中国中小企业竞争力工程 (None)</a></li><li><a href='index_20260110.html'>Surely I am Joking (None)</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Posts <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='posts_air-freshener-nightmare_20251129.html'>Surely I am Joking</a></li><li><a href='posts_american-english-problems_20251030.html'>Surely I am Joking</a></li><li><a href='posts_authority_20251221.html'>Surely I am Joking</a></li><li><a href='posts_cello-technique_20251102.html'>Surely I am Joking</a></li><li><a href='posts_continuation-course_20251206.html'>Surely I am Joking</a></li><li><a href='posts_cs-class2_20251105.html'>Surely I am Joking</a></li><li><a href='posts_cs-course-5_20251208.html'>Surely I am Joking</a></li><li><a href='posts_cs-video-course_20251101.html'>Surely I am Joking</a></li><li><a href='posts_cs3_20251102.html'>Surely I am Joking</a></li><li><a href='posts_cs4_20251102.html'>Surely I am Joking</a></li><li><a href='posts_cs5-completed_20251031.html'>Surely I am Joking</a></li><li><a href='posts_entry-level-class_20251102.html'>Surely I am Joking</a></li><li><a href='posts_learning-philosophy_20251211.html'>Surely I am Joking</a></li><li><a href='posts_oberon_20260113.html'>Surely I am Joking</a></li><li><a href='posts_reading-course_20251102.html'>Surely I am Joking</a></li><li><a href='posts_super-human-level-vision_20251104.html'>Surely I am Joking</a></li><li><a href='posts_tuition-for-covid_20251103.html'>Surely I am Joking</a></li><li><a href='posts_wisdom-of-intelligence_20251102.html'>Surely I am Joking</a></li><li><a href='posts_youth-cs-student_20251102.html'>Surely I am Joking</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='resources_d8-3404-d8-8424_20130614.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_base64mime.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_charset.py_20150506.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_encoders.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_errors.py_20150409.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_header.py_20140305.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_quoprimime.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_re.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_compile.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_constants.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_parse.py_20160822.html'>Untitled</a></li><li><a href='resources_diff1-diff2_20200728.html'>Untitled</a></li><li><a href='resources_mk1-mk2_20130627.html'>Untitled</a></li><li><a href='resources_nav1-nav2_20200728.html'>Untitled</a></li><li><a href='resources_paredit20-paredit23_20200728.html'>Untitled</a></li><li><a href='resources_pydiff1-pydiff2_20130711.html'>Untitled</a></li><li><a href='resources_simulator-mips-simulator-arm_20200728.html'>Untitled</a></li><li><a href='resources_typed-clojure1-typed-clojure2_20200728.html'>Untitled</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tags <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='tags_ai_20251103.html'>Surely I am Joking</a></li><li><a href='tags_education_20251031.html'>Surely I am Joking</a></li><li><a href='tags_english_20251101.html'>Surely I am Joking</a></li><li><a href='tags_health_20251102.html'>Surely I am Joking</a></li><li><a href='tags_life_20251129.html'>Surely I am Joking</a></li><li><a href='tags_lifestyle_20251101.html'>Surely I am Joking</a></li><li><a href='tags_philosophy_20251101.html'>Surely I am Joking</a></li><li><a href='tags_programming-language_20260113.html'>Surely I am Joking</a></li><li><a href='tags_travel_20251129.html'>Surely I am Joking</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Misc <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='.well-known_dnt-policy.txt_20251211.html'>Surely I am Joking</a></li><li><a href='_5C_20251205.html'>Surely I am Joking</a></li><li><a href='_5Cu003c_a_5Cu003e_5Cu003c_td_5Cu003e_5Cn_5Cu003ctd_5Cu003e_E7_BC_96_E7_A8_8B_5Cu003c_td_5Cu003e_5Cn_5Cu003c_tr_5Cu003e_5Cn_5Cu003ctr_5Cu003e_5Cn_5Cu003ctd_5Cu003e_5Cu003ca_20251204.html'>Surely I am Joking</a></li><li><a href='ads.txt_20251013.html'>Surely I am Joking</a></li><li><a href='afficheAction.do_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='apply_dcb.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='apply_twsqb.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='common_casetoyota.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='common_casexhx.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='common_courseBase_main.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='common_courseBase_tch_grzl.jsp_20060106.html'>Untitled</a></li><li><a href='contactus.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='datadownload.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='dljm.jsp_20060516.html'>竞争力工程</a></li><li><a href='fwjs.jsp_20060516.html'>竞争力工程</a></li><li><a href='hd_qgjx.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='laws_laws_01.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='lianxi.jsp_20060428.html'>竞争力工程</a></li><li><a href='more.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='neirong.jsp_20060516.html'>详细内容</a></li><li><a href='newsPublishAction.do_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='servicecenter_servicecenter_01.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='tongzhi.jsp_20060428.html'>竞争力工程</a></li><li><a href='tongzhi_tongzhi1.htm_20060428.html'>ÎÞ±êÌâÎÄµµ</a></li><li><a href='tongzhi_tongzhi2.htm_20060428.html'>ÎÞ±êÌâÎÄµµ</a></li><li><a href='units_gjfz.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='units_jstg.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='units_zgzx.jsp_20060213.html'>中国中小企业竞争力工程</a></li></ul></li></ul>
+            </div>
+        </div>
+    </nav>
 
-<h2>ä¸å¥åå¾çµ</h2>
+    <div class="inner">
+        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2013_07_13_church-turing_20130718.html" >2013-07-18</a> <a href="blog-cn_2013_07_13_church-turing_20130803.html" >2013-08-03</a> <a href="blog-cn_2013_07_13_church-turing_20140129.html" class="current">2014-01-29</a> <a href="blog-cn_2013_07_13_church-turing_20140507.html" >2014-05-07</a> <a href="blog-cn_2013_07_13_church-turing_20140701.html" >2014-07-01</a> <a href="blog-cn_2013_07_13_church-turing_20150101.html" >2015-01-01</a> <a href="blog-cn_2013_07_13_church-turing_20160922.html" >2016-09-22</a> <a href="blog-cn_2013_07_13_church-turing_20170506.html" >2017-05-06</a> <a href="blog-cn_2013_07_13_church-turing_20170608.html" >2017-06-08</a> <a href="blog-cn_2013_07_13_church-turing_20170707.html" >2017-07-07</a> <a href="blog-cn_2013_07_13_church-turing_20171208.html" >2017-12-08</a> <a href="blog-cn_2013_07_13_church-turing_20180222.html" >2018-02-22</a> <a href="blog-cn_2013_07_13_church-turing_20200228.html" >2020-02-28</a> <a href="blog-cn_2013_07_13_church-turing_20240416.html" >2024-04-16</a></div>
+        <h2>丘奇和图灵</h2>
 
 <table><tr><td><img src="images/Alonzo_Church.jpg" height=300></td><td>&emsp;</td><td><img src="images/Alan_Turing.jpg" height=300></td><tr></table>
 
 
-<p>ä¸å¥ï¼Alonzo Churchï¼åå¾çµï¼Alan Turingï¼æ¯ä¸¤ä½å¯¹è®¡ç®æºç§å­¦å·ææå¤§å½±ååçäººç©ï¼ç¶èä»ä»¬å´å·æéå¸¸å¯¹ç«çè§ç¹åç¸å·®å¾å¤çåæ°ãå¨æé¿è¾¾16å¹´çè®¡ç®æºç§å­¦çæ¶¯ä¸­ï¼æ»æ¯æè§å°èªå·±çææ³ååå¤å¤çå¾å¾äºè¿ä¸¤ä¸ªâéµè¥âä¹é´ãä¸å¥ä»£è¡¨äºâé»è¾âåâè¯­è¨âï¼èå¾çµä»£è¡¨çâç©çâåâæºå¨âãå¨åé¢ç8å¹´ä¸­ï¼æå¯¹ä¸å¥ä¸æ æç¥ï¼èå¨åé¢ç8å¹´ä¸­ï¼æå´å¾å°åå¬å°å¾çµçåå­ãä»ä»¬çè§ç¹è°å¯¹è°éï¼æ¯ä¸ä¸ªæ æ³åç­çé®é¢ãå®å¨æé ä¸å¥ï¼æèå®å¨æé å¾çµï¼è²ä¼¼é½æ¯éè¯¯çåæ³ãè¿æ¯ä¸ç§éå¸¸é¾è¯´æ¸æ¥çï¼çç¾çæè§ï¼ä½æ¯ä»å¤©æè¯å¾æèªå·±çææç®è¦çä»ç»ä¸ä¸ã</p>
+<p>丘奇（Alonzo Church）和图灵（Alan Turing）是两位对计算机科学具有最大影响力的人物，然而他们却具有非常对立的观点和相差很多的名气。在我长达16年的计算机科学生涯中，总是感觉到自己的思想反反复复的徘徊于这两个“阵营”之间。丘奇代表了“逻辑”和“语言”，而图灵代表着“物理”和“机器”。在前面的8年中，我对丘奇一无所知，而在后面的8年中，我却很少再听到图灵的名字。他们的观点谁对谁错，是一个无法回答的问题。完全投靠丘奇，或者完全投靠图灵，貌似都是错误的做法。这是一种非常难说清楚的，矛盾的感觉，但是今天我试图把自己的感悟简要的介绍一下。</p>
 
-<h3>ä¸å¥ä¸å¾çµä¹äº</h3>
+<h3>丘奇与图灵之争</h3>
 
-<p>æ³å¿ä¸çä¸ææçè®¡ç®æºå­¦çé½ç¥éå¾çµçå¤§ååäºè¿¹ï¼å ä¸ºç¾å½è®¡ç®æºå¨å­¦ä¼ï¼ACMï¼æ¯å¹´é½ä¼é¢åâå¾çµå¥âï¼å®è¢«èªä¸ºè®¡ç®æºç§å­¦çæé«è£èªãå¤§é¨åçè®¡ç®æºå­¦çé½ä¼å¨æé¨è¯¾ç¨ï¼æ¯å¦âè®¡ç®çè®ºâï¼å­¦ä¹ âå¾çµæºâçåçãç¶èï¼æå¤å°äººç¥éä¸å¥æ¯ä»ä¹äººï¼ä»ååºäºä»ä¹è´¡ç®ï¼ä»ä¸å¾çµæ¯ä»ä¹æ ·çå³ç³»å¢ï¼ææ³ææä¸å°ä¸åçäººå§ã</p>
+<p>想必世界上所有的计算机学生都知道图灵的大名和事迹，因为美国计算机器学会（ACM）每年都会颁发“图灵奖”，它被誉为计算机科学的最高荣誉。大部分的计算机学生都会在某门课程（比如“计算理论”）学习“图灵机”的原理。然而，有多少人知道丘奇是什么人，他做出了什么贡献，他与图灵是什么样的关系呢？我想恐怕不到一半的人吧。</p>
 
-<p>å¦æä½ æ¥ä¸ä¸<a href="http://www.genealogy.math.ndsu.nodak.edu/id.php?id=8014">æ°å­¦å®¶è°±å¾</a>ï¼å°±ä¼åç°ä¸å¥å¶å®æ¯å¾çµçåå£«å¯¼å¸ãç¶èä» Andrew Hodges æèçã<a href="http://www.turing.org.uk/bio/part3.html">å¾çµä¼ </a>ãï¼ä½ å´å¯ä»¥çå°å¾çµçå¿ç®ä¸­ä»¿ä½å¹¶æ²¡æè¿ä¸ªå¯¼å¸ï¼ä»¿ä½èªå·±çâå¨æ°åæâåºå¾çåæ°ï¼è¢«ä¸å¥æ¢èµ°äºä¸æ ·ï¼æ³¨æä½èçç¨è¯ï¼robbedï¼ãäºå®å°åºæ¯ææ ·çï¼ææè°ä¹è¯´ä¸æ¸æ¥ãæåªè½è¯´ï¼è²ä¼¼è®¡ç®æºç§å­¦ä»è¯çä¹æ¥å¼å§å°±åæ»¡äºåç§âå®ææäºâã</p>
+<p>如果你查一下<a href="http://www.genealogy.math.ndsu.nodak.edu/id.php?id=8014">数学家谱图</a>，就会发现丘奇其实是图灵的博士导师。然而从 Andrew Hodges 所著的《<a href="http://www.turing.org.uk/bio/part3.html">图灵传</a>》，你却可以看到图灵的心目中仿佛并没有这个导师，仿佛自己的“全新发明”应得的名气，被丘奇抢走了一样（注意作者的用词：robbed）。事实到底是怎样的，恐怕谁也说不清楚。我只能说，貌似计算机科学从诞生之日开始就充满了各种“宗教斗争”。</p>
 
-<p>è½ç¶ç°å¨å¾çµæ´å æåï¼ç¶èå¨ç°å®çç¨åºè®¾è®¡ä¸­ï¼å´æ¯ä¸å¥ççè®ºå¨èµ·çç»å¤§é¨åçä½ç¨ãæ®æçç»éªï¼ä¸å¥ççè®ºè®©å¾å¤äºæåå¾ç®åï¼èå¾çµçæºå¨å´è¿åº¦çå¤æãä¸å¥æåæç lambda calculus ä»¥ååç»­çå·¥ä½ï¼æ¯å ä¹ä¸åç¨åºè¯­è¨ççè®ºåºç¡ãèæ ¹æ®èä¸è¾çè®¡ç®æºå·¥ç¨å¸ä»¬çæè¿°ï¼ææ©çè®¡ç®æºææ¶ä¹æ²¡æåå°å¾çµçå¯åï¼é£æ¯ä¸äºçµæºå·¥ç¨å¸å®å¨ç¬ç«çå·¥ä½ãç¶èæè¶£çæ¯ï¼ç»§æ¿äºä¸å¥è¡£éµçè®¡ç®æºç§å­¦å®¶ä»¬æ¿å°çé£ä¸ªå¤§å¥ï¼ä»ç¶è¢«å«åâå¾çµå¥âãæç²ç¥çç®äºä¸ä¸ï¼å¨è¿ä»ææçå¾çµå¥ä¹ä¸­ï¼ç¨åºè¯­è¨çç ç©¶èå äºè¿ä¸åä¹ä¸ã</p>
+<p>虽然现在图灵更加有名，然而在现实的程序设计中，却是丘奇的理论在起着绝大部分的作用。据我的经验，丘奇的理论让很多事情变得简单，而图灵的机器却过度的复杂。丘奇所发明的 lambda calculus 以及后续的工作，是几乎一切程序语言的理论基础。而根据老一辈的计算机工程师们的描述，最早的计算机构架也没有受到图灵的启发，那是一些电机工程师完全独立的工作。然而有趣的是，继承了丘奇衣钵的计算机科学家们拿到的那个大奖，仍然被叫做“图灵奖”。我粗略的算了一下，在迄今所有的图灵奖之中，程序语言的研究者占了近三分之一。</p>
 
-<h3>ä»å¾çµæºå° lambda calculus</h3>
+<h3>从图灵机到 lambda calculus</h3>
 
-<p>å¾çµæºæ°¸è¿çåçå¨äºçè®ºçé¢åï¼ç»å¤§å¤æ°è¢«ç¨å¨âè®¡ç®çè®ºâï¼Theory of Computationï¼ä¸­ãè®¡ç®çè®ºå¶å®åæ¬ä¸¤ä¸ªä¸»è¦æ¦å¿µï¼âå¯è®¡ç®æ§çè®ºâï¼computabilityï¼åâå¤æåº¦çè®ºâ(complexityï¼ãè¿ä¸¤ä¸ªæ¦å¿µå¨éå¸¸çè®¡ç®çè®ºä¹¦ç±ï¼æ¯å¦ Sipser çç»å¸ææï¼éï¼é½æ¯ç¨å¾çµæºæ¥åè¿°çãå¨å­¦ä¹ è®¡ç®çè®ºçæ¶åï¼ç»å¤§å¤æ°çè®¡ç®æºå­¦çææé½ä¼ä¸ºå¾çµæºå¤´çå¥½ä¸éµå­ã</p>
+<p>图灵机永远的停留在了理论的领域，绝大多数被用在“计算理论”（Theory of Computation）中。计算理论其实包括两个主要概念：“可计算性理论”（computability）和“复杂度理论”(complexity）。这两个概念在通常的计算理论书籍（比如 Sipser 的经典教材）里，都是用图灵机来叙述的。在学习计算理论的时候，绝大多数的计算机学生恐怕都会为图灵机头痛好一阵子。</p>
 
-<p>ç¶èå¨åäºç ç©¶çâè®¡ç®çè®ºâè¯¾ç¨ä¸ä¸ªå­¦æç TA ä¹åæå´åç°ï¼å¶å®å ä¹ææè®¡ç®çè®ºçåçï¼é½å¯ä»¥ç¨ lambda calculusï¼æèç¨åºè¯­è¨åè§£éå¨çåçæ¥æè¿°ãæè°âéç¨å¾çµæºâï¼Universal Turing Machineï¼ï¼å¶å®å°±æ¯ä¸ä¸ªå¯ä»¥è§£éèªå·±çè§£éå¨ï¼å«åâåè§£éå¨âï¼meta-circular interpreterï¼ãå¨ Dan Friedman ç B621 ç¨åºè¯­è¨çè®ºè¯¾ç¨ä¸­ï¼ææåçé¡¹ç®å°±æ¯ä¸ä¸ª <a href="https://github.com/yinwang0/old-toys/blob/master/meta-interp.ss">meta-circular interpreter</a>ãè¿ä¸ªè§£éå¨è½å¤å®å¨çè§£éå®èªå·±ï¼èä¸å¯ä»¥ä»»æçåµå¥ï¼ä¹å°±æ¯è¯´ç¨å®èªå·±æ¥è§£éå®èªå·±ï¼åæ¥è§£éå®èªå·±â¦â¦ï¼ãç¶èæçâåè§£éå¨âå´æ¯åºäº lambda calculus çï¼æä»¥æåæ¥åç°äºä¸ç§æ¹æ³ï¼å¯ä»¥å®å¨çç¨ lambda calculus æ¥è§£éè®¡ç®çè®ºéé¢å ä¹ææçå®çã</p>
+<p>然而在做了研究生“计算理论”课程一个学期的 TA 之后我却发现，其实几乎所有计算理论的原理，都可以用 lambda calculus，或者程序语言和解释器的原理来描述。所谓“通用图灵机”（Universal Turing Machine），其实就是一个可以解释自己的解释器，叫做“元解释器”（meta-circular interpreter）。在 Dan Friedman 的 B621 程序语言理论课程中，我最后的项目就是一个 <a href="https://github.com/yinwang0/old-toys/blob/master/meta-interp.ss">meta-circular interpreter</a>。这个解释器能够完全的解释它自己，而且可以任意的嵌套（也就是说用它自己来解释它自己，再来解释它自己……）。然而我的“元解释器”却是基于 lambda calculus 的，所以我后来发现了一种方法，可以完全的用 lambda calculus 来解释计算理论里面几乎所有的定理。</p>
 
-<p>æä¸ºè¿ä¸ªåç°åäºä¸¤ç¯åæï¼ã<a href="http://yinwang0.wordpress.com/2012/03/22/reducibility">A Reformulation of Reducibility</a>ãåã<a href="http://yinwang0.wordpress.com/2012/10/25/halting">Undecidability Proof of Halting Problem without Diagonalization</a>ããææ Sipser ç<a href="http://www.amazon.com/dp/113318779X">è®¡ç®çè®ºè¯¾æ¬</a>éé¢çå ä¹æ´ä¸ªä¸ç« çè¯æé½ç¨æèªå·±çè¿ç§æ¹å¼æ¹åäºä¸éï¼ç¶åè®²ç»ä¸è¯¾çå­¦çãå ä¸ºè¿ç§è¡¨ç¤ºæ¹æ³æ¯èµ·éå¸¸çâå¾çµæº+èªç¶è¯­è¨âçæ¹å¼ç®ååç²¾ç¡®ï¼æä»¥æ¶å°äºç¸å½å¥½çææï¼å¥½äºå­¦çå¯¹æè¯´æä¸ç§æç¶å¤§æçæè§ã</p>
+<p>我为这个发现写了两篇博文：《<a href="http://yinwang0.wordpress.com/2012/03/22/reducibility">A Reformulation of Reducibility</a>》和《<a href="http://yinwang0.wordpress.com/2012/10/25/halting">Undecidability Proof of Halting Problem without Diagonalization</a>》。我把 Sipser 的<a href="http://www.amazon.com/dp/113318779X">计算理论课本</a>里面的几乎整个一章的证明都用我自己的这种方式改写了一遍，然后讲给上课的学生。因为这种表示方法比起通常的“图灵机+自然语言”的方式简单和精确，所以收到了相当好的效果，好些学生对我说有一种恍然大悟的感觉。</p>
 
-<p>ææè¿ä¸åç°åè¯äºæå½æ¶çå¯¼å¸ Amr Sabryãä»ç¬äºï¼è¯´è¿ä¸ªä»æ©å°±ç¥éäºãä»æ¨èæå»çä¸æ¬ä¹¦ï¼å«åã<a href="http://www.diku.dk/~neil/Comp2book.html">Computability and Complexity from a Programming Perspective</a>ãï¼ä½èæ¯å¤§åé¼é¼ç Neil Jones (ä»ä¹æ¯â<a href="http://www.itu.dk/~sestoft/pebook/pebook.html">Partial Evaluation</a>âè¿ä¸éè¦æ¦å¿µçæåºèï¼ãè¿æ¬ä¹¦ä¸æ¯ç¨å¾çµæºï¼èæ¯ä¸ç§è¿ä¼¼äº Pascalï¼å´åå¸¦æ lambda calculus  çä¸äºç¹å¾çè¯­è¨ï¼å«å âWHILE è¯­è¨âï¼æ¥æè¿°è®¡ç®çè®ºãç¨è¿ç§è¯­è¨ï¼Jones ä¸ä½è½»æ¾çè¯æäºææç»å¸çè®¡ç®çè®ºå®çï¼èä¸è½å¤è¯æä¸äºä½¿ç¨å¾çµæºä¸è½è¯æçå®çã</p>
+<p>我把这一发现告诉了我当时的导师 Amr Sabry。他笑了，说这个他早就知道了。他推荐我去看一本书，叫做《<a href="http://www.diku.dk/~neil/Comp2book.html">Computability and Complexity from a Programming Perspective</a>》，作者是大名鼎鼎的 Neil Jones (他也是“<a href="http://www.itu.dk/~sestoft/pebook/pebook.html">Partial Evaluation</a>”这一重要概念的提出者）。这本书不是用图灵机，而是一种近似于 Pascal，却又带有 lambda calculus  的一些特征的语言（叫做 “WHILE 语言”）来描述计算理论。用这种语言，Jones 不但轻松的证明了所有经典的计算理论定理，而且能够证明一些使用图灵机不能证明的定理。</p>
 
-<p>ææ¾ç»ä¸ç´ä¸æç½ï¼ä¸ºä»ä¹å¯ä»¥å¦æ­¤ç®åçè§£éæ¸æ¥çäºæï¼è®¡ç®çè®ºéè¦ä½¿ç¨å¾çµæºï¼èä¸åè¿°ä¹éå¸¸çç¹å¤åå«ç³ãç±äºè¿äºè¯æé½åºäºèµæ·±çè®¡ç®çè®ºå®¶ä»¬ä¹æï¼è®©æä¸å¾ä¸æçèªå·±çæ³æ³éé¢æ¯ä¸æ¯ç¼ºäºç¹ä»ä¹ãå¯æ¯å¨çå°äº Jones ææçè¿æ¬ä¹¦ä¹åï¼æåææ¬£æ°ãåæ¥ä¸åæ¬æ¥å°±æ¯è¿ä¹çç®åï¼</p>
+<p>我曾经一直不明白，为什么可以如此简单的解释清楚的事情，计算理论需要使用图灵机，而且叙述也非常的繁复和含糊。由于这些证明都出于资深的计算理论家们之手，让我不得不怀疑自己的想法里面是不是缺了点什么。可是在看到了 Jones 教授的这本书之后，我倍感欣慰。原来一切本来就是这么的简单！</p>
 
-<p>åæ¥ä» CMU çææ Robert Harper çä¸ç¯åæã<a href="http://existentialtype.wordpress.com/2011/03/16/languages-and-machines">Languages and Machines</a>ãä¸­ï¼æä¹åç° Harper è·æå·æç±»ä¼¼çè§ç¹ï¼çè³æ´å æç«¯ä¸äºãä»å¼ºççæ¯æä½¿ç¨ lambda calculusï¼åå¯¹å¾çµæºåå¶ä»ä¸åæºå¨ä½ä¸ºè®¡ç®çè®ºçåºç¡ã</p>
+<p>后来从 CMU 的教授 Robert Harper 的一篇博文《<a href="http://existentialtype.wordpress.com/2011/03/16/languages-and-machines">Languages and Machines</a>》中，我也发现 Harper 跟我具有类似的观点，甚至更加极端一些。他强烈的支持使用 lambda calculus，反对图灵机和其他一切机器作为计算理论的基础。</p>
 
-<h3>ä» lambda calculus å°çµå­çº¿è·¯</h3>
+<h3>从 lambda calculus 到电子线路</h3>
 
-<p>å½æå¨ 2012 å¹´ç POPL ç¬¬ä¸æ¬¡è§å° Neil Jones çæ¶åï¼ä»è·æè§£éäºè®¸å¤çé®é¢ãå½æé®å°ä»è¿æ¬ä¹¦çæ¶åï¼ä»å¯¹æè¯´ï¼âæä¸æ¨èæçä¹¦ç»ä½ ï¼å ä¸ºå¤§é¨åçäººé½è§å¾ lambda calculus é¾ä»¥çè§£ãâLambda calculus é¾ä»¥çè§£ï¼ææä¹ä¸è§å¾å¢ï¼æè§å¾å¾çµæºéº»ç¦å¤äºãç¶åææåç°ï¼ç±äºç»è¿äºè¿ä¹å¤å¹´çç ç©¶ä¹åï¼èªå·±å¯¹ lambda calculus ççè§£ç¨åº¦å·²ç»å°äºæ·±å¥éª¨é«çå°æ­¥ï¼æä»¥æå·²ç»å¨ç¶ä¸ç¥æ°æå¯¹å®æ¯ä»ä¹æ ·çæè§ãåæ¥âç®åâè¿ä¸ªè¯ï¼å¨å·æä¸åç»åçäººå¤´èéï¼æçå®å¨ä¸åçå«ä¹ã</p>
+<p>当我在 2012 年的 POPL 第一次见到 Neil Jones 的时候，他跟我解释了许多的问题。当我问到他这本书的时候，他对我说：“我不推荐我的书给你，因为大部分的人都觉得 lambda calculus 难以理解。”Lambda calculus 难以理解？我怎么不觉得呢？我觉得图灵机麻烦多了。然后我才发现，由于经过了这么多年的研究之后，自己对 lambda calculus 的理解程度已经到了深入骨髓的地步，所以我已经全然不知新手对它是什么样的感觉。原来“简单”这个词，在具有不同经历的人头脑里，有着完全不同的含义。</p>
 
-<p>æä»¥å¶å® Jones ææè¯´çæ²¡éï¼lambda calculus ä¹è®¸å¯¹äºå¤§é¨åäººæ¥è¯´ä¸åéï¼å ä¸ºå¯¹äºå®æ²¡æä¸ä¸ªå¥½çå¥é¨æåãLambda calculus åºèªé»è¾å­¦å®¶ä¹æï¼èé»è¾å­¦å®¶ä»¬æå¨è¡çï¼å°±æ¯æå¾ç®åçâç¨åºâç¨å¤©ä¹¦ä¸æ ·çå¬å¼è¡¨ç¤ºåºæ¥ãè¿é¾æªèä¸è¾çé»è¾å­¦å®¶ä»¬ï¼å ä¸ºä»ä»¬åé é£äºæ¦å¿µçæ¶åï¼è®¡ç®æºè¿ä¸å­å¨ãä½æ¯å¦æç°å¨è¿ç¨é£ä¸å ç¬¦å·ï¼ææå°±æç¹è½ä¼äºãå¤§é¨åäººå¨çå° beta-reduction, alpha-conversion, eta-conversion, ... è¿å¤§å çå¬å¼çæ¶åï¼å°±å·²ç»å¤´çé¾å¿äºï¼æä¹è¿æå¯è½å©ç¨å®æ¥çè§£è®¡ç®çè®ºå¢ï¼</p>
+<p>所以其实 Jones 教授说的没错，lambda calculus 也许对于大部分人来说不合适，因为对于它没有一个好的入门指南。Lambda calculus 出自逻辑学家之手，而逻辑学家们最在行的，就是把很简单的“程序”用天书一样的公式表示出来。这难怪老一辈的逻辑学家们，因为他们创造那些概念的时候，计算机还不存在。但是如果现在还用那一堆符号，恐怕就有点落伍了。大部分人在看到 beta-reduction, alpha-conversion, eta-conversion, ... 这大堆的公式的时候，就已经头痛难忍了，怎么还有可能利用它来理解计算理论呢？</p>
 
-<p>å¶å®é£ä¸å ç¬¦å·æè¡¨ç¤ºçä¸è¥¿ï¼ç»ç©¶è¶è¶ä¸äºç°å®éçç©ä½åååï¼æå¤ä¸è¿åå¹»æ³ä¸ä¸âå¤ç§æªæ¥âæèâæ¶é´æºå¨âãæäºè®¡ç®æºä¹åï¼è¿äºç¬¦å·å¬å¼ï¼å¶å®é½å¯ä»¥ç¨æ°æ®ç»æåç¨åºè¯­è¨æ¥è¡¨ç¤ºãæä»¥ lambda calculus å¨æçå¤´èéççå¾ç®åãæ¯ä¸ä¸ª lambda å¶å®å°±åæ¯ä¸ä¸ªçµè·¯æ¨¡åãå®ä»çµçº¿ç«¯å­å¾å°è¾å¥ï¼ç¶åè¾åºä¸ä¸ªç»æãä½ æé£äºçµçº¿å«ä»ä¹åå­æ ¹æ¬ä¸éè¦ï¼éè¦çæ¯åä¸æ ¹çµçº¿çåå­å¿é¡»âä¸è´âï¼è¿å°±æ¯æè°çâalpha-conversionâçåçâ¦â¦ ä¸å¨è¿éå¤è¯´äºï¼å¦æä½ æ³æ·±å¥çäºè§£æå¿ç®ä¸­ç lambda calculusï¼ä¹è®¸å¯ä»¥ççæçå¦ä¸ç¯åæã<a href="http://www.yinwang.org/blog-cn/2012/08/01/interpreter">ææ ·åä¸ä¸ªè§£éå¨</a>ãï¼ççè¿ä¸ªå³äºç±»åæ¨å¯¼ç<a href="http://www.tudou.com/programs/view/GU9GtDuWSMk">å¹»ç¯ç</a>çå¼å¤´ï¼æèè¿ä¸æ­¥ï¼ççå¦ä½æ¨å¯¼åº <a href="http://yinwang0.wordpress.com/2012/04/09/reinvent-y">Y combinator</a>ï¼æèççã<a href="http://yinwang0.wordpress.com/2012/09/16/what-is-a-program">What is a program?</a>ããä½ ä¹å¯ä»¥çç Matthias Felleisen å Matthew Flatt çã<a href="http://www.cs.utah.edu/~mflatt/past-courses/cs7520/public_html/s06/notes.pdf">Programming Languages and Lambda Calculi</a>ãã</p>
+<p>其实那一堆符号所表示的东西，终究超越不了现实里的物体和变化，最多不过再幻想一下“多种未来”或者“时间机器”。有了计算机之后，这些符号公式，其实都可以用数据结构和程序语言来表示。所以 lambda calculus 在我的头脑里真的很简单。每一个 lambda 其实就像是一个电路模块。它从电线端子得到输入，然后输出一个结果。你把那些电线叫什么名字根本不重要，重要的是同一根电线的名字必须“一致”，这就是所谓的“alpha-conversion”的原理…… 不在这里多说了，如果你想深入的了解我心目中的 lambda calculus，也许可以看看我的另一篇博文《<a href="http://www.yinwang.org/blog-cn/2012/08/01/interpreter">怎样写一个解释器</a>》，看看这个关于类型推导的<a href="http://www.tudou.com/programs/view/GU9GtDuWSMk">幻灯片</a>的开头，或者进一步，看看如何推导出 <a href="http://yinwang0.wordpress.com/2012/04/09/reinvent-y">Y combinator</a>，或者看看《<a href="http://yinwang0.wordpress.com/2012/09/16/what-is-a-program">What is a program?</a>》。你也可以看看 Matthias Felleisen 和 Matthew Flatt 的《<a href="http://www.cs.utah.edu/~mflatt/past-courses/cs7520/public_html/s06/notes.pdf">Programming Languages and Lambda Calculi</a>》。</p>
 
-<p>æä»¥ï¼ä¹è®¸ä½ çå°äºå¨æçå¤´èéé¢å¹¶å­çä¸å¥åå¾çµçå½±å­ãæè§å¾ä¸å¥ç lambda calculus æ¯æ¯å¾çµæºç®åèå¼ºå¤§çæè¿°å·¥å·ï¼ç¶èæå´åææå°äºå¾çµå¯¹äºâç©çâåâæºå¨âçæ§çãæè§å¾é»è¾å­¦å®¶ä»¬å¯¹ lambda calculus çè§£éè¿äºå¤æï¼èéè¿æå®çè§£ä¸ºç©ççâçµè·¯åä»¶âï¼è®©æå¯¹ lambda calculus ååºäºæ´å ç®åçè§£éï¼æå®ä¸âç°å®ä¸çâèç³»å¨äºä¸èµ·ã</p>
+<p>所以，也许你看到了在我的头脑里面并存着丘奇和图灵的影子。我觉得丘奇的 lambda calculus 是比图灵机简单而强大的描述工具，然而我却又感染到了图灵对于“物理”和“机器”的执着。我觉得逻辑学家们对 lambda calculus 的解释过于复杂，而通过把它理解为物理的“电路元件”，让我对 lambda calculus 做出了更加简单的解释，把它与“现实世界”联系在了一起。</p>
 
 <p><img src="images/lambda-inside.png" width="30%"></p>
 
-<p>æä»¥å°æåï¼ä¸å¥åå¾çµè¿ä¸¤ç§çä¼¼çç¾çææ³ï¼å¨æçèæµ·éå¾å°äºåè°çç»ä¸ãè¿äºç²¾é«çææ³å¸®å©æè§£å³äºè®¸å¤çé®é¢ãæè°¢ä½ ä»¬ï¼è®¡ç®æºç§å­¦çä¸¤ä½é¼»ç¥ã</p>
-
-
+<p>所以到最后，丘奇和图灵这两种看似矛盾的思想，在我的脑海里得到了和谐的统一。这些精髓的思想帮助我解决了许多的问题。感谢你们，计算机科学的两位鼻祖。</p>
+    </div>
+    
+    <script src="js/highlight.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script>
+        if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
+            document.body.classList.add('mobile');
+            var navbar = document.querySelector('nav.navbar');
+            if (navbar) { navbar.classList.remove('navbar-fixed-top'); }
+        }
+    </script>
 </body>
-
 </html>

@@ -1,72 +1,127 @@
+<!DOCTYPE html>
 <html>
 <head>
-
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link href="http://www.yinwang.org/main.css" rel="stylesheet" type="text/css">
-<link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
-<link rel="shortcut icon" href="http://www.yinwang.org/images/Yc.jpg">
-
-<title>Braid - ä¸ä¸ªåäººæ·±æçæ¸¸æ</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <title>Braid - 一个发人深思的游戏</title>
+    <link rel="stylesheet" href="css/highlight/xcode.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-tooltips.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/home.css"> <!-- Need home for navbar -->
+    <link rel="stylesheet" href="css/post.css">
+    <script src="js/jquery.min.js"></script>
+    <style>
+        /* Switcher Fixes */
+        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
+        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
+        .version-switcher a.current { font-weight: bold; color: #333; }
+        /* Inner override for posts */
+        .inner { margin-top: 80px; } 
+    </style>
 </head>
-ãã
 <body>
+    <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-bs">
+                    <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+                <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='aboutcmec_aboutcmec_01.jsp_20060213.html'>About</a></li><li><a href='aboutess_aboutess_01.jsp_20060213.html'>About</a></li><li><a href='aboutinfo_aboutinfo_01.jsp_20060106.html'>About</a></li><li><a href='tweet_20170605.html'>微勃 (Tweets)</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='homepage_20250719.html'>当然我在扯淡 (None)</a></li><li><a href='index.jsp_20060213.html'>中国中小企业竞争力工程 (None)</a></li><li><a href='index_20260110.html'>Surely I am Joking (None)</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Posts <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='posts_air-freshener-nightmare_20251129.html'>Surely I am Joking</a></li><li><a href='posts_american-english-problems_20251030.html'>Surely I am Joking</a></li><li><a href='posts_authority_20251221.html'>Surely I am Joking</a></li><li><a href='posts_cello-technique_20251102.html'>Surely I am Joking</a></li><li><a href='posts_continuation-course_20251206.html'>Surely I am Joking</a></li><li><a href='posts_cs-class2_20251105.html'>Surely I am Joking</a></li><li><a href='posts_cs-course-5_20251208.html'>Surely I am Joking</a></li><li><a href='posts_cs-video-course_20251101.html'>Surely I am Joking</a></li><li><a href='posts_cs3_20251102.html'>Surely I am Joking</a></li><li><a href='posts_cs4_20251102.html'>Surely I am Joking</a></li><li><a href='posts_cs5-completed_20251031.html'>Surely I am Joking</a></li><li><a href='posts_entry-level-class_20251102.html'>Surely I am Joking</a></li><li><a href='posts_learning-philosophy_20251211.html'>Surely I am Joking</a></li><li><a href='posts_oberon_20260113.html'>Surely I am Joking</a></li><li><a href='posts_reading-course_20251102.html'>Surely I am Joking</a></li><li><a href='posts_super-human-level-vision_20251104.html'>Surely I am Joking</a></li><li><a href='posts_tuition-for-covid_20251103.html'>Surely I am Joking</a></li><li><a href='posts_wisdom-of-intelligence_20251102.html'>Surely I am Joking</a></li><li><a href='posts_youth-cs-student_20251102.html'>Surely I am Joking</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='resources_d8-3404-d8-8424_20130614.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_base64mime.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_charset.py_20150506.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_encoders.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_errors.py_20150409.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_header.py_20140305.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_quoprimime.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_re.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_compile.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_constants.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_parse.py_20160822.html'>Untitled</a></li><li><a href='resources_diff1-diff2_20200728.html'>Untitled</a></li><li><a href='resources_mk1-mk2_20130627.html'>Untitled</a></li><li><a href='resources_nav1-nav2_20200728.html'>Untitled</a></li><li><a href='resources_paredit20-paredit23_20200728.html'>Untitled</a></li><li><a href='resources_pydiff1-pydiff2_20130711.html'>Untitled</a></li><li><a href='resources_simulator-mips-simulator-arm_20200728.html'>Untitled</a></li><li><a href='resources_typed-clojure1-typed-clojure2_20200728.html'>Untitled</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tags <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='tags_ai_20251103.html'>Surely I am Joking</a></li><li><a href='tags_education_20251031.html'>Surely I am Joking</a></li><li><a href='tags_english_20251101.html'>Surely I am Joking</a></li><li><a href='tags_health_20251102.html'>Surely I am Joking</a></li><li><a href='tags_life_20251129.html'>Surely I am Joking</a></li><li><a href='tags_lifestyle_20251101.html'>Surely I am Joking</a></li><li><a href='tags_philosophy_20251101.html'>Surely I am Joking</a></li><li><a href='tags_programming-language_20260113.html'>Surely I am Joking</a></li><li><a href='tags_travel_20251129.html'>Surely I am Joking</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Misc <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='.well-known_dnt-policy.txt_20251211.html'>Surely I am Joking</a></li><li><a href='_5C_20251205.html'>Surely I am Joking</a></li><li><a href='_5Cu003c_a_5Cu003e_5Cu003c_td_5Cu003e_5Cn_5Cu003ctd_5Cu003e_E7_BC_96_E7_A8_8B_5Cu003c_td_5Cu003e_5Cn_5Cu003c_tr_5Cu003e_5Cn_5Cu003ctr_5Cu003e_5Cn_5Cu003ctd_5Cu003e_5Cu003ca_20251204.html'>Surely I am Joking</a></li><li><a href='ads.txt_20251013.html'>Surely I am Joking</a></li><li><a href='afficheAction.do_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='apply_dcb.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='apply_twsqb.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='common_casetoyota.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='common_casexhx.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='common_courseBase_main.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='common_courseBase_tch_grzl.jsp_20060106.html'>Untitled</a></li><li><a href='contactus.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='datadownload.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='dljm.jsp_20060516.html'>竞争力工程</a></li><li><a href='fwjs.jsp_20060516.html'>竞争力工程</a></li><li><a href='hd_qgjx.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='laws_laws_01.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='lianxi.jsp_20060428.html'>竞争力工程</a></li><li><a href='more.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='neirong.jsp_20060516.html'>详细内容</a></li><li><a href='newsPublishAction.do_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='servicecenter_servicecenter_01.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='tongzhi.jsp_20060428.html'>竞争力工程</a></li><li><a href='tongzhi_tongzhi1.htm_20060428.html'>ÎÞ±êÌâÎÄµµ</a></li><li><a href='tongzhi_tongzhi2.htm_20060428.html'>ÎÞ±êÌâÎÄµµ</a></li><li><a href='units_gjfz.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='units_jstg.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='units_zgzx.jsp_20060213.html'>中国中小企业竞争力工程</a></li></ul></li></ul>
+            </div>
+        </div>
+    </nav>
 
-<h2>Braid - ä¸ä¸ªåäººæ·±æçæ¸¸æ</h2>
+    <div class="inner">
+        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2013_03_04_braid_20130418.html" class="current">2013-04-18</a> <a href="blog-cn_2013_03_04_braid_20140701.html" >2014-07-01</a> <a href="blog-cn_2013_03_04_braid_20140718.html" >2014-07-18</a> <a href="blog-cn_2013_03_04_braid_20141230.html" >2014-12-30</a> <a href="blog-cn_2013_03_04_braid_20161009.html" >2016-10-09</a> <a href="blog-cn_2013_03_04_braid_20170604.html" >2017-06-04</a> <a href="blog-cn_2013_03_04_braid_20171209.html" >2017-12-09</a> <a href="blog-cn_2013_03_04_braid_20180310.html" >2018-03-10</a> <a href="blog-cn_2013_03_04_braid_20190820.html" >2019-08-20</a> <a href="blog-cn_2013_03_04_braid_20200217.html" >2020-02-17</a> <a href="blog-cn_2013_03_04_braid_20240602.html" >2024-06-02</a></div>
+        <h2>Braid - 一个发人深思的游戏</h2>
 
 <p><img src="images/braid1.png" alt="" /></p>
 
-<p>æå·²ç»å¾ä¹å¾ä¹æ²¡æææ¸¸æäºï¼å¦æä¸ç® Angry Birds ä¹ç±»ç¨æ¥æåæ¶é´çæ¸¸æçè¯ï¼ãæçæåä¸ä¸ªçæ­£æä¹ä¸çæ¸¸ææºï¼æ¯ PlayStation 1ãå¨é£ä¸é¢ï¼æçæ­£æ¬£èµçæåä¸ä¸ªæ¸¸æï¼æ¯ [Metal Gear Solid (1)]ã</p>
+<p>我已经很久很久没有打游戏了（如果不算 Angry Birds 之类用来打发时间的游戏的话）。我的最后一个真正意义上的游戏机，是 PlayStation 1。在那上面，我真正欣赏的最后一个游戏，是 [Metal Gear Solid (1)]。</p>
 
-<p>ææ¾ç»æ¯ä¸ä¸ªæ¸¸æè¿·ï¼å¯æ¯è¿å¥äºè®¡ç®æºä¸ä¸çå­¦ä¹ ä¹åï¼æå°±å¼å§å¤±å»å¯¹æ¸¸æçå´è¶£ï¼åºæ¬ä¸æ¯ç©ä¸ä¸ªé½è®©æå¤±æä¸æ¬¡ï¼ä¸ç®¡å«äººæå®å¹çå¤ä¹âç»å¸âãä¸ç¥éä¸ºä»ä¹ï¼å«äººç©å¾æ´¥æ´¥æå³çæ¸¸æï¼æç©ä¸ä¼å¿å°±æå®éé¢çâå¬å¼âé½çéäºãææ¸æ¥å°ç¥éè¿æ¸¸æçè®¾è®¡èæ¯æä¹å¨âèæâï¼å¨å¦ä½æ³æ¹è®¾æ³æµªè´¹æçæ¶é´ãåæ ·çï¼å«äººçå¾æ´¥æ´¥æå³çå°è¯´åçµå½±ï¼æç»å¸¸ä¸çå¼å¤´å°±è½çå°å®è¦æä¹åå±ï¼ä»¥è³äºä¸è·¯çå°ç»å±ï¼ç´¢ç¶æ å³ãæä»¥æåºæ¬ä¸ä¸å»å½±é¢çææ°ççµå½±ãæå®æ¿å¨ç½ä¸çä¸äºå åå¹´åçèçµå½±ãæè²ä¼¼åªåæ¬¢é£äºè½è®©æâçä¸éâçä¸è¥¿ã</p>
+<p>我曾经是一个游戏迷，可是进入了计算机专业的学习之后，我就开始失去对游戏的兴趣，基本上每玩一个都让我失望一次，不管别人把它吹的多么“经典”。不知道为什么，别人玩得津津有味的游戏，我玩一会儿就把它里面的“公式”都看透了。我清楚地知道这游戏的设计者是怎么在“耍我”，在如何想方设法浪费我的时间。同样的，别人看得津津有味的小说和电影，我经常一看开头就能猜到它要怎么发展，以至于一路猜到结局，索然无味。所以我基本上不去影院看最新的电影。我宁愿在网上看一些几十年前的老电影。我貌似只喜欢那些能让我“猜不透”的东西。</p>
 
-<p>Braidï¼å°±æ¯è¿æ ·ä¸ä¸ªè®©ææ²¡çå¾éçæ¸¸æã</p>
+<p>Braid，就是这样一个让我没猜得透的游戏。</p>
 
-<p>è¿æ¯ä¸ä¸ªåäºæ¨èçãæ¬æ¥å·²ç»å¯¹çµç©å®å¨å¤±æçæï¼ç ´ä¾çä» App Store ä¹°äºæ¥ãç©è¿ä¹åè§å¾ççå¾ä¸éï¼æä¸ç§æè°çâmind blowingâçæè§ãä»¥è³äºæè±äºä¸¤æ´å¤©æ¶é´ï¼åºå¯å¿é£ï¼æå®ç»æéå³äºã</p>
+<p>这是一个同事推荐的。本来已经对电玩完全失望的我，破例的从 App Store 买了来。玩过之后觉得真的很不错，有一种所谓的“mind blowing”的感觉。以至于我花了两整天时间，废寝忘食，把它给打通关了。</p>
 
-<p>Braid çä¸»ä½ç»æï¼åæå¤èçâè¶çº§çä¸½âæ²¡ä»ä¹ä¸¤æ ·ãä¸ä¸ªå°äººï¼å¯ä»¥è·ï¼å¯ä»¥è·³ãä¸äºå°æªç©ï¼è·æ¥è·å»çãä½ å¯ä»¥è·³èµ·æ¥è¸©å®ä»¬ã</p>
+<p>Braid 的主体结构，和最古老的“超级玛丽”没什么两样。一个小人，可以跑，可以跳。一些小怪物，跑来跑去的。你可以跳起来踩它们。</p>
 
-<p>æç»çç®æ ï¼æ¯æ¶éå°ææçæ¼å¾ï¼ç¶åæå®ä»¬ç»åæå¾çãç»åå¾çæ¯å¾å®¹æçäºæãæ¸¸æçé¾åº¦å¶å®å¨äºå¦ä½æ¿å°è¿äºæ¼å¾ãå®ä»¬æå¯è½è¢«æå¨å¾é«çå°æ¹ï¼æèè¢«é¨æ¡ä½ã</p>
+<p>最终的目标，是收集到所有的拼图，然后把它们组合成图片。组合图片是很容易的事情。游戏的难度其实在于如何拿到这些拼图。它们有可能被挂在很高的地方，或者被门挡住。</p>
 
-<p>å¯æ¯è¿æä»ä¹å¼å¾ä¸æçå¢ï¼è¿æ¸¸æå¾ä¸ä¸æ ·çå°æ¹æ¯ï¼å®ç»ä½ æä¾äºå ç§ç»æ ä»æçâè¶è½åâï¼èä¸æå®ä»¬ä¸è°é¢ç»åå¾å ä¹å¤©è¡£æ ç¼ã</p>
+<p>可是这有什么值得一提的呢？这游戏很不一样的地方是，它给你提供了几种绝无仅有的“超能力”，而且把它们与谜题结合得几乎天衣无缝。</p>
 
-<p>ä½ æä¸ç§è¶è½åï¼</p>
+<p>你有三种超能力：</p>
 
 <ol>
-<li>éè½¬æ¶é´çè½å</li>
+<li>逆转时间的能力</li>
 </ol>
 
 
-<p>å¨ä»»ä½æ¶åæä¸ Shift é®ï¼æ¸¸æçæ¶é´å°±ä¼éè½¬ï¼âundoâä¹åçææå¨ä½ãå³ä½¿ä½ æ­»äºï¼é½æ¯å¯ä»¥å¤æ´»çãæ­»å»çå°æªç©ä»¬ä¹ä¼å¤æ´»ãå¯æ¯å°±ç®è¿æ ·ï¼æäºæ¼å¾è¿æ¯å¾é¾æ¿å°ã</p>
+<p>在任何时候按下 Shift 键，游戏的时间就会逆转，“undo”之前的所有动作。即使你死了，都是可以复活的。死去的小怪物们也会复活。可是就算这样，有些拼图还是很难拿到。</p>
 
-<p>å¼å¾ä¸æçæ¯ï¼æ¶é´éè½¬çæ¶åï¼ç»é¢æ¯æµçæ ç¼ºæçï¼è¿çç¸åºé¢é½ä¼âæ¶ç¼©âãæ´ä»¤äººèµå¹çæ¯ï¼æ¸¸æçèæ¯é³ä¹ä¹ä¼åæ­¥éè½¬ãå¦æå¨æ¶é´éè½¬çæ¶åæâä¸âï¼âä¸âé®ï¼å°±å¯ä»¥è°æ´æ¶é´âå¿«éâåâå¿«è¿âçéåº¦ãå½ç¶ï¼æ­¤æ¶çåºæ¯å°±åå½åæºå¨å¿«éæèå¿«è¿ã</p>
+<p>值得一提的是，时间逆转的时候，画面是流畅无缺损的，连爆炸场面都会“收缩”。更令人赞叹的是，游戏的背景音乐也会同步逆转。如果在时间逆转的时候按“上”，“下”键，就可以调整时间“快退”和“快进”的速度。当然，此时的场景就像录像机在快退或者快进。</p>
 
 <ol>
-<li>äº§çâå¤éç°å®âçè½å</li>
+<li>产生“多重现实”的能力</li>
 </ol>
 
 
 <p><img src="images/braid-shadow.jpeg" alt="" /></p>
 
-<p>å¨æäºç« èï¼ä½ å¯ä»¥å®ç°âå¤éç°å®âãåä¸ä¸ªå¨ä½ï¼ç¶åæ Shift é®è®©æ¶é´éè½¬ï¼å½ä½ åæ­¢éè½¬çæ¶åï¼ä½ çå½±å­å°±ä¼å¼å§âredoâåæçé£æ®µâåå²âãèè¿ä¸ªæ¶åä½ å¯ä»¥åä¸äºä¸åäºä»¥åçäºæãè¿å°±å¥½åæä¸¤ä¸ªä¸çï¼ä¸æ°ä¸æ§ï¼ä»âåå²çååç¹âå¼å§ï¼åæ­¥äº¤æ±ã</p>
+<p>在某些章节，你可以实现“多重现实”。做一个动作，然后按 Shift 键让时间逆转，当你停止逆转的时候，你的影子就会开始“redo”刚才的那段“历史”。而这个时候你可以做一些不同于以前的事情。这就好像有两个世界，一新一旧，从“历史的分叉点”开始，同步交汇。</p>
 
-<p>ä½ å¿é¡»ææ¡å¥½æ¶é´æè½è·å½±å­åä½ï¼å ä¸ºå½±å­çè¡å¨éåº¦æ¯ä¸åä½ çâç°åºæ§å¶âçï¼å®åªæ¯æé¨å°±ç­çéæ¼ä½  undo æçåå²ã</p>
+<p>你必须掌握好时间才能跟影子合作，因为影子的行动速度是不受你的“现场控制”的，它只是按部就班的重演你 undo 掉的历史。</p>
 
 <ol>
-<li>æ­æ²æ¶é´çæç¯</li>
+<li>扭曲时间的指环</li>
 </ol>
 
 
 <p><img src="images/braid-ring.jpeg" alt="" /></p>
 
-<p>å¨æäºç« èï¼ä½ ä¼ææºä¼ä½¿ç¨ä¸ä¸ªé­æ³æç¯ãæè¿ä¸ªæç¯æ¾å¨å°ä¸ä¹åï¼å®ä¼å¨éè¿ççç¶ç©ºé´ä¸­å½¢ææ¶é´çâæ­æ²âãè¿æç¹åé»æ´çåçãè¶æ¯é è¿æç¯çä½ç½®ï¼æ¶é´æµå¨è¶æ¢ãèå½ä½ è¿ç¦»æç¯ï¼æ¶é´å°±éæ¸æ¢å¤æ­£å¸¸ãæç¯çå·§å¦ä½¿ç¨ï¼æ¯è§£å³è¿äºç« èè°é¢çå³é®ã</p>
+<p>在某些章节，你会有机会使用一个魔法指环。把这个指环放在地上之后，它会在附近的球状空间中形成时间的“扭曲”。这有点像黑洞的原理。越是靠近指环的位置，时间流动越慢。而当你远离指环，时间就逐渐恢复正常。指环的巧妙使用，是解决这些章节谜题的关键。</p>
 
-<p>åæ ·çï¼é³ä¹ä¸æç¯çç¹å¼åè½æ¯å®ç¾éåçãå½ä½ é è¿æç¯çæ¶åï¼èæ¯é³ä¹å°±ä¼åºç°ç¸åºç¨åº¦çæ­æ²ãæç¹åå½é³æºå¡å¸¦çæè§  :)</p>
+<p>同样的，音乐与指环的特异功能是完美配合的。当你靠近指环的时候，背景音乐就会出现相应程度的扭曲。有点像录音机卡带的感觉  :)</p>
 
-<p>å¨è§£å³äºææçè°é¢ä¹åï¼æåå³äºä¸ä¸ï¼èªå·±ä¸ºä»ä¹æ¬£èµ Braidãè¿ä¹è®¸æ¯å ä¸ºå®ç¬¦åä¸ä¸ªä¼ç§çï¼éä½çº§è¶£å³çæ¸¸æè®¾è®¡ï¼å±æå¯æ°çç®åè§åï¼å´å¯ä»¥ç»åèµ·æ¥ï¼å¶é åºè®¸è®¸å¤å¤çååã</p>
+<p>在解决了所有的谜题之后，我回味了一下，自己为什么欣赏 Braid。这也许是因为它符合一个优秀的，非低级趣味的游戏设计：屈指可数的简单规则，却可以组合起来，制造出许许多多的变化。</p>
 
-<p>ä½ åªæ3ç§è¶è½åï¼ä½æ¯å¦ä½å©ç¨åâç»åâè¿äºè¶è½åï¼å´å½¢æäºè§£å³è°é¢çå³é®ãæäºé¢ç®å¾æç¹é¾åº¦ï¼ä»¥è³äºä½ ä¼å¸ææç¬¬4ç§è¶è½ååºç°ï¼æèå¸ææ¡å°å«çä»ä¹âæ³å®âãå¯æ¯å®ä»¬æ¯ä¸å­å¨çãä½ å¿é¡»ä½¿ç¨é£ä»æç3ç§è½åï¼å ä¸å·§å¦çæç´¢ï¼ç»å¿çè§å¯ï¼æè½è¾¾å°ç®çãå¨è§£å³äºä¸ä¸ªå¾é¾çè°é¢ä¹åï¼ä½ å¾å¾ä¼ä¸æèè¢ï¼åï¼ææä¹ä¸å¼å¤´æ²¡æ³å°ï¼</p>
-
-
+<p>你只有3种超能力，但是如何利用和“组合”这些超能力，却形成了解决谜题的关键。有些题目很有点难度，以至于你会希望有第4种超能力出现，或者希望捡到别的什么“法宝”。可是它们是不存在的。你必须使用那仅有的3种能力，加上巧妙的思索，细心的观察，才能达到目的。在解决了一个很难的谜题之后，你往往会一拍脑袋：哇，我怎么一开头没想到！</p>
+    </div>
+    
+    <script src="js/highlight.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script>
+        if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
+            document.body.classList.add('mobile');
+            var navbar = document.querySelector('nav.navbar');
+            if (navbar) { navbar.classList.remove('navbar-fixed-top'); }
+        }
+    </script>
 </body>
-
 </html>

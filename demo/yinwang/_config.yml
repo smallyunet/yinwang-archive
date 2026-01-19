@@ -1,0 +1,66 @@
+# Navigation bar without starting with a slash
+menu:
+  博客: ''
+  # 微博: micro-blog
+  # 标签云: tags
+  # 关于: about
+  # 捐赠: donation
+  # 我的定投: ri
+  # English: https://en.smallyu.net
+  # 加群: "https://smallyu.net/2025/11/23/%E5%8C%BA%E5%9D%97%E9%93%BE%E6%8A%80%E6%9C%AF%E4%BA%A4%E6%B5%81%E7%BE%A4/"
+
+# Recommended to enable when the page count is more than 1
+paginator: false
+
+# Header section
+header:
+  blank: false     # Open header links in a new tab
+
+# Article list
+list:
+  date: true       # Display date in the article list
+  wordcount: true  # Display word count
+
+# Footer section
+footer:
+  display: false               # Display the footer
+  context: "© smallyu.net"     # Footer content
+
+# Article page
+post:
+  title_h1: true               # Use h1 for article titles
+  blank: false                 # Open articles in a new tab
+  backHome: false              # Display back to home at the end of the article
+  backhome_right: false        # Align back to home content to the right
+  backHome_hr: false           # Display a divider line before back to home
+  backHome_prefix: "↶ "        # Prefix content for back to home
+  backHome_content: "Back to Home"  # Main content for back to home
+  backHome_suffix: ""          # Suffix content for back to home
+  show_tags: true              # Display tags at the end of the article
+
+# Tag cloud
+tags:
+  all: false       # Display all tags on the tag cloud page
+
+# Micro-blog
+github:
+  owner: smallyunet
+  repo: hexo-blog
+micro_blogs:
+  - year: 2020
+    issue: 7
+  - year: 2021
+    issue: 10
+  - year: 2022
+    issue: 19
+  - year: 2023
+    issue: 29
+  - year: 2024
+    issue: 32
+  - year: 2025
+    issue: 35
+issue_years: []
+
+google_analysis:
+  enable: true
+  id: G-Y7C0CVX9PK

@@ -1,45 +1,100 @@
+<!DOCTYPE html>
 <html>
 <head>
-
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link href="http://www.yinwang.org/main.css" rel="stylesheet" type="text/css">
-<link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
-<link rel="shortcut icon" href="http://www.yinwang.org/images/Yc.jpg">
-
-<title>ä¸ºä»ä¹ä¸ç§ç¨åºè¯­è¨æ¯ä¸å¤ç¨ç</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <title>为什么一种程序语言是不够用的</title>
+    <link rel="stylesheet" href="css/highlight/xcode.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-tooltips.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/home.css"> <!-- Need home for navbar -->
+    <link rel="stylesheet" href="css/post.css">
+    <script src="js/jquery.min.js"></script>
+    <style>
+        /* Switcher Fixes */
+        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
+        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
+        .version-switcher a.current { font-weight: bold; color: #333; }
+        /* Inner override for posts */
+        .inner { margin-top: 80px; } 
+    </style>
 </head>
-ãã
 <body>
+    <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-bs">
+                    <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+                <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='aboutcmec_aboutcmec_01.jsp_20060213.html'>About</a></li><li><a href='aboutess_aboutess_01.jsp_20060213.html'>About</a></li><li><a href='aboutinfo_aboutinfo_01.jsp_20060106.html'>About</a></li><li><a href='tweet_20170605.html'>微勃 (Tweets)</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='homepage_20250719.html'>当然我在扯淡 (None)</a></li><li><a href='index.jsp_20060213.html'>中国中小企业竞争力工程 (None)</a></li><li><a href='index_20260110.html'>Surely I am Joking (None)</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Posts <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='posts_air-freshener-nightmare_20251129.html'>Surely I am Joking</a></li><li><a href='posts_american-english-problems_20251030.html'>Surely I am Joking</a></li><li><a href='posts_authority_20251221.html'>Surely I am Joking</a></li><li><a href='posts_cello-technique_20251102.html'>Surely I am Joking</a></li><li><a href='posts_continuation-course_20251206.html'>Surely I am Joking</a></li><li><a href='posts_cs-class2_20251105.html'>Surely I am Joking</a></li><li><a href='posts_cs-course-5_20251208.html'>Surely I am Joking</a></li><li><a href='posts_cs-video-course_20251101.html'>Surely I am Joking</a></li><li><a href='posts_cs3_20251102.html'>Surely I am Joking</a></li><li><a href='posts_cs4_20251102.html'>Surely I am Joking</a></li><li><a href='posts_cs5-completed_20251031.html'>Surely I am Joking</a></li><li><a href='posts_entry-level-class_20251102.html'>Surely I am Joking</a></li><li><a href='posts_learning-philosophy_20251211.html'>Surely I am Joking</a></li><li><a href='posts_oberon_20260113.html'>Surely I am Joking</a></li><li><a href='posts_reading-course_20251102.html'>Surely I am Joking</a></li><li><a href='posts_super-human-level-vision_20251104.html'>Surely I am Joking</a></li><li><a href='posts_tuition-for-covid_20251103.html'>Surely I am Joking</a></li><li><a href='posts_wisdom-of-intelligence_20251102.html'>Surely I am Joking</a></li><li><a href='posts_youth-cs-student_20251102.html'>Surely I am Joking</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='resources_d8-3404-d8-8424_20130614.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_base64mime.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_charset.py_20150506.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_encoders.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_errors.py_20150409.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_header.py_20140305.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_quoprimime.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_re.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_compile.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_constants.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_parse.py_20160822.html'>Untitled</a></li><li><a href='resources_diff1-diff2_20200728.html'>Untitled</a></li><li><a href='resources_mk1-mk2_20130627.html'>Untitled</a></li><li><a href='resources_nav1-nav2_20200728.html'>Untitled</a></li><li><a href='resources_paredit20-paredit23_20200728.html'>Untitled</a></li><li><a href='resources_pydiff1-pydiff2_20130711.html'>Untitled</a></li><li><a href='resources_simulator-mips-simulator-arm_20200728.html'>Untitled</a></li><li><a href='resources_typed-clojure1-typed-clojure2_20200728.html'>Untitled</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tags <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='tags_ai_20251103.html'>Surely I am Joking</a></li><li><a href='tags_education_20251031.html'>Surely I am Joking</a></li><li><a href='tags_english_20251101.html'>Surely I am Joking</a></li><li><a href='tags_health_20251102.html'>Surely I am Joking</a></li><li><a href='tags_life_20251129.html'>Surely I am Joking</a></li><li><a href='tags_lifestyle_20251101.html'>Surely I am Joking</a></li><li><a href='tags_philosophy_20251101.html'>Surely I am Joking</a></li><li><a href='tags_programming-language_20260113.html'>Surely I am Joking</a></li><li><a href='tags_travel_20251129.html'>Surely I am Joking</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Misc <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='.well-known_dnt-policy.txt_20251211.html'>Surely I am Joking</a></li><li><a href='_5C_20251205.html'>Surely I am Joking</a></li><li><a href='_5Cu003c_a_5Cu003e_5Cu003c_td_5Cu003e_5Cn_5Cu003ctd_5Cu003e_E7_BC_96_E7_A8_8B_5Cu003c_td_5Cu003e_5Cn_5Cu003c_tr_5Cu003e_5Cn_5Cu003ctr_5Cu003e_5Cn_5Cu003ctd_5Cu003e_5Cu003ca_20251204.html'>Surely I am Joking</a></li><li><a href='ads.txt_20251013.html'>Surely I am Joking</a></li><li><a href='afficheAction.do_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='apply_dcb.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='apply_twsqb.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='common_casetoyota.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='common_casexhx.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='common_courseBase_main.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='common_courseBase_tch_grzl.jsp_20060106.html'>Untitled</a></li><li><a href='contactus.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='datadownload.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='dljm.jsp_20060516.html'>竞争力工程</a></li><li><a href='fwjs.jsp_20060516.html'>竞争力工程</a></li><li><a href='hd_qgjx.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='laws_laws_01.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='lianxi.jsp_20060428.html'>竞争力工程</a></li><li><a href='more.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='neirong.jsp_20060516.html'>详细内容</a></li><li><a href='newsPublishAction.do_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='servicecenter_servicecenter_01.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='tongzhi.jsp_20060428.html'>竞争力工程</a></li><li><a href='tongzhi_tongzhi1.htm_20060428.html'>ÎÞ±êÌâÎÄµµ</a></li><li><a href='tongzhi_tongzhi2.htm_20060428.html'>ÎÞ±êÌâÎÄµµ</a></li><li><a href='units_gjfz.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='units_jstg.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='units_zgzx.jsp_20060213.html'>中国中小企业竞争力工程</a></li></ul></li></ul>
+            </div>
+        </div>
+    </nav>
 
-<h2>ä¸ºä»ä¹ä¸ç§ç¨åºè¯­è¨æ¯ä¸å¤ç¨ç</h2>
+    <div class="inner">
+        
+        <h2>为什么一种程序语言是不够用的</h2>
 
-<p>ææ¾ç»å¸æè®¾è®¡åºä¸ç§âç»æè¯­è¨âï¼ç¶èæå´åç°ä¸ç§è¯­è¨å¶å®æ¯ä¸å¤ç¨çãè¿æ¯ä¸ºä»ä¹å¢ï¼</p>
+<p>我曾经希望设计出一种“终极语言”，然而我却发现一种语言其实是不够用的。这是为什么呢？</p>
 
-<p>æä»¬é½ç¥éï¼ç¨åºè¯­è¨éåå«äºåéï¼æ°å­ï¼å¯¹è±¡ï¼å½æ°ç­âåç´ âãå®ä»¬å°±åç©çå­¦ç<a href="http://en.wikipedia.org/wiki/Elementary_particle">åºæ¬ç²å­</a>ä¸æ ·ï¼å¯ä»¥ç¨äºæé æä»¬æéè¦çå ä¹ä»»ä½âæ¨¡åâãæ¢ç¶ææçä¸è¥¿é½æ¯ç¨åºæ¬ç²å­ç»æçï¼é£ä¹é¤äºç©çå­¦ï¼æä»¬ä¸ºä»ä¹è¿è¦æåå­¦åçç©ï¼åå­¦å®¶ä½¿ç¨çè¯­è¨æ¯åå­¦åç´ ï¼å®ä»¬æ¯åºæ¬ç²å­å¤§å¾å¤ãçç©å­¦å®¶çè¯­è¨å°±æ´å¤§ä¸äºäºï¼å¤äºç»èççº§å«ãé£ä¹ä¸ºä»ä¹åå­¦å®¶åçç©å­¦å®¶ä¸ä½¿ç¨åºæ¬ç²å­æ¥æè¿°ä»ä»¬çé¢åå¢ï¼</p>
+<p>我们都知道，程序语言里包含了变量，数字，对象，函数等“元素”。它们就像物理学的<a href="http://en.wikipedia.org/wiki/Elementary_particle">基本粒子</a>一样，可以用于构造我们所需要的几乎任何“模型”。既然所有的东西都是用基本粒子组成的，那么除了物理学，我们为什么还要有化学和生物？化学家使用的语言是化学元素，它们比基本粒子大很多。生物学家的语言就更大一些了，处于细胞的级别。那么为什么化学家和生物学家不使用基本粒子来描述他们的领域呢？</p>
 
-<p>é£æ¯å ä¸ºåºæ¬ç²å­æ æ³æä¾è¶³å¤çâæ½è±¡âãå®ä»¬å°åºæ¯å¦ä½ç»æåå­ï¼åå­åå¦ä½è½äº§çç»èï¼è¿äºäºæå°ç°å¨è¿æ²¡ææ¸æ¥ãç¨åºæ¬ç²å­æ¥è¡¨ç¤ºåå­¦åçç©å­¦ï¼é£ä¹æä»¬ææè¦ç­å¾ä¹å¾ä¹ä»¥åæè½æè¿°åå­¦åçç©çç°è±¡ååçã</p>
+<p>那是因为基本粒子无法提供足够的“抽象”。它们到底是如何组成原子，原子又如何能产生细胞，这些事情到现在还没搞清楚。用基本粒子来表示化学和生物学，那么我们恐怕要等很久很久以后才能描述化学和生物的现象和原理。</p>
 
-<p>åæ ·çï¼åéï¼æ°å­ï¼å¯¹è±¡ï¼å½æ°ç­è¯­è¨çè¦ç´ ï¼ä¹æ¯ä¸è¶³ä»¥è¡¨è¾¾æä»¬éè¦çææç¨åºçãæäººè®¤ä¸ºå½æ°æ¯è¿äºåç´ çâç»æç²ååâï¼å¯æ¯å½æ°çç»æç»åè½åå´ä¸æ¯ä¸è½çãå½æ°æ¥åä¸äºåæ°ï¼è¿åä¸ä¸ªç»æãç¶èæäºæä»¬éè¦è¡¨è¾¾çæ¦å¿µå´ä¸æ¯è¿æ ·çç»æï¼æ¯å¦ä¸ä¸ªå¸¦æå¤æ ¹çµçº¿çé»å£å­ï¼å®å¯ä»¥ä»ä»»ä½çµçº¿è¾å¥ä¸è¥¿ï¼ç¶åä»å©ä¸ççµçº¿è¾åºãæ¯æ ¹çµçº¿çè¾å¥åè¾åºæ¹å¼ï¼å¨ä¸åçâè°ç¨âå¯ä»¥éæçæ´æ¹ãæ¯å¦ï¼çµçº¿ A ç¬¬ä¸æ¬¡è¢«è°ç¨æ¯è¾å¥ï¼ç¬¬äºæ¬¡è¢«è°ç¨å°±åæäºè¾åºã</p>
+<p>同样的，变量，数字，对象，函数等语言的要素，也是不足以表达我们需要的所有程序的。有人认为函数是这些元素的“终极粘合剂”，可是函数的结构组合能力却不是万能的。函数接受一些参数，返回一个结果。然而有些我们需要表达的概念却不是这样的结构，比如一个带有多根电线的黑匣子，它可以从任何电线输入东西，然后从剩下的电线输出。每根电线的输入和输出方式，在不同的“调用”可以随意的更改。比如，电线 A 第一次被调用是输入，第二次被调用就变成了输出。</p>
 
-<p>è¿ä¸ªé»å£å­å°±æ¯é»è¾è¯­è¨ï¼æ¯å¦ Prologï¼miniKanrenï¼çåºæ¬åç´ ãä½ å¦ä½ç¨å½æ°æ¥è¡¨ç¤ºå®å¢ï¼ä½ ä¸è½ãå ä¸ºä¸ç®¡ä½ æä¹æå½æ°ç»åèµ·æ¥ï¼è¿ä¸ªé»å£å­ççµçº¿ä¸æ¯è¿æ¥å°å½æ°çè¾å¥ï¼å°±æ¯è¿æ¥å°è¾åºãæä»¥å®ä»¬æ»æ¯æâåºå®âçæ¹åï¼ä¸è½æ»¡è¶³è¿ç§å¥æªçé»å£å­çå·¥ä½æ¹å¼ãæä»¥è½ç¶è¿ä¸ªåç´ å¯ä»¥ç¨æ´å åºæ¬çåç´ ï¼æ¯å¦åéç­ï¼ç»æï¼ç¶èå½æ°å´ä¸è½ä½ä¸ºè¿éçç²ååã</p>
+<p>这个黑匣子就是逻辑语言（比如 Prolog，miniKanren）的基本元素。你如何用函数来表示它呢？你不能。因为不管你怎么把函数组合起来，这个黑匣子的电线不是连接到函数的输入，就是连接到输出。所以它们总是有“固定”的方向，不能满足这种奇怪的黑匣子的工作方式。所以虽然这个元素可以用更加基本的元素（比如变量等）组成，然而函数却不能作为这里的粘合剂。</p>
 
-<p>æä»¥ä¸æ¦åºç°äºè¿æ ·ç¨ç°æçåç´ åç²ååæ²¡æ³è¡¨ç¤ºçä¸è¥¿ï¼æä»¬å°±éè¦ä¸ºè¯­è¨å å¥æ°çæé ï¼ä¹å°±æ¯æè¯­è¨æ©å±ãè¿ä¸ªæé å¿é¡»ç»è¿ä¸ä¸ªæ¯å½æ°æ´å å§ççè½¬åï¼æè½å®ç°æä»¬æ³è¦çåè½ã</p>
+<p>所以一旦出现了这样用现有的元素和粘合剂没法表示的东西，我们就需要为语言加入新的构造，也就是把语言扩展。这个构造必须经过一个比函数更加剧烈的转化，才能实现我们想要的功能。</p>
 
-<p>ç¬¬ä¸ç§æ¹å¼æ¯åä¸ä¸ªè§£éå¨ï¼ç¨æ¥æè¿°è¿ä¸ªé»å£å­çå·¥ä½æ¹å¼ãé»å£å­è¢«ä½ä¸ºä¸ä¸ªæ®éçæ°æ®ç»æï¼è¾å¥è§£éå¨ï¼ç¶åæä»¬ä»è§£éå¨å¾å°å®çç»æãè¿è²ä¼¼æ¯ä¸è½çæ¹å¼ã</p>
+<p>第一种方式是写一个解释器，用来描述这个黑匣子的工作方式。黑匣子被作为一个普通的数据结构，输入解释器，然后我们从解释器得到它的结果。这貌似是万能的方式。</p>
 
-<p>å¦å¤ä¸ç§âå ä¹ä¸è½âçæ¹å¼æ¯ä½¿ç¨å®ï¼macroï¼ãå®å¯ä»¥æè¿ä¸ªé»å£å­çâè¯­è¨æè¿°âï¼ä¹å°±æ¯ASTï¼ææ£ï¼ç¶åç»æä¸ä¸ªç¨åæ¥çè¯­è¨åç´ ç»æçç»æï¼å¹¶ä¸æå®æå¥å°åæ¥çç¨åºéé¢ãè¿å°±ç¸å½äºæé»å£å­âç¼è¯âæäºæä»¬å·²æçè¯­è¨ï¼ç¶åâåµå¥âãæ¯å¦å¯¹äºé»è¾è¯­è¨çé»å£å­ï¼å½æä»¬å¨è°ç¨å®çæ¶åï¼å®å°±ä¼ç¥éå®çè¾å¥åè¾åºçâæ¹åâãä¸æ¦ç¥éäºè¿ä¸ªæ¹åï¼å®çè¡ä¸ºæ¹å¼å°±ä¼åä¸ä¸ªå½æ°ï¼æä»¥æä»¬å°±å¯ä»¥ä»¥æ­¤æå®ç¼è¯æå½æ°ãå¨ä¸ä¸ä¸ªè°ç¨çå°æ¹ï¼è¾å¥è¾åºçæ¹ååæä¸åï¼æä»¥å°±æå®ç¼è¯æå¦å¤ä¸ä¸ªå½æ°ã</p>
+<p>另外一种“几乎万能”的方式是使用宏（macro）。宏可以把这个黑匣子的“语言描述”（也就是AST）拆散，然后组成一个用原来的语言元素组成的结构，并且把它插入到原来的程序里面。这就相当于把黑匣子“编译”成了我们已有的语言，然后“嵌入”。比如对于逻辑语言的黑匣子，当我们在调用它的时候，宏就会知道它的输入和输出的“方向”。一旦知道了这个方向，它的行为方式就会像一个函数，所以我们就可以以此把它编译成函数。在下一个调用的地方，输入输出的方向又有不同，所以就把它编译成另外一个函数。</p>
 
-<p>æä»¥ï¼æ¯ä¸ä¸ªå®å¶å®å°±æ¯ä¸ä¸ªç¼è¯å¨ãä½ å¯ä»¥ç¨ Lisp/Scheme çå®æ¥å®ç°å ä¹ä»»ä½è¯­è¨ç»æãè¿ç§âåµå¥å¼è¯­è¨âéå¸¸è¢«å«å EDSL (Embedded Domain Specific Language)ã</p>
+<p>所以，每一个宏其实就是一个编译器。你可以用 Lisp/Scheme 的宏来实现几乎任何语言结构。这种“嵌入式语言”通常被叫做 EDSL (Embedded Domain Specific Language)。</p>
 
-<p>æäºå¶å®è¯­è¨ä¹æä¾ä¸äºæå»º EDSL çè½åï¼æ¯å¦ Haskell, Scala ç­ãè½ç¶å®ä»¬æä¸å®æå»º EDSL çè½åï¼å´ä¸è½è¾¾å° Lisp/Scheme å®çå°æ­¥ãå®ä»¬å¾å¾ä½¿ç¨âéè½½âçæ¹å¼æ¥å®ä¹ä¸äºæä½ç¬¦ï¼æ¯å¦"+"å·ï¼ç¶åæè¿äºæä½ç¬¦ä½ç¨äºè¿ä¸ª EDSL ç AST æç¹æçç±»åï¼ä»èè®©æä½ç¬¦âèªå¨åæ¢âå°è¿ä¸ª EDSL çè¯­ä¹ã</p>
+<p>有些其它语言也提供一些构建 EDSL 的能力，比如 Haskell, Scala 等。虽然它们有一定构建 EDSL 的能力，却不能达到 Lisp/Scheme 宏的地步。它们往往使用“重载”的方式来定义一些操作符，比如"+"号，然后把这些操作符作用于这个 EDSL 的 AST 所特有的类型，从而让操作符“自动切换”到这个 EDSL 的语义。</p>
 
-<p>Haskell æä¸ä¸ª EDSL å« Accelerate å°±æ¯è¿æ ·å®ç°çï¼å®ä½¿ç¨ type class æ¥éè½½æä½ç¬¦ï¼ç¨äº GPU çæä½ãç¶èæå´åç°ä½¿ç¨å®çæ¶åï¼ææ¶åæå¿é¡»æè¿ä¸äºè«åå¶å¦çï¼è·ææ³è¦è¡¨è¾¾çæ¦å¿µæ¯«æ å³ç³»ä¸è¥¿ãè¿æ¯å ä¸ºéè½½çè½åæ¯æéçï¼å®å¹¶ä¸è½åå®ä¸æ ·ï¼å¯ä»¥ä»»æçæè§£åæ¼è£æ´ä¸ªè¡¨è¾¾å¼ãæä»¥ Accelerate å¨å¾å¤æ¶åéè¦ä½ åä¸äºç¹å®çä¸è¥¿ï¼è¿æ ·å®æè½é¿åæ­§ä¹ï¼å®ç°æ­£ç¡®çéè½½æä½ãå°åæ¥ï¼æåç°è¿äºå¤ä½çç¬¦å·æä¸ºäºéå¸¸ç¢ç¼çä¸è¥¿ï¼è®©ææ æ³ç´æ¥ççå°ææè¦è¡¨è¾¾çæ¦å¿µã</p>
+<p>Haskell 有一个 EDSL 叫 Accelerate 就是这样实现的，它使用 type class 来重载操作符，用于 GPU 的操作。然而我却发现使用它的时候，有时候我必须打进一些莫名其妙的，跟我想要表达的概念毫无关系东西。这是因为重载的能力是有限的，它并不能像宏一样，可以任意的拆解和拼装整个表达式。所以 Accelerate 在很多时候需要你写一些特定的东西，这样它才能避免歧义，实现正确的重载操作。到后来，我发现这些多余的符号成为了非常碍眼的东西，让我无法直接的看到我所要表达的概念。</p>
 
-<p>æä»¥æè§å¾ Lisp å Scheme çå®æ¯å¾éè¦çä¸è¥¿ãç¶èæä¸ä¸ªåæï¼å®ä¸å®è¦å°ç¨ï¼è¦å¨éå¸¸æå¿è¦çæ¶åæå®ä¹å®ãå¦åä½ çè¯­è¨éå°±ä¼åºç°å¾å¤å¥æªçç»æï¼è¿äºç»ææ²¡æ³ç¨å½æ°è°ç¨çè¯­ä¹æ¥çè§£ï¼è¿æ ·å°±é æäºç¨åºåä¹é´äº¤æµçéç¢ãå¨ Common Lisp éé¢æå¤ç§å¾ç«ç looping macro å°±è¿æ ·çä¾å­ï¼å®ä»¬è®© Common Lisp çç¨åºé¾ä»¥çè§£ã</p>
+<p>所以我觉得 Lisp 和 Scheme 的宏是很重要的东西。然而有一个前提：宏一定要少用，要在非常有必要的时候才定义宏。否则你的语言里就会出现很多奇怪的结构，这些结构没法用函数调用的语义来理解，这样就造成了程序员之间交流的障碍。在 Common Lisp 里面有多种很炫的 looping macro 就这样的例子，它们让 Common Lisp 的程序难以理解。</p>
 
-<p>ç¶èè¯´ä¸ç§è¯­è¨æ¯ä¸å¤ç¨çï¼å¹¶ä¸æ¯è¯´ä¸çä¸çé£ä¹å¤ç§è¯­è¨é½æ¯å¿é¡»å­å¨çãå®éä¸ï¼å®ä»¬å¤§é¨åçåè½é½æ¯éå¤çï¼å¾å¤è®¾è®¡ç³ç³çè¯­è¨æ ¹æ¬å°±æ²¡å¿è¦å­å¨ãæä»¥æè¯´çâä¸å¤ç¨âä¸æ¯ä»å®ç¨ä¸»ä¹çè§åº¦åºåï¼èæ¯ä»åçæ§çè§åº¦åºåçãæåªæ¯è¯´ï¼å¨ç¹å®çéæ±é¢åï¼ä½ æå¯è½éè¦ä¸ºè¯­è¨å å¥æ°çæé åè¯­ä¹ã</p>
-
-
+<p>然而说一种语言是不够用的，并不是说世界上的那么多种语言都是必须存在的。实际上，它们大部分的功能都是重复的，很多设计糟糕的语言根本就没必要存在。所以我说的“不够用”不是从实用主义的角度出发，而是从原理性的角度出发的。我只是说，在特定的需求面前，你有可能需要为语言加入新的构造和语义。</p>
+    </div>
+    
+    <script src="js/highlight.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script>
+        if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
+            document.body.classList.add('mobile');
+            var navbar = document.querySelector('nav.navbar');
+            if (navbar) { navbar.classList.remove('navbar-fixed-top'); }
+        }
+    </script>
 </body>
-
 </html>

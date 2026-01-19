@@ -1,33 +1,88 @@
+<!DOCTYPE html>
 <html>
 <head>
-
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link href="http://www.yinwang.org/main.css" rel="stylesheet" type="text/css">
-<link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
-<link rel="shortcut icon" href="http://www.yinwang.org/images/Yc.jpg">
-
-<title>Google å°åºæ¯ä»ä¹é®é¢</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <title>Google 到底是什么问题</title>
+    <link rel="stylesheet" href="css/highlight/xcode.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-tooltips.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/home.css"> <!-- Need home for navbar -->
+    <link rel="stylesheet" href="css/post.css">
+    <script src="js/jquery.min.js"></script>
+    <style>
+        /* Switcher Fixes */
+        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
+        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
+        .version-switcher a.current { font-weight: bold; color: #333; }
+        /* Inner override for posts */
+        .inner { margin-top: 80px; } 
+    </style>
 </head>
-ãã
 <body>
+    <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-bs">
+                    <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+                <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='aboutcmec_aboutcmec_01.jsp_20060213.html'>About</a></li><li><a href='aboutess_aboutess_01.jsp_20060213.html'>About</a></li><li><a href='aboutinfo_aboutinfo_01.jsp_20060106.html'>About</a></li><li><a href='tweet_20170605.html'>微勃 (Tweets)</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='homepage_20250719.html'>当然我在扯淡 (None)</a></li><li><a href='index.jsp_20060213.html'>中国中小企业竞争力工程 (None)</a></li><li><a href='index_20260110.html'>Surely I am Joking (None)</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Posts <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='posts_air-freshener-nightmare_20251129.html'>Surely I am Joking</a></li><li><a href='posts_american-english-problems_20251030.html'>Surely I am Joking</a></li><li><a href='posts_authority_20251221.html'>Surely I am Joking</a></li><li><a href='posts_cello-technique_20251102.html'>Surely I am Joking</a></li><li><a href='posts_continuation-course_20251206.html'>Surely I am Joking</a></li><li><a href='posts_cs-class2_20251105.html'>Surely I am Joking</a></li><li><a href='posts_cs-course-5_20251208.html'>Surely I am Joking</a></li><li><a href='posts_cs-video-course_20251101.html'>Surely I am Joking</a></li><li><a href='posts_cs3_20251102.html'>Surely I am Joking</a></li><li><a href='posts_cs4_20251102.html'>Surely I am Joking</a></li><li><a href='posts_cs5-completed_20251031.html'>Surely I am Joking</a></li><li><a href='posts_entry-level-class_20251102.html'>Surely I am Joking</a></li><li><a href='posts_learning-philosophy_20251211.html'>Surely I am Joking</a></li><li><a href='posts_oberon_20260113.html'>Surely I am Joking</a></li><li><a href='posts_reading-course_20251102.html'>Surely I am Joking</a></li><li><a href='posts_super-human-level-vision_20251104.html'>Surely I am Joking</a></li><li><a href='posts_tuition-for-covid_20251103.html'>Surely I am Joking</a></li><li><a href='posts_wisdom-of-intelligence_20251102.html'>Surely I am Joking</a></li><li><a href='posts_youth-cs-student_20251102.html'>Surely I am Joking</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='resources_d8-3404-d8-8424_20130614.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_base64mime.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_charset.py_20150506.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_encoders.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_errors.py_20150409.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_header.py_20140305.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_quoprimime.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_re.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_compile.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_constants.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_parse.py_20160822.html'>Untitled</a></li><li><a href='resources_diff1-diff2_20200728.html'>Untitled</a></li><li><a href='resources_mk1-mk2_20130627.html'>Untitled</a></li><li><a href='resources_nav1-nav2_20200728.html'>Untitled</a></li><li><a href='resources_paredit20-paredit23_20200728.html'>Untitled</a></li><li><a href='resources_pydiff1-pydiff2_20130711.html'>Untitled</a></li><li><a href='resources_simulator-mips-simulator-arm_20200728.html'>Untitled</a></li><li><a href='resources_typed-clojure1-typed-clojure2_20200728.html'>Untitled</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tags <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='tags_ai_20251103.html'>Surely I am Joking</a></li><li><a href='tags_education_20251031.html'>Surely I am Joking</a></li><li><a href='tags_english_20251101.html'>Surely I am Joking</a></li><li><a href='tags_health_20251102.html'>Surely I am Joking</a></li><li><a href='tags_life_20251129.html'>Surely I am Joking</a></li><li><a href='tags_lifestyle_20251101.html'>Surely I am Joking</a></li><li><a href='tags_philosophy_20251101.html'>Surely I am Joking</a></li><li><a href='tags_programming-language_20260113.html'>Surely I am Joking</a></li><li><a href='tags_travel_20251129.html'>Surely I am Joking</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Misc <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='.well-known_dnt-policy.txt_20251211.html'>Surely I am Joking</a></li><li><a href='_5C_20251205.html'>Surely I am Joking</a></li><li><a href='_5Cu003c_a_5Cu003e_5Cu003c_td_5Cu003e_5Cn_5Cu003ctd_5Cu003e_E7_BC_96_E7_A8_8B_5Cu003c_td_5Cu003e_5Cn_5Cu003c_tr_5Cu003e_5Cn_5Cu003ctr_5Cu003e_5Cn_5Cu003ctd_5Cu003e_5Cu003ca_20251204.html'>Surely I am Joking</a></li><li><a href='ads.txt_20251013.html'>Surely I am Joking</a></li><li><a href='afficheAction.do_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='apply_dcb.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='apply_twsqb.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='common_casetoyota.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='common_casexhx.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='common_courseBase_main.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='common_courseBase_tch_grzl.jsp_20060106.html'>Untitled</a></li><li><a href='contactus.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='datadownload.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='dljm.jsp_20060516.html'>竞争力工程</a></li><li><a href='fwjs.jsp_20060516.html'>竞争力工程</a></li><li><a href='hd_qgjx.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='laws_laws_01.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='lianxi.jsp_20060428.html'>竞争力工程</a></li><li><a href='more.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='neirong.jsp_20060516.html'>详细内容</a></li><li><a href='newsPublishAction.do_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='servicecenter_servicecenter_01.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='tongzhi.jsp_20060428.html'>竞争力工程</a></li><li><a href='tongzhi_tongzhi1.htm_20060428.html'>ÎÞ±êÌâÎÄµµ</a></li><li><a href='tongzhi_tongzhi2.htm_20060428.html'>ÎÞ±êÌâÎÄµµ</a></li><li><a href='units_gjfz.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='units_jstg.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='units_zgzx.jsp_20060213.html'>中国中小企业竞争力工程</a></li></ul></li></ul>
+            </div>
+        </div>
+    </nav>
 
-<h2>Google å°åºæ¯ä»ä¹é®é¢</h2>
+    <div class="inner">
+        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2013_04_13_google_20130417.html" class="current">2013-04-17</a> <a href="blog-cn_2013_04_13_google_20141227.html" >2014-12-27</a></div>
+        <h2>Google 到底是什么问题</h2>
 
-<p>æäººä¹è®¸çè¿æä»¥åå¯¹ Google çè¯è®ºãè½ç¶å®è¯´åºäºå®æï¼ä½ä¹å¸¦æä¸äºæèªå·±çä¸»è§æç»ªãå¦æä½ æ³ä»å¦ä¸ä¸ªè§åº¦çç Google çé®é¢ï¼å¯ä»¥åèä¸ä¸ James Whittaker çåæã<a href="http://blogs.msdn.com/b/jw_on_tech/archive/2012/03/13/why-i-left-google.aspx">Why I left Google</a>ããè¿ä¸ª James å½æ¶æ¯ Google ä¸»ç®¡ test ç directorï¼æ¯æå¨ Google çåèæ¿çèæ¿ãæä»æ¥æ²¡è·ä»ä»ç»è¯´è¿è¯ï¼æä»¥æä¸è½å¯¹ä»ååºä»»ä½è¯ä»·ãè¿ä¸ªæç« ä»ä¾åèã</p>
+<p>有人也许看过我以前对 Google 的评论。虽然它说出了实情，但也带有一些我自己的主观情绪。如果你想从另一个角度看看 Google 的问题，可以参考一下 James Whittaker 的博文《<a href="http://blogs.msdn.com/b/jw_on_tech/archive/2012/03/13/why-i-left-google.aspx">Why I left Google</a>》。这个 James 当时是 Google 主管 test 的 director，是我在 Google 的前老板的老板。我从来没跟他仔细说过话，所以我不能对他做出任何评价。这个文章仅供参考。</p>
 
-<p>ç°å¨æå¨ä¸ä¸ªè· Google å¾ä¸ä¸æ ·çå¬å¸å·¥ä½ãæè½ç¶ä¸è½è¯´å¾åæ¬¢è¿éï¼ä½æ¯å®å´æ²¡æ Google çä¸äºè®©æåªå¤·ææçç¹å¾ãå¤§å®¶è¯´è¯é½ç´æªäºå½ï¼å¹¶ä¸å¯¹èªå·±çå¬å¸é¡¶ç¤¼èæãå¨ç»è¿å·éçæèï¼ä»¥åä¸ä¸äºäººçè®¨è®ºä¹åï¼æè§å¾æåºè¯¥å¯¹ Google ååºä¸ä¸ªå®¢è§çåæï¼ä»¥ä¾¿å¸®å©å¤§å®¶æ¾å°éåèªå·±çå·¥ä½ç¯å¢ãå¨ Google çæåä¹è®¸ä¹è½ä»ä¸­å¾å°åé¦ï¼ä»èå¯ä»¥å¯¹èªå·±çå¬å¸è¿è¡ä¸äºåæè½åçæ¹è¿ã</p>
+<p>现在我在一个跟 Google 很不一样的公司工作。我虽然不能说很喜欢这里，但是它却没有 Google 的一些让我匪夷所思的特征。大家说话都直截了当，并不对自己的公司顶礼膜拜。在经过冷静的思考，以及与一些人的讨论之后，我觉得我应该对 Google 做出一个客观的分析，以便帮助大家找到适合自己的工作环境。在 Google 的朋友也许也能从中得到反馈，从而可以对自己的公司进行一些力所能及的改进。</p>
 
-<p>å¨æä¸æ¬¡æ¹è¯ Google ä¹åï¼æ¶å°äºä¸ä½èåå­¦çåé¦ãä»è¯´æå ä¸ª Google çæåçäºæçæç« å¾æ°æ¤ï¼è¯´æâè®©ä»ä»¬æ¾å¾å¾ä¸éâãæè§å¾å¾å¥æªï¼å ä¸ºææ ¹æ¬å°±ä¸è®¤è¯è¿å ä¸ªäººï¼æ´ä¸å¯è½å¯¹ä»ä»¬æä»ä¹æ¶æï¼ä¸ºä»ä¹æ¹è¯ Google å°±ä¼å¼èµ·âGoogle åå·¥âçå¦æ­¤å¼ºççååºå¢ï¼ä»ç»æ³ä¸ä¸ï¼å¦æææ¹è¯çä¸æ¯ Google èæ¯éº¦å½å³ï¼é£éº¦å½å³çåå·¥ä¼æå¦æ­¤ååºåï¼</p>
+<p>在我上次批评 Google 之后，收到了一位老同学的反馈。他说有几个 Google 的朋友看了我的文章很气愤，说我“让他们显得很丑陋”。我觉得很奇怪，因为我根本就不认识这几个人，更不可能对他们有什么恶意，为什么批评 Google 就会引起“Google 员工”的如此强烈的反应呢？仔细想一下，如果我批评的不是 Google 而是麦当劳，那麦当劳的员工会有如此反应吗？</p>
 
-<p>æ¾ç¶ï¼Google çå¾å¤åå·¥å·²ç»å¤±å»äºèªæï¼æ Google ç­åäºäºèªå·±ï¼æä»¥ä»ä»¬æä¼å¯¹æçè¯ä»·ååºå¦æ­¤ååºãGoogle æåçä¸åï¼ä»ä»¬é½ä¸å å¤æ­çæ¥åãGoogle è®¾è®¡çææä¸è¥¿ï¼ä»ä»¬é½è®¤ä¸ºæ¯ä¸çä¸æåè¿çææ¯ãå¶å®æå¯¹ Google çå·¥ä½ç¯å¢å¯ä¸çåæä¹å¤ï¼å°±æ¯å¾å¤ Google åå·¥åæ¯çæ´»å¨ä¸­å½çæåå¤§é©å½æ¶ä»£ï¼åâç¥å½è±å­éçè±æµâä¸æ ·å¤©å¤©åä¸ï¼ä¸º Google é«å±èµæ­ãGoogle çâæ²³è¹åéâï¼è¿ä¸­å½å±äº§åææé½èªæ§ä¸å¦ã</p>
+<p>显然，Google 的很多员工已经失去了自我，把 Google 等同于了自己，所以他们才会对我的评价做出如此反应。Google 所做的一切，他们都不加判断的接受。Google 设计的所有东西，他们都认为是世界上最先进的技术。其实我对 Google 的工作环境唯一的反感之处，就是很多 Google 员工像是生活在中国的文化大革命时代，像“祖国花园里的花朵”一样天天向上，为 Google 高唱赞歌。Google 的“河蟹力量”，连中国共产党恐怕都自愧不如。</p>
 
-<p>å¶å®æä¸ä½æ¾ç»å¨ Google å·¥ä½çæåï¼åå­æä¸ºä»ä¿å¯ï¼æ¥ä¿¡åè¯æï¼æçæè§ä¸ç¹ä¹æ²¡éï¼å ä¸ºä»å½æ¶å¨ Google ä¹æ¯åæ ·çæåï¼ç¬ç«çäººæ ¼åæç»´ï¼å¨ Google ä»¿ä½è¶äºæ¶äº¡ãæè¿è·å¦ä¸ä¸ªå¬å¸çæåè°å°è¿é®é¢ï¼ä»ä¹è¯´ Google ç¡®å®æ¯è¿æ ·çãä»çä¸äºæåè¿äº Google ä¹åå°±ä»¿ä½å®å¨åäºä¸ä¸ªäººï¼è¿ä»é½ä¸æ¢ç¸ä¿¡è¿äºäººæ¾ç»æ¯ä»çæåãæä»çè¯è¯´ï¼å°±æ¯è¢«âæ´èâäºã</p>
+<p>其实有一位曾经在 Google 工作的朋友（名字我为他保密）来信告诉我，我的感觉一点也没错，因为他当时在 Google 也是同样的感受，独立的人格和思维，在 Google 仿佛趋于消亡。最近跟另一个公司的朋友谈到这问题，他也说 Google 确实是这样的。他的一些朋友进了 Google 之后就仿佛完全变了一个人，连他都不敢相信这些人曾经是他的朋友。按他的话说，就是被“洗脑”了。</p>
 
-<p>ä¹è®¸å¨ææ¯ä¸ Google ååºäºä¸äºå¥½ä¸è¥¿ï¼ä½æ¯å¨âå¬å¸æåâä¸ï¼Google ç¡®å®æå¾ä¸¥éçé®é¢ï¼Google å·æè¿äºå¼ºççåååéï¼è¿ç§åéä½¿å¾åå·¥å¤±å»èªæï¼å®å¨ä»»ç±å¬å¸çæå¿æå·¦å³ãè¿ä¸ªé®é¢çæºå¤´ï¼è²ä¼¼è°ä¹æ²¡æ³è¯´æ¸æ¥ãæä»¥å³äºè¿äºäººæ¯æä¹è¢«æ´èçï¼è¿ä½æåå¼ç©ç¬è¯´ï¼âè¯å®æ¯å ä¸ºé£äºåè´¹çé£ç©éé¢æä»ä¹ç¹æ®çä¸è¥¿ãâ</p>
+<p>也许在技术上 Google 做出了一些好东西，但是在“公司文化”上，Google 确实有很严重的问题：Google 具有过于强烈的同化力量，这种力量使得员工失去自我，完全任由公司的意志所左右。这个问题的源头，貌似谁也没法说清楚。所以关于这些人是怎么被洗脑的，这位朋友开玩笑说，“肯定是因为那些免费的食物里面有什么特殊的东西。”</p>
 
-<p>æåæåæ¬¡å£°æï¼è¿åªæ¯æå¯¹ Google ä½ä¸ºä¸ä¸ªå¬å¸çè¯ä»·ï¼è· Google çåå·¥ä¸ªäººæ²¡æä»»ä½å³ç³»ãä»ä»¬è½ç¶ä¸ºå¬å¸å·¥ä½ï¼ä½ææ´æ¿ææä»ä»¬ä½ä¸ºç¬ç«çï¼ä¸å¸¦æä»»ä½æ ç­¾çäººçå¾ãå½ç¶æå¨è¿éåè¡¨çè§ç¹è·ææå¨çå¬å¸æ²¡æä»»ä½å³ç³»ãè½ç¶æä¸ºä¸ä¸ªå¬å¸å·¥ä½ï¼ä½æ¯æçææ³æ¯ç¬ç«äºä»»ä½å¬å¸çãææ°¸è¿ä¸å±äºä»»ä½å¬å¸ï¼ä¹ä¸å±äºä»»ä½å¶ä»äººãæåªå±äºæèªå·±ã</p>
-
-
+<p>最后我再次声明，这只是我对 Google 作为一个公司的评价，跟 Google 的员工个人没有任何关系。他们虽然为公司工作，但我更愿意把他们作为独立的，不带有任何标签的人看待。当然我在这里发表的观点跟我所在的公司没有任何关系。虽然我为一个公司工作，但是我的思想是独立于任何公司的。我永远不属于任何公司，也不属于任何其他人。我只属于我自己。</p>
+    </div>
+    
+    <script src="js/highlight.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script>
+        if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
+            document.body.classList.add('mobile');
+            var navbar = document.querySelector('nav.navbar');
+            if (navbar) { navbar.classList.remove('navbar-fixed-top'); }
+        }
+    </script>
 </body>
-
 </html>

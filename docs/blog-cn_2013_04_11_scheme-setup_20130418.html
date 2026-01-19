@@ -1,67 +1,113 @@
+<!DOCTYPE html>
 <html>
 <head>
-
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link href="http://www.yinwang.org/main.css" rel="stylesheet" type="text/css">
-<link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
-<link rel="shortcut icon" href="http://www.yinwang.org/images/Yc.jpg">
-
-<title>Scheme ç¼ç¨ç¯å¢çè®¾ç½®</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <title>Scheme 编程环境的设置</title>
+    <link rel="stylesheet" href="css/highlight/xcode.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-tooltips.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/home.css"> <!-- Need home for navbar -->
+    <link rel="stylesheet" href="css/post.css">
+    <script src="js/jquery.min.js"></script>
+    <style>
+        /* Switcher Fixes */
+        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
+        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
+        .version-switcher a.current { font-weight: bold; color: #333; }
+        /* Inner override for posts */
+        .inner { margin-top: 80px; } 
+    </style>
 </head>
-ãã
 <body>
+    <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-bs">
+                    <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+                <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='aboutcmec_aboutcmec_01.jsp_20060213.html'>About</a></li><li><a href='aboutess_aboutess_01.jsp_20060213.html'>About</a></li><li><a href='aboutinfo_aboutinfo_01.jsp_20060106.html'>About</a></li><li><a href='tweet_20170605.html'>微勃 (Tweets)</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='homepage_20250719.html'>当然我在扯淡 (None)</a></li><li><a href='index.jsp_20060213.html'>中国中小企业竞争力工程 (None)</a></li><li><a href='index_20260110.html'>Surely I am Joking (None)</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Posts <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='posts_air-freshener-nightmare_20251129.html'>Surely I am Joking</a></li><li><a href='posts_american-english-problems_20251030.html'>Surely I am Joking</a></li><li><a href='posts_authority_20251221.html'>Surely I am Joking</a></li><li><a href='posts_cello-technique_20251102.html'>Surely I am Joking</a></li><li><a href='posts_continuation-course_20251206.html'>Surely I am Joking</a></li><li><a href='posts_cs-class2_20251105.html'>Surely I am Joking</a></li><li><a href='posts_cs-course-5_20251208.html'>Surely I am Joking</a></li><li><a href='posts_cs-video-course_20251101.html'>Surely I am Joking</a></li><li><a href='posts_cs3_20251102.html'>Surely I am Joking</a></li><li><a href='posts_cs4_20251102.html'>Surely I am Joking</a></li><li><a href='posts_cs5-completed_20251031.html'>Surely I am Joking</a></li><li><a href='posts_entry-level-class_20251102.html'>Surely I am Joking</a></li><li><a href='posts_learning-philosophy_20251211.html'>Surely I am Joking</a></li><li><a href='posts_oberon_20260113.html'>Surely I am Joking</a></li><li><a href='posts_reading-course_20251102.html'>Surely I am Joking</a></li><li><a href='posts_super-human-level-vision_20251104.html'>Surely I am Joking</a></li><li><a href='posts_tuition-for-covid_20251103.html'>Surely I am Joking</a></li><li><a href='posts_wisdom-of-intelligence_20251102.html'>Surely I am Joking</a></li><li><a href='posts_youth-cs-student_20251102.html'>Surely I am Joking</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='resources_d8-3404-d8-8424_20130614.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_base64mime.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_charset.py_20150506.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_encoders.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_errors.py_20150409.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_header.py_20140305.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_quoprimime.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_re.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_compile.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_constants.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_parse.py_20160822.html'>Untitled</a></li><li><a href='resources_diff1-diff2_20200728.html'>Untitled</a></li><li><a href='resources_mk1-mk2_20130627.html'>Untitled</a></li><li><a href='resources_nav1-nav2_20200728.html'>Untitled</a></li><li><a href='resources_paredit20-paredit23_20200728.html'>Untitled</a></li><li><a href='resources_pydiff1-pydiff2_20130711.html'>Untitled</a></li><li><a href='resources_simulator-mips-simulator-arm_20200728.html'>Untitled</a></li><li><a href='resources_typed-clojure1-typed-clojure2_20200728.html'>Untitled</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tags <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='tags_ai_20251103.html'>Surely I am Joking</a></li><li><a href='tags_education_20251031.html'>Surely I am Joking</a></li><li><a href='tags_english_20251101.html'>Surely I am Joking</a></li><li><a href='tags_health_20251102.html'>Surely I am Joking</a></li><li><a href='tags_life_20251129.html'>Surely I am Joking</a></li><li><a href='tags_lifestyle_20251101.html'>Surely I am Joking</a></li><li><a href='tags_philosophy_20251101.html'>Surely I am Joking</a></li><li><a href='tags_programming-language_20260113.html'>Surely I am Joking</a></li><li><a href='tags_travel_20251129.html'>Surely I am Joking</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Misc <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='.well-known_dnt-policy.txt_20251211.html'>Surely I am Joking</a></li><li><a href='_5C_20251205.html'>Surely I am Joking</a></li><li><a href='_5Cu003c_a_5Cu003e_5Cu003c_td_5Cu003e_5Cn_5Cu003ctd_5Cu003e_E7_BC_96_E7_A8_8B_5Cu003c_td_5Cu003e_5Cn_5Cu003c_tr_5Cu003e_5Cn_5Cu003ctr_5Cu003e_5Cn_5Cu003ctd_5Cu003e_5Cu003ca_20251204.html'>Surely I am Joking</a></li><li><a href='ads.txt_20251013.html'>Surely I am Joking</a></li><li><a href='afficheAction.do_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='apply_dcb.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='apply_twsqb.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='common_casetoyota.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='common_casexhx.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='common_courseBase_main.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='common_courseBase_tch_grzl.jsp_20060106.html'>Untitled</a></li><li><a href='contactus.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='datadownload.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='dljm.jsp_20060516.html'>竞争力工程</a></li><li><a href='fwjs.jsp_20060516.html'>竞争力工程</a></li><li><a href='hd_qgjx.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='laws_laws_01.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='lianxi.jsp_20060428.html'>竞争力工程</a></li><li><a href='more.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='neirong.jsp_20060516.html'>详细内容</a></li><li><a href='newsPublishAction.do_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='servicecenter_servicecenter_01.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='tongzhi.jsp_20060428.html'>竞争力工程</a></li><li><a href='tongzhi_tongzhi1.htm_20060428.html'>ÎÞ±êÌâÎÄµµ</a></li><li><a href='tongzhi_tongzhi2.htm_20060428.html'>ÎÞ±êÌâÎÄµµ</a></li><li><a href='units_gjfz.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='units_jstg.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='units_zgzx.jsp_20060213.html'>中国中小企业竞争力工程</a></li></ul></li></ul>
+            </div>
+        </div>
+    </nav>
 
-<h2>Scheme ç¼ç¨ç¯å¢çè®¾ç½®</h2>
+    <div class="inner">
+        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2013_04_11_scheme-setup_20130418.html" class="current">2013-04-18</a> <a href="blog-cn_2013_04_11_scheme-setup_20140701.html" >2014-07-01</a> <a href="blog-cn_2013_04_11_scheme-setup_20140809.html" >2014-08-09</a> <a href="blog-cn_2013_04_11_scheme-setup_20150321.html" >2015-03-21</a> <a href="blog-cn_2013_04_11_scheme-setup_20160426.html" >2016-04-26</a> <a href="blog-cn_2013_04_11_scheme-setup_20160527.html" >2016-05-27</a> <a href="blog-cn_2013_04_11_scheme-setup_20160929.html" >2016-09-29</a> <a href="blog-cn_2013_04_11_scheme-setup_20170504.html" >2017-05-04</a> <a href="blog-cn_2013_04_11_scheme-setup_20170605.html" >2017-06-05</a> <a href="blog-cn_2013_04_11_scheme-setup_20171024.html" >2017-10-24</a> <a href="blog-cn_2013_04_11_scheme-setup_20171205.html" >2017-12-05</a> <a href="blog-cn_2013_04_11_scheme-setup_20180222.html" >2018-02-22</a> <a href="blog-cn_2013_04_11_scheme-setup_20191101.html" >2019-11-01</a> <a href="blog-cn_2013_04_11_scheme-setup_20200228.html" >2020-02-28</a> <a href="blog-cn_2013_04_11_scheme-setup_20220529.html" >2022-05-29</a> <a href="blog-cn_2013_04_11_scheme-setup_20240416.html" >2024-04-16</a></div>
+        <h2>Scheme 编程环境的设置</h2>
 
-<p>ä»ç»äºè¿ä¹ä¹ç Schemeï¼å´æ²¡æè®²è¿å¦ä½éç½®ä¸ä¸ªé«æç Scheme çç¼ç¨ç¯å¢ãæäºäººå¼å§å­¦ä¹  Scheme çæ¶åæè§æ ä»ä¸æï¼æä»¥ä»å¤©è®²ä¸ä¸å®çéç½®ã</p>
+<p>介绍了这么久的 Scheme，却没有讲过如何配置一个高效的 Scheme 的编程环境。有些人开始学习 Scheme 的时候感觉无从下手，所以今天讲一下它的配置。</p>
 
-<p>Scheme çéç½®æå¾å¤ç§æ¹å¼ï¼æä¸æ³ä»ç»å¤ªå¤ä¸è¥¿ï¼åå¾æäººçè±äºç¼ï¼æä»¥è¿éåªä»ç»ä¸ä¸æèªå·±çéç½®ãæä¸å¤§åæ¬¢å <a href="http://www.neilvandyke.org/quack">Quack</a> ä¸ç±»çå¤æçç¯å¢ï¼å ä¸ºå®ä»¬ç»å¸¸æå¾å¤å¤ä½çåè½ï¼å´ç¼ºå°ææ³è¦çåè½ãä¸æ¦ææ³ä¿®æ¹å®ä»¬ï¼åå°å¤åºé®é¢ãæçéç½®å¾ç®çº¦ï¼æç¨å®åäºå åè¡çè¶é«é¾åº¦çä»£ç ï¼ç¿»æ¥è¦å»çæ¹ï¼æè§æçéå¸¸é«ï¼ä¹æ²¡æè§å¾ç¼ºå°ä»ä¹ç¹å«éè¦çä¸è¥¿ã</p>
+<p>Scheme 的配置有很多种方式，我不想介绍太多东西，免得有人看花了眼，所以这里只介绍一下我自己的配置。我不大喜欢像 <a href="http://www.neilvandyke.org/quack">Quack</a> 一类的复杂的环境，因为它们经常有很多多余的功能，却缺少我想要的功能。一旦我想修改它们，又到处出问题。我的配置很简约，我用它写了几千行的超高难度的代码，翻来覆去的改，感觉效率非常高，也没有觉得缺少什么特别重要的东西。</p>
 
-<p>ç°å¨æå°±ä¸æ­¥ä¸æ­¥çä»ç»æçéç½®ã</p>
+<p>现在我就一步一步的介绍我的配置。</p>
 
-<h3>å®è£ Scheme</h3>
+<h3>安装 Scheme</h3>
 
-<p>ä¸çä¸æå¥½ç Scheme å®ç°æ¯ Chez Schemeï¼ä½æ¯å®ä¸åè´¹ä¹ä¸å¼æºãæä»¥å¦æä½ ä¸æ³ç ´è´¹ï¼é£å°±åªå¥½ä¸è½½ä¸ä¸ªå®çâåè´¹çâï¼å«å Petite Chez Schemeï¼petite æ¯æ³è¯­éâå°âçææï¼ãå®å¯ä»¥å¨è¿éä¸è½½ï¼</p>
+<p>世界上最好的 Scheme 实现是 Chez Scheme，但是它不免费也不开源。所以如果你不想破费，那就只好下载一个它的“免费版”，叫做 Petite Chez Scheme（petite 是法语里“小”的意思）。它可以在这里下载：</p>
 
 <p><a href="http://scheme.com/download">http://scheme.com/download</a></p>
 
-<p>è¿ä¸ªé¡µé¢æºé¿ï¼ä¸é¢é½æ¯æ­£å¼çç Chez Schemeï¼ä¸ç¹å»å°±ä¼å«ä½ âèç³»éå®äººåâãè¦æ»å¨å°ä¸é¢æè½çè§åè´¹ççæ¬ãæä¹å®è£æå°±ä¸è®²äºï¼èªå·±çè¯´æåºè¯¥å¾å®¹æçã</p>
+<p>这个页面挺长，上面都是正式版的 Chez Scheme，一点击就会叫你“联系销售人员”。要滚动到下面才能看见免费的版本。怎么安装我就不讲了，自己看说明应该很容易的。</p>
 
-<p>Petite æ¯ä¸ä¸ªå®åçï¼é«æçå®ç°ï¼ä½ å¯ä»¥æå®å½æè§£éå¨ä½¿ç¨ãè¿ä¸ªè§£éå¨çéåº¦éå¸¸ä¹å¿«ï¼çè³æ¯å¾å¤å«ç Scheme å®ç°ç¼è¯åçä»£ç è¿è¦å¿«ãä½æ¯å®æä¸ä¸ªé®é¢ï¼å°±æ¯å®ç»åºçåºéä¿¡æ¯å¤ªç®çº¦äºï¼ä»¥è³äºè¿åºéçå½æ°åå­é½ä¸åè¯ä½ ãè¿æ ·åå¤§ä¸ç¹çç¨åºå°±ä¼æ¯è¾çè¦äºï¼è½ç¶æè¿æ¯ç¨å®åäº2000å¤è¡çç¼è¯å¨ä»£ç ï¼ã</p>
+<p>Petite 是一个完善的，高效的实现，你可以把它当成解释器使用。这个解释器的速度非常之快，甚至比很多别的 Scheme 实现编译后的代码还要快。但是它有一个问题，就是它给出的出错信息太简约了，以至于连出错的函数名字都不告诉你。这样写大一点的程序就会比较痛苦了（虽然我还是用它写了2000多行的编译器代码）。</p>
 
-<p>æä»¥å¦æä½ æ³åç¨å¾®å¤§ç¹çä¸è¥¿ï¼å¯ä»¥ç¨ Racketãå®å¯ä»¥å¨è¿éä¸è½½ï¼</p>
+<p>所以如果你想写稍微大点的东西，可以用 Racket。它可以在这里下载：</p>
 
 <p><a href="http://racket-lang.org">http://racket-lang.org</a></p>
 
-<p>å®è£åºè¯¥å¾å®¹æãUbuntu ä¹èªå¸¦äº Racketï¼æä»¥å¯ä»¥ç´æ¥è®©ç³»ç»å®è£å®ã</p>
+<p>安装应该很容易。Ubuntu 也自带了 Racket，所以可以直接让系统安装它。</p>
 
-<h3>è®¾ç½® ParEdit mode</h3>
+<h3>设置 ParEdit mode</h3>
 
-<p>æç¼è¾ Scheme çæ¶åé½ç¨ Emacsãæä½¿ç¨ä¸ä¸ªå«å ParEdit mode çæä»¶ãå®å¯ä»¥è®©ä½ âåç»æåâå¼çç¼è¾ Scheme åå¶å®ç Lisp æä»¶ãå¼å¤´ä½ å¯è½ä¼æç¹ä¸ä¹ æ¯ï¼å¯æ¯ä¸æ¦ä¹ æ¯äºï¼ä½ å°±åä¹ç¦»ä¸å¼å®ã</p>
+<p>我编辑 Scheme 的时候都用 Emacs。我使用一个叫做 ParEdit mode 的插件。它可以让你“半结构化”式的编辑 Scheme 和其它的 Lisp 文件。开头你可能会有点不习惯，可是一旦习惯了，你就再也离不开它。</p>
 
-<p>ParEdit mode å¯ä»¥å¨è¿éä¸è½½ï¼</p>
+<p>ParEdit mode 可以在这里下载：</p>
 
 <p><a href="http://mumble.net/~campbell/emacs/paredit.el">http://mumble.net/~campbell/emacs/paredit.el</a></p>
 
-<p>ä¸è½½ä¹åï¼æå®æ¾å°ä¸ä¸ªç®å½éï¼æ¯å¦ ~/.emacs.dï¼ç¶åæå¼ ~/.emacs éç½®æä»¶ï¼å å¥å¦ä¸è®¾ç½®ï¼</p>
+<p>下载之后，把它放到一个目录里，比如 ~/.emacs.d，然后打开 ~/.emacs 配置文件，加入如下设置：</p>
 
 <pre><code>(autoload 'paredit-mode "paredit"
   "Minor mode for pseudo-structurally editing Lisp code."
   t)
 </code></pre>
 
-<p>è¿æ ·ï¼åªè¦ä½ ä½¿ç¨ M-x paredit-mode å°±å¯ä»¥èªå¨è½½å¥è¿ä¸ªæ¨¡å¼ãå·ä½çæä½æ¹å¼å¯ä»¥çå®çè¯´æï¼æ C-h m æ¥çâæ¨¡å¼å¸®å©âï¼ï¼æä¸é¢ä¹ä¼ç®åè¯´ä¸ä¸ã</p>
+<p>这样，只要你使用 M-x paredit-mode 就可以自动载入这个模式。具体的操作方式可以看它的说明（按 C-h m 查看“模式帮助”），我下面也会简单说一下。</p>
 
-<h3>è®¾ç½® scheme mode</h3>
+<h3>设置 scheme mode</h3>
 
-<p>æä¸è¬å°±ç¨ç³»ç»èªå¸¦ç Scheme æ¨¡å¼ï¼å« cmuschemeãä½æ¯ä¸ºäºæ¹ä¾¿ï¼æèªå·±åäºå ä¸ªå½æ°ï¼ç¨äºå¨æ§è¡ Scheme ä»£ç çæ¶åèªå¨å¯å¨è§£éå¨ï¼å¹¶ä¸æå¼è§£éå¨çªå£ãä½ åºæ¬åªéè¦æä¸é¢çä»£ç æ·è´å°ä½ ç .emacs æä»¶éå°±è¡ï¼</p>
+<p>我一般就用系统自带的 Scheme 模式，叫 cmuscheme。但是为了方便，我自己写了几个函数，用于在执行 Scheme 代码的时候自动启动解释器，并且打开解释器窗口。你基本只需要把下面的代码拷贝到你的 .emacs 文件里就行：</p>
 
 <pre><code>;;;;;;;;;;;;
 ;; Scheme 
 ;;;;;;;;;;;;
 
 (require 'cmuscheme)
-(setq scheme-program-name "racket")         ;; å¦æç¨ Petite å°±æ¹æ "petite"
+(setq scheme-program-name "racket")         ;; 如果用 Petite 就改成 "petite"
 
 
 ;; bypass the interactive question and start the default interpreter
@@ -111,58 +157,67 @@
     (define-key scheme-mode-map (kbd "&lt;f6&gt;") 'scheme-send-definition-split-window)))
 </code></pre>
 
-<p>æçéç½®ä¼å¨å è½½ Scheme æä»¶çæ¶åèªå¨è½½å¥ ParEdit modeï¼å¹¶ä¸æ F5 é®ç»å®å°âæ§è¡åé¢çSè¡¨è¾¾å¼âãè¿æ ·è®¾ç½®çç®çæ¯ï¼æåªè¦æåæ ç§»å¨å°ä¸ä¸ªSè¡¨è¾¾å¼ä¹åï¼ç¶åç¨ä¸æ ¹ææå¤´æ F5ï¼å°±å¯ä»¥æ§è¡ç¨åºãå¤æå§ã</p>
+<p>我的配置会在加载 Scheme 文件的时候自动载入 ParEdit mode，并且把 F5 键绑定到“执行前面的S表达式”。这样设置的目的是，我只要把光标移动到一个S表达式之后，然后用一根手指头按 F5，就可以执行程序。够懒吧。</p>
 
-<h3>ParEdit mode çç®åä½¿ç¨æ¹æ³</h3>
+<h3>ParEdit mode 的简单使用方法</h3>
 
-<p>ParEdit mode æ¯ä¸ä¸ªå¾ç¹æ®çæ¨¡å¼ãå®èµ·ä½ç¨çæ¶åï¼ä½ ä¸è½ç´æ¥ä¿®æ¹æ¬å·ãè¿æ ·ææçæ¬å·é½ä¿æå®æ´çå¹éï¼ä¸å¯è½åºç°è¯­æ³éè¯¯ãä½æ¯è¿æ ·æä¸ä¸ªé®é¢ï¼å¦æä½ è¦æä¸åä»£ç æ¾è¿å¦ä¸åä»£ç ï¼æèä»éé¢æ¿åºæ¥ï¼å°±ä¸æ¯å¾æ¹ä¾¿äºã</p>
+<p>ParEdit mode 是一个很特殊的模式。它起作用的时候，你不能直接修改括号。这样所有的括号都保持完整的匹配，不可能出现语法错误。但是这样有一个问题，如果你要把一块代码放进另一块代码，或者从里面拿出来，就不是很方便了。</p>
 
-<p>ä¸ºæ­¤ï¼ParEdit mode æä¾äºå ä¸ªéå¸¸é«æçç¼è¾æ¹å¼ãæå¹³æ¶åªä½¿ç¨ä¸¤ä¸ªï¼</p>
+<p>为此，ParEdit mode 提供了几个非常高效的编辑方式。我平时只使用两个：</p>
 
 <ol>
-<li><p><code>C-right</code>: ä¹å°±æ¯æä½ Ctrl åæå³ç®­å¤´ãå®çä½ç¨æ¯è®©åæ å³è¾¹çæ¬å·ï¼âåæâä¸ä¸ä¸ªSè¡¨è¾¾å¼ã</p>
+<li><p><code>C-right</code>: 也就是按住 Ctrl 再按右箭头。它的作用是让光标右边的括号，“吞掉”下一个S表达式。</p>
 
-<p>æ¯å¦ï¼<code>(a b c) (d e)</code>ãä½ æåæ æ¾å¨ <code>(a b c)</code> éé¢ï¼ç¶åæ <code>C-right</code>ãç»æå°±æ¯ <code>(a b c (d e))</code>ãä¹å°±æ¯æ <code>(d e)</code> è¢«æ´ä¸ªâåè¿âäº <code>(a b c)</code> éé¢ã</p></li>
-<li><p><code>M-r</code>: å»æå¤å±ä»£ç ã</p>
+<p>比如，<code>(a b c) (d e)</code>。你把光标放在 <code>(a b c)</code> 里面，然后按 <code>C-right</code>。结果就是 <code>(a b c (d e))</code>。也就是把 <code>(d e)</code> 被整个“吞进”了 <code>(a b c)</code> 里面。</p></li>
+<li><p><code>M-r</code>: 去掉外层代码。</p>
 
-<p>è¿å¨ä½ éè¦å»æå¤å±ç let ç­ç»æçæ¶åéå¸¸æç¨ãæ¯å¦ï¼å¦æä½ çä»£ç çèµ·æ¥æ¯è¿æ ·ï¼</p>
+<p>这在你需要去掉外层的 let 等结构的时候非常有用。比如，如果你的代码看起来是这样：</p>
 
 <pre><code>(let ([x 10])
   (* x 2))
 </code></pre>
 
-<p>å½ä½ æåæ æ¾å¨ <code>(* x 2)</code> çæå·¦è¾¹ï¼ç¶åæ  <code>M-r</code>ï¼ç»æå°±åæäº</p>
+<p>当你把光标放在 <code>(* x 2)</code> 的最左边，然后按  <code>M-r</code>，结果就变成了</p>
 
 <pre><code>(* x 2)
 </code></pre>
 
-<p>ä¹å°±æ¯æå¤é¢ç <code>(let ([x 10]) ...)</code> ç»âææâäºã</p>
+<p>也就是把外面的 <code>(let ([x 10]) ...)</code> 给“掀掉”了。</p>
 
-<p>å¶å®çä¸äºæé®è½ç¶ä¹æç¨ï¼ä¸è¿æè§å¾è¿ä¸¤ä¸ªæ¯ææç¨çï¼çè³ä¸å¯ç¼ºå°çãæäºå¶ä»çèªå¨å¹éæ¬å·çæ¨¡å¼ï¼æ²¡ææä¾è¿ç§æé®ï¼æä»¥ç¨èµ·æ¥å¾å«æ­ã</p></li>
+<p>其它的一些按键虽然也有用，不过我觉得这两个是最有用的，甚至不可缺少的。有些其他的自动匹配括号的模式，没有提供这种按键，所以用起来很别扭。</p></li>
 </ol>
 
 
-<h3>è®¾ç½®æ¬å·é¢è²</h3>
+<h3>设置括号颜色</h3>
 
-<p>å¾å¤äººçè§ Lisp å°±æäºï¼å°±æ¯å ä¸ºå®çèµ·æ¥æ¬å·å¤ªå¤ãå¯æ¯è¿æ ·çè¯­æ³ï¼å´æ¯æå¾å¤§çå¥½å¤çï¼åèè¿ç¯åæãè°è¯­æ³ãï¼ãå¦æä½ ççè§å¾æ¬å·ç¢ç¼ï¼ä½ å¯ä»¥ç¨å¾®è°æ´ä¸ä¸æ¬å·çé¢è²ï¼æ¯å¦æ·¡ç°è²ãè¿æ ·æ¬å·çèµ·æ¥å°±æ²¡æé£ä¹æ¾ç¼äºã</p>
+<p>很多人看见 Lisp 就怕了，就是因为它看起来括号太多。可是这样的语法，却是有很大的好处的（参考这篇博文《谈语法》）。如果你真的觉得括号碍眼，你可以稍微调整一下括号的颜色，比如淡灰色。这样括号看起来就没有那么显眼了。</p>
 
-<p>ä½ åªéè¦ä¸è½½è¿ä¸ª elï¼æ¾å°ä½ ç .emacs.d:</p>
+<p>你只需要下载这个 el，放到你的 .emacs.d:</p>
 
 <p><a href="https://www.dropbox.com/s/v0ejctd1agrt95x/parenface.el">https://www.dropbox.com/s/v0ejctd1agrt95x/parenface.el</a></p>
 
-<p>ç¶åå¨ .emacs éé¢å å¥ä¸¤è¡ï¼</p>
+<p>然后在 .emacs 里面加入两行：</p>
 
 <pre><code>(require 'parenface)
 (set-face-foreground 'paren-face "DimGray")
 </code></pre>
 
-<p>ç¶ååæå¼ Scheme ä»£ç çæ¶åï¼ä½ å°±ä¼çå°æ¯è¿ä¸ªæ ·å­ï¼</p>
+<p>然后再打开 Scheme 代码的时候，你就会看到是这个样子：</p>
 
 <p><img src="images/scheme-paren.jpeg" width="95%"></p>
 
-<p>å¥½äºï¼è¿å°±æ¯æå Scheme çææéç½®äºãå¸æè¿äºææå¸®å©ã</p>
-
-
+<p>好了，这就是我写 Scheme 的所有配置了。希望这些有所帮助。</p>
+    </div>
+    
+    <script src="js/highlight.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script>
+        if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
+            document.body.classList.add('mobile');
+            var navbar = document.querySelector('nav.navbar');
+            if (navbar) { navbar.classList.remove('navbar-fixed-top'); }
+        }
+    </script>
 </body>
-
 </html>

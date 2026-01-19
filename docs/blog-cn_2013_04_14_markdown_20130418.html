@@ -1,44 +1,99 @@
+<!DOCTYPE html>
 <html>
 <head>
-
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link href="http://www.yinwang.org/main.css" rel="stylesheet" type="text/css">
-<link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
-<link rel="shortcut icon" href="http://www.yinwang.org/images/Yc.jpg">
-
-<title>Markdown çä¸äºé®é¢</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <title>Markdown 的一些问题</title>
+    <link rel="stylesheet" href="css/highlight/xcode.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-tooltips.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/home.css"> <!-- Need home for navbar -->
+    <link rel="stylesheet" href="css/post.css">
+    <script src="js/jquery.min.js"></script>
+    <style>
+        /* Switcher Fixes */
+        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
+        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
+        .version-switcher a.current { font-weight: bold; color: #333; }
+        /* Inner override for posts */
+        .inner { margin-top: 80px; } 
+    </style>
 </head>
-ãã
 <body>
+    <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-bs">
+                    <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+                <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='aboutcmec_aboutcmec_01.jsp_20060213.html'>About</a></li><li><a href='aboutess_aboutess_01.jsp_20060213.html'>About</a></li><li><a href='aboutinfo_aboutinfo_01.jsp_20060106.html'>About</a></li><li><a href='tweet_20170605.html'>微勃 (Tweets)</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='homepage_20250719.html'>当然我在扯淡 (None)</a></li><li><a href='index.jsp_20060213.html'>中国中小企业竞争力工程 (None)</a></li><li><a href='index_20260110.html'>Surely I am Joking (None)</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Posts <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='posts_air-freshener-nightmare_20251129.html'>Surely I am Joking</a></li><li><a href='posts_american-english-problems_20251030.html'>Surely I am Joking</a></li><li><a href='posts_authority_20251221.html'>Surely I am Joking</a></li><li><a href='posts_cello-technique_20251102.html'>Surely I am Joking</a></li><li><a href='posts_continuation-course_20251206.html'>Surely I am Joking</a></li><li><a href='posts_cs-class2_20251105.html'>Surely I am Joking</a></li><li><a href='posts_cs-course-5_20251208.html'>Surely I am Joking</a></li><li><a href='posts_cs-video-course_20251101.html'>Surely I am Joking</a></li><li><a href='posts_cs3_20251102.html'>Surely I am Joking</a></li><li><a href='posts_cs4_20251102.html'>Surely I am Joking</a></li><li><a href='posts_cs5-completed_20251031.html'>Surely I am Joking</a></li><li><a href='posts_entry-level-class_20251102.html'>Surely I am Joking</a></li><li><a href='posts_learning-philosophy_20251211.html'>Surely I am Joking</a></li><li><a href='posts_oberon_20260113.html'>Surely I am Joking</a></li><li><a href='posts_reading-course_20251102.html'>Surely I am Joking</a></li><li><a href='posts_super-human-level-vision_20251104.html'>Surely I am Joking</a></li><li><a href='posts_tuition-for-covid_20251103.html'>Surely I am Joking</a></li><li><a href='posts_wisdom-of-intelligence_20251102.html'>Surely I am Joking</a></li><li><a href='posts_youth-cs-student_20251102.html'>Surely I am Joking</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='resources_d8-3404-d8-8424_20130614.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_base64mime.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_charset.py_20150506.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_encoders.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_errors.py_20150409.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_header.py_20140305.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_quoprimime.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_re.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_compile.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_constants.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_parse.py_20160822.html'>Untitled</a></li><li><a href='resources_diff1-diff2_20200728.html'>Untitled</a></li><li><a href='resources_mk1-mk2_20130627.html'>Untitled</a></li><li><a href='resources_nav1-nav2_20200728.html'>Untitled</a></li><li><a href='resources_paredit20-paredit23_20200728.html'>Untitled</a></li><li><a href='resources_pydiff1-pydiff2_20130711.html'>Untitled</a></li><li><a href='resources_simulator-mips-simulator-arm_20200728.html'>Untitled</a></li><li><a href='resources_typed-clojure1-typed-clojure2_20200728.html'>Untitled</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tags <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='tags_ai_20251103.html'>Surely I am Joking</a></li><li><a href='tags_education_20251031.html'>Surely I am Joking</a></li><li><a href='tags_english_20251101.html'>Surely I am Joking</a></li><li><a href='tags_health_20251102.html'>Surely I am Joking</a></li><li><a href='tags_life_20251129.html'>Surely I am Joking</a></li><li><a href='tags_lifestyle_20251101.html'>Surely I am Joking</a></li><li><a href='tags_philosophy_20251101.html'>Surely I am Joking</a></li><li><a href='tags_programming-language_20260113.html'>Surely I am Joking</a></li><li><a href='tags_travel_20251129.html'>Surely I am Joking</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Misc <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='.well-known_dnt-policy.txt_20251211.html'>Surely I am Joking</a></li><li><a href='_5C_20251205.html'>Surely I am Joking</a></li><li><a href='_5Cu003c_a_5Cu003e_5Cu003c_td_5Cu003e_5Cn_5Cu003ctd_5Cu003e_E7_BC_96_E7_A8_8B_5Cu003c_td_5Cu003e_5Cn_5Cu003c_tr_5Cu003e_5Cn_5Cu003ctr_5Cu003e_5Cn_5Cu003ctd_5Cu003e_5Cu003ca_20251204.html'>Surely I am Joking</a></li><li><a href='ads.txt_20251013.html'>Surely I am Joking</a></li><li><a href='afficheAction.do_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='apply_dcb.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='apply_twsqb.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='common_casetoyota.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='common_casexhx.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='common_courseBase_main.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='common_courseBase_tch_grzl.jsp_20060106.html'>Untitled</a></li><li><a href='contactus.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='datadownload.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='dljm.jsp_20060516.html'>竞争力工程</a></li><li><a href='fwjs.jsp_20060516.html'>竞争力工程</a></li><li><a href='hd_qgjx.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='laws_laws_01.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='lianxi.jsp_20060428.html'>竞争力工程</a></li><li><a href='more.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='neirong.jsp_20060516.html'>详细内容</a></li><li><a href='newsPublishAction.do_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='servicecenter_servicecenter_01.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='tongzhi.jsp_20060428.html'>竞争力工程</a></li><li><a href='tongzhi_tongzhi1.htm_20060428.html'>ÎÞ±êÌâÎÄµµ</a></li><li><a href='tongzhi_tongzhi2.htm_20060428.html'>ÎÞ±êÌâÎÄµµ</a></li><li><a href='units_gjfz.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='units_jstg.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='units_zgzx.jsp_20060213.html'>中国中小企业竞争力工程</a></li></ul></li></ul>
+            </div>
+        </div>
+    </nav>
 
-<h2>Markdown çä¸äºé®é¢</h2>
+    <div class="inner">
+        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2013_04_14_markdown_20130418.html" class="current">2013-04-18</a> <a href="blog-cn_2013_04_14_markdown_20140803.html" >2014-08-03</a> <a href="blog-cn_2013_04_14_markdown_20160926.html" >2016-09-26</a> <a href="blog-cn_2013_04_14_markdown_20170504.html" >2017-05-04</a> <a href="blog-cn_2013_04_14_markdown_20170605.html" >2017-06-05</a> <a href="blog-cn_2013_04_14_markdown_20180311.html" >2018-03-11</a> <a href="blog-cn_2013_04_14_markdown_20191228.html" >2019-12-28</a> <a href="blog-cn_2013_04_14_markdown_20200228.html" >2020-02-28</a> <a href="blog-cn_2013_04_14_markdown_20240508.html" >2024-05-08</a></div>
+        <h2>Markdown 的一些问题</h2>
 
-<p>ææä¹åçåæåºæ¬ä¸è½¬æ¢æäº markdown æ ¼å¼ãæåç° markdown è½ç¶å¨ç¼è¾å¨éçèµ·æ¥æ¯ HTML æ¸æ°ä¸äºï¼ä½ä¹æä¸äºä¸è¶³ã</p>
+<p>把我之前的博文基本上转换成了 markdown 格式。我发现 markdown 虽然在编辑器里看起来比 HTML 清晰一些，但也有一些不足。</p>
 
-<p>è¿äº markup è¯­è¨çæ ¼å¼é½æç¹åææ¬ç§çæ¶åç»æç¸åçä¸ç§â<a href="http://www.yinwang.org/blog-cn/2013/04/14/standard-exam-language">æ ååè¯å·æ è®°è¯­è¨</a>âï¼å ä¸ºä»æ¯ä¸­å­¦è±è¯­èå¸ï¼ãå½æ¶æåäºä¸ä¸ª1000æ¥è¡ç Perl èæ¬ï¼å¯ä»¥æè¿ç§ç®åçæ è®°è¯­è¨è½¬æ¢æç¾è§ç LaTeX æ ¼å¼ææ¡£ï¼å¹¶ä¸å¸¦æåå¥½ç Tk å¾å½¢çé¢ãç°å¨åæ³èµ·æ¥ï¼æé£æ¶åçè®¾è®¡å°±å·²ç»ç¸å½åè¿äºãè·æçè¯­è¨ç¸æ¯ï¼è¿äº blog ç¨ç markup è¯­è¨çæ¯å°å·«è§å¤§å·«äºï¼èä¸é®é¢å¤å¤ãæç¹è·é¢äºï¼è¿æ¯åå¤´æ¥çç markdown çé®é¢å§ã</p>
+<p>这些 markup 语言的格式都有点像我本科的时候给我爸做的一种“<a href="http://www.yinwang.org/blog-cn/2013/04/14/standard-exam-language">标准化试卷标记语言</a>”（因为他是中学英语老师）。当时我写了一个1000来行的 Perl 脚本，可以把这种简单的标记语言转换成美观的 LaTeX 格式文档，并且带有友好的 Tk 图形界面。现在回想起来，我那时候的设计就已经相当先进了。跟我的语言相比，这些 blog 用的 markup 语言真是小巫见大巫了，而且问题多多。有点跑题了，还是回头来看看 markdown 的问题吧。</p>
 
 <ul>
-<li><p>Markdown å®éä¸éç¨çæ¯ç±»ä¼¼ Python å Haskell ç layout è¯­æ³ã</p>
+<li><p>Markdown 实际上采用的是类似 Python 和 Haskell 的 layout 语法。</p>
 
-<p>æå·²ç»å¨ä¸ç¯<a href="http://en.yinwang.org/blog-en/2011/05/08/layout">è±æåæ</a>éæå°äº layout è¯­æ³çå¤ç§é®é¢ãå ä¸ºç©ºæ ¼çæ°éå³å®äºææ¡£çç»æï¼è¿ç§ææ¡£æ ¼å¼ç¸å½çâèå¼±âãç¨å¾®å°æä¸ä¸¤ä¸ªç©ºæ ¼ï¼å°±ä¼åºç°ä¸å¯é¢æµçç»æãè¿ç§ç°è±¡å¨âitemizeâåé¨çä»£ç åæå®¹æåºç°ãå ä¸ºæ¯ä¸ª item å¸¦æ¥äºç¼©è¿ï¼æä»¥åé¨çä»£ç å¿é¡»æ¯ item çç¼©è¿å¤4ä¸ªç©ºæ ¼ï¼æè½è¢«æå°æ­£ç¡®çä½ç½®ãæ¯å¦æè½¬æ¢åæçæ¶åå¤æ¬¡åºç°ä»¥ä¸çæåµï¼</p>
+<p>我已经在一篇<a href="http://en.yinwang.org/blog-en/2011/05/08/layout">英文博文</a>里提到了 layout 语法的多种问题。因为空格的数量决定了文档的结构，这种文档格式相当的“脆弱”。稍微少打一两个空格，就会出现不可预测的结果。这种现象在“itemize”内部的代码块最容易出现。因为每个 item 带来了缩进，所以内部的代码必须比 item 的缩进多4个空格，才能被排到正确的位置。比如我转换博文的时候多次出现以下的情况：</p>
 
 <p><img src="images/markdown-mistake.png" width="90%" style="border: 2px solid green;"></p>
 
-<p>è¿éçé®é¢æ¯ï¼ä»£ç éçç¬¬ä¸è¡ <code>helloworld z = let x = 1</code> å ä¸ºç¼©è¿ä¸å¤ï¼è¢«æ¾å°äºä»£ç åå¤é¢ãä½æ¯ä¸ºäºåç¡®çç¼©è¿æèè´¹çç²¾åï¼å¶å®æ¯ç´æ¥æ <code>&lt;pre&gt;</code> è¿æ ·ç tag è¿è¦å¤ã</p></li>
-<li><p>ç¹æ®å­ç¬¦çéæ©ä¸åç</p>
+<p>这里的问题是，代码里的第一行 <code>helloworld z = let x = 1</code> 因为缩进不够，被放到了代码块外面。但是为了准确的缩进所耗费的精力，其实比直接打 <code>&lt;pre&gt;</code> 这样的 tag 还要多。</p></li>
+<li><p>特殊字符的选择不合理</p>
 
-<p>markdown å¯¹ç¹æ®å­ç¬¦çä½¿ç¨ä¸å¤§åçãæå¤æ¬¡åç°ææ¡£æ®µè½æ´æ®µçåææä½ï¼å°±æ¯å ä¸ºåæ¥çææ¡£éåºç°äº <code>x*y</code> è¿æ ·çè¡¨è¾¾å¼ãå¨ç¨åºåçä¸çéï¼âä¹æ³âæ¾ç¶æ¯âå¼ºè°âæ´å é¢ç¹ãæ * ç¨äºæ è®°âå¼ºè°âï¼å®éä¸æä¸ä¸ªéå¸¸æç¨çå­ç¬¦ç¨å¨äºå¾ä¸é¢ç¹çç¨éã</p></li>
-<li><p>è¡¨è¾¾åç¸å½æé</p>
+<p>markdown 对特殊字符的使用不大合理。我多次发现文档段落整段的变成斜体，就是因为原来的文档里出现了 <code>x*y</code> 这样的表达式。在程序员的世界里，“乘法”显然比“强调”更加频繁。把 * 用于标记“强调”，实际上把一个非常有用的字符用在了很不频繁的用途。</p></li>
+<li><p>表达力相当有限</p>
 
-<p>å¨å¾å¤ç»èä¸ï¼markdown å¹¶ä¸è½è¡¨è¾¾ææ³è¦çæ ¼å¼ãæ¯å¦å®ä¸è½æ­£ç¡®çæå¥æ­è¡ <code>&lt;br&gt;</code>ãå¦æä½ æä¸¤åç´§æ¥å¨ä¸èµ·çä»£ç ï¼ä½ä½ ä¸æ³æå®ä»¬è¿å¨ä¸èµ·ï¼markdown éè¦ç»ä½ è¿å¨ä¸èµ·â¦â¦ äºæ¯æå°±åç°èªå·±å å¥äºè¶æ¥è¶å¤ç HTMLã</p>
+<p>在很多细节上，markdown 并不能表达我想要的格式。比如它不能正确的插入断行 <code>&lt;br&gt;</code>。如果你有两块紧接在一起的代码，但你不想把它们连在一起，markdown 非要给你连在一起…… 于是我就发现自己加入了越来越多的 HTML。</p>
 
-<p>è¿å¨å¾ççè¯­æ³ä¸å°±æ´å ææ¾ï¼markdown å¼å¥äº <code>![alt](image url)</code> è¿æ ·çæ ¼å¼ï¼å¶å®æ¯èµ· HTML è¿è¦é¾çåä¸ä¸è´ãæ¯å¦ç°å¨å®ä»ç¶æ æ³è¡¨è¾¾å¾ççå¤§å°ï¼è¿æ¯ç¸å½éè¦çä¿¡æ¯ãæä»¥æè§å¾ markdown çè¯­æ³å·²ç»æ¾ç¤ºåºäºå®çå¼±ç¹ï¼å¦æå®è¦è¡¨è¾¾æ´å¤æçä¿¡æ¯ï¼å°±ä¼åå¾æ¯ HTML è¿è¦é¾è®°ï¼é¾çãæä»¥å¯¹äºå¾çï¼æè§å¾è¿ä¸å¦ç´æ¥ç¨ HTML ç <code>&lt;img&gt;</code> ã</p></li>
+<p>这在图片的语法上就更加明显，markdown 引入了 <code>![alt](image url)</code> 这样的格式，其实比起 HTML 还要难看和不一致。比如现在它仍然无法表达图片的大小，这是相当重要的信息。所以我觉得 markdown 的语法已经显示出了它的弱点，如果它要表达更复杂的信息，就会变得比 HTML 还要难记，难看。所以对于图片，我觉得还不如直接用 HTML 的 <code>&lt;img&gt;</code> 。</p></li>
 </ul>
 
 
-<p>æä»¥æ»çæè§æ¯ markdown å¼å¥äºå¤ªå¤çâè¯­æ³âï¼ä»¥è³äºç¨å¾®å¤æä¸ç¹çä¿¡æ¯è¡¨è¾¾èµ·æ¥è¿ä¸å¦ HTML æ¥çç´æ¥ãç°å¨å°±è¿æ ·åååçå§ãä¹è®¸è¿æ®µæ¶é´èªå·±è®¾è®¡ä¸ä¸ªæ ¼å¼ã</p>
-
-
+<p>所以总的感觉是 markdown 引入了太多的“语法”，以至于稍微复杂一点的信息表达起来还不如 HTML 来的直接。现在就这样先凑合着吧。也许过段时间自己设计一个格式。</p>
+    </div>
+    
+    <script src="js/highlight.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script>
+        if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
+            document.body.classList.add('mobile');
+            var navbar = document.querySelector('nav.navbar');
+            if (navbar) { navbar.classList.remove('navbar-fixed-top'); }
+        }
+    </script>
 </body>
-
 </html>

@@ -1,51 +1,106 @@
+<!DOCTYPE html>
 <html>
 <head>
-
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link href="http://www.yinwang.org/main.css" rel="stylesheet" type="text/css">
-<link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
-<link rel="shortcut icon" href="http://www.yinwang.org/images/Yc.jpg">
-
-<title>è§£å¯âè®¾è®¡æ¨¡å¼â</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <title>解密“设计模式”</title>
+    <link rel="stylesheet" href="css/highlight/xcode.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-tooltips.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/home.css"> <!-- Need home for navbar -->
+    <link rel="stylesheet" href="css/post.css">
+    <script src="js/jquery.min.js"></script>
+    <style>
+        /* Switcher Fixes */
+        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
+        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
+        .version-switcher a.current { font-weight: bold; color: #333; }
+        /* Inner override for posts */
+        .inner { margin-top: 80px; } 
+    </style>
 </head>
-ãã
 <body>
+    <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-bs">
+                    <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+                <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='aboutcmec_aboutcmec_01.jsp_20060213.html'>About</a></li><li><a href='aboutess_aboutess_01.jsp_20060213.html'>About</a></li><li><a href='aboutinfo_aboutinfo_01.jsp_20060106.html'>About</a></li><li><a href='tweet_20170605.html'>微勃 (Tweets)</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='homepage_20250719.html'>当然我在扯淡 (None)</a></li><li><a href='index.jsp_20060213.html'>中国中小企业竞争力工程 (None)</a></li><li><a href='index_20260110.html'>Surely I am Joking (None)</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Posts <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='posts_air-freshener-nightmare_20251129.html'>Surely I am Joking</a></li><li><a href='posts_american-english-problems_20251030.html'>Surely I am Joking</a></li><li><a href='posts_authority_20251221.html'>Surely I am Joking</a></li><li><a href='posts_cello-technique_20251102.html'>Surely I am Joking</a></li><li><a href='posts_continuation-course_20251206.html'>Surely I am Joking</a></li><li><a href='posts_cs-class2_20251105.html'>Surely I am Joking</a></li><li><a href='posts_cs-course-5_20251208.html'>Surely I am Joking</a></li><li><a href='posts_cs-video-course_20251101.html'>Surely I am Joking</a></li><li><a href='posts_cs3_20251102.html'>Surely I am Joking</a></li><li><a href='posts_cs4_20251102.html'>Surely I am Joking</a></li><li><a href='posts_cs5-completed_20251031.html'>Surely I am Joking</a></li><li><a href='posts_entry-level-class_20251102.html'>Surely I am Joking</a></li><li><a href='posts_learning-philosophy_20251211.html'>Surely I am Joking</a></li><li><a href='posts_oberon_20260113.html'>Surely I am Joking</a></li><li><a href='posts_reading-course_20251102.html'>Surely I am Joking</a></li><li><a href='posts_super-human-level-vision_20251104.html'>Surely I am Joking</a></li><li><a href='posts_tuition-for-covid_20251103.html'>Surely I am Joking</a></li><li><a href='posts_wisdom-of-intelligence_20251102.html'>Surely I am Joking</a></li><li><a href='posts_youth-cs-student_20251102.html'>Surely I am Joking</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='resources_d8-3404-d8-8424_20130614.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_base64mime.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_charset.py_20150506.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_encoders.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_errors.py_20150409.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_header.py_20140305.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_quoprimime.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_re.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_compile.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_constants.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_parse.py_20160822.html'>Untitled</a></li><li><a href='resources_diff1-diff2_20200728.html'>Untitled</a></li><li><a href='resources_mk1-mk2_20130627.html'>Untitled</a></li><li><a href='resources_nav1-nav2_20200728.html'>Untitled</a></li><li><a href='resources_paredit20-paredit23_20200728.html'>Untitled</a></li><li><a href='resources_pydiff1-pydiff2_20130711.html'>Untitled</a></li><li><a href='resources_simulator-mips-simulator-arm_20200728.html'>Untitled</a></li><li><a href='resources_typed-clojure1-typed-clojure2_20200728.html'>Untitled</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tags <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='tags_ai_20251103.html'>Surely I am Joking</a></li><li><a href='tags_education_20251031.html'>Surely I am Joking</a></li><li><a href='tags_english_20251101.html'>Surely I am Joking</a></li><li><a href='tags_health_20251102.html'>Surely I am Joking</a></li><li><a href='tags_life_20251129.html'>Surely I am Joking</a></li><li><a href='tags_lifestyle_20251101.html'>Surely I am Joking</a></li><li><a href='tags_philosophy_20251101.html'>Surely I am Joking</a></li><li><a href='tags_programming-language_20260113.html'>Surely I am Joking</a></li><li><a href='tags_travel_20251129.html'>Surely I am Joking</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Misc <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='.well-known_dnt-policy.txt_20251211.html'>Surely I am Joking</a></li><li><a href='_5C_20251205.html'>Surely I am Joking</a></li><li><a href='_5Cu003c_a_5Cu003e_5Cu003c_td_5Cu003e_5Cn_5Cu003ctd_5Cu003e_E7_BC_96_E7_A8_8B_5Cu003c_td_5Cu003e_5Cn_5Cu003c_tr_5Cu003e_5Cn_5Cu003ctr_5Cu003e_5Cn_5Cu003ctd_5Cu003e_5Cu003ca_20251204.html'>Surely I am Joking</a></li><li><a href='ads.txt_20251013.html'>Surely I am Joking</a></li><li><a href='afficheAction.do_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='apply_dcb.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='apply_twsqb.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='common_casetoyota.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='common_casexhx.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='common_courseBase_main.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='common_courseBase_tch_grzl.jsp_20060106.html'>Untitled</a></li><li><a href='contactus.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='datadownload.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='dljm.jsp_20060516.html'>竞争力工程</a></li><li><a href='fwjs.jsp_20060516.html'>竞争力工程</a></li><li><a href='hd_qgjx.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='laws_laws_01.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='lianxi.jsp_20060428.html'>竞争力工程</a></li><li><a href='more.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='neirong.jsp_20060516.html'>详细内容</a></li><li><a href='newsPublishAction.do_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='servicecenter_servicecenter_01.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='tongzhi.jsp_20060428.html'>竞争力工程</a></li><li><a href='tongzhi_tongzhi1.htm_20060428.html'>ÎÞ±êÌâÎÄµµ</a></li><li><a href='tongzhi_tongzhi2.htm_20060428.html'>ÎÞ±êÌâÎÄµµ</a></li><li><a href='units_gjfz.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='units_jstg.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='units_zgzx.jsp_20060213.html'>中国中小企业竞争力工程</a></li></ul></li></ul>
+            </div>
+        </div>
+    </nav>
 
-<h2>è§£å¯âè®¾è®¡æ¨¡å¼â</h2>
+    <div class="inner">
+        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2013_03_07_design-patterns_20130420.html" class="current">2013-04-20</a> <a href="blog-cn_2013_03_07_design-patterns_20140701.html" >2014-07-01</a> <a href="blog-cn_2013_03_07_design-patterns_20161011.html" >2016-10-11</a> <a href="blog-cn_2013_03_07_design-patterns_20170604.html" >2017-06-04</a> <a href="blog-cn_2013_03_07_design-patterns_20171116.html" >2017-11-16</a> <a href="blog-cn_2013_03_07_design-patterns_20171217.html" >2017-12-17</a> <a href="blog-cn_2013_03_07_design-patterns_20200223.html" >2020-02-23</a> <a href="blog-cn_2013_03_07_design-patterns_20240421.html" >2024-04-21</a></div>
+        <h2>解密“设计模式”</h2>
 
-<p>æäºäººé®æï¼ä½ è¯´å­¦ä¹ æä½ç³»ç»çæå¥½åæ³æ¯å­¦ä¹ ç¨åºè®¾è®¡ãé£æä»¬æ¯ä¸æ¯åºè¯¥å­¦ä¹ ä¸äºâè®¾è®¡æ¨¡å¼âï¼design patternsï¼ãè¿æ¯ä¸ä¸ªæå¾æ©å°±æå®è®ºï¼èä¸ç»è¿å®è·µæ£éªçé®é¢ï¼æä»¥æ³å¨è¿éåä¸ä¸ªæ»ç»ã</p>
+<p>有些人问我，你说学习操作系统的最好办法是学习程序设计。那我们是不是应该学习一些“设计模式”（design patterns）。这是一个我很早就有定论，而且经过实践检验的问题，所以想在这里做一个总结。</p>
 
-<p>æ»çæ¥è¯´ï¼å¦æåä»å­é¢ä¸è®²ï¼ç¨åºéç¡®å®æ¯æä¸äºâæ¨¡å¼âå¯ä»¥åæçãå ä¸ºä½ æ»æ¯å¯ä»¥åé´ä»¥åçç»éªï¼ç¨æ¥æé æ°çç¨åºãä½ å¯ä»¥æè¿ç§ç»éªå«åâæ¨¡å¼âãå¯æ¯èªä»ãè®¾è®¡æ¨¡å¼ãï¼éå¸¸å«å GoFï¼âGang of Fourâï¼âåäººå¸®âï¼è¿æ¬ä¹¦å¨ 1994 å¹´åè¡¨ä»¥æ¥ï¼âè®¾è®¡æ¨¡å¼âè¿ä¸ªè¯æäºæ°çï¼æ­æ²çå«ä¹ãå®åæäºä¸ç§ææ¡ï¼å¸¦æ¥äºå¬å¸éç¨åºçä¸¥éå¤æåä»¥åæçä½ä¸ã</p>
+<p>总的来说，如果光从字面上讲，程序里确实是有一些“模式”可以发掘的。因为你总是可以借鉴以前的经验，用来构造新的程序。你可以把这种经验叫做“模式”。可是自从《设计模式》（通常叫做 GoF，“Gang of Four”，“四人帮”）这本书在 1994 年发表以来，“设计模式”这个词有了新的，扭曲的含义。它变成了一种教条，带来了公司里程序的严重复杂化以及效率低下。</p>
 
 <p><img src="images/design-patterns.jpeg" alt="Design Patterns" /></p>
 
-<p>GoF åé´çæ¯ä¸ä¸ªå« Christopher Alexander çå»ºç­å¸çåæ³ãAlexander ç»ä¸äºå»ºç­å­¦éçâè®¾è®¡æ¨¡å¼âèµ·äºåå­ï¼è¯å¾è®©å»ºç­å¸ä»¬æä¸äºâå±åè¯­è¨âãå¯æçæ¯ï¼Alexander åæ¥èªå·±é½æ¿è®¤ï¼ä»çå®éªå¤±è´¥äºãå ä¸ºè¿äºåºå®çæ¨¡å¼ï¼å¹¶æ²¡è½ææå°ä¼ éç²¾é«çç¥è¯ï¼æ²¡è½è®©æ°ææé¿ä¸ºåºè²çå»ºç­å¸ã</p>
+<p>GoF 借鉴的是一个叫 Christopher Alexander 的建筑师的做法。Alexander 给一些建筑学里的“设计模式”起了名字，试图让建筑师们有一些“共同语言”。可惜的是，Alexander 后来自己都承认，他的实验失败了。因为这些固定的模式，并没能有效地传递精髓的知识，没能让新手成长为出色的建筑师。</p>
 
-<p>ç§æ¬æ¨¡å¼ä¸æ¼è¥¿åï¼èä¸è½æä½äºç©çæ¬è´¨ï¼æ²¡æâçµæâï¼å¶å®æ¯è®¾è®¡ä¸åºå¥½ä¸è¥¿çãè¿å°±åç§æ¬âæ¨¡çâæä½æåå¾åå¥½ï¼ä¹æä¸äºä½å®¶ä¸æ ·ã</p>
+<p>照搬模式东拼西凑，而不能抓住事物的本质，没有“灵感”，其实是设计不出好东西的。这就像照搬“模版”把作文写得再好，也成不了作家一样。</p>
 
-<p>æå­¤éå¯¡é»ï¼å½å¬è¯´è¿æ¬ä¹¦çæ¶åï¼æå·²ç»å­¦ä¼äºå½æ°å¼ç¼ç¨ï¼æ­£å¨ Cornell è¯» PhDï¼ä¸æ»ç¨åºè¯­è¨è®¾è®¡ãæä¸å¤©ç±äºå¥½å¥è¿ä¹¦ä¸ºä»ä¹åæ°è¿ä¹å¤§ï¼æä»å¾ä¹¦é¦åäºä¸æ¬åæ¥çãæå¾å¿«çåç°ï¼å¶å®è¿æ¬ä¹¦çä½èåªæ¯ç»æ©å·²ç»å­å¨çç¼ç¨æ¹æ³èµ·äºä¸äºæ°çåå­èå·²ãå½æ¶æå°±æ¿èµ·ä¸å¼ çº¸ï¼æææç20æ¥ä¸ªè®¾è®¡æ¨¡å¼è·æå¸¸ç¨çç¼ç¨æ¦å¿µåäºä¸ä¸ªæ å°ãè¿ä¸ªæ å°å±ç¶æ¯âå¤å¯¹ä¸âï¼many-to-oneï¼çãä¹å°±æ¯è¯´ï¼å¤ä¸ª GoF è®¾è®¡æ¨¡å¼ï¼å±ç¶åªå¯¹åºåä¸ä¸ªææ¯å¤©é½ç¨çæ¦å¿µãæäºæ¦å¿µæ¯å¦æ­¤çä¸å¼ä¸æï¼ä»¥è³äºææ ¹æ¬ä¸éè¦ä¸ä¸ªåå­æ¥æè¿°å®ï¼æ´ä¸è¦è¯´å¤ä¸ªåå­ï¼</p>
+<p>我孤陋寡闻，当听说这本书的时候，我已经学会了函数式编程，正在 Cornell 读 PhD，专攻程序语言设计。有一天由于好奇这书为什么名气这么大，我从图书馆借了一本回来看。我很快的发现，其实这本书的作者只是给早已经存在的编程方法起了一些新的名字而已。当时我就拿起一张纸，把所有的20来个设计模式跟我常用的编程概念做了一个映射。这个映射居然是“多对一”（many-to-one）的。也就是说，多个 GoF 设计模式，居然只对应同一个我每天都用的概念。有些概念是如此的不值一提，以至于我根本不需要一个名字来描述它，更不要说多个名字！</p>
 
-<p>å¶ä¸­æå°æ°å¼å¾ä¸æçâæ¨¡å¼âï¼ä¹è®¸æ¯ visitor å interpreterãå¾å¯æçæ¯ï¼åªæå¾å°çäººæç½å¦ä½ä½¿ç¨å®ä»¬ãæè°ç visitorï¼æ¬è´¨ä¸å°±æ¯å½æ°å¼è¯­è¨éçå«æâæ¨¡å¼å¹éâï¼pattern matchingï¼çéå½å½æ°ãå¨å½æ°å¼è¯­è¨éï¼è¿æ¯å¤ä¹è½»æ¾çäºæãå¯æ¯å ä¸º Java æ²¡ææ¨¡å¼å¹éï¼æä»¥å¾å¤éè¦ç±»ä¼¼åè½çäººå°±å¾ä½¿ç¨ visitor patternãä¸ºäºæè°çâéç¨æ§âï¼ä»ä»¬å¾å¾æ visitor pattern æåºå¤å±ç»§æ¿å³ç³»ï¼è®©ä½ è½¬å éå¼¯ä¹æä¸æ¸æ¥å°åºåªä¸ª visitor ææ¯å¹²å®äºçã</p>
+<p>其中极少数值得一提的“模式”，也许是 visitor 和 interpreter。很可惜的是，只有很少的人明白如何使用它们。所谓的 visitor，本质上就是函数式语言里的含有“模式匹配”（pattern matching）的递归函数。在函数式语言里，这是多么轻松的事情。可是因为 Java 没有模式匹配，所以很多需要类似功能的人就得使用 visitor pattern。为了所谓的“通用性”，他们往往把 visitor pattern 搞出多层继承关系，让你转几道弯也搞不清楚到底哪个 visitor 才是干实事的。</p>
 
-<p>å¶å®ï¼å½æ°å¼è¯­è¨çç ç©¶èä»¬æ©å°±ç¥é visitor pattern æ¯æä¹å¾æ¥çãå¦æä½ æ³ç¥éå¦ä½ä»æ å°æï¼ä¸æ­¥ä¸æ­¥âåæâåº Java ç visitor patternï¼å¯ä»¥åè Dan Friedman è·ä»çå­¦ç Matthias Felleisen ååççå¦ä¸æ¬âå°äººä¹¦âãA Little Java, A Few Patternsãï¼åè¡¨äº 1997 å¹´ï¼ã</p>
+<p>其实，函数式语言的研究者们早就知道 visitor pattern 是怎么得来的。如果你想知道如何从无到有，一步一步“发明”出 Java 的 visitor pattern，可以参考 Dan Friedman 跟他的学生 Matthias Felleisen 合写的的另一本“小人书”《A Little Java, A Few Patterns》（发表于 1997 年）。</p>
 
 <p><img src="images/the-little-java.jpeg" alt="little java" /></p>
 
-<p>è interpreter ï¼è§£éå¨ï¼æ¨¡å¼å¢ï¼çäºä½èä»¬åçä¾å­ç¨åºä¹åï¼æåç°ä»ä»¬å¶å®å¹¶ä¸ä¼åè§£éå¨ï¼æèè¯´ä»ä»¬ä¸ç¥éå¦ä½ååºä¼éçï¼æ­£ç¡®çè§£éå¨ãå¦æä½ æ³ç¥éå¦ä½ååºå¥½çè§£éå¨ï¼å¯ä»¥åèæçåæãææ ·åä¸ä¸ªè§£éå¨ãã</p>
+<p>而 interpreter （解释器）模式呢？看了作者们写的例子程序之后，我发现他们其实并不会写解释器，或者说他们不知道如何写出优雅的，正确的解释器。如果你想知道如何写出好的解释器，可以参考我的博文《怎样写一个解释器》。</p>
 
-<p>ä½ è¯´æå¨è´¬ä½è¿æ¬ä¹¦ççæ­£ä»·å¼ï¼å ä¸º GoF è¯´äºï¼âæä»¬çè´¡ç®ï¼å°±æ¯ç»è¿äºç¼ç¨æ¹å¼èµ·åå­ãè¿æ ·è®©å¹¿å¤§ç¨åºåæå±åçè¯­è¨ãâ å¦æè¿ä¹å«è´¡ç®çè¯ï¼æå°±å¯ä»¥åæ¬ä¹¦ï¼ç»âç©ºæ°âï¼âæ°´âï¼âçªèâè¿äºä¸è¥¿å¨é½èµ·ä¸ªæ°åå­ï¼è®©å¤§å®¶æâå±åçè¯­è¨âãè¿ä¸æ¯æç¬åã</p>
+<p>你说我在贬低这本书的真正价值，因为 GoF 说了：“我们的贡献，就是给这些编程方式起名字。这样让广大程序员有共同的语言。” 如果这也叫贡献的话，我就可以写本书，给“空气”，“水”，“猪肉”这些东西全都起个新名字，让大家有“共同的语言”。这不是搞笑吗。</p>
 
-<p>è¿ä¸æ¯æçä¸å®¶ä¹è¨ï¼Peter Norvig å¨ 1998 å¹´å°±åäºä¸ä¸ªæ¼è®²ï¼æåºå¨âå¨æè¯­è¨âéé¢ï¼GoF ç20å ä¸ªæ¨¡å¼ï¼å¶ä¸­ç»å¤§é¨åé½âéæâäºãä¹å°±æ¯è¯´ï¼ä½ æ ¹æ¬æè§ä¸å°å®ä»¬çå­å¨ãè¿å°±åæåæåè¯ä½ çã</p>
+<p>这不是我的一家之言，Peter Norvig 在 1998 年就做了一个演讲，指出在“动态语言”里面，GoF 的20几个模式，其中绝大部分都“透明”了。也就是说，你根本感觉不到它们的存在。这就像我刚才告诉你的。</p>
 
 <p><img src="images/norvig-patterns.png" alt="Norvig talk" /></p>
 
-<p>å¨è¿é Norvig çè§ç¹æ¯æ­£ç¡®çï¼ä¸è¿éè¦å°å¿ä¸ä¸ªæ¦å¿µéè¯¯ãNorvig å¯¹âéæè¯­è¨âçæ¦å¿µæ¯æå±éæ§çãæçéæè¯­è¨å¶å®ä¹è½ä¼ éå½æ°ä½ä¸ºåæ°ï¼èä¸ä¸å Java é£æ ·ä»ä¹é½å¾æ¾è¿ class éãè¿æ ·çéæè¯­è¨ï¼å¶å®ä¹å¯ä»¥é¿åå¤§é¨å GoF è®¾è®¡æ¨¡å¼ãèâå¨æè¯­è¨âè¿ä¸ªæ¦å¿µï¼å¨ç¨åºè¯­è¨ççè®ºéé¢ï¼å¶å®æ¯æ²¡ææç¡®çå®ä¹çãâå¨æè¯­è¨âå¶å®ä¹è½è¿è¡æäºâéæç±»åæ£æ¥âãä¸è¿å¨ 1998 å¹´ï¼æè¿æ¯ä¸ªå¥é½ä¸æçå±å­©ï¼æä»¥è¿éå°±ä¸è· Norvig å¤§åè®¡è¾äºã</p>
+<p>在这里 Norvig 的观点是正确的，不过需要小心一个概念错误。Norvig 对“静态语言”的概念是有局限性的。有的静态语言其实也能传递函数作为参数，而且不像 Java 那样什么都得放进 class 里。这样的静态语言，其实也可以避免大部分 GoF 设计模式。而“动态语言”这个概念，在程序语言的理论里面，其实是没有明确的定义的。“动态语言”其实也能进行某些“静态类型检查”。不过在 1998 年，我还是个啥都不懂的屁孩，所以这里就不跟 Norvig 大叔计较了。</p>
 
-<p>æ¢ç¶èäººä»¬é½æåå²å±éæ§ï¼é£ä¹ä¸ºå¥æè¿è· GoF æ¾è¬ï¼æ¬æ¥è¿æ¬ä¹¦å¾èäºï¼å¦ææ²¡æäººåè¢«å®è¯¯å¯¼çè¯ï¼è¿ç¯åæä¹å°±ä¸å¿å­å¨äºãå¯æ¯å½æå¨ Google å®ä¹ çæ¶åï¼æåç°å ä¹æ¯ä¸ªç¨åºåçä¹¦æ¶ä¸é½æä¸æ¬ GoFï¼æå¨ Google å®ä¹ äºä¸¤æ¬¡ï¼ç¬¬ä¸æ¬¡çæ¶åä»£ç å¨é½æ¯æä¸ä¸ªäººåçï¼æä»¥æ²¡æä½¿ç¨ä»»ä½ GoF è®¾è®¡æ¨¡å¼ãä»£ç ç´æ¥ï¼ç²¾å·§èç®åãå½æç¬¬äºæ¬¡åå° Googleï¼åç°æçä»£ç éå·²ç»è¢«å å¥äºåç§ factoryï¼visitorï¼â¦â¦ å¶å®å¥å¥½äºä¹æ²¡åï¼åªä¸è¿è®©æçä»£ç å¼¯äºå éå¼¯ï¼è®©äººé¾ä»¥çè§£ã</p>
+<p>既然老人们都有历史局限性，那么为啥我还跟 GoF 找茬？本来这本书很老了，如果没有人再被它误导的话，这篇博文也就不必存在了。可是当我在 Google 实习的时候，我发现几乎每个程序员的书架上都有一本 GoF！我在 Google 实习了两次，第一次的时候代码全都是我一个人写的，所以没有使用任何 GoF 设计模式。代码直接，精巧而简单。当我第二次回到 Google，发现我的代码里已经被加入了各种 factory，visitor，…… 其实啥好事也没做，只不过让我的代码弯了几道弯，让人难以理解。</p>
 
-<p>å¯è§ä¸æ¬åä¹¦ï¼æ¯æçä¸åªæ¯ä¸ä»£ç¨åºåãé´äºå¦æ­¤ï¼ç¹åæ­¤æãåä½æ°æï¼å¸æä½ ä»¬æ²åè­¦éï¼ä¸è¦åèµ°ä¸è¿æ¡èè·¯ï¼ååºä»£ç æ¥è®©å¤§å®¶çè¦ã</p>
-
-
+<p>可见一本坏书，毁掉的不只是一代程序员。鉴于如此，特发此文。各位新手，希望你们敲响警钟，不要再走上这条老路，写出代码来让大家痛苦。</p>
+    </div>
+    
+    <script src="js/highlight.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script>
+        if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
+            document.body.classList.add('mobile');
+            var navbar = document.querySelector('nav.navbar');
+            if (navbar) { navbar.classList.remove('navbar-fixed-top'); }
+        }
+    </script>
 </body>
-
 </html>

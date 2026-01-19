@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <title>当然我在扯淡</title>
+    <link rel="stylesheet" href="css/highlight/xcode.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-tooltips.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/home.css"> <!-- Need home for navbar -->
+    <link rel="stylesheet" href="css/post.css">
+    <script src="js/jquery.min.js"></script>
+    <style>
+        /* Switcher Fixes */
+        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
+        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
+        .version-switcher a.current { font-weight: bold; color: #333; }
+        /* Inner override for posts */
+        .inner { margin-top: 80px; } 
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-bs">
+                    <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+                <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='aboutcmec_aboutcmec_01.jsp_20060213.html'>About</a></li><li><a href='aboutess_aboutess_01.jsp_20060213.html'>About</a></li><li><a href='aboutinfo_aboutinfo_01.jsp_20060106.html'>About</a></li><li><a href='tweet_20170605.html'>微勃 (Tweets)</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='homepage_20250719.html'>当然我在扯淡 (None)</a></li><li><a href='index.jsp_20060213.html'>中国中小企业竞争力工程 (None)</a></li><li><a href='index_20260110.html'>Surely I am Joking (None)</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Posts <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='posts_air-freshener-nightmare_20251129.html'>Surely I am Joking</a></li><li><a href='posts_american-english-problems_20251030.html'>Surely I am Joking</a></li><li><a href='posts_authority_20251221.html'>Surely I am Joking</a></li><li><a href='posts_cello-technique_20251102.html'>Surely I am Joking</a></li><li><a href='posts_continuation-course_20251206.html'>Surely I am Joking</a></li><li><a href='posts_cs-class2_20251105.html'>Surely I am Joking</a></li><li><a href='posts_cs-course-5_20251208.html'>Surely I am Joking</a></li><li><a href='posts_cs-video-course_20251101.html'>Surely I am Joking</a></li><li><a href='posts_cs3_20251102.html'>Surely I am Joking</a></li><li><a href='posts_cs4_20251102.html'>Surely I am Joking</a></li><li><a href='posts_cs5-completed_20251031.html'>Surely I am Joking</a></li><li><a href='posts_entry-level-class_20251102.html'>Surely I am Joking</a></li><li><a href='posts_learning-philosophy_20251211.html'>Surely I am Joking</a></li><li><a href='posts_oberon_20260113.html'>Surely I am Joking</a></li><li><a href='posts_reading-course_20251102.html'>Surely I am Joking</a></li><li><a href='posts_super-human-level-vision_20251104.html'>Surely I am Joking</a></li><li><a href='posts_tuition-for-covid_20251103.html'>Surely I am Joking</a></li><li><a href='posts_wisdom-of-intelligence_20251102.html'>Surely I am Joking</a></li><li><a href='posts_youth-cs-student_20251102.html'>Surely I am Joking</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='resources_d8-3404-d8-8424_20130614.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_base64mime.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_charset.py_20150506.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_encoders.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_errors.py_20150409.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_header.py_20140305.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_quoprimime.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_re.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_compile.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_constants.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_parse.py_20160822.html'>Untitled</a></li><li><a href='resources_diff1-diff2_20200728.html'>Untitled</a></li><li><a href='resources_mk1-mk2_20130627.html'>Untitled</a></li><li><a href='resources_nav1-nav2_20200728.html'>Untitled</a></li><li><a href='resources_paredit20-paredit23_20200728.html'>Untitled</a></li><li><a href='resources_pydiff1-pydiff2_20130711.html'>Untitled</a></li><li><a href='resources_simulator-mips-simulator-arm_20200728.html'>Untitled</a></li><li><a href='resources_typed-clojure1-typed-clojure2_20200728.html'>Untitled</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tags <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='tags_ai_20251103.html'>Surely I am Joking</a></li><li><a href='tags_education_20251031.html'>Surely I am Joking</a></li><li><a href='tags_english_20251101.html'>Surely I am Joking</a></li><li><a href='tags_health_20251102.html'>Surely I am Joking</a></li><li><a href='tags_life_20251129.html'>Surely I am Joking</a></li><li><a href='tags_lifestyle_20251101.html'>Surely I am Joking</a></li><li><a href='tags_philosophy_20251101.html'>Surely I am Joking</a></li><li><a href='tags_programming-language_20260113.html'>Surely I am Joking</a></li><li><a href='tags_travel_20251129.html'>Surely I am Joking</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Misc <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='.well-known_dnt-policy.txt_20251211.html'>Surely I am Joking</a></li><li><a href='_5C_20251205.html'>Surely I am Joking</a></li><li><a href='_5Cu003c_a_5Cu003e_5Cu003c_td_5Cu003e_5Cn_5Cu003ctd_5Cu003e_E7_BC_96_E7_A8_8B_5Cu003c_td_5Cu003e_5Cn_5Cu003c_tr_5Cu003e_5Cn_5Cu003ctr_5Cu003e_5Cn_5Cu003ctd_5Cu003e_5Cu003ca_20251204.html'>Surely I am Joking</a></li><li><a href='ads.txt_20251013.html'>Surely I am Joking</a></li><li><a href='afficheAction.do_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='apply_dcb.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='apply_twsqb.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='common_casetoyota.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='common_casexhx.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='common_courseBase_main.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='common_courseBase_tch_grzl.jsp_20060106.html'>Untitled</a></li><li><a href='contactus.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='datadownload.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='dljm.jsp_20060516.html'>竞争力工程</a></li><li><a href='fwjs.jsp_20060516.html'>竞争力工程</a></li><li><a href='hd_qgjx.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='laws_laws_01.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='lianxi.jsp_20060428.html'>竞争力工程</a></li><li><a href='more.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='neirong.jsp_20060516.html'>详细内容</a></li><li><a href='newsPublishAction.do_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='servicecenter_servicecenter_01.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='tongzhi.jsp_20060428.html'>竞争力工程</a></li><li><a href='tongzhi_tongzhi1.htm_20060428.html'>ÎÞ±êÌâÎÄµµ</a></li><li><a href='tongzhi_tongzhi2.htm_20060428.html'>ÎÞ±êÌâÎÄµµ</a></li><li><a href='units_gjfz.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='units_jstg.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='units_zgzx.jsp_20060213.html'>中国中小企业竞争力工程</a></li></ul></li></ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="inner">
+        <div class="version-switcher"><span>Versions:</span><a href="index_20051105.html" >2005-11-05</a> <a href="index_20051125.html" >2005-11-25</a> <a href="index_20060202.html" >2006-02-02</a> <a href="index_20060403.html" >2006-04-03</a> <a href="index_20060610.html" >2006-06-10</a> <a href="index_20130417.html" >2013-04-17</a> <a href="index_20130426.html" >2013-04-26</a> <a href="index_20130504.html" >2013-05-04</a> <a href="index_20130604.html" >2013-06-04</a> <a href="index_20130627.html" >2013-06-27</a> <a href="index_20130709.html" >2013-07-09</a> <a href="index_20130716.html" >2013-07-16</a> <a href="index_20130722.html" >2013-07-22</a> <a href="index_20130729.html" >2013-07-29</a> <a href="index_20130924.html" >2013-09-24</a> <a href="index_20131009.html" >2013-10-09</a> <a href="index_20131030.html" >2013-10-30</a> <a href="index_20131108.html" >2013-11-08</a> <a href="index_20131117.html" >2013-11-17</a> <a href="index_20131125.html" >2013-11-25</a> <a href="index_20140116.html" >2014-01-16</a> <a href="index_20140125.html" >2014-01-25</a> <a href="index_20140213.html" >2014-02-13</a> <a href="index_20140225.html" >2014-02-25</a> <a href="index_20140313.html" >2014-03-13</a> <a href="index_20140416.html" >2014-04-16</a> <a href="index_20140426.html" >2014-04-26</a> <a href="index_20140503.html" >2014-05-03</a> <a href="index_20140511.html" >2014-05-11</a> <a href="index_20140519.html" >2014-05-19</a> <a href="index_20140619.html" >2014-06-19</a> <a href="index_20140729.html" >2014-07-29</a> <a href="index_20140814.html" >2014-08-14</a> <a href="index_20140820.html" >2014-08-20</a> <a href="index_20140905.html" >2014-09-05</a> <a href="index_20140915.html" >2014-09-15</a> <a href="index_20140928.html" >2014-09-28</a> <a href="index_20141017.html" >2014-10-17</a> <a href="index_20141125.html" >2014-11-25</a> <a href="index_20141226.html" >2014-12-26</a> <a href="index_20150106.html" >2015-01-06</a> <a href="index_20150121.html" >2015-01-21</a> <a href="index_20150202.html" >2015-02-02</a> <a href="index_20150205.html" >2015-02-05</a> <a href="index_20150225.html" >2015-02-25</a> <a href="index_20150304.html" >2015-03-04</a> <a href="index_20150313.html" >2015-03-13</a> <a href="index_20150321.html" >2015-03-21</a> <a href="index_20150324.html" >2015-03-24</a> <a href="index_20150328.html" >2015-03-28</a> <a href="index_20150405.html" >2015-04-05</a> <a href="index_20150619.html" >2015-06-19</a> <a href="index_20150702.html" >2015-07-02</a> <a href="index_20150709.html" >2015-07-09</a> <a href="index_20150924.html" >2015-09-24</a> <a href="index_20151019.html" >2015-10-19</a> <a href="index_20151107.html" >2015-11-07</a> <a href="index_20151115.html" >2015-11-15</a> <a href="index_20151126.html" >2015-11-26</a> <a href="index_20151213.html" >2015-12-13</a> <a href="index_20160109.html" >2016-01-09</a> <a href="index_20160121.html" >2016-01-21</a> <a href="index_20160221.html" >2016-02-21</a> <a href="index_20160228.html" >2016-02-28</a> <a href="index_20160314.html" >2016-03-14</a> <a href="index_20160321.html" >2016-03-21</a> <a href="index_20160401.html" >2016-04-01</a> <a href="index_20160412.html" >2016-04-12</a> <a href="index_20160418.html" >2016-04-18</a> <a href="index_20160514.html" >2016-05-14</a> <a href="index_20160521.html" >2016-05-21</a> <a href="index_20160526.html" >2016-05-26</a> <a href="index_20160607.html" >2016-06-07</a> <a href="index_20160613.html" >2016-06-13</a> <a href="index_20160618.html" >2016-06-18</a> <a href="index_20160624.html" >2016-06-24</a> <a href="index_20160629.html" >2016-06-29</a> <a href="index_20160708.html" class="current">2016-07-08</a> <a href="index_20160713.html" >2016-07-13</a> <a href="index_20160917.html" >2016-09-17</a> <a href="index_20160922.html" >2016-09-22</a> <a href="index_20161006.html" >2016-10-06</a> <a href="index_20161010.html" >2016-10-10</a> <a href="index_20161016.html" >2016-10-16</a> <a href="index_20161029.html" >2016-10-29</a> <a href="index_20161115.html" >2016-11-15</a> <a href="index_20161119.html" >2016-11-19</a> <a href="index_20161120.html" >2016-11-20</a> <a href="index_20170506.html" >2017-05-06</a> <a href="index_20170514.html" >2017-05-14</a> <a href="index_20170517.html" >2017-05-17</a> <a href="index_20170521.html" >2017-05-21</a> <a href="index_20170526.html" >2017-05-26</a> <a href="index_20170602.html" >2017-06-02</a> <a href="index_20170710.html" >2017-07-10</a> <a href="index_20170721.html" >2017-07-21</a> <a href="index_20170805.html" >2017-08-05</a> <a href="index_20170811.html" >2017-08-11</a> <a href="index_20170820.html" >2017-08-20</a> <a href="index_20170909.html" >2017-09-09</a> <a href="index_20170926.html" >2017-09-26</a> <a href="index_20171003.html" >2017-10-03</a> <a href="index_20171012.html" >2017-10-12</a> <a href="index_20171019.html" >2017-10-19</a> <a href="index_20171025.html" >2017-10-25</a> <a href="index_20171031.html" >2017-10-31</a> <a href="index_20171106.html" >2017-11-06</a> <a href="index_20171110.html" >2017-11-10</a> <a href="index_20171115.html" >2017-11-15</a> <a href="index_20171119.html" >2017-11-19</a> <a href="index_20171130.html" >2017-11-30</a> <a href="index_20171206.html" >2017-12-06</a> <a href="index_20171212.html" >2017-12-12</a> <a href="index_20171219.html" >2017-12-19</a> <a href="index_20180103.html" >2018-01-03</a> <a href="index_20180221.html" >2018-02-21</a> <a href="index_20180228.html" >2018-02-28</a> <a href="index_20180305.html" >2018-03-05</a> <a href="index_20180309.html" >2018-03-09</a> <a href="index_20180323.html" >2018-03-23</a> <a href="index_20180327.html" >2018-03-27</a> <a href="index_20180330.html" >2018-03-30</a> <a href="index_20180416.html" >2018-04-16</a> <a href="index_20180509.html" >2018-05-09</a> <a href="index_20180601.html" >2018-06-01</a> <a href="index_20180607.html" >2018-06-07</a> <a href="index_20180918.html" >2018-09-18</a> <a href="index_20181019.html" >2018-10-19</a> <a href="index_20181026.html" >2018-10-26</a> <a href="index_20181126.html" >2018-11-26</a> <a href="index_20181210.html" >2018-12-10</a> <a href="index_20190204.html" >2019-02-04</a> <a href="index_20190211.html" >2019-02-11</a> <a href="index_20190704.html" >2019-07-04</a> <a href="index_20190709.html" >2019-07-09</a> <a href="index_20190713.html" >2019-07-13</a> <a href="index_20190724.html" >2019-07-24</a> <a href="index_20190807.html" >2019-08-07</a> <a href="index_20190822.html" >2019-08-22</a> <a href="index_20190907.html" >2019-09-07</a> <a href="index_20191009.html" >2019-10-09</a> <a href="index_20191022.html" >2019-10-22</a> <a href="index_20191108.html" >2019-11-08</a> <a href="index_20191208.html" >2019-12-08</a> <a href="index_20191221.html" >2019-12-21</a> <a href="index_20191227.html" >2019-12-27</a> <a href="index_20200118.html" >2020-01-18</a> <a href="index_20200217.html" >2020-02-17</a> <a href="index_20200311.html" >2020-03-11</a> <a href="index_20200511.html" >2020-05-11</a> <a href="index_20200604.html" >2020-06-04</a> <a href="index_20220816.html" >2022-08-16</a> <a href="index_20260110.html" >2026-01-10</a></div>
+        <nav class="navbar navbar-default navbar-fixed-top" style="opacity: .9" role="navigation">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">当然我在扯淡</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="#">Blog</a></li>
+                <li><a href="http://www.jianshu.com/users/b1dd2b2c87a8/latest_articles">简书</a></li>
+                <li><a href="http://www.yinwang.org/tweet.html">Tweet</a></li>
+                <li><a href="https://github.com/yinwang0">GitHub</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+<div class="row" style="padding-top: 70px">
+  <div class="container center-block">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 col-sm-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Blog</h3>
+        </div>
+        <ul class="list-group">
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2016/07/05/google-maps">Google Maps的设计问题</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2016/06/28/yangsheng">养生节目带来的危害</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2016/06/27/tiger-for-rent">老虎出租</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2016/06/24/robot-tax">欧盟草拟法案，对机器人征税</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2016/06/22/plan-change">两个计划的变动</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2016/06/20/it-and-society">IT业给世界带来的危机</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2016/06/19/leaving-united-states">关于离开美国的决定</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2016/06/14/information-inequality">美国社会的信息不平等现象</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2016/06/08/java-value-type">Java 有值类型吗？</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2016/06/06/swift">Swift 语言的设计错误</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2016/05/25/my-tweet">我的 tweet 系统</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2016/05/22/positive-thinking">正面思维的误区</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2016/05/14/future">未来计划</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2016/04/13/pay-blog">关于博文的自愿付费方式</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2016/04/07/cfa">到底是谁在欺负我们读书少？</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2016/03/31/no-longer-pl">我为什么不再做PL人</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2016/03/27/docker">Go语言，Docker和Kubernetes</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2016/03/19/self-driving-car-liability">为什么自动车完全不可以犯错误</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2016/03/17/google-vision">Google的眼光</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2016/03/09/alpha-go">AlphaGo与人工智能</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2016/02/25/sea-world">不要去SeaWorld</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2016/02/12/self-driving-car">我看自动驾驶技术</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2016/01/18/java">给Java说句公道话</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2016/01/10/tesla-autopilot">Tesla Autopilot</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2016/01/04/las-vegas">给Las Vegas的差评</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2015/12/21/tesla-model-x">Tesla Model X的车门设计问题</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2015/12/19/book-plan">写书计划</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2015/12/12/tesla-model-s">Tesla Model S的设计失误</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2015/11/21/programming-philosophy">编程的智慧</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2015/10/18/turing">图灵的光环</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2015/09/19/parser">谈谈Parser</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2015/07/04/math">数学和编程</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2015/07/02/program-correctness">谈程序的正确性</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2015/06/14/dry-principle">DRY原则的误区</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2015/06/07/software-engineering">所谓软件工程</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2015/04/03/paradigms">编程的宗派</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2015/03/20/trap-of-intelligence">智商的圈套</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2015/03/18/yin-lang-secret">我为什么不再公开开发Yin语言</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2015/03/17/design">设计的重要性</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2015/03/13/a-plus">我为什么在乎这一个A+</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2015/03/08/be-a-fool">不要做聪明人</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2015/03/03/how-to-respect-a-programmer">怎样尊重一个程序员</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2015/02/24/human-errors">所谓“人为错误”</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2015/02/01/creative-thinking">创造者的思维方式</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2015/01/29/human-value">人的价值</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2015/01/05/top-university-syndrome">牛校综合征</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2014/12/31/google-story">我和 Google 的故事（2015 修订版）</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2014/12/11/san-francisco">在三藩的两年</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2014/11/12/interstellar">恶评《星际穿越》</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2014/09/17/rss">RSS与三不主义</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2014/09/15/innovation">谈创新</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2014/08/14/modesty">谦虚不是一种美德</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2014/08/11/genius">怎样成为一个天才</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2014/07/17/rest">休息，休息一会儿</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2014/04/24/relational">关系模型的实质</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2014/04/18/golang">对 Go 语言的综合评价</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2014/04/11/hacker-culture">黑客文化的精髓</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2014/04/10/tv-formulas">电视编剧的问题</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2014/04/07/racket-pig">天下第一萌程序</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2014/03/24/academic-corruption">学术腐败是历史的必然</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2014/02/18/dijkstra-interview">一个对 Dijkstra 的采访视频</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2014/02/04/pl-tool">程序语言与它们的工具</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2014/01/28/rubysonar">RubySonar：一个 Ruby 静态分析器</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2014/01/25/pl-and">程序语言与……</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2014/01/04/authority">我和权威的故事</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2013/10/29/pysonar2">PySonar2 开源了</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2013/07/13/church-turing">丘奇和图灵</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2013/07/06/PyDiff-Python%E7%BB%93%E6%9E%84%E5%8C%96%E7%A8%8B%E5%BA%8F%E6%AF%94%E8%BE%83%E5%B7%A5%E5%85%B7">Pydiff Python结构化程序比较工具</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2013/06/19/bye-coverity">我离开了Coverity</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2013/04/26/reason-and-proof">原因与证明</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2013/04/21/ydiff-%E7%BB%93%E6%9E%84%E5%8C%96%E7%9A%84%E7%A8%8B%E5%BA%8F%E6%AF%94%E8%BE%83">Ydiff 结构化的程序比较</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2013/04/21/programming-languages-are-not-tools">程序语言不是工具</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2013/04/20/editor-ide">编辑器与IDE</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2013/04/18/language-design-mistake2">程序语言的常见设计错误(2) - 试图容纳世界</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2013/04/17/languages">关于语言的思考</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2013/04/14/yoda-notation">Yoda 表示法错在哪里</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2013/04/14/terminology">几个超炫的专业词汇</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2013/04/14/os-design">一种新的操作系统设计</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2013/04/14/markdown">Markdown 的一些问题</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2013/04/13/generality">谈程序的“通用性”</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2013/04/12/inspiration">什么是启发</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2013/04/11/scheme-setup">Scheme 编程环境的设置</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2013/04/10/cornell">我为什么离开 Cornell</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2013/04/07/test-driven-dev">谈“测试驱动的开发”</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2013/04/03/einstein-on-education">爱因斯坦谈教育</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2013/04/02/currying">谈谈 Currying</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2013/04/01/lazy-evaluation">谈惰性求值</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2013/03/31/purely-functional">对函数式语言的误解</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2013/03/29/scripting-language">什么是“脚本语言”</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2013/03/28/chez-scheme">Chez Scheme 的传说</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2013/03/26/lisp-dead-alive">Lisp 已死，Lisp 万岁！</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2013/03/24/tools">论对东西的崇拜</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2013/03/19/eliminate-problems">“解决问题”与“消灭问题”</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2013/03/15/language-design-mistake1">程序语言的常见设计错误(1) - 片面追求短小</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2013/03/08/on-syntax">谈语法</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2013/03/07/oberon">Oberon 操作系统：被忽略的珍宝</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2013/03/07/linux-windows-mac">谈 Linux，Windows 和 Mac</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2013/03/07/design-patterns">解密“设计模式”</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2013/03/04/braid">Braid - 一个发人深思的游戏</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2012/09/18/texmacs">TeXmacs：一个真正“所见即所得”的排版系统</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2012/08/01/interpreter">怎样写一个解释器</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2012/07/25/semantics">什么是语义学</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2012/07/04/dan-friedman">GTF - Great Teacher Friedman</a>
+          </li>
+          
+          <li class="list-group-item title">
+            <a href="http://yinwang.org/blog-cn/2012/05/18/user-friendliness">什么是“对用户友好”</a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-md-2">
+    </div>
+  </div>
+</div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    </div>
+    
+    <script src="js/highlight.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script>
+        if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
+            document.body.classList.add('mobile');
+            var navbar = document.querySelector('nav.navbar');
+            if (navbar) { navbar.classList.remove('navbar-fixed-top'); }
+        }
+    </script>
+</body>
+</html>

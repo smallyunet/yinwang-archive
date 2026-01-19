@@ -1,68 +1,123 @@
+<!DOCTYPE html>
 <html>
 <head>
-
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link href="http://www.yinwang.org/main.css" rel="stylesheet" type="text/css">
-<link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
-<link rel="shortcut icon" href="http://www.yinwang.org/images/Yc.jpg">
-
-<title>Yoda è¡¨ç¤ºæ³éå¨åªé</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <title>Yoda 表示法错在哪里</title>
+    <link rel="stylesheet" href="css/highlight/xcode.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-tooltips.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/home.css"> <!-- Need home for navbar -->
+    <link rel="stylesheet" href="css/post.css">
+    <script src="js/jquery.min.js"></script>
+    <style>
+        /* Switcher Fixes */
+        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
+        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
+        .version-switcher a.current { font-weight: bold; color: #333; }
+        /* Inner override for posts */
+        .inner { margin-top: 80px; } 
+    </style>
 </head>
-ãã
 <body>
+    <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-bs">
+                    <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+                <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='aboutcmec_aboutcmec_01.jsp_20060213.html'>About</a></li><li><a href='aboutess_aboutess_01.jsp_20060213.html'>About</a></li><li><a href='aboutinfo_aboutinfo_01.jsp_20060106.html'>About</a></li><li><a href='tweet_20170605.html'>微勃 (Tweets)</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='homepage_20250719.html'>当然我在扯淡 (None)</a></li><li><a href='index.jsp_20060213.html'>中国中小企业竞争力工程 (None)</a></li><li><a href='index_20260110.html'>Surely I am Joking (None)</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Posts <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='posts_air-freshener-nightmare_20251129.html'>Surely I am Joking</a></li><li><a href='posts_american-english-problems_20251030.html'>Surely I am Joking</a></li><li><a href='posts_authority_20251221.html'>Surely I am Joking</a></li><li><a href='posts_cello-technique_20251102.html'>Surely I am Joking</a></li><li><a href='posts_continuation-course_20251206.html'>Surely I am Joking</a></li><li><a href='posts_cs-class2_20251105.html'>Surely I am Joking</a></li><li><a href='posts_cs-course-5_20251208.html'>Surely I am Joking</a></li><li><a href='posts_cs-video-course_20251101.html'>Surely I am Joking</a></li><li><a href='posts_cs3_20251102.html'>Surely I am Joking</a></li><li><a href='posts_cs4_20251102.html'>Surely I am Joking</a></li><li><a href='posts_cs5-completed_20251031.html'>Surely I am Joking</a></li><li><a href='posts_entry-level-class_20251102.html'>Surely I am Joking</a></li><li><a href='posts_learning-philosophy_20251211.html'>Surely I am Joking</a></li><li><a href='posts_oberon_20260113.html'>Surely I am Joking</a></li><li><a href='posts_reading-course_20251102.html'>Surely I am Joking</a></li><li><a href='posts_super-human-level-vision_20251104.html'>Surely I am Joking</a></li><li><a href='posts_tuition-for-covid_20251103.html'>Surely I am Joking</a></li><li><a href='posts_wisdom-of-intelligence_20251102.html'>Surely I am Joking</a></li><li><a href='posts_youth-cs-student_20251102.html'>Surely I am Joking</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='resources_d8-3404-d8-8424_20130614.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_base64mime.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_charset.py_20150506.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_encoders.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_errors.py_20150409.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_header.py_20140305.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_quoprimime.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_re.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_compile.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_constants.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_parse.py_20160822.html'>Untitled</a></li><li><a href='resources_diff1-diff2_20200728.html'>Untitled</a></li><li><a href='resources_mk1-mk2_20130627.html'>Untitled</a></li><li><a href='resources_nav1-nav2_20200728.html'>Untitled</a></li><li><a href='resources_paredit20-paredit23_20200728.html'>Untitled</a></li><li><a href='resources_pydiff1-pydiff2_20130711.html'>Untitled</a></li><li><a href='resources_simulator-mips-simulator-arm_20200728.html'>Untitled</a></li><li><a href='resources_typed-clojure1-typed-clojure2_20200728.html'>Untitled</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tags <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='tags_ai_20251103.html'>Surely I am Joking</a></li><li><a href='tags_education_20251031.html'>Surely I am Joking</a></li><li><a href='tags_english_20251101.html'>Surely I am Joking</a></li><li><a href='tags_health_20251102.html'>Surely I am Joking</a></li><li><a href='tags_life_20251129.html'>Surely I am Joking</a></li><li><a href='tags_lifestyle_20251101.html'>Surely I am Joking</a></li><li><a href='tags_philosophy_20251101.html'>Surely I am Joking</a></li><li><a href='tags_programming-language_20260113.html'>Surely I am Joking</a></li><li><a href='tags_travel_20251129.html'>Surely I am Joking</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Misc <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='.well-known_dnt-policy.txt_20251211.html'>Surely I am Joking</a></li><li><a href='_5C_20251205.html'>Surely I am Joking</a></li><li><a href='_5Cu003c_a_5Cu003e_5Cu003c_td_5Cu003e_5Cn_5Cu003ctd_5Cu003e_E7_BC_96_E7_A8_8B_5Cu003c_td_5Cu003e_5Cn_5Cu003c_tr_5Cu003e_5Cn_5Cu003ctr_5Cu003e_5Cn_5Cu003ctd_5Cu003e_5Cu003ca_20251204.html'>Surely I am Joking</a></li><li><a href='ads.txt_20251013.html'>Surely I am Joking</a></li><li><a href='afficheAction.do_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='apply_dcb.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='apply_twsqb.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='common_casetoyota.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='common_casexhx.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='common_courseBase_main.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='common_courseBase_tch_grzl.jsp_20060106.html'>Untitled</a></li><li><a href='contactus.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='datadownload.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='dljm.jsp_20060516.html'>竞争力工程</a></li><li><a href='fwjs.jsp_20060516.html'>竞争力工程</a></li><li><a href='hd_qgjx.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='laws_laws_01.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='lianxi.jsp_20060428.html'>竞争力工程</a></li><li><a href='more.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='neirong.jsp_20060516.html'>详细内容</a></li><li><a href='newsPublishAction.do_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='servicecenter_servicecenter_01.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='tongzhi.jsp_20060428.html'>竞争力工程</a></li><li><a href='tongzhi_tongzhi1.htm_20060428.html'>ÎÞ±êÌâÎÄµµ</a></li><li><a href='tongzhi_tongzhi2.htm_20060428.html'>ÎÞ±êÌâÎÄµµ</a></li><li><a href='units_gjfz.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='units_jstg.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='units_zgzx.jsp_20060213.html'>中国中小企业竞争力工程</a></li></ul></li></ul>
+            </div>
+        </div>
+    </nav>
 
-<h2>Yoda è¡¨ç¤ºæ³éå¨åªé</h2>
+    <div class="inner">
+        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2013_04_14_yoda-notation_20130418.html" class="current">2013-04-18</a> <a href="blog-cn_2013_04_14_yoda-notation_20140701.html" >2014-07-01</a> <a href="blog-cn_2013_04_14_yoda-notation_20141017.html" >2014-10-17</a> <a href="blog-cn_2013_04_14_yoda-notation_20161006.html" >2016-10-06</a> <a href="blog-cn_2013_04_14_yoda-notation_20170506.html" >2017-05-06</a> <a href="blog-cn_2013_04_14_yoda-notation_20170709.html" >2017-07-09</a> <a href="blog-cn_2013_04_14_yoda-notation_20171107.html" >2017-11-07</a></div>
+        <h2>Yoda 表示法错在哪里</h2>
 
-<p>å¨ä¸ä¸ç¯<a href="http://www.yinwang.org/blog-cn/2013/04/14/terminology/">åæ</a>éï¼ææå°äº Yoda è¡¨ç¤ºæ³ã</p>
+<p>在上一篇<a href="http://www.yinwang.org/blog-cn/2013/04/14/terminology/">博文</a>里，我提到了 Yoda 表示法。</p>
 
-<h3>Yoda Notationï¼Yoda è¡¨ç¤ºæ³ï¼</h3>
+<h3>Yoda Notation（Yoda 表示法）</h3>
 
 <p><img src="images/yoda-notation.jpeg" alt="" /></p>
 
-<p>å®çå«ä¹æ¯ï¼å¨ C/C++ éé¢ä½¿ç¨è¿æ ·çè¡¨è¾¾å¼é¡ºåºï¼</p>
+<p>它的含义是，在 C/C++ 里面使用这样的表达式顺序：</p>
 
 <pre><code>if ("blue" == theSky) ...
 </code></pre>
 
-<p>è¿æ¯ä¸ºäºé¿åæå¤çåæï¼</p>
+<p>这是为了避免意外的写成：</p>
 
 <pre><code>if (theSky = "blue") ...
 </code></pre>
 
-<p>âYoda è¡¨ç¤ºæ³âçåå­æ¥æºäºãæçå¤§æãç Yoda å¤§å¸ãä»è¯´è¯çåè¯é¡ºåºç¸å½å¥ç¹ï¼æ¯å¦ï¼âBackwards it is, yes!â</p>
+<p>“Yoda 表示法”的名字来源于《星球大战》的 Yoda 大师。他说话的单词顺序相当奇特，比如：“Backwards it is, yes!”</p>
 
-<h3>ä¸è¬è®¤ä¸º</h3>
+<h3>一般认为</h3>
 
-<blockquote><p>ä½¿ç¨è¿ä¸ªè¡¨ç¤ºæ³æ¯ä¸ºäºâåéâï¼workaroundï¼ C/C++ çä¸ä¸ªè®¾è®¡ææ©ï¼ä½¿ç¨ <code>=</code> æ¥è¡¨ç¤ºèµå¼ï¼èä½¿ç¨ <code>==</code> æ¥è¡¨ç¤ºæ¯è¾ãè¿ä¸ªè®¾è®¡ååçå±ç°äºâåè¾çç½ªâï¼Sins of our Forefathersï¼è¿ä¸è¯æ±çç²¾é«ã</p></blockquote>
+<blockquote><p>使用这个表示法是为了“变通”（workaround） C/C++ 的一个设计抉择：使用 <code>=</code> 来表示赋值，而使用 <code>==</code> 来表示比较。这个设计充分的展现了“先辈的罪”（Sins of our Forefathers）这一词汇的精髓。</p></blockquote>
 
-<h3>æè®¤ä¸º</h3>
+<h3>我认为</h3>
 
-<blockquote><p>ä½¿ç¨ <code>=</code> æ¥è¡¨ç¤ºèµå¼å¶å®å¹¶ä¸æ¯çæ­£çéè¯¯æå¨ãçæ­£çéè¯¯å¨äº C/C++ çèµå¼è¯­å¥ä¸åºè¯¥è¿åä¸ä¸ªå¼ã</p></blockquote>
+<blockquote><p>使用 <code>=</code> 来表示赋值其实并不是真正的错误所在。真正的错误在于 C/C++ 的赋值语句不应该返回一个值。</p></blockquote>
 
-<p>ä¹å°±æ¯è¯´ï¼<code>theSky = "blue"</code> çææåè½åºè¯¥åªæ¯âèµå¼âè¿ç§âå¯ä½ç¨âï¼å¯ä½ç¨ä¸åºè¯¥å·æâå¼âãå³ä½¿ä½ çµå¼ºéä¼è¯´å®æä¸ä¸ªå¼ï¼å®çâå¼âä¹åºè¯¥æ¯ <code>void</code>ï¼éä¹è¿ä¸ª <code>void</code> ä¼è¢«ç±»åæ£æ¥ææç»ï¼å ä¸ºå®ä¸æ¯ <code>if</code> æææç <code>bool</code>ï¼ãæä»¥ï¼ä¸ä¸ªè¯å¥½çè¯­è¨ä¸åºè¯¥åè®¸ä½ æ <code>theSky = "blue"</code> æ¾è¿ <code>if (...)</code> çâæ¡ä»¶âéé¢ãå¦æä½ ççè¦èµå¼åè¦å¤æ­ï¼å®ä¼è¿«ä½¿ä½ æè¿æå¼æä¸¤è¡ï¼</p>
+<p>也就是说，<code>theSky = "blue"</code> 的所有功能应该只是“赋值”这种“副作用”，副作用不应该具有“值”。即使你牵强附会说它有一个值，它的“值”也应该是 <code>void</code>（随之这个 <code>void</code> 会被类型检查所拒绝，因为它不是 <code>if</code> 所期望的 <code>bool</code>）。所以，一个良好的语言不应该允许你把 <code>theSky = "blue"</code> 放进 <code>if (...)</code> 的“条件”里面。如果你真的要赋值又要判断，它会迫使你把这拆开成两行：</p>
 
 <pre><code>theSky = "blue";
 if (theSky) ...
 </code></pre>
 
-<p>æ´è¿ä¸æ­¥ã<code>if (theSky)</code> è¿ä¸ªåæ³å¶å®ä¹æ¯ä¸ä¸ªåè¾çç½ªã<code>theSky</code> çç±»åæ¯ <code>string</code>ï¼å®ä¸åºè¯¥å¯ä»¥ç´æ¥è¢«ä½ä¸º <code>bool</code> ä½¿ç¨ã<code>if (...)</code> çæ¡ä»¶åºè¯¥å¿é¡»æ¯ä¸ä¸ª <code>bool</code>ã æä»¥è¿éå¶å®åºè¯¥åæï¼</p>
+<p>更近一步。<code>if (theSky)</code> 这个写法其实也是一个先辈的罪。<code>theSky</code> 的类型是 <code>string</code>，它不应该可以直接被作为 <code>bool</code> 使用。<code>if (...)</code> 的条件应该必须是一个 <code>bool</code>。 所以这里其实应该写成：</p>
 
 <pre><code>theSky = "blue";
 if (theSky != NULL) ...
 </code></pre>
 
-<p>å ä¸ºèµå¼è¯­å¥æ°¸è¿ä¸å¯è½åºç°å¨æ¡ä»¶çä½ç½®ï¼æä»¥ä¹åçé£ç§éè¯¯ï¼å³ä½¿æä»¬ä½¿ç¨ <code>=</code> ä½ä¸ºèµå¼æä½ç¬¦ï¼ä¹å®å¨ä¸å¯è½åºç°ãè¿æ ·æä»¬ä¹å°±å®å¨æ²¡å¿è¦ç¨ Yoda è¡¨ç¤ºæ³äºã</p>
+<p>因为赋值语句永远不可能出现在条件的位置，所以之前的那种错误，即使我们使用 <code>=</code> 作为赋值操作符，也完全不可能出现。这样我们也就完全没必要用 Yoda 表示法了。</p>
 
-<p>ç¸åï¼å¦ææä»¬åªæ¯æ <code>=</code> æ¢æå Pascal ç <code>:=</code> è¿æ ·çèµå¼æä½ç¬¦ï¼èä¿çå¶å®çâç¹æ§âï¼èµå¼æä½ä¼è¿åå¼ï¼çè¯ï¼æä»¬å¶å®è¿æ¯ä¼éå°åæ ·çé®é¢ï¼</p>
+<p>相反，如果我们只是把 <code>=</code> 换成像 Pascal 的 <code>:=</code> 这样的赋值操作符，而保留其它的“特性”（赋值操作会返回值）的话，我们其实还是会遇到同样的问题：</p>
 
 <pre><code>if (theSky := "blue") ...
 </code></pre>
 
-<p>è¿éåè®¾ä½ æ³æ <code>=</code>ï¼å´ä¸å°å¿ææäº <code>:=</code>ãæºä¼è½ç¶å°ï¼ä½æ¯ä»ç¶æå¯è½ãèææ¨èçè§£å³æ¹æ¡ï¼ä¼è®©ä½ æææ³ç¯éè¯¯é½ä¸å¯è½ï¼ç¼è¯å¨ä¼æç»æ¥åä½ çç¨åºã</p>
+<p>这里假设你想打 <code>=</code>，却不小心打成了 <code>:=</code>。机会虽然小，但是仍然有可能。而我推荐的解决方案，会让你故意想犯错误都不可能，编译器会拒绝接受你的程序。</p>
 
-<p>æä»¥ä½ çå°äºï¼é®é¢çæ ¹æºå¶å®ä¸å¨äºèµå¼æä½çåå­ï¼èæ¯ææ´æ·±çåå ã</p>
-
-
+<p>所以你看到了，问题的根源其实不在于赋值操作的名字，而是有更深的原因。</p>
+    </div>
+    
+    <script src="js/highlight.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script>
+        if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
+            document.body.classList.add('mobile');
+            var navbar = document.querySelector('nav.navbar');
+            if (navbar) { navbar.classList.remove('navbar-fixed-top'); }
+        }
+    </script>
 </body>
-
 </html>

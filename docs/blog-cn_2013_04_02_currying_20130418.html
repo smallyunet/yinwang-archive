@@ -1,31 +1,77 @@
+<!DOCTYPE html>
 <html>
 <head>
-
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link href="http://www.yinwang.org/main.css" rel="stylesheet" type="text/css">
-<link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
-<link rel="shortcut icon" href="http://www.yinwang.org/images/Yc.jpg">
-
-<title>è°è° Currying</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <title>谈谈 Currying</title>
+    <link rel="stylesheet" href="css/highlight/xcode.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-tooltips.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/home.css"> <!-- Need home for navbar -->
+    <link rel="stylesheet" href="css/post.css">
+    <script src="js/jquery.min.js"></script>
+    <style>
+        /* Switcher Fixes */
+        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
+        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
+        .version-switcher a.current { font-weight: bold; color: #333; }
+        /* Inner override for posts */
+        .inner { margin-top: 80px; } 
+    </style>
 </head>
-ãã
 <body>
+    <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-bs">
+                    <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+                <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='aboutcmec_aboutcmec_01.jsp_20060213.html'>About</a></li><li><a href='aboutess_aboutess_01.jsp_20060213.html'>About</a></li><li><a href='aboutinfo_aboutinfo_01.jsp_20060106.html'>About</a></li><li><a href='tweet_20170605.html'>微勃 (Tweets)</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='homepage_20250719.html'>当然我在扯淡 (None)</a></li><li><a href='index.jsp_20060213.html'>中国中小企业竞争力工程 (None)</a></li><li><a href='index_20260110.html'>Surely I am Joking (None)</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Posts <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='posts_air-freshener-nightmare_20251129.html'>Surely I am Joking</a></li><li><a href='posts_american-english-problems_20251030.html'>Surely I am Joking</a></li><li><a href='posts_authority_20251221.html'>Surely I am Joking</a></li><li><a href='posts_cello-technique_20251102.html'>Surely I am Joking</a></li><li><a href='posts_continuation-course_20251206.html'>Surely I am Joking</a></li><li><a href='posts_cs-class2_20251105.html'>Surely I am Joking</a></li><li><a href='posts_cs-course-5_20251208.html'>Surely I am Joking</a></li><li><a href='posts_cs-video-course_20251101.html'>Surely I am Joking</a></li><li><a href='posts_cs3_20251102.html'>Surely I am Joking</a></li><li><a href='posts_cs4_20251102.html'>Surely I am Joking</a></li><li><a href='posts_cs5-completed_20251031.html'>Surely I am Joking</a></li><li><a href='posts_entry-level-class_20251102.html'>Surely I am Joking</a></li><li><a href='posts_learning-philosophy_20251211.html'>Surely I am Joking</a></li><li><a href='posts_oberon_20260113.html'>Surely I am Joking</a></li><li><a href='posts_reading-course_20251102.html'>Surely I am Joking</a></li><li><a href='posts_super-human-level-vision_20251104.html'>Surely I am Joking</a></li><li><a href='posts_tuition-for-covid_20251103.html'>Surely I am Joking</a></li><li><a href='posts_wisdom-of-intelligence_20251102.html'>Surely I am Joking</a></li><li><a href='posts_youth-cs-student_20251102.html'>Surely I am Joking</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='resources_d8-3404-d8-8424_20130614.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_base64mime.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_charset.py_20150506.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_encoders.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_errors.py_20150409.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_header.py_20140305.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_quoprimime.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_re.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_compile.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_constants.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_parse.py_20160822.html'>Untitled</a></li><li><a href='resources_diff1-diff2_20200728.html'>Untitled</a></li><li><a href='resources_mk1-mk2_20130627.html'>Untitled</a></li><li><a href='resources_nav1-nav2_20200728.html'>Untitled</a></li><li><a href='resources_paredit20-paredit23_20200728.html'>Untitled</a></li><li><a href='resources_pydiff1-pydiff2_20130711.html'>Untitled</a></li><li><a href='resources_simulator-mips-simulator-arm_20200728.html'>Untitled</a></li><li><a href='resources_typed-clojure1-typed-clojure2_20200728.html'>Untitled</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tags <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='tags_ai_20251103.html'>Surely I am Joking</a></li><li><a href='tags_education_20251031.html'>Surely I am Joking</a></li><li><a href='tags_english_20251101.html'>Surely I am Joking</a></li><li><a href='tags_health_20251102.html'>Surely I am Joking</a></li><li><a href='tags_life_20251129.html'>Surely I am Joking</a></li><li><a href='tags_lifestyle_20251101.html'>Surely I am Joking</a></li><li><a href='tags_philosophy_20251101.html'>Surely I am Joking</a></li><li><a href='tags_programming-language_20260113.html'>Surely I am Joking</a></li><li><a href='tags_travel_20251129.html'>Surely I am Joking</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Misc <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='.well-known_dnt-policy.txt_20251211.html'>Surely I am Joking</a></li><li><a href='_5C_20251205.html'>Surely I am Joking</a></li><li><a href='_5Cu003c_a_5Cu003e_5Cu003c_td_5Cu003e_5Cn_5Cu003ctd_5Cu003e_E7_BC_96_E7_A8_8B_5Cu003c_td_5Cu003e_5Cn_5Cu003c_tr_5Cu003e_5Cn_5Cu003ctr_5Cu003e_5Cn_5Cu003ctd_5Cu003e_5Cu003ca_20251204.html'>Surely I am Joking</a></li><li><a href='ads.txt_20251013.html'>Surely I am Joking</a></li><li><a href='afficheAction.do_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='apply_dcb.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='apply_twsqb.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='common_casetoyota.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='common_casexhx.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='common_courseBase_main.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='common_courseBase_tch_grzl.jsp_20060106.html'>Untitled</a></li><li><a href='contactus.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='datadownload.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='dljm.jsp_20060516.html'>竞争力工程</a></li><li><a href='fwjs.jsp_20060516.html'>竞争力工程</a></li><li><a href='hd_qgjx.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='laws_laws_01.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='lianxi.jsp_20060428.html'>竞争力工程</a></li><li><a href='more.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='neirong.jsp_20060516.html'>详细内容</a></li><li><a href='newsPublishAction.do_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='servicecenter_servicecenter_01.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='tongzhi.jsp_20060428.html'>竞争力工程</a></li><li><a href='tongzhi_tongzhi1.htm_20060428.html'>ÎÞ±êÌâÎÄµµ</a></li><li><a href='tongzhi_tongzhi2.htm_20060428.html'>ÎÞ±êÌâÎÄµµ</a></li><li><a href='units_gjfz.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='units_jstg.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='units_zgzx.jsp_20060213.html'>中国中小企业竞争力工程</a></li></ul></li></ul>
+            </div>
+        </div>
+    </nav>
 
-<h2>è°è° Currying</h2>
+    <div class="inner">
+        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2013_04_02_currying_20130418.html" class="current">2013-04-18</a> <a href="blog-cn_2013_04_02_currying_20140701.html" >2014-07-01</a> <a href="blog-cn_2013_04_02_currying_20160929.html" >2016-09-29</a> <a href="blog-cn_2013_04_02_currying_20170129.html" >2017-01-29</a> <a href="blog-cn_2013_04_02_currying_20170508.html" >2017-05-08</a> <a href="blog-cn_2013_04_02_currying_20170608.html" >2017-06-08</a> <a href="blog-cn_2013_04_02_currying_20171104.html" >2017-11-04</a> <a href="blog-cn_2013_04_02_currying_20171205.html" >2017-12-05</a> <a href="blog-cn_2013_04_02_currying_20180307.html" >2018-03-07</a> <a href="blog-cn_2013_04_02_currying_20191206.html" >2019-12-06</a> <a href="blog-cn_2013_04_02_currying_20200228.html" >2020-02-28</a> <a href="blog-cn_2013_04_02_currying_20240416.html" >2024-04-16</a></div>
+        <h2>谈谈 Currying</h2>
 
-<p>å¾å¤åºäº lambda calculus çç¨åºè¯­è¨ï¼æ¯å¦ ML å Haskellï¼é½ä¹ æ¯ç¨ä¸ç§å«å currying çææ³æ¥è¡¨ç¤ºå½æ°ãæ¯å¦ï¼å¦æä½ å¨ Haskell éé¢è¿æ ·åä¸ä¸ªå½æ°ï¼</p>
+<p>很多基于 lambda calculus 的程序语言，比如 ML 和 Haskell，都习惯用一种叫做 currying 的手法来表示函数。比如，如果你在 Haskell 里面这样写一个函数：</p>
 
 <pre><code>f x y = x + y
 </code></pre>
 
-<p>ç¶åä½ å°±å¯ä»¥è¿æ ·æé¾è¡¨éçæ¯ä¸ªåç´ å ä¸ 2ï¼</p>
+<p>然后你就可以这样把链表里的每个元素加上 2：</p>
 
 <pre><code>map (f 2) [1, 2, 3]
 </code></pre>
 
-<p>å®ä¼è¾åº <code>[3, 4, 5]</code>ã</p>
+<p>它会输出 <code>[3, 4, 5]</code>。</p>
 
-<p>æ³¨ææ¬æ¥ <code>f</code> éè¦ä¸¤ä¸ªåæ°æè½ç®åºç»æï¼å¯æ¯è¿éç <code>(f 2)</code> åªç»äº <code>f</code> ä¸ä¸ªåæ°ãè¿æ¯å ä¸º Haskell çå½æ°å®ä¹çç¼ºçæ¹å¼æ¯âcurryingâãCurrying å¶å®å°±æ¯ç¨âååæ°âçå½æ°ï¼æ¥æ¨¡æå¤åæ°çå½æ°ãæ¯å¦ï¼ä¸é¢ç <code>f</code> çå®ä¹å¨ Scheme éé¢ç¸å½äºï¼</p>
+<p>注意本来 <code>f</code> 需要两个参数才能算出结果，可是这里的 <code>(f 2)</code> 只给了 <code>f</code> 一个参数。这是因为 Haskell 的函数定义的缺省方式是“currying”。Currying 其实就是用“单参数”的函数，来模拟多参数的函数。比如，上面的 <code>f</code> 的定义在 Scheme 里面相当于：</p>
 
 <pre><code>(define f
   (lambda (x)
@@ -33,79 +79,88 @@
       (+ x y))))
 </code></pre>
 
-<p>å®æ¯è¯´ï¼å½æ° <code>f</code>ï¼æ¥åä¸ä¸ªåæ° <code>x</code>ï¼è¿åå¦ä¸ä¸ªå½æ°ï¼æ²¡æåå­ï¼ãè¿ä¸ªå¿åå½æ°ï¼å¦æåæ¥åä¸ä¸ªåæ° <code>y</code>ï¼å°±ä¼è¿å <code>x + y</code>ãæä»¥ä¸é¢çä¾å­éé¢ï¼<code>(f 2)</code> è¿åçæ¯ä¸ä¸ªå¿åå½æ°ï¼å®ä¼æ 2 å å°èªå·±çåæ°ä¸é¢è¿åãæä»¥æå® map å° <code>[1, 2, 3]</code>ï¼æä»¬å°±å¾å°äº <code>[3, 4, 5]</code>ã</p>
+<p>它是说，函数 <code>f</code>，接受一个参数 <code>x</code>，返回另一个函数（没有名字）。这个匿名函数，如果再接受一个参数 <code>y</code>，就会返回 <code>x + y</code>。所以上面的例子里面，<code>(f 2)</code> 返回的是一个匿名函数，它会把 2 加到自己的参数上面返回。所以把它 map 到 <code>[1, 2, 3]</code>，我们就得到了 <code>[3, 4, 5]</code>。</p>
 
-<p>å¨è¿ä¸ªä¾å­éé¢ï¼currying è²ä¼¼ä¸ä¸ªæºæç¨çä¸è¥¿ï¼å®è®©ç¨åºåå¾âç®ç­âãå¦æä¸ç¨ curryingï¼ä½ å°±éè¦å¶é å¦ä¸ä¸ªå½æ°ï¼åæè¿ä¸ªæ ·å­ï¼</p>
+<p>在这个例子里面，currying 貌似一个挺有用的东西，它让程序变得“简短”。如果不用 currying，你就需要制造另一个函数，写成这个样子：</p>
 
 <pre><code>map (\y-&gt;f 2 y) [1, 2, 3]
 </code></pre>
 
-<p>è¿å°±æ¯ä¸ºä»ä¹ Haskell å ML çç¨åºåé£ä¹åæ¬¢ curryingãè¿ä¸ªåæ³å¶å®æ¥æºäºææ©ç lambda calculus çè®¾è®¡ãå ä¸º lambda calculus çå½æ°é½åªæä¸ä¸ªåæ°ï¼æä»¥ä¸ºäºè½å¤è¡¨ç¤ºå¤åæ°çå½æ°ï¼æä¸ä¸ªå« Haskell Curry çæ°å­¦å®¶åé»è¾å­¦å®¶ï¼åæäºè¿ä¸ªæ¹æ³ã</p>
+<p>这就是为什么 Haskell 和 ML 的程序员那么喜欢 currying。这个做法其实来源于最早的 lambda calculus 的设计。因为 lambda calculus 的函数都只有一个参数，所以为了能够表示多参数的函数，有一个叫 Haskell Curry 的数学家和逻辑学家，发明了这个方法。</p>
 
-<p>å½ç¶ï¼Haskell Curry æ¯æå¾å°æ¬çäººãä¸è¿æä»å¤©æ³æåºçæ¯ï¼currying å¨ç¨åºè®¾è®¡çå®è·µä¸­ï¼å¶å®å¹¶ä¸æ¯æ³è±¡ä¸­çé£ä¹å¥½ãå¤§éä½¿ç¨ curryingï¼å¶å®ä¼å¸¦æ¥ç¨åºé¾ä»¥çè§£ï¼å¤ææ§å¢å ï¼å¹¶ä¸è¿å¯è½å æ­¤å¼èµ·ææ³ä¸å°çéè¯¯ã</p>
+<p>当然，Haskell Curry 是我很尊敬的人。不过我今天想指出的是，currying 在程序设计的实践中，其实并不是想象中的那么好。大量使用 currying，其实会带来程序难以理解，复杂性增加，并且还可能因此引起意想不到的错误。</p>
 
-<p>ä¸ç¨ currying çåæ³<code>(\y-&gt;f 2 y)</code>è½ç¶æ¯èµ· currying çåæ³<code>(f 2)</code>é¿äºé£ä¹ä¸ç¹ï¼ä½æ¯å®æä¸ç¹å¥½ãé£å°±æ¯ä½ ä½ä¸ºä¸ä¸ªäººï¼èä¸æ¯æºå¨ï¼ï¼å¯ä»¥å¾æ¸æ¥çä»â\y->f 2 yâè¿ä¸ªè¡¨è¾¾å¼ï¼çå°å®çâç¨æâæ¯ä»ä¹ãä½ ä¼å¾æ¸æ¥ççå°ï¼</p>
+<p>不用 currying 的写法<code>(\y-&gt;f 2 y)</code>虽然比起 currying 的写法<code>(f 2)</code>长了那么一点，但是它有一点好。那就是你作为一个人（而不是机器），可以很清楚的从“\y->f 2 y”这个表达式，看到它的“用意”是什么。你会很清楚的看到：</p>
 
-<blockquote><p>âf æ¬æ¥æ¯ä¸ä¸ªéè¦ä¸¤ä¸ªåæ°çå½æ°ãæä»¬åªç»äºå®ç¬¬ä¸ä¸ªåæ° 2ãæä»¬æ³è¦æ [1, 2, 3] è¿ä¸ªé¾è¡¨éçæ¯ä¸ä¸ªåç´ ï¼æ¾è¿ f çç¬¬äºä¸ªåæ° yï¼ç¶åæ f è¿åçç»æä¸ä¸ªä¸ä¸ªçæ¾è¿è¿åå¼çé¾è¡¨éãâ</p></blockquote>
+<blockquote><p>“f 本来是一个需要两个参数的函数。我们只给了它第一个参数 2。我们想要把 [1, 2, 3] 这个链表里的每一个元素，放进 f 的第二个参数 y，然后把 f 返回的结果一个一个的放进返回值的链表里。”</p></blockquote>
 
-<p>ä»ç»ççä¸é¢è¿æ®µè¯è¯´äºä»ä¹å§ï¼åæ¥çç <code>(f 2)</code> æ¯å¦è¡¨è¾¾äºåæ ·çææï¼æ³¨æï¼æä»¬ç°å¨çâéç¹âå¨äºä½ ï¼ä¸ä¸ªäººï¼èä¸å¨äºè®¡ç®æºãä½ ä»ç»æ³ï¼ä¸è¦è®©æç»´çå®å¿æ¥å½±åä½ çå¤æ­ã</p>
+<p>仔细看看上面这段话说了什么吧，再来看看 <code>(f 2)</code> 是否表达了同样的意思？注意，我们现在的“重点”在于你，一个人，而不在于计算机。你仔细想，不要让思维的定势来影响你的判断。</p>
 
-<p>ä½ åç°äºåï¼<code>(f 2)</code> å¹¶ä¸å®å¨çå«æ <code>\y-&gt;f 2 y</code> æè¡¨è¾¾çåå®¹ãå ä¸ºåä» <code>(f 2)</code> è¿ä¸ªè¡¨è¾¾å¼ï¼ä¸çå®çå®ä¹ï¼ï¼ä½ çä¸å°âf æ»å±éè¦å ä¸ªåæ°âè¿ä¸ä¿¡æ¯ï¼ä½ ä¹çä¸å° (f 2) ä¼è¿åä»ä¹ä¸è¥¿ãf æå¯è½éè¦2ä¸ªåæ°ï¼ä¹æå¯è½éè¦3ä¸ªï¼4ä¸ªï¼5ä¸ªâ¦â¦ æ¯å¦ï¼å¦æå®éè¦3ä¸ªåæ°çè¯ï¼<code>map (f 2) [1, 2, 3]</code> å°±ä¸ä¼è¿åä¸ä¸ªæ´æ°çé¾è¡¨ï¼èä¼è¿åä¸ä¸ªå½æ°çé¾è¡¨ï¼å®çèµ·æ¥æ¯è¿æ ·ï¼<code>[(\z-&gt;f 2 1 z), (\z-&gt;f 2 2 z), (\z-&gt;f 2 3 z)]</code>ãè¿ä¸ä¸ªå½æ°åå«è¿éè¦ä¸ä¸ªåæ°ï¼æä¼è¾åºç»æã</p>
+<p>你发现了吗？<code>(f 2)</code> 并不完全的含有 <code>\y-&gt;f 2 y</code> 所表达的内容。因为单从 <code>(f 2)</code> 这个表达式（不看它的定义），你看不到“f 总共需要几个参数”这一信息，你也看不到 (f 2) 会返回什么东西。f 有可能需要2个参数，也有可能需要3个，4个，5个…… 比如，如果它需要3个参数的话，<code>map (f 2) [1, 2, 3]</code> 就不会返回一个整数的链表，而会返回一个函数的链表，它看起来是这样：<code>[(\z-&gt;f 2 1 z), (\z-&gt;f 2 2 z), (\z-&gt;f 2 3 z)]</code>。这三个函数分别还需要一个参数，才会输出结果。</p>
 
-<p>è¿æ ·ä¸æ¥ï¼è¡¨è¾¾å¼ <code>(f 2)</code> å«æçå¯¹âäººâæç¨çä¿¡æ¯ï¼å°±æ¯è¾å°äºãä½ ä¸è½å¾å¯é å°ç¥éè¿ä¸ªå½æ°æ¥åäºä¸ä¸ªåæ°ä¹åä¼åæä»ä¹æ ·å­ãå½ç¶ï¼ä½ å¯ä»¥å»ç <code>f</code> çå®ä¹ï¼ç¶åååæ¥ï¼ä½æ¯è¿éæä¸ç§âç´è§âä¸çå¼éãå¦æä½ ä¸è½åæ¶çè§è¿äºä¿¡æ¯ï¼ä½ çèå­å°±éè¦å¤è½¬ä¸éå¼¯ï¼ä½ å°±ä¼ç¼ºå°ä¸äºéè¦çç´è§ãè¿ç§ç´è§è½å¸®å©ä½ ååºæ´å¥½çç¨åºã</p>
+<p>这样一来，表达式 <code>(f 2)</code> 含有的对“人”有用的信息，就比较少了。你不能很可靠地知道这个函数接受了一个参数之后会变成什么样子。当然，你可以去看 <code>f</code> 的定义，然后再回来，但是这里有一种“直觉”上的开销。如果你不能同时看见这些信息，你的脑子就需要多转一道弯，你就会缺少一些重要的直觉。这种直觉能帮助你写出更好的程序。</p>
 
-<p>ç¶èï¼currying çé®é¢ä¸æ­¢å¨äºè¿ç§âè®¤ç¥âçæ¹é¢ï¼ææ¶åä½¿ç¨ curry ä¼ç´æ¥å¸¦æ¥ä»£ç å¤ææ§çå¢å ãæ¯å¦ï¼å¦æä½ ç f å®ä¹ä¸æ¯å æ³ï¼èæ¯é¤æ³ï¼</p>
+<p>然而，currying 的问题不止在于这种“认知”的方面，有时候使用 curry 会直接带来代码复杂性的增加。比如，如果你的 f 定义不是加法，而是除法：</p>
 
 <pre><code>f x y = x / y
 </code></pre>
 
-<p>ç¶åï¼æä»¬ç°å¨éè¦æé¾è¡¨ <code>[1, 2, 3]</code> éçæ¯ä¸ä¸ªæ°é½é¤ä»¥ 2ãä½ ä¼æä¹åå¢ï¼</p>
+<p>然后，我们现在需要把链表 <code>[1, 2, 3]</code> 里的每一个数都除以 2。你会怎么做呢？</p>
 
-<p><code>map (f 2) [1, 2, 3]</code> è¯å®ä¸è¡ï¼å ä¸º 2 æ¯é¤æ°ï¼èä¸æ¯è¢«é¤æ°ãçæ Haskell çäººé½ç¥éï¼å¯ä»¥è¿æ ·åï¼</p>
+<p><code>map (f 2) [1, 2, 3]</code> 肯定不行，因为 2 是除数，而不是被除数。熟悉 Haskell 的人都知道，可以这样做：</p>
 
 <pre><code>map (flip f 2) [1, 2, 3]
 </code></pre>
 
-<p><code>flip</code> çä½ç¨æ¯âäº¤æ¢âä¸¤ä¸ªåæ°çä½ç½®ãå®å¯ä»¥è¢«å®ä¹ä¸ºï¼</p>
+<p><code>flip</code> 的作用是“交换”两个参数的位置。它可以被定义为：</p>
 
 <pre><code>flip f x y = f y x
 </code></pre>
 
-<p>ä½æ¯ï¼å¦æ f æ 3 ä¸ªåæ°ï¼èæä»¬éè¦æå®çç¬¬ 2 ä¸ªåæ° <code>map</code> å°ä¸ä¸ªé¾è¡¨ï¼æä¹åå¢ï¼æ¯å¦ï¼å¦æ <code>f</code> è¢«å®ä¹ä¸ºï¼</p>
+<p>但是，如果 f 有 3 个参数，而我们需要把它的第 2 个参数 <code>map</code> 到一个链表，怎么办呢？比如，如果 <code>f</code> 被定义为：</p>
 
 <pre><code>f x y z = (x - y) / z
 </code></pre>
 
-<p>ç¨å¾®å¨ä¸ä¸èç­ï¼ä½ å¯è½ä¼æ³åºè¿æ ·çä»£ç ï¼</p>
+<p>稍微动一下脑筋，你可能会想出这样的代码：</p>
 
 <pre><code>map (flip (f 1) 2) [1, 2, 3]
 </code></pre>
 
-<p>è½æ³åºè¿æ®µä»£ç è¯´æä½ æºèªæï¼å¯æ¯å¦æä½ è¿æ ·åä»£ç ï¼é£å°±æ¯ç¼ºä¹ä¸äºâæºæ§âãææ¶åï¼å¥½çç¨åºå¶å®ä¸å¨äºæ¾ç¤ºä½ æå¤âèªæâï¼èå¨äºæ¾ç¤ºä½ æå¤âç¬¨âãç°å¨æä»¬å°±æ¥ççç¬¨ä¸ç¹çä»£ç ï¼</p>
+<p>能想出这段代码说明你挺聪明，可是如果你这样写代码，那就是缺乏一些“智慧”。有时候，好的程序其实不在于显示你有多“聪明”，而在于显示你有多“笨”。现在我们就来看看笨一点的代码：</p>
 
 <pre><code>map (\y -&gt; f 1 y 2) [1, 2, 3]
 </code></pre>
 
-<p>ç°å¨æ¯è¾ä¸ä¸ï¼ä½ ä»ç¶è§å¾ä¹åé£æ®µä»£ç å¾èªæåï¼å¦æä½ æ³¨æè§å¯ï¼å°±ä¼åç° <code>(flip (f 1) 2)</code> è¿ä¸ªè¡¨è¾¾å¼ï¼æ¯å¤ä¹çæ¦æ¶©ï¼å¤ä¹çå¤æã</p>
+<p>现在比较一下，你仍然觉得之前那段代码很聪明吗？如果你注意观察，就会发现 <code>(flip (f 1) 2)</code> 这个表达式，是多么的晦涩，多么的复杂。</p>
 
-<p>ä» <code>(flip (f 1) 2)</code> éé¢ï¼ä½ å ä¹çä¸å°èªå·±æ³è¦å¹²ä»ä¹ãè <code>\y-&gt; f 1 y 2</code> å´å¾æç¡®çæ¾ç¤ºåºï¼ä½ æ³ç¨ 1 å 2 å¡«åæ <code>f</code> çç¬¬ä¸ï¼ä¸å·åæ°ï¼æç¬¬äºä¸ªåæ°çä¸æ¥ï¼ç¶åæå¾å°çå½æ° map å°é¾è¡¨ <code>[1, 2, 3]</code>ãä»ç»ççï¼æ¯ä¸æ¯è¿æ ·çï¼</p>
+<p>从 <code>(flip (f 1) 2)</code> 里面，你几乎看不到自己想要干什么。而 <code>\y-&gt; f 1 y 2</code> 却很明确的显示出，你想用 1 和 2 填充掉 <code>f</code> 的第一，三号参数，把第二个参数留下来，然后把得到的函数 map 到链表 <code>[1, 2, 3]</code>。仔细看看，是不是这样的？</p>
 
-<p>æä»¥ä½ è±è´¹äºæºå¤çèåææé£ä½¿ç¨ currying çä»£ç ååºæ¥ï¼ç¶åä½ æ¯æ¬¡çå°å®ï¼è¿éè¦èè´¹åæ ·å¤çèåï¼æè½æç½ä½ å½æ¶åå®æ¥å¹²åãä½ æ¯ä¸æ¯åé¥±äºæ²¡äºå¹²å¢ï¼</p>
+<p>所以你花费了挺多的脑力才把那使用 currying 的代码写出来，然后你每次看到它，还需要耗费同样多的脑力，才能明白你当时写它来干嘛。你是不是吃饱了没事干呢？</p>
 
-<p>ç»ä¹ é¢ï¼å¦æä½ è¿ä¸ç¸ä¿¡ï¼å°±è¯·ä½ ç¨ currying çæ¹æ³ï¼å ä¸ <code>flip</code>ï¼è¡¨è¾¾ä¸é¢è¿ä¸ªè¯­å¥ï¼ä¹å°±æ¯æ f çç¬¬ä¸ä¸ªåæ° map å°é¾è¡¨ <code>[1, 2, 3]</code>ï¼</p>
+<p>练习题：如果你还不相信，就请你用 currying 的方法（加上 <code>flip</code>）表达下面这个语句，也就是把 f 的第一个参数 map 到链表 <code>[1, 2, 3]</code>：</p>
 
 <pre><code>map (\y -&gt; f y 1 2) [1, 2, 3]
 </code></pre>
 
-<p>å¾å°ç»æä¹ååè·ä¸é¢è¿ä¸ªè¯­å¥å¯¹æ¯ï¼çè°æ´å ç®åï¼</p>
+<p>得到结果之后再跟上面这个语句对比，看谁更加简单？</p>
 
-<p>å°ç°å¨ä½ ä¹è®¸æ³¨æå°äºï¼ä»¥ä¸çâç¬¨åæ³âå¯¹äºæä»¬æ³è¦ <code>map</code> çæ¯ä¸ä¸ªåæ°ï¼é½æ¯å·®ä¸å¤çå½¢å¼ï¼èä½¿ç¨ currying çä»£ç ï¼å¯¹äºæ¯ä¸ªåæ°ï¼å½¢å¼æå¾å¤§çå·®å«ãæä»¥æä»¬çâç¬¨åæ³âå¶å®ææ¯ä»¥ä¸ååºä¸åçè¯ç­ã</p>
+<p>到现在你也许注意到了，以上的“笨办法”对于我们想要 <code>map</code> 的每一个参数，都是差不多的形式；而使用 currying 的代码，对于每个参数，形式有很大的差别。所以我们的“笨办法”其实才是以不变应万变的良策。</p>
 
-<p>æä¸ä¸ªåæ°ï¼currying å°±æ¾ç¤ºåºäºå®çå¼±ç¹ï¼å¦æè¶è¿ä¸ä¸ªåæ°ï¼é£å°±æ´éº»ç¦äºãæä»¥å¾å¤äººä¸ºäºå currying çå½æ°ï¼ç¹ææåæ°è°æ´å°æ¹ä¾¿ currying çé¡ºåºãå¯æ¯ç¨åºçè®¾è®¡æ»æ¯æææ³ä¸å°çååãææ¶åä½ éè¦å¢å ä¸ä¸ªåæ°ï¼ææ¶åä½ åæ³åå°ä¸ä¸ªåæ°ï¼ææ¶åä½ åä¼æå«çç¨æ³ï¼å¯¼è´ä½ éè¦è°æ´åæ°çé¡ºåºâ¦â¦ äºåå®æå¥½çé£äºåæ°é¡ºåºï¼å¾æå¯è½ä¸è½æ»¡è¶³ä½ åæ¥çéè¦ãå³ä½¿å®è½æ»¡è¶³ä½ åæ¥çéè¦ï¼ä½ çå½æ°ä¹ä¼å ä¸º currying èé¾ä»¥çæã</p>
+<p>才三个参数，currying 就显示出了它的弱点，如果超过三个参数，那就更麻烦了。所以很多人为了写 currying 的函数，特意把参数调整到方便 currying 的顺序。可是程序的设计总是有意想不到的变化。有时候你需要增加一个参数，有时候你又想减少一个参数，有时候你又会有别的用法，导致你需要调整参数的顺序…… 事先安排好的那些参数顺序，很有可能不能满足你后来的需要。即使它能满足你后来的需要，你的函数也会因为 currying 而难以看懂。</p>
 
-<p>è¿å°±æ¯ä¸ºä»ä¹æä»æ¥ä¸å¨æç ML å Haskell ç¨åºéä½¿ç¨ currying çåå ãå¤èèç¾ä¸½ççè®ºï¼ä¹è®¸è½å¤ç»æå¸¦æ¥ææ³çå¯è¿ªï¼å¯æ¯æªå¿å°±è½å¸¦æ¥å·¥ç¨ä¸­çæ³çææã</p>
-
-
+<p>这就是为什么我从来不在我的 ML 和 Haskell 程序里使用 currying 的原因。古老而美丽的理论，也许能够给我带来思想的启迪，可是未必就能带来工程中理想的效果。</p>
+    </div>
+    
+    <script src="js/highlight.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script>
+        if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
+            document.body.classList.add('mobile');
+            var navbar = document.querySelector('nav.navbar');
+            if (navbar) { navbar.classList.remove('navbar-fixed-top'); }
+        }
+    </script>
 </body>
-
 </html>

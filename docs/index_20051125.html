@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <title>中国中小企业竞争力工程</title>
+    <link rel="stylesheet" href="css/highlight/xcode.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-tooltips.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/home.css"> <!-- Need home for navbar -->
+    <link rel="stylesheet" href="css/post.css">
+    <script src="js/jquery.min.js"></script>
+    <style>
+        /* Switcher Fixes */
+        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
+        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
+        .version-switcher a.current { font-weight: bold; color: #333; }
+        /* Inner override for posts */
+        .inner { margin-top: 80px; } 
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-bs">
+                    <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+                <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='aboutcmec_aboutcmec_01.jsp_20060213.html'>About</a></li><li><a href='aboutess_aboutess_01.jsp_20060213.html'>About</a></li><li><a href='aboutinfo_aboutinfo_01.jsp_20060106.html'>About</a></li><li><a href='tweet_20170605.html'>微勃 (Tweets)</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='homepage_20250719.html'>当然我在扯淡 (None)</a></li><li><a href='index.jsp_20060213.html'>中国中小企业竞争力工程 (None)</a></li><li><a href='index_20260110.html'>Surely I am Joking (None)</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Posts <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='posts_air-freshener-nightmare_20251129.html'>Surely I am Joking</a></li><li><a href='posts_american-english-problems_20251030.html'>Surely I am Joking</a></li><li><a href='posts_authority_20251221.html'>Surely I am Joking</a></li><li><a href='posts_cello-technique_20251102.html'>Surely I am Joking</a></li><li><a href='posts_continuation-course_20251206.html'>Surely I am Joking</a></li><li><a href='posts_cs-class2_20251105.html'>Surely I am Joking</a></li><li><a href='posts_cs-course-5_20251208.html'>Surely I am Joking</a></li><li><a href='posts_cs-video-course_20251101.html'>Surely I am Joking</a></li><li><a href='posts_cs3_20251102.html'>Surely I am Joking</a></li><li><a href='posts_cs4_20251102.html'>Surely I am Joking</a></li><li><a href='posts_cs5-completed_20251031.html'>Surely I am Joking</a></li><li><a href='posts_entry-level-class_20251102.html'>Surely I am Joking</a></li><li><a href='posts_learning-philosophy_20251211.html'>Surely I am Joking</a></li><li><a href='posts_oberon_20260113.html'>Surely I am Joking</a></li><li><a href='posts_reading-course_20251102.html'>Surely I am Joking</a></li><li><a href='posts_super-human-level-vision_20251104.html'>Surely I am Joking</a></li><li><a href='posts_tuition-for-covid_20251103.html'>Surely I am Joking</a></li><li><a href='posts_wisdom-of-intelligence_20251102.html'>Surely I am Joking</a></li><li><a href='posts_youth-cs-student_20251102.html'>Surely I am Joking</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='resources_d8-3404-d8-8424_20130614.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_base64mime.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_charset.py_20150506.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_encoders.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_errors.py_20150409.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_header.py_20140305.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_email_quoprimime.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_re.py_20150408.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_compile.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_constants.py_20160822.html'>Untitled</a></li><li><a href='resources_demos_pysonar2_sre_parse.py_20160822.html'>Untitled</a></li><li><a href='resources_diff1-diff2_20200728.html'>Untitled</a></li><li><a href='resources_mk1-mk2_20130627.html'>Untitled</a></li><li><a href='resources_nav1-nav2_20200728.html'>Untitled</a></li><li><a href='resources_paredit20-paredit23_20200728.html'>Untitled</a></li><li><a href='resources_pydiff1-pydiff2_20130711.html'>Untitled</a></li><li><a href='resources_simulator-mips-simulator-arm_20200728.html'>Untitled</a></li><li><a href='resources_typed-clojure1-typed-clojure2_20200728.html'>Untitled</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tags <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='tags_ai_20251103.html'>Surely I am Joking</a></li><li><a href='tags_education_20251031.html'>Surely I am Joking</a></li><li><a href='tags_english_20251101.html'>Surely I am Joking</a></li><li><a href='tags_health_20251102.html'>Surely I am Joking</a></li><li><a href='tags_life_20251129.html'>Surely I am Joking</a></li><li><a href='tags_lifestyle_20251101.html'>Surely I am Joking</a></li><li><a href='tags_philosophy_20251101.html'>Surely I am Joking</a></li><li><a href='tags_programming-language_20260113.html'>Surely I am Joking</a></li><li><a href='tags_travel_20251129.html'>Surely I am Joking</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Misc <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='.well-known_dnt-policy.txt_20251211.html'>Surely I am Joking</a></li><li><a href='_5C_20251205.html'>Surely I am Joking</a></li><li><a href='_5Cu003c_a_5Cu003e_5Cu003c_td_5Cu003e_5Cn_5Cu003ctd_5Cu003e_E7_BC_96_E7_A8_8B_5Cu003c_td_5Cu003e_5Cn_5Cu003c_tr_5Cu003e_5Cn_5Cu003ctr_5Cu003e_5Cn_5Cu003ctd_5Cu003e_5Cu003ca_20251204.html'>Surely I am Joking</a></li><li><a href='ads.txt_20251013.html'>Surely I am Joking</a></li><li><a href='afficheAction.do_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='apply_dcb.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='apply_twsqb.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='common_casetoyota.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='common_casexhx.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='common_courseBase_main.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='common_courseBase_tch_grzl.jsp_20060106.html'>Untitled</a></li><li><a href='contactus.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='datadownload.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='dljm.jsp_20060516.html'>竞争力工程</a></li><li><a href='fwjs.jsp_20060516.html'>竞争力工程</a></li><li><a href='hd_qgjx.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='laws_laws_01.jsp_20060106.html'>中国中小企业竞争力工程</a></li><li><a href='lianxi.jsp_20060428.html'>竞争力工程</a></li><li><a href='more.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='neirong.jsp_20060516.html'>详细内容</a></li><li><a href='newsPublishAction.do_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='servicecenter_servicecenter_01.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='tongzhi.jsp_20060428.html'>竞争力工程</a></li><li><a href='tongzhi_tongzhi1.htm_20060428.html'>ÎÞ±êÌâÎÄµµ</a></li><li><a href='tongzhi_tongzhi2.htm_20060428.html'>ÎÞ±êÌâÎÄµµ</a></li><li><a href='units_gjfz.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='units_jstg.jsp_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='units_zgzx.jsp_20060213.html'>中国中小企业竞争力工程</a></li></ul></li></ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="inner">
+        <div class="version-switcher"><span>Versions:</span><a href="index_20051105.html" >2005-11-05</a> <a href="index_20051125.html" class="current">2005-11-25</a> <a href="index_20060202.html" >2006-02-02</a> <a href="index_20060403.html" >2006-04-03</a> <a href="index_20060610.html" >2006-06-10</a> <a href="index_20130417.html" >2013-04-17</a> <a href="index_20130426.html" >2013-04-26</a> <a href="index_20130504.html" >2013-05-04</a> <a href="index_20130604.html" >2013-06-04</a> <a href="index_20130627.html" >2013-06-27</a> <a href="index_20130709.html" >2013-07-09</a> <a href="index_20130716.html" >2013-07-16</a> <a href="index_20130722.html" >2013-07-22</a> <a href="index_20130729.html" >2013-07-29</a> <a href="index_20130924.html" >2013-09-24</a> <a href="index_20131009.html" >2013-10-09</a> <a href="index_20131030.html" >2013-10-30</a> <a href="index_20131108.html" >2013-11-08</a> <a href="index_20131117.html" >2013-11-17</a> <a href="index_20131125.html" >2013-11-25</a> <a href="index_20140116.html" >2014-01-16</a> <a href="index_20140125.html" >2014-01-25</a> <a href="index_20140213.html" >2014-02-13</a> <a href="index_20140225.html" >2014-02-25</a> <a href="index_20140313.html" >2014-03-13</a> <a href="index_20140416.html" >2014-04-16</a> <a href="index_20140426.html" >2014-04-26</a> <a href="index_20140503.html" >2014-05-03</a> <a href="index_20140511.html" >2014-05-11</a> <a href="index_20140519.html" >2014-05-19</a> <a href="index_20140619.html" >2014-06-19</a> <a href="index_20140729.html" >2014-07-29</a> <a href="index_20140814.html" >2014-08-14</a> <a href="index_20140820.html" >2014-08-20</a> <a href="index_20140905.html" >2014-09-05</a> <a href="index_20140915.html" >2014-09-15</a> <a href="index_20140928.html" >2014-09-28</a> <a href="index_20141017.html" >2014-10-17</a> <a href="index_20141125.html" >2014-11-25</a> <a href="index_20141226.html" >2014-12-26</a> <a href="index_20150106.html" >2015-01-06</a> <a href="index_20150121.html" >2015-01-21</a> <a href="index_20150202.html" >2015-02-02</a> <a href="index_20150205.html" >2015-02-05</a> <a href="index_20150225.html" >2015-02-25</a> <a href="index_20150304.html" >2015-03-04</a> <a href="index_20150313.html" >2015-03-13</a> <a href="index_20150321.html" >2015-03-21</a> <a href="index_20150324.html" >2015-03-24</a> <a href="index_20150328.html" >2015-03-28</a> <a href="index_20150405.html" >2015-04-05</a> <a href="index_20150619.html" >2015-06-19</a> <a href="index_20150702.html" >2015-07-02</a> <a href="index_20150709.html" >2015-07-09</a> <a href="index_20150924.html" >2015-09-24</a> <a href="index_20151019.html" >2015-10-19</a> <a href="index_20151107.html" >2015-11-07</a> <a href="index_20151115.html" >2015-11-15</a> <a href="index_20151126.html" >2015-11-26</a> <a href="index_20151213.html" >2015-12-13</a> <a href="index_20160109.html" >2016-01-09</a> <a href="index_20160121.html" >2016-01-21</a> <a href="index_20160221.html" >2016-02-21</a> <a href="index_20160228.html" >2016-02-28</a> <a href="index_20160314.html" >2016-03-14</a> <a href="index_20160321.html" >2016-03-21</a> <a href="index_20160401.html" >2016-04-01</a> <a href="index_20160412.html" >2016-04-12</a> <a href="index_20160418.html" >2016-04-18</a> <a href="index_20160514.html" >2016-05-14</a> <a href="index_20160521.html" >2016-05-21</a> <a href="index_20160526.html" >2016-05-26</a> <a href="index_20160607.html" >2016-06-07</a> <a href="index_20160613.html" >2016-06-13</a> <a href="index_20160618.html" >2016-06-18</a> <a href="index_20160624.html" >2016-06-24</a> <a href="index_20160629.html" >2016-06-29</a> <a href="index_20160708.html" >2016-07-08</a> <a href="index_20160713.html" >2016-07-13</a> <a href="index_20160917.html" >2016-09-17</a> <a href="index_20160922.html" >2016-09-22</a> <a href="index_20161006.html" >2016-10-06</a> <a href="index_20161010.html" >2016-10-10</a> <a href="index_20161016.html" >2016-10-16</a> <a href="index_20161029.html" >2016-10-29</a> <a href="index_20161115.html" >2016-11-15</a> <a href="index_20161119.html" >2016-11-19</a> <a href="index_20161120.html" >2016-11-20</a> <a href="index_20170506.html" >2017-05-06</a> <a href="index_20170514.html" >2017-05-14</a> <a href="index_20170517.html" >2017-05-17</a> <a href="index_20170521.html" >2017-05-21</a> <a href="index_20170526.html" >2017-05-26</a> <a href="index_20170602.html" >2017-06-02</a> <a href="index_20170710.html" >2017-07-10</a> <a href="index_20170721.html" >2017-07-21</a> <a href="index_20170805.html" >2017-08-05</a> <a href="index_20170811.html" >2017-08-11</a> <a href="index_20170820.html" >2017-08-20</a> <a href="index_20170909.html" >2017-09-09</a> <a href="index_20170926.html" >2017-09-26</a> <a href="index_20171003.html" >2017-10-03</a> <a href="index_20171012.html" >2017-10-12</a> <a href="index_20171019.html" >2017-10-19</a> <a href="index_20171025.html" >2017-10-25</a> <a href="index_20171031.html" >2017-10-31</a> <a href="index_20171106.html" >2017-11-06</a> <a href="index_20171110.html" >2017-11-10</a> <a href="index_20171115.html" >2017-11-15</a> <a href="index_20171119.html" >2017-11-19</a> <a href="index_20171130.html" >2017-11-30</a> <a href="index_20171206.html" >2017-12-06</a> <a href="index_20171212.html" >2017-12-12</a> <a href="index_20171219.html" >2017-12-19</a> <a href="index_20180103.html" >2018-01-03</a> <a href="index_20180221.html" >2018-02-21</a> <a href="index_20180228.html" >2018-02-28</a> <a href="index_20180305.html" >2018-03-05</a> <a href="index_20180309.html" >2018-03-09</a> <a href="index_20180323.html" >2018-03-23</a> <a href="index_20180327.html" >2018-03-27</a> <a href="index_20180330.html" >2018-03-30</a> <a href="index_20180416.html" >2018-04-16</a> <a href="index_20180509.html" >2018-05-09</a> <a href="index_20180601.html" >2018-06-01</a> <a href="index_20180607.html" >2018-06-07</a> <a href="index_20180918.html" >2018-09-18</a> <a href="index_20181019.html" >2018-10-19</a> <a href="index_20181026.html" >2018-10-26</a> <a href="index_20181126.html" >2018-11-26</a> <a href="index_20181210.html" >2018-12-10</a> <a href="index_20190204.html" >2019-02-04</a> <a href="index_20190211.html" >2019-02-11</a> <a href="index_20190704.html" >2019-07-04</a> <a href="index_20190709.html" >2019-07-09</a> <a href="index_20190713.html" >2019-07-13</a> <a href="index_20190724.html" >2019-07-24</a> <a href="index_20190807.html" >2019-08-07</a> <a href="index_20190822.html" >2019-08-22</a> <a href="index_20190907.html" >2019-09-07</a> <a href="index_20191009.html" >2019-10-09</a> <a href="index_20191022.html" >2019-10-22</a> <a href="index_20191108.html" >2019-11-08</a> <a href="index_20191208.html" >2019-12-08</a> <a href="index_20191221.html" >2019-12-21</a> <a href="index_20191227.html" >2019-12-27</a> <a href="index_20200118.html" >2020-01-18</a> <a href="index_20200217.html" >2020-02-17</a> <a href="index_20200311.html" >2020-03-11</a> <a href="index_20200511.html" >2020-05-11</a> <a href="index_20200604.html" >2020-06-04</a> <a href="index_20220816.html" >2022-08-16</a> <a href="index_20260110.html" >2026-01-10</a></div>
+        <table width="770" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td width="20" background="/images/bg_03.gif">&nbsp;</td>
+    <td width="730" bgcolor="#FFFFFF">
+<div align="center">
+        <table width="730" border="0" align="center" cellpadding="0" cellspacing="0">
+          <tr> 
+            <td> 
+			
+
+
+
+
+<link href="/css.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_showHideLayers() { //v6.0
+  var i,p,v,obj,args=MM_showHideLayers.arguments;
+  for (i=0; i<(args.length-2); i+=3) if ((obj=MM_findObj(args[i]))!=null) { v=args[i+2];
+    if (obj.style) { obj=obj.style; v=(v=='show')?'visible':(v=='hide')?'hidden':v; }
+    obj.visibility=v; }
+}
+//-->
+</script>
+<table width="730" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="10" background="/images/bg_02.gif"><a name=""></a></td>
+  </tr>
+  <tr>
+    <td height="12"><img src="images/tp_01.gif" width="730" height="3"></td>
+  </tr>
+  <tr>
+    <td><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="730" height="134">
+      <param name="movie" value="/images/flash1.swf">
+      <param name="quality" value="high">
+      <embed src="/images/flash1.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="730" height="134"></embed>
+    </object></td>
+  </tr>
+  <tr>
+    <td height="12"><img src="images/tp_01.gif" width="730" height="3"></td>
+  </tr>
+  <tr>
+    <td background="/images/bg_04.gif">
+      <table width="730" height="26" border="0" align="center" cellpadding="0" cellspacing="0" class="pos">
+        <tr>
+          <td width="85">
+            <div align="center"><a href="/index.jsp" class="daohang">首页</a></div></td>
+          <td width="6"><div align="center"><img src="images/tp_03.gif" width="2" height="26"></div></td>
+          <td width="93" onMouseOver="MM_showHideLayers('Layer1','','show')" onMouseOut="MM_showHideLayers('Layer1','','hide')"><div align="center"><a href="javascript:void(null)" class="daohang">工程介绍</a>
+            </div>            <div id="Layer1" style="position:absolute; width:135px; height:80px; z-index:1; left: 88px; top: 27px; visibility: hidden;">
+              <table width="134" height="77" border="0" cellpadding="0" cellspacing="1" bgcolor="#FFFFFF" onMouseOver="MM_showHideLayers('Layer1','','show')" onMouseOut="MM_showHideLayers('Layer1','','hide')">
+                <tr>
+                  <td height="25" bgcolor="#FDF7DF">　<a href="/aboutinfo/aboutinfo_01.jsp" class="black">竞争力工程介绍</a></td>
+                </tr>
+                <tr>
+                  <td height="25" bgcolor="#FDF7DF">　<a href="/aboutess/aboutess_01.jsp" class="black">ESS企业自助学习系统</a></td>
+                </tr>
+                <tr>
+                  <td height="25" bgcolor="#FDF7DF">　<a href="/aboutcmec/aboutcmec_01.jsp" class="black">CMEC会员式服务</a></td>
+                </tr>
+              </table>
+          </div></td>
+          <td width="6"><div align="center"><img src="images/tp_03.gif" width="2" height="26"></div></td>
+          <td width="93"><div align="center"><a href="/newsPublishAction.do?operation=ywDynNewsList" class="daohang" target="_self">新闻动态</a></div></td>
+          <td width="6"><div align="center"><img src="images/tp_03.gif" width="2" height="26"></div></td>
+          <td width="115" onMouseOver="MM_showHideLayers('Layer2','','show')" onMouseOut="MM_showHideLayers('Layer2','','hide')"><div align="center"><a href="javascript:void(null)" class="daohang">企业入网申请</a>
+            <div id="Layer2" style="position:absolute; width:111px; height:54px; z-index:1; left: 291px; top: 27px; visibility: hidden;">
+              <table width="111" border="0" cellpadding="0" cellspacing="1" bgcolor="#FFFFFF" onMouseOver="MM_showHideLayers('Layer2','','show')" onMouseOut="MM_showHideLayers('Layer2','','hide')">
+                <tr>
+                  <td height="25" bgcolor="#FDF7DF">　<a href="/apply_dcb.jsp" class="black">调查问卷</a></td>
+                </tr>
+                <tr>
+                  <td height="25" bgcolor="#FDF7DF">　<a href="/apply_twsqb.jsp" class="black">入网申请表</a></td>
+                </tr>
+              </table>
+            </div>
+          </div></td>
+          <td width="6"><div align="center"><img src="images/tp_03.gif" width="2" height="26"></div></td>
+          <td width="115"><div align="center"><a href="/servicecenter/servicecenter_01.jsp" class="daohang">地区服务中心</a></div></td>
+          <td width="6"><div align="center"><img src="images/tp_03.gif" width="2" height="26"></div></td>
+          <td width="100"><div align="center"><a href="/common/courseBase/main.jsp?catLib=0" class="daohang">公共课程库</a></div></td>
+          <td width="6"><div align="center"><img src="images/tp_03.gif" width="2" height="26"></div></td>
+          <td width="93" onMouseOver="MM_showHideLayers('Layer3','','show')" onMouseOut="MM_showHideLayers('Layer3','','hide')"><div align="center"><a href="javascript:void(null)" class="daohang">实施案例</a>
+            <div id="Layer3" style="position:absolute; width:112px; height:106px; z-index:1; left: 616px; top: 27px; visibility: hidden;">
+              <table width="111" height="51" border="0" cellpadding="0" cellspacing="1" bgcolor="#FFFFFF" onMouseOver="MM_showHideLayers('Layer3','','show')" onMouseOut="MM_showHideLayers('Layer3','','hide')">
+                <tr>
+                  <td height="50" bgcolor="#FDF7DF"><a href="/common/casexhx.jsp" class="black">　新华信市场研究<br>
+                    　咨询有限公司</a></td>
+                </tr>
+                <tr>
+                  <td height="50" bgcolor="#FDF7DF">　<a href="/common/casetoyota.jsp" class="black">一汽丰田汽车<br>
+                    　销售有限公司</a></td>
+                </tr>
+              </table>
+            </div>
+          </div></td>
+        </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td height="12"><img src="images/tp_01.gif" width="730" height="3"></td>
+  </tr>
+</table>
+
+
+              <table width="730" border="0" cellspacing="0" cellpadding="0">
+                <tr> 
+                  <td width="730" height="25" colspan="2"><table width="700" height="25" border="0" align="center" cellpadding="0" cellspacing="0">
+                      <tr> 
+                        <td>您现在的位置：竞争力工程网站&gt;&gt;首页</td>
+                        <td><div align="right">
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+</head>
+
+          <script language="JavaScript" class="style2">
+				        todayDate = new Date();
+						date = todayDate.getDate();
+						month= todayDate.getMonth()+1;
+						year= todayDate.getYear();
+						document.write("今天是 ");
+						document.write(year);
+						document.write("年");
+						document.write(month);
+						document.write("月");
+						document.write(date);
+						document.write("日");
+						document.write(" ")
+						if (todayDate.getDay() == 5) document.write("星期五")
+						if (todayDate.getDay() == 6) document.write("星期六")
+						if (todayDate.getDay() == 0) document.write("星期日")
+						if (todayDate.getDay() == 1) document.write("星期一")
+						if (todayDate.getDay() == 2) document.write("星期二")
+						if (todayDate.getDay() == 3) document.write("星期三")
+						if (todayDate.getDay() == 4) document.write("星期四")
+					</script>
+</html></div></td>
+                      </tr>
+                    </table></td>
+                </tr>
+                <tr > 
+                  <td  background="/images/bg_02.gif" height="8" colspan="2"><a name=""></a></td>
+                </tr>
+                <tr >
+                  <td height="5" colspan="2"><a name=""></a></td>
+                </tr>
+              </table></td>
+          </tr>
+          <tr>
+            <td valign="top"> 
+              <table width="730" border="0" cellpadding="0" cellspacing="0">
+                <tr> 
+                  <td width="227" valign="top">					<table width="215" height="129" border="0" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td height="65" valign="top"><div align="center"><a href="http://jingzhengli.yinwang.org"><img src="images/pic_wlxy.gif" height="60" border="0"></a></div></td>
+                      </tr>
+                      <tr>
+                        <td height="65"><div align="center"><a href="http://yanshi.yinwang.org"><img src="images/pic_yanshi.gif" height="60" border="0"></a></div></td>
+                      </tr>
+                    </table>
+                    <table width="75%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td height="8"><a name=""></a></td>
+                      </tr>
+                    </table>
+                    <table width="215" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td>
+
+
+
+
+
+
+
+
+
+
+<script language="javascript">
+	function leaveWord(){
+		if(document.all("name").value.length==0){
+			alert("请输入你的姓名！");
+			return;
+		}
+		if(document.all("content").value.length==0){
+			alert("请输入你的留言！");
+			return;
+		}
+		document.listForm.submit();
+	}
+</script>
+<form name="listForm" method="post">
+<table width="215" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td height="5" bgcolor="9BA2A8"><a name=""></a></td>
+        </tr>
+        <tr>
+          <td height="23" bgcolor="B6BEC6"><table width="150" height="18" border="0" align="center" cellpadding="0" cellspacing="0">
+              <tr>
+                <td width="40"><div align="center"><img src="images/tb_01.gif" width="16" height="15"></div></td>
+                <td width="110" valign="bottom"><strong>留言板</strong></td>
+              </tr>
+          </table></td>
+        </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td><table width="100%" border="0" cellpadding="0" cellspacing="1" bgcolor="B6BEC6">
+        <tr>
+          <td align="left" bgcolor="#FFFFFF"><table width="95%" height="0%" border="0" align="center" cellpadding="0" cellspacing="0">
+              <tr>
+                <td height="8" colspan="2"><a name=""></a></td>
+              </tr>
+              <tr>
+                <td width="66" height="25">您的姓名：</td>
+                <td width="136"><input name="name" type="text" size="18" maxlength="16"></td>
+              </tr>
+              <tr>
+                <td height="25">您的邮箱：</td>
+                <td><input name="email" type="text" size="18" maxlength="64"></td>
+              </tr>
+              <tr>
+                <td height="25">您的电话：</td>
+                <td><input name="tel" type="text" size="18" maxlength="16"></td>
+              </tr>
+              <tr>
+                <td height="25">留言内容：</td>
+                <td><textarea name="content" cols="17" rows="5"></textarea></td>
+              </tr>
+              <tr>
+                <td height="31" colspan="2"><table width="90%" height="31"  border="0" align="center" cellpadding="0" cellspacing="0">
+                    <tr>
+                      <td width="50%"><div align="center"><a href="#" onClick="leaveWord();"><img src="images/button_tj.gif" width="63" height="28" border="0"></a></div></td>
+                      <td width="50%"><div align="center"><a href="#" onClick="reset();"><img src="images/button_cx.gif" width="63" height="28" border="0"></a></div></td>
+                    </tr>
+                </table></td>
+              </tr>
+              <tr>
+                <td height="8" colspan="2"><a name=""></a></td>
+              </tr>
+          </table></td>
+        </tr>
+    </table></td>
+  </tr>
+</table>
+</form>
+</td>
+                      </tr>
+                    </table>
+                    <table width="75%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td height="8"><a name=""></a></td>
+                      </tr>
+                    </table>
+                    <table width="215" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td height="5" bgcolor="#9BA2A8"><a name=""></a></td>
+                      </tr>
+                    </table>
+                    <table width="215" height="60" border="0" cellpadding="0" cellspacing="0" background="images/bg_lszjwy.gif">
+                      <tr> 
+                        <td height="8"><table width="100%" height="35"  border="0" cellpadding="0" cellspacing="0">
+                          <tr>
+                            <td width="8%"><div align="center"></div></td>
+                            <td width="8%"><strong><img src="images/tb_jt.gif" width="9" height="9"></strong></td>
+                            <td width="34%"><strong><a href="#" class="red">理事会</a></strong></td>
+                            <td width="8%"><div align="center"></div></td>
+                            <td width="7%"><strong><img src="images/tb_jt.gif" width="9" height="9"></strong></td>
+                            <td width="35%"><strong><a href="#" class="red">专家委员会</a></strong></td>
+                          </tr>
+                        </table>                          </td>
+                      </tr>
+                    </table>
+                    <table width="75%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td height="8"><a name=""></a></td>
+                      </tr>
+                    </table>
+                    <table width="215" border="0" cellspacing="0" cellpadding="0">
+                      <tr> 
+                        <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr> 
+                              <td height="5" bgcolor="9BA2A8"><a name=""></a></td>
+                            </tr>
+                            <tr> 
+                              <td height="23" bgcolor="B6BEC6"><table width="150" height="18" border="0" align="center" cellpadding="0" cellspacing="0">
+                                  <tr> 
+                                    <td width="40"><div align="center"><img src="images/tb_01.gif" width="16" height="15"></div></td>
+                                    <td width="110" valign="bottom"><strong>主办单位</strong></td>
+                                  </tr>
+                                </table></td>
+                            </tr>
+                          </table></td>
+                      </tr>
+                      <tr> 
+                        <td><table width="100%" border="0" cellpadding="0" cellspacing="1" bgcolor="B6BEC6">
+                            <tr> 
+                              <td bgcolor="#FFFFFF"><table width="85%" border="0" align="center" cellpadding="0" cellspacing="0">
+                                  <tr> 
+                                    <td width="200" height="5"><a name=""></a></td>
+                                  </tr>
+                                  <tr> 
+                                    <td height="50">・<a href="units_zgzx.jsp" class="black">中国中小企业国际合作协会</a></td>
+                                  </tr>
+                                  <tr> 
+                                    <td height="25">・<a href="units_gjfz.jsp" class="black">中国中小企业对外合作协调<br>
+                                    中心</a> </td>
+                                  </tr>
+                                </table></td>
+                            </tr>
+                          </table></td>
+                      </tr>
+                    </table>                  
+                    <table width="75%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td height="8"><a name=""></a></td>
+                      </tr>
+                    </table>
+                    <table width="215" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                              <td height="5" bgcolor="9BA2A8"><a name=""></a></td>
+                            </tr>
+                            <tr>
+                              <td height="23" bgcolor="B6BEC6"><table width="150" height="18" border="0" align="center" cellpadding="0" cellspacing="0">
+                                  <tr>
+                                    <td width="40"><div align="center"><img src="images/tb_01.gif" width="16" height="15"></div></td>
+                                    <td width="110" valign="bottom"><strong>技术提供商</strong></td>
+                                  </tr>
+                              </table></td>
+                            </tr>
+                        </table></td>
+                      </tr>
+                      <tr>
+                        <td><table width="100%" border="0" cellpadding="0" cellspacing="1" bgcolor="B6BEC6">
+                            <tr>
+                              <td bgcolor="#FFFFFF"><table width="85%" border="0" align="center" cellpadding="0" cellspacing="0">
+                                  <tr>
+                                    <td width="200" height="5"><a name=""></a></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="40"><a href="units_jstg.jsp" class="black">北京中企银网教育科技有限公司</a></td>
+                                  </tr>
+                              </table></td>
+                            </tr>
+                        </table></td>
+                      </tr>
+                    </table>
+                    <table width="75%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td height="8"><a name=""></a></td>
+                      </tr>
+                    </table>
+                    <table width="215" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                              <td height="5" bgcolor="9BA2A8"><a name=""></a></td>
+                            </tr>
+                            <tr>
+                              <td height="23" bgcolor="B6BEC6"><table width="150" height="18" border="0" align="center" cellpadding="0" cellspacing="0">
+                                  <tr>
+                                    <td width="40"><div align="center"><img src="images/tb_01.gif" width="16" height="15"></div></td>
+                                    <td width="110" valign="bottom"><strong>链接</strong></td>
+                                  </tr>
+                              </table></td>
+                            </tr>
+                        </table></td>
+                      </tr>
+                      <tr>
+                        <td><table width="100%" border="0" cellpadding="0" cellspacing="1" bgcolor="B6BEC6">
+                            <tr>
+                              <td bgcolor="#FFFFFF"><table width="85%" border="0" align="center" cellpadding="0" cellspacing="0">
+                                  <tr>
+                                    <td width="200" height="5"><a name=""></a></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="25">・<a href="http://www.csmeschool.com" class="black">中国中小企业大讲堂</a> </td>
+                                  </tr>
+                                  <tr>
+                                    <td height="25">・<a href="http://www.chinasme.org.cn/" class="black">中国中小企业国际合作网</a></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="25">・<a href="http://www.sme.gov.cn/index.htm" class="black">中国中小企业信息网</a></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="25">・<a href="http://www.sdpc.gov.cn/" class="black">国家发展与改革委员会</a></td>
+                                  </tr>
+                              </table></td>
+                            </tr>
+                        </table></td>
+                      </tr>
+                    </table></td>
+                  <td width="503" valign="top"><table width="503" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td width="433"><table width="150" height="18" border="0" cellpadding="0" cellspacing="0">
+                          <tr>
+                            <td width="40"><div align="center"><img src="images/tb_01.gif" width="16" height="15"></div></td>
+                            <td width="110" valign="bottom"><strong>重要通知</strong></td>
+                          </tr>
+                      </table></td>
+                      <td width="70"><div align="center"><a href="/afficheAction.do?operation=listInfo" target="_blank"><img src="images/tb_02.gif" width="33" height="9" border="0"></a></div></td>
+                    </tr>
+                    <tr>
+                      <td height="2" colspan="2" bgcolor="9BA2A8"><a name=""></a></td>
+                    </tr>
+                    <tr valign="top">
+                      <td colspan="2">
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td height="10"><a name=""></a></td>
+                          </tr>
+                          <tr>
+                            <td valign="top">
+
+                              
+
+
+
+
+
+
+
+<table width="90%" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="200" height="5"><a name=""></a></td>
+  </tr>
+  <tr>
+    <td height="35">
+	 
+	 ・<a href="/afficheAction.do?operation=getDetailInfo&objectid=61677" target="_blank" class="black">青岛市ESS企业自助学习系统试用开通通知</a>
+      2005-11-11
+<br>
+	  
+	 ・<a href="/afficheAction.do?operation=getDetailInfo&objectid=61676" target="_blank" class="black">中国中小企业竞争力工程课程征集函</a>
+      2005-11-11
+<br>
+	  
+	 ・<a href="/afficheAction.do?operation=getDetailInfo&objectid=61675" target="_blank" class="black">中国中小企业竞争力工程课程征集工作会议的通知</a>
+      2005-11-10
+<br>
+	  
+	 ・<a href="/afficheAction.do?operation=getDetailInfo&objectid=61321" target="_blank" class="black">关于开展“中国中小企业竞争力工程”试点工作的通知</a>
+      2005-11-03
+<br>
+	  
+	 ・<a href="/afficheAction.do?operation=getDetailInfo&objectid=53153" target="_blank" class="black">关于实施中国中小企业竞争力工程为企业发展提供智力和技术支持的函</a>
+      2005-08-15
+<br>
+	  
+    </td>
+  </tr>
+</table>
+</td>
+                          </tr>
+                      </table></td>
+                    </tr>
+                  </table>
+                    <table width="75%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td>&nbsp;</td>
+                      </tr>
+                    </table>
+                    <table width="98%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td height="25">
+
+
+
+
+
+
+
+
+<table width="503" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="433"><table width="150" height="18" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="40"><div align="center"><img src="..images/tb_01.gif" width="16" height="15"></div></td>
+          <td width="110" valign="bottom"><strong>最新新闻动态</strong></td>
+        </tr>
+    </table></td>
+    <td width="70"><div align="center"><a href="/newsPublishAction.do?operation=ywDynNewsList" target="_blank" class="black"><img src="../images/tb_02.gif" width="33" height="9" border="0"></a></div></td>
+  </tr>
+  <tr>
+    <td height="2" colspan="2" bgcolor="9BA2A8"><a name=""></a></td>
+  </tr>
+  <tr>
+    <td colspan="2"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td height="10" colspan="2"><a name=""></a></td>
+        </tr>
+        <tr>
+          <td width="30%" valign="top">
+		 
+            <table width="59%" border="0" align="center" cellpadding="0" cellspacing="0">
+              <tr>
+                <td width="100%" align="center"><table width="85" height="100" border="0" align="center" cellpadding="0" cellspacing="2" bgcolor="E8EAED">
+                    <tr>
+                      <td align="center" bgcolor="#FFFFFF">
+			    <a href="/newsPublishAction.do?operation=getDetailInfo&objectid=62582" target="_blank">
+					  <img src="../upload/img_1132130329979538.jpg" width="85" height="100" border="0">
+					  </a>
+					  </td>
+                    </tr>
+                </table></td>
+              </tr>
+              <tr>
+                <td align="center"><a name=""></a></td>
+              </tr>
+              <tr>
+                <td bgcolor="#E8EAED">竞争力工程参加首届中国培训发展论坛
+</td>
+              </tr>
+          </table>
+		  
+		  </td>
+          <td width="70%" valign="top">
+		    <br>
+		    
+&middot;	  	    <a href="/newsPublishAction.do?operation=getDetailInfo&objectid=62581" target="_blank" class="black">
+		  中国中小企业竞争力工程课程征集工作会议在京举行</a> 
+		   2005-11-16
+
+		   <br>
+         
+&middot;	  	    <a href="/newsPublishAction.do?operation=getDetailInfo&objectid=61671" target="_blank" class="black">
+		  11月3日竞争力工程办公室在威海举办专题培训会</a> 
+		   2005-11-10
+
+		   <br>
+         
+&middot;	  	    <a href="/newsPublishAction.do?operation=getDetailInfo&objectid=61670" target="_blank" class="black">
+		  青岛市ESS企业自助学习系统试用开通通知</a> 
+		   2005-11-10
+
+		   <br>
+         
+&middot;	  	    <a href="/newsPublishAction.do?operation=getDetailInfo&objectid=61669" target="_blank" class="black">
+		  竞争力工程办公室联合青岛市国资委联合举办“青岛市加强企业培训工作研讨会”</a> 
+		   2005-11-10
+
+		   <br>
+         
+&middot;	  	    <a href="/newsPublishAction.do?operation=getDetailInfo&objectid=61668" target="_blank" class="black">
+		  竞争力工程办公室在烟台举办“人力资本与企业竞争力提升”高层研修会</a> 
+		   2005-11-10
+
+		   <br>
+         
+&middot;	  	    <a href="/newsPublishAction.do?operation=getDetailInfo&objectid=61665" target="_blank" class="black">
+		  关于健全非公有制经济和中小企业统计监测体系做好企业生产经营分析工作的通知</a> 
+		   2005-11-09
+
+		   <br>
+         
+&middot;	  	    <a href="/newsPublishAction.do?operation=getDetailInfo&objectid=61664" target="_blank" class="black">
+		  关于召开中国中小企业创新发展高级研讨会的通知</a> 
+		   2005-11-09
+
+		   <br>
+         
+&middot;	  	    <a href="/newsPublishAction.do?operation=getDetailInfo&objectid=61141" target="_blank" class="black">
+		  中国中小企业大讲堂――长三角无锡行成功举办</a> 
+		   2005-11-02
+
+		   <br>
+         
+&middot;	  	    <a href="/newsPublishAction.do?operation=getDetailInfo&objectid=60927" target="_blank" class="black">
+		  “中国中小企业竞争力工程”应用培训会通知</a> 
+		   2005-11-01
+
+		   <br>
+         
+&middot;	  	    <a href="/newsPublishAction.do?operation=getDetailInfo&objectid=60926" target="_blank" class="black">
+		  《首届中国培训发展论坛》将在北京举办</a> 
+		   2005-11-01
+
+		   <br>
+                 </tr>
+    </table></td>
+  </tr>
+</table>
+
+</td>
+                      </tr>
+                    </table>
+                    <table width="75%" border="0" cellspacing="0" cellpadding="0">
+                      <tr> 
+                        <td>&nbsp;</td>
+                      </tr>
+                    </table>
+                    <table width="503" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td width="433"><table width="150" height="18" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                              <td width="40"><div align="center"><img src="images/tb_01.gif" width="16" height="15"></div></td>
+                              <td width="110" valign="bottom"><strong>公共课程库</strong></td>
+                            </tr>
+                        </table></td>
+                        <td width="70"><div align="center"></div></td>
+                      </tr>
+                      <tr>
+                        <td height="2" colspan="2" bgcolor="9BA2A8"><a name=""></a></td>
+                      </tr>
+                      <tr valign="top">
+                        <td colspan="2">
+                          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                              <td height="10"><a name=""></a></td>
+                            </tr>
+                            <tr>
+                              <td height="25" valign="top">
+
+
+
+
+
+
+
+
+
+<table width="98%"  border="0">
+  <tr>
+    <td>
+	<table width="100%" border="0" align="center" cellpadding="0" cellspacing="2">
+	
+	  <tr>    
+		  <td width="25%">・<a class="black" target="_blank" href="/common/courseBase/main.jsp?catID=50921">政策法规</a></td>
+		  
+		  <td width="25%">
+		  
+		  ・<a class="black" target="_blank" href="/common/courseBase/main.jsp?catID=50922">管理思想</a>
+			  
+		  </td>
+		  
+		  <td width="25%">
+		  
+		  ・<a class="black" target="_blank" href="/common/courseBase/main.jsp?catID=50923">管理基础</a>
+			  
+		  </td>
+		  
+		  <td width="25%">
+		  
+		  ・<a class="black" target="_blank" href="/common/courseBase/main.jsp?catID=50924">商务基础</a>
+			  
+		  </td>
+		  
+	  </tr>
+	  
+	  <tr>    
+		  <td width="25%">・<a class="black" target="_blank" href="/common/courseBase/main.jsp?catID=50925">领导艺术</a></td>
+		  
+		  <td width="25%">
+		  
+		  ・<a class="black" target="_blank" href="/common/courseBase/main.jsp?catID=50926">团队建设</a>
+			  
+		  </td>
+		  
+		  <td width="25%">
+		  
+		  ・<a class="black" target="_blank" href="/common/courseBase/main.jsp?catID=50927">沟通技巧</a>
+			  
+		  </td>
+		  
+		  <td width="25%">
+		  
+		  ・<a class="black" target="_blank" href="/common/courseBase/main.jsp?catID=50928">战略规划</a>
+			  
+		  </td>
+		  
+	  </tr>
+	  
+	  <tr>    
+		  <td width="25%">・<a class="black" target="_blank" href="/common/courseBase/main.jsp?catID=50929">行政管理</a></td>
+		  
+		  <td width="25%">
+		  
+		  ・<a class="black" target="_blank" href="/common/courseBase/main.jsp?catID=50930">市场</a>
+			  
+		  </td>
+		  
+		  <td width="25%">
+		  
+		  ・<a class="black" target="_blank" href="/common/courseBase/main.jsp?catID=50931">销售</a>
+			  
+		  </td>
+		  
+		  <td width="25%">
+		  
+		  ・<a class="black" target="_blank" href="/common/courseBase/main.jsp?catID=50932">客户服务</a>
+			  
+		  </td>
+		  
+	  </tr>
+	  
+	  <tr>    
+		  <td width="25%">・<a class="black" target="_blank" href="/common/courseBase/main.jsp?catID=50933">人力资源</a></td>
+		  
+		  <td width="25%">
+		  
+		  ・<a class="black" target="_blank" href="/common/courseBase/main.jsp?catID=50934">生产作业</a>
+			  
+		  </td>
+		  
+		  <td width="25%">
+		  
+		  ・<a class="black" target="_blank" href="/common/courseBase/main.jsp?catID=50935">物流与供应链</a>
+			  
+		  </td>
+		  
+		  <td width="25%">
+		  
+		  ・<a class="black" target="_blank" href="/common/courseBase/main.jsp?catID=50936">项目管理</a>
+			  
+		  </td>
+		  
+	  </tr>
+	  
+	  <tr>    
+		  <td width="25%">・<a class="black" target="_blank" href="/common/courseBase/main.jsp?catID=50937">财务管理</a></td>
+		  
+		  <td width="25%">
+		  
+		  ・<a class="black" target="_blank" href="/common/courseBase/main.jsp?catID=50945">知识管理</a>
+			  
+		  </td>
+		  
+		  <td width="25%">
+		  
+		  ・<a class="black" target="_blank" href="/common/courseBase/main.jsp?catID=50946">个人发展</a>
+			  
+		  </td>
+		  
+		  <td width="25%">
+		  
+		  ・<a class="black" target="_blank" href="/common/courseBase/main.jsp?catID=50947">法律法规</a>
+			  
+		  </td>
+		  
+	  </tr>
+	    
+	 </table>
+	</td>
+  </tr>
+</table></td>
+                            </tr>
+                        </table></td>
+                      </tr>
+                    </table>
+                    <table width="75%" border="0" cellspacing="0" cellpadding="0">
+                      <tr> 
+                        <td>&nbsp;</td>
+                      </tr>
+                    </table>
+                    <table width="503" border="0" cellspacing="0" cellpadding="0">
+                      <tr> 
+                        <td width="433"><table width="150" height="18" border="0" cellpadding="0" cellspacing="0">
+                            <tr> 
+                              <td width="40"><div align="center"><img src="images/tb_01.gif" width="16" height="15"></div></td>
+                              <td width="110" valign="bottom"><strong>最新加入单位</strong></td>
+                            </tr>
+                          </table></td>
+                        <td width="70"><div align="center"></div></td>
+                      </tr>
+                      <tr> 
+                        <td height="2" colspan="2" bgcolor="9BA2A8"><a name=""></a></td>
+                      </tr>
+                      <tr valign="top"> 
+                        <td colspan="2"> <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr> 
+                              <td valign="top">
+							    <table width="95%" border="0" align="center" cellpadding="0" cellspacing="0">
+                                  <tr>
+                                    <td width="50%" height="22">                                      <div align="left">・青岛海信集团有限公司  </div></td>
+                                    <td width="50%" height="22">・青岛澳柯玛集团总公司 </td>
+                                  </tr>
+                                  <tr>
+                                    <td height="22">・青岛海尔集团有限公司</td>
+                                    <td>・青岛钢铁控股集团有限公司 </td>
+                                  </tr>
+                                  <tr>
+                                    <td height="22"> ・青岛市邮政局</td>
+                                    <td>・青岛市商业银行</td>
+                                  </tr>
+                                  <tr>
+                                    <td height="22">・青岛啤酒股份有限公司 </td>
+                                    <td>・青岛崂山矿泉水公司</td>
+                                  </tr>
+                                  <tr>
+                                    <td height="22">・<a href="http://qingdao.yinwang.org" class="black">青岛市国资委网络学院</a></td>
+                                    <td width="50%"><div align="left">・广西黑五类食品集团有限责任公司</div></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="22">&nbsp;</td>
+                                    <td><a href="more.jsp" class="black">&gt;&gt;&gt;更多企业</a></td>
+                                  </tr>
+                                </table></td>
+                            </tr>
+                          </table></td>
+                      </tr>
+                    </table>
+                    <table width="75%" border="0" cellspacing="0" cellpadding="0">
+                      <tr> 
+                        <td>&nbsp;</td>
+                      </tr>
+                    </table></td>
+                </tr>
+              </table> 
+			  
+
+
+
+
+<link href="/css.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.style1 {color: #FFFFFF}
+-->
+</style>
+<script language=javascript> 
+	function addHome(){ 
+		var url = "http://www.yinwang.org"; 
+		var title = "中国中小企业竞争力工程"; 
+		window.external.AddFavorite(url,title); 
+	}
+</script> 
+<table width="730" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="5"><a name=""></a></td>
+  </tr>
+  <tr>
+    <td height="8" background="/images/bg_02.gif"><a name=""></a></td>
+  </tr>
+  <tr>
+    <td height="3"><a name=""></a></td>
+  </tr>
+  <tr>
+    <td height="26" background="/images/bg_04.gif">
+      <div align="center" class="style1"> <a href="/laws/laws_01.jsp" target="_blank" class="daohang">&#25919;&#31574;&#27861;&#35268;</a>&#65372;<a href="/contactus.jsp" target="_blank" class="daohang">&#32852;&#31995;&#25105;&#20204;</a>&#65372;<a href="/datadownload.jsp" target="_blank" class="daohang">&#36164;&#26009;&#19979;&#36733;</a>&#65372;<a href="#" class="daohang" onClick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.yinwang.org');return false;">&#35774;&#20026;&#39318;&#39029;</a>&#65372;<a href="#" class="daohang" onClick="addHome();">&#21152;&#20837;&#25910;&#34255;</a> </div></td>
+  </tr>
+  <tr>
+    <td height="12"><img src="images/tp_01.gif" width="730" height="3"></td>
+  </tr>
+  <tr>
+    <td height="12"><div align="center">&#29256;&#26435;&#25152;&#26377;&#65306;&#20013;&#22269;&#20013;&#23567;&#20225;&#19994;&#31454;&#20105;&#21147;&#24037;&#31243;&#21150;&#20844;&#23460;<br>
+      &#30005;&#35805;&#65306;010-82783158-240&#12289;231 &#12288; &#30005;&#23376;&#37038;&#20214;&#65306;info@yinwang.org      <br>
+    </div></td>
+  </tr>
+  <tr>
+    <td height="10" background="/images/bg_02.gif"><a name=""></a></td>
+  </tr>
+</table>
+
+            </td>
+          </tr>
+        </table>
+      </div></td>
+    <td width="20" background="/images/bg_01.gif">&nbsp;</td>
+  </tr>
+</table>
+    </div>
+    
+    <script src="js/highlight.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script>
+        if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
+            document.body.classList.add('mobile');
+            var navbar = document.querySelector('nav.navbar');
+            if (navbar) { navbar.classList.remove('navbar-fixed-top'); }
+        }
+    </script>
+</body>
+</html>
