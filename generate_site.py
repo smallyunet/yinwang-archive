@@ -280,14 +280,15 @@ def process_archives():
     <style>
         body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
         /* Removed .inner/.outer overrides to respect theme post.css */
-        .list-group-item { padding: 8px 15px; } /* Tighten list */
+        
         .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
         .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
         .version-switcher a.current { font-weight: bold; color: #333; }
+        
         .navbar-brand { font-size: 20px; font-weight: bold; }
-        .list-group-item.title { display: flex; align-items: baseline; }
-        .list-group-item.title .date { min-width: 100px; margin-right: 15px; color: #999; font-size: 0.9em; }
         .navbar-nav > li > a { font-size: 14px; } /* Reduce Navbar font size */
+        
+        /* Removed custom flexbox list styling to match demo vertical style */
     </style>
     """
 
