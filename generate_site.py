@@ -215,7 +215,7 @@ def process_archives():
              title = base_name.replace('_', ' ').title()
 
         if base_name.startswith('tweet'):
-            nav_structure['top'].append({'url': link, 'label': '微勃 (Tweets)'})
+            nav_structure['top'].append({'url': link, 'label': 'Tweets'})
         elif base_name.startswith('about'):
              nav_structure['top'].append({'url': link, 'label': 'About'})
         elif base_name.startswith('homepage') or base_name.startswith('index'):
@@ -287,6 +287,7 @@ def process_archives():
         .navbar-brand { font-size: 20px; font-weight: bold; }
         .list-group-item.title { display: flex; align-items: baseline; }
         .list-group-item.title .date { min-width: 100px; margin-right: 15px; color: #999; font-size: 0.9em; }
+        .navbar-nav > li > a { font-size: 14px; } /* Reduce Navbar font size */
     </style>
     """
 
@@ -307,6 +308,41 @@ def process_archives():
             content = re.sub(r'<div\s+[^>]*class=["\']inner["\'][^>]*>', '<div>', content, count=1, flags=re.IGNORECASE)
             
             raw_body = get_body_content(content)
+            
+            # Special handling for Tweets: Transform to .micro-blog structure
+            if base_name.startswith('tweet'):
+                # Extract content inside <div class="tweet">
+                tweet_match = re.search(r'<div class="tweet">(.*?)</div>', content, re.DOTALL | re.IGNORECASE)
+                if tweet_match:
+                    tweet_content = tweet_match.group(1)
+                    
+                    # Transform <p><i>Date</i>Content... to structured items
+                    # Pattern: <p><i>(.*?)</i>(.*?)</p> (or just up to next <p>)
+                    # Note: Original HTML is messy, sometimes <p> isn't closed or uses <br>.
+                    # Heuristic: Split by <p><i>, then reconstruct.
+                    
+                    matches = re.finditer(r'<p><i>(.*?)</i>(.*?)(?=<p><i>|$)', tweet_content, re.DOTALL | re.IGNORECASE)
+                    new_tweets = []
+                    for m in matches:
+                        date = m.group(1).strip()
+                        text = m.group(2).strip()
+                        # Clean up any leading/trailing <br> or whitespace
+                        text = re.sub(r'^<br\s*/?>', '', text).strip()
+                        
+                        item_html = f"""
+                        <div class="list-group-item">
+                            <div class="date">{date}</div>
+                            <div class="content">{text}</div>
+                        </div>
+                        """
+                        new_tweets.append(item_html)
+                    
+                    if new_tweets:
+                        raw_body = f'<div class="micro-blog">{"".join(new_tweets)}</div>'
+                else:
+                    # Fallback if no .tweet div found, just wrap raw body
+                     raw_body = f'<div class="micro-blog">{raw_body}</div>'
+
             title = extract_title(content)
             
             switcher_html = ""
