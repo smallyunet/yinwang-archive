@@ -1,9 +1,9 @@
 name: Archive Yinwang Blog
 
 on:
-  # schedule:
-  #   # Run at 00:00 every Sunday (UTC)
-  #   - cron: '0 0 * * 0'
+  schedule:
+    # Run at 00:00 every Sunday (UTC)
+    - cron: '0 0 * * 0'
   workflow_dispatch:
     # Allow manual triggering
 
