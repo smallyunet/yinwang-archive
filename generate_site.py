@@ -14,25 +14,47 @@ DOMAIN = "yinwang.org"
 def parse_article_date(filename):
     """
     Parses the article date (publication date) from the filename.
-    Typically finds the first YYYY_MM_DD pattern.
+    Typically finds the first YYYY_MM_DD or YYYYMMDD pattern.
     """
+    # Try YYYY_MM_DD
     match = re.search(r'(\d{4})_(\d{2})_(\d{2})', filename)
     if match:
         return f"{match.group(1)}-{match.group(2)}-{match.group(3)}"
+    
+    # Try YYYYMMDD (often at end of filename or after underscore)
+    match = re.search(r'_(\d{4})(\d{2})(\d{2})', filename)
+    if match:
+         return f"{match.group(1)}-{match.group(2)}-{match.group(3)}"
+         
     return None
 
-def extract_title(content):
-    try:
-        # Try <title>
-        match = re.search(r'<title>(.*?)</title>', content, re.IGNORECASE | re.DOTALL)
-        if match:
-            return match.group(1).strip()
-        # Try h2
-        match = re.search(r'<h2>(.*?)</h2>', content, re.IGNORECASE | re.DOTALL)
-        if match:
-            return match.group(1).strip()
-    except Exception as e:
-        pass
+def strip_tags(text):
+    """Removes HTML tags from a string."""
+    clean = re.compile('<.*?>')
+    return re.sub(clean, '', text)
+
+def extract_title(content, filename):
+    # Try to find h1
+    match = re.search(r'<h1[^>]*>(.*?)</h1>', content, re.IGNORECASE | re.DOTALL)
+    if match:
+        return strip_tags(match.group(1)).strip()
+    
+    # Try title tag
+    match = re.search(r'<title[^>]*>(.*?)</title>', content, re.IGNORECASE | re.DOTALL)
+    if match:
+        title = strip_tags(match.group(1)).strip()
+        if title and title.lower() != 'untitled':
+            return title
+
+    # Fallback to filename
+    base = os.path.basename(filename)
+    # Remove extension and potential date suffix
+    base = re.sub(r'(_\d{8})?\.html$', '', base)
+    # Improve readability for resource files (e.g. replacing separators)
+    clean_name = base.replace('resources_', '').replace('_', ' ').replace('-', ' ')
+    if clean_name.strip():
+        return clean_name.title()
+    
     return "Untitled"
 
 def get_base_name_and_version(filename):
@@ -44,6 +66,31 @@ def get_base_name_and_version(filename):
     if match:
         return match.group(1), match.group(2)
     return filename, "00000000"
+
+def extract_metadata(content, filename):
+    """
+    Extract date and title from content.
+    Returns a dict with 'date' (YYYY-MM-DD or None) and 'title'.
+    """
+    title = extract_title(content, filename)
+    
+    # Try to find date in content (common yinwang patterns)
+    # Pattern 1: <h2>Date</h2> or <div class="date">
+    date_match = re.search(r'(\d{4}[-/]\d{1,2}[-/]\d{1,2})', content)
+    date = None
+    if date_match:
+        date = date_match.group(1).replace('/', '-')
+    else:
+        # Fallback: Extract date from filename (e.g., _20130504.html)
+        filename_date_match = re.search(r'_(\d{8})\.html$', filename)
+        if filename_date_match:
+            d_str = filename_date_match.group(1)
+            date = f"{d_str[:4]}-{d_str[4:6]}-{d_str[6:]}"
+
+    return {
+        'date': date,
+        'title': title
+    }
 
 def format_version_date(date_str):
     if len(date_str) == 8:
@@ -165,7 +212,7 @@ def process_archives():
             if unique_versions:
                 latest = unique_versions[-1]
                 # Pre-calculate title for layout
-                title = extract_title(latest['content'])
+                title = extract_title(latest['content'], latest['filename'])
                 processed_groups[base_name] = {
                     'type': type_label,
                     'versions': unique_versions,
@@ -286,7 +333,10 @@ def process_archives():
         .version-switcher a.current { font-weight: bold; color: #333; }
         
         .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 14px; } /* Reduce Navbar font size */
+        .navbar-nav > li > a { font-size: 16px; } /* Slightly larger per user request */
+        
+        /* Reduce gap between navbar and content */
+        div.outer { margin-top: 30px; }
         
         /* Removed custom flexbox list styling to match demo vertical style */
     </style>
@@ -344,7 +394,7 @@ def process_archives():
                     # Fallback if no .tweet div found, just wrap raw body
                      raw_body = f'<div class="micro-blog">{raw_body}</div>'
 
-            title = extract_title(content)
+            title = extract_title(content, ver['filename'])
             
             switcher_html = ""
             if has_multiple:
