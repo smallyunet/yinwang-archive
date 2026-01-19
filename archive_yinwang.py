@@ -380,5 +380,40 @@ def main():
 
     print(f"Process complete. Total: {total_files}, Success: {success_count[0]}, Failed: {fail_count[0]}")
 
+def cleanup_old_archives():
+    """Remove files in archives/ that are older than MIN_YEAR."""
+    print(f"Cleaning up archives older than {MIN_YEAR}...")
+    if not os.path.exists(OUTPUT_DIR):
+        print("Archives directory not found, skipping cleanup.")
+        return
+
+    count = 0
+    for filename in os.listdir(OUTPUT_DIR):
+        filepath = os.path.join(OUTPUT_DIR, filename)
+        if not os.path.isfile(filepath):
+            continue
+            
+        # Extract date from filename: name_20060213.html
+        match = re.search(r'_(\d{8})\.html$', filename)
+        if match:
+            date_str = match.group(1)
+            year = date_str[:4]
+            
+            if year < MIN_YEAR:
+                try:
+                    os.remove(filepath)
+                    # print(f"Deleted old file: {filename}")
+                    count += 1
+                except Exception as e:
+                    print(f"Error deleting {filename}: {e}")
+    
+    if count > 0:
+        print(f"Cleanup complete. Deleted {count} files older than {MIN_YEAR}.")
+    else:
+        print("Cleanup complete. No old files found.")
+
 if __name__ == "__main__":
+    # Run cleanup before main process or after? 
+    # Better run it first to clear out junk.
+    cleanup_old_archives()
     main()
