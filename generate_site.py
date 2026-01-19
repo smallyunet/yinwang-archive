@@ -229,13 +229,28 @@ def process_archives():
         else:
             nav_structure['Misc'].append({'url': link, 'label': title})
 
+
     def build_nav_html():
         html = "<ul class='nav navbar-nav navbar-right'>"
         html += "<li class='active'><a href='./'>首页 (Home)</a></li>"
         
+        # Helper to dedup
+        def add_unique_items(items):
+            result = ""
+            seen_labels = set()
+            for item in items:
+                label = item['label']
+                if label in seen_labels:
+                    # Append date to make unique? Or just skip?
+                    # For now, let's skip exact duplicates, or append part of filename if needed.
+                    # But simpler: just skip.
+                    continue
+                seen_labels.add(label)
+                result += f"<li><a href='{item['url']}'>{item['label']}</a></li>"
+            return result
+
         # Top level items
-        for item in nav_structure['top']:
-            html += f"<li><a href='{item['url']}'>{item['label']}</a></li>"
+        html += add_unique_items(nav_structure['top'])
 
         # Dropdowns
         dropdowns = ['History', 'Posts', 'Resources', 'Tags', 'Misc']
@@ -244,24 +259,37 @@ def process_archives():
             if not items:
                 continue
             
-            # Limit history to top 20 latest to avoid huge menu?
             if cat == 'History':
-               items.sort(key=lambda x: x['label'], reverse=True) # Sort by date desc in label
-               # items = items[:20] 
+               items.sort(key=lambda x: x['label'], reverse=True)
             
             html += f"""
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{cat} <span class="caret"></span></a>
                 <ul class="dropdown-menu">
             """
-            for item in items:
-                html += f"<li><a href='{item['url']}'>{item['label']}</a></li>"
+            html += add_unique_items(items)
             html += "</ul></li>"
             
         html += "</ul>"
         return html
 
     navbar_html = build_nav_html()
+
+    # Shared CSS Overrides
+    custom_css = """
+    <style>
+        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
+        /* Removed .inner/.outer overrides to respect theme post.css */
+        .list-group-item { padding: 8px 15px; } /* Tighten list */
+        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
+        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
+        .version-switcher a.current { font-weight: bold; color: #333; }
+        .navbar-brand { font-size: 20px; font-weight: bold; }
+        .list-group-item.title { display: flex; align-items: baseline; }
+        .list-group-item.title .date { min-width: 100px; margin-right: 15px; color: #999; font-size: 0.9em; }
+    </style>
+    """
+
 
     # 5. Generate Content
     for base_name, data in processed_groups.items():
@@ -274,6 +302,9 @@ def process_archives():
             # Clean old CSS
             content = re.sub(r'<link[^>]*href=["\'].*?main\.css["\'][^>]*>', '', content, flags=re.IGNORECASE)
             content = re.sub(r'<link[^>]*href=["\'].*?style\.css["\'][^>]*>', '', content, flags=re.IGNORECASE)
+            
+            # Fix nesting: neutralize internal .inner to avoid double styling from theme
+            content = re.sub(r'<div\s+[^>]*class=["\']inner["\'][^>]*>', '<div>', content, count=1, flags=re.IGNORECASE)
             
             raw_body = get_body_content(content)
             title = extract_title(content)
@@ -298,17 +329,10 @@ def process_archives():
     <link rel="stylesheet" href="css/bootstrap/bootstrap-tooltips.css">
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="css/home.css"> <!-- Need home for navbar -->
+    <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    <style>
-        /* Switcher Fixes */
-        .version-switcher {{ padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }}
-        .version-switcher a {{ margin-right: 10px; color: #888; text-decoration: none; }}
-        .version-switcher a.current {{ font-weight: bold; color: #333; }}
-        /* Inner override for posts */
-        .inner {{ margin-top: 80px; }} 
-    </style>
+    {custom_css}
 </head>
 <body>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
@@ -363,6 +387,7 @@ def process_archives():
         "    <link rel='stylesheet' href='css/bootstrap/bootstrap-theme.min.css'>",
         "    <link rel='stylesheet' href='css/home.css'>",
         "    <script src='js/jquery.min.js'></script>",
+        f"    {custom_css}",
         "</head>",
         "<body>",
         "    <nav class='navbar navbar-default navbar-fixed-top' style='opacity:.9' role='navigation'>",
@@ -411,6 +436,7 @@ def process_archives():
         f.write("\n".join(html_lines))
         
     print(f"Generated {INDEX_OUTPUT} with {len(articles_meta)} articles.")
+
 
 
 
