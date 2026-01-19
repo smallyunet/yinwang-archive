@@ -1,61 +1,67 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.5">
-    <title>Demos Pysonar2 Sre Compile.Py</title>
-    <link rel="stylesheet" href="css/highlight/xcode.min.css">
-    <link rel="stylesheet" href="css/bootstrap/bootstrap-tooltips.css">
-    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="css/bootstrap/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="css/home.css">
-    <link rel="stylesheet" href="css/post.css">
-    <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 16px; } /* Slightly larger per user request */
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+<html><head title="/Users/yinwang/Code/cpython/Lib/sre_compile.py"><style type='text/css'>
+body { color: #666666; }
+a {
+    text-decoration: none; color: #5AA2A7;
+    border: solid 1px white;
+}
+a.active {
+    background: -webkit-linear-gradient(top,rgba(255, 255, 200, 0.35) 0,rgba(255, 255, 200, 0.55) 100%);
+    border: solid 1px #E5E600;
+}
+table, th, td { border: 1px solid lightgrey; padding: 5px; corner: rounded; }
+.builtin {color: #B17E41;}
+.comment, .block-comment {color: #aaaaaa; font-style: italic;}
+.constant {color: #888888;}
+.decorator {color: #778899;}
+.doc-string {color: #aaaaaa;}
+.error {border-bottom: 1px solid red;}
+.field-name {color: #2e8b57;}
+.function {color: #4682b4;}
+.identifier {color: #8b7765;}
+.info {border-bottom: 1px dotted RoyalBlue;}
+.keyword {color: #0000cd;}
+.lineno {color: #cccccc;}
+.number {color: #483d8b;}
+.parameter {color: #777777;}
+.string {color: #999999;}
+.type-name {color: #4682b4;}
+.warning {border-bottom: 1px dotted orange;}</style>
+<script language="JavaScript" type="text/javascript">
+var highlighted;
+
+function highlight(xid)
+{
+    var elms = document.querySelectorAll('[xid="' + xid + '"]');
+    for (k in elms) {
+        v = elms[k]
+        v.className = "active";
+    }
+    highlighted = xid;
+}
+
+function clearHighlight() {
+    var elms = document.querySelectorAll('[xid="' + highlighted + '"]');
+    for (k in elms) {
+        v = elms[k]
+        v.className = "";
+    }
+}
+
+window.onload =
+    function (e) {
+        var tags = document.getElementsByTagName("A")
+        for (var i = 0; i < tags.length; i++) {
+            tags[i].onmouseover =
+                function (e) {
+                    clearHighlight();
+                    var xid = e.toElement.getAttribute('xid');
+                    highlight(xid);
+                }
+        }
+    }</script>
 </head>
 <body>
-    <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-bs">
-                    <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
-            </div>
-            <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
-                <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170605.html'>Tweets</a></li>
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-            <li><a href='homepage_20250719.html'>当然我在扯淡 (2025-07-19)</a></li><li><a href='index_20260110.html'>Surely I am Joking (2026-01-10)</a></li></ul></li>
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-            <li><a href='resources_d8-3404-d8-8424_20130614.html'>D8 3404 D8 8424</a></li><li><a href='resources_demos_pysonar2_email_base64mime.py_20150408.html'>Demos Pysonar2 Email Base64Mime.Py</a></li><li><a href='resources_demos_pysonar2_email_charset.py_20150506.html'>Demos Pysonar2 Email Charset.Py</a></li><li><a href='resources_demos_pysonar2_email_encoders.py_20160822.html'>Demos Pysonar2 Email Encoders.Py</a></li><li><a href='resources_demos_pysonar2_email_errors.py_20150409.html'>Demos Pysonar2 Email Errors.Py</a></li><li><a href='resources_demos_pysonar2_email_header.py_20140305.html'>Demos Pysonar2 Email Header.Py</a></li><li><a href='resources_demos_pysonar2_email_quoprimime.py_20150408.html'>Demos Pysonar2 Email Quoprimime.Py</a></li><li><a href='resources_demos_pysonar2_re.py_20150408.html'>Demos Pysonar2 Re.Py</a></li><li><a href='resources_demos_pysonar2_sre_compile.py_20160822.html'>Demos Pysonar2 Sre Compile.Py</a></li><li><a href='resources_demos_pysonar2_sre_constants.py_20160822.html'>Demos Pysonar2 Sre Constants.Py</a></li><li><a href='resources_demos_pysonar2_sre_parse.py_20160822.html'>Demos Pysonar2 Sre Parse.Py</a></li><li><a href='resources_diff1-diff2_20200728.html'>Diff1 Diff2</a></li><li><a href='resources_mk1-mk2_20130627.html'>Mk1 Mk2</a></li><li><a href='resources_nav1-nav2_20200728.html'>Nav1 Nav2</a></li><li><a href='resources_paredit20-paredit23_20200728.html'>Paredit20 Paredit23</a></li><li><a href='resources_pydiff1-pydiff2_20130711.html'>Pydiff1 Pydiff2</a></li><li><a href='resources_simulator-mips-simulator-arm_20200728.html'>Simulator Mips Simulator Arm</a></li><li><a href='resources_typed-clojure1-typed-clojure2_20200728.html'>Typed Clojure1 Typed Clojure2</a></li></ul></li></ul>
-            </div>
-        </div>
-    </nav>
-
-    <div class="inner">
-        
-        <table width=100% border='1px solid gray'><tr><td valign='top'><ul>
+<table width=100% border='1px solid gray'><tr><td valign='top'><ul>
 <li><a href='#.Users.yinwang.Code.cpython.Lib.sre_parse', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_sre_parse")'><span class='identifier'>sre_parse</span></a></li><li><a href='#.Users.yinwang.Code.cpython.Lib.sre_constants', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_sre_constants")'><span class='identifier'>sre_constants</span></a></li><li><a href='#.Users.yinwang.Code.cpython.Lib.sre_compile.MAXCODE', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_sre_compile_MAXCODE")'><span class='identifier'>MAXCODE</span></a></li><li><a href='#.Users.yinwang.Code.cpython.Lib.sre_compile.MAXCODE', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_sre_compile_MAXCODE")'><span class='identifier'>MAXCODE</span></a></li><li><a href='#.Users.yinwang.Code.cpython.Lib.sre_compile._identityfunction', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_sre_compile__identityfunction")'><span class='function'>_identityfunction</span></a></li><li><a href='#.Users.yinwang.Code.cpython.Lib.sre_compile._LITERAL_CODES', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_sre_compile__LITERAL_CODES")'><span class='identifier'>_LITERAL_CODES</span></a></li><li><a href='#.Users.yinwang.Code.cpython.Lib.sre_compile._REPEATING_CODES', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_sre_compile__REPEATING_CODES")'><span class='identifier'>_REPEATING_CODES</span></a></li><li><a href='#.Users.yinwang.Code.cpython.Lib.sre_compile._SUCCESS_CODES', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_sre_compile__SUCCESS_CODES")'><span class='identifier'>_SUCCESS_CODES</span></a></li><li><a href='#.Users.yinwang.Code.cpython.Lib.sre_compile._ASSERT_CODES', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_sre_compile__ASSERT_CODES")'><span class='identifier'>_ASSERT_CODES</span></a></li><li><a href='#.Users.yinwang.Code.cpython.Lib.sre_compile._compile', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_sre_compile__compile")'><span class='function'>_compile</span></a></li><li><a href='#.Users.yinwang.Code.cpython.Lib.sre_compile._compile_charset', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_sre_compile__compile_charset")'><span class='function'>_compile_charset</span></a></li><li><a href='#.Users.yinwang.Code.cpython.Lib.sre_compile._optimize_charset', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_sre_compile__optimize_charset")'><span class='function'>_optimize_charset</span></a></li><li><a href='#.Users.yinwang.Code.cpython.Lib.sre_compile._CODEBITS', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_sre_compile__CODEBITS")'><span class='identifier'>_CODEBITS</span></a></li><li><a href='#.Users.yinwang.Code.cpython.Lib.sre_compile._BITS_TRANS', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_sre_compile__BITS_TRANS")'><span class='identifier'>_BITS_TRANS</span></a></li><li><a href='#.Users.yinwang.Code.cpython.Lib.sre_compile._mk_bitmap', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_sre_compile__mk_bitmap")'><span class='function'>_mk_bitmap</span></a></li><li><a href='#.Users.yinwang.Code.cpython.Lib.sre_compile._bytes_to_codes', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_sre_compile__bytes_to_codes")'><span class='function'>_bytes_to_codes</span></a></li><li><a href='#.Users.yinwang.Code.cpython.Lib.sre_compile._simple', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_sre_compile__simple")'><span class='function'>_simple</span></a></li><li><a href='#.Users.yinwang.Code.cpython.Lib.sre_compile._generate_overlap_table', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_sre_compile__generate_overlap_table")'><span class='function'>_generate_overlap_table</span></a></li><li><a href='#.Users.yinwang.Code.cpython.Lib.sre_compile._compile_info', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_sre_compile__compile_info")'><span class='function'>_compile_info</span></a></li><li><a href='#.Users.yinwang.Code.cpython.Lib.sre_compile.isstring', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_sre_compile_isstring")'><span class='function'>isstring</span></a></li><li><a href='#.Users.yinwang.Code.cpython.Lib.sre_compile._code', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_sre_compile__code")'><span class='function'>_code</span></a></li><li><a href='#.Users.yinwang.Code.cpython.Lib.sre_compile.compile', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_sre_compile_compile")'><span class='function'>compile</span></a></li></ul>
 </td><td><pre><span class='lineno'>   1</span> #
 <span class='lineno'>   2</span> # Secret Labs&#39; Regular Expression Engine
@@ -546,18 +552,4 @@
 <span class='lineno'> 487</span>         <a href='#.Users.yinwang.Code.cpython.Lib.sre_compile.compile.p', xid ='.Users.yinwang.Code.cpython.Lib.sre_compile.compile.p', title='{? | str}'>p</a>.<a href='sre_parse.py.html#.Users.yinwang.Code.cpython.Lib.sre_parse.SubPattern.pattern', xid ='.Users.yinwang.Code.cpython.Lib.sre_parse.SubPattern.pattern', title='Pattern'>pattern</a>.<a href='re.py.html#.Users.yinwang.Code.cpython.Lib.sre_parse.Pattern.groups', xid ='.Users.yinwang.Code.cpython.Lib.sre_parse.Pattern.groups', title='int'>groups</a>-1,
 <span class='lineno'> 488</span>         <a href='#.Users.yinwang.Code.cpython.Lib.sre_compile.compile.groupindex', xid ='.Users.yinwang.Code.cpython.Lib.sre_compile.compile.groupindex', title='?'>groupindex</a>, <a href='#.Users.yinwang.Code.cpython.Lib.sre_compile.compile.indexgroup', xid ='.Users.yinwang.Code.cpython.Lib.sre_compile.compile.indexgroup', title='[None]'>indexgroup</a>
 <span class='lineno'> 489</span>         )
-</pre></td></tr></table>
-    </div>
-    
-    <script src="js/highlight.min.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/bootstrap/bootstrap.min.js"></script>
-    <script>
-        if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
-            document.body.classList.add('mobile');
-            var navbar = document.querySelector('nav.navbar');
-            if (navbar) { navbar.classList.remove('navbar-fixed-top'); }
-        }
-    </script>
-</body>
-</html>
+</pre></td></tr></table></body></html>

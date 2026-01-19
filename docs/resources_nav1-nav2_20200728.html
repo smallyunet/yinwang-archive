@@ -1,61 +1,11 @@
-<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.5">
-    <title>Nav1 Nav2</title>
-    <link rel="stylesheet" href="css/highlight/xcode.min.css">
-    <link rel="stylesheet" href="css/bootstrap/bootstrap-tooltips.css">
-    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="css/bootstrap/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="css/home.css">
-    <link rel="stylesheet" href="css/post.css">
-    <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 16px; } /* Slightly larger per user request */
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<LINK href="diff.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="nav.js"></script>
 </head>
 <body>
-    <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-bs">
-                    <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
-            </div>
-            <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
-                <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170605.html'>Tweets</a></li>
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-            <li><a href='homepage_20250719.html'>当然我在扯淡 (2025-07-19)</a></li><li><a href='index_20260110.html'>Surely I am Joking (2026-01-10)</a></li></ul></li>
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-            <li><a href='resources_d8-3404-d8-8424_20130614.html'>D8 3404 D8 8424</a></li><li><a href='resources_demos_pysonar2_email_base64mime.py_20150408.html'>Demos Pysonar2 Email Base64Mime.Py</a></li><li><a href='resources_demos_pysonar2_email_charset.py_20150506.html'>Demos Pysonar2 Email Charset.Py</a></li><li><a href='resources_demos_pysonar2_email_encoders.py_20160822.html'>Demos Pysonar2 Email Encoders.Py</a></li><li><a href='resources_demos_pysonar2_email_errors.py_20150409.html'>Demos Pysonar2 Email Errors.Py</a></li><li><a href='resources_demos_pysonar2_email_header.py_20140305.html'>Demos Pysonar2 Email Header.Py</a></li><li><a href='resources_demos_pysonar2_email_quoprimime.py_20150408.html'>Demos Pysonar2 Email Quoprimime.Py</a></li><li><a href='resources_demos_pysonar2_re.py_20150408.html'>Demos Pysonar2 Re.Py</a></li><li><a href='resources_demos_pysonar2_sre_compile.py_20160822.html'>Demos Pysonar2 Sre Compile.Py</a></li><li><a href='resources_demos_pysonar2_sre_constants.py_20160822.html'>Demos Pysonar2 Sre Constants.Py</a></li><li><a href='resources_demos_pysonar2_sre_parse.py_20160822.html'>Demos Pysonar2 Sre Parse.Py</a></li><li><a href='resources_diff1-diff2_20200728.html'>Diff1 Diff2</a></li><li><a href='resources_mk1-mk2_20130627.html'>Mk1 Mk2</a></li><li><a href='resources_nav1-nav2_20200728.html'>Nav1 Nav2</a></li><li><a href='resources_paredit20-paredit23_20200728.html'>Paredit20 Paredit23</a></li><li><a href='resources_pydiff1-pydiff2_20130711.html'>Pydiff1 Pydiff2</a></li><li><a href='resources_simulator-mips-simulator-arm_20200728.html'>Simulator Mips Simulator Arm</a></li><li><a href='resources_typed-clojure1-typed-clojure2_20200728.html'>Typed Clojure1 Typed Clojure2</a></li></ul></li></ul>
-            </div>
-        </div>
-    </nav>
-
-    <div class="inner">
-        
-        <div id="left" class="src">
+<div id="left" class="src">
 <pre>
 <a id='leftstart' tid='rightstart'></a>
 
@@ -562,17 +512,5 @@
 
 </pre>
 </div>
-    </div>
-    
-    <script src="js/highlight.min.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/bootstrap/bootstrap.min.js"></script>
-    <script>
-        if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
-            document.body.classList.add('mobile');
-            var navbar = document.querySelector('nav.navbar');
-            if (navbar) { navbar.classList.remove('navbar-fixed-top'); }
-        }
-    </script>
 </body>
 </html>

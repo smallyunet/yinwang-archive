@@ -347,7 +347,59 @@ def process_archives():
     for base_name, data in processed_groups.items():
         versions = data['versions']
         has_multiple = len(versions) > 1
-        
+
+        # Check if it is a resource page and skip templating
+        if base_name.startswith('resources_'):
+             for ver in versions:
+                 # Ensure output directory exists
+                 with open(os.path.join(OUTPUT_DIR, ver['filename']), 'w', encoding='utf-8') as f:
+                     f.write(ver['content'])
+             continue
+
+        # Generate version switcher for history pages (homepage/index) or normal pages
+        switcher_html = ""
+        if has_multiple:
+            links = []
+            for other_ver in versions:
+                is_current = (other_ver['filename'] == versions[-1]['filename']) # Default to latest? No, need current iter context, but here we don't have 'ver' in loop yet.
+                # Actually we need to generate switcher inside the loop or per version.
+                # But to avoid re-generating for every version if it's identical list, we can gen list first.
+                pass 
+                
+        # Special handling for history pages: Inject switcher into raw content
+        if base_name.startswith('homepage') or base_name.startswith('index'):
+            for ver in versions:
+                 content = ver['content']
+                 
+                 # Generate switcher specifically for this version to mark 'current' correctly
+                 local_switcher_html = ""
+                 if has_multiple:
+                     links = []
+                     for other_ver in versions:
+                         is_current = (other_ver['filename'] == ver['filename'])
+                         cls = 'class="current"' if is_current else ''
+                         links.append(f'<a href="{other_ver["filename"]}" {cls}>{other_ver["formatted_date"]}</a>')
+                     local_switcher_html = f'<div class="version-switcher"><span>Versions:</span>{" ".join(links)}</div>'
+                 
+                 if local_switcher_html:
+                    style_block = """
+                    <style>
+                    .version-switcher { padding: 10px; background: #f0f0f0; border-bottom: 1px solid #ccc; font-family: sans-serif; margin: 20px 0; }
+                    .version-switcher span { font-weight: bold; margin-right: 10px; color: #555; }
+                    .version-switcher a { margin-right: 10px; text-decoration: none; color: #007bff; border-bottom: 1px dotted #ccc; }
+                    .version-switcher a:hover { text-decoration: underline; }
+                    .version-switcher a.current { font-weight: bold; color: #000; pointer-events: none; border-bottom: 2px solid #000; }
+                    </style>
+                    """
+                    if '<body' in content.lower():
+                         content = re.sub(r'(<body[^>]*>)', r'\1' + style_block + local_switcher_html, content, count=1, flags=re.IGNORECASE)
+                    else:
+                         content = style_block + local_switcher_html + content
+
+                 with open(os.path.join(OUTPUT_DIR, ver['filename']), 'w', encoding='utf-8') as f:
+                     f.write(content)
+            continue
+
         for ver in versions:
             content = ver['content']
             

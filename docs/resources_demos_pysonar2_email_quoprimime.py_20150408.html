@@ -1,61 +1,67 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.5">
-    <title>Demos Pysonar2 Email Quoprimime.Py</title>
-    <link rel="stylesheet" href="css/highlight/xcode.min.css">
-    <link rel="stylesheet" href="css/bootstrap/bootstrap-tooltips.css">
-    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="css/bootstrap/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="css/home.css">
-    <link rel="stylesheet" href="css/post.css">
-    <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 16px; } /* Slightly larger per user request */
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+<html><head title="/Users/yinwang/Code/cpython/Lib/email/quoprimime.py"><style type='text/css'>
+body { color: #666666; }
+a {
+    text-decoration: none; color: #5AA2A7;
+    border: solid 1px white;
+}
+a.active {
+    background: -webkit-linear-gradient(top,rgba(255, 255, 200, 0.35) 0,rgba(255, 255, 200, 0.55) 100%);
+    border: solid 1px #E5E600;
+}
+table, th, td { border: 1px solid lightgrey; padding: 5px; corner: rounded; }
+.builtin {color: #B17E41;}
+.comment, .block-comment {color: #aaaaaa; font-style: italic;}
+.constant {color: #888888;}
+.decorator {color: #778899;}
+.doc-string {color: #aaaaaa;}
+.error {border-bottom: 1px solid red;}
+.field-name {color: #2e8b57;}
+.function {color: #4682b4;}
+.identifier {color: #8b7765;}
+.info {border-bottom: 1px dotted RoyalBlue;}
+.keyword {color: #0000cd;}
+.lineno {color: #cccccc;}
+.number {color: #483d8b;}
+.parameter {color: #777777;}
+.string {color: #999999;}
+.type-name {color: #4682b4;}
+.warning {border-bottom: 1px dotted orange;}</style>
+<script language="JavaScript" type="text/javascript">
+var highlighted;
+
+function highlight(xid)
+{
+    var elms = document.querySelectorAll('[xid="' + xid + '"]');
+    for (k in elms) {
+        v = elms[k]
+        v.className = "active";
+    }
+    highlighted = xid;
+}
+
+function clearHighlight() {
+    var elms = document.querySelectorAll('[xid="' + highlighted + '"]');
+    for (k in elms) {
+        v = elms[k]
+        v.className = "";
+    }
+}
+
+window.onload =
+    function (e) {
+        var tags = document.getElementsByTagName("A")
+        for (var i = 0; i < tags.length; i++) {
+            tags[i].onmouseover =
+                function (e) {
+                    clearHighlight();
+                    var xid = e.toElement.getAttribute('xid');
+                    highlight(xid);
+                }
+        }
+    }</script>
 </head>
 <body>
-    <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-bs">
-                    <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
-            </div>
-            <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
-                <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170605.html'>Tweets</a></li>
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-            <li><a href='homepage_20250719.html'>当然我在扯淡 (2025-07-19)</a></li><li><a href='index_20260110.html'>Surely I am Joking (2026-01-10)</a></li></ul></li>
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-            <li><a href='resources_d8-3404-d8-8424_20130614.html'>D8 3404 D8 8424</a></li><li><a href='resources_demos_pysonar2_email_base64mime.py_20150408.html'>Demos Pysonar2 Email Base64Mime.Py</a></li><li><a href='resources_demos_pysonar2_email_charset.py_20150506.html'>Demos Pysonar2 Email Charset.Py</a></li><li><a href='resources_demos_pysonar2_email_encoders.py_20160822.html'>Demos Pysonar2 Email Encoders.Py</a></li><li><a href='resources_demos_pysonar2_email_errors.py_20150409.html'>Demos Pysonar2 Email Errors.Py</a></li><li><a href='resources_demos_pysonar2_email_header.py_20140305.html'>Demos Pysonar2 Email Header.Py</a></li><li><a href='resources_demos_pysonar2_email_quoprimime.py_20150408.html'>Demos Pysonar2 Email Quoprimime.Py</a></li><li><a href='resources_demos_pysonar2_re.py_20150408.html'>Demos Pysonar2 Re.Py</a></li><li><a href='resources_demos_pysonar2_sre_compile.py_20160822.html'>Demos Pysonar2 Sre Compile.Py</a></li><li><a href='resources_demos_pysonar2_sre_constants.py_20160822.html'>Demos Pysonar2 Sre Constants.Py</a></li><li><a href='resources_demos_pysonar2_sre_parse.py_20160822.html'>Demos Pysonar2 Sre Parse.Py</a></li><li><a href='resources_diff1-diff2_20200728.html'>Diff1 Diff2</a></li><li><a href='resources_mk1-mk2_20130627.html'>Mk1 Mk2</a></li><li><a href='resources_nav1-nav2_20200728.html'>Nav1 Nav2</a></li><li><a href='resources_paredit20-paredit23_20200728.html'>Paredit20 Paredit23</a></li><li><a href='resources_pydiff1-pydiff2_20130711.html'>Pydiff1 Pydiff2</a></li><li><a href='resources_simulator-mips-simulator-arm_20200728.html'>Simulator Mips Simulator Arm</a></li><li><a href='resources_typed-clojure1-typed-clojure2_20200728.html'>Typed Clojure1 Typed Clojure2</a></li></ul></li></ul>
-            </div>
-        </div>
-    </nav>
-
-    <div class="inner">
-        
-        <table width=100% border='1px solid gray'><tr><td valign='top'><ul>
+<table width=100% border='1px solid gray'><tr><td valign='top'><ul>
 <li><a href='#.Users.yinwang.Code.cpython.Lib.re', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_re")'><span class='identifier'>re</span></a></li><li><a href='#.Users.yinwang.Code.cpython.Lib.email.quoprimime.__all__', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_quoprimime___all__")'><span class='identifier'>__all__</span></a></li><li><a href='#.Users.yinwang.Code.cpython.Lib.string', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_string")'><span class='identifier'>string</span></a></li><li><a href='#.Users.yinwang.Code.cpython.Lib.email.quoprimime.CRLF', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_quoprimime_CRLF")'><span class='identifier'>CRLF</span></a></li><li><a href='#.Users.yinwang.Code.cpython.Lib.email.quoprimime.NL', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_quoprimime_NL")'><span class='identifier'>NL</span></a></li><li><a href='#.Users.yinwang.Code.cpython.Lib.email.quoprimime.EMPTYSTRING', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_quoprimime_EMPTYSTRING")'><span class='identifier'>EMPTYSTRING</span></a></li><li><a href='#.Users.yinwang.Code.cpython.Lib.email.quoprimime._QUOPRI_HEADER_MAP', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_quoprimime__QUOPRI_HEADER_MAP")'><span class='identifier'>_QUOPRI_HEADER_MAP</span></a></li><li><a href='#.Users.yinwang.Code.cpython.Lib.email.quoprimime._QUOPRI_BODY_MAP', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_quoprimime__QUOPRI_BODY_MAP")'><span class='identifier'>_QUOPRI_BODY_MAP</span></a></li><li><a href='#.Users.yinwang.Code.cpython.Lib.email.quoprimime.c', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_quoprimime_c")'><span class='identifier'>c</span></a></li><li><a href='#.Users.yinwang.Code.cpython.Lib.email.quoprimime.header_check', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_quoprimime_header_check")'><span class='function'>header_check</span></a></li><li><a href='#.Users.yinwang.Code.cpython.Lib.email.quoprimime.body_check', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_quoprimime_body_check")'><span class='function'>body_check</span></a></li><li><a href='#.Users.yinwang.Code.cpython.Lib.email.quoprimime.header_length', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_quoprimime_header_length")'><span class='function'>header_length</span></a></li><li><a href='#.Users.yinwang.Code.cpython.Lib.email.quoprimime.body_length', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_quoprimime_body_length")'><span class='function'>body_length</span></a></li><li><a href='#.Users.yinwang.Code.cpython.Lib.email.quoprimime._max_append', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_quoprimime__max_append")'><span class='function'>_max_append</span></a></li><li><a href='#.Users.yinwang.Code.cpython.Lib.email.quoprimime.unquote', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_quoprimime_unquote")'><span class='function'>unquote</span></a></li><li><a href='#.Users.yinwang.Code.cpython.Lib.email.quoprimime.quote', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_quoprimime_quote")'><span class='function'>quote</span></a></li><li><a href='#.Users.yinwang.Code.cpython.Lib.email.quoprimime.header_encode', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_quoprimime_header_encode")'><span class='function'>header_encode</span></a></li><li><a href='#.Users.yinwang.Code.cpython.Lib.email.quoprimime._body_accumulator', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_quoprimime__body_accumulator")'><span class='type-name'>_body_accumulator</span></a><ul>
 <li><a href='#.Users.yinwang.Code.cpython.Lib.email.quoprimime._body_accumulator.__init__', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_quoprimime__body_accumulator___init__")'><span class='function'>__init__</span></a></li><li><a href='#.Users.yinwang.Code.cpython.Lib.email.quoprimime._body_accumulator.write_str', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_quoprimime__body_accumulator_write_str")'><span class='function'>write_str</span></a></li><li><a href='#.Users.yinwang.Code.cpython.Lib.email.quoprimime._body_accumulator.newline', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_quoprimime__body_accumulator_newline")'><span class='function'>newline</span></a></li><li><a href='#.Users.yinwang.Code.cpython.Lib.email.quoprimime._body_accumulator.write_soft_break', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_quoprimime__body_accumulator_write_soft_break")'><span class='function'>write_soft_break</span></a></li><li><a href='#.Users.yinwang.Code.cpython.Lib.email.quoprimime._body_accumulator.write_wrapped', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_quoprimime__body_accumulator_write_wrapped")'><span class='function'>write_wrapped</span></a></li><li><a href='#.Users.yinwang.Code.cpython.Lib.email.quoprimime._body_accumulator.write_char', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_quoprimime__body_accumulator_write_char")'><span class='function'>write_char</span></a></li></ul>
 </li><li><a href='#.Users.yinwang.Code.cpython.Lib.email.quoprimime.body_encode', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_quoprimime_body_encode")'><span class='function'>body_encode</span></a></li><li><a href='#.Users.yinwang.Code.cpython.Lib.email.quoprimime.decode', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_quoprimime_decode")'><span class='function'>decode</span></a></li><li><a href='#.Users.yinwang.Code.cpython.Lib.email.quoprimime.body_decode', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_quoprimime_body_decode")'><span class='identifier'>body_decode</span></a></li><li><a href='#.Users.yinwang.Code.cpython.Lib.email.quoprimime.decodestring', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_quoprimime_decodestring")'><span class='identifier'>decodestring</span></a></li><li><a href='#.Users.yinwang.Code.cpython.Lib.email.quoprimime._unquote_match', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_quoprimime__unquote_match")'><span class='function'>_unquote_match</span></a></li><li><a href='#.Users.yinwang.Code.cpython.Lib.email.quoprimime.header_decode', onmouseover='highlight("_Users_yinwang_Code_cpython_Lib_email_quoprimime_header_decode")'><span class='function'>header_decode</span></a></li></ul>
@@ -381,18 +387,4 @@
 <span class='lineno'> 320</span>     &quot;&quot;&quot;
 <span class='lineno'> 321</span>     <a name='.Users.yinwang.Code.cpython.Lib.email.quoprimime.header_decode.s', xid ='.Users.yinwang.Code.cpython.Lib.email.quoprimime.header_decode.s', title='?'>s</a> = <a href='#.Users.yinwang.Code.cpython.Lib.email.quoprimime.header_decode.s', xid ='.Users.yinwang.Code.cpython.Lib.email.quoprimime.header_decode.s', title='?'>s</a>.replace(&#39;_&#39;, &#39; &#39;)
 <span class='lineno'> 322</span>     return <a href='../re.py.html#.Users.yinwang.Code.cpython.Lib.re', xid ='.Users.yinwang.Code.cpython.Lib.re', title='re'>re</a>.<a href='../re.py.html#.Users.yinwang.Code.cpython.Lib.re.sub', xid ='.Users.yinwang.Code.cpython.Lib.re.sub', title='(str, ? -> ?, str, int, int) -> ? | (str, ? -> ?, ?, int, int) -> ? | (str, str, str, int, int) -> ? | (str, ? -> str, ?, int, int) -> ?'>sub</a>(r&#39;=[a-fA-F0-9]{2}&#39;, <a href='#.Users.yinwang.Code.cpython.Lib.email.quoprimime._unquote_match', xid ='.Users.yinwang.Code.cpython.Lib.email.quoprimime._unquote_match', title='? -> str'>_unquote_match</a>, <a href='#.Users.yinwang.Code.cpython.Lib.email.quoprimime.header_decode.s', xid ='.Users.yinwang.Code.cpython.Lib.email.quoprimime.header_decode.s', title='?'>s</a>, flags=<a href='../re.py.html#.Users.yinwang.Code.cpython.Lib.re', xid ='.Users.yinwang.Code.cpython.Lib.re', title='re'>re</a>.<a href='../re.py.html#.Users.yinwang.Code.cpython.Lib.re.ASCII', xid ='.Users.yinwang.Code.cpython.Lib.re.ASCII', title='int'>ASCII</a>)
-</pre></td></tr></table>
-    </div>
-    
-    <script src="js/highlight.min.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/bootstrap/bootstrap.min.js"></script>
-    <script>
-        if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
-            document.body.classList.add('mobile');
-            var navbar = document.querySelector('nav.navbar');
-            if (navbar) { navbar.classList.remove('navbar-fixed-top'); }
-        }
-    </script>
-</body>
-</html>
+</pre></td></tr></table></body></html>
