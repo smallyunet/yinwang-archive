@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=0.5">
-    <title>讨厌的 C# IDisposable 接口</title>
+    <title>Blog Cn 2016 10 13 C Sharp Disposable</title>
     <link rel="stylesheet" href="css/highlight/xcode.min.css">
     <link rel="stylesheet" href="css/bootstrap/bootstrap-tooltips.css">
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
@@ -40,7 +40,7 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
-                <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170605.html'>Tweets</a></li>
+                <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
                 <ul class="dropdown-menu">
@@ -54,12 +54,8 @@
     </nav>
 
     <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2016_10_13_c-sharp-disposable_20161017.html" class="current">2016-10-17</a> <a href="blog-cn_2016_10_13_c-sharp-disposable_20161101.html" >2016-11-01</a> <a href="blog-cn_2016_10_13_c-sharp-disposable_20170510.html" >2017-05-10</a> <a href="blog-cn_2016_10_13_c-sharp-disposable_20170531.html" >2017-05-31</a> <a href="blog-cn_2016_10_13_c-sharp-disposable_20171101.html" >2017-11-01</a> <a href="blog-cn_2016_10_13_c-sharp-disposable_20171202.html" >2017-12-02</a> <a href="blog-cn_2016_10_13_c-sharp-disposable_20180305.html" >2018-03-05</a> <a href="blog-cn_2016_10_13_c-sharp-disposable_20191118.html" >2019-11-18</a> <a href="blog-cn_2016_10_13_c-sharp-disposable_20200217.html" >2020-02-17</a> <a href="blog-cn_2016_10_13_c-sharp-disposable_20240416.html" >2024-04-16</a></div>
+        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2016_10_13_c-sharp-disposable_20161017.html" class="current">2016-10-17</a> <a href="blog-cn_2016_10_13_c-sharp-disposable_20161101.html" >2016-11-01</a> <a href="blog-cn_2016_10_13_c-sharp-disposable_20170510.html" >2017-05-10</a> <a href="blog-cn_2016_10_13_c-sharp-disposable_20171101.html" >2017-11-01</a> <a href="blog-cn_2016_10_13_c-sharp-disposable_20171202.html" >2017-12-02</a> <a href="blog-cn_2016_10_13_c-sharp-disposable_20180305.html" >2018-03-05</a> <a href="blog-cn_2016_10_13_c-sharp-disposable_20191118.html" >2019-11-18</a> <a href="blog-cn_2016_10_13_c-sharp-disposable_20200217.html" >2020-02-17</a> <a href="blog-cn_2016_10_13_c-sharp-disposable_20240416.html" >2024-04-16</a></div>
         <div>
-            <table>
-                <tr>
-                    <td>
-                        <div>
                             <h2>讨厌的 C# IDisposable 接口</h2>
                             <p>我们 team 快被 C# 里面的各种 <a href="https://msdn.microsoft.com/en-us/library/system.idisposable(v=vs.110).aspx">IDisposable</a> 对象给折腾疯了…… 先来科普一下，如果你没有用过 C#，IDisposable 是 C# 针对“资源管理”设计的一个接口，它类似于 Java 的 <a href="https://docs.oracle.com/javase/7/docs/api/java/io/Closeable.html">Closeable</a> 接口。这类接口一般提供一个“方法”（比如叫 Dispose 或者 Close），你的资源（比如文件流）实现这个接口。使用资源的人在用完之后调用这个方法，表示“关闭资源”。比如，文件打开，读写完了之后，调用 close 进行关闭，就是这个原理。</p>
 
@@ -176,27 +172,6 @@
 <p>什么时候该实现 IDisposable 接口，如何实现，什么时候可以留给 GC 处理，这些信息在网络上都是各说不一，非常混淆。关于这个问题，我建议使用 .NET 的开发人员都先看看<a href="http://blog.stephencleary.com/2009/08/first-rule-of-implementing-idisposable.html">这篇 blog</a>，看完之后我还有其它的推荐。</p>
 
                         </div>
-
-                        <div>
-                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                            <ins class="adsbygoogle"
-                                 data-ad-client="ca-pub-1331524016319584"
-                                 data-ad-slot="6657867155"></ins>
-                            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-                        </div>
-                    </td>
-
-                    <td valign="top">
-                        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                        <ins class="adsbygoogle"
-                             data-ad-client="ca-pub-1331524016319584"
-                             data-ad-slot="2703393155"
-                             data-ad-format="auto"></ins>
-                        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-                    </td>
-                </tr>
-            </table>
-        </div>
     </div>
     
     <script src="js/highlight.min.js"></script>

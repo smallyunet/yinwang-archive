@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=0.5">
-    <title>DSL</title>
+    <title>Blog Cn 2017 05 25 Dsl</title>
     <link rel="stylesheet" href="css/highlight/xcode.min.css">
     <link rel="stylesheet" href="css/bootstrap/bootstrap-tooltips.css">
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
@@ -40,7 +40,7 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
-                <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170605.html'>Tweets</a></li>
+                <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
                 <ul class="dropdown-menu">
@@ -56,18 +56,6 @@
     <div class="inner">
         <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2017_05_25_dsl_20170527.html" class="current">2017-05-27</a> <a href="blog-cn_2017_05_25_dsl_20170608.html" >2017-06-08</a> <a href="blog-cn_2017_05_25_dsl_20171101.html" >2017-11-01</a> <a href="blog-cn_2017_05_25_dsl_20171202.html" >2017-12-02</a> <a href="blog-cn_2017_05_25_dsl_20171216.html" >2017-12-16</a> <a href="blog-cn_2017_05_25_dsl_20190716.html" >2019-07-16</a> <a href="blog-cn_2017_05_25_dsl_20191206.html" >2019-12-06</a> <a href="blog-cn_2017_05_25_dsl_20200225.html" >2020-02-25</a> <a href="blog-cn_2017_05_25_dsl_20240416.html" >2024-04-16</a></div>
         <div>
-            <table>
-                <tr>
-                    <td>
-                        <div>
-                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                            <ins class="adsbygoogle"
-                                 data-ad-client="ca-pub-1331524016319584"
-                                 data-ad-slot="6657867155"></ins>
-                            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-                        </div>
-
-                        <div>
                             <h2>DSL</h2>
                             <p>DSL 时不时地会成为一个话题，所以今天想专门说一下。</p>
 
@@ -189,54 +177,6 @@
 <span class="nt">&lt;/rule&gt;</span>    
 </code></pre>
 </div>
-
-<p>看明白了吗？这个看得人眼睛发涨的 XML，表达的不过是普通语言里面的 <code class="highlighter-rouge">if (size &gt; 1000) block()</code>。为了理解这一点，你可以把这个 XML 所表示的“数据结构”，想象成编译器里面的“抽象语法树”（AST）。所以写这个 XML，其实是在用手写 AST，那当然是相当痛苦的。</p>
-
-<p>那我们为什么不把 <code class="highlighter-rouge">if (size &gt; 1000) block()</code> 这条语句直接写到系统的 Java 代码里面呢？因为 Java 代码是编译之后放进系统里面的，一旦放进去就不能随时换掉了。然而我们需要可以随时的，“动态”的替换掉这块逻辑，而不更新系统代码。所以你不能把这条 Java 语句“写死”到系统代码里面，而必须作为“配置”。</p>
-
-<p>想清楚了这一点，你就自然找到了解决方案：把 <code class="highlighter-rouge">if (x &gt; 1000) block()</code> 这样的 Java 代码片段写到一个“配置文件”里，然后使用 JVM 读取，组合，并且编译这个文件，动态加载生成的 class，这样系统的行为就可以改变了。实际上这也就是公司里另外一个团队做过的事情，让用户编辑一个基于 Java 的“规则文件”，然后加载它。</p>
-
-<p>我觉得这不失为一个可行的解决方案。为了实现动态逻辑加载，你完全可以用像 Java 或者 JavaScript 那样已有的语言，利用已有的编译器来达到这个目的，而不需要设计新的语言。然而当 PL 民科们遇到这样的问题，他们首先想到的是：设计一个新的 DSL！于是 Dex 就诞生了。</p>
-
-<p>Dex 要表达的东西，本质上就是这些逻辑表达式和条件语句，然而 Dex 被设计为一个完全独立的语言。它的语法被设计得其它语言很不一样，结合了 Haskell，Go 语言，Python 等各种语言语法的缺陷。后来团队里又进来一个研究过 Prolog 逻辑式语言的人，所以他试图在里面加入“逻辑式编程”的元素。总之他们有很宏伟的目标：让这个 DSL “可靠”，“可验证”，成为“描述式语言”……</p>
-
-<p>他们向团队宣布这个雄心勃勃的计划之后，一个有趣的插曲发生了。听说又要创造一个 DSL，“NaCl 专家”再次怒发冲冠，开始反对这个计划。这一次他拿出了实际行动，自己动手拿 Java 内嵌的 <a href="https://en.wikipedia.org/wiki/Nashorn_(JavaScript_engine)">JavaScript 解释器</a>，做了一个基于 JavaScript 的动态配置系统，只开发了一个星期就可以用了。</p>
-
-<p>我觉得用 JavaScript 也不失为一个解决方案，毕竟浏览器的 PAC 文件就是用 JavaScript 定义代理规则的，而这种代理规则跟我们的应用非常类似。我虽然没有特别喜欢 JavaScript，但它其中的一些简单构造用在这种场景，是没什么大问题的。</p>
-
-<p>其实在此之前我也看不下去了，所以自己悄悄做了一个类似的配置系统，拿已有的 JavaScript parser，提取 JavaScript 的相关构造，做了一个解释器，嵌入到系统里，只花了一天时间。但我心里很清楚，一切技术上的努力在政治斗争的面前，都是无足轻重的。我早已经伤不起了，在好心人的帮助下，我离开了这个团队，但暗地里我仍然从精神上支持着“NaCl 专家”继续他的抗争。</p>
-
-<p>争吵的最后结果，当然是由于领导偏心庇护，否决了“外人”的作法，让两个民科和一个 Prolog 狂人继续开发 Dex。几个月之后，公司的第二个奇葩 DSL 诞生了。它用混淆难读的方式，表达了普通语言里的条件语句和逻辑表达式。他们为它写了 parser，写了解释器，写了文档，开始在公司强行推广。“可靠”，“可验证”，“描述式”的目标，早已被抛到九霄云外。用的人都苦不堪言，好多东西没法表达或者不知道如何表达，出错了也没有足够的反馈信息，每次要写东西就得去找“Dex 之父”们。</p>
-
-<p>嗯，历史就这样重演了……</p>
-
-<h3 id="结论">结论</h3>
-
-<p>所以，我对于 DSL 的结论是什么呢？</p>
-
-<ol>
-  <li>尽一切可能避免创造 DSL，因为它会带来严重的理解，交流和学习曲线问题，可能会严重的降低团队的工作效率。如果这个 DSL 是给用户使用，会严重影响用户体验，降低产品的可用性。</li>
-  <li>大部分时候写库代码，把需要的功能做成函数，其实就可以解决问题。</li>
-  <li>如果真的到了必须创造 DSL 的时候，非 DSL 不能解决问题，才可以动手设计 DSL。但 DSL 必须由程序语言专家来完成，否则它还是可能给产品和团队带来严重的后果。</li>
-  <li>大部分 DSL 要解决的问题，不过是“动态逻辑加载”。为了这个目的，你完全可以利用已有的语言（比如 JavaScript），或者取其中一部分构造，通过动态调用它的解释器（编译器）来达到这个目的，而不需要创造新的 DSL。</li>
-</ol>
-
-<p>（本文建议零售价 ￥30，如果它让你的团队或者公司幸免落坑，请付款 ￥100000 :）</p>
-
-                        </div>
-                    </td>
-
-                    <td valign="top">
-                        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                        <ins class="adsbygoogle"
-                             data-ad-client="ca-pub-1331524016319584"
-                             data-ad-slot="2703393155"
-                             data-ad-format="auto"></ins>
-                        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-                    </td>
-                </tr>
-            </table>
-        </div>
     </div>
     
     <script src="js/highlight.min.js"></script>

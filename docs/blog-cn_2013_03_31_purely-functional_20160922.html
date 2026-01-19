@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=0.5">
-    <title>对函数式语言的误解</title>
+    <title>Blog Cn 2013 03 31 Purely Functional</title>
     <link rel="stylesheet" href="css/highlight/xcode.min.css">
     <link rel="stylesheet" href="css/bootstrap/bootstrap-tooltips.css">
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
@@ -40,7 +40,7 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
-                <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170605.html'>Tweets</a></li>
+                <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
                 <ul class="dropdown-menu">
@@ -54,12 +54,8 @@
     </nav>
 
     <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2013_03_31_purely-functional_20130421.html" >2013-04-21</a> <a href="blog-cn_2013_03_31_purely-functional_20140210.html" >2014-02-10</a> <a href="blog-cn_2013_03_31_purely-functional_20140421.html" >2014-04-21</a> <a href="blog-cn_2013_03_31_purely-functional_20140621.html" >2014-06-21</a> <a href="blog-cn_2013_03_31_purely-functional_20151205.html" >2015-12-05</a> <a href="blog-cn_2013_03_31_purely-functional_20160922.html" class="current">2016-09-22</a> <a href="blog-cn_2013_03_31_purely-functional_20170504.html" >2017-05-04</a> <a href="blog-cn_2013_03_31_purely-functional_20170603.html" >2017-06-03</a> <a href="blog-cn_2013_03_31_purely-functional_20171203.html" >2017-12-03</a> <a href="blog-cn_2013_03_31_purely-functional_20180222.html" >2018-02-22</a> <a href="blog-cn_2013_03_31_purely-functional_20191208.html" >2019-12-08</a> <a href="blog-cn_2013_03_31_purely-functional_20200228.html" >2020-02-28</a> <a href="blog-cn_2013_03_31_purely-functional_20240416.html" >2024-04-16</a></div>
+        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2013_03_31_purely-functional_20130421.html" >2013-04-21</a> <a href="blog-cn_2013_03_31_purely-functional_20140210.html" >2014-02-10</a> <a href="blog-cn_2013_03_31_purely-functional_20140421.html" >2014-04-21</a> <a href="blog-cn_2013_03_31_purely-functional_20140621.html" >2014-06-21</a> <a href="blog-cn_2013_03_31_purely-functional_20151205.html" >2015-12-05</a> <a href="blog-cn_2013_03_31_purely-functional_20160922.html" class="current">2016-09-22</a> <a href="blog-cn_2013_03_31_purely-functional_20170504.html" >2017-05-04</a> <a href="blog-cn_2013_03_31_purely-functional_20171203.html" >2017-12-03</a> <a href="blog-cn_2013_03_31_purely-functional_20180222.html" >2018-02-22</a> <a href="blog-cn_2013_03_31_purely-functional_20191208.html" >2019-12-08</a> <a href="blog-cn_2013_03_31_purely-functional_20200228.html" >2020-02-28</a> <a href="blog-cn_2013_03_31_purely-functional_20240416.html" >2024-04-16</a></div>
         <div>
-            <table>
-                <tr>
-                    <td>
-                        <div>
                             <h2>对函数式语言的误解</h2>
                             <p>很早的时候，“函数式语言”对于我来说就是 Lisp，因为 Lisp 可以在程序的几乎任何位置定义函数，并且把它们作为值来传递（这叫做 first-class function）。后来有人告诉我，Lisp 其实不算是“函数式语言”，因为 Lisp 的函数并不“纯”（pure）。所谓“纯函数”的意思，就是像数学的函数一样，如果你给它同样的输入，它就给你同样的输出。然后你就发现在这种定义下，几乎所有程序语言里面常见的随机数函数（<code>random</code>），其实都不是“纯函数”。因为每一次调用 <code>random()</code>，你都会得到不同的随机数。</p>
 
@@ -137,27 +133,6 @@ int h(int z) {
 <p>说了这么多，对于“函数式语言”这一概念的误解，应该消除得差不多了。其实“函数式语言”唯一的要求，应该是能够在任意位置定义函数，并且能够把函数作为值传递，不管这函数是“纯”的还是“不纯”的。所以像 Lisp 和 ML 这样的语言，其实完全符合“函数式语言”这一称号。</p>
 
                         </div>
-
-                        <div>
-                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                            <ins class="adsbygoogle"
-                                 data-ad-client="ca-pub-1331524016319584"
-                                 data-ad-slot="6657867155"></ins>
-                            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-                        </div>
-                    </td>
-
-                    <td valign="top">
-                        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                        <ins class="adsbygoogle"
-                             data-ad-client="ca-pub-1331524016319584"
-                             data-ad-slot="2703393155"
-                             data-ad-format="auto"></ins>
-                        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-                    </td>
-                </tr>
-            </table>
-        </div>
     </div>
     
     <script src="js/highlight.min.js"></script>

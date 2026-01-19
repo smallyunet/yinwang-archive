@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=0.5">
-    <title>GTF - Great Teacher Friedman</title>
+    <title>Blog Cn 2012 07 04 Dan Friedman</title>
     <link rel="stylesheet" href="css/highlight/xcode.min.css">
     <link rel="stylesheet" href="css/bootstrap/bootstrap-tooltips.css">
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
@@ -40,7 +40,7 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
-                <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170605.html'>Tweets</a></li>
+                <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
                 <ul class="dropdown-menu">
@@ -56,10 +56,6 @@
     <div class="inner">
         <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2012_07_04_dan-friedman_20130418.html" >2013-04-18</a> <a href="blog-cn_2012_07_04_dan-friedman_20130426.html" >2013-04-26</a> <a href="blog-cn_2012_07_04_dan-friedman_20150101.html" >2015-01-01</a> <a href="blog-cn_2012_07_04_dan-friedman_20150206.html" >2015-02-06</a> <a href="blog-cn_2012_07_04_dan-friedman_20161011.html" >2016-10-11</a> <a href="blog-cn_2012_07_04_dan-friedman_20170506.html" class="current">2017-05-06</a> <a href="blog-cn_2012_07_04_dan-friedman_20180329.html" >2018-03-29</a> <a href="blog-cn_2012_07_04_dan-friedman_20191025.html" >2019-10-25</a> <a href="blog-cn_2012_07_04_dan-friedman_20200223.html" >2020-02-23</a> <a href="blog-cn_2012_07_04_dan-friedman_20211205.html" >2021-12-05</a> <a href="blog-cn_2012_07_04_dan-friedman_20240421.html" >2024-04-21</a></div>
         <div>
-            <table>
-                <tr>
-                    <td>
-                        <div>
                             <h2>GTF - Great Teacher Friedman</h2>
                             <h3 id="写小人书的老顽童">写小人书的老顽童</h3>
 
@@ -176,47 +172,6 @@
       (cps1 exp id))))
 </code></pre>
 </div>
-
-<p>而这还不是 B621 的全部，每一个星期 Friedman 会在黑板上写下一道很难的题目。他不让你看书或者看论文。他有时甚至不告诉你题目里相关概念的名字，或者故意给它们起个新名字，让你想查都查不到。他要求你完全靠自己把这些难题解出来，下一个星期的时候在黑板上给其它同学讲解。他没有明确的评分标准，让你感觉完全没有成绩的压力。</p>
-
-<p>这些题目包括一些很难的问题， 比如 church numeral 的前驱 (predecessor)。这个问题，当年是 Stephen Kleene （图灵的学长） 花了三个月冥思苦想才做出来的。不幸的是我在 Cornell 就学到了 Kleene 的做法，造成了思维的定势，所以这个训练当时对我来说失去了意义。而我们班上却有一个数学系的同学，出人意料的在一个星期之内做出了一个比 Kleene 还要简单的方法。他的完整的代码（用传统的 lambda calculus 语法表示）如下：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>λn w z. ((n λl h. h (l w)) (λd.z)) (λx.x)
-</code></pre>
-</div>
-
-<p>其它的问题包括从 lambda calculus 到 SKI combinator 的编译器，逻辑式（可逆）CPS 变换，实现 Hindley-Milner 类型系统，等等。我发现，就算自认为明白了的东西，经过一番思索，认识居然还可以更进一步。</p>
-
-<p>当然，重新发明东西并不会给我带来论文发表，但是它却给我带来了更重要的东西，这就是独立的思考能力。一旦一个东西被你“想”出来，而不是从别人那里 “学”过来，那么你就知道这个想法是如何产生的。这比起直接学会这个想法要有用很多，因为你知道这里面所有的细节和犯过的错误。而最重要的，其实是由此得到的直觉。如果直接去看别人的书或者论文，你就很难得到这种直觉，因为一般人写论文都会把直觉埋藏在一堆符号公式之下，让你看不到背后的真实想法。如果得到了直觉，下一次遇到类似的问题，你就有可能很快的利用已有的直觉来解决新的问题。</p>
-
-<p>而这一切都已经发生在我身上。比如在听说 ANF 之后，我没有看 Amr Sabry 的论文，只把我原来的 CPSer 程序改了一点点，就得到了 ANF 变换，整个过程只花了十几分钟。而在 R. Kent Dybvig 的编译器课程上，我利用 CPS 变换里面的直觉，改造和合并了 Dybvig 提供的编译器框架的好几个 pass，使得它们变得比原来短小好几倍，却生成更好的代码。</p>
-
-<p>现在我仍然是这样，喜欢故意重新发明一些东西，探索不止一个领域。这让我获得了直觉，不再受别人思想的限制，节省了看论文的时间，而且多了一些乐趣。一个问题，当我相信自己能想得出来，一般都能解决。虽然我经常不把我埋头做出来的东西放在心上，把它们叫做“重新发明”(reinvention)，但是出乎意料的是，最近我发现这里面其实隐藏了一些真正的发明。我准备慢慢把其中一些想法发掘整理出来，发表成论文或者做成产品。</p>
-
-<p>俗话说“授人以鱼，不如授人以渔。”就是这个道理吧。Dan Friedman，谢谢你教会我钓鱼。</p>
-
-                        </div>
-
-                        <div>
-                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                            <ins class="adsbygoogle"
-                                 data-ad-client="ca-pub-1331524016319584"
-                                 data-ad-slot="6657867155"></ins>
-                            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-                        </div>
-                    </td>
-
-                    <td valign="top">
-                        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                        <ins class="adsbygoogle"
-                             data-ad-client="ca-pub-1331524016319584"
-                             data-ad-slot="2703393155"
-                             data-ad-format="auto"></ins>
-                        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-                    </td>
-                </tr>
-            </table>
-        </div>
     </div>
     
     <script src="js/highlight.min.js"></script>

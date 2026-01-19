@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=0.5">
-    <title>测试的道理</title>
+    <title>Blog Cn 2016 09 14 Tests</title>
     <link rel="stylesheet" href="css/highlight/xcode.min.css">
     <link rel="stylesheet" href="css/bootstrap/bootstrap-tooltips.css">
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
@@ -40,7 +40,7 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
-                <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170605.html'>Tweets</a></li>
+                <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
                 <ul class="dropdown-menu">
@@ -54,12 +54,8 @@
     </nav>
 
     <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2016_09_14_tests_20160917.html" >2016-09-17</a> <a href="blog-cn_2016_09_14_tests_20160923.html" >2016-09-23</a> <a href="blog-cn_2016_09_14_tests_20170506.html" class="current">2017-05-06</a> <a href="blog-cn_2016_09_14_tests_20170606.html" >2017-06-06</a> <a href="blog-cn_2016_09_14_tests_20170628.html" >2017-06-28</a> <a href="blog-cn_2016_09_14_tests_20171111.html" >2017-11-11</a> <a href="blog-cn_2016_09_14_tests_20171216.html" >2017-12-16</a> <a href="blog-cn_2016_09_14_tests_20191206.html" >2019-12-06</a> <a href="blog-cn_2016_09_14_tests_20200228.html" >2020-02-28</a> <a href="blog-cn_2016_09_14_tests_20240416.html" >2024-04-16</a></div>
+        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2016_09_14_tests_20160917.html" >2016-09-17</a> <a href="blog-cn_2016_09_14_tests_20160923.html" >2016-09-23</a> <a href="blog-cn_2016_09_14_tests_20170506.html" class="current">2017-05-06</a> <a href="blog-cn_2016_09_14_tests_20170628.html" >2017-06-28</a> <a href="blog-cn_2016_09_14_tests_20171111.html" >2017-11-11</a> <a href="blog-cn_2016_09_14_tests_20171216.html" >2017-12-16</a> <a href="blog-cn_2016_09_14_tests_20191206.html" >2019-12-06</a> <a href="blog-cn_2016_09_14_tests_20200228.html" >2020-02-28</a> <a href="blog-cn_2016_09_14_tests_20240416.html" >2024-04-16</a></div>
         <div>
-            <table>
-                <tr>
-                    <td>
-                        <div>
                             <h2>测试的道理</h2>
                             <p>在长期的程序语言研究和实际工作中，我摸索出了一些关于测试的道理。然而在我工作过的每一个公司，我发现绝大多数人都不明白这些道理，很多团队集体性的采用错误的做法而不自知。很多人把测试当成一种主义和教条，进行过度的测试，不必要的测试，不可靠的测试，并且把这些错误的做法传授给新手，造成恶性循环。本来目的是提高代码质量，结果不但没能达到目的，反而降低了代码质量，增大了工作量，大幅度延缓工程进度。</p>
 
@@ -177,46 +173,6 @@
 }
 </code></pre>
 </div>
-
-<p>查看代码之后我发现，代码其实没有进入“死循环”，而是进入了指数复杂度的计算，所以很久都不能完成。这是因为写这函数的人不小心，或者没有理解 C++ 的函数参数缺省是传值（做拷贝）而不是传引用，所以他忘了打那个“&amp;”，所以函数被递归调用的时候不是传递原来的集合，而是做了一个拷贝。每一次递归调用<code class="highlighter-rouge">traverse</code>，visited 都得到一个新的拷贝，所以返回之后，visited 的值就恢复到之前的状态，就像 node 被自动 remove 了一样。所以这个函数仍然会在某种情况下再次访问这个节点。这样的代码不会进入死循环，然而在某种特殊的图结构下，这会造成指数级的时间复杂度（请想一下这是什么样的一种图）。</p>
-
-<p>本来很明显的一个图论算法问题，加一个“&amp;”就修好了，手工试验也发现问题消失了。然而 Coverity 的测试教条主义者们（包括写出这 bug 的那人自己），吵着闹着，严肃命令我必须写出测试，构造出可以造成这种后果的数据结构，确保这个 bug 不会再重新出现。</p>
-
-<p>为一个我根本不会犯的错误写测试，而且它不可能再次发生，这不是很搞笑吗？就算你写了测试，也不能保证同样的事情不再发生。如果你不小心漏掉“&amp;”，下次同样的问题还会发生，并且发生在另外的地方，而你却没有给那块代码写测试，所以给这个 bug 写测试，并不能防止同样的问题再次发生。这就像一个技术不过关的赛车手，他在别人不大可能撞车的地方撞了车，然后就要求赛场在那个地方装上轮胎护栏。可是下一次，这个车手又会在另一个其他人都不会撞车地方撞车……</p>
-
-<p>稍微有点图论常识，熟悉 C++ 基本概念的人，都不会犯这种错误。防止这种问题，只有靠个人的技术和经验，而不能靠测试。防止它再次发生的最好办法，恐怕是开个会把这个问题讲清楚，让大家理解，下次不要再犯。所以给这个 bug 写测试，完全是多此一举。跟队友们讲解了这个原理，他们听了之后，仿佛什么都没有听到一样，仍然强硬的要求：“可是你还是得写这个测试，因为这是我们的规定！你知道要是出了 bug，送一个销售工程师去客户那里，要花多少钱吗……” 无语了。</p>
-
-<p>Coverity 的 Java 分析，就是经常因为这种测试教条主义，使得项目进展及其痛苦和缓慢，却仍然 bug 百出。Coverity 的其他的问题，还包括我上面指出的，写重复的测试，一个测试测太多东西，使用字符串比较来做测试，等等。你恐怕很难想象，一个制造旨在提高代码质量的产品的公司，自己代码的质量是这样维护的 :P</p>
-
-<h3 id="完">完</h3>
-
-<p>由于绝大多数人对测试的误解如此之深，测试教条主义的流毒如此之广，导致许许多多优秀的程序员沉沦在繁琐的测试驱动开发中，无法舒展自己的长处。为了大家有一个轻松，顺利又可靠的工作环境，我希望大家多多转发这篇文章，改变这个行业的陋习。我希望大家在工程中理性的对待测试，而不是盲目的写测试，只有这样才能更好更快的完成项目。</p>
-
-<p>（由于这篇文章包含了我很多年的经验和深入的见解，希望你觉得有收获的话为此付费。建议价格是5美元，或者30人民币。【<a href="http://www.yinwang.org/blog-cn/2016/04/13/pay-blog">付费方式</a>】）</p>
-
-
-                        </div>
-
-                        <div>
-                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                            <ins class="adsbygoogle"
-                                 data-ad-client="ca-pub-1331524016319584"
-                                 data-ad-slot="6657867155"></ins>
-                            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-                        </div>
-                    </td>
-
-                    <td valign="top">
-                        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                        <ins class="adsbygoogle"
-                             data-ad-client="ca-pub-1331524016319584"
-                             data-ad-slot="2703393155"
-                             data-ad-format="auto"></ins>
-                        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-                    </td>
-                </tr>
-            </table>
-        </div>
     </div>
     
     <script src="js/highlight.min.js"></script>

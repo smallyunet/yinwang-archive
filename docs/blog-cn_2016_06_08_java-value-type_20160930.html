@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=0.5">
-    <title>Java 有值类型吗？</title>
+    <title>Blog Cn 2016 06 08 Java Value Type</title>
     <link rel="stylesheet" href="css/highlight/xcode.min.css">
     <link rel="stylesheet" href="css/bootstrap/bootstrap-tooltips.css">
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
@@ -40,7 +40,7 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
-                <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170605.html'>Tweets</a></li>
+                <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
                 <ul class="dropdown-menu">
@@ -54,12 +54,8 @@
     </nav>
 
     <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2016_06_08_java-value-type_20160611.html" >2016-06-11</a> <a href="blog-cn_2016_06_08_java-value-type_20160930.html" class="current">2016-09-30</a> <a href="blog-cn_2016_06_08_java-value-type_20170506.html" >2017-05-06</a> <a href="blog-cn_2016_06_08_java-value-type_20170709.html" >2017-07-09</a> <a href="blog-cn_2016_06_08_java-value-type_20171029.html" >2017-10-29</a> <a href="blog-cn_2016_06_08_java-value-type_20171129.html" >2017-11-29</a> <a href="blog-cn_2016_06_08_java-value-type_20171216.html" >2017-12-16</a> <a href="blog-cn_2016_06_08_java-value-type_20191120.html" >2019-11-20</a> <a href="blog-cn_2016_06_08_java-value-type_20200219.html" >2020-02-19</a> <a href="blog-cn_2016_06_08_java-value-type_20240416.html" >2024-04-16</a></div>
+        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2016_06_08_java-value-type_20160611.html" >2016-06-11</a> <a href="blog-cn_2016_06_08_java-value-type_20160930.html" class="current">2016-09-30</a> <a href="blog-cn_2016_06_08_java-value-type_20170506.html" >2017-05-06</a> <a href="blog-cn_2016_06_08_java-value-type_20171029.html" >2017-10-29</a> <a href="blog-cn_2016_06_08_java-value-type_20171129.html" >2017-11-29</a> <a href="blog-cn_2016_06_08_java-value-type_20171216.html" >2017-12-16</a> <a href="blog-cn_2016_06_08_java-value-type_20191120.html" >2019-11-20</a> <a href="blog-cn_2016_06_08_java-value-type_20200219.html" >2020-02-19</a> <a href="blog-cn_2016_06_08_java-value-type_20240416.html" >2024-04-16</a></div>
         <div>
-            <table>
-                <tr>
-                    <td>
-                        <div>
                             <h2>Java 有值类型吗？</h2>
                             <p>有人看了我之前的文章『<a href="http://www.yinwang.org/blog-cn/2016/06/06/swift">Swift 语言的设计错误</a>』，问我：“你说 Java 只有引用类型（reference type），但是根据 Java 的<a href="http://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html">官方文档</a>，Java 也有值类型（value type）和引用类型的区别的。比如 int，boolean 等原始类型就是值类型。” 现在我来解释一下这个问题。</p>
 
@@ -115,27 +111,6 @@ x = 2;        // x指向另一个内存地址B，内容是整数2。y仍然指�
 <p>有人指出，Java 的引用类型可以是 null，而原始类型不行，所以引用类型和值类型还是有区别的。但是其实这并不能否认本文指出的观点，你可以想想这是为什么吗？</p>
 
                         </div>
-
-                        <div>
-                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                            <ins class="adsbygoogle"
-                                 data-ad-client="ca-pub-1331524016319584"
-                                 data-ad-slot="6657867155"></ins>
-                            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-                        </div>
-                    </td>
-
-                    <td valign="top">
-                        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                        <ins class="adsbygoogle"
-                             data-ad-client="ca-pub-1331524016319584"
-                             data-ad-slot="2703393155"
-                             data-ad-format="auto"></ins>
-                        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-                    </td>
-                </tr>
-            </table>
-        </div>
     </div>
     
     <script src="js/highlight.min.js"></script>

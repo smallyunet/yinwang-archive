@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=0.5">
-    <title>关系模型的实质</title>
+    <title>Blog Cn 2014 04 24 Relational</title>
     <link rel="stylesheet" href="css/highlight/xcode.min.css">
     <link rel="stylesheet" href="css/bootstrap/bootstrap-tooltips.css">
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
@@ -40,7 +40,7 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
-                <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170605.html'>Tweets</a></li>
+                <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
                 <ul class="dropdown-menu">
@@ -54,12 +54,8 @@
     </nav>
 
     <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2014_04_24_relational_20151214.html" >2015-12-14</a> <a href="blog-cn_2014_04_24_relational_20160926.html" class="current">2016-09-26</a> <a href="blog-cn_2014_04_24_relational_20170510.html" >2017-05-10</a> <a href="blog-cn_2014_04_24_relational_20170603.html" >2017-06-03</a> <a href="blog-cn_2014_04_24_relational_20171203.html" >2017-12-03</a> <a href="blog-cn_2014_04_24_relational_20171216.html" >2017-12-16</a> <a href="blog-cn_2014_04_24_relational_20190703.html" >2019-07-03</a> <a href="blog-cn_2014_04_24_relational_20191031.html" >2019-10-31</a> <a href="blog-cn_2014_04_24_relational_20200228.html" >2020-02-28</a> <a href="blog-cn_2014_04_24_relational_20240416.html" >2024-04-16</a></div>
+        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2014_04_24_relational_20151214.html" >2015-12-14</a> <a href="blog-cn_2014_04_24_relational_20160926.html" class="current">2016-09-26</a> <a href="blog-cn_2014_04_24_relational_20170510.html" >2017-05-10</a> <a href="blog-cn_2014_04_24_relational_20171203.html" >2017-12-03</a> <a href="blog-cn_2014_04_24_relational_20171216.html" >2017-12-16</a> <a href="blog-cn_2014_04_24_relational_20190703.html" >2019-07-03</a> <a href="blog-cn_2014_04_24_relational_20191031.html" >2019-10-31</a> <a href="blog-cn_2014_04_24_relational_20200228.html" >2020-02-28</a> <a href="blog-cn_2014_04_24_relational_20240416.html" >2024-04-16</a></div>
         <div>
-            <table>
-                <tr>
-                    <td>
-                        <div>
                             <h2>关系模型的实质</h2>
                             <p>每当我批评关系式数据库，就会有人说，SQL和关系式数据库的设计，其实偏离了E.F.Codd最初的关系式理论。关系式理论和关系式模型，本身还是很好的，只不过被人实现的时候搞砸了。如果你看透了本质，就会发现这只是一个托词。关系式数据库的问题是根源性的，这个问题其实源自关系式理论本身，而不只是具体的实现。</p>
 
@@ -125,27 +121,6 @@
 <p>其实数据库的问题哪有那么困难，它其实跟“远过程调用”（RPC）没什么两样。只要你有一个程序语言，你就可以发送这语言的代码，到一个“数据服务器”。服务器接受并执行这代码，对数据进行索引，查询和重构，最后返回结果给客户端。如果你看清了SQL的实质，就会发现这样的“过程式设计”，其实并不会损失SQL的“描述”能力。反而由于过程式语言的简单，直接和普遍，使得开发效率大大提高。NoSQL数据库比起SQL和关系式数据库，存在某种优势，也就是因为它们在朦胧中朝着这个“RPC”的方向发展。</p>
 
                         </div>
-
-                        <div>
-                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                            <ins class="adsbygoogle"
-                                 data-ad-client="ca-pub-1331524016319584"
-                                 data-ad-slot="6657867155"></ins>
-                            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-                        </div>
-                    </td>
-
-                    <td valign="top">
-                        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                        <ins class="adsbygoogle"
-                             data-ad-client="ca-pub-1331524016319584"
-                             data-ad-slot="2703393155"
-                             data-ad-format="auto"></ins>
-                        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-                    </td>
-                </tr>
-            </table>
-        </div>
     </div>
     
     <script src="js/highlight.min.js"></script>

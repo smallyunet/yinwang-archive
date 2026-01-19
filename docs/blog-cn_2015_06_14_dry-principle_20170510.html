@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=0.5">
-    <title>DRY原则的误区</title>
+    <title>Blog Cn 2015 06 14 Dry Principle</title>
     <link rel="stylesheet" href="css/highlight/xcode.min.css">
     <link rel="stylesheet" href="css/bootstrap/bootstrap-tooltips.css">
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
@@ -40,7 +40,7 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
-                <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170605.html'>Tweets</a></li>
+                <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
                 <ul class="dropdown-menu">
@@ -54,12 +54,8 @@
     </nav>
 
     <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2015_06_14_dry-principle_20150617.html" >2015-06-17</a> <a href="blog-cn_2015_06_14_dry-principle_20161008.html" >2016-10-08</a> <a href="blog-cn_2015_06_14_dry-principle_20170510.html" class="current">2017-05-10</a> <a href="blog-cn_2015_06_14_dry-principle_20170523.html" >2017-05-23</a> <a href="blog-cn_2015_06_14_dry-principle_20171216.html" >2017-12-16</a> <a href="blog-cn_2015_06_14_dry-principle_20191019.html" >2019-10-19</a> <a href="blog-cn_2015_06_14_dry-principle_20191206.html" >2019-12-06</a> <a href="blog-cn_2015_06_14_dry-principle_20200228.html" >2020-02-28</a> <a href="blog-cn_2015_06_14_dry-principle_20240416.html" >2024-04-16</a></div>
+        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2015_06_14_dry-principle_20150617.html" >2015-06-17</a> <a href="blog-cn_2015_06_14_dry-principle_20161008.html" >2016-10-08</a> <a href="blog-cn_2015_06_14_dry-principle_20170510.html" class="current">2017-05-10</a> <a href="blog-cn_2015_06_14_dry-principle_20171216.html" >2017-12-16</a> <a href="blog-cn_2015_06_14_dry-principle_20191019.html" >2019-10-19</a> <a href="blog-cn_2015_06_14_dry-principle_20191206.html" >2019-12-06</a> <a href="blog-cn_2015_06_14_dry-principle_20200228.html" >2020-02-28</a> <a href="blog-cn_2015_06_14_dry-principle_20240416.html" >2024-04-16</a></div>
         <div>
-            <table>
-                <tr>
-                    <td>
-                        <div>
                             <h2>DRY原则的误区</h2>
                             <p>很多编程的人，喜欢鼓吹各种各样的“原则”，比如KISS原则，DRY原则…… 总有人把这些所谓原则奉为教条或者秘方，以为兢兢业业地遵循这些，空喊几个口号，就可以写出好的代码。同时，他们对违反这些原则的人嗤之以鼻——你不知道，不遵循或者藐视这些原则，那么你就是菜鸟。所谓“<a href="http://en.wikipedia.org/wiki/Don%27t_repeat_yourself">DRY原则</a>”（Don’t Repeat Yourself，不要重复你自己）就是这些教条其中之一。盲目的迷信DRY原则，在实际的工程中带来了各种各样的问题，却经常被忽视。</p>
 
@@ -84,67 +80,6 @@
 <span class="o">}</span>
 </code></pre>
 </div>
-
-<p>奉行DRY原则的人喜欢把它改成这样：</p>
-
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">C</span> <span class="o">{</span>
-  <span class="kt">int</span> <span class="n">a</span><span class="o">;</span>
-<span class="o">}</span>
-
-<span class="kd">class</span> <span class="nc">A</span> <span class="kd">extends</span> <span class="n">C</span> <span class="o">{</span>
-  <span class="kt">int</span> <span class="n">x</span><span class="o">;</span>
-  <span class="kt">int</span> <span class="n">y</span><span class="o">;</span>
-<span class="o">}</span>
-
-<span class="kd">class</span> <span class="nc">B</span> <span class="kd">extends</span> <span class="n">C</span> <span class="o">{</span>
-  <span class="kt">int</span> <span class="n">u</span><span class="o">;</span>
-  <span class="kt">int</span> <span class="n">v</span><span class="o">;</span>
-<span class="o">}</span>
-</code></pre>
-</div>
-
-<p>后面这段代码有什么害处呢？它的问题是，当你看到<code class="highlighter-rouge">class A</code>和<code class="highlighter-rouge">class B</code>的定义时，你不再能一目了然的看到<code class="highlighter-rouge">int a</code>这个field。“可见性”，对于程序员能够产生直觉，是非常重要的。这种无关紧要的field，其实大部分时候都没必要提出去，造出一个新的父类。很多时候，不同类里面虽然有同样的<code class="highlighter-rouge">int a</code>这样的field，然而它们的含义却是完全不同的。有些人不管三七二十一就来个“DRY”，结果不但没带来好处，反而让程序难以理解。</p>
-
-<h3 id="抽象的时机问题">抽象的时机问题</h3>
-
-<p>奉行DRY原则的人还有一个问题，就是他们随时都在试图发现“将来可能重用”的代码，而不是等到真的出现重复的时候再去做抽象。很多时候他们提取出一个貌似“经典模板”，结果最后过了几个月发现，这个模板在所有代码里其实只用过一次。这就是因为他们过早的进行了抽象。</p>
-
-<p>抽象的思想，关键在于“发现两个东西是一样的”。然而很多时候，你开头觉得两个东西是一回事，结果最后发现，它们其实只是肤浅的相似，而本质完全不同。同一个<code class="highlighter-rouge">int a</code>，其实可以表示很多种风马牛不及的性质。你看到都是<code class="highlighter-rouge">int a</code>就提出来做个父类，其实反而让程序的概念变得混乱。还有的时候，有些东西开头貌似同类，后来你增添了新的逻辑之后，发现它们的用途开始特殊化，后来就分道扬镳了。过早的提取模板，反而捆住了你的手脚，使得你为了所谓“一致性”而重复一些没用的东西。这样的一致性，其实还不如针对每种情况分别做特殊处理。</p>
-
-<p>防止过早抽象的方法其实很简单，它的名字叫做“等待”。其实就算你不重用代码，真的不会死人的。时间能够告诉你一切。如果你发现自己仿佛正在重复以前写过代码，请先不要停下来，请坚持把这段重复的代码写完。如果你不把它写出来，你是不可能准确的发现重复的代码的，因为它们很有可能到最后其实是不一样的。</p>
-
-<p>你还应该避免没有实际效果的抽象。如果代码才重复了两次，你就开始提取模板，也许到最后你会发现，这个模板总共也就只用了两次！只重复了两次的代码，大部分时候是不值得为它提取模板的。因为模板本身也是代码，而且抽象思考本身是需要一定代价的。所以最后总的开销，也许还不如就让那两段重复的代码待在里面。</p>
-
-<p>这就是为什么我喜欢一种懒懒的，笨笨的感觉。因为我懒，所以我不会过早的思考代码的重用。我会等到事实证明重用一定会带来好处的时候，才会开始提取模板，进行抽象。经验告诉我，每一次积极地寻找抽象，最后的结果都是制造一些不必要的模板，搞得自己的代码自己都看不懂。很多人过度强调DRY，强调代码的“重用”，随时随地想着抽象，结果被这些抽象搅混了头脑，bug百出，寸步难行。如果你不能写出“可用”（usable）的代码，又何谈“可重用”（reusable）的代码呢？</p>
-
-<h3 id="谨慎的对待所谓原则">谨慎的对待所谓原则</h3>
-
-<p>说了这么多，我是在支持DRY，还是反对DRY呢？其实不管是支持还是反对它，都会表示我在乎它，而其实呢，我完全不在乎这类原则，因为它们非常的肤浅。这就像你告诉我说你有一个重大的发现，那就是“1+1=2”，我该支持你还是反对你呢？我才懒得跟你说话。人们写程序，本来自然而然就会在合适的时候进行抽象，避免重复，怎么过了几十年后，某个菜鸟给我们的做法起了个名字叫DRY，反而他成了“大师”一样的人物，我倒要用“DRY”这个词来描述我一直在干的事情呢？所以我根本不愿意提起“DRY”这个名字。</p>
-
-<p>所以我觉得这个DRY原则根本就不应该存在，它是一个根本没有资格提出“原则”的人提出来的。看看他鼓吹的其它低劣东西（比如Agile，Ruby），你就会发现，他是一个兜售减肥药的“软件工程专家”。世界上有太多这样的肤浅的所谓原则，我不想对它们一一进行评价，这是在浪费我的时间。世界上有比这些喜欢提出“原则”的软件工程专家深邃很多的人，他们懂得真正根本的原理。</p>
-
-                        </div>
-
-                        <div>
-                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                            <ins class="adsbygoogle"
-                                 data-ad-client="ca-pub-1331524016319584"
-                                 data-ad-slot="6657867155"></ins>
-                            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-                        </div>
-                    </td>
-
-                    <td valign="top">
-                        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                        <ins class="adsbygoogle"
-                             data-ad-client="ca-pub-1331524016319584"
-                             data-ad-slot="2703393155"
-                             data-ad-format="auto"></ins>
-                        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-                    </td>
-                </tr>
-            </table>
-        </div>
     </div>
     
     <script src="js/highlight.min.js"></script>

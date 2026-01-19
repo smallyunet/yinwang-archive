@@ -150,6 +150,41 @@ def clean_html_attributes(content):
     
     return content
 
+def unwrap_layout(content):
+    """
+    If checks for the pattern <table>...<td>...<div><h2>...
+    If found, extracts that inner div, effectively discarding the table wrapper and sidebar.
+    """
+    # Look for the innermost div that contains an h2 (the title).
+    # This is a heuristic: the real content usually starts with the title in an h2.
+    
+    # First, simple check: is there a table?
+    if '<table' not in content.lower():
+        return content
+        
+    # Regex to find the div wrapping the title.
+    # We look for <div ...> ... <h2>Title</h2> ... </div>
+    # But regex for balanced tags is hard. 
+    # Alternative strategy: 
+    # The structure is usually: <body> <div> <table> <tr> <td> <div ...> <h2>...</h2> ... </div> ...
+    # We can try to match the specific legacy structure.
+    
+    # Find the block containing the H2 title
+    match = re.search(r'(<div[^>]*>\s*<h2.*?>.*?</div>)', content, re.IGNORECASE | re.DOTALL)
+    if match:
+        # Check if this div is inside a table (heuristic)
+        # Actually, if we found a div with h2, and the total length is significantly smaller than content,
+        # it might be the extraction we want.
+        extracted = match.group(1)
+        
+        # Verify it's not just the title but the whole article.
+        # In the files observed, the whole article body is in that one div.
+        # Let's verify length ratio to be safe, or just trust the H2 presence in legacy files.
+        if len(extracted) > len(content) * 0.1: # It should be a substantial part of the page
+             return f"<body>{extracted}</body>"
+             
+    return content
+
 
 def process_archives():
     if not os.path.exists(OUTPUT_DIR):
@@ -211,6 +246,7 @@ def process_archives():
                         content = f.read()
                     
                     content = try_fix_mojibake(content)
+                    content = unwrap_layout(content)
                     content = clean_html_attributes(content)
                     body_content = get_body_content(content)
                     norm_body = normalize_html(body_content)
