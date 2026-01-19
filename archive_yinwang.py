@@ -13,6 +13,8 @@ CDX_API_URL = "http://web.archive.org/cdx/search/cdx"
 WAYBACK_URL_TEMPLATE = "https://web.archive.org/web/{timestamp}id_/{original}"
 OUTPUT_DIR = "archives"
 INDEX_FILE = os.path.join(OUTPUT_DIR, "index.json")
+MIN_YEAR = "2010"
+JUNK_YEAR_START = "2025"
 
 def get_session():
     """Create a requests session with retry logic."""
@@ -162,7 +164,7 @@ def crawl_homepage_history(session):
         for rec in all_records:
             if rec.get("length", 0) < 500: continue
             ts = rec.get("timestamp", "")
-            if ts < "2010": continue
+            if ts < MIN_YEAR or ts >= JUNK_YEAR_START: continue
                 
             digest = rec.get("digest")
             if digest not in unique_digests:
@@ -284,6 +286,9 @@ def main():
         seen_digests = set()
         for cand in candidates:
             # Filter junk during selection
+            if cand['timestamp'] < MIN_YEAR or cand['timestamp'] >= JUNK_YEAR_START:
+                continue
+
             if "blog-cn" not in norm_url and len(norm_url) > 30 and not norm_url.endswith(".html"):
                  pass
 

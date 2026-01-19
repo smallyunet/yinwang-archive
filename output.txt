@@ -1,0 +1,49 @@
+Processing archives from archives...
+Analyzing articles...
+DEBUG: Rejected content 'Surely I am Joking'
+Skipping junk file: blog-cn_2016_01_18_java_20251014.html
+DEBUG: Rejected content 'Surely I am Joking'
+Skipping junk file: blog-cn_2014_01_04_authority_20140509.html
+DEBUG: Rejected content 'Surely I am Joking'
+Skipping junk file: blog-cn_2014_01_04_authority_20140811.html
+DEBUG: Rejected content 'Surely I am Joking'
+Skipping junk file: blog-cn_2014_01_04_authority_20141226.html
+DEBUG: Rejected content 'Surely I am Joking'
+Skipping junk file: blog-cn_2014_01_04_authority_20150119.html
+DEBUG: Rejected content 'Surely I am Joking'
+Skipping junk file: blog-cn_2014_01_04_authority_20150206.html
+DEBUG: Rejected content 'Surely I am Joking'
+Skipping junk file: blog-cn_2014_01_04_authority_20161001.html
+DEBUG: Rejected content 'Surely I am Joking'
+Skipping junk file: blog-cn_2014_01_04_authority_20161102.html
+DEBUG: Rejected content 'Surely I am Joking'
+Skipping junk file: blog-cn_2014_01_04_authority_20170506.html
+DEBUG: Rejected content 'Surely I am Joking'
+Skipping junk file: blog-cn_2014_01_04_authority_20170608.html
+DEBUG: Rejected content 'Surely I am Joking'
+Skipping junk file: blog-cn_2014_01_04_authority_20171205.html
+DEBUG: Rejected content 'Surely I am Joking'
+Skipping junk file: blog-cn_2014_01_04_authority_20180307.html
+DEBUG: Rejected content 'Surely I am Joking'
+Skipping junk file: blog-cn_2014_01_04_authority_20190815.html
+DEBUG: Rejected content 'Surely I am Joking'
+Skipping junk file: blog-cn_2014_01_04_authority_20200217.html
+DEBUG: Rejected content 'Surely I am Joking'
+Skipping junk file: blog-cn_2014_01_04_authority_20200611.html
+DEBUG: Rejected content 'Surely I am Joking'
+Skipping junk file: blog-cn_2014_01_04_authority_20240524.html
+DEBUG: Rejected content 'Surely I am Joking'
+Skipping junk file: blog-cn_2014_01_04_authority_20240602.html
+DEBUG: Rejected content 'Surely I am Joking'
+Skipping junk file: blog-cn_2018_04_13_csbook-chapter1_5C_20251028.html
+DEBUG: Rejected content 'Surely I am Joking'
+Skipping junk file: blog-cn_2016_01_18_java_5C__20251116.html
+DEBUG: Rejected content 'Surely I am Joking'
+Skipping junk file: blog-cn_2015_11_21_programming-philosophy_5C_20251021.html
+DEBUG: Rejected content 'Surely I am Joking'
+Skipping junk file: blog-cn_2016_01_18_java__20251119.html
+Analyzing pages...
+Skipping junk file: index_20140313.html
+DEBUG: Rejected content 'Surely I am Joking'
+Skipping junk file: index_20260110.html
+Generated docs/index.html with 305 articles.

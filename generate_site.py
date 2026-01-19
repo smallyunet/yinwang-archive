@@ -39,12 +39,17 @@ def extract_title(content, filename):
     if match:
         return strip_tags(match.group(1)).strip()
     
-    # Try title tag
+    # Try title tag (only works if head wasn't stripped)
     match = re.search(r'<title[^>]*>(.*?)</title>', content, re.IGNORECASE | re.DOTALL)
     if match:
         title = strip_tags(match.group(1)).strip()
         if title and title.lower() != 'untitled':
             return title
+
+    # Try h2 (common in yinwang's older posts)
+    match = re.search(r'<h2[^>]*>(.*?)</h2>', content, re.IGNORECASE | re.DOTALL)
+    if match:
+        return strip_tags(match.group(1)).strip()
 
     # Fallback to filename
     base = os.path.basename(filename)
@@ -150,6 +155,28 @@ def clean_html_attributes(content):
     
     return content
 
+def is_valid_content(content):
+    """
+    Checks if content is valid article content or a junk placeholder.
+    """
+    if not content:
+        return False
+        
+    s = content.lower()
+    
+    # Check for known junk titles/patterns from domain parking
+    if 'surely i am joking' in s:
+        return False
+        
+    if '<div id="app"></div>' in s and len(s) < 2000:
+        return False
+        
+    # Check for empty/too short content
+    if len(s) < 500 and "redirect" not in s and "moved" not in s:
+        return False
+        
+    return True
+
 def unwrap_layout(content):
     """
     If checks for the pattern <table>...<td>...<div><h2>...
@@ -245,6 +272,10 @@ def process_archives():
                     with open(filepath, 'r', encoding='utf-8', errors='ignore') as f:
                         content = f.read()
                     
+                    if not is_valid_content(content):
+                        # print(f"Skipping junk file: {filename}")
+                        continue
+
                     content = try_fix_mojibake(content)
                     content = unwrap_layout(content)
                     content = clean_html_attributes(content)
