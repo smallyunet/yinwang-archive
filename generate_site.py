@@ -12,6 +12,7 @@ INDEX_OUTPUT = os.path.join(OUTPUT_DIR, "index.html")
 STYLE_OUTPUT = os.path.join(OUTPUT_DIR, "style.css")
 
 DOMAIN = "yinwang.org"
+MIN_YEAR = "2010"
 
 def parse_article_date(filename):
     """
@@ -73,6 +74,12 @@ def get_base_name_and_version(filename):
     if match:
         return match.group(1), match.group(2)
     return filename, "00000000"
+
+
+def is_archive_year_allowed(version_date):
+    if not version_date or len(version_date) < 4:
+        return True
+    return version_date[:4] >= MIN_YEAR
 
 def extract_metadata(content, filename):
     """
@@ -266,6 +273,10 @@ def process_archives():
     
     for f in os.listdir(ARCHIVES_DIR):
         if not f.endswith(".html") or f.startswith("index.json"): # Skip index.json but keep index_*.html
+            continue
+
+        _, version_date = get_base_name_and_version(f)
+        if not is_archive_year_allowed(version_date):
             continue
             
         base_name, version_date = get_base_name_and_version(f)

@@ -3,6 +3,7 @@ import json
 import os
 import re
 from collections import Counter, defaultdict
+MIN_YEAR = "2010"
 from dataclasses import dataclass
 from datetime import datetime
 from typing import Any
@@ -21,6 +22,12 @@ def get_base_name_and_version(filename: str) -> tuple[str, str]:
     if match:
         return match.group(1), match.group(2)
     return filename, "00000000"
+
+
+def is_archive_year_allowed(version_date: str) -> bool:
+    if not version_date or len(version_date) < 4:
+        return True
+    return version_date[:4] >= MIN_YEAR
 
 
 def is_valid_content(content: str) -> bool:
@@ -70,11 +77,14 @@ def extract_index_article_hrefs(index_html: str) -> list[str]:
 def build_report(archives_dir: str, docs_dir: str) -> dict[str, Any]:
     index_path = os.path.join(docs_dir, "index.html")
 
-    archive_files = [
-        f
-        for f in os.listdir(archives_dir)
-        if f.startswith("blog-cn") and f.endswith(".html")
-    ]
+    archive_files = []
+    for f in os.listdir(archives_dir):
+        if not (f.startswith("blog-cn") and f.endswith(".html")):
+            continue
+        _base, version_date = get_base_name_and_version(f)
+        if not is_archive_year_allowed(version_date):
+            continue
+        archive_files.append(f)
 
     archive_groups: dict[str, list[str]] = defaultdict(list)
     for filename in archive_files:
