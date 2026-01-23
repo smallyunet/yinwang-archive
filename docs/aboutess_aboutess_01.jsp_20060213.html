@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <title>中国中小企业竞争力工程</title>
+    <link rel="stylesheet" href="css/highlight/xcode.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-tooltips.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/post.css">
+    <script src="js/jquery.min.js"></script>
+    
+    <style>
+        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
+        /* Removed .inner/.outer overrides to respect theme post.css */
+        
+        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
+        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
+        .version-switcher a.current { font-weight: bold; color: #333; }
+        
+        .navbar-brand { font-size: 20px; font-weight: bold; }
+        .navbar-nav > li > a { font-size: 16px; } /* Slightly larger per user request */
+        
+        /* Reduce gap between navbar and content */
+        div.outer { margin-top: 30px; }
+        
+        /* Removed custom flexbox list styling to match demo vertical style */
+    </style>
+    
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-bs">
+                    <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+                <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='aboutcmec_aboutcmec_01.jsp_20060213.html'>About</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='homepage_20231225.html'>当然我在扯淡 (2023-12-25)</a></li><li><a href='index_20220816.html'>当然我在扯淡 (2022-08-16)</a></li><li><a href='index.jsp_20060213.html'>中国中小企业竞争力工程 (2006-02-13)</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='resources_d8-3404-d8-8424_20130614.html'>D8 3404 D8 8424</a></li><li><a href='resources_demos_pysonar2_email_base64mime.py_20150408.html'>Demos Pysonar2 Email Base64Mime.Py</a></li><li><a href='resources_demos_pysonar2_email_charset.py_20150506.html'>Demos Pysonar2 Email Charset.Py</a></li><li><a href='resources_demos_pysonar2_email_encoders.py_20160822.html'>Demos Pysonar2 Email Encoders.Py</a></li><li><a href='resources_demos_pysonar2_email_errors.py_20150409.html'>Demos Pysonar2 Email Errors.Py</a></li><li><a href='resources_demos_pysonar2_email_header.py_20140305.html'>Demos Pysonar2 Email Header.Py</a></li><li><a href='resources_demos_pysonar2_email_quoprimime.py_20150408.html'>Demos Pysonar2 Email Quoprimime.Py</a></li><li><a href='resources_demos_pysonar2_re.py_20150408.html'>Demos Pysonar2 Re.Py</a></li><li><a href='resources_demos_pysonar2_sre_compile.py_20160822.html'>Demos Pysonar2 Sre Compile.Py</a></li><li><a href='resources_demos_pysonar2_sre_constants.py_20160822.html'>Demos Pysonar2 Sre Constants.Py</a></li><li><a href='resources_demos_pysonar2_sre_parse.py_20160822.html'>Demos Pysonar2 Sre Parse.Py</a></li><li><a href='resources_diff1-diff2_20200728.html'>Diff1 Diff2</a></li><li><a href='resources_mk1-mk2_20130627.html'>Mk1 Mk2</a></li><li><a href='resources_nav1-nav2_20200728.html'>Nav1 Nav2</a></li><li><a href='resources_paredit20-paredit23_20200728.html'>Paredit20 Paredit23</a></li><li><a href='resources_pydiff1-pydiff2_20130711.html'>Pydiff1 Pydiff2</a></li><li><a href='resources_simulator-mips-simulator-arm_20200728.html'>Simulator Mips Simulator Arm</a></li><li><a href='resources_typed-clojure1-typed-clojure2_20200728.html'>Typed Clojure1 Typed Clojure2</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Misc <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='afficheAction.do_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='dljm.jsp_20060516.html'>竞争力工程</a></li><li><a href='neirong.jsp_20060428.html'>详细内容</a></li><li><a href='tongzhi_tongzhi1.htm_20060428.html'>ÎÞ±êÌâÎÄµµ</a></li></ul></li></ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="inner">
+        
+        <table align="center" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td background="../servicecenter/images/bg_03.gif">&nbsp;</td>
+    <td bgcolor="#FFFFFF"> 
+	     
+
+
+
+
+<link href="/css.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_showHideLayers() { //v6.0
+  var i,p,v,obj,args=MM_showHideLayers.arguments;
+  for (i=0; i<(args.length-2); i+=3) if ((obj=MM_findObj(args[i]))!=null) { v=args[i+2];
+    if (obj.style) { obj=obj.style; v=(v=='show')?'visible':(v=='hide')?'hidden':v; }
+    obj.visibility=v; }
+}
+//-->
+</script>
+<table cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="10" background="/images/bg_02.gif"><a name=""></a></td>
+  </tr>
+  <tr>
+    <td height="12"><img src="images/tp_01.gif" width="730" height="3"></td>
+  </tr>
+  <tr>
+    <td><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="730" height="134">
+      <param name="movie" value="/images/flash1.swf">
+      <param name="quality" value="high">
+      <embed src="/images/flash1.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="730" height="134"></embed>
+    </object></td>
+  </tr>
+  <tr>
+    <td height="12"><img src="images/tp_01.gif" width="730" height="3"></td>
+  </tr>
+  <tr>
+    <td background="/images/bg_04.gif">
+      <table height="26" align="center" cellpadding="0" cellspacing="0" class="pos">
+        <tr>
+          <td>
+            <div align="center"><a href="/index.jsp" class="daohang">首页</a></div></td>
+          <td><div align="center"><img src="images/tp_03.gif" width="2" height="26"></div></td>
+          <td onMouseOver="MM_showHideLayers('Layer1','','show')" onMouseOut="MM_showHideLayers('Layer1','','hide')"><div align="center"><a href="javascript:void(null)" class="daohang">工程介绍</a>
+            </div>            <div id="Layer1">
+              <table height="77" cellpadding="0" cellspacing="1" bgcolor="#FFFFFF" onMouseOver="MM_showHideLayers('Layer1','','show')" onMouseOut="MM_showHideLayers('Layer1','','hide')">
+                <tr>
+                  <td height="25" bgcolor="#FDF7DF">　<a href="/aboutinfo/aboutinfo_01.jsp" class="black">竞争力工程介绍</a></td>
+                </tr>
+                <tr>
+                  <td height="25" bgcolor="#FDF7DF">　<a href="/aboutess/aboutess_01.jsp" class="black">ESS企业自助学习系统</a></td>
+                </tr>
+                <tr>
+                  <td height="25" bgcolor="#FDF7DF">　<a href="/aboutcmec/aboutcmec_01.jsp" class="black">CMEC会员式服务</a></td>
+                </tr>
+              </table>
+          </div></td>
+          <td><div align="center"><img src="images/tp_03.gif" width="2" height="26"></div></td>
+          <td><div align="center"><a href="/newsPublishAction.do?operation=ywDynNewsList" class="daohang" target="_self">新闻动态</a></div></td>
+          <td><div align="center"><img src="images/tp_03.gif" width="2" height="26"></div></td>
+          <td onMouseOver="MM_showHideLayers('Layer2','','show')" onMouseOut="MM_showHideLayers('Layer2','','hide')"><div align="center"><a href="javascript:void(null)" class="daohang">企业入网申请</a>
+            <div id="Layer2">
+              <table cellpadding="0" cellspacing="1" bgcolor="#FFFFFF" onMouseOver="MM_showHideLayers('Layer2','','show')" onMouseOut="MM_showHideLayers('Layer2','','hide')">
+                <tr>
+                  <td height="25" bgcolor="#FDF7DF">　<a href="/apply_dcb.jsp" class="black">调查问卷</a></td>
+                </tr>
+                <tr>
+                  <td height="25" bgcolor="#FDF7DF">　<a href="/apply_twsqb.jsp" class="black">入网申请表</a></td>
+                </tr>
+              </table>
+            </div>
+          </div></td>
+          <td><div align="center"><img src="images/tp_03.gif" width="2" height="26"></div></td>
+          <td><div align="center"><a href="/servicecenter/servicecenter_01.jsp" class="daohang">地区服务中心</a></div></td>
+          <td><div align="center"><img src="images/tp_03.gif" width="2" height="26"></div></td>
+          <td><div align="center"><a href="/common/courseBase/main.jsp?catLib=0" class="daohang">公共课程库</a></div></td>
+          <td><div align="center"><img src="images/tp_03.gif" width="2" height="26"></div></td>
+          <td onMouseOver="MM_showHideLayers('Layer3','','show')" onMouseOut="MM_showHideLayers('Layer3','','hide')"><div align="center"><a href="javascript:void(null)" class="daohang">实施案例</a>
+            <div id="Layer3">
+              <table height="51" cellpadding="0" cellspacing="1" bgcolor="#FFFFFF" onMouseOver="MM_showHideLayers('Layer3','','show')" onMouseOut="MM_showHideLayers('Layer3','','hide')">
+                <tr>
+                  <td height="50" bgcolor="#FDF7DF"><a href="/common/casexhx.jsp" class="black">　新华信市场研究<br>
+                    　咨询有限公司</a></td>
+                </tr>
+                <tr>
+                  <td height="50" bgcolor="#FDF7DF">　<a href="/common/casetoyota.jsp" class="black">一汽丰田汽车<br>
+                    　销售有限公司</a></td>
+                </tr>
+              </table>
+            </div>
+          </div></td>
+        </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td height="12"><img src="images/tp_01.gif" width="730" height="3"></td>
+  </tr>
+</table>
+
+ 
+<table align="center" cellpadding="0" cellspacing="0">
+        <tr> 
+          <td> 
+            <table cellspacing="0" cellpadding="0">
+              <tr> 
+                <td height="25" colspan="2"><table height="25" align="center" cellpadding="0" cellspacing="0">
+                    <tr> 
+                      <td>您现在的位置：竞争力工程网站&gt;&gt;企业自助学习系统</td>
+                      <td><div align="right">
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+</head>
+
+          <script language="JavaScript" class="style2">
+				        todayDate = new Date();
+						date = todayDate.getDate();
+						month= todayDate.getMonth()+1;
+						year= todayDate.getYear();
+						document.write("今天是 ");
+						document.write(year);
+						document.write("年");
+						document.write(month);
+						document.write("月");
+						document.write(date);
+						document.write("日");
+						document.write(" ")
+						if (todayDate.getDay() == 5) document.write("星期五")
+						if (todayDate.getDay() == 6) document.write("星期六")
+						if (todayDate.getDay() == 0) document.write("星期日")
+						if (todayDate.getDay() == 1) document.write("星期一")
+						if (todayDate.getDay() == 2) document.write("星期二")
+						if (todayDate.getDay() == 3) document.write("星期三")
+						if (todayDate.getDay() == 4) document.write("星期四")
+					</script>
+</html></div></td>
+                    </tr>
+                  </table></td>
+              </tr>
+              <tr > 
+                <td  background="../servicecenter/images/bg_02.gif" height="8" colspan="2"><a name=""></a></td>
+              </tr>
+              <tr >
+                <td height="5" colspan="2"><a name=""></a><a name="9"></a></td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr>
+          <td height="42" valign="top"><table align="center" cellpadding="0" cellspacing="0">
+            <tr>
+              <td height="49" valign="top"><table cellspacing="0" cellpadding="0">
+                <tr>
+                  <td height="5" bgcolor="#BEC2C7"><a name=""></a></td>
+                </tr>
+                <tr>
+                  <td height="23" bgcolor="#D9DDE1"><table height="18" align="center" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td><div align="center"><img src="images/tb_01.gif" width="16" height="15"></div></td>
+                        <td valign="bottom"><strong>企业自助学习系统</strong></td>
+                      </tr>
+                  </table></td>
+                </tr>
+              </table>
+                <table cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td height="10" colspan="3"><a name="1"></a></td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td valign="top"><img src="../images/tb_jt1.gif" width="8" height="13"></td>
+                    <td height="25" valign="top"> <a href="aboutess_01.jsp" class="black">什么是ESS</a></td>
+                  </tr>
+                  <tr>
+                    <td height="10" colspan="3"><table cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td height="1" background="../images/bg_xx.gif"><a name="1"></a></td>
+                      </tr>
+                    </table></td>
+                  </tr>
+                </table>
+                <table cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td height="10" colspan="3"><a name="1"></a></td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td valign="top"><img src="../images/tb_jt1.gif" width="8" height="13"></td>
+                    <td height="25" valign="top">                      <a href="aboutess_02.jsp" class="black">ESS能做什么</a></td>
+                  </tr>
+                  <tr>
+                    <td height="10" colspan="3"><table cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td height="1" background="../images/bg_xx.gif"><a name="1"></a></td>
+                        </tr>
+                    </table></td>
+                  </tr>
+                </table>
+                <table cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td height="10" colspan="3"><a name="1"></a></td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td valign="top"><img src="../images/tb_jt1.gif" width="8" height="13"></td>
+                    <td height="25" valign="top"> <a href="aboutess_03.jsp" class="black">ESS系统组成</a></td>
+                  </tr>
+                  <tr>
+                    <td height="10" colspan="3"><table cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td height="1" background="../images/bg_xx.gif"><a name="1"></a></td>
+                        </tr>
+                    </table></td>
+                  </tr>
+                </table>
+                <table cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td height="10" colspan="3"><a name="1"></a></td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td valign="top"><img src="../images/tb_jt1.gif" width="8" height="13"></td>
+                    <td height="25" valign="top"> <a href="aboutess_04.jsp" class="black">为什么要用ESS</a></td>
+                  </tr>
+                  <tr>
+                    <td height="10" colspan="3"><table cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td height="1" background="../images/bg_xx.gif"><a name="1"></a></td>
+                        </tr>
+                    </table></td>
+                  </tr>
+                </table>
+                <table cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td height="10" colspan="3"><a name="1"></a></td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td valign="top"><img src="../images/tb_jt1.gif" width="8" height="13"></td>
+                    <td height="25" valign="top"> <a href="aboutess_05.jsp" class="black">服务及收费</a></td>
+                  </tr>
+                  <tr>
+                    <td height="10" colspan="3"><table cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td height="1" background="../images/bg_xx.gif"><a name="1"></a></td>
+                        </tr>
+                    </table></td>
+                  </tr>
+                </table>
+                <table cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td height="10" colspan="3"><a name="1"></a></td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td valign="top"><img src="../images/tb_jt1.gif" width="8" height="13"></td>
+                    <td height="25" valign="top"> <a href="aboutess_06.jsp" class="black">开通ESS服务流程</a></td>
+                  </tr>
+                  <tr>
+                    <td height="10" colspan="3"><table cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td height="1" background="../images/bg_xx.gif"><a name="1"></a></td>
+                        </tr>
+                    </table></td>
+                  </tr>
+                </table></td>
+              <td valign="top"><table align="right" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td height="151" valign="top"><p><strong>（一）什么是ESS</strong></p>
+                    <p>　　ESS 是竞争力工程为全国中小企业提供的一种企业自助学习系统（ Enterprise Self-learning System, 简称 ESS ）， ESS 在全球领先的企业视讯交互系统 WebExEDU 基础上开发实现，可广泛应用于企业的内部培训、渠道商培训、非实时会议、顾客培训、在岗全员知识更新等领域。 </p>                    
+                    <p>　　竞争力工程将为申请 ESS 系统的企业提供两个月的全免费辅导期，辅导期内为企业提供自动课件生成系统、 ESS 企业网络学院、共享课件库的支持，并提供 2G 的硬盘空间供企业上传及存储课件。企业无须购置任何专业设备即可组织远程学习，实施代理商与分公司培训，实施全员培训。 </p>
+                    　　 竞争力工程办公室还为申请 ESS 系统的企业培训 1-2 名知识管理专员。知识管理专员将具备培训需求调研、培训设计、培训实施、远程学习管理等基本能力，能够熟练应用 ESS 系统组织企业内部课程资源，形成企业标准课件库，降低企业的学习成本。 </td>
+                </tr>
+                <tr>
+                  <td height="292" valign="top"><a href="pic01.htm" target="_blank"><img src="../images/gcjs_05.gif" width="453" height="278" border="0"></a></td>
+                </tr>
+              </table></td>
+            </tr>
+          </table>
+          <div align="right"></div></td>
+        </tr>
+      </table>      
+      
+
+
+
+
+<link href="/css.css" rel="stylesheet" type="text/css">
+
+<script language=javascript> 
+	function addHome(){ 
+		var url = "http://www.yinwang.org"; 
+		var title = "中国中小企业竞争力工程"; 
+		window.external.AddFavorite(url,title); 
+	}
+</script> 
+<table cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="5"><a name=""></a></td>
+  </tr>
+  <tr>
+    <td height="8" background="/images/bg_02.gif"><a name=""></a></td>
+  </tr>
+  <tr>
+    <td height="3"><a name=""></a></td>
+  </tr>
+  <tr>
+    <td height="26" background="/images/bg_04.gif">
+      <div align="center" class="style1"> <a href="/laws/laws_01.jsp" target="_blank" class="daohang">&#25919;&#31574;&#27861;&#35268;</a>&#65372;<a href="/contactus.jsp" target="_blank" class="daohang">&#32852;&#31995;&#25105;&#20204;</a>&#65372;<a href="/datadownload.jsp" target="_blank" class="daohang">&#36164;&#26009;&#19979;&#36733;</a>&#65372;<a href="#" class="daohang" onClick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.yinwang.org');return false;">&#35774;&#20026;&#39318;&#39029;</a>&#65372;<a href="#" class="daohang" onClick="addHome();">&#21152;&#20837;&#25910;&#34255;</a> </div></td>
+  </tr>
+  <tr>
+    <td height="12"><img src="images/tp_01.gif" width="730" height="3"></td>
+  </tr>
+  <tr>
+    <td height="12"><div align="center">&#29256;&#26435;&#25152;&#26377;&#65306;&#20013;&#22269;&#20013;&#23567;&#20225;&#19994;&#31454;&#20105;&#21147;&#24037;&#31243;&#21150;&#20844;&#23460;<br>
+      &#30005;&#35805;&#65306;010-82783158-240&#12289;231 &#12288; &#30005;&#23376;&#37038;&#20214;&#65306;info@yinwang.org      <br>
+    </div></td>
+  </tr>
+  <tr>
+    <td height="10" background="/images/bg_02.gif"><a name=""></a></td>
+  </tr>
+</table>
+</td>
+    <td background="/images/bg_01.gif">&nbsp;</td>
+  </tr>
+</table>
+    </div>
+    
+    <script src="js/highlight.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script>
+        if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
+            document.body.classList.add('mobile');
+            var navbar = document.querySelector('nav.navbar');
+            if (navbar) { navbar.classList.remove('navbar-fixed-top'); }
+        }
+    </script>
+</body>
+</html>

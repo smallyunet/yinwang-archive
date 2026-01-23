@@ -1,26 +1,15 @@
 {
-  "generated_at": "2026-01-23T20:37:40",
+  "generated_at": "2026-01-23T12:45:55",
   "archives_dir": "archives",
   "output_dir": "docs",
   "articles_in_index": 305,
-  "processed_groups_total": 326,
+  "processed_groups_total": 353,
   "skipped_invalid_reason_counts": {
     "junk-domain-parking": 61,
-    "empty": 1
+    "empty": 1,
+    "too-short": 1
   },
   "skipped_invalid_examples": [
-    {
-      "filename": "blog-cn_2016_01_18_java_20251014.html",
-      "reason": "junk-domain-parking",
-      "type": "article",
-      "base_name": "blog-cn_2016_01_18_java"
-    },
-    {
-      "filename": "blog-cn_2012_05_18_user-friendliness__20_20251228.html",
-      "reason": "junk-domain-parking",
-      "type": "article",
-      "base_name": "blog-cn_2012_05_18_user-friendliness__20"
-    },
     {
       "filename": "blog-cn_2014_01_04_authority_20140109.html",
       "reason": "junk-domain-parking",
@@ -142,10 +131,22 @@
       "base_name": "blog-cn_2014_01_04_authority"
     },
     {
-      "filename": "blog-cn_2018_04_13_csbook-chapter1_5C_20251028.html",
+      "filename": "blog-cn_2015_11_21_programming-philosophy_5C_20251021.html",
       "reason": "junk-domain-parking",
       "type": "article",
-      "base_name": "blog-cn_2018_04_13_csbook-chapter1_5C"
+      "base_name": "blog-cn_2015_11_21_programming-philosophy_5C"
+    },
+    {
+      "filename": "blog-cn_2016_01_18_java_20251014.html",
+      "reason": "junk-domain-parking",
+      "type": "article",
+      "base_name": "blog-cn_2016_01_18_java"
+    },
+    {
+      "filename": "blog-cn_2012_05_18_user-friendliness__20_20251228.html",
+      "reason": "junk-domain-parking",
+      "type": "article",
+      "base_name": "blog-cn_2012_05_18_user-friendliness__20"
     },
     {
       "filename": "blog-cn_2016_01_18_java_5C__20251116.html",
@@ -154,16 +155,16 @@
       "base_name": "blog-cn_2016_01_18_java_5C_"
     },
     {
-      "filename": "blog-cn_2015_11_21_programming-philosophy_5C_20251021.html",
+      "filename": "blog-cn_2012_05_18_user-friendliness__nbsp_20251230.html",
       "reason": "junk-domain-parking",
       "type": "article",
-      "base_name": "blog-cn_2015_11_21_programming-philosophy_5C"
+      "base_name": "blog-cn_2012_05_18_user-friendliness__nbsp"
     },
     {
-      "filename": "blog-cn_2016_01_18_java__20251119.html",
+      "filename": "blog-cn_2018_04_13_csbook-chapter1_5C_20251028.html",
       "reason": "junk-domain-parking",
       "type": "article",
-      "base_name": "blog-cn_2016_01_18_java_"
+      "base_name": "blog-cn_2018_04_13_csbook-chapter1_5C"
     },
     {
       "filename": "blog-cn_2013_04_11_scheme-setup_5C_20251017.html",
@@ -172,22 +173,16 @@
       "base_name": "blog-cn_2013_04_11_scheme-setup_5C"
     },
     {
-      "filename": "blog-cn_2012_05_18_user-friendliness__nbsp_20251230.html",
+      "filename": "blog-cn_2016_01_18_java__20251119.html",
       "reason": "junk-domain-parking",
       "type": "article",
-      "base_name": "blog-cn_2012_05_18_user-friendliness__nbsp"
+      "base_name": "blog-cn_2016_01_18_java_"
     },
     {
-      "filename": "tags_english_20251101.html",
+      "filename": "posts_continuation-course_20251206.html",
       "reason": "junk-domain-parking",
       "type": "page",
-      "base_name": "tags_english"
-    },
-    {
-      "filename": "tags_philosophy_20251101.html",
-      "reason": "junk-domain-parking",
-      "type": "page",
-      "base_name": "tags_philosophy"
+      "base_name": "posts_continuation-course"
     },
     {
       "filename": "index_20140313.html",
@@ -202,76 +197,10 @@
       "base_name": "index"
     },
     {
-      "filename": "posts_authority_20251221.html",
+      "filename": "ads.txt_20251013.html",
       "reason": "junk-domain-parking",
       "type": "page",
-      "base_name": "posts_authority"
-    },
-    {
-      "filename": "tags_life_20251129.html",
-      "reason": "junk-domain-parking",
-      "type": "page",
-      "base_name": "tags_life"
-    },
-    {
-      "filename": "_5Cu003c_a_5Cu003e_5Cu003c_td_5Cu003e_5Cn_5Cu003ctd_5Cu003e_E7_BC_96_E7_A8_8B_5Cu003c_td_5Cu003e_5Cn_5Cu003c_tr_5Cu003e_5Cn_5Cu003ctr_5Cu003e_5Cn_5Cu003ctd_5Cu003e_5Cu003ca_20251204.html",
-      "reason": "junk-domain-parking",
-      "type": "page",
-      "base_name": "_5Cu003c_a_5Cu003e_5Cu003c_td_5Cu003e_5Cn_5Cu003ctd_5Cu003e_E7_BC_96_E7_A8_8B_5Cu003c_td_5Cu003e_5Cn_5Cu003c_tr_5Cu003e_5Cn_5Cu003ctr_5Cu003e_5Cn_5Cu003ctd_5Cu003e_5Cu003ca"
-    },
-    {
-      "filename": "posts_american-english-problems_20251030.html",
-      "reason": "junk-domain-parking",
-      "type": "page",
-      "base_name": "posts_american-english-problems"
-    },
-    {
-      "filename": "tags_education_20251031.html",
-      "reason": "junk-domain-parking",
-      "type": "page",
-      "base_name": "tags_education"
-    },
-    {
-      "filename": "posts_cs5-completed_20251031.html",
-      "reason": "junk-domain-parking",
-      "type": "page",
-      "base_name": "posts_cs5-completed"
-    },
-    {
-      "filename": "_5C_20251205.html",
-      "reason": "junk-domain-parking",
-      "type": "page",
-      "base_name": "_5C"
-    },
-    {
-      "filename": "posts_oberon_20260113.html",
-      "reason": "junk-domain-parking",
-      "type": "page",
-      "base_name": "posts_oberon"
-    },
-    {
-      "filename": "tags_health_20251102.html",
-      "reason": "junk-domain-parking",
-      "type": "page",
-      "base_name": "tags_health"
-    },
-    {
-      "filename": ".well-known_dnt-policy.txt_20251211.html",
-      "reason": "junk-domain-parking",
-      "type": "page",
-      "base_name": ".well-known_dnt-policy.txt"
-    },
-    {
-      "filename": "posts_cs-class2_20251105.html",
-      "reason": "junk-domain-parking",
-      "type": "page",
-      "base_name": "posts_cs-class2"
-    },
-    {
-      "filename": "tags_travel_20251129.html",
-      "reason": "junk-domain-parking",
-      "type": "page",
-      "base_name": "tags_travel"
+      "base_name": "ads.txt"
     },
     {
       "filename": "tags_lifestyle_20251101.html",
@@ -280,10 +209,10 @@
       "base_name": "tags_lifestyle"
     },
     {
-      "filename": "posts_continuation-course_20251206.html",
+      "filename": "tags_education_20251031.html",
       "reason": "junk-domain-parking",
       "type": "page",
-      "base_name": "posts_continuation-course"
+      "base_name": "tags_education"
     },
     {
       "filename": "posts_tuition-for-covid_20251103.html",
@@ -292,10 +221,154 @@
       "base_name": "posts_tuition-for-covid"
     },
     {
+      "filename": "tags_health_20251102.html",
+      "reason": "junk-domain-parking",
+      "type": "page",
+      "base_name": "tags_health"
+    },
+    {
+      "filename": "posts_air-freshener-nightmare_20251129.html",
+      "reason": "junk-domain-parking",
+      "type": "page",
+      "base_name": "posts_air-freshener-nightmare"
+    },
+    {
+      "filename": "_5Cu003c_a_5Cu003e_5Cu003c_td_5Cu003e_5Cn_5Cu003ctd_5Cu003e_E7_BC_96_E7_A8_8B_5Cu003c_td_5Cu003e_5Cn_5Cu003c_tr_5Cu003e_5Cn_5Cu003ctr_5Cu003e_5Cn_5Cu003ctd_5Cu003e_5Cu003ca_20251204.html",
+      "reason": "junk-domain-parking",
+      "type": "page",
+      "base_name": "_5Cu003c_a_5Cu003e_5Cu003c_td_5Cu003e_5Cn_5Cu003ctd_5Cu003e_E7_BC_96_E7_A8_8B_5Cu003c_td_5Cu003e_5Cn_5Cu003c_tr_5Cu003e_5Cn_5Cu003ctr_5Cu003e_5Cn_5Cu003ctd_5Cu003e_5Cu003ca"
+    },
+    {
+      "filename": "posts_super-human-level-vision_20251104.html",
+      "reason": "junk-domain-parking",
+      "type": "page",
+      "base_name": "posts_super-human-level-vision"
+    },
+    {
+      "filename": "posts_cs3_20251102.html",
+      "reason": "junk-domain-parking",
+      "type": "page",
+      "base_name": "posts_cs3"
+    },
+    {
+      "filename": "tags_travel_20251129.html",
+      "reason": "junk-domain-parking",
+      "type": "page",
+      "base_name": "tags_travel"
+    },
+    {
+      "filename": "tags_philosophy_20251101.html",
+      "reason": "junk-domain-parking",
+      "type": "page",
+      "base_name": "tags_philosophy"
+    },
+    {
+      "filename": "tags_programming-language_20260113.html",
+      "reason": "junk-domain-parking",
+      "type": "page",
+      "base_name": "tags_programming-language"
+    },
+    {
+      "filename": "posts_cs5-completed_20251031.html",
+      "reason": "junk-domain-parking",
+      "type": "page",
+      "base_name": "posts_cs5-completed"
+    },
+    {
+      "filename": "posts_american-english-problems_20251030.html",
+      "reason": "junk-domain-parking",
+      "type": "page",
+      "base_name": "posts_american-english-problems"
+    },
+    {
+      "filename": "posts_cs-class2_20251105.html",
+      "reason": "junk-domain-parking",
+      "type": "page",
+      "base_name": "posts_cs-class2"
+    },
+    {
+      "filename": "posts_oberon_20260113.html",
+      "reason": "junk-domain-parking",
+      "type": "page",
+      "base_name": "posts_oberon"
+    },
+    {
+      "filename": "posts_wisdom-of-intelligence_20251102.html",
+      "reason": "junk-domain-parking",
+      "type": "page",
+      "base_name": "posts_wisdom-of-intelligence"
+    },
+    {
+      "filename": "tags_life_20251129.html",
+      "reason": "junk-domain-parking",
+      "type": "page",
+      "base_name": "tags_life"
+    },
+    {
+      "filename": ".well-known_dnt-policy.txt_20251211.html",
+      "reason": "junk-domain-parking",
+      "type": "page",
+      "base_name": ".well-known_dnt-policy.txt"
+    },
+    {
+      "filename": "common_courseBase_tch_grzl.jsp_20060106.html",
+      "reason": "too-short",
+      "type": "page",
+      "base_name": "common_courseBase_tch_grzl.jsp"
+    },
+    {
       "filename": "posts_cello-technique_20251102.html",
       "reason": "junk-domain-parking",
       "type": "page",
       "base_name": "posts_cello-technique"
+    },
+    {
+      "filename": "tags_english_20251101.html",
+      "reason": "junk-domain-parking",
+      "type": "page",
+      "base_name": "tags_english"
+    },
+    {
+      "filename": "posts_learning-philosophy_20251211.html",
+      "reason": "junk-domain-parking",
+      "type": "page",
+      "base_name": "posts_learning-philosophy"
+    },
+    {
+      "filename": "posts_youth-cs-student_20251102.html",
+      "reason": "junk-domain-parking",
+      "type": "page",
+      "base_name": "posts_youth-cs-student"
+    },
+    {
+      "filename": "posts_reading-course_20251102.html",
+      "reason": "junk-domain-parking",
+      "type": "page",
+      "base_name": "posts_reading-course"
+    },
+    {
+      "filename": "_5C_20251205.html",
+      "reason": "junk-domain-parking",
+      "type": "page",
+      "base_name": "_5C"
+    },
+    {
+      "filename": "posts_cs4_20251102.html",
+      "reason": "junk-domain-parking",
+      "type": "page",
+      "base_name": "posts_cs4"
+    },
+    {
+      "filename": "posts_entry-level-class_20251102.html",
+      "reason": "junk-domain-parking",
+      "type": "page",
+      "base_name": "posts_entry-level-class"
+    },
+    {
+      "filename": "posts_cs-course-5_20251208.html",
+      "reason": "junk-domain-parking",
+      "type": "page",
+      "base_name": "posts_cs-course-5"
     },
     {
       "filename": "posts_cs-video-course_20251101.html",
@@ -310,88 +383,14 @@
       "base_name": "tags_ai"
     },
     {
-      "filename": "posts_cs-course-5_20251208.html",
+      "filename": "posts_authority_20251221.html",
       "reason": "junk-domain-parking",
       "type": "page",
-      "base_name": "posts_cs-course-5"
-    },
-    {
-      "filename": "posts_wisdom-of-intelligence_20251102.html",
-      "reason": "junk-domain-parking",
-      "type": "page",
-      "base_name": "posts_wisdom-of-intelligence"
-    },
-    {
-      "filename": "posts_cs4_20251102.html",
-      "reason": "junk-domain-parking",
-      "type": "page",
-      "base_name": "posts_cs4"
-    },
-    {
-      "filename": "posts_air-freshener-nightmare_20251129.html",
-      "reason": "junk-domain-parking",
-      "type": "page",
-      "base_name": "posts_air-freshener-nightmare"
-    },
-    {
-      "filename": "posts_youth-cs-student_20251102.html",
-      "reason": "junk-domain-parking",
-      "type": "page",
-      "base_name": "posts_youth-cs-student"
-    },
-    {
-      "filename": "tags_programming-language_20260113.html",
-      "reason": "junk-domain-parking",
-      "type": "page",
-      "base_name": "tags_programming-language"
-    },
-    {
-      "filename": "posts_cs3_20251102.html",
-      "reason": "junk-domain-parking",
-      "type": "page",
-      "base_name": "posts_cs3"
-    },
-    {
-      "filename": "ads.txt_20251013.html",
-      "reason": "junk-domain-parking",
-      "type": "page",
-      "base_name": "ads.txt"
-    },
-    {
-      "filename": "posts_reading-course_20251102.html",
-      "reason": "junk-domain-parking",
-      "type": "page",
-      "base_name": "posts_reading-course"
-    },
-    {
-      "filename": "posts_entry-level-class_20251102.html",
-      "reason": "junk-domain-parking",
-      "type": "page",
-      "base_name": "posts_entry-level-class"
-    },
-    {
-      "filename": "posts_learning-philosophy_20251211.html",
-      "reason": "junk-domain-parking",
-      "type": "page",
-      "base_name": "posts_learning-philosophy"
-    },
-    {
-      "filename": "posts_super-human-level-vision_20251104.html",
-      "reason": "junk-domain-parking",
-      "type": "page",
-      "base_name": "posts_super-human-level-vision"
+      "base_name": "posts_authority"
     }
   ],
-  "dropped_groups_count": 40,
+  "dropped_groups_count": 41,
   "dropped_groups": [
-    {
-      "base_name": "blog-cn_2012_05_18_user-friendliness__20",
-      "type": "article",
-      "file_count": 1,
-      "files": [
-        "blog-cn_2012_05_18_user-friendliness__20_20251228.html"
-      ]
-    },
     {
       "base_name": "blog-cn_2014_01_04_authority",
       "type": "article",
@@ -420,11 +419,19 @@
       ]
     },
     {
-      "base_name": "blog-cn_2018_04_13_csbook-chapter1_5C",
+      "base_name": "blog-cn_2015_11_21_programming-philosophy_5C",
       "type": "article",
       "file_count": 1,
       "files": [
-        "blog-cn_2018_04_13_csbook-chapter1_5C_20251028.html"
+        "blog-cn_2015_11_21_programming-philosophy_5C_20251021.html"
+      ]
+    },
+    {
+      "base_name": "blog-cn_2012_05_18_user-friendliness__20",
+      "type": "article",
+      "file_count": 1,
+      "files": [
+        "blog-cn_2012_05_18_user-friendliness__20_20251228.html"
       ]
     },
     {
@@ -436,19 +443,19 @@
       ]
     },
     {
-      "base_name": "blog-cn_2015_11_21_programming-philosophy_5C",
+      "base_name": "blog-cn_2012_05_18_user-friendliness__nbsp",
       "type": "article",
       "file_count": 1,
       "files": [
-        "blog-cn_2015_11_21_programming-philosophy_5C_20251021.html"
+        "blog-cn_2012_05_18_user-friendliness__nbsp_20251230.html"
       ]
     },
     {
-      "base_name": "blog-cn_2016_01_18_java_",
+      "base_name": "blog-cn_2018_04_13_csbook-chapter1_5C",
       "type": "article",
       "file_count": 1,
       "files": [
-        "blog-cn_2016_01_18_java__20251119.html"
+        "blog-cn_2018_04_13_csbook-chapter1_5C_20251028.html"
       ]
     },
     {
@@ -460,131 +467,11 @@
       ]
     },
     {
-      "base_name": "blog-cn_2012_05_18_user-friendliness__nbsp",
+      "base_name": "blog-cn_2016_01_18_java_",
       "type": "article",
       "file_count": 1,
       "files": [
-        "blog-cn_2012_05_18_user-friendliness__nbsp_20251230.html"
-      ]
-    },
-    {
-      "base_name": "tags_english",
-      "type": "page",
-      "file_count": 1,
-      "files": [
-        "tags_english_20251101.html"
-      ]
-    },
-    {
-      "base_name": "tags_philosophy",
-      "type": "page",
-      "file_count": 1,
-      "files": [
-        "tags_philosophy_20251101.html"
-      ]
-    },
-    {
-      "base_name": "posts_authority",
-      "type": "page",
-      "file_count": 1,
-      "files": [
-        "posts_authority_20251221.html"
-      ]
-    },
-    {
-      "base_name": "tags_life",
-      "type": "page",
-      "file_count": 1,
-      "files": [
-        "tags_life_20251129.html"
-      ]
-    },
-    {
-      "base_name": "_5Cu003c_a_5Cu003e_5Cu003c_td_5Cu003e_5Cn_5Cu003ctd_5Cu003e_E7_BC_96_E7_A8_8B_5Cu003c_td_5Cu003e_5Cn_5Cu003c_tr_5Cu003e_5Cn_5Cu003ctr_5Cu003e_5Cn_5Cu003ctd_5Cu003e_5Cu003ca",
-      "type": "page",
-      "file_count": 1,
-      "files": [
-        "_5Cu003c_a_5Cu003e_5Cu003c_td_5Cu003e_5Cn_5Cu003ctd_5Cu003e_E7_BC_96_E7_A8_8B_5Cu003c_td_5Cu003e_5Cn_5Cu003c_tr_5Cu003e_5Cn_5Cu003ctr_5Cu003e_5Cn_5Cu003ctd_5Cu003e_5Cu003ca_20251204.html"
-      ]
-    },
-    {
-      "base_name": "posts_american-english-problems",
-      "type": "page",
-      "file_count": 1,
-      "files": [
-        "posts_american-english-problems_20251030.html"
-      ]
-    },
-    {
-      "base_name": "tags_education",
-      "type": "page",
-      "file_count": 1,
-      "files": [
-        "tags_education_20251031.html"
-      ]
-    },
-    {
-      "base_name": "posts_cs5-completed",
-      "type": "page",
-      "file_count": 1,
-      "files": [
-        "posts_cs5-completed_20251031.html"
-      ]
-    },
-    {
-      "base_name": "_5C",
-      "type": "page",
-      "file_count": 1,
-      "files": [
-        "_5C_20251205.html"
-      ]
-    },
-    {
-      "base_name": "posts_oberon",
-      "type": "page",
-      "file_count": 1,
-      "files": [
-        "posts_oberon_20260113.html"
-      ]
-    },
-    {
-      "base_name": "tags_health",
-      "type": "page",
-      "file_count": 1,
-      "files": [
-        "tags_health_20251102.html"
-      ]
-    },
-    {
-      "base_name": ".well-known_dnt-policy.txt",
-      "type": "page",
-      "file_count": 1,
-      "files": [
-        ".well-known_dnt-policy.txt_20251211.html"
-      ]
-    },
-    {
-      "base_name": "posts_cs-class2",
-      "type": "page",
-      "file_count": 1,
-      "files": [
-        "posts_cs-class2_20251105.html"
-      ]
-    },
-    {
-      "base_name": "tags_travel",
-      "type": "page",
-      "file_count": 1,
-      "files": [
-        "tags_travel_20251129.html"
-      ]
-    },
-    {
-      "base_name": "tags_lifestyle",
-      "type": "page",
-      "file_count": 1,
-      "files": [
-        "tags_lifestyle_20251101.html"
+        "blog-cn_2016_01_18_java__20251119.html"
       ]
     },
     {
@@ -596,6 +483,30 @@
       ]
     },
     {
+      "base_name": "ads.txt",
+      "type": "page",
+      "file_count": 1,
+      "files": [
+        "ads.txt_20251013.html"
+      ]
+    },
+    {
+      "base_name": "tags_lifestyle",
+      "type": "page",
+      "file_count": 1,
+      "files": [
+        "tags_lifestyle_20251101.html"
+      ]
+    },
+    {
+      "base_name": "tags_education",
+      "type": "page",
+      "file_count": 1,
+      "files": [
+        "tags_education_20251031.html"
+      ]
+    },
+    {
       "base_name": "posts_tuition-for-covid",
       "type": "page",
       "file_count": 1,
@@ -604,11 +515,203 @@
       ]
     },
     {
+      "base_name": "tags_health",
+      "type": "page",
+      "file_count": 1,
+      "files": [
+        "tags_health_20251102.html"
+      ]
+    },
+    {
+      "base_name": "posts_air-freshener-nightmare",
+      "type": "page",
+      "file_count": 1,
+      "files": [
+        "posts_air-freshener-nightmare_20251129.html"
+      ]
+    },
+    {
+      "base_name": "_5Cu003c_a_5Cu003e_5Cu003c_td_5Cu003e_5Cn_5Cu003ctd_5Cu003e_E7_BC_96_E7_A8_8B_5Cu003c_td_5Cu003e_5Cn_5Cu003c_tr_5Cu003e_5Cn_5Cu003ctr_5Cu003e_5Cn_5Cu003ctd_5Cu003e_5Cu003ca",
+      "type": "page",
+      "file_count": 1,
+      "files": [
+        "_5Cu003c_a_5Cu003e_5Cu003c_td_5Cu003e_5Cn_5Cu003ctd_5Cu003e_E7_BC_96_E7_A8_8B_5Cu003c_td_5Cu003e_5Cn_5Cu003c_tr_5Cu003e_5Cn_5Cu003ctr_5Cu003e_5Cn_5Cu003ctd_5Cu003e_5Cu003ca_20251204.html"
+      ]
+    },
+    {
+      "base_name": "posts_super-human-level-vision",
+      "type": "page",
+      "file_count": 1,
+      "files": [
+        "posts_super-human-level-vision_20251104.html"
+      ]
+    },
+    {
+      "base_name": "posts_cs3",
+      "type": "page",
+      "file_count": 1,
+      "files": [
+        "posts_cs3_20251102.html"
+      ]
+    },
+    {
+      "base_name": "tags_travel",
+      "type": "page",
+      "file_count": 1,
+      "files": [
+        "tags_travel_20251129.html"
+      ]
+    },
+    {
+      "base_name": "tags_philosophy",
+      "type": "page",
+      "file_count": 1,
+      "files": [
+        "tags_philosophy_20251101.html"
+      ]
+    },
+    {
+      "base_name": "tags_programming-language",
+      "type": "page",
+      "file_count": 1,
+      "files": [
+        "tags_programming-language_20260113.html"
+      ]
+    },
+    {
+      "base_name": "posts_cs5-completed",
+      "type": "page",
+      "file_count": 1,
+      "files": [
+        "posts_cs5-completed_20251031.html"
+      ]
+    },
+    {
+      "base_name": "posts_american-english-problems",
+      "type": "page",
+      "file_count": 1,
+      "files": [
+        "posts_american-english-problems_20251030.html"
+      ]
+    },
+    {
+      "base_name": "posts_cs-class2",
+      "type": "page",
+      "file_count": 1,
+      "files": [
+        "posts_cs-class2_20251105.html"
+      ]
+    },
+    {
+      "base_name": "posts_oberon",
+      "type": "page",
+      "file_count": 1,
+      "files": [
+        "posts_oberon_20260113.html"
+      ]
+    },
+    {
+      "base_name": "posts_wisdom-of-intelligence",
+      "type": "page",
+      "file_count": 1,
+      "files": [
+        "posts_wisdom-of-intelligence_20251102.html"
+      ]
+    },
+    {
+      "base_name": "tags_life",
+      "type": "page",
+      "file_count": 1,
+      "files": [
+        "tags_life_20251129.html"
+      ]
+    },
+    {
+      "base_name": ".well-known_dnt-policy.txt",
+      "type": "page",
+      "file_count": 1,
+      "files": [
+        ".well-known_dnt-policy.txt_20251211.html"
+      ]
+    },
+    {
+      "base_name": "common_courseBase_tch_grzl.jsp",
+      "type": "page",
+      "file_count": 1,
+      "files": [
+        "common_courseBase_tch_grzl.jsp_20060106.html"
+      ]
+    },
+    {
       "base_name": "posts_cello-technique",
       "type": "page",
       "file_count": 1,
       "files": [
         "posts_cello-technique_20251102.html"
+      ]
+    },
+    {
+      "base_name": "tags_english",
+      "type": "page",
+      "file_count": 1,
+      "files": [
+        "tags_english_20251101.html"
+      ]
+    },
+    {
+      "base_name": "posts_learning-philosophy",
+      "type": "page",
+      "file_count": 1,
+      "files": [
+        "posts_learning-philosophy_20251211.html"
+      ]
+    },
+    {
+      "base_name": "posts_youth-cs-student",
+      "type": "page",
+      "file_count": 1,
+      "files": [
+        "posts_youth-cs-student_20251102.html"
+      ]
+    },
+    {
+      "base_name": "posts_reading-course",
+      "type": "page",
+      "file_count": 1,
+      "files": [
+        "posts_reading-course_20251102.html"
+      ]
+    },
+    {
+      "base_name": "_5C",
+      "type": "page",
+      "file_count": 1,
+      "files": [
+        "_5C_20251205.html"
+      ]
+    },
+    {
+      "base_name": "posts_cs4",
+      "type": "page",
+      "file_count": 1,
+      "files": [
+        "posts_cs4_20251102.html"
+      ]
+    },
+    {
+      "base_name": "posts_entry-level-class",
+      "type": "page",
+      "file_count": 1,
+      "files": [
+        "posts_entry-level-class_20251102.html"
+      ]
+    },
+    {
+      "base_name": "posts_cs-course-5",
+      "type": "page",
+      "file_count": 1,
+      "files": [
+        "posts_cs-course-5_20251208.html"
       ]
     },
     {
@@ -628,99 +731,11 @@
       ]
     },
     {
-      "base_name": "posts_cs-course-5",
+      "base_name": "posts_authority",
       "type": "page",
       "file_count": 1,
       "files": [
-        "posts_cs-course-5_20251208.html"
-      ]
-    },
-    {
-      "base_name": "posts_wisdom-of-intelligence",
-      "type": "page",
-      "file_count": 1,
-      "files": [
-        "posts_wisdom-of-intelligence_20251102.html"
-      ]
-    },
-    {
-      "base_name": "posts_cs4",
-      "type": "page",
-      "file_count": 1,
-      "files": [
-        "posts_cs4_20251102.html"
-      ]
-    },
-    {
-      "base_name": "posts_air-freshener-nightmare",
-      "type": "page",
-      "file_count": 1,
-      "files": [
-        "posts_air-freshener-nightmare_20251129.html"
-      ]
-    },
-    {
-      "base_name": "posts_youth-cs-student",
-      "type": "page",
-      "file_count": 1,
-      "files": [
-        "posts_youth-cs-student_20251102.html"
-      ]
-    },
-    {
-      "base_name": "tags_programming-language",
-      "type": "page",
-      "file_count": 1,
-      "files": [
-        "tags_programming-language_20260113.html"
-      ]
-    },
-    {
-      "base_name": "posts_cs3",
-      "type": "page",
-      "file_count": 1,
-      "files": [
-        "posts_cs3_20251102.html"
-      ]
-    },
-    {
-      "base_name": "ads.txt",
-      "type": "page",
-      "file_count": 1,
-      "files": [
-        "ads.txt_20251013.html"
-      ]
-    },
-    {
-      "base_name": "posts_reading-course",
-      "type": "page",
-      "file_count": 1,
-      "files": [
-        "posts_reading-course_20251102.html"
-      ]
-    },
-    {
-      "base_name": "posts_entry-level-class",
-      "type": "page",
-      "file_count": 1,
-      "files": [
-        "posts_entry-level-class_20251102.html"
-      ]
-    },
-    {
-      "base_name": "posts_learning-philosophy",
-      "type": "page",
-      "file_count": 1,
-      "files": [
-        "posts_learning-philosophy_20251211.html"
-      ]
-    },
-    {
-      "base_name": "posts_super-human-level-vision",
-      "type": "page",
-      "file_count": 1,
-      "files": [
-        "posts_super-human-level-vision_20251104.html"
+        "posts_authority_20251221.html"
       ]
     }
   ]

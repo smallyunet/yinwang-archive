@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <title>中国中小企业竞争力工程</title>
+    <link rel="stylesheet" href="css/highlight/xcode.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-tooltips.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/post.css">
+    <script src="js/jquery.min.js"></script>
+    
+    <style>
+        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
+        /* Removed .inner/.outer overrides to respect theme post.css */
+        
+        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
+        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
+        .version-switcher a.current { font-weight: bold; color: #333; }
+        
+        .navbar-brand { font-size: 20px; font-weight: bold; }
+        .navbar-nav > li > a { font-size: 16px; } /* Slightly larger per user request */
+        
+        /* Reduce gap between navbar and content */
+        div.outer { margin-top: 30px; }
+        
+        /* Removed custom flexbox list styling to match demo vertical style */
+    </style>
+    
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-bs">
+                    <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+                <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='aboutcmec_aboutcmec_01.jsp_20060213.html'>About</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='homepage_20231225.html'>当然我在扯淡 (2023-12-25)</a></li><li><a href='index_20220816.html'>当然我在扯淡 (2022-08-16)</a></li><li><a href='index.jsp_20060213.html'>中国中小企业竞争力工程 (2006-02-13)</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='resources_d8-3404-d8-8424_20130614.html'>D8 3404 D8 8424</a></li><li><a href='resources_demos_pysonar2_email_base64mime.py_20150408.html'>Demos Pysonar2 Email Base64Mime.Py</a></li><li><a href='resources_demos_pysonar2_email_charset.py_20150506.html'>Demos Pysonar2 Email Charset.Py</a></li><li><a href='resources_demos_pysonar2_email_encoders.py_20160822.html'>Demos Pysonar2 Email Encoders.Py</a></li><li><a href='resources_demos_pysonar2_email_errors.py_20150409.html'>Demos Pysonar2 Email Errors.Py</a></li><li><a href='resources_demos_pysonar2_email_header.py_20140305.html'>Demos Pysonar2 Email Header.Py</a></li><li><a href='resources_demos_pysonar2_email_quoprimime.py_20150408.html'>Demos Pysonar2 Email Quoprimime.Py</a></li><li><a href='resources_demos_pysonar2_re.py_20150408.html'>Demos Pysonar2 Re.Py</a></li><li><a href='resources_demos_pysonar2_sre_compile.py_20160822.html'>Demos Pysonar2 Sre Compile.Py</a></li><li><a href='resources_demos_pysonar2_sre_constants.py_20160822.html'>Demos Pysonar2 Sre Constants.Py</a></li><li><a href='resources_demos_pysonar2_sre_parse.py_20160822.html'>Demos Pysonar2 Sre Parse.Py</a></li><li><a href='resources_diff1-diff2_20200728.html'>Diff1 Diff2</a></li><li><a href='resources_mk1-mk2_20130627.html'>Mk1 Mk2</a></li><li><a href='resources_nav1-nav2_20200728.html'>Nav1 Nav2</a></li><li><a href='resources_paredit20-paredit23_20200728.html'>Paredit20 Paredit23</a></li><li><a href='resources_pydiff1-pydiff2_20130711.html'>Pydiff1 Pydiff2</a></li><li><a href='resources_simulator-mips-simulator-arm_20200728.html'>Simulator Mips Simulator Arm</a></li><li><a href='resources_typed-clojure1-typed-clojure2_20200728.html'>Typed Clojure1 Typed Clojure2</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Misc <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='afficheAction.do_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='dljm.jsp_20060516.html'>竞争力工程</a></li><li><a href='neirong.jsp_20060428.html'>详细内容</a></li><li><a href='tongzhi_tongzhi1.htm_20060428.html'>ÎÞ±êÌâÎÄµµ</a></li></ul></li></ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="inner">
+        
+        <table align="center" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td background="../images/bg_03.gif">&nbsp;</td>
+    <td bgcolor="#FFFFFF">	  <table align="center" cellpadding="0" cellspacing="0">
+        <tr> 
+          <td height="25" class="newsTitle"> <div align="center"><strong>
+            
+
+
+
+
+<link href="/css.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_showHideLayers() { //v6.0
+  var i,p,v,obj,args=MM_showHideLayers.arguments;
+  for (i=0; i<(args.length-2); i+=3) if ((obj=MM_findObj(args[i]))!=null) { v=args[i+2];
+    if (obj.style) { obj=obj.style; v=(v=='show')?'visible':(v=='hide')?'hidden':v; }
+    obj.visibility=v; }
+}
+//-->
+</script>
+<table cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="10" background="/images/bg_02.gif"><a name=""></a></td>
+  </tr>
+  <tr>
+    <td height="12"><img src="images/tp_01.gif" width="730" height="3"></td>
+  </tr>
+  <tr>
+    <td><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="730" height="134">
+      <param name="movie" value="/images/flash1.swf">
+      <param name="quality" value="high">
+      <embed src="/images/flash1.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="730" height="134"></embed>
+    </object></td>
+  </tr>
+  <tr>
+    <td height="12"><img src="images/tp_01.gif" width="730" height="3"></td>
+  </tr>
+  <tr>
+    <td background="/images/bg_04.gif">
+      <table height="26" align="center" cellpadding="0" cellspacing="0" class="pos">
+        <tr>
+          <td>
+            <div align="center"><a href="/index.jsp" class="daohang">首页</a></div></td>
+          <td><div align="center"><img src="images/tp_03.gif" width="2" height="26"></div></td>
+          <td onMouseOver="MM_showHideLayers('Layer1','','show')" onMouseOut="MM_showHideLayers('Layer1','','hide')"><div align="center"><a href="javascript:void(null)" class="daohang">工程介绍</a>
+            </div>            <div id="Layer1">
+              <table height="77" cellpadding="0" cellspacing="1" bgcolor="#FFFFFF" onMouseOver="MM_showHideLayers('Layer1','','show')" onMouseOut="MM_showHideLayers('Layer1','','hide')">
+                <tr>
+                  <td height="25" bgcolor="#FDF7DF">　<a href="/aboutinfo/aboutinfo_01.jsp" class="black">竞争力工程介绍</a></td>
+                </tr>
+                <tr>
+                  <td height="25" bgcolor="#FDF7DF">　<a href="/aboutess/aboutess_01.jsp" class="black">ESS企业自助学习系统</a></td>
+                </tr>
+                <tr>
+                  <td height="25" bgcolor="#FDF7DF">　<a href="/aboutcmec/aboutcmec_01.jsp" class="black">CMEC会员式服务</a></td>
+                </tr>
+              </table>
+          </div></td>
+          <td><div align="center"><img src="images/tp_03.gif" width="2" height="26"></div></td>
+          <td><div align="center"><a href="/newsPublishAction.do?operation=ywDynNewsList" class="daohang" target="_self">新闻动态</a></div></td>
+          <td><div align="center"><img src="images/tp_03.gif" width="2" height="26"></div></td>
+          <td onMouseOver="MM_showHideLayers('Layer2','','show')" onMouseOut="MM_showHideLayers('Layer2','','hide')"><div align="center"><a href="javascript:void(null)" class="daohang">企业入网申请</a>
+            <div id="Layer2">
+              <table cellpadding="0" cellspacing="1" bgcolor="#FFFFFF" onMouseOver="MM_showHideLayers('Layer2','','show')" onMouseOut="MM_showHideLayers('Layer2','','hide')">
+                <tr>
+                  <td height="25" bgcolor="#FDF7DF">　<a href="/apply_dcb.jsp" class="black">调查问卷</a></td>
+                </tr>
+                <tr>
+                  <td height="25" bgcolor="#FDF7DF">　<a href="/apply_twsqb.jsp" class="black">入网申请表</a></td>
+                </tr>
+              </table>
+            </div>
+          </div></td>
+          <td><div align="center"><img src="images/tp_03.gif" width="2" height="26"></div></td>
+          <td><div align="center"><a href="/servicecenter/servicecenter_01.jsp" class="daohang">地区服务中心</a></div></td>
+          <td><div align="center"><img src="images/tp_03.gif" width="2" height="26"></div></td>
+          <td><div align="center"><a href="/common/courseBase/main.jsp?catLib=0" class="daohang">公共课程库</a></div></td>
+          <td><div align="center"><img src="images/tp_03.gif" width="2" height="26"></div></td>
+          <td onMouseOver="MM_showHideLayers('Layer3','','show')" onMouseOut="MM_showHideLayers('Layer3','','hide')"><div align="center"><a href="javascript:void(null)" class="daohang">实施案例</a>
+            <div id="Layer3">
+              <table height="51" cellpadding="0" cellspacing="1" bgcolor="#FFFFFF" onMouseOver="MM_showHideLayers('Layer3','','show')" onMouseOut="MM_showHideLayers('Layer3','','hide')">
+                <tr>
+                  <td height="50" bgcolor="#FDF7DF"><a href="/common/casexhx.jsp" class="black">　新华信市场研究<br>
+                    　咨询有限公司</a></td>
+                </tr>
+                <tr>
+                  <td height="50" bgcolor="#FDF7DF">　<a href="/common/casetoyota.jsp" class="black">一汽丰田汽车<br>
+                    　销售有限公司</a></td>
+                </tr>
+              </table>
+            </div>
+          </div></td>
+        </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td height="12"><img src="images/tp_01.gif" width="730" height="3"></td>
+  </tr>
+</table>
+
+
+			中国中小企业竞争力工程课程征集工作会议的通知
+		  </strong></div></td>
+        </tr>
+        <tr> 
+          <td height="25" bgcolor="E8EAED"> <div align="right">发布时间：
+		  
+		  2005-11-10
+　</div></td>
+        </tr>
+
+        <tr> 		  
+          <td height="500" align="center" valign="top" class="newsText">
+			&nbsp;
+			
+		  <table>
+            <tr>
+              <td><P class=MsoNormal><B><SPAN>各教育培训机构、培训讲师：<SPAN lang=EN-US><?xml:namespace prefix = o ns = "urn:schemas-microsoft-com:office:office" /><o:p></o:p></SPAN></SPAN></B></P>
+<P class=MsoNormal><SPAN>中国中小企业竞争力工程目前已经在山东、河南等<SPAN lang=EN-US>8</SPAN>个试点省份逐步推开，得到了各地中小企业政府主管部门和服务机构的广泛重视与积极配合，<SPAN lang=EN-US>3000</SPAN>余家地方骨干企业、高新技术企业即将成为工程试点期间的首批服务对象。作为主要服务内容之一，工程将向试点企业提供优质课程资源，为此，竞争力工程办公室定于<SPAN lang=EN-US>2005</SPAN>年<SPAN lang=EN-US>11</SPAN>月<SPAN lang=EN-US>15</SPAN>日在北京召开“中国中小企业竞争力工程”课程征集工作会议。请各有关教育培训机构高度重视、积极参与。现将有关事项通知如下：<SPAN lang=EN-US><o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal><SPAN>一、会议内容<SPAN lang=EN-US><o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal><SPAN>（一）中国中小企业竞争力工程的背景及介绍<SPAN lang=EN-US><o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal><SPAN>（二）竞争力工程的实施情况及服务内容、服务对象<SPAN lang=EN-US><o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal><SPAN>（三）竞争力工程课程资源征集的目的、要求、政策及课程资源提供方的收益分配原则<SPAN lang=EN-US><o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal><SPAN>（四）竞争力工程在部分省市、骨干企业中的实施案例<SPAN lang=EN-US><o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal><SPAN>二、参加人员<SPAN lang=EN-US><o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal><SPAN>各教育培训机构的主要负责人（总经理、副总经理、总监）和培训讲师。<SPAN lang=EN-US><o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal><SPAN>三、时间地点<SPAN lang=EN-US><o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal><SPAN lang=EN-US><SPAN>（一）<SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN></SPAN><SPAN>时间：<?xml:namespace prefix = st1 ns = "urn:schemas-microsoft-com:office:smarttags" /><st1:chsdate IsROCDate="False" IsLunarDate="False" Day="15" Month="11" Year="2005" w:st="on"><SPAN lang=EN-US>11</SPAN><SPAN>月<SPAN lang=EN-US>15</SPAN>日下午</SPAN></st1:chsdate></SPAN><SPAN lang=EN-US>14:00</SPAN><SPAN>――<SPAN lang=EN-US>17</SPAN>：<SPAN lang=EN-US>00<o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal><SPAN lang=EN-US><SPAN>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN><SPAN>（会议日程安排附后）</SPAN><SPAN lang=EN-US><o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN>（二）地点：国家发展与改革委员会培训中心会议室<SPAN lang=EN-US><o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal><SPAN>（国宏宾馆</SPAN><SPAN lang=EN-GB>B504</SPAN><SPAN>室</SPAN><SPAN>）<SPAN lang=EN-US><o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal align=left><SPAN>四、会议费用<SPAN lang=EN-US><o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal align=left><SPAN>免收会务费、资料费。往返交通费用自理。<SPAN lang=EN-US><o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal align=left><SPAN>五、联系方式<SPAN lang=EN-US><o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal><SPAN>电<SPAN lang=EN-US><SPAN>&nbsp; </SPAN></SPAN>话：<SPAN lang=EN-US>010-82783158</SPAN>－<SPAN lang=EN-US>215 <SPAN>&nbsp;&nbsp;</SPAN></SPAN>传<SPAN lang=EN-US><SPAN>&nbsp; </SPAN></SPAN>真：<SPAN lang=EN-US>010-82781855 <o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal><SPAN>联系人：宋歌<SPAN lang=EN-US><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>邮<SPAN lang=EN-US><SPAN>&nbsp; </SPAN></SPAN>箱：<SPAN lang=EN-US><A href="mailto:songg@yinwang.org">songg@yinwang.org</A><o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal><SPAN lang=EN-US><o:p>&nbsp;</o:p></SPAN></P>
+<P class=MsoNormal><SPAN>附<SPAN lang=EN-US>: </SPAN>与会嘉宾名单与会议日程安排<SPAN lang=EN-US><o:p></o:p></SPAN></SPAN></P>
+<H2><SPAN>与会嘉宾<SPAN lang=EN-US>:<o:p></o:p></SPAN></SPAN></H2>
+<P class=MsoNormal><SPAN lang=EN-US>　　1. </SPAN><SPAN>中国企业评价协会学习型组织专业委员会副秘书长<SPAN lang=EN-US><SPAN>&nbsp; </SPAN></SPAN>吕鸿雷<SPAN lang=EN-US><o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal><SPAN lang=EN-US>　　2. </SPAN><SPAN>摩托罗拉大学创始人<SPAN lang=EN-US><SPAN>&nbsp; </SPAN></SPAN>马普林<SPAN lang=EN-US>(</SPAN>印裔<SPAN lang=EN-US>)<o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal><SPAN lang=EN-US>　　3. </SPAN><SPAN>北大纵横管理咨询公司总裁<SPAN lang=EN-US><SPAN>&nbsp; </SPAN></SPAN>王璞<SPAN lang=EN-US><o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal><SPAN lang=EN-US>　　4. </SPAN><SPAN>北大商学网总裁<SPAN lang=EN-US><SPAN>&nbsp; </SPAN></SPAN>刘铁山<SPAN lang=EN-US><o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal><SPAN lang=EN-US>　　5. </SPAN><SPAN>新华信市场研究咨询有限公司总裁<SPAN lang=EN-US><SPAN>&nbsp; </SPAN></SPAN>林雷<SPAN lang=EN-US><o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal><SPAN lang=EN-US>　　6.LG400</SPAN><SPAN>司法考试培训学校校长<SPAN lang=EN-US><SPAN>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>李树建<SPAN lang=EN-US><o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal><SPAN lang=EN-US>　　7. </SPAN><SPAN>北京和君创业培训发展有限公司总经理<SPAN lang=EN-US><SPAN>&nbsp; </SPAN></SPAN>高伟<SPAN lang=EN-US><o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal><SPAN lang=EN-US>　　8. </SPAN><SPAN>北京华点通教育科技有限公司总经理<SPAN lang=EN-US><SPAN>&nbsp;&nbsp;&nbsp; </SPAN></SPAN>郎燕侠<SPAN lang=EN-US><o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal><SPAN lang=EN-US>　　9. </SPAN><SPAN>北京时代光华教育发展有限公司市场总监<SPAN lang=EN-US><SPAN>&nbsp;&nbsp;&nbsp; </SPAN></SPAN>蔡自强<SPAN lang=EN-US><o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal><SPAN lang=EN-US>　　10. </SPAN><SPAN>美国卡耐基训练北京代表处资深经理<SPAN lang=EN-US><SPAN>&nbsp;&nbsp; </SPAN></SPAN>柴国炳<SPAN lang=EN-US><o:p></o:p></SPAN></SPAN></P>
+<H2><SPAN>会议日程<SPAN lang=EN-US>:<o:p></o:p></SPAN></SPAN></H2>
+<P class=MsoNormal><SPAN lang=EN-US>　　13:30― 14:00<SPAN>&nbsp;&nbsp;&nbsp; </SPAN></SPAN><SPAN>会议签到<SPAN lang=EN-US>,</SPAN>嘉宾入场<SPAN lang=EN-US><o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal><SPAN lang=EN-US>　　14:00― 14:10<SPAN>&nbsp;&nbsp;&nbsp; </SPAN></SPAN><SPAN>会议开始<SPAN lang=EN-US>,</SPAN>介绍与会嘉宾</SPAN><SPAN lang=EN-US><o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN lang=EN-US>　　14:10― 14:50<SPAN>&nbsp;&nbsp;&nbsp; </SPAN></SPAN><SPAN>国家相关政策及中国中小企业竞争力工程介绍<SPAN lang=EN-US><o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal><SPAN lang=EN-US><SPAN>&nbsp;</SPAN><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;　　&nbsp; </SPAN></SPAN><SPAN>主讲人：中国中小企业国际合作协会副秘书长秦志辉<SPAN lang=EN-US><o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal><SPAN lang=EN-US>　　14:50―15:00<SPAN>&nbsp;&nbsp;&nbsp; </SPAN></SPAN><SPAN>竞争力工程合作伙伴单位授牌仪式<SPAN lang=EN-US><o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal><SPAN lang=EN-US>　　15:00―15:40<SPAN>&nbsp;&nbsp;&nbsp; </SPAN></SPAN><SPAN>竞争力工程实施办法及项目合作方式的相关问题<SPAN lang=EN-US><o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal><SPAN lang=EN-US><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;　　&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN><SPAN>主讲人：竞争力工程办公室项目负责人 国怀志<SPAN lang=EN-US><o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal><SPAN lang=EN-US>　　15:40―16:00<SPAN>&nbsp;&nbsp;&nbsp; </SPAN></SPAN><SPAN>工程实践与企业发展的意义<SPAN lang=EN-GB><o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal><SPAN>　　主讲人：摩托罗拉大学创始人 马普林<SPAN lang=EN-US><o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal><SPAN lang=EN-US>　　16:00―16:20<SPAN>&nbsp;&nbsp;&nbsp; </SPAN></SPAN><SPAN>工程试点企业负责人分享经验<SPAN lang=EN-US><o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal><SPAN>　　主讲人：新华信市场研究咨询公司总裁 林雷<SPAN lang=EN-US><o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal><SPAN lang=EN-US>　　16:20―16:40<SPAN>&nbsp;&nbsp;&nbsp; </SPAN></SPAN><SPAN>与会代表发言<SPAN lang=EN-US><o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal><SPAN>　　主讲人：北京华点通教育科技有限公司总经理 郎燕侠<SPAN lang=EN-US><o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal><SPAN lang=EN-US>　　16:40―17:00<SPAN>&nbsp;&nbsp;&nbsp; </SPAN></SPAN><SPAN>工程技术平台及课件制作演示<SPAN lang=EN-US><o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal><SPAN lang=EN-US>　　17:00―17:30<SPAN>&nbsp;&nbsp;&nbsp; </SPAN></SPAN><SPAN>交流与答疑</SPAN></P>
+<P class=MsoNormal><SPAN></SPAN>&nbsp;</P>
+<P class=MsoNormal align=center><SPAN>回执</SPAN></P>
+<DIV align=center>
+<TABLE class=MsoNormalTable cellSpacing=0 cellPadding=0 border=1>
+<TBODY>
+<TR>
+<TD vAlign=top width=79>
+<P class=MsoNormal align=center><B><SPAN>姓<SPAN lang=EN-US><SPAN>&nbsp; </SPAN></SPAN>名<SPAN lang=EN-US><o:p></o:p></SPAN></SPAN></B></P></TD>
+<TD vAlign=top width=276>
+<P class=MsoNormal align=center><B><SPAN>单<SPAN lang=EN-US><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>位<SPAN lang=EN-US><o:p></o:p></SPAN></SPAN></B></P></TD>
+<TD vAlign=top width=100>
+<P class=MsoNormal align=center><B><SPAN>职<SPAN lang=EN-US><SPAN>&nbsp; </SPAN></SPAN>务<SPAN lang=EN-US><o:p></o:p></SPAN></SPAN></B></P></TD>
+<TD vAlign=top width=113>
+<P class=MsoNormal align=center><B><SPAN>联系电话<SPAN lang=EN-US><o:p></o:p></SPAN></SPAN></B></P></TD></TR>
+<TR>
+<TD vAlign=top width=79>
+<P class=MsoNormal align=center><SPAN lang=EN-US><o:p>&nbsp;</o:p></SPAN></P></TD>
+<TD vAlign=top width=276>
+<P class=MsoNormal align=center><SPAN lang=EN-US><o:p>&nbsp;</o:p></SPAN></P></TD>
+<TD vAlign=top width=100>
+<P class=MsoNormal align=center><SPAN lang=EN-US><o:p>&nbsp;</o:p></SPAN></P></TD>
+<TD vAlign=top width=113>
+<P class=MsoNormal align=center><SPAN lang=EN-US><o:p>&nbsp;</o:p></SPAN></P></TD></TR>
+<TR>
+<TD vAlign=top width=79>
+<P class=MsoNormal align=center><SPAN lang=EN-US><o:p>&nbsp;</o:p></SPAN></P></TD>
+<TD vAlign=top width=276>
+<P class=MsoNormal align=center><SPAN lang=EN-US><o:p>&nbsp;</o:p></SPAN></P></TD>
+<TD vAlign=top width=100>
+<P class=MsoNormal align=center><SPAN lang=EN-US><o:p>&nbsp;</o:p></SPAN></P></TD>
+<TD vAlign=top width=113>
+<P class=MsoNormal align=center><SPAN lang=EN-US><o:p>&nbsp;</o:p></SPAN></P></TD></TR>
+<TR>
+<TD vAlign=top width=79>
+<P class=MsoNormal align=center><SPAN lang=EN-US><o:p>&nbsp;</o:p></SPAN></P></TD>
+<TD vAlign=top width=276>
+<P class=MsoNormal align=center><SPAN lang=EN-US><o:p>&nbsp;</o:p></SPAN></P></TD>
+<TD vAlign=top width=100>
+<P class=MsoNormal align=center><SPAN lang=EN-US><o:p>&nbsp;</o:p></SPAN></P></TD>
+<TD vAlign=top width=113>
+<P class=MsoNormal align=center><SPAN lang=EN-US><o:p>&nbsp;</o:p></SPAN></P></TD></TR></TBODY></TABLE></DIV>
+</td>
+            </tr>
+          </table></td>
+        </tr>
+        <tr>
+          <td height="30">&nbsp;</td>
+        </tr>
+        <tr>
+          <td height="30"> 
+            <div align="center"><a href="#"><img src="../images/but_02.gif" width="110" height="24" border="0" onClick="window.close()"></a></div></td>
+        </tr>
+      </table>	  
+	  
+
+
+
+
+<link href="/css.css" rel="stylesheet" type="text/css">
+
+<script language=javascript> 
+	function addHome(){ 
+		var url = "http://www.yinwang.org"; 
+		var title = "中国中小企业竞争力工程"; 
+		window.external.AddFavorite(url,title); 
+	}
+</script> 
+<table cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="5"><a name=""></a></td>
+  </tr>
+  <tr>
+    <td height="8" background="/images/bg_02.gif"><a name=""></a></td>
+  </tr>
+  <tr>
+    <td height="3"><a name=""></a></td>
+  </tr>
+  <tr>
+    <td height="26" background="/images/bg_04.gif">
+      <div align="center" class="style1"> <a href="/laws/laws_01.jsp" target="_blank" class="daohang">&#25919;&#31574;&#27861;&#35268;</a>&#65372;<a href="/contactus.jsp" target="_blank" class="daohang">&#32852;&#31995;&#25105;&#20204;</a>&#65372;<a href="/datadownload.jsp" target="_blank" class="daohang">&#36164;&#26009;&#19979;&#36733;</a>&#65372;<a href="#" class="daohang" onClick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.yinwang.org');return false;">&#35774;&#20026;&#39318;&#39029;</a>&#65372;<a href="#" class="daohang" onClick="addHome();">&#21152;&#20837;&#25910;&#34255;</a> </div></td>
+  </tr>
+  <tr>
+    <td height="12"><img src="images/tp_01.gif" width="730" height="3"></td>
+  </tr>
+  <tr>
+    <td height="12"><div align="center">&#29256;&#26435;&#25152;&#26377;&#65306;&#20013;&#22269;&#20013;&#23567;&#20225;&#19994;&#31454;&#20105;&#21147;&#24037;&#31243;&#21150;&#20844;&#23460;<br>
+      &#30005;&#35805;&#65306;010-82783158-240&#12289;231 &#12288; &#30005;&#23376;&#37038;&#20214;&#65306;info@yinwang.org      <br>
+    </div></td>
+  </tr>
+  <tr>
+    <td height="10" background="/images/bg_02.gif"><a name=""></a></td>
+  </tr>
+</table>
+    </td>
+    <td background="../images/bg_01.gif">&nbsp;</td>
+  </tr>
+</table>
+    </div>
+    
+    <script src="js/highlight.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script>
+        if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
+            document.body.classList.add('mobile');
+            var navbar = document.querySelector('nav.navbar');
+            if (navbar) { navbar.classList.remove('navbar-fixed-top'); }
+        }
+    </script>
+</body>
+</html>

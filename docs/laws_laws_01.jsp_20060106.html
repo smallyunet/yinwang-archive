@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <title>中国中小企业竞争力工程</title>
+    <link rel="stylesheet" href="css/highlight/xcode.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-tooltips.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/post.css">
+    <script src="js/jquery.min.js"></script>
+    
+    <style>
+        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
+        /* Removed .inner/.outer overrides to respect theme post.css */
+        
+        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
+        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
+        .version-switcher a.current { font-weight: bold; color: #333; }
+        
+        .navbar-brand { font-size: 20px; font-weight: bold; }
+        .navbar-nav > li > a { font-size: 16px; } /* Slightly larger per user request */
+        
+        /* Reduce gap between navbar and content */
+        div.outer { margin-top: 30px; }
+        
+        /* Removed custom flexbox list styling to match demo vertical style */
+    </style>
+    
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-bs">
+                    <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+                <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='aboutcmec_aboutcmec_01.jsp_20060213.html'>About</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='homepage_20231225.html'>当然我在扯淡 (2023-12-25)</a></li><li><a href='index_20220816.html'>当然我在扯淡 (2022-08-16)</a></li><li><a href='index.jsp_20060213.html'>中国中小企业竞争力工程 (2006-02-13)</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='resources_d8-3404-d8-8424_20130614.html'>D8 3404 D8 8424</a></li><li><a href='resources_demos_pysonar2_email_base64mime.py_20150408.html'>Demos Pysonar2 Email Base64Mime.Py</a></li><li><a href='resources_demos_pysonar2_email_charset.py_20150506.html'>Demos Pysonar2 Email Charset.Py</a></li><li><a href='resources_demos_pysonar2_email_encoders.py_20160822.html'>Demos Pysonar2 Email Encoders.Py</a></li><li><a href='resources_demos_pysonar2_email_errors.py_20150409.html'>Demos Pysonar2 Email Errors.Py</a></li><li><a href='resources_demos_pysonar2_email_header.py_20140305.html'>Demos Pysonar2 Email Header.Py</a></li><li><a href='resources_demos_pysonar2_email_quoprimime.py_20150408.html'>Demos Pysonar2 Email Quoprimime.Py</a></li><li><a href='resources_demos_pysonar2_re.py_20150408.html'>Demos Pysonar2 Re.Py</a></li><li><a href='resources_demos_pysonar2_sre_compile.py_20160822.html'>Demos Pysonar2 Sre Compile.Py</a></li><li><a href='resources_demos_pysonar2_sre_constants.py_20160822.html'>Demos Pysonar2 Sre Constants.Py</a></li><li><a href='resources_demos_pysonar2_sre_parse.py_20160822.html'>Demos Pysonar2 Sre Parse.Py</a></li><li><a href='resources_diff1-diff2_20200728.html'>Diff1 Diff2</a></li><li><a href='resources_mk1-mk2_20130627.html'>Mk1 Mk2</a></li><li><a href='resources_nav1-nav2_20200728.html'>Nav1 Nav2</a></li><li><a href='resources_paredit20-paredit23_20200728.html'>Paredit20 Paredit23</a></li><li><a href='resources_pydiff1-pydiff2_20130711.html'>Pydiff1 Pydiff2</a></li><li><a href='resources_simulator-mips-simulator-arm_20200728.html'>Simulator Mips Simulator Arm</a></li><li><a href='resources_typed-clojure1-typed-clojure2_20200728.html'>Typed Clojure1 Typed Clojure2</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Misc <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='afficheAction.do_20060213.html'>中国中小企业竞争力工程</a></li><li><a href='dljm.jsp_20060516.html'>竞争力工程</a></li><li><a href='neirong.jsp_20060428.html'>详细内容</a></li><li><a href='tongzhi_tongzhi1.htm_20060428.html'>ÎÞ±êÌâÎÄµµ</a></li></ul></li></ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="inner">
+        
+        <table align="center" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td background="../servicecenter/images/bg_03.gif">&nbsp;</td>
+    <td bgcolor="#FFFFFF"> 
+	     
+
+
+
+
+<link href="/css.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_showHideLayers() { //v6.0
+  var i,p,v,obj,args=MM_showHideLayers.arguments;
+  for (i=0; i<(args.length-2); i+=3) if ((obj=MM_findObj(args[i]))!=null) { v=args[i+2];
+    if (obj.style) { obj=obj.style; v=(v=='show')?'visible':(v=='hide')?'hidden':v; }
+    obj.visibility=v; }
+}
+//-->
+</script>
+<table cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="10" background="/images/bg_02.gif"><a name=""></a></td>
+  </tr>
+  <tr>
+    <td height="12"><img src="images/tp_01.gif" width="730" height="3"></td>
+  </tr>
+  <tr>
+    <td><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="730" height="134">
+      <param name="movie" value="/images/flash1.swf">
+      <param name="quality" value="high">
+      <embed src="/images/flash1.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="730" height="134"></embed>
+    </object></td>
+  </tr>
+  <tr>
+    <td height="12"><img src="images/tp_01.gif" width="730" height="3"></td>
+  </tr>
+  <tr>
+    <td background="/images/bg_04.gif">
+      <table height="26" align="center" cellpadding="0" cellspacing="0" class="pos">
+        <tr>
+          <td>
+            <div align="center"><a href="/index.jsp" class="daohang">首页</a></div></td>
+          <td><div align="center"><img src="images/tp_03.gif" width="2" height="26"></div></td>
+          <td onMouseOver="MM_showHideLayers('Layer1','','show')" onMouseOut="MM_showHideLayers('Layer1','','hide')"><div align="center"><a href="javascript:void(null)" class="daohang">工程介绍</a>
+            </div>            <div id="Layer1">
+              <table height="77" cellpadding="0" cellspacing="1" bgcolor="#FFFFFF" onMouseOver="MM_showHideLayers('Layer1','','show')" onMouseOut="MM_showHideLayers('Layer1','','hide')">
+                <tr>
+                  <td height="25" bgcolor="#FDF7DF">　<a href="/aboutinfo/aboutinfo_01.jsp" class="black">竞争力工程介绍</a></td>
+                </tr>
+                <tr>
+                  <td height="25" bgcolor="#FDF7DF">　<a href="/aboutess/aboutess_01.jsp" class="black">ESS企业自助学习系统</a></td>
+                </tr>
+                <tr>
+                  <td height="25" bgcolor="#FDF7DF">　<a href="/aboutcmec/aboutcmec_01.jsp" class="black">CMEC会员式服务</a></td>
+                </tr>
+              </table>
+          </div></td>
+          <td><div align="center"><img src="images/tp_03.gif" width="2" height="26"></div></td>
+          <td><div align="center"><a href="/newsPublishAction.do?operation=ywDynNewsList" class="daohang" target="_self">新闻动态</a></div></td>
+          <td><div align="center"><img src="images/tp_03.gif" width="2" height="26"></div></td>
+          <td onMouseOver="MM_showHideLayers('Layer2','','show')" onMouseOut="MM_showHideLayers('Layer2','','hide')"><div align="center"><a href="javascript:void(null)" class="daohang">企业入网申请</a>
+            <div id="Layer2">
+              <table cellpadding="0" cellspacing="1" bgcolor="#FFFFFF" onMouseOver="MM_showHideLayers('Layer2','','show')" onMouseOut="MM_showHideLayers('Layer2','','hide')">
+                <tr>
+                  <td height="25" bgcolor="#FDF7DF">　<a href="/apply_dcb.jsp" class="black">调查问卷</a></td>
+                </tr>
+                <tr>
+                  <td height="25" bgcolor="#FDF7DF">　<a href="/apply_twsqb.jsp" class="black">入网申请表</a></td>
+                </tr>
+              </table>
+            </div>
+          </div></td>
+          <td><div align="center"><img src="images/tp_03.gif" width="2" height="26"></div></td>
+          <td><div align="center"><a href="/servicecenter/servicecenter_01.jsp" class="daohang">地区服务中心</a></div></td>
+          <td><div align="center"><img src="images/tp_03.gif" width="2" height="26"></div></td>
+          <td><div align="center"><a href="/common/courseBase/main.jsp?catLib=0" class="daohang">公共课程库</a></div></td>
+          <td><div align="center"><img src="images/tp_03.gif" width="2" height="26"></div></td>
+          <td onMouseOver="MM_showHideLayers('Layer3','','show')" onMouseOut="MM_showHideLayers('Layer3','','hide')"><div align="center"><a href="javascript:void(null)" class="daohang">实施案例</a>
+            <div id="Layer3">
+              <table height="51" cellpadding="0" cellspacing="1" bgcolor="#FFFFFF" onMouseOver="MM_showHideLayers('Layer3','','show')" onMouseOut="MM_showHideLayers('Layer3','','hide')">
+                <tr>
+                  <td height="50" bgcolor="#FDF7DF"><a href="/common/casexhx.jsp" class="black">　新华信市场研究<br>
+                    　咨询有限公司</a></td>
+                </tr>
+                <tr>
+                  <td height="50" bgcolor="#FDF7DF">　<a href="/common/casetoyota.jsp" class="black">一汽丰田汽车<br>
+                    　销售有限公司</a></td>
+                </tr>
+              </table>
+            </div>
+          </div></td>
+        </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td height="12"><img src="images/tp_01.gif" width="730" height="3"></td>
+  </tr>
+</table>
+
+ 
+<table align="center" cellpadding="0" cellspacing="0">
+        <tr> 
+          <td> 
+            <table cellspacing="0" cellpadding="0">
+              <tr> 
+                <td height="25" colspan="2"><table height="25" align="center" cellpadding="0" cellspacing="0">
+                    <tr> 
+                      <td>您现在的位置：竞争力工程网站&gt;&gt;政策法规</td>
+                      <td><div align="right">
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+</head>
+
+          <script language="JavaScript" class="style2">
+				        todayDate = new Date();
+						date = todayDate.getDate();
+						month= todayDate.getMonth()+1;
+						year= todayDate.getYear();
+						document.write("今天是 ");
+						document.write(year);
+						document.write("年");
+						document.write(month);
+						document.write("月");
+						document.write(date);
+						document.write("日");
+						document.write(" ")
+						if (todayDate.getDay() == 5) document.write("星期五")
+						if (todayDate.getDay() == 6) document.write("星期六")
+						if (todayDate.getDay() == 0) document.write("星期日")
+						if (todayDate.getDay() == 1) document.write("星期一")
+						if (todayDate.getDay() == 2) document.write("星期二")
+						if (todayDate.getDay() == 3) document.write("星期三")
+						if (todayDate.getDay() == 4) document.write("星期四")
+					</script>
+</html></div></td>
+                    </tr>
+                  </table></td>
+              </tr>
+              <tr > 
+                <td  background="../servicecenter/images/bg_02.gif" height="8" colspan="2"><a name=""></a></td>
+              </tr>
+              <tr >
+                <td height="5" colspan="2"><a name=""></a><a name="9"></a></td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr>
+          <td height="42" valign="top"><table align="center" cellpadding="0" cellspacing="0">
+            <tr>
+              <td height="49" valign="top"><table cellspacing="0" cellpadding="0">
+                <tr>
+                  <td height="5" bgcolor="#BEC2C7"><a name=""></a></td>
+                </tr>
+                <tr>
+                  <td height="23" bgcolor="#D9DDE1"><table height="18" align="center" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td><div align="center"><img src="images/tb_01.gif" width="16" height="15"></div></td>
+                        <td valign="bottom"><strong>政策法规</strong></td>
+                      </tr>
+                  </table></td>
+                </tr>
+              </table>
+                <table cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td height="10" colspan="3"><a name="1"></a></td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td valign="top"><img src="../images/tb_jt1.gif" width="8" height="13"></td>
+                    <td height="25" valign="top"> <a href="laws_01.jsp" class="black">促进个体私营等非公有制经济发展的通知</a></td>
+                  </tr>
+                  <tr>
+                    <td height="10" colspan="3"><table cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td height="1" background="../images/bg_xx.gif"><a name="1"></a></td>
+                      </tr>
+                    </table></td>
+                  </tr>
+                </table>
+                <table cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td height="10" colspan="3"><a name="1"></a></td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td valign="top"><img src="../images/tb_jt1.gif" width="8" height="13"></td>
+                    <td height="25" valign="top"><a href="laws_02.jsp" class="black">                      非公经济36条</a></td>
+                  </tr>
+                  <tr>
+                    <td height="10" colspan="3"><table cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td height="1" background="../images/bg_xx.gif"><a name="1"></a></td>
+                        </tr>
+                    </table></td>
+                  </tr>
+                </table>
+                <table cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td height="10" colspan="3"><a name="1"></a></td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td valign="top"><img src="../images/tb_jt1.gif" width="8" height="13"></td>
+                    <td height="25" valign="top"> <a href="laws_03.jsp" class="black">关于促进民营科技企业发展的若干意见</a></td>
+                  </tr>
+                  <tr>
+                    <td height="10" colspan="3"><table cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td height="1" background="../images/bg_xx.gif"><a name="1"></a></td>
+                        </tr>
+                    </table></td>
+                  </tr>
+                </table>
+                <table cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td height="10" colspan="3"><a name="1"></a></td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td valign="top"><img src="../images/tb_jt1.gif" width="8" height="13"></td>
+                    <td height="25" valign="top"> <a href="laws_04.jsp" class="black">关于大力发展民营科技型企业若干问题的决</a></td>
+                  </tr>
+                  <tr>
+                    <td height="10" colspan="3"><table cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td height="1" background="../images/bg_xx.gif"><a name="1"></a></td>
+                        </tr>
+                    </table></td>
+                  </tr>
+                </table>
+                <table cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td height="10" colspan="3"><a name="1"></a></td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td valign="top"><img src="../images/tb_jt1.gif" width="8" height="13"></td>
+                    <td height="25" valign="top"> <a href="laws_05.jsp" class="black">关于鼓励和促进中小企业发展的若干政策意见</a></td>
+                  </tr>
+                  <tr>
+                    <td height="10" colspan="3"><table cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td height="1" background="../images/bg_xx.gif"><a name="1"></a></td>
+                        </tr>
+                    </table></td>
+                  </tr>
+                </table>
+                <table cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td height="10" colspan="3"><a name="1"></a></td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td valign="top"><img src="../images/tb_jt1.gif" width="8" height="13"></td>
+                    <td height="25" valign="top"> <a href="laws_06.jsp" class="black">关于合作开展中小企业贷款与信用担保体系建设工作的通知</a></td>
+                  </tr>
+                  <tr>
+                    <td height="10" colspan="3"><table cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td height="1" background="../images/bg_xx.gif"><a name="1"></a></td>
+                        </tr>
+                    </table></td>
+                  </tr>
+                </table>
+                <table cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td height="10" colspan="3"><a name="1"></a></td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td valign="top"><img src="../images/tb_jt1.gif" width="8" height="13"></td>
+                    <td height="25" valign="top"> <a href="laws_07.jsp" class="black">关于科技型中小企业创新基金项目试点的通知</a></td>
+                  </tr>
+                  <tr>
+                    <td height="10" colspan="3"><table cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td height="1" background="../images/bg_xx.gif"><a name="1"></a></td>
+                        </tr>
+                    </table></td>
+                  </tr>
+                </table>
+                <table cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td height="10" colspan="3"><a name="1"></a></td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td valign="top"><img src="../images/tb_jt1.gif" width="8" height="13"></td>
+                    <td height="25" valign="top"> <a href="laws_08.jsp" class="black">关于培育中小企业社会化服务体系若干问题的意见</a></td>
+                  </tr>
+                  <tr>
+                    <td height="10" colspan="3"><table cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td height="1" background="../images/bg_xx.gif"><a name="1"></a></td>
+                        </tr>
+                    </table></td>
+                  </tr>
+                </table>
+                <table cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td height="10" colspan="3"><a name="1"></a></td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td valign="top"><img src="../images/tb_jt1.gif" width="8" height="13"></td>
+                    <td height="25" valign="top"> <a href="laws_09.jsp" class="black">企业划型标准</a></td>
+                  </tr>
+                  <tr>
+                    <td height="10" colspan="3"><table cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td height="1" background="../images/bg_xx.gif"><a name="1"></a></td>
+                        </tr>
+                    </table></td>
+                  </tr>
+                </table>
+                <table cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td height="10" colspan="3"><a name="1"></a></td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td valign="top"><img src="../images/tb_jt1.gif" width="8" height="13"></td>
+                    <td height="25" valign="top"> <a href="laws_10.jsp" class="black">税收减免管理办法(试行)</a></td>
+                  </tr>
+                  <tr>
+                    <td height="10" colspan="3"><table cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td height="1" background="../images/bg_xx.gif"><a name="1"></a></td>
+                        </tr>
+                    </table></td>
+                  </tr>
+                </table>
+                <table cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td height="10" colspan="3"><a name="1"></a></td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td valign="top"><img src="../images/tb_jt1.gif" width="8" height="13"></td>
+                    <td height="25" valign="top"> <a href="laws_11.jsp" class="black">中小企业标准暂行规定</a></td>
+                  </tr>
+                  <tr>
+                    <td height="10" colspan="3"><table cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td height="1" background="../images/bg_xx.gif"><a name="1"></a></td>
+                        </tr>
+                    </table></td>
+                  </tr>
+                </table>
+                <table cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td height="10" colspan="3"><a name="1"></a></td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td valign="top"><img src="../images/tb_jt1.gif" width="8" height="13"></td>
+                    <td height="25" valign="top"> <a href="laws_12.jsp" class="black">中小企业促进法</a></td>
+                  </tr>
+                  <tr>
+                    <td height="10" colspan="3"><table cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td height="1" background="../images/bg_xx.gif"><a name="1"></a></td>
+                        </tr>
+                    </table></td>
+                  </tr>
+                </table>
+                <table cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td height="10" colspan="3"><a name="1"></a></td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td valign="top"><img src="../images/tb_jt1.gif" width="8" height="13"></td>
+                    <td height="25" valign="top"> <a href="laws_13.jsp" class="black">中小企业发展专项资金管理暂行办法</a></td>
+                  </tr>
+                  <tr>
+                    <td height="10" colspan="3"><table cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td height="1" background="../images/bg_xx.gif"><a name="1"></a></td>
+                        </tr>
+                    </table></td>
+                  </tr>
+                </table>
+                <table cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td height="10" colspan="3"><a name="1"></a></td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td valign="top"><img src="../images/tb_jt1.gif" width="8" height="13"></td>
+                    <td height="25" valign="top"> <a href="laws_14.jsp" class="black">中小企业服务体系专项补助资金使用管理办法</a></td>
+                  </tr>
+                  <tr>
+                    <td height="10" colspan="3"><table cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td height="1" background="../images/bg_xx.gif"><a name="1"></a></td>
+                        </tr>
+                    </table></td>
+                  </tr>
+                </table>
+                <table cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td height="10" colspan="3"><a name="1"></a></td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td valign="top"><img src="../images/tb_jt1.gif" width="8" height="13"></td>
+                    <td height="25" valign="top"> <a href="laws_15.jsp" class="black">中小企业国际市场开拓资金</a></td>
+                  </tr>
+                  <tr>
+                    <td height="10" colspan="3"><table cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td height="1" background="../images/bg_xx.gif"><a name="1"></a></td>
+                        </tr>
+                    </table></td>
+                  </tr>
+                </table>
+                <table cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td height="10" colspan="3"><a name="1"></a></td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td valign="top"><img src="../images/tb_jt1.gif" width="8" height="13"></td>
+                    <td height="25" valign="top"> <a href="laws_16.jsp" class="black">中小企业信用担保机构免征营业税的通知</a></td>
+                  </tr>
+                  <tr>
+                    <td height="10" colspan="3"><table cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td height="1" background="../images/bg_xx.gif"><a name="1"></a></td>
+                        </tr>
+                    </table></td>
+                  </tr>
+                </table>                </td>
+              <td valign="top"><table align="right" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td height="63" valign="top"><p align="center"><strong>关于发挥工商行政管理职能作用<br>
+                  </strong><strong>促进个体私营等非公有制经济发展的通知<br>
+                  </strong>工商个字 [2005] 第 39 号</p>
+                    </td>
+                </tr>
+                <tr>
+                  <td height="72" valign="top"><p align="left">各省、自治区、直辖市及计划单列市、副省级市工商行政管理局： </p>
+                    <p align="left">　
+                      　为了认真落实《国务院关于鼓励支持和引导个体私营等非公有制经济发展的若干意见》（国发 [2005]3 号），深入贯彻以公有制为主体、多种所有制经济共同发展的基本经济制度，进一步发挥个体、私营企业在繁荣城乡市场、扩大社会就业、改善群众生活和促进经济发展等方面的重要作用，现就发挥工商行政管理职能作用，促进个体私营等非公有制经济发展的有关工作通知如下： </p>
+                    <p align="left"><strong>一、进一步提高思想认识，用 </strong><strong>科学发展观统领和指导促进个体私营经济发展工作 </strong><strong></strong></p>
+                    <p align="left">　　（一）坚持科学发展观，是我们党以 邓小平理论和“三个代表”重要思想为指导，从新世纪、新阶段党和国家经济社会发展全局出发提出的重要指导思想。各级工商行政管理机关要深刻理解促进个体私营等非公有制经济发展的重大意义 ， 坚持“两个毫不动摇”的基本方针，始终 用科学发展观统领和指导工作，从全局和战略的高度 充分认识鼓励、支持和引导个体私营等非公有制经济发展的重要性和紧迫性，增强贯彻党中央有关发展个体私营等非公有制经济的一系列方针政策和国务院若干意见的自觉性，不断提高为个体私营企业服务的能力和水平。 </p>
+                    <p align="left">　　（二）认真学习贯彻胡锦涛总书记在中央党校研讨班开班式上的重要讲话精神，在促进个体私营等非公有制经济发展工作中不断提高构建社会主义和谐社会的意识和能力。在工商部门对个体私营企业的支持服务和规范管理过程中，涉及到引导个体私营企业贯彻国家宏观调控、环境保护政策 , 以及调整经济结构、转变经济增长方式和个体私营企业权益保护等一系列问题，这些都是 落实科学发展观和 构建和谐社会的重要任务。各级工商行政管理机关要按照建设民主法治、公平正义、诚信友爱、充满活力、安定有序、人与自然和谐相处的社会主义和谐社会的要求，在思想和工作上始终把构建和谐社会贯穿于促进个体、私营等非公有制经济发展的全过程，做到认识上提高、工作上落实。 </p>
+                    <p align="left"><strong>二、改革市场主体登记管理制度，放宽市场准入，鼓励公平竞争 </strong><strong></strong></p>
+                    <p align="left">　　（三）认真贯彻《行政许可法》，进一步清理、修订和废止限制个体私营等非公有制经济发展的部门规章和规范性文件，以改革创新的精神，抓紧制定相关配套办法和实施细则。积极配合国家立法机关加快立法立规工作，积极参与修改和完善《公司法》、《合伙企业法》、《反不正当竞争法》等法律及有关行政法规，改革和完善市场主体登记管理制度，确立平等的市场主体地位，鼓励、支持和引导各种所有制市场主体公平竞争，为个体私营等非公有制经济健康发展创造良好的法治环境和宽松的政策环境。 </p>
+                    <p align="left">　　（四）鼓励、支持符合法律法规规定条件的各类人员自主创业，兴办个体工商户、个人独资企业、合伙企业、私营有限责任公司和股份有限公司。在市场准入和市场主体设立方面，除法律、行政法规和国务院决定规定的外，不得随意增加登记前置许可项目。根据修改后的有关法律法规规定，降低公司注册资本的最低限额，允许注册资本分期到位。在组织形式、经营范围及经营方式等方面，除法律法规禁止的以外，允许个体私营企业自主选择。鼓励、支持有条件的私营企业参与法律法规未禁止的电力、电信、铁路、民航、石油、公用事业、基础设施等垄断行业、领域的投资与经营，工商行政管理机关依法及时予以登记。 </p>
+                    <p align="left">　　（五）创新登记管理机制，大力推行个体工商户分层分类登记管理改革。适应新形势下个体工商户的市场准入，创新登记管理机制，建立对个体工商户的委托登记、委托备案和委托验照的制度，由县级工商局委托工商所实施登记、备案和年度验照工作。充分发挥基层工商所点多面广的优势，方便群众就近申办登记个体工商户，提高办事效率。对农村流动商贩实行备案制，免于工商登记，对农民进入集贸市场销售自产农副产品的，可不予登记。要结合个体工商户和私营企业信用分类管理和经济户口管理，逐步建立健全一套适合我国现阶段个体私营经济发展需要的登记监管机制，促进个体私营经济健康有序发展。 </p>
+                    <p align="left">　　（六）切实为港澳居民在内地申办个体工商户提供登记服务。认真落实《内地与香港关于建立更紧密经贸关系的安排》、《内地与澳门关于建立更紧密经贸关系的安排》补充协议的有关规定，允许香港、澳门永久性居民中的中国公民依照内地有关法律法规和行政规章，在内地各省、自治区、直辖市设立个体工商户，无需经过外资审批。要 认真执行 有关法律法规以及相关登记管理办法， 改进工作作风， 为港澳居民申办个体工商户排忧解难，提供良好的服务，积极支持港澳居民在内地发展个体经济。</p>
+                    <p align="left"><strong>三、积极推动农村个体私营企业发展， </strong><strong>提高农业综合生产能力 ，促进农民增收和农村劳动力转移 </strong></p>
+                    <p align="left">　　（七）各级工商行政管理机关要把贯彻《国务院关于鼓励支持和引导个体私营等非公有制经济发展的若干意见》与落实《 中共中央国务院关于进一步加强农村工作提高农业综合生产能力若干政策的意见 》（中发 [2005]1 号）精神有机结合起来， 采取多种形式，积极宣传党和国家支持“三农”工作、鼓励农村个体私营经济发展的有关方针、政策，把支持和引导农村个体私营经济发展同推进农村经济结构调整和农业产业化经营相结合，并与促进农业增效、农民增收、农村发展、农村劳动力转移和维护农村社会稳定相结合，相互促进，共同发展。 </p>
+                    <p align="left">　　（八） 根据农村经济结构调整和农业产业化经营的要求，突出重点行业和领域，积极支持、 引导农村个体私营企业向农产品加工业、种养业以及为农业生产服务的行业拓展；引导农村个体私营专业户、专业村、专业乡的发展；引导农村个体私营企业从事食品加工业特别是以粮食、重要农产品为主要原料的加工业；引导支持农民承包开发荒山、荒地、荒滩和退耕还林、还草，从事特色经济作物的种植业和优良品种畜、禽、鱼类的养殖业，促进农村发展特色产业。 </p>
+                    <p align="left">　　（九）围绕培育、繁荣和规范农村市场，积极鼓励、支持 农村个体私营企业 参与农副产品批发市场和集贸市场的经营，发展农产品拍卖、网上交易等方式，扩大交易功能；积极拓宽农资商品经营，支持、引导发展各类农业经纪人，扩大农副产品流通，活跃农村经济，促进农民增收。要鼓励、引导 农村个体私营企业 注册、使用商标和地理标志，实施品牌战略，利用知识产权扩大经营规模，提高农副产品市场竞争能力，促其增加经济效益。支持 农村大型私营企业实行多种经营形式的优化组合， 组建发展企业集团，形成 产供销、工商贸一体化的产业经营格局 。 </p>
+                    <p align="left">　　（十） 各级工商行政管理机关 要 结合本地实际， 积极探索农民专业合作经济组织的登记管理。 各类 从事生产经营活动 的农民专业合作经济组织均可以申请工商登记，取得市场主体资格。对农民个人申办的专业合作经济组织，符合个人合伙设立条件的，按个体工商户登记；符合合伙企业设立条件的，按合伙企业登记；符合有限公司设立条件的，按有限公司登记。对其他投资者根据农业产业化和多种经营的需要申办的专业合作经济组织，要根据投资人身份和出资财产的性质，本着谁出资谁所有的原则，依照现行登记法规核定企业类型。 </p>
+                    <p align="left"><strong>四、按照统筹城乡发展的要求，积极支持和引导个体私营企业促进区域经济协调发展 </strong></p>
+                    <p align="left">　　（十一）继续坚持把支持、引导个体私营企业发展同西部大开发、中部崛起、东部加快发展有机结合起来，引导个体私营企业参与“中国中小企业博览会（广东）”、“中国东西部合作与投资贸易洽谈会（陕西）”、“中国兰州投资贸易洽谈会”以及“中国青海结构调整暨投资贸易洽谈会”等，为东、中、西部地区之间的经济技术合作与交流牵线搭桥，结合工商行政管理职能，支持区域经济调整优化结构，改进经济增长方式，扩大对外开放，发挥地区的比较优势，为促进区域经济全面、持续、协调发展服务。 <strong></strong></p>
+                    <p align="left">　　（十二）继续坚持把支持、引导个体私营企业发展同支持国有企业改革、振兴东北等老工业基地紧密结合，引导、支持有条件的个体私营企业参与国有企业改革改组改造，与国有企业相互参股、融资，发展新型的混合所有制企业；引导、支持个体私营企业托管、承包、租赁或收购国有亏损的中小企业，参与老工业技术改造，发展环保型、生态型和外向型产业；引导、支持大型私营企业努力提高具有自主知识产权的科技创新能力，充分利用科研机构的研究成果，以市场为导向，大力发展以高科技产业为主体的新兴产业，实施技术创新和品牌战略，引导企业增加注册商标，争创驰名商标，扩大自主知识产权，促进私营企业改进经济增长方式，调整结构，提高经济效益。同时，要引导发挥个体私营企业作用，大力支持东北老工业基地的建设，改造提升传统工业，促进资源型城市经济转型。 <strong></strong></p>
+                    <p align="left"><strong>五、鼓励、支持和引导个体私营企业大力发展第三产业 </strong></p>
+                    <p align="left">　　（十三）第三产业的加快发展是生产力提高和社会进步的必然要求，是现代社会经济发达的重要标志，是缓解日益严峻的就业压力的重要途径。各级工商行政管理机关要鼓励、支持和引导个体私营企业大力发展第三产业，促进优化产业结构和国民经济持续健康发展。 </p>
+                    <p align="left">　　（十四）鼓励、支持个体私营企业从事商业批发与零售业，发展电子商务、物流配送和连锁经营等现代流通方式；鼓励、支持个体私营企业从事货物进出口、技术进出口等对外贸易经营；支持、引导个体私营企业从事交通运输、仓储业，为活跃市场流通、繁荣城乡经济服务；支持、引导个体私营企业参与开发具有历史文化内涵和富有现代休闲品位的旅游景点，发展观光、生态、度假、商贸等专项旅游；支持、引导个体私营企业发展房地产、居民服务业、餐饮业和文化卫生事业，为改善和提高人民生活质量服务；支持、引导个体私营企业发展科技、法律、会计、审计等咨询业以及信息业、各类技术服务业，发挥经济类中介组织服务市场经济的积极作用。 <strong></strong></p>
+                    <p align="left"><strong>六、积极引导下岗失业人员和大学毕业生从事个体私营经济，促进就业和再就业工作，为维护社会稳定服务 </strong></p>
+                    <p align="left">　　（十五）各级工商行政管理机关要继续深入贯彻落实党的十六大“就业是民生之本”的精神，采取多种形式，积极鼓励、扶持下岗失业人员、高校毕业生、归国留学生、退役士兵、残疾人员及其他新增待业人员兴办个体工商户、私营企业，引导个体私营企业吸纳更多的下岗失业人员和大中专毕业生及新增待业人员就业和再就业，充分发挥个体私营经济在扩大社会就业方面的重要作用。 </p>
+                    <p align="left">　　（十六）基层工商行政管理机关要设立专门窗口，为下岗失业人员及新增待业人员申办个体或企业登记免费提供开业指导，以及相关政策、法规和信息的咨询服务；要设立“绿色通道”，符合条件的及时依法核准登记；对下岗失业等人员从事临时性经营、季节性经营的，可以核发临时营业执照。继续严格执行党中央、国务院有关促进就业和再就业的优惠政策，对下岗失业人员凭《再就业优惠证》从事个体经营的，自发照之日起 3 年内免收个体工商户注册登记费、个体工商户管理费、集贸市场管理费、经济合同示范文本工本费；对初创的小 企业，酌情减免登记注册费用，扶持下岗失业等人员自谋职业、自主创业，为维护社会稳定做出新贡献。 </p>
+                    <p align="left"><strong>七、加强监管执法和规范管理，促进个体私营企业健康发展 </strong></p>
+                    <p align="left">　　（十七）各级工商行政管理机关要以打击制售假冒伪劣商品违法行为、查处不正当竞争行为和保护知识产权为重点，开展专项执法行动。要加强对垄断性行业限制竞争行为的监管，依法查处虚假宣传、虚假广告、商业欺诈和商业贿赂等违法行为；要积极保护个体私营企业的商标专用权，及时查处有关商标假冒侵权案件，为个体私营经济发展营造公平竞争的市场环境。</p>
+                    <p align="left">　　（十八）各级工商行政管理机关要通过企业年检、个体工商户验照和市场巡查等监管方式，规范个体私营企业的经营行为，促其诚信经商，守法经营，文明服务。要进一步加强对个体私营企业从事的重点行业和领域的市场监管，特别要抓好食品、药品、保健品等涉及群众人身健康和生命安全的行业，对旅游、娱乐、餐饮、洗浴、美容、摄影、修理等涉及群众生活的一些行业，对会计、审计、劳务、留学、婚介等中介组织行业也要进行重点监管，严厉查处制假售假、以次充好、合同欺诈等违法行为；要加大对无照经营的查处取缔力度，促进个体私营经济健康有序发展。 </p>
+                    <p align="left"> <strong>八、进一步改进工作作风，优质高效服务，依法保护个体私营企业的合法权益 </strong></p>
+                    <p align="left">　　（十九）正确认识和处理监管与服务的关系，寓监管于服务之中，积极做好服务工作。要向个体私营企业申办者宣传有关政策法规，主动提供咨询服务，为其排忧解难；要简化登记程序，减少审批环节，实行政务公开和首办责任制、限时办结制，做到制度公开化、表格标准化、用语规范化，提供申请、受理、审批一站式服务，符合条件的及时核准登记；本着提高效率、方便企业的原则，改革和完善私营企业年检和个体工商户验照制度，简化年检、验照的内容和程序；有条件的地方要实行滚动式的年检和验照，对边远和比较集中地区的个体工商户实行现场验照，对诚信守法的个体私营企业实行免检，为个体私营企业提供方便条件，切实做好支持服务工作。 </p>
+                    <p align="left">　　（二十）各级工商行政管理机关要坚决贯彻执行《宪法》修正案 “ 国家保护个体经济、私营经济等非公有制经济的合法的权利和利益 ” 、 “ 公民的合法的私有财产不受侵犯 ” 的规定，建立、完善公开办事制度和监督举报制度，坚决执行 “ 六项禁令 ” ，严禁各种形式的超标准乱收费和 “ 搭车 ” 收费，严禁违反国家法律法规规定的乱罚款，严禁向个体私营企业摊派征订各种杂志、报刊，坚决纠正损害群众利益的不正之风，通过依法行政、严格执法，切实保护个体私营企业的合法权益。 </p>
+                    <p align="left">　　（二十一）各级工商行政管理机关要继续加强对个体劳动者协会、私营企业协会的指导工作，使其真正成为党和政府联系个体劳动者及私营企业的桥梁和纽带。各级个体劳动者协会、私营企业协会要以发展为主题，通过发挥自我教育、自我管理、自我服务等措施，帮助 个体私营企业解决生产经营中涉及的土地、水电、融资、税收等实际困难；要 以会员为本，通过反映诉求和有关方面的支持，帮助 个体私营企业解决小孩入托、子女上学、医疗保险等生活方面的实际问题 ；要加强行业自律，采取多种形式，加强思想教育、法制教育和职业道德教育，引导个体劳动者和私营企业经营者做到爱国、敬业、诚信、守法；要鼓励、引导 个体私营企业 积极参与扶贫开发、社会救济等社会公益事业，为构建和谐社会做出应有的贡献。 </p>
+                    <p align="left">　　各单位贯彻落实本通知的有关情况，请于 2005 年 11 月 15 日前 报送国家工商行政管理总局。（联系单位：个体私营经济监管司；联系人：左 军、杨力军；联系电话： 010- 68028439 、 010-68013300-5811 ；传真电话： 010-68034029 ） </p>                    </td>
+                </tr>
+                <tr>
+                  <td height="40"><div align="right"> 二○○五年三月二十一日 </div></td>
+                </tr>
+              </table></td>
+            </tr>
+          </table>
+          <div align="right"></div></td>
+        </tr>
+      </table>      
+      
+
+
+
+
+<link href="/css.css" rel="stylesheet" type="text/css">
+
+<script language=javascript> 
+	function addHome(){ 
+		var url = "http://www.yinwang.org"; 
+		var title = "中国中小企业竞争力工程"; 
+		window.external.AddFavorite(url,title); 
+	}
+</script> 
+<table cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="5"><a name=""></a></td>
+  </tr>
+  <tr>
+    <td height="8" background="/images/bg_02.gif"><a name=""></a></td>
+  </tr>
+  <tr>
+    <td height="3"><a name=""></a></td>
+  </tr>
+  <tr>
+    <td height="26" background="/images/bg_04.gif">
+      <div align="center" class="style1"> <a href="/laws/laws_01.jsp" target="_blank" class="daohang">&#25919;&#31574;&#27861;&#35268;</a>&#65372;<a href="/contactus.jsp" target="_blank" class="daohang">&#32852;&#31995;&#25105;&#20204;</a>&#65372;<a href="/datadownload.jsp" target="_blank" class="daohang">&#36164;&#26009;&#19979;&#36733;</a>&#65372;<a href="#" class="daohang" onClick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.yinwang.org');return false;">&#35774;&#20026;&#39318;&#39029;</a>&#65372;<a href="#" class="daohang" onClick="addHome();">&#21152;&#20837;&#25910;&#34255;</a> </div></td>
+  </tr>
+  <tr>
+    <td height="12"><img src="images/tp_01.gif" width="730" height="3"></td>
+  </tr>
+  <tr>
+    <td height="12"><div align="center">&#29256;&#26435;&#25152;&#26377;&#65306;&#20013;&#22269;&#20013;&#23567;&#20225;&#19994;&#31454;&#20105;&#21147;&#24037;&#31243;&#21150;&#20844;&#23460;<br>
+      &#30005;&#35805;&#65306;010-82783158-240&#12289;231 &#12288; &#30005;&#23376;&#37038;&#20214;&#65306;info@yinwang.org      <br>
+    </div></td>
+  </tr>
+  <tr>
+    <td height="10" background="/images/bg_02.gif"><a name=""></a></td>
+  </tr>
+</table>
+</td>
+    <td background="/images/bg_01.gif">&nbsp;</td>
+  </tr>
+</table>
+    </div>
+    
+    <script src="js/highlight.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script>
+        if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
+            document.body.classList.add('mobile');
+            var navbar = document.querySelector('nav.navbar');
+            if (navbar) { navbar.classList.remove('navbar-fixed-top'); }
+        }
+    </script>
+</body>
+</html>
