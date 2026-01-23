@@ -37,6 +37,20 @@ jobs:
       - name: Generate Site
         run: python generate_site.py
 
+      - name: Check Index Coverage
+        run: |
+          python check_index_coverage.py --json docs/_index_coverage_report.json
+          python - <<'PY'
+          import json
+          with open('docs/_index_coverage_report.json', 'r', encoding='utf-8') as f:
+              report = json.load(f)
+          breakdown = report.get('missing_breakdown') or {}
+          bad = int(breakdown.get('has-valid-but-missing', 0) or 0)
+          if bad:
+              raise SystemExit(f"Index coverage check failed: {bad} article groups have valid content but are missing from index")
+          print('Index coverage check OK')
+          PY
+
       - name: Commit and Push Changes
         if: always()
         run: |

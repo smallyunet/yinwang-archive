@@ -3,6 +3,8 @@ import os
 import re
 import hashlib
 from datetime import datetime
+import json
+from collections import Counter
 
 ARCHIVES_DIR = "archives"
 OUTPUT_DIR = "docs"
@@ -171,11 +173,29 @@ def is_valid_content(content):
     if '<div id="app"></div>' in s and len(s) < 2000:
         return False
         
-    # Check for empty/too short content
-    if len(s) < 500 and "redirect" not in s and "moved" not in s:
+    # Check for empty/too short content (keep conservative; allow short posts)
+    if len(s) < 200 and "redirect" not in s and "moved" not in s:
         return False
         
     return True
+
+
+def invalid_content_reason(content):
+    if not content:
+        return "empty"
+
+    s = content.lower()
+
+    if 'surely i am joking' in s:
+        return "junk-domain-parking"
+
+    if '<div id="app"></div>' in s and len(s) < 2000:
+        return "empty-app-shell"
+
+    if len(s) < 200 and "redirect" not in s and "moved" not in s:
+        return "too-short"
+
+    return "other"
 
 def unwrap_layout(content):
     """
@@ -239,6 +259,10 @@ def process_archives():
     # 2. Group files
     article_groups = {} 
     page_groups = {}    
+
+    skipped_invalid_files = []
+    skipped_invalid_reason_counts = Counter()
+    dropped_groups = []
     
     for f in os.listdir(ARCHIVES_DIR):
         if not f.endswith(".html") or f.startswith("index.json"): # Skip index.json but keep index_*.html
@@ -273,7 +297,15 @@ def process_archives():
                         content = f.read()
                     
                     if not is_valid_content(content):
-                        # print(f"Skipping junk file: {filename}")
+                        reason = invalid_content_reason(content)
+                        skipped_invalid_reason_counts[reason] += 1
+                        if len(skipped_invalid_files) < 200:
+                            skipped_invalid_files.append({
+                                'filename': filename,
+                                'reason': reason,
+                                'type': type_label,
+                                'base_name': base_name
+                            })
                         continue
 
                     content = try_fix_mojibake(content)
@@ -309,6 +341,15 @@ def process_archives():
                         'sort_date': parse_article_date(latest['filename']) or "1970-01-01"
                     }
                 }
+            else:
+                # If a group has no usable versions, it will disappear from the site/index.
+                # Record it so the user can audit what was dropped.
+                dropped_groups.append({
+                    'base_name': base_name,
+                    'type': type_label,
+                    'file_count': len(files),
+                    'files': files[:50],
+                })
 
     print("Analyzing articles...")
     analyze_group(article_groups, 'article')
@@ -598,6 +639,24 @@ def process_archives():
     # 6. Generate Index
     articles_meta = [v['latest_meta'] for k, v in processed_groups.items() if v['type'] == 'article']
     articles_meta.sort(key=lambda x: x['sort_date'], reverse=True)
+
+    # Write a build report for auditing missing/skipped content
+    report = {
+        'generated_at': datetime.now().isoformat(timespec='seconds'),
+        'archives_dir': ARCHIVES_DIR,
+        'output_dir': OUTPUT_DIR,
+        'articles_in_index': len(articles_meta),
+        'processed_groups_total': len(processed_groups),
+        'skipped_invalid_reason_counts': dict(skipped_invalid_reason_counts),
+        'skipped_invalid_examples': skipped_invalid_files,
+        'dropped_groups_count': len(dropped_groups),
+        'dropped_groups': dropped_groups,
+    }
+    try:
+        with open(os.path.join(OUTPUT_DIR, '_build_report.json'), 'w', encoding='utf-8') as f:
+            json.dump(report, f, ensure_ascii=False, indent=2)
+    except Exception as e:
+        print(f"Warning: failed to write build report: {e}")
     
     html_lines = [
         "<!DOCTYPE html>",

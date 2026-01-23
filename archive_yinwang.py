@@ -4,6 +4,7 @@ import os
 import time
 import re
 from urllib.parse import urlparse, unquote, urljoin
+from html import unescape
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 
@@ -68,19 +69,100 @@ def fetch_cdx_records(session, url_pattern, filters=None):
 
 def normalize_url(url):
     """Normalize URL to identify unique pages."""
-    if "://" in url:
-        url = url.split("://", 1)[1]
-    if ":" in url:
-        parts = url.split("/")
-        if ":" in parts[0]:
-            parts[0] = parts[0].split(":")[0]
-        url = "/".join(parts)
-    url = url.rstrip("/")
+    if not url:
+        return ""
+
+    raw = url.strip()
+    # urlparse needs a scheme to reliably parse netloc
+    if "://" not in raw:
+        raw = "http://" + raw
+    parsed = urlparse(raw)
+
+    host = (parsed.netloc or "").lower()
+    if host.startswith("www."):
+        host = host[4:]
+    if ":" in host:
+        host = host.split(":", 1)[0]
+
+    path = parsed.path or ""
     try:
-        url = unquote(url)
-    except:
+        path = unquote(path)
+    except Exception:
         pass
-    return url
+    path = path.rstrip("/")
+
+    # Ignore query/fragment for identity
+    if not path:
+        return host
+    return host + path
+
+
+def is_suspicious_original_url(url):
+    """Heuristics to drop obviously broken/junk URLs coming from CDX wildcard or bad link extraction."""
+    if not url:
+        return False
+    s = url.lower()
+    if "%5c" in s or "\\" in s:
+        return True
+    if "&nbsp" in s:
+        return True
+    if "\u003c" in s or "\u003e" in s:
+        return True
+    if "<" in s or ">" in s:
+        return True
+    return False
+
+
+def clean_discovered_article_url(url):
+    """Normalize and validate discovered article links from homepage snapshots."""
+    if not url:
+        return None
+
+    u = unescape(url).strip()
+    # Remove non-breaking spaces that can come from '&nbsp;'
+    u = u.replace("\u00a0", "").strip()
+
+    if u.startswith("//"):
+        u = "https:" + u
+
+    try:
+        parsed = urlparse(u)
+    except Exception:
+        return None
+
+    host = (parsed.netloc or "").lower()
+    if host.startswith("www."):
+        host = host[4:]
+    if ":" in host:
+        host = host.split(":", 1)[0]
+    if host != DOMAIN:
+        return None
+
+    raw_path = parsed.path or ""
+    if not raw_path:
+        return None
+
+    # Reject obviously broken paths
+    if is_suspicious_original_url(raw_path):
+        return None
+
+    try:
+        path = unquote(raw_path)
+    except Exception:
+        path = raw_path
+
+    if any(ch in path for ch in ["\\", "<", ">", "\"", "'"]):
+        return None
+    if "&" in path or ";" in path:
+        return None
+    if re.search(r"\s", path):
+        return None
+
+    if not path.startswith("/blog-cn/"):
+        return None
+
+    path = path.rstrip("/")
+    return f"https://{DOMAIN}{path}"
 
 def get_safe_filename(original_url, timestamp):
     parsed = urlparse(original_url)
@@ -122,10 +204,11 @@ def extract_links_from_html(html, base_url):
     for link in matches:
         full_url = urljoin(base_url, link)
         if "yinwang.org" in full_url:
-            # Check if it looks like an article
             # Most articles are in /blog-cn/...
             if "/blog-cn/" in full_url:
-                links.add(full_url)
+                cleaned = clean_discovered_article_url(full_url)
+                if cleaned:
+                    links.add(cleaned)
             # Heuristic for other potential articles?
             # Early articles might be elsewhere, but /blog-cn/ is dominat.
             # Let's trust /blog-cn/ for now based on previous file list.
@@ -279,6 +362,7 @@ def main():
     # Actually, let's just pick the best for each normalized URL from the map directly
     
     final_snapshots = []
+    suspicious_skipped_small = 0
     for norm_url, candidates in known_urls_map.items():
         # Dedup logic from before
         candidates.sort(key=lambda x: x['timestamp']) # Sort by time ascending
@@ -289,11 +373,18 @@ def main():
             if cand['timestamp'] < MIN_YEAR or cand['timestamp'] >= JUNK_YEAR_START:
                 continue
 
+            # Be conservative: don't drop these URLs entirely. However, small snapshots for
+            # obviously broken URLs are almost always junk and just waste time.
+            if is_suspicious_original_url(cand.get('original', '')) and cand.get('length', 0) < 5000:
+                suspicious_skipped_small += 1
+                continue
+
             if "blog-cn" not in norm_url and len(norm_url) > 30 and not norm_url.endswith(".html"):
                  pass
 
             # Validity check: must be reasonable size
-            if cand['length'] > 1500:
+            # Keep conservative to avoid missing short posts.
+            if cand['length'] > 600:
                 digest = cand.get('digest')
                 if digest not in seen_digests:
                     seen_digests.add(digest)
@@ -303,6 +394,9 @@ def main():
         if not seen_digests and candidates:
              candidates.sort(key=lambda x: x['length'], reverse=True)
              final_snapshots.append(candidates[0])
+
+    if suspicious_skipped_small:
+        print(f"Skipped {suspicious_skipped_small} small snapshots with suspicious URLs (kept fallbacks when needed).")
 
     print(f"Total unique pages to download: {len(final_snapshots)}")
     final_snapshots.sort(key=lambda x: x['original'])

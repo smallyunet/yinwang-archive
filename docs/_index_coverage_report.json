@@ -1,0 +1,114 @@
+{
+  "generated_at": "2026-01-23T20:26:11",
+  "archives_dir": "archives",
+  "docs_dir": "docs",
+  "index_path": "docs/index.html",
+  "archives_blog_cn_versions": 2296,
+  "archives_blog_cn_distinct_articles": 313,
+  "index_listed_articles": 305,
+  "missing_distinct_articles": 8,
+  "missing_breakdown": {
+    "all-invalid": 8
+  },
+  "missing_examples": [
+    {
+      "base_name": "blog-cn_2012_05_18_user-friendliness__20",
+      "any_valid": false,
+      "invalid_reasons": {
+        "junk-domain-parking": 1
+      },
+      "files": [
+        "blog-cn_2012_05_18_user-friendliness__20_20251228.html"
+      ]
+    },
+    {
+      "base_name": "blog-cn_2012_05_18_user-friendliness__nbsp",
+      "any_valid": false,
+      "invalid_reasons": {
+        "junk-domain-parking": 1
+      },
+      "files": [
+        "blog-cn_2012_05_18_user-friendliness__nbsp_20251230.html"
+      ]
+    },
+    {
+      "base_name": "blog-cn_2013_04_11_scheme-setup_5C",
+      "any_valid": false,
+      "invalid_reasons": {
+        "junk-domain-parking": 1
+      },
+      "files": [
+        "blog-cn_2013_04_11_scheme-setup_5C_20251017.html"
+      ]
+    },
+    {
+      "base_name": "blog-cn_2014_01_04_authority",
+      "any_valid": false,
+      "invalid_reasons": {
+        "junk-domain-parking": 20
+      },
+      "files": [
+        "blog-cn_2014_01_04_authority_20140109.html",
+        "blog-cn_2014_01_04_authority_20140111.html",
+        "blog-cn_2014_01_04_authority_20140113.html",
+        "blog-cn_2014_01_04_authority_20140117.html",
+        "blog-cn_2014_01_04_authority_20140509.html",
+        "blog-cn_2014_01_04_authority_20140811.html",
+        "blog-cn_2014_01_04_authority_20141226.html",
+        "blog-cn_2014_01_04_authority_20150119.html",
+        "blog-cn_2014_01_04_authority_20150206.html",
+        "blog-cn_2014_01_04_authority_20161001.html",
+        "blog-cn_2014_01_04_authority_20161102.html",
+        "blog-cn_2014_01_04_authority_20170506.html",
+        "blog-cn_2014_01_04_authority_20170608.html",
+        "blog-cn_2014_01_04_authority_20171205.html",
+        "blog-cn_2014_01_04_authority_20180307.html",
+        "blog-cn_2014_01_04_authority_20190815.html",
+        "blog-cn_2014_01_04_authority_20200217.html",
+        "blog-cn_2014_01_04_authority_20200611.html",
+        "blog-cn_2014_01_04_authority_20240524.html",
+        "blog-cn_2014_01_04_authority_20240602.html"
+      ]
+    },
+    {
+      "base_name": "blog-cn_2015_11_21_programming-philosophy_5C",
+      "any_valid": false,
+      "invalid_reasons": {
+        "junk-domain-parking": 1
+      },
+      "files": [
+        "blog-cn_2015_11_21_programming-philosophy_5C_20251021.html"
+      ]
+    },
+    {
+      "base_name": "blog-cn_2016_01_18_java_",
+      "any_valid": false,
+      "invalid_reasons": {
+        "junk-domain-parking": 1
+      },
+      "files": [
+        "blog-cn_2016_01_18_java__20251119.html"
+      ]
+    },
+    {
+      "base_name": "blog-cn_2016_01_18_java_5C_",
+      "any_valid": false,
+      "invalid_reasons": {
+        "junk-domain-parking": 1
+      },
+      "files": [
+        "blog-cn_2016_01_18_java_5C__20251116.html"
+      ]
+    },
+    {
+      "base_name": "blog-cn_2018_04_13_csbook-chapter1_5C",
+      "any_valid": false,
+      "invalid_reasons": {
+        "junk-domain-parking": 1
+      },
+      "files": [
+        "blog-cn_2018_04_13_csbook-chapter1_5C_20251028.html"
+      ]
+    }
+  ]
+}
