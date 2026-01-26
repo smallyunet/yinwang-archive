@@ -12,7 +12,7 @@ INDEX_OUTPUT = os.path.join(OUTPUT_DIR, "index.html")
 STYLE_OUTPUT = os.path.join(OUTPUT_DIR, "style.css")
 
 DOMAIN = "yinwang.org"
-MIN_YEAR = "2010"
+MIN_YEAR = "2000"
 
 def parse_article_date(filename):
     """
@@ -647,8 +647,58 @@ def process_archives():
             with open(os.path.join(OUTPUT_DIR, ver['filename']), 'w', encoding='utf-8') as f:
                 f.write(new_html)
 
+
     # 6. Generate Index
     articles_meta = [v['latest_meta'] for k, v in processed_groups.items() if v['type'] == 'article']
+    
+
+    # Deduplicate by title: Prefer version with "real" date over 2009-01-01
+    # 1. Group by normalized title (remove whitespace) to catch "Title A" vs "TitleA"
+    by_title = {}
+    for art in articles_meta:
+        # Normalize: remove whitespace
+        t_norm = art['title'].replace(' ', '').lower()
+        if t_norm not in by_title:
+             by_title[t_norm] = []
+        by_title[t_norm].append(art)
+        
+    final_articles = []
+    dropped_duplicates = []
+    
+    for t_norm, arts in by_title.items():
+        if len(arts) == 1:
+            final_articles.append(arts[0])
+        else:
+            # If duplicates exist, filter out 2009-01-01 if a better date exists
+            has_real_date = any(a['date'] != '2009-01-01' for a in arts)
+            if has_real_date:
+                # Keep only those that are NOT 2009-01-01
+                kept = [a for a in arts if a['date'] != '2009-01-01']
+                dropped = [a for a in arts if a['date'] == '2009-01-01']
+                final_articles.extend(kept)
+                dropped_duplicates.extend(dropped)
+            else:
+                # All are 2009-01-01.
+                # If titles differ only by whitespace, we might want to keep just one.
+                # Heuristic: Keep the one with the longest title (maybe more spaces = better formatted?)
+                # OR just keep the first one.
+                # Let's keep the one that matches the key? No key is stripped.
+                # Let's Sort by title length descending (arbitrary stable choice) and pick first?
+                # Actually if all are 20090101, it's likely duplicates from import.
+                # Let's keep the first one found.
+                # BUT if we have multiple 20090101s with same normalized title but different actual titles...
+                # e.g. "Foo" and "Foo "
+                # We probably only want one showing up.
+                # Let's deduplicate these strict fuzzy dupes to 1 if all are undated.
+                
+                # Sort by title length (prefer "Foo Bar" over "FooBar"?)
+                # It's hard to say which is better using length.
+                # Let's just pick duplicates[0] to avoid 2 entries.
+                final_articles.append(arts[0])
+                if len(arts) > 1:
+                    dropped_duplicates.extend(arts[1:])
+                
+    articles_meta = final_articles
     articles_meta.sort(key=lambda x: x['sort_date'], reverse=True)
 
     # Write a build report for auditing missing/skipped content
@@ -657,6 +707,8 @@ def process_archives():
         'archives_dir': ARCHIVES_DIR,
         'output_dir': OUTPUT_DIR,
         'articles_in_index': len(articles_meta),
+        'dropped_duplicates_count': len(dropped_duplicates),
+        'dropped_duplicates': [d['title'] for d in dropped_duplicates],
         'processed_groups_total': len(processed_groups),
         'skipped_invalid_reason_counts': dict(skipped_invalid_reason_counts),
         'skipped_invalid_examples': skipped_invalid_files,
@@ -705,7 +757,14 @@ def process_archives():
     for art in articles_meta:
         html_lines.append(f"            <li class='list-group-item title'>")
         if art['date']:
-             html_lines.append(f"                <div class='date'>{art['date']}</div>")
+            # User request: don't show date for older/default date articles (2009-01-01)
+            is_default_date = (art['date'] == '2009-01-01')
+            if not is_default_date:
+                 html_lines.append(f"                <div class='date'>{art['date']}</div>")
+            else:
+                 # Optional: Visual indicator or just empty?
+                 # User said "do not mark the date"
+                 pass
         html_lines.append(f"                <a href='{art['filename']}' target='_blank'>{art['title']}</a>")
         html_lines.append(f"            </li>")
         

@@ -44,16 +44,26 @@ def extract_date_from_content(content):
         month = match.group(2).zfill(2)
         day = match.group(3).zfill(2) if match.group(3) else "01"
         return f"{year}-{month}-{day}"
+    
+    # Pattern: 2005-09-27 (common in some files)
+    match = re.search(r'(\d{4})-(\d{1,2})-(\d{1,2})', content)
+    if match:
+         return f"{match.group(1)}-{match.group(2).zfill(2)}-{match.group(3).zfill(2)}"
+         
+    # Pattern: 2005年9月22日
+    match = re.search(r'(\d{4})年(\d{1,2})月(\d{1,2})日?', content)
+    if match:
+         return f"{match.group(1)}-{match.group(2).zfill(2)}-{match.group(3).zfill(2)}"
+         
     return None
 
 def sanitize_filename(name):
     """Sanitizes the title to be filename friendly."""
-    # This is for the output filename
     # replace spaces with underscores, remove special chars
-    # However, existing archive uses Chinese filenames, so maybe we just keep it simple?
-    # Generate_site.py seems to handle unicode.
-    # Let's just make sure it doesn't contain slashes or colons.
     name = name.replace('/', '_').replace(':', '：')
+    # Remove URL unsafe characters: ?, ", ', <, >, *, |
+    for char in ['?', '"', "'", '<', '>', '*', '|', '“', '”', '‘', '’']:
+        name = name.replace(char, '')
     return name
 
 
@@ -167,14 +177,17 @@ def convert_and_import():
             if match:
                 date_str = match.group(1)
         
+
         if not date_str:
             date_str = extract_date_from_content(content)
-        if not date_str:
-            date_str = get_file_created_date(filename)
+        
+        # Disabled git date fallback per user request
+        # if not date_str:
+        #     date_str = get_file_created_date(filename)
         
         if not date_str:
-            print(f"Warning: No date found for {filename}, using 2000-01-01")
-            date_str = "2000-01-01"
+            print(f"Warning: No date found for {filename}, using default 2009-01-01")
+            date_str = "2009-01-01"
 
         full_html = f"""<!DOCTYPE html>
 <html>
