@@ -1,13 +1,12 @@
 {
-  "generated_at": "2026-01-23T12:45:55",
+  "generated_at": "2026-01-26T07:02:36",
   "archives_dir": "archives",
   "output_dir": "docs",
   "articles_in_index": 305,
-  "processed_groups_total": 353,
+  "processed_groups_total": 326,
   "skipped_invalid_reason_counts": {
     "junk-domain-parking": 61,
-    "empty": 1,
-    "too-short": 1
+    "empty": 1
   },
   "skipped_invalid_examples": [
     {
@@ -311,12 +310,6 @@
       "base_name": ".well-known_dnt-policy.txt"
     },
     {
-      "filename": "common_courseBase_tch_grzl.jsp_20060106.html",
-      "reason": "too-short",
-      "type": "page",
-      "base_name": "common_courseBase_tch_grzl.jsp"
-    },
-    {
       "filename": "posts_cello-technique_20251102.html",
       "reason": "junk-domain-parking",
       "type": "page",
@@ -389,7 +382,7 @@
       "base_name": "posts_authority"
     }
   ],
-  "dropped_groups_count": 41,
+  "dropped_groups_count": 40,
   "dropped_groups": [
     {
       "base_name": "blog-cn_2014_01_04_authority",
@@ -632,14 +625,6 @@
       "file_count": 1,
       "files": [
         ".well-known_dnt-policy.txt_20251211.html"
-      ]
-    },
-    {
-      "base_name": "common_courseBase_tch_grzl.jsp",
-      "type": "page",
-      "file_count": 1,
-      "files": [
-        "common_courseBase_tch_grzl.jsp_20060106.html"
       ]
     },
     {
