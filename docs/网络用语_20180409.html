@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <title>网络用语</title>
+    <link rel="stylesheet" href="css/highlight/xcode.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-tooltips.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/post.css">
+    <script src="js/jquery.min.js"></script>
+    
+    <style>
+        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
+        /* Removed .inner/.outer overrides to respect theme post.css */
+        
+        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
+        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
+        .version-switcher a.current { font-weight: bold; color: #333; }
+        
+        .navbar-brand { font-size: 20px; font-weight: bold; }
+        .navbar-nav > li > a { font-size: 16px; } /* Slightly larger per user request */
+        
+        /* Reduce gap between navbar and content */
+        div.outer { margin-top: 30px; }
+        
+        /* Removed custom flexbox list styling to match demo vertical style */
+    </style>
+    
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-bs">
+                    <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+                <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='homepage_20231225.html'>当然我在扯淡 (2023-12-25)</a></li><li><a href='index_20220816.html'>当然我在扯淡 (2022-08-16)</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='resources_d8-3404-d8-8424_20130614.html'>D8 3404 D8 8424</a></li><li><a href='resources_demos_pysonar2_email_base64mime.py_20150408.html'>Demos Pysonar2 Email Base64Mime.Py</a></li><li><a href='resources_demos_pysonar2_email_charset.py_20150506.html'>Demos Pysonar2 Email Charset.Py</a></li><li><a href='resources_demos_pysonar2_email_encoders.py_20160822.html'>Demos Pysonar2 Email Encoders.Py</a></li><li><a href='resources_demos_pysonar2_email_errors.py_20150409.html'>Demos Pysonar2 Email Errors.Py</a></li><li><a href='resources_demos_pysonar2_email_header.py_20140305.html'>Demos Pysonar2 Email Header.Py</a></li><li><a href='resources_demos_pysonar2_email_quoprimime.py_20150408.html'>Demos Pysonar2 Email Quoprimime.Py</a></li><li><a href='resources_demos_pysonar2_re.py_20150408.html'>Demos Pysonar2 Re.Py</a></li><li><a href='resources_demos_pysonar2_sre_compile.py_20160822.html'>Demos Pysonar2 Sre Compile.Py</a></li><li><a href='resources_demos_pysonar2_sre_constants.py_20160822.html'>Demos Pysonar2 Sre Constants.Py</a></li><li><a href='resources_demos_pysonar2_sre_parse.py_20160822.html'>Demos Pysonar2 Sre Parse.Py</a></li><li><a href='resources_diff1-diff2_20200728.html'>Diff1 Diff2</a></li><li><a href='resources_mk1-mk2_20130627.html'>Mk1 Mk2</a></li><li><a href='resources_nav1-nav2_20200728.html'>Nav1 Nav2</a></li><li><a href='resources_paredit20-paredit23_20200728.html'>Paredit20 Paredit23</a></li><li><a href='resources_pydiff1-pydiff2_20130711.html'>Pydiff1 Pydiff2</a></li><li><a href='resources_simulator-mips-simulator-arm_20200728.html'>Simulator Mips Simulator Arm</a></li><li><a href='resources_typed-clojure1-typed-clojure2_20200728.html'>Typed Clojure1 Typed Clojure2</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Misc <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='C#的 IDisposable接口_20180302.html'>C#的 Idisposable接口</a></li><li><a href='Chez Scheme 的传说_20171025.html'>Chez Scheme 的传说</a></li><li><a href='Currying的局限性_20171025.html'>Currying的局限性</a></li><li><a href='C编译器优化过程中的Bug_20180302.html'>C编译器优化过程中的Bug</a></li><li><a href='DRY原则的误区_20171025.html'>Dry原则的误区</a></li><li><a href='DSL_20180224.html'>Dsl</a></li><li><a href='GTF： Great Teacher Friedman_20180201.html'>GTF: Great Teacher Friedman</a></li><li><a href='Hindley-Milner 类型系统的根本性错误_20171025.html'>Hindley-Milner 类型系统的根本性错误</a></li><li><a href='Kotlin 和 Checked Exception_20180224.html'>Kotlin 和 Checked Exception</a></li><li><a href='Lisp已死Lisp万岁_20171025.html'>Lisp已死Lisp万岁</a></li><li><a href='Markdown 的一些问题_20171025.html'>Markdown 的一些问题</a></li><li><a href='Oberon 操作系统：被忽略的珍宝_20171025.html'>Oberon 操作系统：被忽略的珍宝</a></li><li><a href='PySonar2与Sourcegraph集成完毕_20180201.html'>Pysonar2与Sourcegraph集成完毕</a></li><li><a href='PySonar2开源了_20180201.html'>Pysonar2开源了</a></li><li><a href='PySonar的工作原理_20180201.html'>Pysonar的工作原理</a></li><li><a href='PySonar的第二个用户_20180201.html'>Pysonar的第二个用户</a></li><li><a href='README_20160623.html'>Readme</a></li><li><a href='RubySonar：一个 Ruby 静态分析器_20180201.html'>Rubysonar：一个 Ruby 静态分析器</a></li><li><a href='Swift语言的设计错误_20180201.html'>Swift语言的设计错误</a></li><li><a href='Talk-is-not-cheap_20190911.html'>Talk-Is-Not-Cheap</a></li><li><a href='Tesla autopilot 引起致命车祸_20180302.html'>Tesla Autopilot 引起致命车祸</a></li><li><a href='Texmacs：一个真正“所见即得”的排版系统_20171025.html'>Texmacs:一个真正“所见即得”的排版系统</a></li><li><a href='Unix的缺陷_20160623.html'>Unix的缺陷</a></li><li><a href='math_20240505.html'>Math</a></li><li><a href='ydiff：结构化的程序比较_20171025.html'>Ydiff：结构化的程序比较</a></li><li><a href='“解决问题”与“消灭问题”_20171025.html'>“解决问题”与“消灭问题”</a></li><li><a href='上海_20180627.html'>上海</a></li><li><a href='不再推荐Haskell_20160623.html'>不再推荐Haskell</a></li><li><a href='丘奇和图灵_20171025.html'>丘奇和图灵</a></li><li><a href='中国人如何经营自己_20180302.html'>中国人如何经营自己</a></li><li><a href='中国人的信任危机_20190822.html'>中国人的信任危机</a></li><li><a href='中国人的鉴赏力_20180329.html'>中国人的鉴赏力</a></li><li><a href='为什么一种程序语言是不够用的_20171025.html'>为什么一种程序语言是不够用的</a></li><li><a href='为什么拍照是个坏习惯_20180911.html'>为什么拍照是个坏习惯</a></li><li><a href='为什么自动车完全不可以犯错误_20180302.html'>为什么自动车完全不可以犯错误</a></li><li><a href='为什么说面向对象编程和函数式编程都有问题_20171025.html'>为什么说面向对象编程和函数式编程都有问题</a></li><li><a href='为什么需要正则表达式_20160623.html'>为什么需要正则表达式</a></li><li><a href='人工智能的局限性_20180224.html'>人工智能的局限性</a></li><li><a href='什么是“脚本语言”_20171025.html'>什么是“脚本语言”</a></li><li><a href='什么是对用户友好_20160623.html'>什么是对用户友好</a></li><li><a href='什么是现实理想主义者_20180227.html'>什么是现实理想主义者</a></li><li><a href='什么是程序语言研究_20161202.html'>什么是程序语言研究</a></li><li><a href='什么是语义学_20160623.html'>什么是语义学</a></li><li><a href='从工具的奴隶到工具的主人_20160623.html'>从工具的奴隶到工具的主人</a></li><li><a href='代码进入闭源状态_20180409.html'>代码进入闭源状态</a></li><li><a href='伟大老师DanFriedman_20160623.html'>伟大老师Danfriedman</a></li><li><a href='关于写书_20180412.html'>关于写书</a></li><li><a href='关于微内核的对话_20190822.html'>关于微内核的对话</a></li><li><a href='关于语言的思考_20171025.html'>关于语言的思考</a></li><li><a href='关系模型的实质_20171025.html'>关系模型的实质</a></li><li><a href='其他人的BUG_20180302.html'>其他人的Bug</a></li><li><a href='再别IU_20161202.html'>再别Iu</a></li><li><a href='再见 Voxer，你好 Sourcegraph_20171025.html'>再见 Voxer，你好 Sourcegraph</a></li><li><a href='再谈P-vs-NP问题_20190812.html'>再谈P-Vs-Np问题</a></li><li><a href='写给支持和反对《完全用Linux工作》的人们_20160623.html'>写给支持和反对《完全用Linux工作》的人们</a></li><li><a href='到底是谁在欺负我们读书少_20171220.html'>到底是谁在欺负我们读书少</a></li><li><a href='十年前的我的来信_20171025.html'>十年前的我的来信</a></li><li><a href='半年来的工作感受_20171025.html'>半年来的工作感受</a></li><li><a href='原因与证明_20171025.html'>原因与证明</a></li><li><a href='反省_20160623.html'>反省</a></li><li><a href='在Sourcegraph的第三天_20180201.html'>在Sourcegraph的第三天</a></li><li><a href='如何掌握所有的程序语言_20180224.html'>如何掌握所有的程序语言</a></li><li><a href='如何掌握程序语言_20160623.html'>如何掌握程序语言</a></li><li><a href='如何阅读别人的代码_20200418.html'>如何阅读别人的代码</a></li><li><a href='学习的智慧_20190727.html'>学习的智慧</a></li><li><a href='完全用Linux工作_20130301.html'>完全用Linux工作</a></li><li><a href='对 Go 语言的综合评价_20180224.html'>对 Go 语言的综合评价</a></li><li><a href='对Parser的误解_20171220.html'>对Parser的误解</a></li><li><a href='对Rust语言的分析_20180201.html'>对Rust语言的分析</a></li><li><a href='对函数式语言的误解_20171025.html'>对函数式语言的误解</a></li><li><a href='对博士学位说永别_20160623.html'>对博士学位说永别</a></li><li><a href='对某领导离任有感_20180227.html'>对某领导离任有感</a></li><li><a href='小费和中国人的尊严_20180409.html'>小费和中国人的尊严</a></li><li><a href='康奈尔感受_20160623.html'>康奈尔感受</a></li><li><a href='怎样尊重一个程序员_20180302.html'>怎样尊重一个程序员</a></li><li><a href='我不是编译器专家_20200418.html'>我不是编译器专家</a></li><li><a href='我为什么不在做PL人_20171220.html'>我为什么不在做Pl人</a></li><li><a href='我和谷歌的故事_20160623.html'>我和谷歌的故事</a></li><li><a href='我的第一次和最后一次Hackathon经历_20180302.html'>我的第一次和最后一次Hackathon经历</a></li><li><a href='我看PhD_20160623.html'>我看Phd</a></li><li><a href='我离开了Coverity_20171025.html'>我离开了Coverity</a></li><li><a href='扶门的礼仪_20180328.html'>扶门的礼仪</a></li><li><a href='改变_20180529.html'>改变</a></li><li><a href='智能合约和形式验证_20180224.html'>智能合约和形式验证</a></li><li><a href='更新_20180409.html'>更新</a></li><li><a href='更新一下_20181015.html'>更新一下</a></li><li><a href='机器与人类智能的差距_20190916.html'>机器与人类智能的差距</a></li><li><a href='机器学习与逻辑编程_20190209.html'>机器学习与逻辑编程</a></li><li><a href='标准化试卷标记语言_20171025.html'>标准化试卷标记语言</a></li><li><a href='测试的道理_20171220.html'>测试的道理</a></li><li><a href='清华梦的粉碎_20160623.html'>清华梦的粉碎</a></li><li><a href='理论是围城_20160623.html'>理论是围城</a></li><li><a href='用脑图来分享思想_20171025.html'>用脑图来分享思想</a></li><li><a href='知识份子的傲慢与偏见_20160623.html'>知识份子的傲慢与偏见</a></li><li><a href='程序设计里的“小聪明”（1）_20171025.html'>程序设计里的“小聪明”（1）</a></li><li><a href='程序语言不是工具_20171025.html'>程序语言不是工具</a></li><li><a href='程序语言与它们的工具_20171025.html'>程序语言与它们的工具</a></li><li><a href='程序语言理论的学习对于程序员教育的作用_20171025.html'>程序语言理论的学习对于程序员教育的作用</a></li><li><a href='程序语言的常见设计错误(2) - 试图容纳世界_20171025.html'>程序语言的常见设计错误(2) - 试图容纳世界</a></li><li><a href='给Java说句公道话_20171220.html'>给Java说句公道话</a></li><li><a href='给Texmacs的推荐信_20160623.html'>给Texmacs的推荐信</a></li><li><a href='编程的宗派_20171025.html'>编程的宗派</a></li><li><a href='编程的智慧_20171220.html'>编程的智慧</a></li><li><a href='编辑器与IDE_20171025.html'>编辑器与Ide</a></li><li><a href='网络用语_20180409.html'>网络用语</a></li><li><a href='美国企业的装嫩问题_20180302.html'>美国企业的装嫩问题</a></li><li><a href='美国公司管理层的洗脑技巧_20180302.html'>美国公司管理层的洗脑技巧</a></li><li><a href='美国社会的信息不平等现象_20180302.html'>美国社会的信息不平等现象</a></li><li><a href='自动驾驶车的责任和风险分析_20191007.html'>自动驾驶车的责任和风险分析</a></li><li><a href='解密英语语法（1）_20181124.html'>解密英语语法（1）</a></li><li><a href='解密英语语法（前言）_20181124.html'>解密英语语法（前言）</a></li><li><a href='解谜计算机科学01_20180415.html'>解谜计算机科学01</a></li><li><a href='警惕“编译器人”和“函数式程序员”_20191224.html'>警惕“编译器人”和“函数式程序员”</a></li><li><a href='让科学和理性回到计算机科学_20160623.html'>让科学和理性回到计算机科学</a></li><li><a href='论对东西的崇拜_20171025.html'>论对东西的崇拜</a></li><li><a href='论研究_20160623.html'>论研究</a></li><li><a href='谁是真正的程序语言专家_20171025.html'>谁是真正的程序语言专家</a></li><li><a href='谈 Linux，Windows 和 Mac_20171025.html'>谈 Linux，Windows 和 Mac</a></li><li><a href='谈“P=NP?”_20171025.html'>谈“P=Np?”</a></li><li><a href='谈“测试驱动的开发”_20171025.html'>谈“测试驱动的开发”</a></li><li><a href='谈惰性求值_20171025.html'>谈惰性求值</a></li><li><a href='谈程序的“通用性”_20171025.html'>谈程序的“通用性”</a></li><li><a href='谈程序的正确性_20171025.html'>谈程序的正确性</a></li><li><a href='谈语法_20171025.html'>谈语法</a></li><li><a href='谈谈 Currying_20171025.html'>谈谈 Currying</a></li><li><a href='谈谈Parser_20171220.html'>谈谈Parser</a></li></ul></li></ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="inner">
+        
+        <h1>网络用语</h1>
+<div class="date">2018-04-09</div>
+<p>不知道有人注意到没有，凡是在跟我的对话中使用过“吐槽”，“喷”，“low”，…… 这类词汇的人，都会被我自动在心理上进行隔离。也许他们对我用了这些词，也许对其他人用了，也许对他们自己用了。不管怎样，他们被我自动划为“另一类人”。</p>
+<p>使用了这类词的商家或者 app，也会被我划到“低级”的行列。比如有的商家在请求评价的菜单里给出这些选项：“1. 给个好评。2. 我要吐槽。3. 残忍拒绝……” 我只好对这种商家翻个白眼。</p>
+<p>我也不知道怎么会这样，这本来不是我的理智做出的决定，而是一种自然反应。但现在我想来分析一下，我的潜意识为什么不喜欢这样的“网络用语”。</p>
+<p>首先我对一个词的感觉，大部分都来源于它的字面或者发音。我的潜意识不会去想这个词有什么渊源，是音译过来的还是什么，它只知道“好听”还是“不好听”。“吐槽”的两个字，不管是发音还是含义，都非常的不雅，甚至是恶心。“吐”你知道的，很恶心。“槽”是什么？猪的食槽吗？听到这个词我首先想到的，就是一头很脏的猪，吃东西时吐了，吐在它的食槽里。不管网络字典如何解释这个词的渊源，它给我的第一印象就是这样的，非常难听，无法改变。</p>
+<p>“喷”这个词也是差不多，感觉很恶心，不卫生，而且带有强烈的情绪特征。</p>
+<p>那么“low”是什么问题呢？有些人喜欢说：“好 low。” 虽然他是在说其他人“低级”，他自己却被我放到了低级的类别里。你发现没有，我用了“低级”这个词，这跟“low”不是一个意思吗？虽然词义相同，它们表达的说话人的态度，却是很不一样的。如果他说“低级”，“低俗”，是完全没有问题的。要是他说“好 low”，就有问题了，自动降低了自己的身份。</p>
+<p>“low”的问题就在于，作为一个中国人，明明有一个大家熟知的中文词汇“低级”，他却故意要用英文单词“low”。这说明这人的脑子里存在某种毛病，也许是自卑，也许是傲慢，也许是崇洋媚外，或者在显示自己会英文？总之，他不是他自己。他需要冒出英文来，才能在气势上压倒别人，这不正好说明他的地位其实很低吗？低不是问题，low 是问题。</p>
+<p>我提到“地位”或者“身份”，可能会引起一些异议，难道我是在煽动社会等级和歧视吗？不是的。在我的心目中，人的“地位”不是指他的官职，衣着或者财富，而是他的文明程度。这类似于 Emily Post 的『Etiquette』（礼仪）一书中，对“best society”（最好社会，或者上等社会）的定义。一个人是否属于上等社会，不是看他有多少钱，他的官爵，而是他的礼仪和素质。更精确的说法，是文明程度。</p>
+<p>之前说到的这些用语，都是在短时间内流行起来的，属于“网络用语”。为什么在中国人的社会里，网络用语层出不穷呢？我觉得其原因就在于很多国人“人云亦云”的心理，再加上很多人沉迷于网络，成天被各种信息洗脑。某富豪，某明星说了什么，他们就跟着转。朋友圈看到别人说了什么，他们也不管是否难听，就跟着用。在知乎，BBS 之类的地方“交流”太多，深受毒害。这就是为什么某些从没见过的词汇，忽然红遍网络，像“给力”，“也是醉了”，“不明觉厉”，“吐槽”，“喷”，“low”……</p>
+<p>喜欢使用这类词汇的人，一般都属于“网民”，也就是大部分时间生活在网络空间里，在各种论坛，知乎，MITBBS 这类地方进行“交流”的人。他们在网络上交流那么多，在现实世界却找不到人说话，所以他们沉迷于虚幻的世界。这种人在网络上看似幽默，能说会道，在现实生活中就显示出很严重的自闭现象。他们往往不修边幅，不懂得基本的礼仪，言谈举止看上去俗气，粗鲁，不近人情，总是关心“网络上发生的事情”。</p>
+<p>这也许就是我对使用这类网络词汇的人产生无意识反感的原因。当今中国泛滥的网络用语，其实是文化垃圾，是对中华民族文字和文化的侮辱。它们已经泛滥到广告里，电视里，书籍里，成为反复出现，乏味又恶心的口头禅。我们应该从自己做起，避免使用这类网络词汇。</p>
+<p>另外对于“吐槽”，“喷”这类词，还有一个“类比心理”的误解问题。当我在指出一些事物的问题，说了一些实话的时候，有些人就产生了类比心理，说我在“吐槽”，“喷”或者抱怨。有些甚至开始跟我讲道，说：“无力改变的就接受……” 这种人可能就是自己平时抱怨太多了，或者上 MITBBS 之类看别人抱怨或者对骂太多了，所以不知道还有一种态度叫做“调侃”。当他们看到有人调侃一件事，就觉得别人像他平时的态度一样，在抱怨。</p>
+<p>抱怨属于弱者，属于那种无奈，没能力改变事物的人。而调侃属于强者，属于独立于事物之外，不受其影响，甚至有能力改变现实的人。</p>
+<p>大部分时候我看到一些不合理的事物，我喜欢调侃。比如我经常调侃一些设计有问题，社区质量低还自以为是的程序语言。我看到 Tesla 或者 Google 又在吹牛，误导群众，我会嘲笑一下，调侃一下。我看到某些地方的市政设施做工拙劣，严重影响市容市貌，或者设计错误，花钱办傻事，我可能会拍个照片，调侃一下。</p>
+<p>我在乎这些东西吗？它们对我有什么影响吗？没有。我都不用 Tesla 的产品，我不住在那个城市。我对这些不合理的事物并没有强烈的情绪。我只是从一个设计者和创造者的角度，提点一下更好的办法是什么，这样某些人可能会提高一下认识。当然，知乎和 MITBBS 上那些一本正经爱抱怨的人们，就习惯性地认为这是抱怨了。</p>
+<p>对于程序语言就更是如此了。有些人说我“又在喷 Python”，就是完全没有明白抱怨和调侃的差别。我经常都是在调侃 Python，Ruby，JS 之类的语言，而不是在抱怨它们。如果一个普通程序员，用 Python 时觉得很痛苦，却无法改变它，他确实可能是在抱怨。而对于我来说，这些语言的设计者根本就是业余爱好者，还自以为是。我只能嘲笑或者调侃他们，而不可能抱怨。明白了吧。</p>
+<p>所以有时候我只是幽默地嘲笑一下这些公司，这些设计者，同时利用信息的威力，间接地帮助每天都生活在这些地方，受到其影响的人。我不但独立于这些事物，不受它们影响，而且我有力量改变它们。利用我的洞察力和影响力，把正确的信息传播到很多人的头脑里，让他们认识到更好的设计和办事方式，逐渐引起社会的改变，这就是知识的力量。</p>
+    </div>
+    
+    <script src="js/highlight.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script>
+        if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
+            document.body.classList.add('mobile');
+            var navbar = document.querySelector('nav.navbar');
+            if (navbar) { navbar.classList.remove('navbar-fixed-top'); }
+        }
+    </script>
+</body>
+</html>

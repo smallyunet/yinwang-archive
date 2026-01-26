@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <title>Hindley-Milner 类型系统的根本性错误</title>
+    <link rel="stylesheet" href="css/highlight/xcode.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-tooltips.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/post.css">
+    <script src="js/jquery.min.js"></script>
+    
+    <style>
+        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
+        /* Removed .inner/.outer overrides to respect theme post.css */
+        
+        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
+        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
+        .version-switcher a.current { font-weight: bold; color: #333; }
+        
+        .navbar-brand { font-size: 20px; font-weight: bold; }
+        .navbar-nav > li > a { font-size: 16px; } /* Slightly larger per user request */
+        
+        /* Reduce gap between navbar and content */
+        div.outer { margin-top: 30px; }
+        
+        /* Removed custom flexbox list styling to match demo vertical style */
+    </style>
+    
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-bs">
+                    <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+                <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='homepage_20231225.html'>当然我在扯淡 (2023-12-25)</a></li><li><a href='index_20220816.html'>当然我在扯淡 (2022-08-16)</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='resources_d8-3404-d8-8424_20130614.html'>D8 3404 D8 8424</a></li><li><a href='resources_demos_pysonar2_email_base64mime.py_20150408.html'>Demos Pysonar2 Email Base64Mime.Py</a></li><li><a href='resources_demos_pysonar2_email_charset.py_20150506.html'>Demos Pysonar2 Email Charset.Py</a></li><li><a href='resources_demos_pysonar2_email_encoders.py_20160822.html'>Demos Pysonar2 Email Encoders.Py</a></li><li><a href='resources_demos_pysonar2_email_errors.py_20150409.html'>Demos Pysonar2 Email Errors.Py</a></li><li><a href='resources_demos_pysonar2_email_header.py_20140305.html'>Demos Pysonar2 Email Header.Py</a></li><li><a href='resources_demos_pysonar2_email_quoprimime.py_20150408.html'>Demos Pysonar2 Email Quoprimime.Py</a></li><li><a href='resources_demos_pysonar2_re.py_20150408.html'>Demos Pysonar2 Re.Py</a></li><li><a href='resources_demos_pysonar2_sre_compile.py_20160822.html'>Demos Pysonar2 Sre Compile.Py</a></li><li><a href='resources_demos_pysonar2_sre_constants.py_20160822.html'>Demos Pysonar2 Sre Constants.Py</a></li><li><a href='resources_demos_pysonar2_sre_parse.py_20160822.html'>Demos Pysonar2 Sre Parse.Py</a></li><li><a href='resources_diff1-diff2_20200728.html'>Diff1 Diff2</a></li><li><a href='resources_mk1-mk2_20130627.html'>Mk1 Mk2</a></li><li><a href='resources_nav1-nav2_20200728.html'>Nav1 Nav2</a></li><li><a href='resources_paredit20-paredit23_20200728.html'>Paredit20 Paredit23</a></li><li><a href='resources_pydiff1-pydiff2_20130711.html'>Pydiff1 Pydiff2</a></li><li><a href='resources_simulator-mips-simulator-arm_20200728.html'>Simulator Mips Simulator Arm</a></li><li><a href='resources_typed-clojure1-typed-clojure2_20200728.html'>Typed Clojure1 Typed Clojure2</a></li></ul></li></ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="inner">
+        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2013_04_01_hindley-milner_20130421.html" >2013-04-21</a> <a href="blog-cn_2013_04_01_hindley-milner_20171025.html" class="current">2017-10-25</a> <a href="blog-cn_2013_04_01_hindley-milner_20230313.html" >2023-03-13</a> <a href="blog-cn_2013_04_01_hindley-milner_20240602.html" >2024-06-02</a></div>
+        <h1>Hindley-Milner 类型系统的根本性错误</h1>
+<div class="date">2017-10-25</div>
+<p>作者：王垠</p>
+<p>之前的一个时间，我曾经公开过这样一段幻灯片，它是2012年10月的时候，我在 Indiana 大学做的最后一次演讲。由于当时的委婉，我并没有直接说出这些结论的重要性。其实它揭示了 ML 和 Haskell 这类基于 Hindley-Milner 类型系统的语言的一个根本性的错误。</p>
+<p>这个错误来源于对一阶逻辑的“全称量词”（universal quantifier，通常写作∀）与程序函数之间关系的误解。在 HM 系统里面，多态（polymorphic）的函数能够被推导为含有全称量词的类型，比如 \x-&gt;x 的类型被推导为 ∀a.a-&gt;a，但 HM 系统决定这个全称量词的位置的方式，却是没有原则的。这就导致了类型变量（type variable）的作用域（scope）的偏差。</p>
+<p>我的研究显示，这个错误来源于 HM 系统最初的一项重要的设计，叫做 let-polymorphism。如果右边的函数是一个多态的函数，比如：</p>
+<p>let f = \x-&gt;x in</p>
+<p>...</p>
+<p>let-polymorphism 总是会把全称量词的位置确定在 let 的“=”右边。然而这是一个非常错误的做法，它的错误程度近似于早期的 Lisp 所采用的 dynamic scoping。这样做的结果是，全称量词的位置会随着程序的“格式”，而不是程序的“结构”，而变化。至于什么是 dynamic scoping，你可以参考我的这篇博文。</p>
+<p>为了弥补这个错误，30多年来，许多的人发表了许多的论文，提出了很多的“改进措施”，比如 value restriction，MLF，等等。但是我的研究却显示，所有这些“改进措施”都是丑陋的 hack。因为他们没有看到问题的根源，所以他们的方案只对一些特殊情况起作用，而不能通用。为此，我可以轻而易举的写出正确的程序，而让它不能通过这些类型系统的检查，比如像我这篇英文博文所示。如果你看到了问题的根源，就会发现 HM 系统的这个错误是无法弥补的，因为它触及了 HM 系统的根基。为了根治这个问题，let-polymorphism 必须被去除掉。</p>
+<p>我为此提出了自己的解决方案：在 lambda 的位置进行“generalization”，也就是说把 ∀ 放在 lambda 的位置，而不是 let。这样一来 let-polymorphism 就不存在了。但是这样一来，HM 系统就不再是 HM 系统，因为它的“模块化类型推导”的性质，就会名存实亡。由于类型里面含有程序的“控制结构”，这个类型系统表面上看起来是在进行“模块化类型检查”，而本质上是在做一个“跨过程静态检查”（interprocedual static analysis）。也就是说，模块化的类型推导，在 HM 这样的没有“类型标记”的体系下，其实是不可能实现的。</p>
+<p>为了达到完全通用的模块化类型检查，却又允许多态函数的存在，我们终究会需要在函数的参数位置手工写上类型，这样我们就完全的丧失了 HM 系统设计的初衷。</p>
+    </div>
+    
+    <script src="js/highlight.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script>
+        if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
+            document.body.classList.add('mobile');
+            var navbar = document.querySelector('nav.navbar');
+            if (navbar) { navbar.classList.remove('navbar-fixed-top'); }
+        }
+    </script>
+</body>
+</html>

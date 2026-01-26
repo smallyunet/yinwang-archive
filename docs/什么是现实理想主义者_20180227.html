@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <title>什么是现实理想主义者</title>
+    <link rel="stylesheet" href="css/highlight/xcode.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-tooltips.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/post.css">
+    <script src="js/jquery.min.js"></script>
+    
+    <style>
+        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
+        /* Removed .inner/.outer overrides to respect theme post.css */
+        
+        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
+        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
+        .version-switcher a.current { font-weight: bold; color: #333; }
+        
+        .navbar-brand { font-size: 20px; font-weight: bold; }
+        .navbar-nav > li > a { font-size: 16px; } /* Slightly larger per user request */
+        
+        /* Reduce gap between navbar and content */
+        div.outer { margin-top: 30px; }
+        
+        /* Removed custom flexbox list styling to match demo vertical style */
+    </style>
+    
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-bs">
+                    <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+                <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='homepage_20231225.html'>当然我在扯淡 (2023-12-25)</a></li><li><a href='index_20220816.html'>当然我在扯淡 (2022-08-16)</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='resources_d8-3404-d8-8424_20130614.html'>D8 3404 D8 8424</a></li><li><a href='resources_demos_pysonar2_email_base64mime.py_20150408.html'>Demos Pysonar2 Email Base64Mime.Py</a></li><li><a href='resources_demos_pysonar2_email_charset.py_20150506.html'>Demos Pysonar2 Email Charset.Py</a></li><li><a href='resources_demos_pysonar2_email_encoders.py_20160822.html'>Demos Pysonar2 Email Encoders.Py</a></li><li><a href='resources_demos_pysonar2_email_errors.py_20150409.html'>Demos Pysonar2 Email Errors.Py</a></li><li><a href='resources_demos_pysonar2_email_header.py_20140305.html'>Demos Pysonar2 Email Header.Py</a></li><li><a href='resources_demos_pysonar2_email_quoprimime.py_20150408.html'>Demos Pysonar2 Email Quoprimime.Py</a></li><li><a href='resources_demos_pysonar2_re.py_20150408.html'>Demos Pysonar2 Re.Py</a></li><li><a href='resources_demos_pysonar2_sre_compile.py_20160822.html'>Demos Pysonar2 Sre Compile.Py</a></li><li><a href='resources_demos_pysonar2_sre_constants.py_20160822.html'>Demos Pysonar2 Sre Constants.Py</a></li><li><a href='resources_demos_pysonar2_sre_parse.py_20160822.html'>Demos Pysonar2 Sre Parse.Py</a></li><li><a href='resources_diff1-diff2_20200728.html'>Diff1 Diff2</a></li><li><a href='resources_mk1-mk2_20130627.html'>Mk1 Mk2</a></li><li><a href='resources_nav1-nav2_20200728.html'>Nav1 Nav2</a></li><li><a href='resources_paredit20-paredit23_20200728.html'>Paredit20 Paredit23</a></li><li><a href='resources_pydiff1-pydiff2_20130711.html'>Pydiff1 Pydiff2</a></li><li><a href='resources_simulator-mips-simulator-arm_20200728.html'>Simulator Mips Simulator Arm</a></li><li><a href='resources_typed-clojure1-typed-clojure2_20200728.html'>Typed Clojure1 Typed Clojure2</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Misc <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='C#的 IDisposable接口_20180302.html'>C#的 Idisposable接口</a></li><li><a href='Chez Scheme 的传说_20171025.html'>Chez Scheme 的传说</a></li><li><a href='Currying的局限性_20171025.html'>Currying的局限性</a></li><li><a href='C编译器优化过程中的Bug_20180302.html'>C编译器优化过程中的Bug</a></li><li><a href='DRY原则的误区_20171025.html'>Dry原则的误区</a></li><li><a href='DSL_20180224.html'>Dsl</a></li><li><a href='GTF： Great Teacher Friedman_20180201.html'>GTF: Great Teacher Friedman</a></li><li><a href='Hindley-Milner 类型系统的根本性错误_20171025.html'>Hindley-Milner 类型系统的根本性错误</a></li><li><a href='Kotlin 和 Checked Exception_20180224.html'>Kotlin 和 Checked Exception</a></li><li><a href='Lisp已死Lisp万岁_20171025.html'>Lisp已死Lisp万岁</a></li><li><a href='Markdown 的一些问题_20171025.html'>Markdown 的一些问题</a></li><li><a href='Oberon 操作系统：被忽略的珍宝_20171025.html'>Oberon 操作系统：被忽略的珍宝</a></li><li><a href='PySonar2与Sourcegraph集成完毕_20180201.html'>Pysonar2与Sourcegraph集成完毕</a></li><li><a href='PySonar2开源了_20180201.html'>Pysonar2开源了</a></li><li><a href='PySonar的工作原理_20180201.html'>Pysonar的工作原理</a></li><li><a href='PySonar的第二个用户_20180201.html'>Pysonar的第二个用户</a></li><li><a href='README_20160623.html'>Readme</a></li><li><a href='RubySonar：一个 Ruby 静态分析器_20180201.html'>Rubysonar：一个 Ruby 静态分析器</a></li><li><a href='Swift语言的设计错误_20180201.html'>Swift语言的设计错误</a></li><li><a href='Talk-is-not-cheap_20190911.html'>Talk-Is-Not-Cheap</a></li><li><a href='Tesla autopilot 引起致命车祸_20180302.html'>Tesla Autopilot 引起致命车祸</a></li><li><a href='Texmacs：一个真正“所见即得”的排版系统_20171025.html'>Texmacs:一个真正“所见即得”的排版系统</a></li><li><a href='Unix的缺陷_20160623.html'>Unix的缺陷</a></li><li><a href='math_20240505.html'>Math</a></li><li><a href='ydiff：结构化的程序比较_20171025.html'>Ydiff：结构化的程序比较</a></li><li><a href='“解决问题”与“消灭问题”_20171025.html'>“解决问题”与“消灭问题”</a></li><li><a href='上海_20180627.html'>上海</a></li><li><a href='不再推荐Haskell_20160623.html'>不再推荐Haskell</a></li><li><a href='丘奇和图灵_20171025.html'>丘奇和图灵</a></li><li><a href='中国人如何经营自己_20180302.html'>中国人如何经营自己</a></li><li><a href='中国人的信任危机_20190822.html'>中国人的信任危机</a></li><li><a href='中国人的鉴赏力_20180329.html'>中国人的鉴赏力</a></li><li><a href='为什么一种程序语言是不够用的_20171025.html'>为什么一种程序语言是不够用的</a></li><li><a href='为什么拍照是个坏习惯_20180911.html'>为什么拍照是个坏习惯</a></li><li><a href='为什么自动车完全不可以犯错误_20180302.html'>为什么自动车完全不可以犯错误</a></li><li><a href='为什么说面向对象编程和函数式编程都有问题_20171025.html'>为什么说面向对象编程和函数式编程都有问题</a></li><li><a href='为什么需要正则表达式_20160623.html'>为什么需要正则表达式</a></li><li><a href='人工智能的局限性_20180224.html'>人工智能的局限性</a></li><li><a href='什么是“脚本语言”_20171025.html'>什么是“脚本语言”</a></li><li><a href='什么是对用户友好_20160623.html'>什么是对用户友好</a></li><li><a href='什么是现实理想主义者_20180227.html'>什么是现实理想主义者</a></li><li><a href='什么是程序语言研究_20161202.html'>什么是程序语言研究</a></li><li><a href='什么是语义学_20160623.html'>什么是语义学</a></li><li><a href='从工具的奴隶到工具的主人_20160623.html'>从工具的奴隶到工具的主人</a></li><li><a href='代码进入闭源状态_20180409.html'>代码进入闭源状态</a></li><li><a href='伟大老师DanFriedman_20160623.html'>伟大老师Danfriedman</a></li><li><a href='关于写书_20180412.html'>关于写书</a></li><li><a href='关于微内核的对话_20190822.html'>关于微内核的对话</a></li><li><a href='关于语言的思考_20171025.html'>关于语言的思考</a></li><li><a href='关系模型的实质_20171025.html'>关系模型的实质</a></li><li><a href='其他人的BUG_20180302.html'>其他人的Bug</a></li><li><a href='再别IU_20161202.html'>再别Iu</a></li><li><a href='再见 Voxer，你好 Sourcegraph_20171025.html'>再见 Voxer，你好 Sourcegraph</a></li><li><a href='再谈P-vs-NP问题_20190812.html'>再谈P-Vs-Np问题</a></li><li><a href='写给支持和反对《完全用Linux工作》的人们_20160623.html'>写给支持和反对《完全用Linux工作》的人们</a></li><li><a href='到底是谁在欺负我们读书少_20171220.html'>到底是谁在欺负我们读书少</a></li><li><a href='十年前的我的来信_20171025.html'>十年前的我的来信</a></li><li><a href='半年来的工作感受_20171025.html'>半年来的工作感受</a></li><li><a href='原因与证明_20171025.html'>原因与证明</a></li><li><a href='反省_20160623.html'>反省</a></li><li><a href='在Sourcegraph的第三天_20180201.html'>在Sourcegraph的第三天</a></li><li><a href='如何掌握所有的程序语言_20180224.html'>如何掌握所有的程序语言</a></li><li><a href='如何掌握程序语言_20160623.html'>如何掌握程序语言</a></li><li><a href='如何阅读别人的代码_20200418.html'>如何阅读别人的代码</a></li><li><a href='学习的智慧_20190727.html'>学习的智慧</a></li><li><a href='完全用Linux工作_20130301.html'>完全用Linux工作</a></li><li><a href='对 Go 语言的综合评价_20180224.html'>对 Go 语言的综合评价</a></li><li><a href='对Parser的误解_20171220.html'>对Parser的误解</a></li><li><a href='对Rust语言的分析_20180201.html'>对Rust语言的分析</a></li><li><a href='对函数式语言的误解_20171025.html'>对函数式语言的误解</a></li><li><a href='对博士学位说永别_20160623.html'>对博士学位说永别</a></li><li><a href='对某领导离任有感_20180227.html'>对某领导离任有感</a></li><li><a href='小费和中国人的尊严_20180409.html'>小费和中国人的尊严</a></li><li><a href='康奈尔感受_20160623.html'>康奈尔感受</a></li><li><a href='怎样尊重一个程序员_20180302.html'>怎样尊重一个程序员</a></li><li><a href='我不是编译器专家_20200418.html'>我不是编译器专家</a></li><li><a href='我为什么不在做PL人_20171220.html'>我为什么不在做Pl人</a></li><li><a href='我和谷歌的故事_20160623.html'>我和谷歌的故事</a></li><li><a href='我的第一次和最后一次Hackathon经历_20180302.html'>我的第一次和最后一次Hackathon经历</a></li><li><a href='我看PhD_20160623.html'>我看Phd</a></li><li><a href='我离开了Coverity_20171025.html'>我离开了Coverity</a></li><li><a href='扶门的礼仪_20180328.html'>扶门的礼仪</a></li><li><a href='改变_20180529.html'>改变</a></li><li><a href='智能合约和形式验证_20180224.html'>智能合约和形式验证</a></li><li><a href='更新_20180409.html'>更新</a></li><li><a href='更新一下_20181015.html'>更新一下</a></li><li><a href='机器与人类智能的差距_20190916.html'>机器与人类智能的差距</a></li><li><a href='机器学习与逻辑编程_20190209.html'>机器学习与逻辑编程</a></li><li><a href='标准化试卷标记语言_20171025.html'>标准化试卷标记语言</a></li><li><a href='测试的道理_20171220.html'>测试的道理</a></li><li><a href='清华梦的粉碎_20160623.html'>清华梦的粉碎</a></li><li><a href='理论是围城_20160623.html'>理论是围城</a></li><li><a href='用脑图来分享思想_20171025.html'>用脑图来分享思想</a></li><li><a href='知识份子的傲慢与偏见_20160623.html'>知识份子的傲慢与偏见</a></li><li><a href='程序设计里的“小聪明”（1）_20171025.html'>程序设计里的“小聪明”（1）</a></li><li><a href='程序语言不是工具_20171025.html'>程序语言不是工具</a></li><li><a href='程序语言与它们的工具_20171025.html'>程序语言与它们的工具</a></li><li><a href='程序语言理论的学习对于程序员教育的作用_20171025.html'>程序语言理论的学习对于程序员教育的作用</a></li><li><a href='程序语言的常见设计错误(2) - 试图容纳世界_20171025.html'>程序语言的常见设计错误(2) - 试图容纳世界</a></li><li><a href='给Java说句公道话_20171220.html'>给Java说句公道话</a></li><li><a href='给Texmacs的推荐信_20160623.html'>给Texmacs的推荐信</a></li><li><a href='编程的宗派_20171025.html'>编程的宗派</a></li><li><a href='编程的智慧_20171220.html'>编程的智慧</a></li><li><a href='编辑器与IDE_20171025.html'>编辑器与Ide</a></li><li><a href='网络用语_20180409.html'>网络用语</a></li><li><a href='美国企业的装嫩问题_20180302.html'>美国企业的装嫩问题</a></li><li><a href='美国公司管理层的洗脑技巧_20180302.html'>美国公司管理层的洗脑技巧</a></li><li><a href='美国社会的信息不平等现象_20180302.html'>美国社会的信息不平等现象</a></li><li><a href='自动驾驶车的责任和风险分析_20191007.html'>自动驾驶车的责任和风险分析</a></li><li><a href='解密英语语法（1）_20181124.html'>解密英语语法（1）</a></li><li><a href='解密英语语法（前言）_20181124.html'>解密英语语法（前言）</a></li><li><a href='解谜计算机科学01_20180415.html'>解谜计算机科学01</a></li><li><a href='警惕“编译器人”和“函数式程序员”_20191224.html'>警惕“编译器人”和“函数式程序员”</a></li><li><a href='让科学和理性回到计算机科学_20160623.html'>让科学和理性回到计算机科学</a></li><li><a href='论对东西的崇拜_20171025.html'>论对东西的崇拜</a></li><li><a href='论研究_20160623.html'>论研究</a></li><li><a href='谁是真正的程序语言专家_20171025.html'>谁是真正的程序语言专家</a></li><li><a href='谈 Linux，Windows 和 Mac_20171025.html'>谈 Linux，Windows 和 Mac</a></li><li><a href='谈“P=NP?”_20171025.html'>谈“P=Np?”</a></li><li><a href='谈“测试驱动的开发”_20171025.html'>谈“测试驱动的开发”</a></li><li><a href='谈惰性求值_20171025.html'>谈惰性求值</a></li><li><a href='谈程序的“通用性”_20171025.html'>谈程序的“通用性”</a></li><li><a href='谈程序的正确性_20171025.html'>谈程序的正确性</a></li><li><a href='谈语法_20171025.html'>谈语法</a></li><li><a href='谈谈 Currying_20171025.html'>谈谈 Currying</a></li><li><a href='谈谈Parser_20171220.html'>谈谈Parser</a></li></ul></li></ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="inner">
+        
+        <h1>什么是现实理想主义者</h1>
+<div class="date">2018-02-27</div>
+<p>曾经有人看了我的文章，以为我是一个“理想主义者”，来找我聊天。他说：“你知道吗，我跟你一样喜欢简单优雅的代码。上次我在某公司工作，看到他们的代码乱得不成样子，二话没说给他们重写了，结果有几个小地方跟原来的代码不大一样，后来系统因此当掉了。老板对我说，明天你不用再来上班了！你说我是不是好心没好报啊？”</p>
+<p>虽然我同情他丢了工作，然而我并不认同这种不经同意就推翻重写别人代码的作法。实际上我曾经跟一个老喜欢重写别人代码的人合作，后来整个团队（包括我）都差点被他给弄疯了。所以我对他说：“你不可以这样改别人的代码的！如果我是你老板，可能不会开掉你，却也会给你一个严重警告的。”</p>
+<p>从我们的对话你也许已经发现了，我并不是一个通常人所谓的“理想主义者”。虽然我有很多新颖而美好的想法，然而它们全都深深植根于现实中。我反对不以现实为基础的“理想”，实际上那不叫理想，而只能叫做“空想”。我的直觉和理性会很快的告诉我，哪些事情是可能的，哪些是不大可能的。我往往在早期就能察觉和避免那些最终会失败的“理想主义作法”。</p>
+<p>从我对各种“新语言”，“新理论”和“新技术”的看法，你也许已经发现了我的这个特点，我不再是十年前那个“热爱新奇事物”的王垠。不理解的人甚至会觉得我“守旧”，然而我只是通过理性分析，预见了某些“新技术”的失败。在我的心里，事物和技术并没有新旧之分，只有合理与不合理的差别。</p>
+<h2>如何对待别人的代码</h2>
+<p>那么我是如何对待别人的“垃圾代码”的呢？你也许会很惊讶我的做法：我尽量不动它们！</p>
+<p>虽然我喜欢简单优雅的代码，然而对于别人写的代码，就算它再丑再乱，我也不会乱动它。我就像一个外科专家，多次对已有代码进行“换心手术”。这种手术成功的要诀，是制造尽量小的“切口”，刚好可以换掉心脏，而不动其他部位。就算那些地方血管乱绕，堆满各种垃圾，也不要去动它们。</p>
+<p>这是为什呢？因为代码首要的目标应该是“解决问题”（包括“没有 bug”），其次的目标才是“简单优雅”。如果不能解决问题，再优雅又有什么用呢，只不过是玩具而已。对于已经可以解决问题的代码，就算它再乱再复杂，我也是高度尊重的，绝对不敢像这个朋友一样，不假思索就删掉重写。这就像你给别人做换心手术，看到大腿上有些血管是乱的，就把大腿也切开倒腾，你的病人不死才怪呢。</p>
+<p>我自己写代码的时候，“解决问题”和“简单优雅”往往是紧密结合，交织在一起的。如果我写不出简单优雅的代码，我就不能又快又正确的解决问题。所以我的代码往往从一开头就是简单优雅，模块化的。我从很小的函数开始写起，每个函数只解决很小的问题，最终我把它们组合在一起，解决掉整个问题。</p>
+<p>对于别人的代码，情况就很不一样了。很多人写的代码很乱，很复杂，不易理解，看得我头痛，但由于他们在上面花了很多的时间，而且这些代码经过了很长时间的使用，大量现实情况的考验，所以它们已经算是解决了问题。对于这样的代码，我的经验是这样：如果把它删掉完全重写，是很难不犯原作者已经犯过的错误的。就算你自认为水平世界一流，写的代码极其简单和优雅，也不能避免犯错。</p>
+<p>这不是一个智力的问题，而是一个智慧的问题。喜欢删掉别人代码重写的人，也许有很高的智力，却缺乏智慧。代码是用来解决现实问题的，而现实有许许多多的细节，代码需要覆盖现实世界各种不完美的地方。这些不完美也许来自库代码，也许来自操作系统，也许来自网络协议，也许来自用户习惯，也许来自自然界。我们必须承认，很多这些东西我们是没有能力，没有时间，也没有必要去改变的。</p>
+<p>别人已经写好，用了几年的代码，很有可能已经遇到各种现实问题，各种边角情况，原来的作者虽然不像你一样思路清晰，却也为此付出了时间和精力。这些复杂混乱的代码逻辑里面，已经针对现实世界的不完美，做出了基本可行的解决方案。一个有智慧的人，必须能利用这些前人留下来的混乱代码，因为它包含了时间积累下来的财富。</p>
+<p>那么我一般是如何利用别人遗留下来的代码的呢？我的策略包含好几个要点。</p>
+<p>首先，我尽量保持别人的代码原封不动。因为别人的代码解决的问题，很可能不是我当前需要解决的问题。因为看不顺眼而去改别人的代码，不但分散自己的精力，而且有可能制造新的 bug，导致新老代码中同时多处出现 bug，难以追踪和修复。为了保持别人的代码原封不动，却又让自己写的新代码简单优雅，我必须理解原有代码的接口（interface），以及它原有的各种特征，我力求保持它们不变。这就像外科大夫做换心手术，他必须保证已有的血管都连接到正确的地方。</p>
+<p>我喜欢把自己的代码做成一个可替换的，模块化的元件，可以随时在系统里插入或者移除。一旦发现出了问题，我可以随时切换到原来的代码，重新测试，这样我就可以知道问题出在原来的代码，还是出在我的新代码里面。另外，我还会注意避免对已有函数进行换名，这样我可以把自己的修改局限在一个或者少数几个文件里面，避免 Git 的历史里面出现不必要的，让人分心的修改。就算要换名也应该单独作为 commit，而不应该跟逻辑的修改混在一起。</p>
+<p>如果经过多次试验，我发现别人的代码的确需要改，不然我没法继续写新的代码，那么我只好对它进行修改。由于已有的代码复杂混乱，我一般会极其小心的对待它。我不会删掉大片的代码，从头开始写，那几乎注定是要失败的。通常我会先“隔离”出很小的一块代码，对它进行重写。随之立即进行大量的测试和试验，找原作者来帮我检查是否有问题，如此反复……</p>
+<p>那么这块改掉的代码需要小到什么程度呢？我也许就只改写一个 for 循环，把几行代码提出去做成帮助函数，简化一个表达式，把一个类成员变成一个局部变量，改几个局部变量的名字之类的。你可以参考我在《编程的智慧》里提到的各种改进代码的方式。每一个这样的小改动都有可能出错，所以在此之后必须进行严格的验证，确保修改后的代码和原来的代码语义相同。这样反反复复很多次之后，你才能正确的替换掉原来的代码。</p>
+<p>从我对待别人代码的方式，你也许已经发现了，我不是一个通常意义上的理想主义者。我不会为了自己简单优雅的理想，而完全推翻重写别人的代码，因为我知道现实世界的复杂性，我知道这样做注定是要失败的。我对待别人代码的态度，是深深地植根于现实的。通过极其严密的措施，我确保改进后的代码跟原来的代码语义完全相同，尽最大可能避免重复前人的错误，避免制造新的 bug。</p>
+<p>由于我的理想植根于现实，我把自己称为“现实理想主义者”（practical idealist），而不是“理想主义者”（idealist）。我曾经跟纯粹的理想主义者共事，这种人总是嫌别人的代码丑，不经商量就大幅度的删除重写大量代码，结果给团队的开发带来灾难性的后果。我在将来会避免跟这样的人共事。</p>
+<p>通过这个例子，你可能已经发现为什么“现实理想主义”是优于“理想主义”的。下面我来讲一下，为什么“现实理想主义”也超越了完全的“现实主义”。</p>
+<h2>超越现实主义</h2>
+<p>既然我不是一个完全的理想主义者，那么是不是说，我就是一个完全的“现实主义者”呢？在我的职业生涯中，我已经多次证明了，我不是一个完全的现实主义者，我能做到现实主义者做不到的事情。我心中的“理想”成分，让我能够看到现实主义者看不到的可能性，而我的“现实”成分，又帮助我为这种可能性找到切实可行的路线。理想和现实的结合，指引我达到现实主义者认为是不可能的目标。</p>
+<p>说到这一点，第一个跳进我脑海里的例子，是我当年在 Google 完成的项目。Google 需要一个可以像 IDE 一样索引 Python 代码的工具，可以支持准确的“跳转到定义”功能。作为现实主义者的团队领导（Steve）对我说，你去拿一个开源的 Python 工具，比如 PyDev，修改之后插入到我们的构架里就可以了。</p>
+<p>当我调研了十多个开源 Python 工具和 IDE 之后，发现它们都不能准确地实现“跳转到定义”。它们的实现方式基本都是字符串匹配而已，所以找出来的“定义”完全不着边际，甚至把字符串里出现的名字都给加亮了。这时候，我的理想成分告诉我，准确的定义查找应该是可能的，只不过现有的工具都不知道怎么实现它而已。为了给 Python 这样的动态语言实现精确的定义索引，就必须实现类型推导，而这是我很在行的事情。于是我决定做一个新的 Python 类型推导器，这样就可以利用它实现精确的跳转功能。</p>
+<p>我把这个想法告诉了 Steve 和其它团队成员，结果作为现实主义者的他们，非常的担心这个项目无法在三个月的实习期内完成。Steve 说：“你知道吗，光是写一个 Python 的 parser 就够写三个月了。我很担心你不能完成任务！” 这时候，我的现实成分开始起作用。我说：“你知道吗，我并不觉得写 Python 的 parser 是一件很难的事情，但我也不觉得它是一件很有意义的事情，所以我会拿一个开源的 parser 来，利用它生成的语法树，然后在上面完成我们需要的功能。”</p>
+<p>结果，我拿了 Jython 里面的 Python parser，然后在上面实现了 PySonar。整个对付 parser 的过程只花了我两天时间，剩下的时间我都在研究和实现最关键，最有趣的部分。我拿了别人已经做好的，自己不想做的东西来，然后加上自己的核心思想，达到了最终的目的。最后，我不但在三个月的时间里完成了 PySonar，而且把它集成到了 Grok 项目里面。</p>
+<p>在这个例子里，现实理想主义者帮助了现实主义者，完成了他们以为不可能的事情。本来 Grok 项目在 Google 处于濒临灭亡的境地，由于 PySonar 的成功实现增大了项目的影响力，团队在 Google 存活了下来，并且开始受到公司的重视，相关人员也获得了提拔。今天 PySonar 仍然在为 Google 的 Python 程序员提供高质量的索引服务，它生成的数据在背后默默支持着 CodeSearch 等内部代码搜索服务。</p>
+<h2>个人兴趣与企业兴趣</h2>
+<p>最后，我想再讲一个跟这个话题相关的故事，它说明现实理想主义者不但是一种个人技术财富，而且是企业的财富。他不但与“企业的兴趣”一点矛盾都没有，反而在很多时候可以帮助甚至拯救公司和团队。这个故事很有趣，但中间部分技术性有点强，看不懂的人可以跳过。</p>
+<p>我曾经在职的某公司，邀请了某位“大牛”来做 VP。经过一段时间的接触，我发现这个人不懂很多东西，尽在瞎指挥。很明显，他并没有把公司的利益放在心上。在多次的瞎指挥之后，有一天他又提出一个“新想法”。他说，我们团队的代码应该实现“模块化管理”。如何实现模块化管理呢？我们把代码按目录结构切分开，分成 30 个“模块”。把每个模块做成一个 Git 代码库（repository），代码库之间通过 Maven 的版本号依赖关系进行连接。每个人负责一两个模块，使用“语义版本号”（semver）标注模块的版本。如果修改了代码，就更新对应的版本号，这样依赖于这个模块的代码库就必须做出相应的修改，才能连接到新的模块代码，不然它们就可以继续使用旧的模块代码……</p>
+<p>这个新想法没有经过团队的集体讨论研究，就被 VP 的一个亲信动手实现了。一夜醒来，我们发现代码库被他分成了 30 多个，制定了一系列规章条款，要我们遵守。接下来的事情，我发现自己没法工作了。一天当中有超过半天的时间，我发现自己在为那些 semver 伤脑经。你刚刚更新了所有的代码，才工作了个把小时，正要提交的时候，却发现另外几个模块的版本号更新了！你得手动去看是哪些代码库发生了改变，更新自己 maven 文件里的依赖关系，然后才能进行测试，提交自己的代码。有时候当你提交之前，忽然又有其它的模块版本号发生了改变，所以你前功尽弃，又得去查到底是谁改了他的模块版本号。有很多次，有人没有把版本号完全搞对就提交了代码，结果导致项目 build 失败。</p>
+<p>后来我发现，这种所谓的“模块化”，根本就不是真正的模块化，而 semver 版本号，在这里也并不比 Git 的 hash 更好。模块不应该是按目录结构划分的，而应该是按代码的逻辑结构，而且模块之间不应该有“循环依赖关系”，否则这些模块就不应该被分成模块，而应该合并在一起。另外，semver 根本不是用来干这个事情的，它根本不应该被用于连接同一个项目里的多个模块，它只能被用来引用库代码。每一个 Git commit 的 hash，本身就是一个“全宇宙唯一”的版本号，它包含了代码所处的独一无二的状态。所以 Git 其实自然而然的解决了这种“模块”间版本依赖的问题。所以把代码拆分成 30 多个 Git 代码库，使用 semvar 连接它们，完全是多此一举，而且严重的损害了开发效率。</p>
+<p>观察到这个问题之后，我向团队群发了邮件，告诉他们我觉得这样的做法已经造成了我工作效率严重打折，并且指出了问题的要害。一个来自法国的资深工程师深有同感，也开始抱怨，说自己花了超过一半的时间来折腾这些版本号。然而 VP 听了这些意见，却坚持认为自己的“创新”是有价值的，对我们说：“任何一项伟大的创新，都会受到不理解它的旧势力的阻碍。同志们，困难是暂时的，适应是必须的！” 为了这个问题，我们在 email 里面吵了两个星期之久。任凭我们据理力争，拿出具体的证据证明这种做法不可行，严重的伤害了团队的开发效率，VP 凭着自己的名气和地位，毫不退缩。</p>
+<p>最后无赖之下，我决定采取实际的行动。我写了一个 Python 脚本，它调用 Git 的一些罕见命令，可以自动把多个 Git 代码库合并成一个，并且保留所有的历史 commit 信息。有了这个脚本之后，我可以随时制造出一个合并的代码库。我把这个脚本分享给了团队，告诉他们我随时可以把代码库合并在一起，而且给了他们一个合并后的代码库，作为试验用。我告诉他们，可以试用这个代码库，看它是否解决了 30 个代码库带来的问题。最后法国同事和其它几个人采用了我的代码库，发现不再有之前的头痛问题。</p>
+<p>我们用理论和切实的证据证明了所谓的“模块化代码管理”的不可行。通过对其它公司代码的观察，我们发现 Google 的 Chrome 项目有三千多万行代码，却全都存放在同一个 Git 代码库里。这说明一个 Git 代码库足以支持管理 Chrome 那么大的项目。我们的团队总共才 20 多人，代码不超过十万行，却被强行切分成 30 多个代码库，这是非常荒唐滑稽的。</p>
+<p>最后在工程师们的一致同意下，再加上团队 director 委婉的支持，我用脚本将 30 个代码库合并在了一起，结束了大家的痛苦…… 在此之后，VP 的亲信们还不死心，在合并后的代码库里又做了一些手脚，故意加大工作的复杂性，让我们依赖于他们的“工具”，这些我就不细说了。总之你看到了，这位 VP 的瞎指挥，导致团队浪费很多的时间和精力。如果这种情况不受控制继续下去，整个团队甚至整个公司，都有可能因此走向灭亡。</p>
+<p>我发现很多所谓管理人物，他们到一个新的公司出任要职，其实并没把公司的利益放在心上。他们不是为了公司的发展和成功做出决定，而是为了自己的“仕途”。这些管理者明白，公司就像一艘船，自己表面上在为公司服务，而其实是在利用公司的资源达成自己的目标。由于自己挥霍公司的资源，而不作出实质的贡献，甚至瞎指挥帮倒忙，这艘船在将来很可能会沉没。但作为管理者，自己总是可以在沉船之前跳到另外一艘船上，靠着自己的关系网，不断找到高薪的职位……</p>
+<p>像这样的例子我还有很多。为了团队，为了公司能够达成自己的目标，我多次顶着压力，帮助团队和公司避免不必要的浪费，甚至悬崖勒马。当然很多时候团队在错误的道路上走得太远，看清真相的我却受到压制，没有话语权，所以也爱莫能助，只能听之任之。注意我在这里谈“企业利益”，并不是说我喜欢为资本家卖命。这里的“公司”和“企业”，只是代表一个集体，它包括了公司里所有的员工和股东。</p>
+<p>从这样一个例子，你也可以看到我作为一个“现实理想主义者”的特征。这个 VP 可算是“理想主义”了，他一拍脑袋提出了“新颖”的，其它公司都没想到的工作方式，结果却给大家带来了灾难。我从现实和理性的角度，分析得知这种做法的荒谬，论证了“传统做法”的和理性，与他据理力争，维护公司和团队的利益，再加上团结大多数有职业素养的工程师，最终我们合力战胜了 VP 的瞎指挥，逆转了他给团队和公司带来的伤害，避免了灾难性的后果。</p>
+<p>当我离开这个公司的时候，我收到了这样一封来自团队成员的感谢 email：</p>
+<p>他说：“谢谢你帮助我们保持了常理和理智，把事业推向前进。我们会怀念你的！”</p>
+<p>这样的现实理想主义者，不管是作为员工，作为团队的领导，还是作为公司的统帅，都会身体力行，给他们带来帮助，避免不必要的浪费和弯路，引导企业走上正轨，走向兴旺繁荣。我希望广大 IT 工作者能理解我这里说的东西，把自己的“伟大理想”植根于现实，避免因为自己的轻狂而走向歧途。</p>
+    </div>
+    
+    <script src="js/highlight.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script>
+        if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
+            document.body.classList.add('mobile');
+            var navbar = document.querySelector('nav.navbar');
+            if (navbar) { navbar.classList.remove('navbar-fixed-top'); }
+        }
+    </script>
+</body>
+</html>

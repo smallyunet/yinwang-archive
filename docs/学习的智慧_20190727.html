@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <title>学习的智慧</title>
+    <link rel="stylesheet" href="css/highlight/xcode.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-tooltips.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/post.css">
+    <script src="js/jquery.min.js"></script>
+    
+    <style>
+        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
+        /* Removed .inner/.outer overrides to respect theme post.css */
+        
+        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
+        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
+        .version-switcher a.current { font-weight: bold; color: #333; }
+        
+        .navbar-brand { font-size: 20px; font-weight: bold; }
+        .navbar-nav > li > a { font-size: 16px; } /* Slightly larger per user request */
+        
+        /* Reduce gap between navbar and content */
+        div.outer { margin-top: 30px; }
+        
+        /* Removed custom flexbox list styling to match demo vertical style */
+    </style>
+    
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-bs">
+                    <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+                <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='homepage_20231225.html'>当然我在扯淡 (2023-12-25)</a></li><li><a href='index_20220816.html'>当然我在扯淡 (2022-08-16)</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='resources_d8-3404-d8-8424_20130614.html'>D8 3404 D8 8424</a></li><li><a href='resources_demos_pysonar2_email_base64mime.py_20150408.html'>Demos Pysonar2 Email Base64Mime.Py</a></li><li><a href='resources_demos_pysonar2_email_charset.py_20150506.html'>Demos Pysonar2 Email Charset.Py</a></li><li><a href='resources_demos_pysonar2_email_encoders.py_20160822.html'>Demos Pysonar2 Email Encoders.Py</a></li><li><a href='resources_demos_pysonar2_email_errors.py_20150409.html'>Demos Pysonar2 Email Errors.Py</a></li><li><a href='resources_demos_pysonar2_email_header.py_20140305.html'>Demos Pysonar2 Email Header.Py</a></li><li><a href='resources_demos_pysonar2_email_quoprimime.py_20150408.html'>Demos Pysonar2 Email Quoprimime.Py</a></li><li><a href='resources_demos_pysonar2_re.py_20150408.html'>Demos Pysonar2 Re.Py</a></li><li><a href='resources_demos_pysonar2_sre_compile.py_20160822.html'>Demos Pysonar2 Sre Compile.Py</a></li><li><a href='resources_demos_pysonar2_sre_constants.py_20160822.html'>Demos Pysonar2 Sre Constants.Py</a></li><li><a href='resources_demos_pysonar2_sre_parse.py_20160822.html'>Demos Pysonar2 Sre Parse.Py</a></li><li><a href='resources_diff1-diff2_20200728.html'>Diff1 Diff2</a></li><li><a href='resources_mk1-mk2_20130627.html'>Mk1 Mk2</a></li><li><a href='resources_nav1-nav2_20200728.html'>Nav1 Nav2</a></li><li><a href='resources_paredit20-paredit23_20200728.html'>Paredit20 Paredit23</a></li><li><a href='resources_pydiff1-pydiff2_20130711.html'>Pydiff1 Pydiff2</a></li><li><a href='resources_simulator-mips-simulator-arm_20200728.html'>Simulator Mips Simulator Arm</a></li><li><a href='resources_typed-clojure1-typed-clojure2_20200728.html'>Typed Clojure1 Typed Clojure2</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Misc <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='C#的 IDisposable接口_20180302.html'>C#的 Idisposable接口</a></li><li><a href='Chez Scheme 的传说_20171025.html'>Chez Scheme 的传说</a></li><li><a href='Currying的局限性_20171025.html'>Currying的局限性</a></li><li><a href='C编译器优化过程中的Bug_20180302.html'>C编译器优化过程中的Bug</a></li><li><a href='DRY原则的误区_20171025.html'>Dry原则的误区</a></li><li><a href='DSL_20180224.html'>Dsl</a></li><li><a href='GTF： Great Teacher Friedman_20180201.html'>GTF: Great Teacher Friedman</a></li><li><a href='Hindley-Milner 类型系统的根本性错误_20171025.html'>Hindley-Milner 类型系统的根本性错误</a></li><li><a href='Kotlin 和 Checked Exception_20180224.html'>Kotlin 和 Checked Exception</a></li><li><a href='Lisp已死Lisp万岁_20171025.html'>Lisp已死Lisp万岁</a></li><li><a href='Markdown 的一些问题_20171025.html'>Markdown 的一些问题</a></li><li><a href='Oberon 操作系统：被忽略的珍宝_20171025.html'>Oberon 操作系统：被忽略的珍宝</a></li><li><a href='PySonar2与Sourcegraph集成完毕_20180201.html'>Pysonar2与Sourcegraph集成完毕</a></li><li><a href='PySonar2开源了_20180201.html'>Pysonar2开源了</a></li><li><a href='PySonar的工作原理_20180201.html'>Pysonar的工作原理</a></li><li><a href='PySonar的第二个用户_20180201.html'>Pysonar的第二个用户</a></li><li><a href='README_20160623.html'>Readme</a></li><li><a href='RubySonar：一个 Ruby 静态分析器_20180201.html'>Rubysonar：一个 Ruby 静态分析器</a></li><li><a href='Swift语言的设计错误_20180201.html'>Swift语言的设计错误</a></li><li><a href='Talk-is-not-cheap_20190911.html'>Talk-Is-Not-Cheap</a></li><li><a href='Tesla autopilot 引起致命车祸_20180302.html'>Tesla Autopilot 引起致命车祸</a></li><li><a href='Texmacs：一个真正“所见即得”的排版系统_20171025.html'>Texmacs:一个真正“所见即得”的排版系统</a></li><li><a href='Unix的缺陷_20160623.html'>Unix的缺陷</a></li><li><a href='math_20240505.html'>Math</a></li><li><a href='ydiff：结构化的程序比较_20171025.html'>Ydiff：结构化的程序比较</a></li><li><a href='“解决问题”与“消灭问题”_20171025.html'>“解决问题”与“消灭问题”</a></li><li><a href='上海_20180627.html'>上海</a></li><li><a href='不再推荐Haskell_20160623.html'>不再推荐Haskell</a></li><li><a href='丘奇和图灵_20171025.html'>丘奇和图灵</a></li><li><a href='中国人如何经营自己_20180302.html'>中国人如何经营自己</a></li><li><a href='中国人的信任危机_20190822.html'>中国人的信任危机</a></li><li><a href='中国人的鉴赏力_20180329.html'>中国人的鉴赏力</a></li><li><a href='为什么一种程序语言是不够用的_20171025.html'>为什么一种程序语言是不够用的</a></li><li><a href='为什么拍照是个坏习惯_20180911.html'>为什么拍照是个坏习惯</a></li><li><a href='为什么自动车完全不可以犯错误_20180302.html'>为什么自动车完全不可以犯错误</a></li><li><a href='为什么说面向对象编程和函数式编程都有问题_20171025.html'>为什么说面向对象编程和函数式编程都有问题</a></li><li><a href='为什么需要正则表达式_20160623.html'>为什么需要正则表达式</a></li><li><a href='人工智能的局限性_20180224.html'>人工智能的局限性</a></li><li><a href='什么是“脚本语言”_20171025.html'>什么是“脚本语言”</a></li><li><a href='什么是对用户友好_20160623.html'>什么是对用户友好</a></li><li><a href='什么是现实理想主义者_20180227.html'>什么是现实理想主义者</a></li><li><a href='什么是程序语言研究_20161202.html'>什么是程序语言研究</a></li><li><a href='什么是语义学_20160623.html'>什么是语义学</a></li><li><a href='从工具的奴隶到工具的主人_20160623.html'>从工具的奴隶到工具的主人</a></li><li><a href='代码进入闭源状态_20180409.html'>代码进入闭源状态</a></li><li><a href='伟大老师DanFriedman_20160623.html'>伟大老师Danfriedman</a></li><li><a href='关于写书_20180412.html'>关于写书</a></li><li><a href='关于微内核的对话_20190822.html'>关于微内核的对话</a></li><li><a href='关于语言的思考_20171025.html'>关于语言的思考</a></li><li><a href='关系模型的实质_20171025.html'>关系模型的实质</a></li><li><a href='其他人的BUG_20180302.html'>其他人的Bug</a></li><li><a href='再别IU_20161202.html'>再别Iu</a></li><li><a href='再见 Voxer，你好 Sourcegraph_20171025.html'>再见 Voxer，你好 Sourcegraph</a></li><li><a href='再谈P-vs-NP问题_20190812.html'>再谈P-Vs-Np问题</a></li><li><a href='写给支持和反对《完全用Linux工作》的人们_20160623.html'>写给支持和反对《完全用Linux工作》的人们</a></li><li><a href='到底是谁在欺负我们读书少_20171220.html'>到底是谁在欺负我们读书少</a></li><li><a href='十年前的我的来信_20171025.html'>十年前的我的来信</a></li><li><a href='半年来的工作感受_20171025.html'>半年来的工作感受</a></li><li><a href='原因与证明_20171025.html'>原因与证明</a></li><li><a href='反省_20160623.html'>反省</a></li><li><a href='在Sourcegraph的第三天_20180201.html'>在Sourcegraph的第三天</a></li><li><a href='如何掌握所有的程序语言_20180224.html'>如何掌握所有的程序语言</a></li><li><a href='如何掌握程序语言_20160623.html'>如何掌握程序语言</a></li><li><a href='如何阅读别人的代码_20200418.html'>如何阅读别人的代码</a></li><li><a href='学习的智慧_20190727.html'>学习的智慧</a></li><li><a href='完全用Linux工作_20130301.html'>完全用Linux工作</a></li><li><a href='对 Go 语言的综合评价_20180224.html'>对 Go 语言的综合评价</a></li><li><a href='对Parser的误解_20171220.html'>对Parser的误解</a></li><li><a href='对Rust语言的分析_20180201.html'>对Rust语言的分析</a></li><li><a href='对函数式语言的误解_20171025.html'>对函数式语言的误解</a></li><li><a href='对博士学位说永别_20160623.html'>对博士学位说永别</a></li><li><a href='对某领导离任有感_20180227.html'>对某领导离任有感</a></li><li><a href='小费和中国人的尊严_20180409.html'>小费和中国人的尊严</a></li><li><a href='康奈尔感受_20160623.html'>康奈尔感受</a></li><li><a href='怎样尊重一个程序员_20180302.html'>怎样尊重一个程序员</a></li><li><a href='我不是编译器专家_20200418.html'>我不是编译器专家</a></li><li><a href='我为什么不在做PL人_20171220.html'>我为什么不在做Pl人</a></li><li><a href='我和谷歌的故事_20160623.html'>我和谷歌的故事</a></li><li><a href='我的第一次和最后一次Hackathon经历_20180302.html'>我的第一次和最后一次Hackathon经历</a></li><li><a href='我看PhD_20160623.html'>我看Phd</a></li><li><a href='我离开了Coverity_20171025.html'>我离开了Coverity</a></li><li><a href='扶门的礼仪_20180328.html'>扶门的礼仪</a></li><li><a href='改变_20180529.html'>改变</a></li><li><a href='智能合约和形式验证_20180224.html'>智能合约和形式验证</a></li><li><a href='更新_20180409.html'>更新</a></li><li><a href='更新一下_20181015.html'>更新一下</a></li><li><a href='机器与人类智能的差距_20190916.html'>机器与人类智能的差距</a></li><li><a href='机器学习与逻辑编程_20190209.html'>机器学习与逻辑编程</a></li><li><a href='标准化试卷标记语言_20171025.html'>标准化试卷标记语言</a></li><li><a href='测试的道理_20171220.html'>测试的道理</a></li><li><a href='清华梦的粉碎_20160623.html'>清华梦的粉碎</a></li><li><a href='理论是围城_20160623.html'>理论是围城</a></li><li><a href='用脑图来分享思想_20171025.html'>用脑图来分享思想</a></li><li><a href='知识份子的傲慢与偏见_20160623.html'>知识份子的傲慢与偏见</a></li><li><a href='程序设计里的“小聪明”（1）_20171025.html'>程序设计里的“小聪明”（1）</a></li><li><a href='程序语言不是工具_20171025.html'>程序语言不是工具</a></li><li><a href='程序语言与它们的工具_20171025.html'>程序语言与它们的工具</a></li><li><a href='程序语言理论的学习对于程序员教育的作用_20171025.html'>程序语言理论的学习对于程序员教育的作用</a></li><li><a href='程序语言的常见设计错误(2) - 试图容纳世界_20171025.html'>程序语言的常见设计错误(2) - 试图容纳世界</a></li><li><a href='给Java说句公道话_20171220.html'>给Java说句公道话</a></li><li><a href='给Texmacs的推荐信_20160623.html'>给Texmacs的推荐信</a></li><li><a href='编程的宗派_20171025.html'>编程的宗派</a></li><li><a href='编程的智慧_20171220.html'>编程的智慧</a></li><li><a href='编辑器与IDE_20171025.html'>编辑器与Ide</a></li><li><a href='网络用语_20180409.html'>网络用语</a></li><li><a href='美国企业的装嫩问题_20180302.html'>美国企业的装嫩问题</a></li><li><a href='美国公司管理层的洗脑技巧_20180302.html'>美国公司管理层的洗脑技巧</a></li><li><a href='美国社会的信息不平等现象_20180302.html'>美国社会的信息不平等现象</a></li><li><a href='自动驾驶车的责任和风险分析_20191007.html'>自动驾驶车的责任和风险分析</a></li><li><a href='解密英语语法（1）_20181124.html'>解密英语语法（1）</a></li><li><a href='解密英语语法（前言）_20181124.html'>解密英语语法（前言）</a></li><li><a href='解谜计算机科学01_20180415.html'>解谜计算机科学01</a></li><li><a href='警惕“编译器人”和“函数式程序员”_20191224.html'>警惕“编译器人”和“函数式程序员”</a></li><li><a href='让科学和理性回到计算机科学_20160623.html'>让科学和理性回到计算机科学</a></li><li><a href='论对东西的崇拜_20171025.html'>论对东西的崇拜</a></li><li><a href='论研究_20160623.html'>论研究</a></li><li><a href='谁是真正的程序语言专家_20171025.html'>谁是真正的程序语言专家</a></li><li><a href='谈 Linux，Windows 和 Mac_20171025.html'>谈 Linux，Windows 和 Mac</a></li><li><a href='谈“P=NP?”_20171025.html'>谈“P=Np?”</a></li><li><a href='谈“测试驱动的开发”_20171025.html'>谈“测试驱动的开发”</a></li><li><a href='谈惰性求值_20171025.html'>谈惰性求值</a></li><li><a href='谈程序的“通用性”_20171025.html'>谈程序的“通用性”</a></li><li><a href='谈程序的正确性_20171025.html'>谈程序的正确性</a></li><li><a href='谈语法_20171025.html'>谈语法</a></li><li><a href='谈谈 Currying_20171025.html'>谈谈 Currying</a></li><li><a href='谈谈Parser_20171220.html'>谈谈Parser</a></li></ul></li></ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="inner">
+        
+        <h1>学习的智慧</h1>
+<div class="date">2019-07-27</div>
+<p>有些人很爱学习，兢兢业业把书一个字一个字从头看到尾。好不容易学完一本书，却不知道自己学到了什么。</p>
+<p>另外一些人聪明一点，他们嘴里喜欢冒出各种术语，听得别人头都冒汗。等遇到实际问题的时候，你就发现他们虽然胸有成竹的样子，做事动作快，却把握不准方向。</p>
+<p>而垠神呢，更奇葩。垠神身边的人常发现他问一些很傻的“初学者”问题，简直让人不屑。遇到术语名词丈二和尚张冠李戴，好像不知道那些是什么。垠神居然什么都不会！</p>
+<p>每次到了需要作出关键决策的时候，垠神默默听完大家正儿八经滔滔不绝之后，有时会不经意抖出一句：“那看起来是 xx …… 那样那样弄一下，就可以了。” 你起初不信他，跟他争论，说这样不能满足我们的宏伟目标。他又轻描淡写跟你说一些，然后回头玩他的去了。</p>
+<p>他的话被你当耳边风，你坚信自己是对的。几个月之后，经过实现 N 种方案，各种教训之后，你发现自己最后选择了垠神最初指出的方向。如果你开头就试图理解他在说什么，可能几天就完工了。</p>
+<p>在 Indiana 的时候，垠神经常享受的一件事情，就是静静看着同学们喊着各种口号和术语，眼睁睁看着他们误入歧途，重蹈自己几年前犯过的错误。甚至有些人弄了一两年都没发现是死路一条，还继续在垠神面前手舞足蹈。</p>
+<p>不是垠神自私，而是很多人根本没有在意过他的看法，甚至没给他发言的机会。如果有人滔滔不绝，垠神就懒得去插嘴。如果有人如此急切的证明自己是对的，垠神总不至于热心到想打断他，讲述自己在同一路线的失败经历吧？</p>
+<h2>死知识，活知识</h2>
+<hr />
+<p>很多人坚信“知识就是力量”，可是他们不知道，知识和知识是不一样的。</p>
+<p>大部分人从学校，从书籍，从文献学知识，结果学到一堆“死知识”。要检验知识是不是死的，很简单。如果你遇到前所未见的问题，却不能把这些知识运用出来解决问题，那么这些知识就很可能是死的。</p>
+<p>死知识可能来源于真正聪明的人，但普通人往往是间接得到它。从知识的创造者到你之间，经过了多次的转手倒卖。就算你直接跟知识的鼻祖学习都不容易得到真传，普通人还得经过多次转手。每一次转手都损失里面的信息含量，增加“噪音”，甚至完全被误传。所以到你这里的时候，里面的“信噪比”就很低了。这就是为什么你学了东西，到时候却没法用出来。</p>
+<p>追根溯源之后，你会发现这知识最初的创造者经过了成百上千的错误。这就像爱迪生发明灯泡，经过了几千次失败的实验。知识的创造者把最后的成功记录在文献里发表，然后你去读它。你以为得到了最宝贵的财富，然而最宝贵的财富却是看不见的。作者从那成百上千的失败中得到的经验教训，才是最宝贵的。而从来没有人把失败写下来发表。</p>
+<p>没有这些失败的经验，你就少了所谓“思路”，那你是不大可能从一个知识发展出新的知识的。就像你读了别人的重要 paper，你是不大可能由此发展出重大想法的。你的 paper 会比别人低一个档次，往往只能修修补补，弄出一个小点的想法。而原来的作者以及他的学生们，却可以很容易的变出新的花样，因为他们知道这些路是怎么走过来的，知道许许多多没有写下来的东西。“失败是成功之母”，在我脑子里就是这个意思。</p>
+<p>垠神从很早的时候就知道了这个道理，所以他很多时候不看书，不看 paper。或者只看个开头，知道问题是什么。他看到一个问题，喜欢自己想出解决方案。他不是每次都成功，实际上他为此经历了许许多多的失败。运气好的时候，他得到跟已有成果一样的结果。运气再好一点的时候，他得到更好的结果。但他关心的不只是成功，中间的许多失败对他也是价值重大的。</p>
+<p>然后他会去找有经验的人讨论，这些人也许很厉害，早就做过深入的研究。也许是初学者，刚刚接触到同样的问题。但很奇特的是，不管跟什么样的人交流，垠神几乎总是能得到启发。即使这个人什么都不懂，现教给他也一样。通过向不懂的人解释这个问题，他经常意外的发现问题的答案。</p>
+<p>死知识是脆弱的。面对现实的问题，死知识的拥有者往往不知所措，他们的内心充满了恐惧。他们急于证明自己的能力，忙于维护各种术语和教条。因为这不是他们自己的思想，他们只能抬出权威来镇压大家：这个理论是某某大牛提出的，所以肯定能解决问题！</p>
+<p>为死知识引以为豪的人往往满口的术语，对“初级问题”不屑一顾。懂得活知识的人，却知道每一个初级甚至傻问题的价值。世界上最重大的发现，往往产生于对非常基础的问题的思考，比如“时间是什么？” 如果你觉得理所当然每个人都该知道这个问题的答案，只有白痴才会问出这种问题，那你就失去了很多产生活知识的机会。这就是为什么垠神经常问一些基础问题，因为他想知道它们背后还隐藏着什么他不知道的内涵。</p>
+<p>这就是垠神获取活知识的秘密。活知识必须靠自己创造出来，要经过许许多多的失败。如果没有经过失败，是不可能得到活知识的。</p>
+<p>由于活知识是自己创造的，其中包含的概念，垠神是不知道它们在文献中的术语的——垠神平时都懒得看文献。这就是为什么很多人跟垠神交流，发现他连基本的术语都不知道是什么。经过进一步交流，你也许会发现虽然垠神不知道一个东西的名字，他却知道这个东西是什么——以他自己的理解方式 ;)</p>
+<h2>知识的来源</h2>
+<hr />
+<p>所以呢，知识的来源最好是自己的头脑，但也不尽然。有些东西成本太高，没条件做实验就没法得到，所以还是得先获取现成的死知识。</p>
+<p>有些人说到“学习”，总是喜欢认认真真上课，抄笔记，看书。有些人喜欢勾书，把书上整整齐齐画满了横杠。兢兢业业不辞辛苦，最后却发现没学会什么。</p>
+<p>为什么会这样呢？首先因为他们没有理智的选择知识的来源。他们没有意识到，对于同一个问题有很多不同的书，不同的作者对于问题的见解深度是不一样的。如果你拿着一本书从头看到尾，而不参考其他人的，往往会误入歧途。你手上的书的作者，也许自己没看很透这个问题，只是他发表的早，占了先机，所以这书成了学校指定的，大家推崇的“经典教材”。</p>
+<p>在学校的时候，我不止一次的发现经典教材很难懂。经过不懈的努力，让自己的思维爬到一定高度之后我才发现，原来这经典教材作者很多地方没有看透彻。写书的时候他也把一些可有可无的内容写进去，引经据典的罗列出各种 paper，却忽视了最重要的思想和直觉。看这种书，你当然头痛了。</p>
+<p>我为什么能突破这道壁垒呢？第一是因为我自己动手创造了知识，第二是因为我从其他人那里学到了东西。我喜欢在网上搜索对应一个主题的内容，往往能发现一些名不见经传的人的作品，反而比著名的大牛来的深刻。当然网上内容鱼龙混杂，你也不要死钻进去出不来了。</p>
+<p>看书的时候不要老想从头看到尾。如果一个主题你看得头大，最好的办法是放下这书，去寻找对同一主题的更简单的解释。这些东西可以来源于网络，也可以来自其它书籍，也可以来自身边的人。同时保留多个这样的资源，你就可以对任何主题采用同样的“广度优先”搜索，获得深入理解的机会就会增加。</p>
+<p>都说书籍是人类的朋友，我却发现看书是很闷的事情，我很不喜欢看技术方面的书。我最喜欢的是直接跟人学东西。找到懂一点的人，跟他聊。别管他懂多少，懂多深，我发现真人几乎总是比书好。至少，你聊天的时候不会打瞌睡 ;) 而且很多时候他没告诉你答案，但通过聊天，你自己把它给想出来了。</p>
+<p>参加学术会议的时候，我会事先把会议的 paper 浏览一下，然后发现根本看不进去。带着好奇心来到会议，听了演讲还是不懂。接下来我使出绝招…… 等演讲者下台之后的休息时间，我会走到他面前说：“你好，我比较笨看不懂你的 paper。请问你能在三句话之内把里面的要点概括一下吗？” 接下来奇迹发生了，作者说出了他从未发表的直觉，仔仔细细教会了我，甚至跟我成了朋友。当然对于这样的人，我也会告诉他一些我知道的东西作为回报。</p>
+<h2>英语的重要性</h2>
+<hr />
+<p>关于学习，我最后想提醒大家的是英语的重要性。很多人英文不够好，对看英文材料有畏惧心理，只看中文内容，这使得他们很难得到准确的信息，经常被人误导，被收智商税。</p>
+<p>我从大学年代开始就很少看中文内容了。专业书籍，技术文档，全部都看英文的。现在没那么排斥中文了，然而看中文网站的时候仍然发现很多误导。国产电视剧也大部分是各种脑残剧情，误导人们的三观。</p>
+<p>不是我崇洋媚外，可是实话说，这几年中文内容虽然改进了很多，可是很多方向上的专业程度还是比英文的低很多。很多不准确，甚至根本就是错的。所以虽然我平时说话用中文，写东西用中文，却很少看中文的东西。我看的中文内容大部分是人文的，小说一类的。</p>
+<p>中文信息经常包含各种误导，危言耸听，造成了人们生活中不必要的麻烦。手机放枕边说有辐射，充电器用完不拔说会爆炸，被鱼刺扎了不敢自己弄下去，医院的椅子不敢坐说会传染皮肤病，不要喝“阴阳水”，不要吃这不要吃那全都有害，快点贷款买房快点结婚生孩子…… 各种事实上观念上文化上的误导，导致了许多国人生活方式的困窘。</p>
+<p>中国小孩子从小就学英语，到了关键时候却从来不用。我不排斥看中文内容，但我建议不要片面的只看中文内容。事无巨细都应该同时参考英文信息，多方面分析之后再做决定。生活的决策如此，专业知识的学习当然也一样。对于同一个知识点，看到中文的时候你最好搜索它的英文，对比各种资料，这样你就更容易得到准确的信息。</p>
+    </div>
+    
+    <script src="js/highlight.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script>
+        if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
+            document.body.classList.add('mobile');
+            var navbar = document.querySelector('nav.navbar');
+            if (navbar) { navbar.classList.remove('navbar-fixed-top'); }
+        }
+    </script>
+</body>
+</html>

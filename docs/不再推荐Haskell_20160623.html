@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <title>不再推荐Haskell</title>
+    <link rel="stylesheet" href="css/highlight/xcode.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-tooltips.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/post.css">
+    <script src="js/jquery.min.js"></script>
+    
+    <style>
+        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
+        /* Removed .inner/.outer overrides to respect theme post.css */
+        
+        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
+        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
+        .version-switcher a.current { font-weight: bold; color: #333; }
+        
+        .navbar-brand { font-size: 20px; font-weight: bold; }
+        .navbar-nav > li > a { font-size: 16px; } /* Slightly larger per user request */
+        
+        /* Reduce gap between navbar and content */
+        div.outer { margin-top: 30px; }
+        
+        /* Removed custom flexbox list styling to match demo vertical style */
+    </style>
+    
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-bs">
+                    <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+                <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='homepage_20231225.html'>当然我在扯淡 (2023-12-25)</a></li><li><a href='index_20220816.html'>当然我在扯淡 (2022-08-16)</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='resources_d8-3404-d8-8424_20130614.html'>D8 3404 D8 8424</a></li><li><a href='resources_demos_pysonar2_email_base64mime.py_20150408.html'>Demos Pysonar2 Email Base64Mime.Py</a></li><li><a href='resources_demos_pysonar2_email_charset.py_20150506.html'>Demos Pysonar2 Email Charset.Py</a></li><li><a href='resources_demos_pysonar2_email_encoders.py_20160822.html'>Demos Pysonar2 Email Encoders.Py</a></li><li><a href='resources_demos_pysonar2_email_errors.py_20150409.html'>Demos Pysonar2 Email Errors.Py</a></li><li><a href='resources_demos_pysonar2_email_header.py_20140305.html'>Demos Pysonar2 Email Header.Py</a></li><li><a href='resources_demos_pysonar2_email_quoprimime.py_20150408.html'>Demos Pysonar2 Email Quoprimime.Py</a></li><li><a href='resources_demos_pysonar2_re.py_20150408.html'>Demos Pysonar2 Re.Py</a></li><li><a href='resources_demos_pysonar2_sre_compile.py_20160822.html'>Demos Pysonar2 Sre Compile.Py</a></li><li><a href='resources_demos_pysonar2_sre_constants.py_20160822.html'>Demos Pysonar2 Sre Constants.Py</a></li><li><a href='resources_demos_pysonar2_sre_parse.py_20160822.html'>Demos Pysonar2 Sre Parse.Py</a></li><li><a href='resources_diff1-diff2_20200728.html'>Diff1 Diff2</a></li><li><a href='resources_mk1-mk2_20130627.html'>Mk1 Mk2</a></li><li><a href='resources_nav1-nav2_20200728.html'>Nav1 Nav2</a></li><li><a href='resources_paredit20-paredit23_20200728.html'>Paredit20 Paredit23</a></li><li><a href='resources_pydiff1-pydiff2_20130711.html'>Pydiff1 Pydiff2</a></li><li><a href='resources_simulator-mips-simulator-arm_20200728.html'>Simulator Mips Simulator Arm</a></li><li><a href='resources_typed-clojure1-typed-clojure2_20200728.html'>Typed Clojure1 Typed Clojure2</a></li></ul></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Misc <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+            <li><a href='C#的 IDisposable接口_20180302.html'>C#的 Idisposable接口</a></li><li><a href='Chez Scheme 的传说_20171025.html'>Chez Scheme 的传说</a></li><li><a href='Currying的局限性_20171025.html'>Currying的局限性</a></li><li><a href='C编译器优化过程中的Bug_20180302.html'>C编译器优化过程中的Bug</a></li><li><a href='DRY原则的误区_20171025.html'>Dry原则的误区</a></li><li><a href='DSL_20180224.html'>Dsl</a></li><li><a href='GTF： Great Teacher Friedman_20180201.html'>GTF: Great Teacher Friedman</a></li><li><a href='Hindley-Milner 类型系统的根本性错误_20171025.html'>Hindley-Milner 类型系统的根本性错误</a></li><li><a href='Kotlin 和 Checked Exception_20180224.html'>Kotlin 和 Checked Exception</a></li><li><a href='Lisp已死Lisp万岁_20171025.html'>Lisp已死Lisp万岁</a></li><li><a href='Markdown 的一些问题_20171025.html'>Markdown 的一些问题</a></li><li><a href='Oberon 操作系统：被忽略的珍宝_20171025.html'>Oberon 操作系统：被忽略的珍宝</a></li><li><a href='PySonar2与Sourcegraph集成完毕_20180201.html'>Pysonar2与Sourcegraph集成完毕</a></li><li><a href='PySonar2开源了_20180201.html'>Pysonar2开源了</a></li><li><a href='PySonar的工作原理_20180201.html'>Pysonar的工作原理</a></li><li><a href='PySonar的第二个用户_20180201.html'>Pysonar的第二个用户</a></li><li><a href='README_20160623.html'>Readme</a></li><li><a href='RubySonar：一个 Ruby 静态分析器_20180201.html'>Rubysonar：一个 Ruby 静态分析器</a></li><li><a href='Swift语言的设计错误_20180201.html'>Swift语言的设计错误</a></li><li><a href='Talk-is-not-cheap_20190911.html'>Talk-Is-Not-Cheap</a></li><li><a href='Tesla autopilot 引起致命车祸_20180302.html'>Tesla Autopilot 引起致命车祸</a></li><li><a href='Texmacs：一个真正“所见即得”的排版系统_20171025.html'>Texmacs:一个真正“所见即得”的排版系统</a></li><li><a href='Unix的缺陷_20160623.html'>Unix的缺陷</a></li><li><a href='math_20240505.html'>Math</a></li><li><a href='ydiff：结构化的程序比较_20171025.html'>Ydiff：结构化的程序比较</a></li><li><a href='“解决问题”与“消灭问题”_20171025.html'>“解决问题”与“消灭问题”</a></li><li><a href='上海_20180627.html'>上海</a></li><li><a href='不再推荐Haskell_20160623.html'>不再推荐Haskell</a></li><li><a href='丘奇和图灵_20171025.html'>丘奇和图灵</a></li><li><a href='中国人如何经营自己_20180302.html'>中国人如何经营自己</a></li><li><a href='中国人的信任危机_20190822.html'>中国人的信任危机</a></li><li><a href='中国人的鉴赏力_20180329.html'>中国人的鉴赏力</a></li><li><a href='为什么一种程序语言是不够用的_20171025.html'>为什么一种程序语言是不够用的</a></li><li><a href='为什么拍照是个坏习惯_20180911.html'>为什么拍照是个坏习惯</a></li><li><a href='为什么自动车完全不可以犯错误_20180302.html'>为什么自动车完全不可以犯错误</a></li><li><a href='为什么说面向对象编程和函数式编程都有问题_20171025.html'>为什么说面向对象编程和函数式编程都有问题</a></li><li><a href='为什么需要正则表达式_20160623.html'>为什么需要正则表达式</a></li><li><a href='人工智能的局限性_20180224.html'>人工智能的局限性</a></li><li><a href='什么是“脚本语言”_20171025.html'>什么是“脚本语言”</a></li><li><a href='什么是对用户友好_20160623.html'>什么是对用户友好</a></li><li><a href='什么是现实理想主义者_20180227.html'>什么是现实理想主义者</a></li><li><a href='什么是程序语言研究_20161202.html'>什么是程序语言研究</a></li><li><a href='什么是语义学_20160623.html'>什么是语义学</a></li><li><a href='从工具的奴隶到工具的主人_20160623.html'>从工具的奴隶到工具的主人</a></li><li><a href='代码进入闭源状态_20180409.html'>代码进入闭源状态</a></li><li><a href='伟大老师DanFriedman_20160623.html'>伟大老师Danfriedman</a></li><li><a href='关于写书_20180412.html'>关于写书</a></li><li><a href='关于微内核的对话_20190822.html'>关于微内核的对话</a></li><li><a href='关于语言的思考_20171025.html'>关于语言的思考</a></li><li><a href='关系模型的实质_20171025.html'>关系模型的实质</a></li><li><a href='其他人的BUG_20180302.html'>其他人的Bug</a></li><li><a href='再别IU_20161202.html'>再别Iu</a></li><li><a href='再见 Voxer，你好 Sourcegraph_20171025.html'>再见 Voxer，你好 Sourcegraph</a></li><li><a href='再谈P-vs-NP问题_20190812.html'>再谈P-Vs-Np问题</a></li><li><a href='写给支持和反对《完全用Linux工作》的人们_20160623.html'>写给支持和反对《完全用Linux工作》的人们</a></li><li><a href='到底是谁在欺负我们读书少_20171220.html'>到底是谁在欺负我们读书少</a></li><li><a href='十年前的我的来信_20171025.html'>十年前的我的来信</a></li><li><a href='半年来的工作感受_20171025.html'>半年来的工作感受</a></li><li><a href='原因与证明_20171025.html'>原因与证明</a></li><li><a href='反省_20160623.html'>反省</a></li><li><a href='在Sourcegraph的第三天_20180201.html'>在Sourcegraph的第三天</a></li><li><a href='如何掌握所有的程序语言_20180224.html'>如何掌握所有的程序语言</a></li><li><a href='如何掌握程序语言_20160623.html'>如何掌握程序语言</a></li><li><a href='如何阅读别人的代码_20200418.html'>如何阅读别人的代码</a></li><li><a href='学习的智慧_20190727.html'>学习的智慧</a></li><li><a href='完全用Linux工作_20130301.html'>完全用Linux工作</a></li><li><a href='对 Go 语言的综合评价_20180224.html'>对 Go 语言的综合评价</a></li><li><a href='对Parser的误解_20171220.html'>对Parser的误解</a></li><li><a href='对Rust语言的分析_20180201.html'>对Rust语言的分析</a></li><li><a href='对函数式语言的误解_20171025.html'>对函数式语言的误解</a></li><li><a href='对博士学位说永别_20160623.html'>对博士学位说永别</a></li><li><a href='对某领导离任有感_20180227.html'>对某领导离任有感</a></li><li><a href='小费和中国人的尊严_20180409.html'>小费和中国人的尊严</a></li><li><a href='康奈尔感受_20160623.html'>康奈尔感受</a></li><li><a href='怎样尊重一个程序员_20180302.html'>怎样尊重一个程序员</a></li><li><a href='我不是编译器专家_20200418.html'>我不是编译器专家</a></li><li><a href='我为什么不在做PL人_20171220.html'>我为什么不在做Pl人</a></li><li><a href='我和谷歌的故事_20160623.html'>我和谷歌的故事</a></li><li><a href='我的第一次和最后一次Hackathon经历_20180302.html'>我的第一次和最后一次Hackathon经历</a></li><li><a href='我看PhD_20160623.html'>我看Phd</a></li><li><a href='我离开了Coverity_20171025.html'>我离开了Coverity</a></li><li><a href='扶门的礼仪_20180328.html'>扶门的礼仪</a></li><li><a href='改变_20180529.html'>改变</a></li><li><a href='智能合约和形式验证_20180224.html'>智能合约和形式验证</a></li><li><a href='更新_20180409.html'>更新</a></li><li><a href='更新一下_20181015.html'>更新一下</a></li><li><a href='机器与人类智能的差距_20190916.html'>机器与人类智能的差距</a></li><li><a href='机器学习与逻辑编程_20190209.html'>机器学习与逻辑编程</a></li><li><a href='标准化试卷标记语言_20171025.html'>标准化试卷标记语言</a></li><li><a href='测试的道理_20171220.html'>测试的道理</a></li><li><a href='清华梦的粉碎_20160623.html'>清华梦的粉碎</a></li><li><a href='理论是围城_20160623.html'>理论是围城</a></li><li><a href='用脑图来分享思想_20171025.html'>用脑图来分享思想</a></li><li><a href='知识份子的傲慢与偏见_20160623.html'>知识份子的傲慢与偏见</a></li><li><a href='程序设计里的“小聪明”（1）_20171025.html'>程序设计里的“小聪明”（1）</a></li><li><a href='程序语言不是工具_20171025.html'>程序语言不是工具</a></li><li><a href='程序语言与它们的工具_20171025.html'>程序语言与它们的工具</a></li><li><a href='程序语言理论的学习对于程序员教育的作用_20171025.html'>程序语言理论的学习对于程序员教育的作用</a></li><li><a href='程序语言的常见设计错误(2) - 试图容纳世界_20171025.html'>程序语言的常见设计错误(2) - 试图容纳世界</a></li><li><a href='给Java说句公道话_20171220.html'>给Java说句公道话</a></li><li><a href='给Texmacs的推荐信_20160623.html'>给Texmacs的推荐信</a></li><li><a href='编程的宗派_20171025.html'>编程的宗派</a></li><li><a href='编程的智慧_20171220.html'>编程的智慧</a></li><li><a href='编辑器与IDE_20171025.html'>编辑器与Ide</a></li><li><a href='网络用语_20180409.html'>网络用语</a></li><li><a href='美国企业的装嫩问题_20180302.html'>美国企业的装嫩问题</a></li><li><a href='美国公司管理层的洗脑技巧_20180302.html'>美国公司管理层的洗脑技巧</a></li><li><a href='美国社会的信息不平等现象_20180302.html'>美国社会的信息不平等现象</a></li><li><a href='自动驾驶车的责任和风险分析_20191007.html'>自动驾驶车的责任和风险分析</a></li><li><a href='解密英语语法（1）_20181124.html'>解密英语语法（1）</a></li><li><a href='解密英语语法（前言）_20181124.html'>解密英语语法（前言）</a></li><li><a href='解谜计算机科学01_20180415.html'>解谜计算机科学01</a></li><li><a href='警惕“编译器人”和“函数式程序员”_20191224.html'>警惕“编译器人”和“函数式程序员”</a></li><li><a href='让科学和理性回到计算机科学_20160623.html'>让科学和理性回到计算机科学</a></li><li><a href='论对东西的崇拜_20171025.html'>论对东西的崇拜</a></li><li><a href='论研究_20160623.html'>论研究</a></li><li><a href='谁是真正的程序语言专家_20171025.html'>谁是真正的程序语言专家</a></li><li><a href='谈 Linux，Windows 和 Mac_20171025.html'>谈 Linux，Windows 和 Mac</a></li><li><a href='谈“P=NP?”_20171025.html'>谈“P=Np?”</a></li><li><a href='谈“测试驱动的开发”_20171025.html'>谈“测试驱动的开发”</a></li><li><a href='谈惰性求值_20171025.html'>谈惰性求值</a></li><li><a href='谈程序的“通用性”_20171025.html'>谈程序的“通用性”</a></li><li><a href='谈程序的正确性_20171025.html'>谈程序的正确性</a></li><li><a href='谈语法_20171025.html'>谈语法</a></li><li><a href='谈谈 Currying_20171025.html'>谈谈 Currying</a></li><li><a href='谈谈Parser_20171220.html'>谈谈Parser</a></li></ul></li></ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="inner">
+        
+        <h1>不再推荐Haskell</h1>
+<div class="date">2016-06-23</div>
+<h1>不再推荐Haskell</h1>
+<p>作者：王垠</p>
+<p>在之前的一篇博文里，我推荐从函数式语言入手掌握程序语言。推荐的两种语言是 Scheme 和 Haskell。可是出于多种原因，我必须告诉大家，我已经不再推荐 Haskell。这里的原因比较深入，可能不容易说清楚，所以只简述一下。如果有异议的话，可以来信跟我讨论，这样也可以帮我理清思路。</p>
+<p>先说说之前推荐 Haskell 的原因吧。推荐它其实是因为是它的类型关系较 Scheme 清晰，并且有模式匹配等方便的功能。可是类型系统和模式匹配，却不是 Haskell 所专有的。其它的一些语言，比如 OCaml 和 Racket 也有很方便的模式匹配和能力相近的类型系统。</p>
+<p>现在停止推荐 Haskell，其实是出于很多原因的积累：</p>
+<h3>1. 类型系统过于复杂</h3>
+<p>最开头的时候，Haskell 使用的是普通的 Hindley-Milner 类型系统（HM 系统）。使用这种类型系统的原因是因为程序员不需要写任何类型标记（typeannotation）就可以“静态”的确保类型的正确。可是这样做的代价是，这个类型系统表达能力太弱。很多程序需要拐弯抹角的绕过这个类型系统的种种限制才写得出来。比如，Haskell 的 sum type 导致 constructor 的非常麻烦的多重嵌套，这我已经在一篇英文博文里面比较隐晦的批评了一下。显然 HM 系统灵活性太差，所以 Haskell 内部后来引进了 SystemFw。可是这些系统发展了好多年，还是不能解决问题。到现在，你仍然会在 Haskell 里面遇到莫名其妙的限制。你觉得程序应该编译通过，可是它就是编译不过（比如我这篇英文博客所述）。究其原因，其实是类型系统有问题，而不是程序员的思路有问题。</p>
+<p>有的 Haskell 程序员可能会反驳，说是因为我不能理解 Haskell 的类型系统。那么我可以告诉你，我不但实现了 Haskell 和 ML 所用的 HM 系统，而且实现了比 HM 还要强大的 MLF, intersection type 等类型系统。Haskell 推导不出来的类型，我的系统可以推导出来。所以我说的话其实是出自第一手的依据。</p>
+<h3>2. 参数和返回值的类型标记很有必要</h3>
+<p>与 Haskell 同门的 SML 和 OCaml 的类型系统也有类似的问题，甚至更加严重（比如 ML 有 value restriction，导致不必要的约束和困惑）。但是很多“常规语言”，特别是像 Java,C++ 等需要类型标记的语言，却没有这个问题。很多人喜欢 Haskell 都是因为用它可以“不写类型标记”，可是现在呢，最好的 Haskell 程序员都是先把类型写下来，才开始写函数。一来这样思路清晰，你知道这函数要处理哪些类型的数据，你就明确的把它写下来，以后再来看，或者给其他人看，都一目了然。二来是因为 Haskell 的类型系统由于加入的一些“不可判定”（undecidable）的扩展功能，有时候已经无法推导出类型了。而给函数的参数和返回值加上类型标记之后，就可以轻松推导出类型。所以你看到，给参数和返回值加上类型标记，不管是对人还是对机器，都有好处。所以经过我一学期的研究得出的结论是，HM 系统的类型推导，其实是多此一举。</p>
+<p>不过需要注意的是，函数的局部变量，其实是不需要类型标记的。比如在 Java 程序里常见的：</p>
+<p>List<String> ls = newArrayList<String>();</p>
+<p>这样的赋值语句，其实是没必要在左边加一个类型标记的，因为右边的类型我们知道。在这一点上C++11 的 "auto" 是一个正确的方向。比如在 C++11 里，你可以写：</p>
+<p>auto ls =newArrayList<String>();</p>
+<p>这种类型推导不难做，基本就是一个抽象解释器。我给 Python 做的 PySonar 类型推导系统里面就实现了这样的功能。</p>
+<p>对任何语言，具体是哪些地方有必要加上类型标记呢？其实有一个很简单的方法来判断：观察信息进出函数的“接口”，把这些接口都做上标记。直观一点说，函数就像是一个电路模块，只要我们知道输入和输出是什么，那么中间的导线里面是什么，我们其实都可以推出来。类型推导的过程，就像是模拟这个电路的运行。这里函数的输入就是参数，输出就是返回值，所以基本上把这两者加上类型标记，里面的局部变量的类型都可以推出来。另外需要注意的是，如果函数使用了全局变量，那么全局变量就是函数的一个“隐性”的输入，所以如果程序有全局变量，都需要加上类型标记。</p>
+<h3>3. “纯函数式”并不是好主意</h3>
+<p>我最近常常跟同学开玩笑，说“纯函数式”语言是什么意思。“纯函数式”语言是用来描述这样一个世界的，在这个世界里，所有的东西都是“有线”的（wired）。不存在 3G，4G，不存在 wifi，收音机，卫星电视…… 所谓的 monads，其实就是这个布满电缆的世界里的“接线盒”。</p>
+<p>Haskell 编程之麻烦，就是因为这些电缆。你必须小心翼翼的把它们接在一起，安排好，否则就会有各种问题，甚至绊到脚。连生成随机数这么简单的事情，你都得学会使用各种各样的“随机数 monads”。这是因为我们需要记录随机数发生器的“状态”，所以随机数 monad 输入一个随机数发生器，返回一个随机数以及一个新的随机数发生器！想一想，在 C 语言里面，你只需要一个全局变量或者函数内部的 static 变量来记录随机数发生器的状态。到底是谁简单，谁复杂？我想你可能已经意识到，全局变量其实就是 wifi！</p>
+<p>Haskell 的支持者常说，纯函数的语言容易“推理”，容易确保程序的正确。因为它的程序就像“数学的函数”，给同一个输入，就会得到同一个输出。这叫做“referentialtransparency”。可是这种性质，真的可以让程序容易“推理”吗？如果 Haskell 的函数使用了 monads，比如“状态”（statemonad），那么这个函数的“输入”，就几乎永远不会相同。因为那个状态每次都可能变化，所以你实际上还是没法知道那里面是什么！</p>
+<p>记住这一点：世界上没有包治百病的神药。</p>
+<h3>4. 惰性求值（lazyevaluation）不是好主意</h3>
+<p>关于惰性求值，我基本同意 Robert Harper 的观点。惰性求值让类型变得混乱，让程序的时间和空间复杂度难以分析，而且跟并行计算的原则有根本性的矛盾。而惰性求值的功能，却不是经常有用的。即使需要，在普通的语言里也可以通过 thunk 来实现。所以，惰性求值带来的问题恐怕比它解决的问题还要多。</p>
+<p>很多自称“从 Haskell 衍生”的语言，很多其实都只是有其形，而无其实。一个例子就是 Bluespec，一种硬件描述语言。它虽然自称是从 Haskell 演变来的，看起来像 Haskell，但是它却不是惰性的，类型系统也很简单，所以基本上它已经不是 Haskell。打着 Haskell 的旗号，恐怕是想借助 Haskell 的名声来抬高自己，或者是因为 Bluespec 的创造者 Lennart Augustsson 最早的时候是 Haskell 的主要发起人之一。</p>
+<h3>5. 思想局限</h3>
+<p>所以综上所述，Haskell 自称的“特性”几乎被实践一一推翻。可是 Haskell 程序员往往炫耀自己的“函数式编程”水平，其实经常陷入一些很难理解的“设计模式”，无法自拔。鉴于这个原因，我停止向大家推荐 Haskell。</p>
+<p>另外需要申明一下的是，我停止推荐 Haskell 并不是因为我想力推 Scheme。实际上 Scheme 也有自己的问题，但是相对来说，它更加简单易懂，符合学习的需要。另外，以前对 C 和 C++ 的批评也许过于偏激。最近为了在 LLVM 上做一些事情，开始重新理解C++，发现它做的好些事情其实是挺不错的，甚至超过好些最炫的，带有“dependenttype”的函数式语言。所以现在我觉得，其实世界上的语言并没有什么绝对的标准。在一段时间认为是错的东西，可能却是对的。所以不用盲目的排斥一些语言，把它们都拿来看一下，互相对比，才会知道到底什么是好的。</p>
+    </div>
+    
+    <script src="js/highlight.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script>
+        if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
+            document.body.classList.add('mobile');
+            var navbar = document.querySelector('nav.navbar');
+            if (navbar) { navbar.classList.remove('navbar-fixed-top'); }
+        }
+    </script>
+</body>
+</html>
