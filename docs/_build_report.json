@@ -1,12 +1,11 @@
 {
-  "generated_at": "2026-01-26T19:25:37",
+  "generated_at": "2026-01-28T17:30:49",
   "archives_dir": "archives",
   "output_dir": "docs",
-  "articles_in_index": 349,
-  "dropped_duplicates_count": 11,
+  "articles_in_index": 343,
+  "dropped_duplicates_count": 10,
   "dropped_duplicates": [
     "PySonar2开源了",
-    "对Rust语言的分析",
     "PySonar的工作原理",
     "Currying的局限性",
     "我的第一次和最后一次Hackathon经历",
@@ -17,7 +16,7 @@
     "为什么一种程序语言是不够用的",
     "在Sourcegraph的第三天"
   ],
-  "processed_groups_total": 381,
+  "processed_groups_total": 374,
   "skipped_invalid_reason_counts": {
     "junk-domain-parking": 57,
     "empty": 1
