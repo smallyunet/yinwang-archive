@@ -14,6 +14,53 @@ STYLE_OUTPUT = os.path.join(OUTPUT_DIR, "style.css")
 DOMAIN = "yinwang.org"
 MIN_YEAR = "2000"
 
+DISCLAIMER_AUTHOR = "王垠"
+DISCLAIMER_BLOG_URL = "https://www.yinwang.org/"
+
+
+def build_disclaimer_footer_html(variant: str) -> str:
+    """Returns an HTML footer disclaimer.
+
+    variant:
+      - "templated": uses classes expected to exist on generated pages (bootstrap).
+      - "raw": inline styles for pages that keep original HTML/CSS.
+    """
+    if variant == "raw":
+        return (
+            "\n"
+            "<div style=\"margin:40px auto 30px; padding:0 20px; max-width:1000px; font-size:14px; line-height:1.6; text-align:center;\">"
+            "<p style=\"margin:0;\">"
+            "声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。"
+            f"原文作者：{DISCLAIMER_AUTHOR}；原博客："
+            f"<a href=\"{DISCLAIMER_BLOG_URL}\" target=\"_blank\" rel=\"noopener noreferrer\">{DISCLAIMER_BLOG_URL}</a>"
+            "</p>"
+            "</div>\n"
+        )
+
+    # templated
+    return (
+        "\n"
+        "<div class=\"site-footer\">"
+        "  <p class=\"text-center text-muted\">"
+        "声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。"
+        f"原文作者：{DISCLAIMER_AUTHOR}；原博客："
+        f"<a href=\"{DISCLAIMER_BLOG_URL}\" target=\"_blank\" rel=\"noopener noreferrer\">{DISCLAIMER_BLOG_URL}</a>"
+        "  </p>"
+        "</div>\n"
+    )
+
+
+def inject_footer_before_body_close(html: str, footer_html: str) -> str:
+    """Injects footer_html before </body> if present, else before </html>, else appends."""
+    if not html or not footer_html:
+        return html
+
+    if re.search(r"</body\\s*>", html, flags=re.IGNORECASE):
+        return re.sub(r"</body\\s*>", footer_html + "</body>", html, count=1, flags=re.IGNORECASE)
+    if re.search(r"</html\\s*>", html, flags=re.IGNORECASE):
+        return re.sub(r"</html\\s*>", footer_html + "</html>", html, count=1, flags=re.IGNORECASE)
+    return html + footer_html
+
 def parse_article_date(filename):
     """
     Parses the article date (publication date) from the filename.
@@ -475,6 +522,9 @@ def process_archives():
         
         /* Reduce gap between navbar and content */
         div.outer { margin-top: 30px; }
+
+        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
+        .site-footer a { color: inherit; text-decoration: underline; }
         
         /* Removed custom flexbox list styling to match demo vertical style */
     </style>
@@ -491,7 +541,7 @@ def process_archives():
              for ver in versions:
                  # Ensure output directory exists
                  with open(os.path.join(OUTPUT_DIR, ver['filename']), 'w', encoding='utf-8') as f:
-                     f.write(ver['content'])
+                     f.write(inject_footer_before_body_close(ver['content'], build_disclaimer_footer_html("raw")))
              continue
 
         # Generate version switcher for history pages (homepage/index) or normal pages
@@ -533,6 +583,9 @@ def process_archives():
                          content = re.sub(r'(<body[^>]*>)', r'\1' + style_block + local_switcher_html, content, count=1, flags=re.IGNORECASE)
                     else:
                          content = style_block + local_switcher_html + content
+
+                 # Add disclaimer footer at the very bottom
+                 content = inject_footer_before_body_close(content, build_disclaimer_footer_html("raw"))
 
                  with open(os.path.join(OUTPUT_DIR, ver['filename']), 'w', encoding='utf-8') as f:
                      f.write(content)
@@ -596,6 +649,7 @@ def process_archives():
                 switcher_html = f'<div class="version-switcher"><span>Versions:</span>{" ".join(links)}</div>'
 
             # Template
+            disclaimer_footer_html = build_disclaimer_footer_html("templated")
             new_html = f"""<!DOCTYPE html>
 <html>
 <head>
@@ -630,6 +684,8 @@ def process_archives():
         {switcher_html}
         {raw_body}
     </div>
+
+    {disclaimer_footer_html}
     
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
@@ -770,8 +826,8 @@ def process_archives():
         
     html_lines.append("        </ul>")
     html_lines.append("    </div>") 
-    
-    html_lines.append("    <div class='footer'><p class='text-center'>Archived from yinwang.org</p></div>")
+
+    html_lines.append(build_disclaimer_footer_html("templated"))
     html_lines.append("    <script src='js/highlight.min.js'></script>")
     html_lines.append("    <script src='js/main.js'></script>")
     html_lines.append("    <script src='js/bootstrap/bootstrap.min.js'></script>")
