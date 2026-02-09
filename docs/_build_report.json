@@ -1,22 +1,19 @@
 {
-  "generated_at": "2026-02-06T05:54:18",
+  "generated_at": "2026-02-09T13:15:54",
   "archives_dir": "archives",
   "output_dir": "docs",
-  "articles_in_index": 341,
-  "dropped_duplicates_count": 10,
+  "articles_in_index": 336,
+  "dropped_duplicates_count": 7,
   "dropped_duplicates": [
     "PySonar2开源了",
     "PySonar的工作原理",
     "Currying的局限性",
-    "我的第一次和最后一次Hackathon经历",
     "PySonar2与Sourcegraph集成完毕",
     "Swift语言的设计错误",
-    "C#的 IDisposable接口",
     "PySonar的第二个用户",
-    "为什么一种程序语言是不够用的",
-    "在Sourcegraph的第三天"
+    "为什么一种程序语言是不够用的"
   ],
-  "processed_groups_total": 372,
+  "processed_groups_total": 364,
   "skipped_invalid_reason_counts": {
     "junk-domain-parking": 57,
     "empty": 1
