@@ -1,0 +1,26 @@
+{
+  "description": "Sources used to replace the synthetic 2009-01-01 placeholder. Dates are only recorded when a day-level trace was found.",
+  "placeholder": "2009-01-01",
+  "records": [
+    {"title": "写给支持和反对《完全用Linux工作》的人们", "date": "2004-08-26", "confidence": "high", "sources": ["https://blog.delphij.net/posts/2004/08/linux/"], "note": "The preserved article itself ends with 2004.8.26; the mirror was published the following day."},
+    {"title": "Unix的缺陷", "date": "2012-04-11", "confidence": "high", "sources": ["http://blog.sina.com.cn/s/blog_5d90e82f01014k5j.html", "https://github.com/jrtxio/yinwangdl/blob/main/posts/Unix%20%E7%9A%84%E7%BC%BA%E9%99%B7.md"]},
+    {"title": "我和谷歌的故事", "date": "2012-07-12", "confidence": "high", "sources": ["https://henix.github.io/feeds/yinwang/", "https://github.com/jrtxio/yinwangdl/blob/main/posts/%E6%88%91%E5%92%8C%20Google%20%E7%9A%84%E6%95%85%E4%BA%8B%EF%BC%882012%20%E5%B9%B4%E5%8E%9F%E7%89%88%EF%BC%89.md"]},
+    {"title": "知识份子的傲慢与偏见", "date": "2012-09-09", "confidence": "high", "sources": ["http://blog.sina.com.cn/s/blog_5d90e82f01019m9p.html", "https://github.com/jrtxio/yinwangdl/blob/main/posts/%E7%9F%A5%E8%AF%86%E5%88%86%E5%AD%90%E7%9A%84%E5%82%B2%E6%85%A2%E4%B8%8E%E5%81%8F%E8%A7%81.md"]},
+    {"title": "对博士学位说永别", "date": "2012-09-15", "confidence": "high", "sources": ["https://github.com/jrtxio/yinwangdl/blob/main/posts/%E5%AF%B9%E5%8D%9A%E5%A3%AB%E5%AD%A6%E4%BD%8D%E8%AF%B4%E6%B0%B8%E5%88%AB.md"]},
+    {"title": "不再推荐Haskell", "date": "2012-09-14", "confidence": "medium", "sources": ["https://www.cnblogs.com/lexus?page=309", "https://www.cnblogs.com/cmt/archive/2012/09/17/2688162.html"], "note": "A same-day contemporary news repost establishes the article was public no later than 2012-09-14."},
+    {"title": "Texmacs：一个真正“所见即得”的排版系统", "date": "2012-09-18", "confidence": "high", "sources": ["https://henix.github.io/feeds/yinwang/", "https://github.com/miaopeng/yinwang0-blog-cn/blob/master/_posts/2012-09-18-texmacs.md"]},
+    {"title": "Lisp已死Lisp万岁", "date": "2013-03-26", "confidence": "high", "sources": ["https://github.com/jrtxio/yinwangdl/blob/main/posts/Lisp%20%E5%B7%B2%E6%AD%BB%EF%BC%8CLisp%20%E4%B8%87%E5%B2%81%EF%BC%81.md"]},
+    {"title": "程序设计里的“小聪明”（1）", "date": "2013-03-15", "confidence": "high", "sources": ["https://henix.github.io/feeds/yinwang/", "https://github.com/miaopeng/yinwang0-blog-cn/blob/master/_posts/2013-03-15-language-design-mistake1.md"]},
+    {"title": "Currying的局限性", "date": "2013-04-02", "confidence": "high", "sources": ["https://github.com/jrtxio/yinwangdl/blob/main/posts/Currying%20%E7%9A%84%E5%B1%80%E9%99%90%E6%80%A7.md"]},
+    {"title": "ydiff：结构化的程序比较", "date": "2013-04-21", "confidence": "high", "sources": ["https://github.com/jrtxio/yinwangdl/blob/main/posts/Ydiff%20%E7%BB%93%E6%9E%84%E5%8C%96%E7%9A%84%E7%A8%8B%E5%BA%8F%E6%AF%94%E8%BE%83.md"]},
+    {"title": "PySonar的工作原理", "date": "2013-06-21", "confidence": "high", "sources": ["http://www.yinwang.org/blog-cn/2013/06/21/pysonar-slides", "https://github.com/jrtxio/yinwangdl/blob/main/posts/PySonar%20%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86.md"]},
+    {"title": "为什么一种程序语言是不够用的", "date": "2013-06-23", "confidence": "high", "sources": ["http://www.yinwang.org/blog-cn/2013/06/23/one-lang-not-enough/", "https://github.com/jrtxio/yinwangdl/blob/main/posts/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%80%E7%A7%8D%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80%E6%98%AF%E4%B8%8D%E5%A4%9F%E7%94%A8%E7%9A%84.md"]},
+    {"title": "PySonar的第二个用户", "date": "2013-10-06", "confidence": "high", "sources": ["https://github.com/miaopeng/yinwang0-blog-cn/blob/master/_posts/2013-10-06-sourcegraph.md"]},
+    {"title": "PySonar2开源了", "date": "2013-10-29", "confidence": "high", "sources": ["http://www.yinwang.org/blog-cn/2013/10/29/pysonar2", "https://global.v2ex.com/t/87312"]},
+    {"title": "PySonar2与Sourcegraph集成完毕", "date": "2013-11-25", "confidence": "high", "sources": ["https://www.yinwang.org/posts/pysonar2-sg", "https://github.com/jrtxio/yinwangdl/blob/main/posts/PySonar2%20%E4%B8%8E%20Sourcegraph%20%E9%9B%86%E6%88%90%E5%AE%8C%E6%AF%95.md"]},
+    {"title": "为什么说面向对象编程和函数式编程都有问题", "date": "2013-11-26", "confidence": "medium", "sources": ["https://www.aqee.net/post/whats-wrong-with-oop-and-fp/"], "note": "Date of the preserved Chinese translation trace."},
+    {"title": "Swift语言的设计错误", "date": "2016-06-06", "confidence": "high", "sources": ["https://www.yinwang.org/posts/swift", "https://github.com/jrtxio/yinwangdl/blob/main/posts/Swift%20%E8%AF%AD%E8%A8%80%E7%9A%84%E8%AE%BE%E8%AE%A1%E9%94%99%E8%AF%AF.md"]},
+    {"title": "再谈P-vs-NP问题", "date": "2019-07-21", "confidence": "high", "sources": ["https://www.yinwang.org/posts/pnp2", "https://github.com/jrtxio/yinwangdl/blob/main/posts/%E5%86%8D%E8%B0%88%E2%80%9CP%20vs%20NP%E2%80%9D%E9%97%AE%E9%A2%98.md"]},
+    {"title": "Talk-is-not-cheap", "date": "2019-09-11", "confidence": "high", "sources": ["https://www.yinwang.org/posts/talk-is-not-cheap", "https://github.com/jrtxio/yinwangdl/blob/main/posts/Talk%20is%20not%20cheap.md"]}
+  ]
+}
