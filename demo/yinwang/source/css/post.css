@@ -22,6 +22,15 @@ body.mobile {
   font-size: 32px;
 }
 
+.navbar .navbar-nav > li > a {
+  font-size: 24px;
+}
+
+body.mobile .navbar .navbar-nav > li > a {
+  font-size: 32px;
+  line-height: 40px;
+}
+
 P,
 li {
   line-height: 1.8;

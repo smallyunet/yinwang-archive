@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-21T13:00:40",
+  "generated_at": "2026-07-25T15:27:52",
   "archives_dir": "archives",
   "output_dir": "docs",
-  "articles_in_index": 337,
+  "articles_in_index": 336,
   "dropped_duplicates_count": 0,
   "dropped_duplicates": [],
-  "processed_groups_total": 358,
+  "processed_groups_total": 357,
   "skipped_invalid_reason_counts": {
     "junk-domain-parking": 57,
     "empty": 1

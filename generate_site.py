@@ -518,7 +518,8 @@ def process_archives():
         .version-switcher a.current { font-weight: bold; color: #333; }
         
         .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 16px; } /* Slightly larger per user request */
+        .navbar-nav > li > a { font-size: 24px; }
+        body.mobile .navbar-nav > li > a { font-size: 32px; line-height: 40px; }
         
         /* Reduce gap between navbar and content */
         div.outer { margin-top: 30px; }

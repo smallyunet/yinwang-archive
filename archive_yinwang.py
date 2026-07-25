@@ -169,6 +169,13 @@ def get_safe_filename(original_url, timestamp):
     path = parsed.path.strip("/")
     if not path:
         path = "index"
+
+    # The author renamed this article while keeping its publication date and
+    # title. Preserve both snapshots under one canonical slug so the site
+    # generator presents them as versions of the same article.
+    path = {
+        "blog-cn/2025/04/27/past-year": "blog-cn/2025/04/27/sabbatical",
+    }.get(path, path)
     
     # special case for homepage
     p = original_url.lower()
