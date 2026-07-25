@@ -1,9 +1,10 @@
 {
-  "description": "Sources used to replace the synthetic 2009-01-01 placeholder. Dates are only recorded when a day-level trace was found.",
+  "description": "Sources used to replace the synthetic 2009-01-01 placeholder. Month-only dates are explicitly marked when no reliable day-level trace was found.",
   "placeholder": "2009-01-01",
   "records": [
     {"title": "写给支持和反对《完全用Linux工作》的人们", "date": "2004-08-26", "confidence": "high", "sources": ["https://blog.delphij.net/posts/2004/08/linux/"], "note": "The preserved article itself ends with 2004.8.26; the mirror was published the following day."},
     {"title": "Unix的缺陷", "date": "2012-04-11", "confidence": "high", "sources": ["http://blog.sina.com.cn/s/blog_5d90e82f01014k5j.html", "https://github.com/jrtxio/yinwangdl/blob/main/posts/Unix%20%E7%9A%84%E7%BC%BA%E9%99%B7.md"]},
+    {"title": "程序语言理论的学习对于程序员教育的作用", "date": "2012-06-13", "confidence": "medium", "sources": ["https://topic.alibabacloud.com/a/the-role-of-programming-language-theory-in-programmer-education_2_65_30424478.html", "https://www.cnblogs.com/zhanglong8681"], "note": "A preserved mirror explicitly identifies 2012-06-13 as the publication date on Wang Yin's Sina blog; the original Sina article is no longer available."},
     {"title": "我和谷歌的故事", "date": "2012-07-12", "confidence": "high", "sources": ["https://henix.github.io/feeds/yinwang/", "https://github.com/jrtxio/yinwangdl/blob/main/posts/%E6%88%91%E5%92%8C%20Google%20%E7%9A%84%E6%95%85%E4%BA%8B%EF%BC%882012%20%E5%B9%B4%E5%8E%9F%E7%89%88%EF%BC%89.md"]},
     {"title": "知识份子的傲慢与偏见", "date": "2012-09-09", "confidence": "high", "sources": ["http://blog.sina.com.cn/s/blog_5d90e82f01019m9p.html", "https://github.com/jrtxio/yinwangdl/blob/main/posts/%E7%9F%A5%E8%AF%86%E5%88%86%E5%AD%90%E7%9A%84%E5%82%B2%E6%85%A2%E4%B8%8E%E5%81%8F%E8%A7%81.md"]},
     {"title": "对博士学位说永别", "date": "2012-09-15", "confidence": "high", "sources": ["https://github.com/jrtxio/yinwangdl/blob/main/posts/%E5%AF%B9%E5%8D%9A%E5%A3%AB%E5%AD%A6%E4%BD%8D%E8%AF%B4%E6%B0%B8%E5%88%AB.md"]},
@@ -11,6 +12,7 @@
     {"title": "Texmacs：一个真正“所见即得”的排版系统", "date": "2012-09-18", "confidence": "high", "sources": ["https://henix.github.io/feeds/yinwang/", "https://github.com/miaopeng/yinwang0-blog-cn/blob/master/_posts/2012-09-18-texmacs.md"]},
     {"title": "Lisp已死Lisp万岁", "date": "2013-03-26", "confidence": "high", "sources": ["https://github.com/jrtxio/yinwangdl/blob/main/posts/Lisp%20%E5%B7%B2%E6%AD%BB%EF%BC%8CLisp%20%E4%B8%87%E5%B2%81%EF%BC%81.md"]},
     {"title": "程序设计里的“小聪明”（1）", "date": "2013-03-15", "confidence": "high", "sources": ["https://henix.github.io/feeds/yinwang/", "https://github.com/miaopeng/yinwang0-blog-cn/blob/master/_posts/2013-03-15-language-design-mistake1.md"]},
+    {"title": "谈“P=NP?”", "date": "2013-03", "precision": "month", "confidence": "medium", "sources": ["https://finance.sina.com.cn/tech/csj/2021-05-26/doc-ikmxzfmm4752104.shtml", "https://global.v2ex.com/t/72074"], "note": "A later profile identifies March 2013; contemporary traces show the separate article was announced around March 19 and had disappeared by June 11, but no reliable day-level trace was found."},
     {"title": "Currying的局限性", "date": "2013-04-02", "confidence": "high", "sources": ["https://github.com/jrtxio/yinwangdl/blob/main/posts/Currying%20%E7%9A%84%E5%B1%80%E9%99%90%E6%80%A7.md"]},
     {"title": "ydiff：结构化的程序比较", "date": "2013-04-21", "confidence": "high", "sources": ["https://github.com/jrtxio/yinwangdl/blob/main/posts/Ydiff%20%E7%BB%93%E6%9E%84%E5%8C%96%E7%9A%84%E7%A8%8B%E5%BA%8F%E6%AF%94%E8%BE%83.md"]},
     {"title": "PySonar的工作原理", "date": "2013-06-21", "confidence": "high", "sources": ["http://www.yinwang.org/blog-cn/2013/06/21/pysonar-slides", "https://github.com/jrtxio/yinwangdl/blob/main/posts/PySonar%20%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86.md"]},

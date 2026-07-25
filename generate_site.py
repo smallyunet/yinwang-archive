@@ -14,6 +14,11 @@ STYLE_OUTPUT = os.path.join(OUTPUT_DIR, "style.css")
 DOMAIN = "yinwang.org"
 MIN_YEAR = "2000"
 
+LEGACY_REDIRECTS = {
+    "blog-cn_20090101_谈P=NP_20090101.html": "blog-cn_2013_03_谈P=NP_20171025.html",
+    "blog-cn_20090101_程序语言理论的学习对于程序员教育的作用_20090101.html": "blog-cn_20120613_程序语言理论的学习对于程序员教育的作用_20120613.html",
+}
+
 DISCLAIMER_AUTHOR = "王垠"
 DISCLAIMER_BLOG_URL = "https://www.yinwang.org/"
 
@@ -64,12 +69,19 @@ def inject_footer_before_body_close(html: str, footer_html: str) -> str:
 def parse_article_date(filename):
     """
     Parses the article date (publication date) from the filename.
-    Typically finds the first YYYY_MM_DD or YYYYMMDD pattern.
+    Typically finds the first YYYY_MM_DD, YYYY_MM, or YYYYMMDD pattern.
+    Month-only dates are used when the surviving evidence does not establish
+    an exact publication day.
     """
     # Try YYYY_MM_DD
     match = re.search(r'(\d{4})_(\d{2})_(\d{2})', filename)
     if match:
         return f"{match.group(1)}-{match.group(2)}-{match.group(3)}"
+
+    # Try YYYY_MM, but do not treat the prefix of YYYY_MM_DD as month-only.
+    match = re.search(r'(\d{4})_(\d{2})(?!_\d{2})', filename)
+    if match:
+        return f"{match.group(1)}-{match.group(2)}"
     
     # Try YYYYMMDD (often at end of filename or after underscore)
     match = re.search(r'_(\d{4})(\d{2})(\d{2})', filename)
@@ -131,7 +143,7 @@ def is_archive_year_allowed(version_date):
 def extract_metadata(content, filename):
     """
     Extract date and title from content.
-    Returns a dict with 'date' (YYYY-MM-DD or None) and 'title'.
+    Returns a dict with 'date' (YYYY-MM-DD, YYYY-MM, or None) and 'title'.
     """
     title = extract_title(content, filename)
     
@@ -142,11 +154,16 @@ def extract_metadata(content, filename):
     if date_match:
         date = date_match.group(1).replace('/', '-')
     else:
-        # Fallback: Extract date from filename (e.g., _20130504.html)
-        filename_date_match = re.search(r'_(\d{8})\.html$', filename)
-        if filename_date_match:
-            d_str = filename_date_match.group(1)
-            date = f"{d_str[:4]}-{d_str[4:6]}-{d_str[6:]}"
+        # Preserve explicitly month-precision dates without inventing a day.
+        month_date_match = re.search(
+            r'<div[^>]*class=["\'][^"\']*\bdate\b[^"\']*["\'][^>]*>\s*(\d{4}[-/]\d{1,2})\s*</div>',
+            content,
+            re.IGNORECASE,
+        )
+        if month_date_match:
+            date = month_date_match.group(1).replace('/', '-')
+        else:
+            date = parse_article_date(filename)
 
     return {
         'date': date,
@@ -518,8 +535,8 @@ def process_archives():
         .version-switcher a.current { font-weight: bold; color: #333; }
         
         .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 24px; }
-        body.mobile .navbar-nav > li > a { font-size: 32px; line-height: 40px; }
+        .navbar-nav > li > a { font-size: 20px; }
+        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
         
         /* Reduce gap between navbar and content */
         div.outer { margin-top: 30px; }
@@ -704,6 +721,22 @@ def process_archives():
             with open(os.path.join(OUTPUT_DIR, ver['filename']), 'w', encoding='utf-8') as f:
                 f.write(new_html)
 
+    # Preserve published archive URLs when correcting imported metadata.
+    for old_filename, new_filename in LEGACY_REDIRECTS.items():
+        redirect_html = f"""<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="refresh" content="0; url={new_filename}">
+    <link rel="canonical" href="{new_filename}">
+    <title>Redirecting…</title>
+</head>
+<body>
+    <p><a href="{new_filename}">文章已移动，点击这里继续阅读。</a></p>
+</body>
+</html>"""
+        with open(os.path.join(OUTPUT_DIR, old_filename), 'w', encoding='utf-8') as f:
+            f.write(redirect_html)
 
     # 6. Generate Index
     articles_meta = [v['latest_meta'] for k, v in processed_groups.items() if v['type'] == 'article']

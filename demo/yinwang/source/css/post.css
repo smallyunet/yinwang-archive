@@ -23,12 +23,12 @@ body.mobile {
 }
 
 .navbar .navbar-nav > li > a {
-  font-size: 24px;
+  font-size: 20px;
 }
 
 body.mobile .navbar .navbar-nav > li > a {
-  font-size: 32px;
-  line-height: 40px;
+  font-size: 17px;
+  line-height: 24px;
 }
 
 P,
