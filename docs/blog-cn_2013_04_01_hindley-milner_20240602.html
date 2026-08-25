@@ -57,10 +57,10 @@
         </section>
 
 
-    <main class="inner" id="main-content">
+    <div class="inner" id="main-content" role="main">
 
         <div>
-            <h1 class="article-title">Hindley-Milner 类型系统的根本性错误</h1>
+            <h2 class="article-title">Hindley-Milner 类型系统的根本性错误</h2>
             <p>之前的一个时间，我曾经公开过这样一段<a href="http://www.tudou.com/programs/view/GU9GtDuWSMk">幻灯片</a>，它是2012年10月的时候，我在 Indiana 大学做的最后一次演讲。由于当时的委婉，我并没有直接说出这些结论的重要性。其实它揭示了 ML 和 Haskell 这类基于 Hindley-Milner 类型系统的语言的一个根本性的错误。</p>
 
 <p>这个错误来源于对一阶逻辑的“全称量词”（universal quantifier，通常写作∀）与程序函数之间关系的误解。在 HM 系统里面，多态（polymorphic）的函数能够被推导为含有全称量词的类型，比如 <code class="language-plaintext highlighter-rouge">\x-&gt;x</code> 的类型被推导为 <code class="language-plaintext highlighter-rouge">∀a.a-&gt;a</code>，但 HM 系统决定这个全称量词的位置的方式，却是没有原则的。这就导致了类型变量（type variable）的作用域（scope）的偏差。</p>
@@ -80,7 +80,7 @@
 <p>为了达到完全通用的模块化类型检查，却又允许多态函数的存在，我们终究会需要在函数的参数位置手工写上类型，这样我们就完全的丧失了 HM 系统设计的初衷。</p>
 
         </div>
-    </main>
+    </div>
 
 
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>

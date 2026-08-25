@@ -212,21 +212,34 @@ def clean_archived_page_chrome(raw_body):
 
 
 def normalize_article_title(raw_body, title):
-    """Give confirmed article-title headings one consistent semantic style."""
+    """Mark the article title without changing its archived heading level/style."""
     heading = re.search(
-        r'<h(?P<level>[12])\b[^>]*>(?P<inner>.*?)</h(?P=level)>',
+        r'<h(?P<level>[12])\b(?P<attrs>[^>]*)>(?P<inner>.*?)</h(?P=level)>',
         raw_body,
         re.IGNORECASE | re.DOTALL,
     )
     escaped_title = html_lib.escape(title)
     if not heading:
-        return f'<h1 class="article-title">{escaped_title}</h1>\n{raw_body}'
+        return f'<h2 class="article-title">{escaped_title}</h2>\n{raw_body}'
 
     visible_heading = html_lib.unescape(strip_tags(heading.group('inner'))).strip()
     if normalize_title_key(visible_heading) != normalize_title_key(title):
-        return f'<h1 class="article-title">{escaped_title}</h1>\n{raw_body}'
+        return f'<h2 class="article-title">{escaped_title}</h2>\n{raw_body}'
 
-    normalized_heading = f'<h1 class="article-title">{heading.group("inner").strip()}</h1>'
+    attrs = heading.group('attrs')
+    class_match = re.search(r'\bclass=(["\'])(.*?)\1', attrs, re.IGNORECASE | re.DOTALL)
+    if class_match:
+        classes = class_match.group(2).split()
+        if 'article-title' not in classes:
+            classes.append('article-title')
+        replacement = f'class={class_match.group(1)}{" ".join(classes)}{class_match.group(1)}'
+        attrs = attrs[:class_match.start()] + replacement + attrs[class_match.end():]
+    else:
+        attrs = attrs.rstrip() + ' class="article-title"'
+    level = heading.group('level')
+    normalized_heading = (
+        f'<h{level}{attrs}>{heading.group("inner").strip()}</h{level}>'
+    )
     return raw_body[:heading.start()] + normalized_heading + raw_body[heading.end():]
 
 def get_base_name_and_version(filename):
@@ -812,26 +825,6 @@ def process_archives():
         .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
         .version-switcher a.current { font-weight: bold; color: #333; }
 
-        h1.article-title {
-            width: auto;
-            margin: 0 0 1.15em;
-            padding: 0;
-            border: 0;
-            color: #555;
-            font-size: clamp(1.55em, 4vw, 2em);
-            line-height: 1.35;
-            overflow-wrap: anywhere;
-            text-wrap: balance;
-        }
-        h1.article-title + .date,
-        h1.article-title + .time {
-            margin-top: -1.2em;
-            margin-bottom: 2em;
-            color: #777;
-            text-align: center;
-            font-size: .85em;
-        }
-
         .version-nav { margin-right: 8px; }
         .skip-link {
             position: fixed;
@@ -1190,7 +1183,7 @@ def process_archives():
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">{navbar_html}</div>
         </div>
     </nav>
-    <main class="inner diff-page" id="main-content">
+    <div class="inner diff-page" id="main-content" role="main">
         <header class="diff-header">
             <h1 class="article-title" id="diff-title">版本差异</h1>
             <div class="diff-range" id="diff-range"></div>
@@ -1203,7 +1196,7 @@ def process_archives():
         <p class="diff-loading" id="diff-loading" role="status">正在载入差异…</p>
         <p class="diff-error" id="diff-error" role="alert" hidden></p>
         <div id="diff-content"></div>
-    </main>
+    </div>
     {build_disclaimer_footer_html("templated")}
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
@@ -1377,10 +1370,10 @@ def process_archives():
 
     {version_panel_html}
 
-    <main class="inner" id="main-content">
+    <div class="inner" id="main-content" role="main">
         {switcher_html}
         {raw_body}
-    </main>
+    </div>
 
     {disclaimer_footer_html}
     
@@ -1481,7 +1474,7 @@ def process_archives():
         'dropped_duplicates': [d['title'] for d in dropped_duplicates],
         'processed_groups_total': len(processed_groups),
         'style_and_diff': {
-            'normalized_article_versions': sum(
+            'preserved_article_title_versions': sum(
                 len(group['versions'])
                 for group in processed_groups.values()
                 if group['type'] == 'article'

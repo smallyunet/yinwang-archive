@@ -57,10 +57,10 @@
         </section>
 
 
-    <main class="inner" id="main-content">
+    <div class="inner" id="main-content" role="main">
 
         <div>
-            <h1 class="article-title">函数式语言的宗教</h1>
+            <h2 class="article-title">函数式语言的宗教</h2>
             <p>很早的时候，“函数式语言”对于我来说就是 Lisp，因为 Lisp 可以在程序的几乎任意位置定义函数，并且把它们作为值来传递（这叫做 first-class function）。可是到后来有人告诉我，Lisp 其实不算“函数式语言”，因为 Lisp 的函数不“纯”（pure）。</p>
 
 <p>所谓“纯函数”，就是像数学函数一样，你给它同样的输入，它就给你同样的输出。然后你就发现在这种定义下，几乎所有程序语言里面的随机数函数（<code class="highlighter-rouge">random</code>），都不是“纯函数”。因为每一次调用 <code class="highlighter-rouge">random()</code>，输入都是一样的（没有参数），但每次会输出不同的随机数。他们告诉我，不纯的函数容易出错，没法验证它的正确性。</p>
@@ -153,7 +153,7 @@ int h(int z) {
 <p>说了这么多，对于“函数式语言”这一概念的误解，应该消除得差不多了。其实“函数式语言”唯一的要求，应该是能够在任意位置定义函数，并且能够把函数作为值传递，不管这函数是“纯”的还是“不纯”的。所以像 Lisp 和 ML 这样的语言，其实完全符合“函数式语言”这一称号。</p>
 
         </div>
-    </main>
+    </div>
 
 
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>

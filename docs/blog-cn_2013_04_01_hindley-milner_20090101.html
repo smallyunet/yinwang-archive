@@ -57,7 +57,7 @@
         </section>
 
 
-    <main class="inner" id="main-content">
+    <div class="inner" id="main-content" role="main">
 
         <h1 class="article-title">Hindley-Milner 类型系统的根本性错误</h1>
 <div class="date">2009-01-01</div>
@@ -71,7 +71,7 @@
 <p>为了弥补这个错误，30多年来，许多的人发表了许多的论文，提出了很多的“改进措施”，比如 value restriction，MLF，等等。但是我的研究却显示，所有这些“改进措施”都是丑陋的 hack。因为他们没有看到问题的根源，所以他们的方案只对一些特殊情况起作用，而不能通用。为此，我可以轻而易举的写出正确的程序，而让它不能通过这些类型系统的检查，比如像我这篇英文博文所示。如果你看到了问题的根源，就会发现 HM 系统的这个错误是无法弥补的，因为它触及了 HM 系统的根基。为了根治这个问题，let-polymorphism 必须被去除掉。</p>
 <p>我为此提出了自己的解决方案：在 lambda 的位置进行“generalization”，也就是说把 ∀ 放在 lambda 的位置，而不是 let。这样一来 let-polymorphism 就不存在了。但是这样一来，HM 系统就不再是 HM 系统，因为它的“模块化类型推导”的性质，就会名存实亡。由于类型里面含有程序的“控制结构”，这个类型系统表面上看起来是在进行“模块化类型检查”，而本质上是在做一个“跨过程静态检查”（interprocedual static analysis）。也就是说，模块化的类型推导，在 HM 这样的没有“类型标记”的体系下，其实是不可能实现的。</p>
 <p>为了达到完全通用的模块化类型检查，却又允许多态函数的存在，我们终究会需要在函数的参数位置手工写上类型，这样我们就完全的丧失了 HM 系统设计的初衷。</p>
-    </main>
+    </div>
 
 
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>

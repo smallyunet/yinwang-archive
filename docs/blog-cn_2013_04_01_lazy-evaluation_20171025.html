@@ -57,7 +57,7 @@
         </section>
 
 
-    <main class="inner" id="main-content">
+    <div class="inner" id="main-content" role="main">
 
         <h1 class="article-title">谈惰性求值</h1>
 <div class="date">2017-10-25</div>
@@ -80,7 +80,7 @@ Haskell 所用的 type class，其实跟一般语言（比如 Java）里面的�
 <p>所以，问太多问题，没法充分利用寄存器，这使得 Haskell 在效率上大打折扣。</p>
 <p>然后我们来看看，为什么惰性求值会跟并行计算的目标相冲突。这其实很明显，它的原因就在于“惰性求值”的定义。惰性求值说：“到需要我的时候再来计算我。”而并行计算说：“到需要你的时候，你最好已经被某个处理器算出来了。”所以你看到了，并行计算要求你“勤奋”，要求你事先做好准备。而惰性求值本来就是很“懒”，怎么可能没事找事，先把自己算出来呢？由于这个问题来自于“惰性求值”的定义，所以这是不可调和的矛盾。</p>
 <p>所以，惰性求值不管是在串行处理还是在并行处理的时候，都会带来效率上的大打折扣。它是一个很鸡肋的语言特征。</p>
-    </main>
+    </div>
 
 
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>

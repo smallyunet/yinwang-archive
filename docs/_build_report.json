@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-25T13:48:34",
+  "generated_at": "2026-08-25T14:07:39",
   "archives_dir": "archives",
   "output_dir": "docs",
   "articles_in_index": 335,
@@ -7,7 +7,7 @@
   "dropped_duplicates": [],
   "processed_groups_total": 356,
   "style_and_diff": {
-    "normalized_article_versions": 1680,
+    "preserved_article_title_versions": 1680,
     "multi_version_article_groups": 259,
     "adjacent_diff_comparisons": 1345
   },

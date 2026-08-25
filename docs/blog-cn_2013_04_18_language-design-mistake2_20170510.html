@@ -57,10 +57,10 @@
         </section>
 
 
-    <main class="inner" id="main-content">
+    <div class="inner" id="main-content" role="main">
 
         <div>
-                            <h1 class="article-title">程序语言的常见设计错误(2) - 试图容纳世界</h1>
+                            <h2 class="article-title">程序语言的常见设计错误(2) - 试图容纳世界</h2>
                             <p>之前的一篇文章里，我谈到了程序语言设计的一个常见错误倾向：<a href="http://www.yinwang.org/blog-cn/2013/03/15/language-design-mistake1">片面追求短小</a>，它导致了一系列的历史性的设计错误。今天我来谈一下另外一种错误的倾向，这种倾向也导致了很多错误，并且继续在导致错误的产生。</p>
 
 <p>今天我要说的错误倾向叫做“试图容纳世界”。这个错误导致了 Python，Ruby 和 JavaScript 等“动态语言”里面的一系列问题。我给 Python 写过一个静态分析器，所以我基本上实现了整个 Python 的语义，可以说是对 Python 了解的相当清楚了。在设计这个静态分析的时候，我发现 Python 的设计让静态分析异常的困难，Python 的程序出了问题很难找到错误的所在，Python 程序的执行速度比大部分程序语言都要慢，这其实是源自 Python 本身的设计问题。这些设计问题，其实大部分出自同一个设计倾向，也就是“试图容纳世界”。</p>
@@ -78,7 +78,7 @@
 <div class="highlighter-rouge"><pre class="highlight"><code>List&lt;有一个头和两只手的正常人&gt; normalPeople;
 </code></pre>
 </div>
-    </main>
+    </div>
 
 
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>

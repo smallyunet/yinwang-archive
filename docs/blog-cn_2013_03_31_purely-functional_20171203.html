@@ -57,7 +57,7 @@
         </section>
 
 
-    <main class="inner" id="main-content">
+    <div class="inner" id="main-content" role="main">
 
         <div class="ad-banner">
 
@@ -68,7 +68,7 @@
         </div>
 
         <div>
-            <h1 class="article-title">对函数式语言的误解</h1>
+            <h2 class="article-title">对函数式语言的误解</h2>
             <p>很早的时候，“函数式语言”对于我来说就是 Lisp，因为 Lisp 可以在程序的几乎任何位置定义函数，并且把它们作为值来传递（这叫做 first-class function）。后来有人告诉我，Lisp 其实不算是“函数式语言”，因为 Lisp 的函数并不“纯”（pure）。所谓“纯函数”的意思，就是像数学的函数一样，如果你给它同样的输入，它就给你同样的输出。然后你就发现在这种定义下，几乎所有程序语言里面常见的随机数函数（<code class="highlighter-rouge">random</code>），其实都不是“纯函数”。因为每一次调用 <code class="highlighter-rouge">random()</code>，你都会得到不同的随机数。</p>
 
 <p>在这种害怕自己所用的语言“不纯”的恐慌之下，我开始接触 Haskell，一种号称“纯函数式”的语言。Haskell 的社区喜欢在他们的概念里省掉“纯”这个字，把 Haskell 叫做“函数式语言”。他们喜欢“纠正”别人的概念。他们告诉人们，“不纯”的函数式语言，其实都不配叫做“函数式语言”。在他们的这种定义下，Lisp 这么老牌的函数式语言，居然都不能叫“函数式语言”了。但是看完这篇文章你就会发现，其实他们的这种定义是狭隘和错误的。</p>
@@ -149,7 +149,7 @@ int h(int z) {
 <p>说了这么多，对于“函数式语言”这一概念的误解，应该消除得差不多了。其实“函数式语言”唯一的要求，应该是能够在任意位置定义函数，并且能够把函数作为值传递，不管这函数是“纯”的还是“不纯”的。所以像 Lisp 和 ML 这样的语言，其实完全符合“函数式语言”这一称号。</p>
 
         </div>
-    </main>
+    </div>
 
 
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
