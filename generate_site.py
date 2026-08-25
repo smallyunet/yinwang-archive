@@ -990,26 +990,52 @@ def process_archives():
         .version-change.removed { color: #99524e; }
         .version-change.changed { color: #80691f; }
         .version-no-change, .version-earliest { color: #666; }
-        .version-preview {
-            max-height: 0;
-            margin: 0;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            color: #666;
-            opacity: 0;
-            font-size: 12px;
-            line-height: 1.55;
-            transition: max-height .18s ease, margin .18s ease, opacity .18s ease;
-        }
-        .version-item:hover .version-preview,
-        .version-item:focus-within .version-preview {
-            max-height: 1.6em;
-            margin: 3px 0 2px;
-            opacity: 1;
-        }
         .version-diff-link { display: inline-flex; min-height: 28px; flex: 0 0 auto; align-items: center; gap: 3px; color: #555; font-size: 12px; font-weight: 500; text-decoration: none; touch-action: manipulation; }
         .version-diff-link:hover { background: transparent; color: #111; text-decoration: underline; }
+
+        .article-diff-preview {
+            position: fixed;
+            z-index: 1045;
+            overflow: hidden;
+            border: 1px solid #cfcfcf;
+            background: #fff;
+            box-shadow: 0 10px 28px rgba(0, 0, 0, .12);
+            color: #333;
+            pointer-events: none;
+        }
+        .article-diff-preview[hidden] { display: none !important; }
+        .article-diff-preview-header {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 14px 18px 12px;
+            border-bottom: 1px solid #ddd;
+            background: #fafafa;
+        }
+        .article-diff-preview-kicker { color: #666; font-size: 12px; }
+        .article-diff-preview-header h2 {
+            width: auto;
+            margin: 2px 0 0;
+            padding: 0;
+            border: 0;
+            color: #333;
+            text-align: left;
+            font-family: inherit;
+            font-size: 17px;
+            font-weight: 600;
+            line-height: 1.35;
+        }
+        .article-diff-preview-header p { margin: 0; color: #555; text-align: right; font-size: 13px; }
+        .article-diff-preview-header small { display: block; margin-top: 2px; color: #666; font-size: 11px; }
+        .article-diff-preview-content {
+            max-height: calc(100% - 69px);
+            padding: 14px 18px 24px;
+            overflow: hidden;
+            font-size: 15px;
+            line-height: 1.65;
+        }
+        .version-item.previewing { background: #ececec; }
 
         .diff-header { margin-bottom: 28px; text-align: center; }
         .diff-header h1 { margin-bottom: 12px; }
@@ -1066,13 +1092,13 @@ def process_archives():
             .version-panel-close { width: 44px; height: 44px; line-height: 44px; }
             .version-list { max-height: calc(min(72dvh, 640px) - 53px); padding-bottom: max(12px, env(safe-area-inset-bottom)); }
             .version-date-link, .version-diff-link { min-height: 36px; }
-            .version-preview { display: none; }
+            .article-diff-preview { display: none !important; }
             .diff-legend { flex-wrap: wrap; gap: 8px 16px; }
             .diff-block { padding-right: 10px; padding-left: 30px; }
         }
 
         @media (prefers-reduced-motion: reduce) {
-            .version-item, .version-preview { transition: none; }
+            .version-item { transition: none; }
         }
         
         /* Removed custom flexbox list styling to match demo vertical style */
@@ -1148,6 +1174,7 @@ def process_archives():
         items = []
         for version in reversed(versions):
             is_current = version['filename'] == current['filename']
+            item_diff_attr = ''
             safe_filename = html_lib.escape(version['filename'], quote=True)
             safe_date = html_lib.escape(version['formatted_date'])
             if is_current:
@@ -1170,11 +1197,9 @@ def process_archives():
                     )
                 else:
                     summary = '<span class="version-no-change">正文无变化</span>'
-                preview = ''
-                if change_total and diff_info['preview']:
-                    preview = f'<p class="version-preview">{html_lib.escape(diff_info["preview"])}</p>'
                 if change_total:
                     diff_url = html_lib.escape(diff_info['url'], quote=True)
+                    item_diff_attr = f' data-diff-url="{diff_url}"'
                     diff_link = (
                         f'<a class="version-diff-link" href="{diff_url}">'
                         '对比 <span aria-hidden="true">→</span></a>'
@@ -1183,15 +1208,14 @@ def process_archives():
                     diff_link = ''
             else:
                 summary = '<span class="version-earliest">最早保留版本</span>'
-                preview = ''
                 diff_link = ''
 
             current_class = ' current' if is_current else ''
             items.append(
-                f'<li class="version-item{current_class}">'
+                f'<li class="version-item{current_class}"{item_diff_attr}>'
                 f'<div class="version-item-row">{date_control}{badge}</div>'
                 f'<div class="version-item-meta"><span class="version-diff-summary">{summary}</span>'
-                f'{diff_link}</div>{preview}</li>'
+                f'{diff_link}</div></li>'
             )
 
         panel = f"""
@@ -1202,6 +1226,16 @@ def process_archives():
                 <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
             </div>
             <ol class="version-list">{''.join(items)}</ol>
+        </section>
+        <section class="article-diff-preview" id="article-diff-preview" aria-labelledby="article-diff-preview-title" hidden>
+            <header class="article-diff-preview-header">
+                <div>
+                    <span class="article-diff-preview-kicker">悬停预览</span>
+                    <h2 id="article-diff-preview-title">版本差异</h2>
+                </div>
+                <p><span id="article-diff-preview-range"></span><small>仅显示发生变化的段落</small></p>
+            </header>
+            <div class="article-diff-preview-content" id="article-diff-preview-content"></div>
         </section>
         """
         return trigger, panel
