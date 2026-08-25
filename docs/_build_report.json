@@ -1,193 +1,73 @@
 {
-  "generated_at": "2026-07-25T21:48:28",
+  "generated_at": "2026-08-25T13:18:20",
   "archives_dir": "archives",
   "output_dir": "docs",
-  "articles_in_index": 335,
+  "articles_in_index": 336,
   "dropped_duplicates_count": 0,
   "dropped_duplicates": [],
-  "processed_groups_total": 356,
+  "processed_groups_total": 357,
   "skipped_invalid_reason_counts": {
-    "junk-domain-parking": 57,
+    "empty-app-shell": 37,
     "empty": 1
   },
   "skipped_invalid_examples": [
     {
       "filename": "blog-cn_2016_01_18_java_20251014.html",
-      "reason": "junk-domain-parking",
+      "reason": "empty-app-shell",
       "type": "article",
       "base_name": "blog-cn_2016_01_18_java"
     },
     {
       "filename": "blog-cn_2012_05_18_user-friendliness__20_20251228.html",
-      "reason": "junk-domain-parking",
+      "reason": "empty-app-shell",
       "type": "article",
       "base_name": "blog-cn_2012_05_18_user-friendliness__20"
     },
     {
-      "filename": "blog-cn_2014_01_04_authority_20140109.html",
-      "reason": "junk-domain-parking",
-      "type": "article",
-      "base_name": "blog-cn_2014_01_04_authority"
-    },
-    {
-      "filename": "blog-cn_2014_01_04_authority_20140111.html",
-      "reason": "junk-domain-parking",
-      "type": "article",
-      "base_name": "blog-cn_2014_01_04_authority"
-    },
-    {
-      "filename": "blog-cn_2014_01_04_authority_20140113.html",
-      "reason": "junk-domain-parking",
-      "type": "article",
-      "base_name": "blog-cn_2014_01_04_authority"
-    },
-    {
-      "filename": "blog-cn_2014_01_04_authority_20140117.html",
-      "reason": "junk-domain-parking",
-      "type": "article",
-      "base_name": "blog-cn_2014_01_04_authority"
-    },
-    {
-      "filename": "blog-cn_2014_01_04_authority_20140509.html",
-      "reason": "junk-domain-parking",
-      "type": "article",
-      "base_name": "blog-cn_2014_01_04_authority"
-    },
-    {
-      "filename": "blog-cn_2014_01_04_authority_20140811.html",
-      "reason": "junk-domain-parking",
-      "type": "article",
-      "base_name": "blog-cn_2014_01_04_authority"
-    },
-    {
-      "filename": "blog-cn_2014_01_04_authority_20141226.html",
-      "reason": "junk-domain-parking",
-      "type": "article",
-      "base_name": "blog-cn_2014_01_04_authority"
-    },
-    {
-      "filename": "blog-cn_2014_01_04_authority_20150119.html",
-      "reason": "junk-domain-parking",
-      "type": "article",
-      "base_name": "blog-cn_2014_01_04_authority"
-    },
-    {
-      "filename": "blog-cn_2014_01_04_authority_20150206.html",
-      "reason": "junk-domain-parking",
-      "type": "article",
-      "base_name": "blog-cn_2014_01_04_authority"
-    },
-    {
-      "filename": "blog-cn_2014_01_04_authority_20161001.html",
-      "reason": "junk-domain-parking",
-      "type": "article",
-      "base_name": "blog-cn_2014_01_04_authority"
-    },
-    {
-      "filename": "blog-cn_2014_01_04_authority_20161102.html",
-      "reason": "junk-domain-parking",
-      "type": "article",
-      "base_name": "blog-cn_2014_01_04_authority"
-    },
-    {
-      "filename": "blog-cn_2014_01_04_authority_20170506.html",
-      "reason": "junk-domain-parking",
-      "type": "article",
-      "base_name": "blog-cn_2014_01_04_authority"
-    },
-    {
-      "filename": "blog-cn_2014_01_04_authority_20170608.html",
-      "reason": "junk-domain-parking",
-      "type": "article",
-      "base_name": "blog-cn_2014_01_04_authority"
-    },
-    {
-      "filename": "blog-cn_2014_01_04_authority_20171205.html",
-      "reason": "junk-domain-parking",
-      "type": "article",
-      "base_name": "blog-cn_2014_01_04_authority"
-    },
-    {
-      "filename": "blog-cn_2014_01_04_authority_20180307.html",
-      "reason": "junk-domain-parking",
-      "type": "article",
-      "base_name": "blog-cn_2014_01_04_authority"
-    },
-    {
-      "filename": "blog-cn_2014_01_04_authority_20190815.html",
-      "reason": "junk-domain-parking",
-      "type": "article",
-      "base_name": "blog-cn_2014_01_04_authority"
-    },
-    {
-      "filename": "blog-cn_2014_01_04_authority_20200217.html",
-      "reason": "junk-domain-parking",
-      "type": "article",
-      "base_name": "blog-cn_2014_01_04_authority"
-    },
-    {
-      "filename": "blog-cn_2014_01_04_authority_20200611.html",
-      "reason": "junk-domain-parking",
-      "type": "article",
-      "base_name": "blog-cn_2014_01_04_authority"
-    },
-    {
-      "filename": "blog-cn_2014_01_04_authority_20240524.html",
-      "reason": "junk-domain-parking",
-      "type": "article",
-      "base_name": "blog-cn_2014_01_04_authority"
-    },
-    {
-      "filename": "blog-cn_2014_01_04_authority_20240602.html",
-      "reason": "junk-domain-parking",
-      "type": "article",
-      "base_name": "blog-cn_2014_01_04_authority"
-    },
-    {
       "filename": "blog-cn_2018_04_13_csbook-chapter1_5C_20251028.html",
-      "reason": "junk-domain-parking",
+      "reason": "empty-app-shell",
       "type": "article",
       "base_name": "blog-cn_2018_04_13_csbook-chapter1_5C"
     },
     {
       "filename": "blog-cn_2016_01_18_java_5C__20251116.html",
-      "reason": "junk-domain-parking",
+      "reason": "empty-app-shell",
       "type": "article",
       "base_name": "blog-cn_2016_01_18_java_5C_"
     },
     {
       "filename": "blog-cn_2015_11_21_programming-philosophy_5C_20251021.html",
-      "reason": "junk-domain-parking",
+      "reason": "empty-app-shell",
       "type": "article",
       "base_name": "blog-cn_2015_11_21_programming-philosophy_5C"
     },
     {
       "filename": "blog-cn_2016_01_18_java__20251119.html",
-      "reason": "junk-domain-parking",
+      "reason": "empty-app-shell",
       "type": "article",
       "base_name": "blog-cn_2016_01_18_java_"
     },
     {
       "filename": "blog-cn_2013_04_11_scheme-setup_5C_20251017.html",
-      "reason": "junk-domain-parking",
+      "reason": "empty-app-shell",
       "type": "article",
       "base_name": "blog-cn_2013_04_11_scheme-setup_5C"
     },
     {
       "filename": "blog-cn_2012_05_18_user-friendliness__nbsp_20251230.html",
-      "reason": "junk-domain-parking",
+      "reason": "empty-app-shell",
       "type": "article",
       "base_name": "blog-cn_2012_05_18_user-friendliness__nbsp"
     },
     {
       "filename": "tags_english_20251101.html",
-      "reason": "junk-domain-parking",
+      "reason": "empty-app-shell",
       "type": "page",
       "base_name": "tags_english"
     },
     {
       "filename": "tags_philosophy_20251101.html",
-      "reason": "junk-domain-parking",
+      "reason": "empty-app-shell",
       "type": "page",
       "base_name": "tags_philosophy"
     },
@@ -199,168 +79,168 @@
     },
     {
       "filename": "index_20260110.html",
-      "reason": "junk-domain-parking",
+      "reason": "empty-app-shell",
       "type": "page",
       "base_name": "index"
     },
     {
       "filename": "posts_authority_20251221.html",
-      "reason": "junk-domain-parking",
+      "reason": "empty-app-shell",
       "type": "page",
       "base_name": "posts_authority"
     },
     {
       "filename": "tags_life_20251129.html",
-      "reason": "junk-domain-parking",
+      "reason": "empty-app-shell",
       "type": "page",
       "base_name": "tags_life"
     },
     {
       "filename": "posts_american-english-problems_20251030.html",
-      "reason": "junk-domain-parking",
+      "reason": "empty-app-shell",
       "type": "page",
       "base_name": "posts_american-english-problems"
     },
     {
       "filename": "tags_education_20251031.html",
-      "reason": "junk-domain-parking",
+      "reason": "empty-app-shell",
       "type": "page",
       "base_name": "tags_education"
     },
     {
       "filename": "posts_cs5-completed_20251031.html",
-      "reason": "junk-domain-parking",
+      "reason": "empty-app-shell",
       "type": "page",
       "base_name": "posts_cs5-completed"
     },
     {
       "filename": "posts_oberon_20260113.html",
-      "reason": "junk-domain-parking",
+      "reason": "empty-app-shell",
       "type": "page",
       "base_name": "posts_oberon"
     },
     {
       "filename": "tags_health_20251102.html",
-      "reason": "junk-domain-parking",
+      "reason": "empty-app-shell",
       "type": "page",
       "base_name": "tags_health"
     },
     {
       "filename": "posts_cs-class2_20251105.html",
-      "reason": "junk-domain-parking",
+      "reason": "empty-app-shell",
       "type": "page",
       "base_name": "posts_cs-class2"
     },
     {
       "filename": "tags_travel_20251129.html",
-      "reason": "junk-domain-parking",
+      "reason": "empty-app-shell",
       "type": "page",
       "base_name": "tags_travel"
     },
     {
       "filename": "tags_lifestyle_20251101.html",
-      "reason": "junk-domain-parking",
+      "reason": "empty-app-shell",
       "type": "page",
       "base_name": "tags_lifestyle"
     },
     {
       "filename": "posts_continuation-course_20251206.html",
-      "reason": "junk-domain-parking",
+      "reason": "empty-app-shell",
       "type": "page",
       "base_name": "posts_continuation-course"
     },
     {
       "filename": "posts_tuition-for-covid_20251103.html",
-      "reason": "junk-domain-parking",
+      "reason": "empty-app-shell",
       "type": "page",
       "base_name": "posts_tuition-for-covid"
     },
     {
       "filename": "posts_cello-technique_20251102.html",
-      "reason": "junk-domain-parking",
+      "reason": "empty-app-shell",
       "type": "page",
       "base_name": "posts_cello-technique"
     },
     {
       "filename": "posts_cs-video-course_20251101.html",
-      "reason": "junk-domain-parking",
+      "reason": "empty-app-shell",
       "type": "page",
       "base_name": "posts_cs-video-course"
     },
     {
       "filename": "tags_ai_20251103.html",
-      "reason": "junk-domain-parking",
+      "reason": "empty-app-shell",
       "type": "page",
       "base_name": "tags_ai"
     },
     {
       "filename": "posts_cs-course-5_20251208.html",
-      "reason": "junk-domain-parking",
+      "reason": "empty-app-shell",
       "type": "page",
       "base_name": "posts_cs-course-5"
     },
     {
       "filename": "posts_wisdom-of-intelligence_20251102.html",
-      "reason": "junk-domain-parking",
+      "reason": "empty-app-shell",
       "type": "page",
       "base_name": "posts_wisdom-of-intelligence"
     },
     {
       "filename": "posts_cs4_20251102.html",
-      "reason": "junk-domain-parking",
+      "reason": "empty-app-shell",
       "type": "page",
       "base_name": "posts_cs4"
     },
     {
       "filename": "posts_air-freshener-nightmare_20251129.html",
-      "reason": "junk-domain-parking",
+      "reason": "empty-app-shell",
       "type": "page",
       "base_name": "posts_air-freshener-nightmare"
     },
     {
       "filename": "posts_youth-cs-student_20251102.html",
-      "reason": "junk-domain-parking",
+      "reason": "empty-app-shell",
       "type": "page",
       "base_name": "posts_youth-cs-student"
     },
     {
       "filename": "tags_programming-language_20260113.html",
-      "reason": "junk-domain-parking",
+      "reason": "empty-app-shell",
       "type": "page",
       "base_name": "tags_programming-language"
     },
     {
       "filename": "posts_cs3_20251102.html",
-      "reason": "junk-domain-parking",
+      "reason": "empty-app-shell",
       "type": "page",
       "base_name": "posts_cs3"
     },
     {
       "filename": "posts_reading-course_20251102.html",
-      "reason": "junk-domain-parking",
+      "reason": "empty-app-shell",
       "type": "page",
       "base_name": "posts_reading-course"
     },
     {
       "filename": "posts_entry-level-class_20251102.html",
-      "reason": "junk-domain-parking",
+      "reason": "empty-app-shell",
       "type": "page",
       "base_name": "posts_entry-level-class"
     },
     {
       "filename": "posts_learning-philosophy_20251211.html",
-      "reason": "junk-domain-parking",
+      "reason": "empty-app-shell",
       "type": "page",
       "base_name": "posts_learning-philosophy"
     },
     {
       "filename": "posts_super-human-level-vision_20251104.html",
-      "reason": "junk-domain-parking",
+      "reason": "empty-app-shell",
       "type": "page",
       "base_name": "posts_super-human-level-vision"
     }
   ],
-  "dropped_groups_count": 36,
+  "dropped_groups_count": 35,
   "dropped_groups": [
     {
       "base_name": "blog-cn_2012_05_18_user-friendliness__20",
@@ -368,33 +248,6 @@
       "file_count": 1,
       "files": [
         "blog-cn_2012_05_18_user-friendliness__20_20251228.html"
-      ]
-    },
-    {
-      "base_name": "blog-cn_2014_01_04_authority",
-      "type": "article",
-      "file_count": 20,
-      "files": [
-        "blog-cn_2014_01_04_authority_20140109.html",
-        "blog-cn_2014_01_04_authority_20140111.html",
-        "blog-cn_2014_01_04_authority_20140113.html",
-        "blog-cn_2014_01_04_authority_20140117.html",
-        "blog-cn_2014_01_04_authority_20140509.html",
-        "blog-cn_2014_01_04_authority_20140811.html",
-        "blog-cn_2014_01_04_authority_20141226.html",
-        "blog-cn_2014_01_04_authority_20150119.html",
-        "blog-cn_2014_01_04_authority_20150206.html",
-        "blog-cn_2014_01_04_authority_20161001.html",
-        "blog-cn_2014_01_04_authority_20161102.html",
-        "blog-cn_2014_01_04_authority_20170506.html",
-        "blog-cn_2014_01_04_authority_20170608.html",
-        "blog-cn_2014_01_04_authority_20171205.html",
-        "blog-cn_2014_01_04_authority_20180307.html",
-        "blog-cn_2014_01_04_authority_20190815.html",
-        "blog-cn_2014_01_04_authority_20200217.html",
-        "blog-cn_2014_01_04_authority_20200611.html",
-        "blog-cn_2014_01_04_authority_20240524.html",
-        "blog-cn_2014_01_04_authority_20240602.html"
       ]
     },
     {

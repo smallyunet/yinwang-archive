@@ -237,10 +237,9 @@ def is_valid_content(content):
         
     s = content.lower()
     
-    # Check for known junk titles/patterns from domain parking
-    if 'surely i am joking' in s:
-        return False
-        
+    # Reject the known empty app shell itself, rather than matching its title
+    # anywhere in the document. Valid articles can mention "Surely I Am
+    # Joking" in their body (for example, 《我和权威的故事》).
     if '<div id="app"></div>' in s and len(s) < 2000:
         return False
         
@@ -256,9 +255,6 @@ def invalid_content_reason(content):
         return "empty"
 
     s = content.lower()
-
-    if 'surely i am joking' in s:
-        return "junk-domain-parking"
 
     if '<div id="app"></div>' in s and len(s) < 2000:
         return "empty-app-shell"
