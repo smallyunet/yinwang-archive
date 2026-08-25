@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">5</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,17 +46,21 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2021_04_16_cello-technique_20210417.html" >2021-04-17</a> <a href="blog-cn_2021_04_16_cello-technique_20210428.html" >2021-04-28</a> <a href="blog-cn_2021_04_16_cello-technique_20210515.html" >2021-05-15</a> <a href="blog-cn_2021_04_16_cello-technique_20230829.html" >2023-08-29</a> <a href="blog-cn_2021_04_16_cello-technique_20240416.html" class="current">2024-04-16</a></div>
-        <script>
-            if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent))
-            {
-               document.body.classList.add('mobile');
-            }
-        </script>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2024-04-16</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F9e3987a93c8538a4.json&amp;to=blog-cn_2021_04_16_cello-technique_20240416.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2021_04_16_cello-technique_20230829.html">2023-08-29</a></div><p class="version-diff-summary">较前版：+0 −15 修改 0</p><p class="version-preview">用巴赫音乐做练习曲</p><a class="version-diff-link" href="diff.html?data=diffs%2F9e3987a93c8538a4.json&amp;to=blog-cn_2021_04_16_cello-technique_20230829.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2021_04_16_cello-technique_20210515.html">2021-05-15</a></div><p class="version-diff-summary">较前版：+2 −0 修改 1</p><p class="version-preview">一个月之前决定开始学大提琴，找了一个老师上了几节课，并且在 YouTube 看了许多大提琴教学视频，每天琢磨和练习。然后才发现，大提琴原来是世界上最难学的乐器。不仅乐器本身难用，而且教学也很成问题。</p><a class="version-diff-link" href="diff.html?data=diffs%2F9e3987a93c8538a4.json&amp;to=blog-cn_2021_04_16_cello-technique_20210515.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2021_04_16_cello-technique_20210428.html">2021-04-28</a></div><p class="version-diff-summary">较前版：+94 −0 修改 56</p><p class="version-preview">（本文记录了我开始“破解大提琴计划”一个月以来的阶段性发现。图片比较多，虽然经过压缩，还是需要一定时间，请耐心等待加载。）</p><a class="version-diff-link" href="diff.html?data=diffs%2F9e3987a93c8538a4.json&amp;to=blog-cn_2021_04_16_cello-technique_20210428.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2021_04_16_cello-technique_20210417.html">2021-04-17</a></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
 
         <div>
-            <h2>大提琴为什么这么难学</h2>
+            <h1 class="article-title">大提琴为什么这么难学</h1>
             <p>（本文记录了我开始“破解大提琴计划”一个月以来的阶段性发现。图片比较多，虽然经过压缩，还是需要一定时间，请耐心等待加载。）</p>
 
 <p>一个月之前决定开始学大提琴，找了一个老师上了几节课，并且在 YouTube 看了许多大提琴教学视频，每天琢磨和练习。然后才发现，大提琴原来是世界上最难学的乐器。不仅乐器本身难用，而且教学也很成问题。</p>
@@ -426,15 +419,16 @@
 
 
         </div>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

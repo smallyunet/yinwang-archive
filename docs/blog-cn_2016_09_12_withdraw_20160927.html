@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">2</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,10 +46,21 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2016_09_12_withdraw_20160916.html" >2016-09-16</a> <a href="blog-cn_2016_09_12_withdraw_20160927.html" class="current">2016-09-27</a></div>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2016-09-27</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F0104c762dbc6d033.json&amp;to=blog-cn_2016_09_12_withdraw_20160927.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_09_12_withdraw_20160916.html">2016-09-16</a></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
+
         <div>
-                            <h2>收回前一篇文章</h2>
+                            <h1 class="article-title">收回前一篇文章</h1>
                             <p>写前一篇文章的时候，头脑比较热。现在想起来，也不知道自己为什么会说出那样的话来，为什么会有那样的想法。最后是真是假，还有一些半成品和猜忌，都一股脑的倒了出来。</p>
 
 <p>今天回到公司，看见 manager 诚恳的眼神，被一群低调的同事所围绕，听取我对某些工具的抱怨和改进意见，向我表示抱歉，解释并且确认需要改进的地方。我发现，满头的怨气顿时全没了。这是一群挺可爱的同事……</p>
@@ -74,15 +74,16 @@
 <p>（有人在关心是不是领导给了我压力，所以改口了。我王垠有这么怕事吗？话说如果领导真给了我压力，那我还反倒不改了。我又不靠微软这口饭活着 :P 我是真心觉得自己太急太冲动了，本着尊重事实的原则，所以才撤回的。）</p>
 
                         </div>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">2</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,10 +46,21 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2016_12_01_september-eleven_20161205.html" class="current">2016-12-05</a> <a href="blog-cn_2016_12_01_september-eleven_20170506.html" >2017-05-06</a></div>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_12_01_september-eleven_20170506.html">2017-05-06</a></div><p class="version-diff-summary">较前版：+2 −0 修改 12</p><p class="version-preview">然而最近我发现了这部摄制于 2014 年的纪录片『9-11：新的珍珠港』，它打破了 9-11 的迷雾。跟『华氏9-11』之类的阴谋论不同，『新珍珠港』出自许许多多追求真相的专家：飞行员，土木工程师，结构工程师，爆破专家，甚至世贸大厦的…</p><a class="version-diff-link" href="diff.html?data=diffs%2F92825286737aa46b.json&amp;to=blog-cn_2016_12_01_september-eleven_20170506.html">查看差异</a></li><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2016-12-05</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
+
         <div>
-                            <h2>9-11 袭击的真相</h2>
+                            <h1 class="article-title">9-11 袭击的真相</h1>
                             <p>9-11 袭击一直以来都是一个谜。是谁在幕后策划，它为什么会发生？美国政府对此进行的调查都是遮遮掩掩，很多证据藏起来不给人看，借口说是“国家机密”。这种鬼鬼祟祟的行为非常可疑，所以网络上出现了很多的谣言和“阴谋论”，说这是美国政府的人自己干的。然而这些东西很少有确凿的证据，所以久而久之，人们对真相失去了兴趣。每当跟美国人提到“9-11真相”，他们的反应一般都是，我不相信美国政府可能做出这么邪恶的事情！</p>
 
 <p>然而最近我发现了这部摄制于 2014 年的纪录片『<a href="https://www.youtube.com/watch?v=8DOnAn_PX6M">9-11：新的珍珠港</a>』，它打破了 9-11 的迷雾。跟『华氏9-11』之类的阴谋论不同，『新珍珠港』出自许许多多追求真相的专家：飞行员，土木工程师，结构工程师，爆破专家，甚至世贸大厦的设计者自己…… 它从严谨的证据，数据和科学的角度出发，通过常识和科学理论，指出了美国政府官方报告与实际现象的严重偏差，从而引导人们认识到这背后的可怕真相。再加上一个<a href="https://www.youtube.com/watch?v=fAawF22QUMs">前 CIA 特工的证实</a>，我发现『新珍珠港』里面的大部分猜想都是正确的。</p>
@@ -168,15 +168,16 @@
 <p>当今的美国政府里面，窝藏着世界上最阴险的犯罪团伙。犯下这样极端残忍的滔天罪行，居然还可以藏这么深这么久，让人们继续以为他们是道德高尚的好人，也真是无人能比了。人们对 9-11 真相的无知是很危险的。由于他们的无知，这些野心家可以制造任何他们想要的假象，可以诬陷任何好人，继续屠杀本国民众，同时让他们的战争和侵略行为合法化。我希望 Trump 的政府能改变这种情况，让 9-11 的真相大白于天下，把这些十恶不赦的罪犯们早日送上断头台。</p>
 
                         </div>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

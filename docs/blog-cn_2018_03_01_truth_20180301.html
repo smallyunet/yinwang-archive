@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">4</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,27 +46,21 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2018_03_01_truth_20180301.html" class="current">2018-03-01</a> <a href="blog-cn_2018_03_01_truth_20180303.html" >2018-03-03</a> <a href="blog-cn_2018_03_01_truth_20180304.html" >2018-03-04</a> <a href="blog-cn_2018_03_01_truth_20180310.html" >2018-03-10</a></div>
-        <script>
-            if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent))
-            {
-               document.body.classList.add('mobile');
-            }
-        </script>
 
-        <!--
-        <div class="ad-banner">
-            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <ins class="adsbygoogle"
-                    data-ad-client="ca-pub-1331524016319584"
-                    data-ad-slot="6657867155"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-        </div>
-        -->
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2018_03_01_truth_20180310.html">2018-03-10</a></div><p class="version-diff-summary">较前版：+0 −9 修改 1</p><p class="version-preview">关于我写书的动机，我的书与经典教材的区别等内容，请参考这篇新的博文。</p><a class="version-diff-link" href="diff.html?data=diffs%2F5d65dd9edf29312a.json&amp;to=blog-cn_2018_03_01_truth_20180310.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2018_03_01_truth_20180304.html">2018-03-04</a></div><p class="version-diff-summary">较前版：+1 −2 修改 1</p><p class="version-preview">我自己的软件项目进入保密阶段，自由发展。我不会再宣扬我自己在写什么代码，我也没有必要一直做我曾经说我要做的事情。我对很多东西都感兴趣，什么好玩我就可以做什么。我可以告诉人们我的兴趣，但我没必要用代码来证明什么。地位低的人才需要用代码来…</p><a class="version-diff-link" href="diff.html?data=diffs%2F5d65dd9edf29312a.json&amp;to=blog-cn_2018_03_01_truth_20180304.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2018_03_01_truth_20180303.html">2018-03-03</a></div><p class="version-diff-summary">较前版：+10 −1 修改 10</p><p class="version-preview">一个善良的人，他需要莫大的支持和勇气，才能冲破这样的迷雾，冲破对自己的怀疑：“我是不是那个错的人？” “我是不是伤害了其他人？” 他反复的问自己…… 可惜他的家人，他心爱的人，都不同程度的被媒体和舆论所洗脑，甚至对他进行反向灌输，否认…</p><a class="version-diff-link" href="diff.html?data=diffs%2F5d65dd9edf29312a.json&amp;to=blog-cn_2018_03_01_truth_20180303.html">查看差异</a></li><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2018-03-01</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
 
         <div>
-            <h2>真相</h2>
+            <h1 class="article-title">真相</h1>
             <p>金钱，是万恶之源。容易得来的金钱，就更加吸引愚蠢的人。这一句，解释了我在美国硅谷看到的一切怪异现象。那些现象在中国也很猖獗。</p>
 
 <p>每当我批评像 Google 这样的公司里面的风气，就有人把我包装成一个自高自大的人，仿佛错的人是我。作为一个善良的人，我也曾经以为我在某些方面做得不对。然而看透了这一切之后我才发现，我对于那些经历发表的一切感受，几乎全都没有错。</p>
@@ -131,15 +114,16 @@
 
 
         </div>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

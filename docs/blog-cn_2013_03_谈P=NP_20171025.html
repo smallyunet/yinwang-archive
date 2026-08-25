@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,7 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,9 +38,11 @@
         </div>
     </nav>
 
-    <div class="inner">
-        
-        <h1>谈“P=NP?”</h1>
+
+
+    <main class="inner" id="main-content">
+
+        <h1 class="article-title">谈“P=NP?”</h1>
 <div class="date">2013-03</div>
 <p>作者：王垠</p>
 <p>“P=NP?” 通常被认为是计算机科学最重要的问题。有一个叫 Clay Math 的研究所，甚至悬赏 100 万美元给解决它的人。可是我今天要告诉你的是，这个问题其实是不存在的，它根本不需要解决。</p>
@@ -107,15 +90,16 @@ n1000000 也许不说明问题，但是“多项式”的范围实在太大了�
 <p>你也许发现了，其实上面的论述根本没必要用 n10100 这么大的多项式，只要用一个很大的常数（比如 10100）就够了，因为常数也算是多项式。使用多项式的原因，只是想演示一下多项式可以有多大。</p>
 <p>所以你看到了，常数，指数，输入的大小，对于算法的性能都是很关键的。“P=NP?”的问题就在于它用“多项式”这个笼统的概念抹杀了所有这些细节，以至于即使 P=NP 被证明出来，我们仍然不会得到可以实用的结果。</p>
 <p>正确的做法，应该是找到整个算法（代码）的具体的复杂度函数，最好细致到常数。比如 3.65n2 + 21n + 1000，做出类似上面所示的曲线图，然后根据具体输入的大小，看看哪个算法更快一些。在这一点上，Knuth 在 TAOCP 中对算法的细致入微的分析，确实是我们的榜样（虽然我不赞成他使用机器语言）。</p>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

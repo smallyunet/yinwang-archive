@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,7 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,9 +38,11 @@
         </div>
     </nav>
 
-    <div class="inner">
-        
-        <h2>大数据的高烧</h2>
+
+
+    <main class="inner" id="main-content">
+
+        <h1 class="article-title">大数据的高烧</h1>
 
     <p><img src="http://upload-images.jianshu.io/upload_images/68562-4b4c75a74fe19812.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
 
@@ -82,15 +65,16 @@
 <p>当我把这个发现告诉他们老总的时候，他说：“这个不关你的事！这界面是我们请专业的UX设计师弄的，你外行就别管了！”设计问题明摆在眼前，玩几下就发现了，可有人就是视而不见。明眼人说的话不听，恁是相信大数据分析能够告诉他真理，你拿他有啥办法？于是呢，他继续叫人分析这app的登录数据，然后向投资人鼓吹自己采用的各种尖端big data技术，最后用户越来越少，走上穷途末路……</p>
 
 <p>所以你看到了，大数据并不能代替好的科学家，不能代替好的设计师。像任何工具一样，大数据有适用的地方，也有它解决不了的问题。我不否认大数据在某些方面能够提供帮助，然而这种认为“大数据能解决一切问题”的想法，只是高烧产生的幻觉而已。</p>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

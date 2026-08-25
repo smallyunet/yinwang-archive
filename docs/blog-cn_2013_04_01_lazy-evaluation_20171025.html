@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">12</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,9 +46,20 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2013_04_01_lazy-evaluation_20090101.html" >2009-01-01</a> <a href="blog-cn_2013_04_01_lazy-evaluation_20130421.html" >2013-04-21</a> <a href="blog-cn_2013_04_01_lazy-evaluation_20140701.html" >2014-07-01</a> <a href="blog-cn_2013_04_01_lazy-evaluation_20160307.html" >2016-03-07</a> <a href="blog-cn_2013_04_01_lazy-evaluation_20160929.html" >2016-09-29</a> <a href="blog-cn_2013_04_01_lazy-evaluation_20170224.html" >2017-02-24</a> <a href="blog-cn_2013_04_01_lazy-evaluation_20170510.html" >2017-05-10</a> <a href="blog-cn_2013_04_01_lazy-evaluation_20171025.html" class="current">2017-10-25</a> <a href="blog-cn_2013_04_01_lazy-evaluation_20171202.html" >2017-12-02</a> <a href="blog-cn_2013_04_01_lazy-evaluation_20191206.html" >2019-12-06</a> <a href="blog-cn_2013_04_01_lazy-evaluation_20200228.html" >2020-02-28</a> <a href="blog-cn_2013_04_01_lazy-evaluation_20240416.html" >2024-04-16</a></div>
-        <h1>谈惰性求值</h1>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_04_01_lazy-evaluation_20240416.html">2024-04-16</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F8af948b99dbb3a93.json&amp;to=blog-cn_2013_04_01_lazy-evaluation_20240416.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_04_01_lazy-evaluation_20200228.html">2020-02-28</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F8af948b99dbb3a93.json&amp;to=blog-cn_2013_04_01_lazy-evaluation_20200228.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_04_01_lazy-evaluation_20191206.html">2019-12-06</a></div><p class="version-diff-summary">较前版：+2 −0 修改 0</p><p class="version-preview">可能你已经发现了，这其实带来了类型系统的混乱。任何类型，不管是 Int, Bool, List, … 或者自定义数据类型，都多出了这么一个东西：thunk。它表示的是“还没有求值的计算”。Haskell 程序员一般把它叫做“botto…</p><a class="version-diff-link" href="diff.html?data=diffs%2F8af948b99dbb3a93.json&amp;to=blog-cn_2013_04_01_lazy-evaluation_20191206.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_04_01_lazy-evaluation_20171202.html">2017-12-02</a></div><p class="version-diff-summary">较前版：+5 −3 修改 2</p><p class="version-preview">作者：王垠</p><a class="version-diff-link" href="diff.html?data=diffs%2F8af948b99dbb3a93.json&amp;to=blog-cn_2013_04_01_lazy-evaluation_20171202.html">查看差异</a></li><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2017-10-25</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">较前版：+3 −5 修改 2</p><p class="version-preview">作者：王垠</p><a class="version-diff-link" href="diff.html?data=diffs%2F8af948b99dbb3a93.json&amp;to=blog-cn_2013_04_01_lazy-evaluation_20171025.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_04_01_lazy-evaluation_20170510.html">2017-05-10</a></div><p class="version-diff-summary">较前版：+0 −2 修改 0</p><p class="version-preview">可能你已经发现了，这其实带来了类型系统的混乱。任何类型，不管是 Int, Bool, List, ... 或者自定义数据类型，都多出了这么一个东西：thunk。它表示的是“还没有求值的计算”。Haskell 程序员一般把它叫做“bot…</p><a class="version-diff-link" href="diff.html?data=diffs%2F8af948b99dbb3a93.json&amp;to=blog-cn_2013_04_01_lazy-evaluation_20170510.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_04_01_lazy-evaluation_20170224.html">2017-02-24</a></div><p class="version-diff-summary">较前版：+0 −1 修改 1</p><p class="version-preview">所以，惰性求值不管是在串行处理还是在并行处理的时候，都会带来效率上的大打折扣，它是一个很鸡肋的语言特征。</p><a class="version-diff-link" href="diff.html?data=diffs%2F8af948b99dbb3a93.json&amp;to=blog-cn_2013_04_01_lazy-evaluation_20170224.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_04_01_lazy-evaluation_20160929.html">2016-09-29</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F8af948b99dbb3a93.json&amp;to=blog-cn_2013_04_01_lazy-evaluation_20160929.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_04_01_lazy-evaluation_20160307.html">2016-03-07</a></div><p class="version-diff-summary">较前版：+0 −1 修改 1</p><p class="version-preview">（王垠 yinwang.org 版权所有，未经许可，请勿转载）</p><a class="version-diff-link" href="diff.html?data=diffs%2F8af948b99dbb3a93.json&amp;to=blog-cn_2013_04_01_lazy-evaluation_20160307.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_04_01_lazy-evaluation_20140701.html">2014-07-01</a></div><p class="version-diff-summary">较前版：+1 −0 修改 0</p><p class="version-preview">（王垠 yinwang.org 版权所有，未经许可，请勿转载）</p><a class="version-diff-link" href="diff.html?data=diffs%2F8af948b99dbb3a93.json&amp;to=blog-cn_2013_04_01_lazy-evaluation_20140701.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_04_01_lazy-evaluation_20130421.html">2013-04-21</a></div><p class="version-diff-summary">较前版：+6 −1 修改 1</p><p class="version-preview">作者：王垠</p><a class="version-diff-link" href="diff.html?data=diffs%2F8af948b99dbb3a93.json&amp;to=blog-cn_2013_04_01_lazy-evaluation_20130421.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_04_01_lazy-evaluation_20090101.html">2009-01-01</a></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
+
+        <h1 class="article-title">谈惰性求值</h1>
 <div class="date">2017-10-25</div>
 <p>作者：王垠</p>
 <p>从之前的几篇博文里面你也许已经看到了，Haskell 其实是问题相当严重的语言，然而这些问题却没有引起足够的重视。我能看到的 Haskell 的问题在于：</p>
@@ -80,15 +80,16 @@ Haskell 所用的 type class，其实跟一般语言（比如 Java）里面的�
 <p>所以，问太多问题，没法充分利用寄存器，这使得 Haskell 在效率上大打折扣。</p>
 <p>然后我们来看看，为什么惰性求值会跟并行计算的目标相冲突。这其实很明显，它的原因就在于“惰性求值”的定义。惰性求值说：“到需要我的时候再来计算我。”而并行计算说：“到需要你的时候，你最好已经被某个处理器算出来了。”所以你看到了，并行计算要求你“勤奋”，要求你事先做好准备。而惰性求值本来就是很“懒”，怎么可能没事找事，先把自己算出来呢？由于这个问题来自于“惰性求值”的定义，所以这是不可调和的矛盾。</p>
 <p>所以，惰性求值不管是在串行处理还是在并行处理的时候，都会带来效率上的大打折扣。它是一个很鸡肋的语言特征。</p>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,7 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,9 +38,11 @@
         </div>
     </nav>
 
-    <div class="inner">
-        
-        <h1>Unix的缺陷</h1>
+
+
+    <main class="inner" id="main-content">
+
+        <h1 class="article-title">Unix的缺陷</h1>
 <div class="date">2012-04-11</div>
 <p>作者：王垠</p>
 <p>我想通过这篇文章解释一下我对 Unix 哲学本质的理解。我虽然指出 Unix 的一个设计问题，但目的并不是打击人们对 Unix 的兴趣。虽然 Unix 在基础概念上有一个挺严重的问题，但是经过多年的发展之后，这个问题恐怕已经被各种别的因素所弥补（比如大量的人力）。但是如果开始正视这个问题，我们也许就可以缓慢的改善系统的结构，从而使得它用起来更加高效，方便和安全，那又未尝不可。同时也希望这里对 Unix 命令本质的阐述能帮助人迅速的掌握 Unix，灵活的应用它的潜力，避免它的缺点。</p>
@@ -192,15 +175,16 @@
 <p>如果 main 函数可以接受多种类型的参数，并且可以有 keyword argument，它能返回一个或多个不同类型的对象作为返回值，而且如果这些对象可以被自动存储到一种特殊的“数据库”里，那么 shell，管道，命令行选项，甚至连文件系统都没有必要存在。我们甚至可以说，“操作系统”这个概念变得“透明”。因为这样一来，操作系统的本质不过是某种程序语言的“运行时系统”(runtime system)。这有点像 JVM 之于 Java。其实从本质上讲，Unix 就是 C 语言的运行时系统。</p>
 <p>如果我们再进一步，把与数据库的连接做成透明的，即用同一种程序语言来“隐性”(implicit)的访问数据库，而不是像 SQL 之类的专用数据库语言，那么“数据库”这个概念也变得透明了。我们得到的会是一个非常简单，统一，方便，而且强大的系统。这个系统里面只有一种程序语言，程序员直接编写高级语言程序，用同样的语言从命令行执行它们，而且不用担心数据放在什么地方。这样可以大大的减小程序员工作的复杂度，让他们专注于问题本身，而不是系统的内部结构。</p>
 <p>实际上，类似这样的系统在历史上早已存在过 (Lisp Machine, System/38，Oberon)，而且收到了不错的效果。但是由于某些原因（历史的，经济的，政治的，技术的），它们都消亡了。但是不得不说它们的这种方式比 Unix 现有的方式优秀，所以何不学过来？我相信，随着程序语言和编译器技术发展，它们的这种简单而统一的设计理念，有一天会改变这个世界。</p>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

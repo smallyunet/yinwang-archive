@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">14</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,9 +46,20 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2013_03_19_eliminate-problems_20090101.html" >2009-01-01</a> <a href="blog-cn_2013_03_19_eliminate-problems_20130418.html" >2013-04-18</a> <a href="blog-cn_2013_03_19_eliminate-problems_20140701.html" >2014-07-01</a> <a href="blog-cn_2013_03_19_eliminate-problems_20141020.html" >2014-10-20</a> <a href="blog-cn_2013_03_19_eliminate-problems_20141226.html" class="current">2014-12-26</a> <a href="blog-cn_2013_03_19_eliminate-problems_20150127.html" >2015-01-27</a> <a href="blog-cn_2013_03_19_eliminate-problems_20161011.html" >2016-10-11</a> <a href="blog-cn_2013_03_19_eliminate-problems_20170506.html" >2017-05-06</a> <a href="blog-cn_2013_03_19_eliminate-problems_20171025.html" >2017-10-25</a> <a href="blog-cn_2013_03_19_eliminate-problems_20171108.html" >2017-11-08</a> <a href="blog-cn_2013_03_19_eliminate-problems_20171216.html" >2017-12-16</a> <a href="blog-cn_2013_03_19_eliminate-problems_20191120.html" >2019-11-20</a> <a href="blog-cn_2013_03_19_eliminate-problems_20200219.html" >2020-02-19</a> <a href="blog-cn_2013_03_19_eliminate-problems_20240416.html" >2024-04-16</a></div>
-        <h2>“解决问题”与“消灭问题”</h2>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_03_19_eliminate-problems_20240416.html">2024-04-16</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2Fab3d3a182eb4e578.json&amp;to=blog-cn_2013_03_19_eliminate-problems_20240416.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_03_19_eliminate-problems_20200219.html">2020-02-19</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2Fab3d3a182eb4e578.json&amp;to=blog-cn_2013_03_19_eliminate-problems_20200219.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_03_19_eliminate-problems_20191120.html">2019-11-20</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2Fab3d3a182eb4e578.json&amp;to=blog-cn_2013_03_19_eliminate-problems_20191120.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_03_19_eliminate-problems_20171216.html">2017-12-16</a></div><p class="version-diff-summary">较前版：+3 −0 修改 3</p><p class="version-preview">这问题是否可以在简单的改变某些“设计”或者“思路”之后，不复存在？ 很多问题的“存在”，其实是因为人们的“思维定势”。他们看不到问题的“根源”和因果关系，而是经常在下意识里假定某种“先决条件”（A）的存在，然后坚定不移的相信由此“导致…</p><a class="version-diff-link" href="diff.html?data=diffs%2Fab3d3a182eb4e578.json&amp;to=blog-cn_2013_03_19_eliminate-problems_20171216.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_03_19_eliminate-problems_20171108.html">2017-11-08</a></div><p class="version-diff-summary">较前版：+0 −8 修改 2</p><p class="version-preview">作者：王垠</p><a class="version-diff-link" href="diff.html?data=diffs%2Fab3d3a182eb4e578.json&amp;to=blog-cn_2013_03_19_eliminate-problems_20171108.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_03_19_eliminate-problems_20171025.html">2017-10-25</a></div><p class="version-diff-summary">较前版：+8 −0 修改 2</p><p class="version-preview">作者：王垠</p><a class="version-diff-link" href="diff.html?data=diffs%2Fab3d3a182eb4e578.json&amp;to=blog-cn_2013_03_19_eliminate-problems_20171025.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_03_19_eliminate-problems_20170506.html">2017-05-06</a></div><p class="version-diff-summary">较前版：+0 −3 修改 3</p><p class="version-preview">这问题是否可以在简单的改变某些“设计”或者“思路”之后，不复存在？</p><a class="version-diff-link" href="diff.html?data=diffs%2Fab3d3a182eb4e578.json&amp;to=blog-cn_2013_03_19_eliminate-problems_20170506.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_03_19_eliminate-problems_20161011.html">2016-10-11</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2Fab3d3a182eb4e578.json&amp;to=blog-cn_2013_03_19_eliminate-problems_20161011.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_03_19_eliminate-problems_20150127.html">2015-01-27</a></div><p class="version-diff-summary">较前版：+0 −1 修改 0</p><p class="version-preview">（王垠 yinwang.org 版权所有，未经许可，请勿转载）</p><a class="version-diff-link" href="diff.html?data=diffs%2Fab3d3a182eb4e578.json&amp;to=blog-cn_2013_03_19_eliminate-problems_20150127.html">查看差异</a></li><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2014-12-26</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2Fab3d3a182eb4e578.json&amp;to=blog-cn_2013_03_19_eliminate-problems_20141226.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_03_19_eliminate-problems_20141020.html">2014-10-20</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2Fab3d3a182eb4e578.json&amp;to=blog-cn_2013_03_19_eliminate-problems_20141020.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_03_19_eliminate-problems_20140701.html">2014-07-01</a></div><p class="version-diff-summary">较前版：+1 −5 修改 4</p><p class="version-preview">（王垠 yinwang.org 版权所有，未经许可，请勿转载）</p><a class="version-diff-link" href="diff.html?data=diffs%2Fab3d3a182eb4e578.json&amp;to=blog-cn_2013_03_19_eliminate-problems_20140701.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_03_19_eliminate-problems_20130418.html">2013-04-18</a></div><p class="version-diff-summary">较前版：+1 −1 修改 1</p><p class="version-preview">作者：王垠</p><a class="version-diff-link" href="diff.html?data=diffs%2Fab3d3a182eb4e578.json&amp;to=blog-cn_2013_03_19_eliminate-problems_20130418.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_03_19_eliminate-problems_20090101.html">2009-01-01</a></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
+
+        <h1 class="article-title">“解决问题”与“消灭问题”</h1>
 
     <p>（王垠 <a href="http://www.yinwang.org">yinwang.org</a> 版权所有，未经许可，请勿转载）</p>
 
@@ -96,15 +96,16 @@
 <p>语法分析成为一个问题的原因，就在于很多人错误的以为程序语言应该有复杂的语法。正是这些复杂的语法，造成了这个问题研究了很多年，仍然没有一个很好的解决方案。可是一旦语法设计被简化（比如像 Lisp 那样），语法分析就变成一个非常容易的问题。实际上计算机系统（比如 Unix）里的很多问题都是由此引发的，想要利用字符串来进行数据交换，却又设计了一些非常不方便的“数据格式”。简单的语法设计，会让这些问题一并消失掉。关于这个问题，我不想重复发文，细节请见另一篇博文《<a href="http://www.yinwang.org/blog-cn/2013/03/08/on-syntax">谈语法</a>)》。</p>
 
 <p>爱因斯坦说“想象力比知识更重要”，也许就是这个道理。没有想象力的人经常钻牛角尖，走死胡同，忘记了自己其实还有另外的路可走。</p>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

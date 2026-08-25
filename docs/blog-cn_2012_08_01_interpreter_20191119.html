@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">16</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,27 +46,21 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2012_08_01_interpreter_20130417.html" >2013-04-17</a> <a href="blog-cn_2012_08_01_interpreter_20140525.html" >2014-05-25</a> <a href="blog-cn_2012_08_01_interpreter_20140624.html" >2014-06-24</a> <a href="blog-cn_2012_08_01_interpreter_20160418.html" >2016-04-18</a> <a href="blog-cn_2012_08_01_interpreter_20160519.html" >2016-05-19</a> <a href="blog-cn_2012_08_01_interpreter_20161013.html" >2016-10-13</a> <a href="blog-cn_2012_08_01_interpreter_20170506.html" >2017-05-06</a> <a href="blog-cn_2012_08_01_interpreter_20170623.html" >2017-06-23</a> <a href="blog-cn_2012_08_01_interpreter_20171102.html" >2017-11-02</a> <a href="blog-cn_2012_08_01_interpreter_20171203.html" >2017-12-03</a> <a href="blog-cn_2012_08_01_interpreter_20171216.html" >2017-12-16</a> <a href="blog-cn_2012_08_01_interpreter_20180405.html" >2018-04-05</a> <a href="blog-cn_2012_08_01_interpreter_20191020.html" >2019-10-20</a> <a href="blog-cn_2012_08_01_interpreter_20191119.html" class="current">2019-11-19</a> <a href="blog-cn_2012_08_01_interpreter_20200218.html" >2020-02-18</a> <a href="blog-cn_2012_08_01_interpreter_20240421.html" >2024-04-21</a></div>
-        <script>
-            if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent))
-            {
-               document.body.classList.add('mobile');
-            }
-        </script>
 
-        <!--
-        <div class="ad-banner">
-            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <ins class="adsbygoogle"
-                    data-ad-client="ca-pub-1331524016319584"
-                    data-ad-slot="6657867155"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-        </div>
-        -->
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2012_08_01_interpreter_20240421.html">2024-04-21</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F733ba2bebd824539.json&amp;to=blog-cn_2012_08_01_interpreter_20240421.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2012_08_01_interpreter_20200218.html">2020-02-18</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F733ba2bebd824539.json&amp;to=blog-cn_2012_08_01_interpreter_20200218.html">查看差异</a></li><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2019-11-19</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F733ba2bebd824539.json&amp;to=blog-cn_2012_08_01_interpreter_20191119.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2012_08_01_interpreter_20191020.html">2019-10-20</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F733ba2bebd824539.json&amp;to=blog-cn_2012_08_01_interpreter_20191020.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2012_08_01_interpreter_20180405.html">2018-04-05</a></div><p class="version-diff-summary">较前版：+1 −2 修改 11</p><p class="version-preview">方括号跟圆括号可以互换，唯一的要求是方括号必须和方括号匹配。通常我喜欢用方括号来表示“无动作”的数据（比如上面的 [x 1], [y 2]），这样可以跟函数调用和其它具有“动作”的代码，产生“视觉差”。这对于代码的可读性是一个改善，因…</p><a class="version-diff-link" href="diff.html?data=diffs%2F733ba2bebd824539.json&amp;to=blog-cn_2012_08_01_interpreter_20180405.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2012_08_01_interpreter_20171216.html">2017-12-16</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F733ba2bebd824539.json&amp;to=blog-cn_2012_08_01_interpreter_20171216.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2012_08_01_interpreter_20171203.html">2017-12-03</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F733ba2bebd824539.json&amp;to=blog-cn_2012_08_01_interpreter_20171203.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2012_08_01_interpreter_20171102.html">2017-11-02</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F733ba2bebd824539.json&amp;to=blog-cn_2012_08_01_interpreter_20171102.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2012_08_01_interpreter_20170623.html">2017-06-23</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F733ba2bebd824539.json&amp;to=blog-cn_2012_08_01_interpreter_20170623.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2012_08_01_interpreter_20170506.html">2017-05-06</a></div><p class="version-diff-summary">较前版：+0 −0 修改 1</p><p class="version-preview">注意这里的 exp 就是 ``(lambda (,x) ,e)` 自己。</p><a class="version-diff-link" href="diff.html?data=diffs%2F733ba2bebd824539.json&amp;to=blog-cn_2012_08_01_interpreter_20170506.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2012_08_01_interpreter_20161013.html">2016-10-13</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F733ba2bebd824539.json&amp;to=blog-cn_2012_08_01_interpreter_20161013.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2012_08_01_interpreter_20160519.html">2016-05-19</a></div><p class="version-diff-summary">较前版：+28 −0 修改 92</p><p class="version-preview">写一个解释器，通常是设计和实现程序语言的第一步。解释器是简单却又深奥的东西，以至于好多人都不会写，所以我决定写一篇这方面的入门读物。</p><a class="version-diff-link" href="diff.html?data=diffs%2F733ba2bebd824539.json&amp;to=blog-cn_2012_08_01_interpreter_20160519.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2012_08_01_interpreter_20160418.html">2016-04-18</a></div><p class="version-diff-summary">较前版：+40 −12 修改 97</p><p class="version-preview">写一个解释器，是设计和实现程序语言的第一步。解释器是简单却又深奥的东西，以至于好多人都不会写。也有人自认为会写，却没领会到里面的真谛，所以我决定写一篇这方面的入门读物。虽然我试图从最基本的原理讲起，尽量不依赖于其它知识，但这并不是一本…</p><a class="version-diff-link" href="diff.html?data=diffs%2F733ba2bebd824539.json&amp;to=blog-cn_2012_08_01_interpreter_20160418.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2012_08_01_interpreter_20140624.html">2014-06-24</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F733ba2bebd824539.json&amp;to=blog-cn_2012_08_01_interpreter_20140624.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2012_08_01_interpreter_20140525.html">2014-05-25</a></div><p class="version-diff-summary">较前版：+1 −0 修改 0</p><p class="version-preview">（王垠 yinwang.org 版权所有，未经许可，请勿转载）</p><a class="version-diff-link" href="diff.html?data=diffs%2F733ba2bebd824539.json&amp;to=blog-cn_2012_08_01_interpreter_20140525.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2012_08_01_interpreter_20130417.html">2013-04-17</a></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
 
         <div>
-            <h2>怎样写一个解释器</h2>
+            <h1 class="article-title">怎样写一个解释器</h1>
             <p>写一个解释器，通常是设计和实现程序语言的第一步。解释器是简单却又深奥的东西，以至于好多人都不会写，所以我决定写一篇这方面的入门读物。</p>
 
 <p>虽然我试图从最基本的原理讲起，尽量不依赖于其它知识，但这并不是一本编程入门教材。我假设你已经理解 Scheme 语言，以及基本的编程技巧（比如递归）。如果你完全不了解这些，那我建议你读一下 <a href="https://mitpress.mit.edu/sicp">SICP</a> 的第一，二章，或者 <a href="http://www.htdp.org">HtDP</a> 的前几章，习题可以不做。注意不要读太多书，否则你就回不来了 ;-) 当然你也可以直接读这篇文章，有不懂的地方再去查资料。</p>
@@ -700,15 +683,16 @@
 <p>如果你喜欢这篇文章，可以到这里<a href="http://www.yinwang.org/blog-cn/2016/04/13/pay-blog">付费购买</a>。</p>
 
         </div>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

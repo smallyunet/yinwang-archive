@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">7</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,17 +46,21 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2019_08_17_trust_20090101.html" >2009-01-01</a> <a href="blog-cn_2019_08_17_trust_20190817.html" >2019-08-17</a> <a href="blog-cn_2019_08_17_trust_20190819.html" >2019-08-19</a> <a href="blog-cn_2019_08_17_trust_20190822.html" >2019-08-22</a> <a href="blog-cn_2019_08_17_trust_20190824.html" >2019-08-24</a> <a href="blog-cn_2019_08_17_trust_20190916.html" >2019-09-16</a> <a href="blog-cn_2019_08_17_trust_20200220.html" class="current">2020-02-20</a></div>
-        <script>
-            if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent))
-            {
-               document.body.classList.add('mobile');
-            }
-        </script>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2020-02-20</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2Ff5de02827ccb6994.json&amp;to=blog-cn_2019_08_17_trust_20200220.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2019_08_17_trust_20190916.html">2019-09-16</a></div><p class="version-diff-summary">较前版：+2 −0 修改 2</p><p class="version-preview">你也许觉得这是一个特别不好的小区才会这样，可惜旁边的几个小区我看过了，样子都差不多，根本没有品质可言。这就是成都的市中心。我看过一个朋友买的成都高新区的新房子，屋里装修崭新的，一进电梯就像进了贫民窟，地下车库也是破败不堪。难以想象他每…</p><a class="version-diff-link" href="diff.html?data=diffs%2Ff5de02827ccb6994.json&amp;to=blog-cn_2019_08_17_trust_20190916.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2019_08_17_trust_20190824.html">2019-08-24</a></div><p class="version-diff-summary">较前版：+6 −0 修改 14</p><p class="version-preview">生活环境如此，中国人不用心改造现实的环境，却热衷于“虚拟产业”。中国的互联网产业，人工智能，显然是非常受重视的。没有其它国家的人有这么热衷于“人工智能”和“高科技”，成天各种浮夸，布道，洗脑。</p><a class="version-diff-link" href="diff.html?data=diffs%2Ff5de02827ccb6994.json&amp;to=blog-cn_2019_08_17_trust_20190824.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2019_08_17_trust_20190822.html">2019-08-22</a></div><p class="version-diff-summary">较前版：+36 −0 修改 5</p><p class="version-preview">比如上图，就是我父母住的成都某小区楼门口的顶棚。玻璃顶棚碎成这样了，业主们闹了两年还不修。你能想象这种心情吗，自己的父母每天从这摇摇欲坠的玻璃下面走过！楼里的三部电梯坏了两部，闹了几个月修了其中一部，还有一部一直不修。物业为了赚外快，…</p><a class="version-diff-link" href="diff.html?data=diffs%2Ff5de02827ccb6994.json&amp;to=blog-cn_2019_08_17_trust_20190822.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2019_08_17_trust_20190819.html">2019-08-19</a></div><p class="version-diff-summary">较前版：+6 −0 修改 32</p><p class="version-preview">最近有些人找到我，问我为什么很久没写文章了，我没有回答他们。一方面是因为我没有必要回答任何问题，另一方面我不想当面告诉这些人——我不信任他们。回国两年以来，我对国人的信任值已经降低到了人生中的最低水平。我发现几乎所有人都是在演戏，极少…</p><a class="version-diff-link" href="diff.html?data=diffs%2Ff5de02827ccb6994.json&amp;to=blog-cn_2019_08_17_trust_20190819.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2019_08_17_trust_20190817.html">2019-08-17</a></div><p class="version-diff-summary">较前版：+0 −42 修改 32</p><p class="version-preview">最近有些人找到我，问我为什么很久没写文章了，我没有回答他们。一方面是因为我没有必要回答任何问题，另一方面我不想当面告诉这些人——我不信任他们。回国两年以来，我对国人的信任值已经降低到了人生中的最低水平。我发现几乎所有人都是在演戏，极少…</p><a class="version-diff-link" href="diff.html?data=diffs%2Ff5de02827ccb6994.json&amp;to=blog-cn_2019_08_17_trust_20190817.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2019_08_17_trust_20090101.html">2009-01-01</a></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
 
         <div>
-            <h2>中国人的信任危机</h2>
+            <h1 class="article-title">中国人的信任危机</h1>
             <p>最近有些人找到我，问我为什么很久没写文章了，我没有回答他们。一方面是因为我没有必要回答任何问题，另一方面我不想当面告诉这些人——我不信任他们。回国两年以来，我对国人的信任值已经降低到了人生中的最低水平。我发现几乎所有人都是在演戏，极少有人是他们自己，人心已经被贪婪和愚昧所毒害。</p>
 
 <p>在这种情况下，我已经没有动力跟不熟悉的人“分享”什么了。我以为网络上的人才有这么差，可是回国之后，我发现现实中的人们跟网络上的差别不大。毕竟很多国人大部分时间都生活在网上，没有其它乐趣，成天刷微博，刷知乎，谈论各种名人丑闻，看什么信什么，使得他们的内心变得阴暗。</p>
@@ -238,29 +231,16 @@
 
 
         </div>
+    </main>
 
-        <!--
-        <div class="ad-banner">
-            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <ins class="adsbygoogle"
-                    data-ad-client="ca-pub-1331524016319584"
-                    data-ad-slot="6657867155"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-        </div>
 
-        <script data-ad-client="ca-pub-1331524016319584" async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
-        </script>
-        -->
-    </div>
-
-    
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

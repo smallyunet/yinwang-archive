@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">7</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,9 +46,20 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2015_01_19_tips_20090101.html" >2009-01-01</a> <a href="blog-cn_2015_01_19_tips_20150122.html" >2015-01-22</a> <a href="blog-cn_2015_01_19_tips_20150206.html" >2015-02-06</a> <a href="blog-cn_2015_01_19_tips_20180329.html" >2018-03-29</a> <a href="blog-cn_2015_01_19_tips_20180409.html" class="current">2018-04-09</a> <a href="blog-cn_2015_01_19_tips_20200228.html" >2020-02-28</a> <a href="blog-cn_2015_01_19_tips_20240416.html" >2024-04-16</a></div>
-        <h1>小费和中国人的尊严</h1>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_01_19_tips_20240416.html">2024-04-16</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F7a843b72fcea0c84.json&amp;to=blog-cn_2015_01_19_tips_20240416.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_01_19_tips_20200228.html">2020-02-28</a></div><p class="version-diff-summary">较前版：+6 −0 修改 1</p><p class="version-preview">美国小费的普遍性来自于落后的社会关系和严重的贫富分化。中国和英国很少有需要付小费的地方，这是社会制度在某些方面先进的表现。所以没必要在美国餐厅战战兢兢，担心自己“不懂规矩”，或者以此来审视别人。</p><a class="version-diff-link" href="diff.html?data=diffs%2F7a843b72fcea0c84.json&amp;to=blog-cn_2015_01_19_tips_20200228.html">查看差异</a></li><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2018-04-09</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">较前版：+0 −6 修改 1</p><p class="version-preview">- 美国小费的普遍性来自于落后的社会关系和严重的贫富分化。中国和英国很少有需要付小费的地方，这是社会制度在某些方面先进的表现。所以没必要在美国餐厅战战兢兢，担心自己“不懂规矩”，或者以此来审视别人。 - 在心理上，小费应该是一种施舍（…</p><a class="version-diff-link" href="diff.html?data=diffs%2F7a843b72fcea0c84.json&amp;to=blog-cn_2015_01_19_tips_20180409.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_01_19_tips_20180329.html">2018-03-29</a></div><p class="version-diff-summary">较前版：+0 −0 修改 2</p><p class="version-preview">在社会文明的某些方面更加先进的英国和欧洲其它国家，基本不用给小费，而且给小费被视为对服务人员的侮辱（人家的工资不低）。所以就跟美国人仍然使用落后的英制单位（英里，英寸，加伦，盎司，华氏度…）一样，小费并不是什么“高大上”的社会现象。相…</p><a class="version-diff-link" href="diff.html?data=diffs%2F7a843b72fcea0c84.json&amp;to=blog-cn_2015_01_19_tips_20180329.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_01_19_tips_20150206.html">2015-02-06</a></div><p class="version-diff-summary">较前版：+1 −1 修改 5</p><p class="version-preview">（王垠 yinwang.org 版权所有，未经许可，请勿转载）</p><a class="version-diff-link" href="diff.html?data=diffs%2F7a843b72fcea0c84.json&amp;to=blog-cn_2015_01_19_tips_20150206.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_01_19_tips_20150122.html">2015-01-22</a></div><p class="version-diff-summary">较前版：+6 −0 修改 3</p><p class="version-preview">（王垠 yinwang.org 版权所有，未经许可，请勿转载）</p><a class="version-diff-link" href="diff.html?data=diffs%2F7a843b72fcea0c84.json&amp;to=blog-cn_2015_01_19_tips_20150122.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_01_19_tips_20090101.html">2009-01-01</a></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
+
+        <h1 class="article-title">小费和中国人的尊严</h1>
 <div class="date">2018-04-09</div>
 <p>小费，一个尴尬的话题，一般是中国人来到美国之后第一个不习惯的文化现象。在中国，吃饭理发等活动是不需要付小费的，而在美国，付小费貌似服务行业一种必须的事情。在美国的饭店吃饭，一般人会付至少 15% 的小费给服务员。</p>
 <p>初到美国的中国人一般比较小气，想方设法省钱，当然也想在小费上省钱。有些人去饭店吃饭，不管别人服务如何周到如何有礼貌，都只付不到 15% 甚至少于 10% 的小费，吃饭之后总是有做贼一样逃之夭夭的感觉。</p>
@@ -84,15 +84,16 @@
 
 - 对于快餐店和咖啡店收款处的“小费筒”，大可不必放钱进去。我觉得往里面丢钱是对店员的侮辱。不过如果我用现金，一般会把找回来的硬币顺手丢进去，因为我不喜欢带硬币在身上。
 </code></pre>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,7 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,9 +38,11 @@
         </div>
     </nav>
 
-    <div class="inner">
-        
-        <h1>用脑图来分享思想</h1>
+
+
+    <main class="inner" id="main-content">
+
+        <h1 class="article-title">用脑图来分享思想</h1>
 <div class="date">2009-01-01</div>
 <p>作者：王垠</p>
 <p>一直都觉得自然语言并不是分享思想的最好手段。不管是论文，博客，还是个人主页，总是不能很好的传播思想。其中的原因，我觉得是因为自然语言是一种顺序化的媒体。它的产生来自于人类语言最初的载体：声波。那个远古的时候，没有文字，也没有艺术。声波是一种顺序化的媒体，你必须先听到一句话，才能听到下一句话。想想吧，如果两句话同时传过来，你就什么也听不清。然而，人的头脑却是高度并行的信息处理机构。这就是为什么人们往往发现看图比阅读更加迅速，而阅读又比说话更加迅速。我经常发现自己写的博客过一段时间就觉得某些部分表达得不好，却又改来改去总改不对，这就是自然语言的局限性所致。</p>
@@ -67,15 +50,16 @@
 <p>我的第一个公开的脑图是关于计算机科学里的“数据结构”，它的网址在这里：　http://www.mindmeister.com/212871624/data-structure</p>
 <p>目前只有很少的内容，而且不知道这个 MindMeister 软件到底好不好用。感觉比 Freemind 和 XMind 的 WEB 界面好点，不过比 Mind Manager 可能要差点。</p>
 <p>不过如果实验成功的话，不久我就会加进很多的东西。目前我还没有发现很好的接受评论的方法，所以如果有问题或者想法，也许只能给我发 email。不过也许这些软件不久就会提供很好的方式来接受评论（比如直接在图的结点上做评论）。</p>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

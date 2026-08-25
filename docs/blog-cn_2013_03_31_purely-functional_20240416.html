@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">14</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,17 +46,21 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2013_03_31_purely-functional_20090101.html" >2009-01-01</a> <a href="blog-cn_2013_03_31_purely-functional_20130421.html" >2013-04-21</a> <a href="blog-cn_2013_03_31_purely-functional_20140210.html" >2014-02-10</a> <a href="blog-cn_2013_03_31_purely-functional_20140421.html" >2014-04-21</a> <a href="blog-cn_2013_03_31_purely-functional_20140621.html" >2014-06-21</a> <a href="blog-cn_2013_03_31_purely-functional_20151205.html" >2015-12-05</a> <a href="blog-cn_2013_03_31_purely-functional_20160922.html" >2016-09-22</a> <a href="blog-cn_2013_03_31_purely-functional_20170504.html" >2017-05-04</a> <a href="blog-cn_2013_03_31_purely-functional_20171025.html" >2017-10-25</a> <a href="blog-cn_2013_03_31_purely-functional_20171203.html" >2017-12-03</a> <a href="blog-cn_2013_03_31_purely-functional_20180222.html" >2018-02-22</a> <a href="blog-cn_2013_03_31_purely-functional_20191208.html" >2019-12-08</a> <a href="blog-cn_2013_03_31_purely-functional_20200228.html" >2020-02-28</a> <a href="blog-cn_2013_03_31_purely-functional_20240416.html" class="current">2024-04-16</a></div>
-        <script>
-            if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent))
-            {
-               document.body.classList.add('mobile');
-            }
-        </script>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2024-04-16</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F7f2ec61c6f56f7cd.json&amp;to=blog-cn_2013_03_31_purely-functional_20240416.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_03_31_purely-functional_20200228.html">2020-02-28</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F7f2ec61c6f56f7cd.json&amp;to=blog-cn_2013_03_31_purely-functional_20200228.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_03_31_purely-functional_20191208.html">2019-12-08</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F7f2ec61c6f56f7cd.json&amp;to=blog-cn_2013_03_31_purely-functional_20191208.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_03_31_purely-functional_20180222.html">2018-02-22</a></div><p class="version-diff-summary">较前版：+6 −0 修改 2</p><p class="version-preview">很早的时候，“函数式语言”对于我来说就是 Lisp，因为 Lisp 可以在程序的几乎任意位置定义函数，并且把它们作为值来传递（这叫做 first-class function）。可是到后来有人告诉我，Lisp 其实不算“函数式语言”，…</p><a class="version-diff-link" href="diff.html?data=diffs%2F7f2ec61c6f56f7cd.json&amp;to=blog-cn_2013_03_31_purely-functional_20180222.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_03_31_purely-functional_20171203.html">2017-12-03</a></div><p class="version-diff-summary">较前版：+0 −17 修改 4</p><p class="version-preview">作者：王垠</p><a class="version-diff-link" href="diff.html?data=diffs%2F7f2ec61c6f56f7cd.json&amp;to=blog-cn_2013_03_31_purely-functional_20171203.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_03_31_purely-functional_20171025.html">2017-10-25</a></div><p class="version-diff-summary">较前版：+38 −0 修改 2</p><p class="version-preview">作者：王垠</p><a class="version-diff-link" href="diff.html?data=diffs%2F7f2ec61c6f56f7cd.json&amp;to=blog-cn_2013_03_31_purely-functional_20171025.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_03_31_purely-functional_20170504.html">2017-05-04</a></div><p class="version-diff-summary">较前版：+0 −20 修改 0</p><p class="version-preview">这里的 seed 是一个“static 变量”，其本质就是一个全局变量，只不过这个全局变量只能被 random 这一个函数访问。每次调用 random()，它都会使用 next_random(seed) 生成下一个随机数，并且把 se…</p><a class="version-diff-link" href="diff.html?data=diffs%2F7f2ec61c6f56f7cd.json&amp;to=blog-cn_2013_03_31_purely-functional_20170504.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_03_31_purely-functional_20160922.html">2016-09-22</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F7f2ec61c6f56f7cd.json&amp;to=blog-cn_2013_03_31_purely-functional_20160922.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_03_31_purely-functional_20151205.html">2015-12-05</a></div><p class="version-diff-summary">较前版：+0 −1 修改 0</p><p class="version-preview">（王垠 yinwang.org 版权所有，未经许可，请勿转载）</p><a class="version-diff-link" href="diff.html?data=diffs%2F7f2ec61c6f56f7cd.json&amp;to=blog-cn_2013_03_31_purely-functional_20151205.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_03_31_purely-functional_20140621.html">2014-06-21</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F7f2ec61c6f56f7cd.json&amp;to=blog-cn_2013_03_31_purely-functional_20140621.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_03_31_purely-functional_20140421.html">2014-04-21</a></div><p class="version-diff-summary">较前版：+1 −0 修改 0</p><p class="version-preview">（王垠 yinwang.org 版权所有，未经许可，请勿转载）</p><a class="version-diff-link" href="diff.html?data=diffs%2F7f2ec61c6f56f7cd.json&amp;to=blog-cn_2013_03_31_purely-functional_20140421.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_03_31_purely-functional_20140210.html">2014-02-10</a></div><p class="version-diff-summary">较前版：+0 −1 修改 0</p><p class="version-preview">对数学和逻辑学的盲目崇拜，导致了 Harper 做出盲目的判断。这也许不能完全怪他。如果你知道他是 Alonzo Church 的第三代“学术后裔”（Alozon Church --&gt; Stephen Kleene --&gt; Rober…</p><a class="version-diff-link" href="diff.html?data=diffs%2F7f2ec61c6f56f7cd.json&amp;to=blog-cn_2013_03_31_purely-functional_20140210.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_03_31_purely-functional_20130421.html">2013-04-21</a></div><p class="version-diff-summary">较前版：+0 −17 修改 5</p><p class="version-preview">作者：王垠</p><a class="version-diff-link" href="diff.html?data=diffs%2F7f2ec61c6f56f7cd.json&amp;to=blog-cn_2013_03_31_purely-functional_20130421.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_03_31_purely-functional_20090101.html">2009-01-01</a></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
 
         <div>
-            <h2>函数式语言的宗教</h2>
+            <h1 class="article-title">函数式语言的宗教</h1>
             <p>很早的时候，“函数式语言”对于我来说就是 Lisp，因为 Lisp 可以在程序的几乎任意位置定义函数，并且把它们作为值来传递（这叫做 first-class function）。可是到后来有人告诉我，Lisp 其实不算“函数式语言”，因为 Lisp 的函数不“纯”（pure）。</p>
 
 <p>所谓“纯函数”，就是像数学函数一样，你给它同样的输入，它就给你同样的输出。然后你就发现在这种定义下，几乎所有程序语言里面的随机数函数（<code class="language-plaintext highlighter-rouge">random</code>），都不是“纯函数”。因为每一次调用 <code class="language-plaintext highlighter-rouge">random()</code>，输入都是一样的（没有参数），但每次会输出不同的随机数。他们告诉我，不纯的函数容易出错，没法验证它的正确性。</p>
@@ -160,15 +153,16 @@ int h(int z) {
 <p>说了这么多，对于“函数式语言”这一概念的误解，应该消除得差不多了。其实“函数式语言”唯一的要求，应该是能够在任意位置定义函数，并且能够把函数作为值传递，不管这函数是“纯”的还是“不纯”的。所以像 Lisp 和 ML 这样的语言，其实完全符合“函数式语言”这一称号。</p>
 
         </div>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

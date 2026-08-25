@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">4</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,10 +46,21 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2017_07_21_love-cat_20170723.html" >2017-07-23</a> <a href="blog-cn_2017_07_21_love-cat_20170810.html" class="current">2017-08-10</a> <a href="blog-cn_2017_07_21_love-cat_20180304.html" >2018-03-04</a> <a href="blog-cn_2017_07_21_love-cat_20181119.html" >2018-11-19</a></div>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2017_07_21_love-cat_20181119.html">2018-11-19</a></div><p class="version-diff-summary">较前版：+0 −0 修改 4</p><p class="version-preview">很多人对猫有误解，认为相对于狗而言，猫不忠诚，养不家，不认人。甚至认为猫很势利，你有吃的就对你好，没吃的就可以不理你，甚至出走。自己养猫之后，发现这些说法全都是误解。猫不但会认人，而且会思念自己喜欢的人。很多人盲目的认为忠诚是优点，而…</p><a class="version-diff-link" href="diff.html?data=diffs%2F4afc117e0a6bc195.json&amp;to=blog-cn_2017_07_21_love-cat_20181119.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2017_07_21_love-cat_20180304.html">2018-03-04</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F4afc117e0a6bc195.json&amp;to=blog-cn_2017_07_21_love-cat_20180304.html">查看差异</a></li><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2017-08-10</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">较前版：+0 −0 修改 1</p><p class="version-preview">很多人对猫有误解，认为相对于狗而言，猫不忠诚，养不家，不认人。甚至认为猫很势利，你有吃的就对你好，没吃的就可以不理你，甚至出走。自己养猫之后，发现这些说法全都是误解。猫不但会认人，而且会思念自己喜欢的人。很多人盲目的认为忠诚是优点，而…</p><a class="version-diff-link" href="diff.html?data=diffs%2F4afc117e0a6bc195.json&amp;to=blog-cn_2017_07_21_love-cat_20170810.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2017_07_21_love-cat_20170723.html">2017-07-23</a></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
+
         <div>
-                            <h2>我为什么爱猫</h2>
+                            <h1 class="article-title">我为什么爱猫</h1>
                             <p>从小就喜欢猫，可惜由于母亲“凡是会拉屎的都不养”的政策，一直都没有机会自己养一只。所以邻居家的猫，对我来说都有一种难以抵抗的诱惑。我还记得小时候住平房，自己学了一声喵叫录到磁带里，然后用最大的音量放出来，结果邻居家的小白猫听见了，窜进我家的纱门，那种欣喜是难以言表的。然而别人家的猫毕竟只能是客人，这个恋猫情结就一直到了自己独立生活的时候，才有了进展。</p>
 
 <p>很多人对猫有误解，认为相对于狗而言，猫不忠诚，养不家，不认人。甚至认为猫很势利，你有吃的就对你好，没吃的就可以不理你，甚至出走。自己养猫之后，发现这些说法全都是误解。猫不但会认人，而且会思念自己喜欢的人。很多人盲目的认为忠诚是优点，而我觉得狗那种“无条件的忠诚”，其实是虚伪而危险的。狗往往对主人表现得很忠诚，而对其他人就凶神恶煞的。人们都说“狗仗人势”就是这个道理，狗的忠诚里面显露出来的其实是一个字：贱。</p>
@@ -91,15 +91,16 @@
 
 
                         </div>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

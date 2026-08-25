@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">5</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,17 +46,21 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2018_02_16_chengdu-pollution_20180217.html" >2018-02-17</a> <a href="blog-cn_2018_02_16_chengdu-pollution_20180220.html" >2018-02-20</a> <a href="blog-cn_2018_02_16_chengdu-pollution_20180228.html" >2018-02-28</a> <a href="blog-cn_2018_02_16_chengdu-pollution_20230313.html" class="current">2023-03-13</a> <a href="blog-cn_2018_02_16_chengdu-pollution_20240508.html" >2024-05-08</a></div>
-        <script>
-            if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent))
-            {
-               document.body.classList.add('mobile');
-            }
-        </script>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2018_02_16_chengdu-pollution_20240508.html">2024-05-08</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2Fa7f3ff8e6cefd670.json&amp;to=blog-cn_2018_02_16_chengdu-pollution_20240508.html">查看差异</a></li><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2023-03-13</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2Fa7f3ff8e6cefd670.json&amp;to=blog-cn_2018_02_16_chengdu-pollution_20230313.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2018_02_16_chengdu-pollution_20180228.html">2018-02-28</a></div><p class="version-diff-summary">较前版：+2 −0 修改 8</p><p class="version-preview">很多人以为成都只有冬天有空气污染，还不以为然的样子。冬天有三个月之久，每天这样的雾霾，已经是非常难受的。而且成都也许不只是冬天才有污染。你想想，北方冬天雾霾严重，是因为北方需要烧煤产生暖气。成都冬天根本没有集体供暖，不需要烧煤，那么这…</p><a class="version-diff-link" href="diff.html?data=diffs%2Fa7f3ff8e6cefd670.json&amp;to=blog-cn_2018_02_16_chengdu-pollution_20180228.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2018_02_16_chengdu-pollution_20180220.html">2018-02-20</a></div><p class="version-diff-summary">较前版：+4 −0 修改 3</p><p class="version-preview">三个月以来，成都的天空一直是这个样子，每一天都像是世界末日。当你还能看见太阳的时候就更诡异了，大白天的看到太阳，是一个朦胧的火球，空气都是红色橙色的，红得可怕。这只有在好莱坞的外星人入侵地球大片里才能看到。</p><a class="version-diff-link" href="diff.html?data=diffs%2Fa7f3ff8e6cefd670.json&amp;to=blog-cn_2018_02_16_chengdu-pollution_20180220.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2018_02_16_chengdu-pollution_20180217.html">2018-02-17</a></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
 
         <div>
-            <h2>成都的雾霾</h2>
+            <h1 class="article-title">成都的雾霾</h1>
             <p>今天是大年初一，本来不想写东西的。可是一大早起来，就看到这样的天空，空气质量又是“重度污染”。连大年初一都不放过我，出不了门，所以我这个年也不想过了，决定写点什么，在我被这雾霾灭口之前 :)</p>
 
 <p><img src="images/chengdu-air.jpg" width="600" /></p>
@@ -187,29 +180,16 @@
 </ol>
 
         </div>
+    </main>
 
-        <!--
-        <div class="ad-banner">
-            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <ins class="adsbygoogle"
-                    data-ad-client="ca-pub-1331524016319584"
-                    data-ad-slot="6657867155"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-        </div>
 
-        <script data-ad-client="ca-pub-1331524016319584" async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
-        </script>
-        -->
-    </div>
-
-    
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

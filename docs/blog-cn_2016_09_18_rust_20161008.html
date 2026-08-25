@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">11</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,10 +46,21 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2016_09_18_rust_20160922.html" >2016-09-22</a> <a href="blog-cn_2016_09_18_rust_20161008.html" class="current">2016-10-08</a> <a href="blog-cn_2016_09_18_rust_20170506.html" >2017-05-06</a> <a href="blog-cn_2016_09_18_rust_20170524.html" >2017-05-24</a> <a href="blog-cn_2016_09_18_rust_20171113.html" >2017-11-13</a> <a href="blog-cn_2016_09_18_rust_20171214.html" >2017-12-14</a> <a href="blog-cn_2016_09_18_rust_20171216.html" >2017-12-16</a> <a href="blog-cn_2016_09_18_rust_20191121.html" >2019-11-21</a> <a href="blog-cn_2016_09_18_rust_20200220.html" >2020-02-20</a> <a href="blog-cn_2016_09_18_rust_20200611.html" >2020-06-11</a> <a href="blog-cn_2016_09_18_rust_20240530.html" >2024-05-30</a></div>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_09_18_rust_20240530.html">2024-05-30</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F4ab90f8533926d40.json&amp;to=blog-cn_2016_09_18_rust_20240530.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_09_18_rust_20200611.html">2020-06-11</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F4ab90f8533926d40.json&amp;to=blog-cn_2016_09_18_rust_20200611.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_09_18_rust_20200220.html">2020-02-20</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F4ab90f8533926d40.json&amp;to=blog-cn_2016_09_18_rust_20200220.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_09_18_rust_20191121.html">2019-11-21</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F4ab90f8533926d40.json&amp;to=blog-cn_2016_09_18_rust_20191121.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_09_18_rust_20171216.html">2017-12-16</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F4ab90f8533926d40.json&amp;to=blog-cn_2016_09_18_rust_20171216.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_09_18_rust_20171214.html">2017-12-14</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F4ab90f8533926d40.json&amp;to=blog-cn_2016_09_18_rust_20171214.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_09_18_rust_20171113.html">2017-11-13</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F4ab90f8533926d40.json&amp;to=blog-cn_2016_09_18_rust_20171113.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_09_18_rust_20170524.html">2017-05-24</a></div><p class="version-diff-summary">较前版：+0 −0 修改 1</p><p class="version-preview">实际上我有一个类似的梦。我曾经向我的教授们提出过 N 多种不需 GC 和 RC 就能静态管理内存的办法，结果每一次都被他们给我的小例子给打败了，以至于我很难相信有任何人可以想到比 GC 和 RC 更好的方法。</p><a class="version-diff-link" href="diff.html?data=diffs%2F4ab90f8533926d40.json&amp;to=blog-cn_2016_09_18_rust_20170524.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_09_18_rust_20170506.html">2017-05-06</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F4ab90f8533926d40.json&amp;to=blog-cn_2016_09_18_rust_20170506.html">查看差异</a></li><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2016-10-08</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">较前版：+0 −0 修改 2</p><p class="version-preview">Rust 是一门最近比较热的语言，有很多人问过我对 Rust 的看法。由于我本人是一个语言专家，实现过几乎所有的语言特性，所以我不认为任何一种语言是新的。任何“新语言”对我来说，不过是把早已存在的语言特性（或者毛病），挑一些出来放在一…</p><a class="version-diff-link" href="diff.html?data=diffs%2F4ab90f8533926d40.json&amp;to=blog-cn_2016_09_18_rust_20161008.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_09_18_rust_20160922.html">2016-09-22</a></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
+
         <div>
-                            <h2>对 Rust 语言的分析</h2>
+                            <h1 class="article-title">对 Rust 语言的分析</h1>
                             <p>Rust 是一门最近比较热的语言，有很多人问过我对 Rust 的看法。由于我本人是一个语言专家，实现过几乎所有的语言特性，所以我不认为任何一种语言是新的。任何“新语言”对我来说，不过是把早已存在的语言特性（或者毛病），挑一些出来放在一起。所以一般情况下我都不会去评论别人设计的语言，甚至懒得看一眼，除非它历史悠久（比如像 C 或者 C++），或者它在工作中惹恼了我（像 Go 和 JavaScript 那样）。这就是为什么这些人问我 Rust 的问题，我一般都没有回复，或者一笔带过。</p>
 
 <p>不过最近有点闲，我想既然有人这么热衷于这种新语言，那我还是稍微凑下热闹，顺便分享一下我对某些常见的设计思路的看法。所以这篇文章虽然是在评论 Rust 的设计，它却不只是针对 Rust。它是针对某些语言特性，而不只是针对某一种语言。</p>
@@ -263,15 +263,16 @@ fn add_one(x: i32) -&gt; i32 {
 <p>（如果你喜欢这些内容，请付费5美元或者30人民币，谢谢！）</p>
 
                         </div>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">5</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,9 +46,20 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2013_06_17_work_20090101.html" >2009-01-01</a> <a href="blog-cn_2013_06_17_work_20130619.html" >2013-06-19</a> <a href="blog-cn_2013_06_17_work_20150113.html" class="current">2015-01-13</a> <a href="blog-cn_2013_06_17_work_20150206.html" >2015-02-06</a> <a href="blog-cn_2013_06_17_work_20171025.html" >2017-10-25</a></div>
-        <h2>半年来的工作感受</h2>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_06_17_work_20171025.html">2017-10-25</a></div><p class="version-diff-summary">较前版：+2 −1 修改 7</p><p class="version-preview">作者：王垠</p><a class="version-diff-link" href="diff.html?data=diffs%2F8c9ed1546089ab9b.json&amp;to=blog-cn_2013_06_17_work_20171025.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_06_17_work_20150206.html">2015-02-06</a></div><p class="version-diff-summary">较前版：+0 −1 修改 0</p><p class="version-preview">（王垠 yinwang.org 版权所有，未经许可，请勿转载）</p><a class="version-diff-link" href="diff.html?data=diffs%2F8c9ed1546089ab9b.json&amp;to=blog-cn_2013_06_17_work_20150206.html">查看差异</a></li><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2015-01-13</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">较前版：+1 −1 修改 8</p><p class="version-preview">（王垠 yinwang.org 版权所有，未经许可，请勿转载）</p><a class="version-diff-link" href="diff.html?data=diffs%2F8c9ed1546089ab9b.json&amp;to=blog-cn_2013_06_17_work_20150113.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_06_17_work_20130619.html">2013-06-19</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F8c9ed1546089ab9b.json&amp;to=blog-cn_2013_06_17_work_20130619.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_06_17_work_20090101.html">2009-01-01</a></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
+
+        <h1 class="article-title">半年来的工作感受</h1>
 
     <p>（王垠 <a href="http://www.yinwang.org">yinwang.org</a> 版权所有，未经许可，请勿转载）</p>
 
@@ -88,15 +88,16 @@
 <p>我受到的训练让我可以直接看到简单而正确的结果，就像米开朗基罗看见大卫一样，所以测试对于我来说分量没有那么重。当我的代码需要大量的测试才能确保正确的时候，那就是它该被推翻重写的时候。所以我的代码往往没有任何补丁和变通，可以说是无懈可击。当然，优美的代码并不是一蹴而就的，有的代码被我推翻重来几十次才最后成功，但最后的结果肯定不会留下丝毫错误的痕迹。所以我觉得，看一个程序员的水平，不要看他留下来多少行代码，而要看他删掉了多少行。</p>
 
 <p>我觉得做 Coverity 的工程师真累。这种累不止在于技术层面的繁琐，而且在于管理层对工程师的缺乏尊重以及不必要的压力。这让我在受到了足够的“启发”之后，开始怀疑是否还有继续为它工作的价值。对于公司管理，以及对于 IT 行业总体的看法，我还是以后再讲吧。</p>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

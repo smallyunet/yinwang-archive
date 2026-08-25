@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">7</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,10 +46,21 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2014_04_10_tv-formulas_20141230.html" >2014-12-30</a> <a href="blog-cn_2014_04_10_tv-formulas_20150202.html" >2015-02-02</a> <a href="blog-cn_2014_04_10_tv-formulas_20161003.html" >2016-10-03</a> <a href="blog-cn_2014_04_10_tv-formulas_20170510.html" class="current">2017-05-10</a> <a href="blog-cn_2014_04_10_tv-formulas_20171124.html" >2017-11-24</a> <a href="blog-cn_2014_04_10_tv-formulas_20180311.html" >2018-03-11</a> <a href="blog-cn_2014_04_10_tv-formulas_20200228.html" >2020-02-28</a></div>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_04_10_tv-formulas_20200228.html">2020-02-28</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2Fd2ec39d4dfec4705.json&amp;to=blog-cn_2014_04_10_tv-formulas_20200228.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_04_10_tv-formulas_20180311.html">2018-03-11</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2Fd2ec39d4dfec4705.json&amp;to=blog-cn_2014_04_10_tv-formulas_20180311.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_04_10_tv-formulas_20171124.html">2017-11-24</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2Fd2ec39d4dfec4705.json&amp;to=blog-cn_2014_04_10_tv-formulas_20171124.html">查看差异</a></li><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2017-05-10</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">较前版：+0 −0 修改 1</p><a class="version-diff-link" href="diff.html?data=diffs%2Fd2ec39d4dfec4705.json&amp;to=blog-cn_2014_04_10_tv-formulas_20170510.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_04_10_tv-formulas_20161003.html">2016-10-03</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2Fd2ec39d4dfec4705.json&amp;to=blog-cn_2014_04_10_tv-formulas_20161003.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_04_10_tv-formulas_20150202.html">2015-02-02</a></div><p class="version-diff-summary">较前版：+0 −1 修改 0</p><p class="version-preview">（王垠 yinwang.org 版权所有，未经许可，请勿转载）</p><a class="version-diff-link" href="diff.html?data=diffs%2Fd2ec39d4dfec4705.json&amp;to=blog-cn_2014_04_10_tv-formulas_20150202.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_04_10_tv-formulas_20141230.html">2014-12-30</a></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
+
         <div>
-                            <h2>电视编剧的问题</h2>
+                            <h1 class="article-title">电视编剧的问题</h1>
                             <p><img src="images/from-star.jpg" width="40%" /></p>
 
 <p>听一朋友说“远离韩剧，保护智商”，誓死不看脑残剧《来自星星的你》。觉得好奇，于是乎想看看它为何脑残。开头还觉得挺有创意，风趣幽默，前后呼应，逻辑严密。对它看法大有改观，于是继续看下去。直到第11集的时候开始发现上当，及时悬崖勒马。</p>
@@ -96,15 +96,16 @@
 <p>韩剧的毛病也许不能怪编剧们。没有很多人真的是想要给世界留下什么宝贵的精神财富。为了混饭活命，这拖泥带水的问题从莎士比亚那时代就开始了 :) 学术界的论文其实与电视编剧也有惊人的相似之处。每个领域最初的经典 paper 一般最有价值，而后来的“续集”就往往是为了领域的“生存”而写。所以不要以为心目中的大师们是什么神，他们也跟我们一样是混饭吃的人类。</p>
 
                         </div>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

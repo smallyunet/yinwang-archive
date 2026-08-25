@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">6</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,9 +46,20 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2019_09_30_autopilot-responsibility_20090101.html" class="current">2009-01-01</a> <a href="blog-cn_2019_09_30_autopilot-responsibility_20191001.html" >2019-10-01</a> <a href="blog-cn_2019_09_30_autopilot-responsibility_20191007.html" >2019-10-07</a> <a href="blog-cn_2019_09_30_autopilot-responsibility_20191009.html" >2019-10-09</a> <a href="blog-cn_2019_09_30_autopilot-responsibility_20200228.html" >2020-02-28</a> <a href="blog-cn_2019_09_30_autopilot-responsibility_20240416.html" >2024-04-16</a></div>
-        <h1>自动驾驶车的责任和风险分析</h1>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2019_09_30_autopilot-responsibility_20240416.html">2024-04-16</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F2ccb1bbefbc98aa0.json&amp;to=blog-cn_2019_09_30_autopilot-responsibility_20240416.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2019_09_30_autopilot-responsibility_20200228.html">2020-02-28</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F2ccb1bbefbc98aa0.json&amp;to=blog-cn_2019_09_30_autopilot-responsibility_20200228.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2019_09_30_autopilot-responsibility_20191009.html">2019-10-09</a></div><p class="version-diff-summary">较前版：+0 −2 修改 4</p><p class="version-preview">```</p><a class="version-diff-link" href="diff.html?data=diffs%2F2ccb1bbefbc98aa0.json&amp;to=blog-cn_2019_09_30_autopilot-responsibility_20191009.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2019_09_30_autopilot-responsibility_20191007.html">2019-10-07</a></div><p class="version-diff-summary">较前版：+14 −11 修改 22</p><p class="version-preview">说到“自动驾驶”，人们最熟悉的名字恐怕是 Tesla 的 Elon Musk 先生了。他总是对 Tesla 的 Autopilot 进行各种夸大宣传，让人误解 Autopilot 的能力。Autopilot 引起车祸死了人之后，Mus…</p><a class="version-diff-link" href="diff.html?data=diffs%2F2ccb1bbefbc98aa0.json&amp;to=blog-cn_2019_09_30_autopilot-responsibility_20191007.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2019_09_30_autopilot-responsibility_20191001.html">2019-10-01</a></div><p class="version-diff-summary">较前版：+11 −14 修改 22</p><p class="version-preview">我曾经对 Tesla 的 Autopilot 做过一些技术上，责任上的分析，可是我发现人们对于自动驾驶车的责任和风险问题，仍然缺乏一个精确的，使人信服的说法。最近思考很多机器视觉方面的问题，最终产生了这篇文章中的想法。在本文里，我试图…</p><a class="version-diff-link" href="diff.html?data=diffs%2F2ccb1bbefbc98aa0.json&amp;to=blog-cn_2019_09_30_autopilot-responsibility_20191001.html">查看差异</a></li><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2009-01-01</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
+
+        <h1 class="article-title">自动驾驶车的责任和风险分析</h1>
 <div class="date">2009-01-01</div>
 <p>说到“自动驾驶”，人们最熟悉的名字恐怕是 Tesla 的 Elon Musk 先生了。他总是对 Tesla 的 Autopilot 进行各种夸大宣传，让人误解 Autopilot 的能力。Autopilot 引起车祸死了人之后，Musk 先生总是在网上发话扭曲人们的逻辑，抓住“车主没有及时接管”等各种借口，逃避对事故的责任。</p>
 <p>很多人对他的言论感到荒谬和愤怒，却又难以说清楚他到底哪里错了，甚至政府监管机构都对各自动驾驶公司的歪理无能为力。我发现对于自动驾驶车的责任和风险问题，人们仍然缺乏一个精确的，使人信服的说法，所以我一直在思索这些问题。</p>
@@ -119,15 +119,16 @@ P(其它非自动车出车祸 | 一辆非自动车出车祸)
 <p>Elon Musk 在<a href="https://youtu.be/dEv99vxKjVI">采访</a>中把汽车叫做“two-ton death machine”（两吨重的死亡机器），甚至说“难以置信我们居然允许人开车”，根本就是危言耸听。盲目的强调车祸死亡人数，号称可以降低事故率，就是自动驾驶领域常见的幌子。他们解决的并不是一个那么重要的问题，而且解决的方法根本就是不切实际的忽悠。</p>
 <p><img alt="" src="https://www.yinwang.org/images/musk-allowed-to-drive.jpg" /></p>
 <p>所以 Tesla 不但在技术上无法实现自动驾驶，而且人品和诚信都很成问题。我还没有见过一个汽车公司如此急于推脱责任的，一般都是积极配合调查，勇于承担责任，及时整改，这样才可能得到公众的信任。</p>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

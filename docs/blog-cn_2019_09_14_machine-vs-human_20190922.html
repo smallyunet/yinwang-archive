@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">8</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,27 +46,21 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2019_09_14_machine-vs-human_20090101.html" >2009-01-01</a> <a href="blog-cn_2019_09_14_machine-vs-human_20190915.html" >2019-09-15</a> <a href="blog-cn_2019_09_14_machine-vs-human_20190916.html" >2019-09-16</a> <a href="blog-cn_2019_09_14_machine-vs-human_20190918.html" >2019-09-18</a> <a href="blog-cn_2019_09_14_machine-vs-human_20190922.html" class="current">2019-09-22</a> <a href="blog-cn_2019_09_14_machine-vs-human_20190930.html" >2019-09-30</a> <a href="blog-cn_2019_09_14_machine-vs-human_20200228.html" >2020-02-28</a> <a href="blog-cn_2019_09_14_machine-vs-human_20240602.html" >2024-06-02</a></div>
-        <script>
-            if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent))
-            {
-               document.body.classList.add('mobile');
-            }
-        </script>
 
-        <!--
-        <div class="ad-banner">
-            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <ins class="adsbygoogle"
-                    data-ad-client="ca-pub-1331524016319584"
-                    data-ad-slot="6657867155"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-        </div>
-        -->
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2019_09_14_machine-vs-human_20240602.html">2024-06-02</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F0bfa5ba7421ba9ba.json&amp;to=blog-cn_2019_09_14_machine-vs-human_20240602.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2019_09_14_machine-vs-human_20200228.html">2020-02-28</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F0bfa5ba7421ba9ba.json&amp;to=blog-cn_2019_09_14_machine-vs-human_20200228.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2019_09_14_machine-vs-human_20190930.html">2019-09-30</a></div><p class="version-diff-summary">较前版：+14 −91 修改 40</p><p class="version-preview">本文属于个人观点，跟本人在职公司的立场无关。由于最近 GitHub 服务器在国内访问速度严重变慢，虽然经过大幅度压缩尺寸，文中的图片仍然可能需要比较长时间才能加载。这篇文章揭示了 AI 领域重要的谬误和不实宣传，为了阻止愚昧的蔓延，我…</p><a class="version-diff-link" href="diff.html?data=diffs%2F0bfa5ba7421ba9ba.json&amp;to=blog-cn_2019_09_14_machine-vs-human_20190930.html">查看差异</a></li><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2019-09-22</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">较前版：+30 −2 修改 19</p><p class="version-preview">很多人以为人工智能就快实现了，是因为他们混淆了“识别”和“理解”。现在所谓的“人工智能”都是在做识别：语音识别，图像识别，而真正的智能是需要理解能力的。我们离理解有多远呢？恐怕真正的工作根本就没开始。</p><a class="version-diff-link" href="diff.html?data=diffs%2F0bfa5ba7421ba9ba.json&amp;to=blog-cn_2019_09_14_machine-vs-human_20190922.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2019_09_14_machine-vs-human_20190918.html">2019-09-18</a></div><p class="version-diff-summary">较前版：+4 −14 修改 25</p><p class="version-preview">（本文属于个人观点，跟本人在职公司的立场无关。）</p><a class="version-diff-link" href="diff.html?data=diffs%2F0bfa5ba7421ba9ba.json&amp;to=blog-cn_2019_09_14_machine-vs-human_20190918.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2019_09_14_machine-vs-human_20190916.html">2019-09-16</a></div><p class="version-diff-summary">较前版：+113 −0 修改 22</p><p class="version-preview">很多人以为人工智能就快实现了，是因为他们混淆了“识别”和“理解”。现在所谓的“人工智能”都是在做识别：语音识别，图像识别，而真正的智能是需要理解能力的。我们离理解有多远呢？恐怕真正的工作根本就没开始。</p><a class="version-diff-link" href="diff.html?data=diffs%2F0bfa5ba7421ba9ba.json&amp;to=blog-cn_2019_09_14_machine-vs-human_20190916.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2019_09_14_machine-vs-human_20190915.html">2019-09-15</a></div><p class="version-diff-summary">较前版：+0 −113 修改 22</p><p class="version-preview">很多人以为“人工智能”就快实现了，是因为他们混淆了“识别”和“理解”。现在所谓的“人工智能”，离真正的智能差的实在太远。有多远呢？真正的工作几乎没有开始。</p><a class="version-diff-link" href="diff.html?data=diffs%2F0bfa5ba7421ba9ba.json&amp;to=blog-cn_2019_09_14_machine-vs-human_20190915.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2019_09_14_machine-vs-human_20090101.html">2009-01-01</a></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
 
         <div>
-            <h2>机器与人类智能的差距</h2>
+            <h1 class="article-title">机器与人类智能的差距</h1>
             <p>（本文属于个人观点，跟本人在职公司的立场无关。）</p>
 
 <p>很多人以为人工智能就快实现了，是因为他们混淆了“识别”和“理解”。现在所谓的“人工智能”都是在做识别：语音识别，图像识别，而真正的智能是需要理解能力的。我们离理解有多远呢？恐怕真正的工作根本就没开始。</p>
@@ -384,15 +367,16 @@
 <p>（这篇文章包含了很多独到的见解。如果你觉得有帮助，可以考虑<a href="http://www.yinwang.org/blog-cn/2016/04/13/pay-blog">付费</a>支持。）</p>
 
         </div>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

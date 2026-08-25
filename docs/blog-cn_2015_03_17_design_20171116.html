@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">8</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,25 +46,29 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2015_03_17_design_20150320.html" >2015-03-20</a> <a href="blog-cn_2015_03_17_design_20161001.html" >2016-10-01</a> <a href="blog-cn_2015_03_17_design_20170504.html" >2017-05-04</a> <a href="blog-cn_2015_03_17_design_20170604.html" >2017-06-04</a> <a href="blog-cn_2015_03_17_design_20171116.html" class="current">2017-11-16</a> <a href="blog-cn_2015_03_17_design_20171216.html" >2017-12-16</a> <a href="blog-cn_2015_03_17_design_20200223.html" >2020-02-23</a> <a href="blog-cn_2015_03_17_design_20240416.html" >2024-04-16</a></div>
-        <script>
-            if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent))
-            {
-               document.body.classList.add('mobile');
-            }
-        </script>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_03_17_design_20240416.html">2024-04-16</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F6b23bac616543f4d.json&amp;to=blog-cn_2015_03_17_design_20240416.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_03_17_design_20200223.html">2020-02-23</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F6b23bac616543f4d.json&amp;to=blog-cn_2015_03_17_design_20200223.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_03_17_design_20171216.html">2017-12-16</a></div><p class="version-diff-summary">较前版：+0 −1 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F6b23bac616543f4d.json&amp;to=blog-cn_2015_03_17_design_20171216.html">查看差异</a></li><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2017-11-16</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">较前版：+1 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F6b23bac616543f4d.json&amp;to=blog-cn_2015_03_17_design_20171116.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_03_17_design_20170604.html">2017-06-04</a></div><p class="version-diff-summary">较前版：+0 −0 修改 1</p><p class="version-preview">经常有人自豪的声称自己的项目有多少万行代码，仿佛代码的行数是衡量一个软件质量的标准，行数越多质量越好，然而事实却恰恰相反。就像《小王子》作者说的：“一个设计师知道他达到了完美，并不是当他不能再加进任何东西，而是当没有任何东西可以被去掉。”</p><a class="version-diff-link" href="diff.html?data=diffs%2F6b23bac616543f4d.json&amp;to=blog-cn_2015_03_17_design_20170604.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_03_17_design_20170504.html">2017-05-04</a></div><p class="version-diff-summary">较前版：+0 −0 修改 1</p><a class="version-diff-link" href="diff.html?data=diffs%2F6b23bac616543f4d.json&amp;to=blog-cn_2015_03_17_design_20170504.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_03_17_design_20161001.html">2016-10-01</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F6b23bac616543f4d.json&amp;to=blog-cn_2015_03_17_design_20161001.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_03_17_design_20150320.html">2015-03-20</a></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
 
         <div class="ad-banner">
-            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
             <ins class="adsbygoogle"
                     data-ad-client="ca-pub-1331524016319584"
                     data-ad-slot="6657867155"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
         </div>
 
         <div>
-            <h2>设计的重要性</h2>
+            <h1 class="article-title">设计的重要性</h1>
             <p>我曾经在一篇<a href="http://www.yinwang.org/blog-cn/2014/07/17/rest">文章</a>里谈过关于设计的问题，然而那篇文章由于标题不够醒目，可能很多人没有注意看。我觉得现在有必要把里面的内容专门提出来讲一下，因为设计在我的心目中具有至关重要的地位，却被很多计算机科学家和程序员所轻视。</p>
 
 <p>我觉得自己不但是一个计算机科学家和程序员，在很大程度上我还是一个设计师。我不但是一个程序语言的设计师，而且是其它很多东西的设计师。我设计的东西不但常常比别人的简洁好用，而且我经常直接看出其他人的设计里面的问题。我写的代码不仅自己容易看懂，而且别人也容易理解。我有时候受命修补前人的BUG，结果没法看懂他们的代码。在这种情况下，我的解决方案是推翻重写。经我重写之后的代码，不仅没有BUG，而且简洁很多。</p>
@@ -86,12 +79,10 @@
 
 <p>经常有人自豪的声称自己的项目有多少万行代码，仿佛代码的行数是衡量一个软件质量的标准，行数越多质量越好，然而事实却恰恰相反。就像<a href="http://zh.wikipedia.org/wiki/%E5%AE%89%E6%89%98%E4%B8%87%C2%B7%E5%BE%B7%E5%9C%A3%E5%9F%83%E5%85%8B%E7%B5%AE%E4%BD%A9%E9%87%8C">《小王子》作者</a>说的：“一个设计师知道他达到了完美，并不是当他不能再加进任何东西，而是当没有任何东西可以被去掉。”</p>
 
-<script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
 
 <p><ins class="adsbygoogle" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-1331524016319584" data-ad-slot="8974343912"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script></p>
+</p>
 
 <p>如果你跟我一样关心设计，却发现身边的人喜欢显示自己能搞懂复杂的东西，跟你说容易的东西都是菜鸟用的，那么你需要一个朋友。书籍是人类最好的朋友，因为它的作者可以跨越时间和空间的限制，给你最需要的支持和鼓励。这就是当我阅读这本1988年出版的《<a href="http://www.amazon.com/Design-Everyday-Things-Revised-Expanded-ebook/dp/B00E257T6C">The Design of Everyday Things</a>》（简称DOET）时的感觉。我觉得，终于有人懂我了！有趣的是，它的作者 Don Norman 曾经是 Apple Fellow，也是《<a href="http://web.mit.edu/~simsong/www/ugh.pdf">The Unix-Haters Handbook</a>》一书序言的作者。</p>
 
@@ -106,15 +97,16 @@
 <p>如果你跟我一样不想用眼睛看书，可以到 Audible 买本<a href="http://www.audible.com/pd/Science-Technology/The-Design-of-Everyday-Things-Audiobook/B005I5MDGQ">有声书</a>来听。</p>
 
         </div>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

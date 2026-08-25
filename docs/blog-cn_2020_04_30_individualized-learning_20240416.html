@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">5</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,17 +46,21 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2020_04_30_individualized-learning_20200503.html" >2020-05-03</a> <a href="blog-cn_2020_04_30_individualized-learning_20200513.html" >2020-05-13</a> <a href="blog-cn_2020_04_30_individualized-learning_20200602.html" >2020-06-02</a> <a href="blog-cn_2020_04_30_individualized-learning_20210304.html" >2021-03-04</a> <a href="blog-cn_2020_04_30_individualized-learning_20240416.html" class="current">2024-04-16</a></div>
-        <script>
-            if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent))
-            {
-               document.body.classList.add('mobile');
-            }
-        </script>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2024-04-16</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2Fb130a1bbd09757fe.json&amp;to=blog-cn_2020_04_30_individualized-learning_20240416.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2020_04_30_individualized-learning_20210304.html">2021-03-04</a></div><p class="version-diff-summary">较前版：+2 −1 修改 6</p><p class="version-preview">（更新：一对一教学的时间跨度，原先设定为不超过两个月。根据实际情况，现在调整一下，改为不超过三个月。）</p><a class="version-diff-link" href="diff.html?data=diffs%2Fb130a1bbd09757fe.json&amp;to=blog-cn_2020_04_30_individualized-learning_20210304.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2020_04_30_individualized-learning_20200602.html">2020-06-02</a></div><p class="version-diff-summary">较前版：+1 −0 修改 4</p><p class="version-preview">内容范围还是跟普通班的范围相同，只是教学方式不同。请明确自己的期望值，不要认为“一对一教学”等于你想知道什么，我就教你什么。内容跟普通课程一样，是事先规划好了，只是一对一方式可以根据你的个人时间，反应，调整方式来让你学会这些内容。请有…</p><a class="version-diff-link" href="diff.html?data=diffs%2Fb130a1bbd09757fe.json&amp;to=blog-cn_2020_04_30_individualized-learning_20200602.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2020_04_30_individualized-learning_20200513.html">2020-05-13</a></div><p class="version-diff-summary">较前版：+2 −0 修改 10</p><p class="version-preview">这一期课程的成员来自中国大陆，香港，台湾，有各种各样的背景。有些同学没有理科背景，没上过大学，还有的完全是出于兴趣，还有的却已经博士毕业几年。他们短短两个星期以来的表现，思考问题的角度和深度，学习的态度和动力，让我惊讶又欣慰。每当看到…</p><a class="version-diff-link" href="diff.html?data=diffs%2Fb130a1bbd09757fe.json&amp;to=blog-cn_2020_04_30_individualized-learning_20200513.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2020_04_30_individualized-learning_20200503.html">2020-05-03</a></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
 
         <div>
-            <h2>一对一教学计划</h2>
+            <h1 class="article-title">一对一教学计划</h1>
             <p>（更新：一对一教学的时间跨度，原先设定为不超过两个月。根据实际情况，现在调整一下，改为不超过三个月。）</p>
 
 <p>（更新：由于一对一教学需要的时间和精力较多，重复讲课对于老师来说比较枯燥，所以我决定减少一对一教学的数量，将价格调整为 18000，对学生也会更有选择性。请大家理解这个改变，欢迎大家积极报名集体课程。）</p>
@@ -102,15 +95,16 @@
 <p>对这个方式感兴趣的人，可以使用<a href="http://www.yinwang.org/blog-cn/2020/03/26/entry-level-class">普通课程</a>同样的方式报名，来信请注明《申请一对一教学》。请考虑清楚，对我有足够信任，决定参加再联系我。我没有时间和精力来回答各种顾虑，不想说服任何人参加。请不要报名沟通之后再讲价或者要求分期，浪费大家的时间。</p>
 
         </div>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

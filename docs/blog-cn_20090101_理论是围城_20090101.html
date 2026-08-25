@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,7 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,9 +38,11 @@
         </div>
     </nav>
 
-    <div class="inner">
-        
-        <h1>理论是围城</h1>
+
+
+    <main class="inner" id="main-content">
+
+        <h1 class="article-title">理论是围城</h1>
 <div class="date">2009-01-01</div>
 <p>作者：王垠</p>
 <p>发了上一篇博文之后，很多人来信表示慰问。在此深表感谢。回想这么多年来的经验，真是有点乾坤扭转的感觉。曾经认为是错误的东西，后来又觉得是正确的，过一段时间它又好象确实是错误的。真是捉摸不定。</p>
@@ -68,15 +51,16 @@
 <p>“抄袭”的判定在理论的领域也很纠结。到底谁的思想是原创的？什么样的行为算作抄袭？这是无法说清楚的。很多当今程序语言界最时髦的话题，其实在几十年前早就有人提出来了。很多时候做理论的人都在“重复发现”以前的结果，到头来很难说清楚他们的论文里有什么“新东西”。你甚至不可能跟他们“理论”。如果你说理论A跟理论B，实际效果是完全一样的，你有什么证据呢？有趣的是，就算你觉得是几句话就说得清楚的事情，它们的支持者也会视而不见，要求你用“数学证明”的方式证明你的说法。可是某些人的公式和证明是如此的丑陋，就像一个人写的程序代码毫无章法。你愿意花功夫去证明他的理论跟另一个是等价的吗？所以你就懒得去跟他们说了。你就说，你们信就信，不信就算了。</p>
 <p>其实学术界最严重的问题就是总是要求“新”的东西，“独创”的东西。研究了快一百年的领域，每年有那么多的会议，哪里可能有那么多新东西啊。所以大家就开始给老的概念起新的名字。</p>
 <p>理论就像一个围城，外面的人想进来，里面的人想出去。其实我最想做的事情是做一些实际对人有用的，工程性质的东西。当然，之前学会的理论很可能在里面会起到重要的作用。</p>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

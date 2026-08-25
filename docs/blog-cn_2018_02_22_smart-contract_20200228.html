@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">6</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,17 +46,21 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2018_02_22_smart-contract_20180226.html" >2018-02-26</a> <a href="blog-cn_2018_02_22_smart-contract_20180929.html" >2018-09-29</a> <a href="blog-cn_2018_02_22_smart-contract_20190902.html" >2019-09-02</a> <a href="blog-cn_2018_02_22_smart-contract_20191031.html" >2019-10-31</a> <a href="blog-cn_2018_02_22_smart-contract_20200228.html" class="current">2020-02-28</a> <a href="blog-cn_2018_02_22_smart-contract_20240416.html" >2024-04-16</a></div>
-        <script>
-            if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent))
-            {
-               document.body.classList.add('mobile');
-            }
-        </script>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2018_02_22_smart-contract_20240416.html">2024-04-16</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F1041dde267e9faf8.json&amp;to=blog-cn_2018_02_22_smart-contract_20240416.html">查看差异</a></li><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2020-02-28</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F1041dde267e9faf8.json&amp;to=blog-cn_2018_02_22_smart-contract_20200228.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2018_02_22_smart-contract_20191031.html">2019-10-31</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F1041dde267e9faf8.json&amp;to=blog-cn_2018_02_22_smart-contract_20191031.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2018_02_22_smart-contract_20190902.html">2019-09-02</a></div><p class="version-diff-summary">较前版：+1 −0 修改 11</p><p class="version-preview">在之前一篇关于人工智能的文章里，我指出了“自动编程”的不可能性。今天我想来谈谈一个相关的话题：以太坊式的智能合约的形式验证。有些人声称要实现基于“深度学习”的，自动的智能合约形式验证（formal verification），用于确保…</p><a class="version-diff-link" href="diff.html?data=diffs%2F1041dde267e9faf8.json&amp;to=blog-cn_2018_02_22_smart-contract_20190902.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2018_02_22_smart-contract_20180929.html">2018-09-29</a></div><p class="version-diff-summary">较前版：+0 −3 修改 0</p><p class="version-preview">说到这里，很多人可能以为我对数字货币不屑一顾，然而实际上正好相反 :) 我打心眼里是对区块链技术感兴趣的，我只是觉得其中的智能合约是多余的麻烦。虽然被某些人吹捧得有些过头了，用它来忽悠的人也很多，然而比特币的技术确实是有相当大价值的。…</p><a class="version-diff-link" href="diff.html?data=diffs%2F1041dde267e9faf8.json&amp;to=blog-cn_2018_02_22_smart-contract_20180929.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2018_02_22_smart-contract_20180226.html">2018-02-26</a></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
 
         <div>
-            <h2>智能合约和形式验证</h2>
+            <h1 class="article-title">智能合约和形式验证</h1>
             <p>在之前一篇<a href="http://www.yinwang.org/blog-cn/2017/04/23/ai">关于人工智能的文章</a>里，我指出了“自动编程”的不可能性。今天我想来谈谈一个相关的话题：以太坊式的智能合约的形式验证。有些人声称要实现基于“深度学习”的，自动的智能合约形式验证（formal verification），用于确保合约的正确性。然而今天我要告诉你的是，跟自动编程一样，完全自动的合约验证也是不可能实现的。</p>
 
 <p>随着区块链技术的愈演愈烈，很多人开始在以太坊（Ethereum）的“智能合约语言”上做文章。其中一部分是搞 PL 的人，他们试图对 Solidity 之类语言写的智能合约进行形式验证，号称要用严密的数理逻辑方法，自动的验证智能合约的正确性。其中一种方法是用“深度学习”，经过训练之后，自动生成 Hoare Logic 的“前条件”和“后条件”。</p>
@@ -145,29 +138,16 @@
 
 
         </div>
+    </main>
 
-        <!--
-        <div class="ad-banner">
-            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <ins class="adsbygoogle"
-                    data-ad-client="ca-pub-1331524016319584"
-                    data-ad-slot="6657867155"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-        </div>
 
-        <script data-ad-client="ca-pub-1331524016319584" async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
-        </script>
-        -->
-    </div>
-
-    
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

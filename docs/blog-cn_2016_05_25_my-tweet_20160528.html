@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">3</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,24 +46,36 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2016_05_25_my-tweet_20160528.html" class="current">2016-05-28</a> <a href="blog-cn_2016_05_25_my-tweet_20160610.html" >2016-06-10</a> <a href="blog-cn_2016_05_25_my-tweet_20161016.html" >2016-10-16</a></div>
-        <h2>我的 tweet 系统</h2>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_05_25_my-tweet_20161016.html">2016-10-16</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F14895c77ca16f40a.json&amp;to=blog-cn_2016_05_25_my-tweet_20161016.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_05_25_my-tweet_20160610.html">2016-06-10</a></div><p class="version-diff-summary">较前版：+0 −0 修改 1</p><p class="version-preview">这个系统有一系列强大的功能：无法 follow 或订阅，不能评论，不方便转载。可以随意修改，随意排序，不限字数。不能随时随地增加内容，防止成瘾。心诚的人必须主动来这里看，理解更深入，自动过滤心理不正常的人，等等…… 这是迄今为止最好最…</p><a class="version-diff-link" href="diff.html?data=diffs%2F14895c77ca16f40a.json&amp;to=blog-cn_2016_05_25_my-tweet_20160610.html">查看差异</a></li><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2016-05-28</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
+
+        <h1 class="article-title">我的 tweet 系统</h1>
 
     <p>有时候灵光乍现，却又不想写成完整的文章，所以尝试过使用 twitter 和微博，然而最终我发现它们有各种缺点。所以我想出一个圡办法：自己手动整理一个列表，把想说的放进去，加上日期，就算是我的 tweet 系统。</p>
 
 <p>这个系统有一系列强大的功能：无法 follow 或订阅，不能评论，不方便转载。可以随意修改，随意排序，不限字数。心诚的人必须主动来这里看，理解更深入，自动过滤心理不正常的人，等等…… 这是迄今为止最好最完善的 social network 系统。本系统的座右铭是：我想写 tweet，所以我就写了。你们想看就看，不想看就算了。</p>
 
 <p>请点击<a href="http://www.yinwang.org/tweet.html">这里</a>访问我的 tweet 系统。</p>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

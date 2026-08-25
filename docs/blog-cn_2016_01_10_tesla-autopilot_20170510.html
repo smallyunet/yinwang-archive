@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">9</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,10 +46,21 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2016_01_10_tesla-autopilot_20160115.html" >2016-01-15</a> <a href="blog-cn_2016_01_10_tesla-autopilot_20160206.html" >2016-02-06</a> <a href="blog-cn_2016_01_10_tesla-autopilot_20160919.html" >2016-09-19</a> <a href="blog-cn_2016_01_10_tesla-autopilot_20170510.html" class="current">2017-05-10</a> <a href="blog-cn_2016_01_10_tesla-autopilot_20171125.html" >2017-11-25</a> <a href="blog-cn_2016_01_10_tesla-autopilot_20171216.html" >2017-12-16</a> <a href="blog-cn_2016_01_10_tesla-autopilot_20191009.html" >2019-10-09</a> <a href="blog-cn_2016_01_10_tesla-autopilot_20200228.html" >2020-02-28</a> <a href="blog-cn_2016_01_10_tesla-autopilot_20240416.html" >2024-04-16</a></div>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_01_10_tesla-autopilot_20240416.html">2024-04-16</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F57282f56ed9c37dd.json&amp;to=blog-cn_2016_01_10_tesla-autopilot_20240416.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_01_10_tesla-autopilot_20200228.html">2020-02-28</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F57282f56ed9c37dd.json&amp;to=blog-cn_2016_01_10_tesla-autopilot_20200228.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_01_10_tesla-autopilot_20191009.html">2019-10-09</a></div><p class="version-diff-summary">较前版：+0 −0 修改 10</p><p class="version-preview">两个月前，Tesla 通过“软件更新”，使 Model S 具有了初级的“自动驾驶”（autopilot）功能。这个功能可以让 Model S 自动地，沿着有“清晰边界线”的车道行驶，根据前后车辆的速度相应的加速和减速。</p><a class="version-diff-link" href="diff.html?data=diffs%2F57282f56ed9c37dd.json&amp;to=blog-cn_2016_01_10_tesla-autopilot_20191009.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_01_10_tesla-autopilot_20171216.html">2017-12-16</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F57282f56ed9c37dd.json&amp;to=blog-cn_2016_01_10_tesla-autopilot_20171216.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_01_10_tesla-autopilot_20171125.html">2017-11-25</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F57282f56ed9c37dd.json&amp;to=blog-cn_2016_01_10_tesla-autopilot_20171125.html">查看差异</a></li><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2017-05-10</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">较前版：+0 −0 修改 3</p><p class="version-preview">我对这些说法持不同的观点。首先，Tesla根本就不应该把一个处于”beta状态”的功能，自动推送到所有Model S的系统里面。实际上，像autopilot这种功能，关系到人的生命安全，根本就不应该有”beta版本”或者“测试版本”之…</p><a class="version-diff-link" href="diff.html?data=diffs%2F57282f56ed9c37dd.json&amp;to=blog-cn_2016_01_10_tesla-autopilot_20170510.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_01_10_tesla-autopilot_20160919.html">2016-09-19</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F57282f56ed9c37dd.json&amp;to=blog-cn_2016_01_10_tesla-autopilot_20160919.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_01_10_tesla-autopilot_20160206.html">2016-02-06</a></div><p class="version-diff-summary">较前版：+4 −0 修改 8</p><p class="version-preview">以下内容是《Tesla Model S的设计失误》一文中新加入的小节。由于写作时间相距太远，而且由于它的时效性，现在也把它单独提出来，独立成文。</p><a class="version-diff-link" href="diff.html?data=diffs%2F57282f56ed9c37dd.json&amp;to=blog-cn_2016_01_10_tesla-autopilot_20160206.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_01_10_tesla-autopilot_20160115.html">2016-01-15</a></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
+
         <div>
-                            <h2>Tesla Autopilot</h2>
+                            <h1 class="article-title">Tesla Autopilot</h1>
                             <p class="notice">以下内容是《<a href="http://www.yinwang.org/blog-cn/2015/12/12/tesla-model-s">Tesla Model S的设计失误</a>》一文中新加入的小节。由于写作时间相距太远，而且由于它的<a href="http://www.reuters.com/article/us-tesla-autopilot-idUSKCN0UO0NM20160110">时效性</a>，现在也把它单独提出来，独立成文。</p>
 
 <p>两个月前，Tesla通过“软件更新”，使Model S具有了初级的“自动驾驶”（autopilot）功能。这个功能可以让Model S自动地，沿着有“清晰边界线”的车道行驶，根据前后车辆的速度相应的加速和减速。</p>
@@ -127,15 +127,16 @@
 <p>这些能够让车子自己移动的功能，跟autopilot一样，同样会给社会带来安全隐患。比如，有人在不该使用自动趴车和summon功能的地方用了它，就可能会导致车祸。这不是用户的问题，而是Tesla根本不应该发布这些不成熟的技术来哗众取巧。</p>
 
                         </div>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

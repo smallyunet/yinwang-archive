@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">3</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,10 +46,21 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2016_04_07_cfa_20160411.html" >2016-04-11</a> <a href="blog-cn_2016_04_07_cfa_20160420.html" >2016-04-20</a> <a href="blog-cn_2016_04_07_cfa_20160924.html" class="current">2016-09-24</a></div>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2016-09-24</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2Fa818ddbd9eb5c988.json&amp;to=blog-cn_2016_04_07_cfa_20160924.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_04_07_cfa_20160420.html">2016-04-20</a></div><p class="version-diff-summary">较前版：+0 −0 修改 11</p><p class="version-preview">文章作者彭飞自称导师是Jens Palsberg，我还没能验证这个事实。Palsberg似乎曾在CFA领域做过一点研究，但我印象不深，我也从来没有在批评CFA的时候点过Palsberg的名。但由于我指出了CFA领域的弊病，彭飞可能就是…</p><a class="version-diff-link" href="diff.html?data=diffs%2Fa818ddbd9eb5c988.json&amp;to=blog-cn_2016_04_07_cfa_20160420.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_04_07_cfa_20160411.html">2016-04-11</a></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
+
         <div>
-                            <h2>到底是谁在欺负我们读书少？</h2>
+                            <h1 class="article-title">到底是谁在欺负我们读书少？</h1>
                             <p>发表了之前的文章《<a href="http://www.jianshu.com/p/b94a2b19ebcc">我为什么不再做PL人</a>》之后，我发现有人在知乎上发表文章诬蔑我。本来不想理知乎上的东西，但作者把各种刚从论文上学来的术语，似懂非懂，照本宣科列了一大堆，挺能唬人的，说起来很像那么回事儿，所以我只好破例回应一下，但是下不为例。</p>
 
 <p>现在我把这篇文章，题名『<a href="http://zhuanlan.zhihu.com/p/20699215">王垠，请别再欺负我们读书少</a>』的链接放在这里，供大家观看。评论的第4，第6页有我的回复，技术性比较强，不过有兴趣的人可以看看。为了方便，我也把评论整理和拷贝到这篇文章第二节。</p>
@@ -223,15 +223,16 @@ In the expression: (f 1, f True)
 <p>知乎的民科们班门弄斧，拿起石头砸了自己的脚，已经不止第一次了。我劝这些人还是好自为之。</p>
 
                         </div>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

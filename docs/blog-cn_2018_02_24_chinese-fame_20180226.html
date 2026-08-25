@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">5</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,27 +46,21 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2018_02_24_chinese-fame_20090101.html" >2009-01-01</a> <a href="blog-cn_2018_02_24_chinese-fame_20180226.html" class="current">2018-02-26</a> <a href="blog-cn_2018_02_24_chinese-fame_20180302.html" >2018-03-02</a> <a href="blog-cn_2018_02_24_chinese-fame_20180311.html" >2018-03-11</a> <a href="blog-cn_2018_02_24_chinese-fame_20180414.html" >2018-04-14</a></div>
-        <script>
-            if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent))
-            {
-               document.body.classList.add('mobile');
-            }
-        </script>
 
-        <!--
-        <div class="ad-banner">
-            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <ins class="adsbygoogle"
-                    data-ad-client="ca-pub-1331524016319584"
-                    data-ad-slot="6657867155"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-        </div>
-        -->
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2018_02_24_chinese-fame_20180414.html">2018-04-14</a></div><p class="version-diff-summary">较前版：+0 −0 修改 1</p><p class="version-preview">套路3：跟大牛合影。没有什么比一张照片更说明问题的了。如果你有机会见到大牛，不妨请求跟他合影。一般说来外国人不会很介意这个，他们也不知道你合影之后会拿来做什么。之后你就可以把这照片拿来放在你的网站，宣传单，甚至书里面了。中文的信息很难…</p><a class="version-diff-link" href="diff.html?data=diffs%2F7e3c148bcd563f2b.json&amp;to=blog-cn_2018_02_24_chinese-fame_20180414.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2018_02_24_chinese-fame_20180311.html">2018-03-11</a></div><p class="version-diff-summary">较前版：+2 −1 修改 6</p><p class="version-preview">巧妙的显示出自己与这些世界级大牛有关系。注意“巧妙”二字，切不可像垠神那样，直接说我上过那人的课，得了 A+！那是会被人笑掉大牙的，立马会被认为是在吹牛逼 :p 正确的做法是含蓄一点，自然地引入你认识的，或者见过的一个牛人，我们假设他…</p><a class="version-diff-link" href="diff.html?data=diffs%2F7e3c148bcd563f2b.json&amp;to=blog-cn_2018_02_24_chinese-fame_20180311.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2018_02_24_chinese-fame_20180302.html">2018-03-02</a></div><p class="version-diff-summary">较前版：+1 −1 修改 3</p><p class="version-preview">巧妙的显示出自己与这些世界级大牛有关系。注意“巧妙”二字，切不可像垠神那样，直接说我上过那人的课，得了 A+！那是会被人笑掉大牙的，立马会被认为是在吹牛逼 :p 正确的做法是含蓄一点，自然地引入你认识的，或者见过的一个牛人，我们假设他…</p><a class="version-diff-link" href="diff.html?data=diffs%2F7e3c148bcd563f2b.json&amp;to=blog-cn_2018_02_24_chinese-fame_20180302.html">查看差异</a></li><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2018-02-26</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">较前版：+1 −1 修改 3</p><p class="version-preview">巧妙的显示出自己与这些世界级大牛有关系。注意“巧妙”二字，切不可像垠神那样，直接说我上过那人的课，得了 A+！那是会被人笑掉大牙的，立马会被认为是在吹牛逼 :p 正确的做法是含蓄一点，自然地引入你认识的，或者见过的一个牛人，我们假设他…</p><a class="version-diff-link" href="diff.html?data=diffs%2F7e3c148bcd563f2b.json&amp;to=blog-cn_2018_02_24_chinese-fame_20180226.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2018_02_24_chinese-fame_20090101.html">2009-01-01</a></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
 
         <div>
-            <h2>中国人如何经营自己</h2>
+            <h1 class="article-title">中国人如何经营自己</h1>
             <p>大家都知道，在中国人的圈子里，有很多人黑我。我懒得去看，但是有好心人告诉我，黑我的网站有知乎，MITBBS，V2EX。还有成都某码农 QQ 群，里面都是 Python 爱好者，他们可瞧不起我了，每个人都觉得自己比我牛…… 现实生活中也有听说我是谁之后，态度诡异，阴阳怪气的。我妈总是说我不会经营自己，让我向国内的一些名人学习一下技巧。可是我一直对此不屑一顾，直到今天才发现新大陆……</p>
 
 <p>网络上的网民，喜欢采用像黑美国总统特朗普一样的办法，拿起别人只言片语，断章取义，或者歪曲原意，或者干脆完全杜撰，力图把他塑造成一个自高自大，目空一切，很难相处的人。他们喜欢在“王垠是一个什么样的人”这样的知乎问题下面作答：我认为王垠是一个…… 说得好像认识我，见过我一样。而其实我不认识任何一个会在知乎上回答问题的人。</p>
@@ -179,15 +162,16 @@
 
 
         </div>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

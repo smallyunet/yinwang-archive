@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">3</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,9 +46,20 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2018_03_29_appreciation_20090101.html" >2009-01-01</a> <a href="blog-cn_2018_03_29_appreciation_20180329.html" class="current">2018-03-29</a> <a href="blog-cn_2018_03_29_appreciation_20180401.html" >2018-04-01</a></div>
-        <h1>中国人的鉴赏力</h1>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2018_03_29_appreciation_20180401.html">2018-04-01</a></div><p class="version-diff-summary">较前版：+2 −0 修改 14</p><p class="version-preview">大部分的中国人都不会鉴别物品的好坏和价值，所以他们只能以“价格”的高低来做判断。你经常听中国人说“穿着一万块一件的衣服”，“开着一百万一辆的车”，“住着十万一平米的房子”，就是这个原因。他们不懂得一个东西好在哪，只知道它是多少钱买的。…</p><a class="version-diff-link" href="diff.html?data=diffs%2Fa63da5dd739655a6.json&amp;to=blog-cn_2018_03_29_appreciation_20180401.html">查看差异</a></li><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2018-03-29</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2Fa63da5dd739655a6.json&amp;to=blog-cn_2018_03_29_appreciation_20180329.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2018_03_29_appreciation_20090101.html">2009-01-01</a></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
+
+        <h1 class="article-title">中国人的鉴赏力</h1>
 <div class="date">2018-03-29</div>
 <p>部分的中国人都不会鉴别物品的好坏和价值，所以他们只能以“价格”的高低来做判断。你经常听中国人说“穿着一万块一件的衣服”，“开着一百万一辆的车”，“住着二十万一平米的房子”，就是这个原因。他们不懂得这个东西好在哪，只知道它们是多少钱买的。他们仿佛认为一万块钱的东西和一万块钱的东西，都是一样的。</p>
 <p>这种现象跟中国人从小上学就只认数字有关系，他们从小就被当成一个数字。考试成绩是一个数字，期末排名是一个数字。还有竞赛名次啊，金牌总数啊…… 大部分中国人知道数字，但却不知道数字背后的意义。他们不明白，有些东西是不能转化为数字进行比较的。比如我跟有些人说我今天跑步了，他们会问我跑了多少公里，多少圈。我回答：我不知道！我只知道沿途的风景很美，我跑了很开心。</p>
@@ -75,15 +75,16 @@
 <p>从来没有汽车公司把“驾驶辅助系统”（driver assistant）吹嘘成“自动驾驶系统”（autonomous driving），Tesla 大言不惭开了这个先河。如此不负责的公司，最后还要把责任都推到用户身上。我认识一个 Tesla 的修车技工，他说在 Tesla 工作特别辛苦，因为这车毛病太多了，感觉公司里的工程师都不知道他们自己在干什么，有些东西根本就不该那样设计。一个修车工都知道的事情，设计师工程师却不懂……</p>
 <p>所以呢，Tesla 这颗葡萄是真的酸。你见过我骂奔驰吗？我骂过法拉利，劳斯莱斯吗？出于一个负责的工程师的态度，我尊敬他们。我尊敬他们是因为他们的工匠精神，制造出一些世界上最美，最可靠的机器，而不是因为它们的价格昂贵。</p>
 <p>中国人民要什么时候才能意识到，并不是贵的就好。能忽略价格看到物品的品质，懂得鉴赏，是很重要的能力。</p>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

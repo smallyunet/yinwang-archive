@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">10</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,9 +46,20 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2014_02_18_dijkstra-interview_20140524.html" >2014-05-24</a> <a href="blog-cn_2014_02_18_dijkstra-interview_20140623.html" >2014-06-23</a> <a href="blog-cn_2014_02_18_dijkstra-interview_20150105.html" class="current">2015-01-05</a> <a href="blog-cn_2014_02_18_dijkstra-interview_20150205.html" >2015-02-05</a> <a href="blog-cn_2014_02_18_dijkstra-interview_20161001.html" >2016-10-01</a> <a href="blog-cn_2014_02_18_dijkstra-interview_20170506.html" >2017-05-06</a> <a href="blog-cn_2014_02_18_dijkstra-interview_20171204.html" >2017-12-04</a> <a href="blog-cn_2014_02_18_dijkstra-interview_20180306.html" >2018-03-06</a> <a href="blog-cn_2014_02_18_dijkstra-interview_20200217.html" >2020-02-17</a> <a href="blog-cn_2014_02_18_dijkstra-interview_20240421.html" >2024-04-21</a></div>
-        <h2>一个对 Dijkstra 的采访视频</h2>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_02_18_dijkstra-interview_20240421.html">2024-04-21</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F6353c5a4a7fde54f.json&amp;to=blog-cn_2014_02_18_dijkstra-interview_20240421.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_02_18_dijkstra-interview_20200217.html">2020-02-17</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F6353c5a4a7fde54f.json&amp;to=blog-cn_2014_02_18_dijkstra-interview_20200217.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_02_18_dijkstra-interview_20180306.html">2018-03-06</a></div><p class="version-diff-summary">较前版：+0 −0 修改 1</p><a class="version-diff-link" href="diff.html?data=diffs%2F6353c5a4a7fde54f.json&amp;to=blog-cn_2014_02_18_dijkstra-interview_20180306.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_02_18_dijkstra-interview_20171204.html">2017-12-04</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F6353c5a4a7fde54f.json&amp;to=blog-cn_2014_02_18_dijkstra-interview_20171204.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_02_18_dijkstra-interview_20170506.html">2017-05-06</a></div><p class="version-diff-summary">较前版：+0 −0 修改 2</p><p class="version-preview">软件的版本号 2.6, 2.7, … 都是胡扯。本来第1版就应该是最终的产品，可是软件公司总是先弄出来一个不完整的版本，骗大家买了，以后再慢慢“升级”。每次升级都要用户再次付钱。</p><a class="version-diff-link" href="diff.html?data=diffs%2F6353c5a4a7fde54f.json&amp;to=blog-cn_2014_02_18_dijkstra-interview_20170506.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_02_18_dijkstra-interview_20161001.html">2016-10-01</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F6353c5a4a7fde54f.json&amp;to=blog-cn_2014_02_18_dijkstra-interview_20161001.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_02_18_dijkstra-interview_20150205.html">2015-02-05</a></div><p class="version-diff-summary">较前版：+0 −1 修改 0</p><p class="version-preview">（王垠 yinwang.org 版权所有，未经许可，请勿转载）</p><a class="version-diff-link" href="diff.html?data=diffs%2F6353c5a4a7fde54f.json&amp;to=blog-cn_2014_02_18_dijkstra-interview_20150205.html">查看差异</a></li><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2015-01-05</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F6353c5a4a7fde54f.json&amp;to=blog-cn_2014_02_18_dijkstra-interview_20150105.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_02_18_dijkstra-interview_20140623.html">2014-06-23</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F6353c5a4a7fde54f.json&amp;to=blog-cn_2014_02_18_dijkstra-interview_20140623.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_02_18_dijkstra-interview_20140524.html">2014-05-24</a></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
+
+        <h1 class="article-title">一个对 Dijkstra 的采访视频</h1>
 
     <p>（王垠 <a href="http://www.yinwang.org">yinwang.org</a> 版权所有，未经许可，请勿转载）</p>
 
@@ -88,15 +88,16 @@
 <li>我的母亲是一个优秀的数学家。有一次我问她几何难不难，她说一点也不难，只要你用“心”来理解所有的公式。如果你需要超过5行公式，那么你就走错路了。</li>
 <li>为什么这么少的人追求优雅？这就是现实。如果说优雅也有缺点的话，那就是你需要艰巨的工作才能得到它，需要良好的教育才能欣赏它。</li>
 </ol>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

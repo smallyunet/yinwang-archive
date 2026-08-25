@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,7 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,9 +38,11 @@
         </div>
     </nav>
 
-    <div class="inner">
-        
-        <h1>论研究</h1>
+
+
+    <main class="inner" id="main-content">
+
+        <h1 class="article-title">论研究</h1>
 <div class="date">2009-01-01</div>
 <p>作者：王垠</p>
 <p>很多人称自己在研究，却不明白什么是研究。实际上，恰恰是“研究”这个时髦的词汇，导致了今天学术界的堕落，以至于使得真正希望研究的人离它而去。</p>
@@ -83,15 +66,16 @@
 <p>所以，学术的“霸权主义”其实已经由来已久了。有什么办法可以突破这道壁垒呢？其实每个人都可以做的一件事情就是：藐视权威。当然，藐视权威并不等于对他没礼貌，而只是在心理上把他真正的作对一个普通人对待。不卑，不亢，不盲从，相信自己的力量。就像纳什的传记《美丽心灵》里所描述的，纳什不看论文不看书，全凭自己的能力重新把整套的理论想出来，不盲从任何权威。很多人都没有意识到，其实他们自己也是可以做到这些的，可是他们总是认为他们不是“天才”，所以不可能做得到。思想的唯一限制，其实是人的信念。只有相信自己能做到，你才能做得到。</p>
 <p>本来研究这活动，从前是贵族阶级吃饱了没事干的消遣，而它现在却成了穷人以为可以用来通往更高阶级的光明大道。贵族做研究就像编笑话，不好笑的笑话，就不用讲给人听了。可是穷人做研究总是为了一点研究经费就像和尚一样去化斋，给我钱我就随便念一段经给你听，反正你也听不懂。也许唯一的根治这个问题的办法是实现罗素所设想的，真正的“社会主义”。想一下吧，世界上的资源其实足够每个人活得好好的了，机械化大生产也实现了，为什么我们还在这么拼命的工作呢？为了毁灭地球吗？我们应该对每个人都实现一星期五天，一天四小时的工作制，这应该足够支持每个人的衣食住行。之后每个人就都可以像从前的贵族一样，可以进行一些高雅的娱乐活动和真正的研究了。</p>
 <p>这一天会来到吗？</p>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

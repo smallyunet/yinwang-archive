@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">3</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,17 +46,21 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2021_02_16_cs-reading-course_20210216.html" >2021-02-16</a> <a href="blog-cn_2021_02_16_cs-reading-course_20210228.html" >2021-02-28</a> <a href="blog-cn_2021_02_16_cs-reading-course_20240416.html" class="current">2024-04-16</a></div>
-        <script>
-            if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent))
-            {
-               document.body.classList.add('mobile');
-            }
-        </script>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2024-04-16</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F1e3e2ce656e6615d.json&amp;to=blog-cn_2021_02_16_cs-reading-course_20240416.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2021_02_16_cs-reading-course_20210228.html">2021-02-28</a></div><p class="version-diff-summary">较前版：+0 −0 修改 2</p><p class="version-preview">为了专注于核心内容，避免将来的翻译开销，并且为了广泛的传播，这本书首先会用英语写作。所以阅读班的同学应该具有基本的英语能力。我会使用很容易的英语，不含复杂的语法和单词。这也可以锻炼参加者的英语能力。</p><a class="version-diff-link" href="diff.html?data=diffs%2F1e3e2ce656e6615d.json&amp;to=blog-cn_2021_02_16_cs-reading-course_20210228.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2021_02_16_cs-reading-course_20210216.html">2021-02-16</a></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
 
         <div>
-            <h2>计算机科学阅读班（实验）</h2>
+            <h1 class="article-title">计算机科学阅读班（实验）</h1>
             <p>昨天发出计算机科学基础班（第三期）的信息，已经收到了好些同学的踊跃报名。请大家写申请不要有太大压力，我会在春节之后的一个星期才开始阅读这些申请。请注意我不是按照发送的时间顺序，而是综合考虑的，所以请大家写申请不要有时间压力，好好享受春节的最后几天。</p>
 
 <p>大家的踊跃报名让我感觉欣慰，因为我长期以来改善教育的希望得到了很多的理解和支持。同时也让我有些不安，因为亲自授课付出很多精力，以至于课程的容量很有限，而且价格给很多年轻人造成一定压力。每次集体班都会不得已而拒绝很多人的申请，以至于很多有志于学习的人们得不到帮助。经过「集体班」和「一对一微信教学」的实验，我发现这样的教学效果确实好，所以这段时间我一直在设想一种新的授课方式，可以逐步改善这种情况。</p>
@@ -112,15 +105,16 @@
 <p>已经报名参加集体班第三期的同学，在班级确定之前可以申请换成阅读班，但是集体班开课之后就不能再换，所以请想清楚自己的需求和情况再决定。</p>
 
         </div>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

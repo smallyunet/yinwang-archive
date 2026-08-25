@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">9</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,27 +46,21 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2019_07_21_pnp2_20190813.html" >2019-08-13</a> <a href="blog-cn_2019_07_21_pnp2_20190815.html" class="current">2019-08-15</a> <a href="blog-cn_2019_07_21_pnp2_20190820.html" >2019-08-20</a> <a href="blog-cn_2019_07_21_pnp2_20191212.html" >2019-12-12</a> <a href="blog-cn_2019_07_21_pnp2_20191214.html" >2019-12-14</a> <a href="blog-cn_2019_07_21_pnp2_20191219.html" >2019-12-19</a> <a href="blog-cn_2019_07_21_pnp2_20200218.html" >2020-02-18</a> <a href="blog-cn_2019_07_21_pnp2_20220604.html" >2022-06-04</a> <a href="blog-cn_2019_07_21_pnp2_20240416.html" >2024-04-16</a></div>
-        <script>
-            if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent))
-            {
-               document.body.classList.add('mobile');
-            }
-        </script>
 
-        <!--
-        <div class="ad-banner">
-            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <ins class="adsbygoogle"
-                    data-ad-client="ca-pub-1331524016319584"
-                    data-ad-slot="6657867155"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-        </div>
-        -->
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2019_07_21_pnp2_20240416.html">2024-04-16</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F89e454afd22f32ab.json&amp;to=blog-cn_2019_07_21_pnp2_20240416.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2019_07_21_pnp2_20220604.html">2022-06-04</a></div><p class="version-diff-summary">较前版：+0 −10 修改 0</p><p class="version-preview">解密（2019 年 12 月）</p><a class="version-diff-link" href="diff.html?data=diffs%2F89e454afd22f32ab.json&amp;to=blog-cn_2019_07_21_pnp2_20220604.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2019_07_21_pnp2_20200218.html">2020-02-18</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F89e454afd22f32ab.json&amp;to=blog-cn_2019_07_21_pnp2_20200218.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2019_07_21_pnp2_20191219.html">2019-12-19</a></div><p class="version-diff-summary">较前版：+1 −0 修改 6</p><p class="version-preview">写作『再谈“P vs NP”问题』背后的故事，经过了几个月，我觉得可以解密一下。</p><a class="version-diff-link" href="diff.html?data=diffs%2F89e454afd22f32ab.json&amp;to=blog-cn_2019_07_21_pnp2_20191219.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2019_07_21_pnp2_20191214.html">2019-12-14</a></div><p class="version-diff-summary">较前版：+1 −0 修改 8</p><p class="version-preview">谨以此文献给“最伟大的计算机科学家”</p><a class="version-diff-link" href="diff.html?data=diffs%2F89e454afd22f32ab.json&amp;to=blog-cn_2019_07_21_pnp2_20191214.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2019_07_21_pnp2_20191212.html">2019-12-12</a></div><p class="version-diff-summary">较前版：+9 −0 修改 1</p><p class="version-preview">谨以此文献给“最伟大的计算机科学家”。</p><a class="version-diff-link" href="diff.html?data=diffs%2F89e454afd22f32ab.json&amp;to=blog-cn_2019_07_21_pnp2_20191212.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2019_07_21_pnp2_20190820.html">2019-08-20</a></div><p class="version-diff-summary">较前版：+2 −0 修改 0</p><p class="version-preview">更进一步看，这些“复杂度”的数学公式，不管是多项式还是指数，不管你的幂，系数常数项有多精确，终究难以描述现实系统的特性。物理的机器有各种分级的 cache，并行能力，同步开销，传输开销，各种瓶颈…… 最后你发现性能根本无法用数学公式来…</p><a class="version-diff-link" href="diff.html?data=diffs%2F89e454afd22f32ab.json&amp;to=blog-cn_2019_07_21_pnp2_20190820.html">查看差异</a></li><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2019-08-15</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">较前版：+0 −0 修改 6</p><p class="version-preview">没想到最近又遇到有人抓住我删掉的文章，乘机拿出来贬损我，尽其羞辱之能力。说王垠你太自以为是了，你知不知道“P vs NP”要是解决了，世界将有天翻地覆的变化，多少的计算难题会被解决，机器学习都没必要了，非对称加密全都被破解…… 跟上课…</p><a class="version-diff-link" href="diff.html?data=diffs%2F89e454afd22f32ab.json&amp;to=blog-cn_2019_07_21_pnp2_20190815.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2019_07_21_pnp2_20190813.html">2019-08-13</a></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
 
         <div>
-            <h2>再谈“P vs NP”问题</h2>
+            <h1 class="article-title">再谈“P vs NP”问题</h1>
             <p>好几年前曾经写过一篇文章表达对计算机科学里著名的 “<a href="https://en.wikipedia.org/wiki/P_versus_NP_problem">P vs NP</a>” 问题的看法。当时正值我人生中第 N 次研究那些东西，由于看透了却不在乎，所以写得特别简略。没想到有人看到后，还以为我没仔细学过复杂度理论，说我信口开河。我一般懒得谈论这种太理论的问题，身边也很少有人关心，所以后来干脆把文章撤了。不是我说的有什么不对，而是我懒得跟人争论。</p>
 
 <p>没想到最近又遇到有人抓住我删掉的文章，乘机拿出来贬损我，尽其羞辱之能力。说王垠你太自以为是了，你知不知道“P vs NP”要是解决了，世界将有天翻地覆的变化，多少的计算难题会被解决，机器学习都没必要了，非对称加密全都被破解…… 跟上课似的头头是道滔滔不绝，几乎把他本科算法课本上的内容给我背了一遍，以为别人不知道一样，却没有显示出任何他自己的思想。</p>
@@ -208,15 +191,16 @@
 
 
         </div>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

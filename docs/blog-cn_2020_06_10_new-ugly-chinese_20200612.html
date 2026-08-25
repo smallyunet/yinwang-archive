@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">8</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,17 +46,21 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2020_06_10_new-ugly-chinese_20200611.html" >2020-06-11</a> <a href="blog-cn_2020_06_10_new-ugly-chinese_20200612.html" class="current">2020-06-12</a> <a href="blog-cn_2020_06_10_new-ugly-chinese_20200615.html" >2020-06-15</a> <a href="blog-cn_2020_06_10_new-ugly-chinese_20200616.html" >2020-06-16</a> <a href="blog-cn_2020_06_10_new-ugly-chinese_20200617.html" >2020-06-17</a> <a href="blog-cn_2020_06_10_new-ugly-chinese_20200620.html" >2020-06-20</a> <a href="blog-cn_2020_06_10_new-ugly-chinese_20200625.html" >2020-06-25</a> <a href="blog-cn_2020_06_10_new-ugly-chinese_20200630.html" >2020-06-30</a></div>
-        <script>
-            if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent))
-            {
-               document.body.classList.add('mobile');
-            }
-        </script>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2020_06_10_new-ugly-chinese_20200630.html">2020-06-30</a></div><p class="version-diff-summary">较前版：+35 −17 修改 0</p><p class="version-preview">“豪宅小区”品质如此，其它的就更差了。其实我本来不想找这种被人叫做“豪宅小区”的，可是后来发现普通的小区看上去实在可怕，难以接受，才去找这种好点的。上海算是中国建筑质量最好的地方了，也都只能这样，其它地方就更不用提了。</p><a class="version-diff-link" href="diff.html?data=diffs%2Fd2cf61884ba056f0.json&amp;to=blog-cn_2020_06_10_new-ugly-chinese_20200630.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2020_06_10_new-ugly-chinese_20200625.html">2020-06-25</a></div><p class="version-diff-summary">较前版：+17 −0 修改 3</p><p class="version-preview">上海的豪宅小区还有一个特点，就是有穿着西装的人来给你开车门，让某些人觉得自己有“身份”和“地位”。有次去看静安区某豪宅小区，绕过满是尘土的“欧式花园”，到了楼门口。车还没停稳，看见五六个穿着西装的人争先恐后过来开车门。开个车门自己就行…</p><a class="version-diff-link" href="diff.html?data=diffs%2Fd2cf61884ba056f0.json&amp;to=blog-cn_2020_06_10_new-ugly-chinese_20200625.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2020_06_10_new-ugly-chinese_20200620.html">2020-06-20</a></div><p class="version-diff-summary">较前版：+0 −0 修改 2</p><p class="version-preview">我总是惊讶，那么多的中国人出国学习和旅游，那么多的政府官员，地产公司，建筑公司出国考察，居然什么都没学到。有人自称在伦敦待了几年，看过了巴黎，悉尼，东京…… 可是居然还说上海某些缺乏真正品质的小区是“豪宅”。那材质，做工，设计，物业人…</p><a class="version-diff-link" href="diff.html?data=diffs%2Fd2cf61884ba056f0.json&amp;to=blog-cn_2020_06_10_new-ugly-chinese_20200620.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2020_06_10_new-ugly-chinese_20200617.html">2020-06-17</a></div><p class="version-diff-summary">较前版：+26 −2 修改 19</p><p class="version-preview">一个悲哀的例子，在国外大学，没有外国人愿意跟中国人做室友。我开头不明白，因为我都是一个人住，或者和女朋友住。直到我需要找室友的时候，才发现外国同学看我名字是中国的，就没有下文了。不得不找了中国室友，才深有体会。换了三个室友，都非常闹心。</p><a class="version-diff-link" href="diff.html?data=diffs%2Fd2cf61884ba056f0.json&amp;to=blog-cn_2020_06_10_new-ugly-chinese_20200617.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2020_06_10_new-ugly-chinese_20200616.html">2020-06-16</a></div><p class="version-diff-summary">较前版：+9 −4 修改 5</p><p class="version-preview">中国的“豪宅”一开头看似金碧辉煌，跟欧洲宫殿似的，过了没多久天花板就裂了，电梯就破了，楼下大堂的墙皮就掉了，台阶裂了里面长了草，车库地砖破了没人修，小区里的路都被车压塌了，整个小区破的不像样，蒙了一层灰。可是人家仍然被叫做“豪宅”。</p><a class="version-diff-link" href="diff.html?data=diffs%2Fd2cf61884ba056f0.json&amp;to=blog-cn_2020_06_10_new-ugly-chinese_20200616.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2020_06_10_new-ugly-chinese_20200615.html">2020-06-15</a></div><p class="version-diff-summary">较前版：+43 −10 修改 19</p><p class="version-preview">谁都需要生存，可是并不是谁都需要一直谈论生存。越南人和印度人都有他们的生存问题，可是他们都不会在饭桌上一直说这些。</p><a class="version-diff-link" href="diff.html?data=diffs%2Fd2cf61884ba056f0.json&amp;to=blog-cn_2020_06_10_new-ugly-chinese_20200615.html">查看差异</a></li><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2020-06-12</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">较前版：+23 −0 修改 13</p><p class="version-preview">如果不是遇到他们，我都不知道越南人是这个样子。中国人印象中的越南人，总是戴个斗笠在种田，却没想到他们可以如此有趣，享受着丰富的生活，比大部分中国人都要有趣。长的不土，穿的不土，思维居然也不俗。</p><a class="version-diff-link" href="diff.html?data=diffs%2Fd2cf61884ba056f0.json&amp;to=blog-cn_2020_06_10_new-ugly-chinese_20200612.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2020_06_10_new-ugly-chinese_20200611.html">2020-06-11</a></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
 
         <div>
-            <h2>新丑陋的中国人</h2>
+            <h1 class="article-title">新丑陋的中国人</h1>
             <p>我想用这篇文章汇集一下自己多年来观察到的一些中国文化现象。柏杨先生有一本书叫《丑陋的中国人》，我推荐大家都看一下，检查一下自己。我这点区区见解，难以跟柏杨相提并论。只是想用这一系列回忆，记录一下自己对一些事的理解。时代前进了，中国人却依然丑陋，似乎一点没变，所以我把它叫做《新丑陋的中国人》。</p>
 
 <p>内容仍然在整理中，请不时回来看看。</p>
@@ -240,29 +233,16 @@
 
 
         </div>
+    </main>
 
-        <!--
-        <div class="ad-banner">
-            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <ins class="adsbygoogle"
-                    data-ad-client="ca-pub-1331524016319584"
-                    data-ad-slot="6657867155"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-        </div>
 
-        <script data-ad-client="ca-pub-1331524016319584" async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
-        </script>
-        -->
-    </div>
-
-    
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

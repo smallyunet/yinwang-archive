@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">12</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,9 +46,20 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2013_04_18_language-design-mistake2_20090101.html" >2009-01-01</a> <a href="blog-cn_2013_04_18_language-design-mistake2_20130422.html" >2013-04-22</a> <a href="blog-cn_2013_04_18_language-design-mistake2_20140804.html" >2014-08-04</a> <a href="blog-cn_2013_04_18_language-design-mistake2_20161001.html" >2016-10-01</a> <a href="blog-cn_2013_04_18_language-design-mistake2_20170510.html" >2017-05-10</a> <a href="blog-cn_2013_04_18_language-design-mistake2_20171024.html" >2017-10-24</a> <a href="blog-cn_2013_04_18_language-design-mistake2_20171025.html" class="current">2017-10-25</a> <a href="blog-cn_2013_04_18_language-design-mistake2_20171124.html" >2017-11-24</a> <a href="blog-cn_2013_04_18_language-design-mistake2_20180324.html" >2018-03-24</a> <a href="blog-cn_2013_04_18_language-design-mistake2_20191206.html" >2019-12-06</a> <a href="blog-cn_2013_04_18_language-design-mistake2_20200228.html" >2020-02-28</a> <a href="blog-cn_2013_04_18_language-design-mistake2_20240416.html" >2024-04-16</a></div>
-        <h1>程序语言的常见设计错误(2) - 试图容纳世界</h1>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_04_18_language-design-mistake2_20240416.html">2024-04-16</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F94f7762b2d445ded.json&amp;to=blog-cn_2013_04_18_language-design-mistake2_20240416.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_04_18_language-design-mistake2_20200228.html">2020-02-28</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F94f7762b2d445ded.json&amp;to=blog-cn_2013_04_18_language-design-mistake2_20200228.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_04_18_language-design-mistake2_20191206.html">2019-12-06</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F94f7762b2d445ded.json&amp;to=blog-cn_2013_04_18_language-design-mistake2_20191206.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_04_18_language-design-mistake2_20180324.html">2018-03-24</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F94f7762b2d445ded.json&amp;to=blog-cn_2013_04_18_language-design-mistake2_20180324.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_04_18_language-design-mistake2_20171124.html">2017-11-24</a></div><p class="version-diff-summary">较前版：+1 −1 修改 2</p><p class="version-preview">作者：王垠</p><a class="version-diff-link" href="diff.html?data=diffs%2F94f7762b2d445ded.json&amp;to=blog-cn_2013_04_18_language-design-mistake2_20171124.html">查看差异</a></li><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2017-10-25</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">较前版：+3 −0 修改 3</p><p class="version-preview">作者：王垠</p><a class="version-diff-link" href="diff.html?data=diffs%2F94f7762b2d445ded.json&amp;to=blog-cn_2013_04_18_language-design-mistake2_20171025.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_04_18_language-design-mistake2_20171024.html">2017-10-24</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F94f7762b2d445ded.json&amp;to=blog-cn_2013_04_18_language-design-mistake2_20171024.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_04_18_language-design-mistake2_20170510.html">2017-05-10</a></div><p class="version-diff-summary">较前版：+0 −3 修改 0</p><p class="version-preview">很可惜，Python 不提供给你这种机制，因为这种机制按照 Python 的“哲学”，不足以容纳这个世界的博大精深的万千变化。让程序员手工给参数和变量写上类型，被认为是“过多的劳动”。</p><a class="version-diff-link" href="diff.html?data=diffs%2F94f7762b2d445ded.json&amp;to=blog-cn_2013_04_18_language-design-mistake2_20170510.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_04_18_language-design-mistake2_20161001.html">2016-10-01</a></div><p class="version-diff-summary">较前版：+0 −1 修改 0</p><p class="version-preview">（王垠 yinwang.org 版权所有，未经许可，请勿转载）</p><a class="version-diff-link" href="diff.html?data=diffs%2F94f7762b2d445ded.json&amp;to=blog-cn_2013_04_18_language-design-mistake2_20161001.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_04_18_language-design-mistake2_20140804.html">2014-08-04</a></div><p class="version-diff-summary">较前版：+1 −0 修改 0</p><p class="version-preview">（王垠 yinwang.org 版权所有，未经许可，请勿转载）</p><a class="version-diff-link" href="diff.html?data=diffs%2F94f7762b2d445ded.json&amp;to=blog-cn_2013_04_18_language-design-mistake2_20140804.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_04_18_language-design-mistake2_20130422.html">2013-04-22</a></div><p class="version-diff-summary">较前版：+1 −1 修改 2</p><p class="version-preview">作者：王垠</p><a class="version-diff-link" href="diff.html?data=diffs%2F94f7762b2d445ded.json&amp;to=blog-cn_2013_04_18_language-design-mistake2_20130422.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_04_18_language-design-mistake2_20090101.html">2009-01-01</a></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
+
+        <h1 class="article-title">程序语言的常见设计错误(2) - 试图容纳世界</h1>
 <div class="date">2017-10-25</div>
 <p>作者：王垠</p>
 <p>之前的一篇文章里，我谈到了程序语言设计的一个常见错误倾向：片面追求短小，它导致了一系列的历史性的设计错误。今天我来谈一下另外一种错误的倾向，这种倾向也导致了很多错误，并且继续在导致错误的产生。</p>
@@ -73,15 +73,16 @@ List&lt;有一个头和两只手的正常人&gt; normalPeople;</p>
 <p>很可惜，Python 不提供给你这种机制，因为这种机制按照 Python 的“哲学”，不足以容纳这个世界的博大精深的万千变化。让程序员手工给参数和变量写上类型，被认为是“过多的劳动”。</p>
 <p>这个问题也存在于 JavaScript 和 Ruby。</p>
 <p>语言的设计者们都应该明白，程序语言不是用来“构造世界”的，而只是对它进行简单的模拟。试图容纳世界的倾向，没带来很多好处，没有节省程序员很多精力，却使得代码完全没有规则可言。这就像生活在一个没有规则，没有制度，没有法律的世界，经常发生无法预料的事情，到处跑着没有头，三只手，六只眼的怪人。这是无穷无尽的烦恼和时间精力的浪费。</p>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">19</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,27 +46,21 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2016_04_13_pay-blog_20160418.html" >2016-04-18</a> <a href="blog-cn_2016_04_13_pay-blog_20161003.html" >2016-10-03</a> <a href="blog-cn_2016_04_13_pay-blog_20170506.html" >2017-05-06</a> <a href="blog-cn_2016_04_13_pay-blog_20170516.html" >2017-05-16</a> <a href="blog-cn_2016_04_13_pay-blog_20170531.html" >2017-05-31</a> <a href="blog-cn_2016_04_13_pay-blog_20170721.html" >2017-07-21</a> <a href="blog-cn_2016_04_13_pay-blog_20171101.html" >2017-11-01</a> <a href="blog-cn_2016_04_13_pay-blog_20171202.html" >2017-12-02</a> <a href="blog-cn_2016_04_13_pay-blog_20171216.html" >2017-12-16</a> <a href="blog-cn_2016_04_13_pay-blog_20180228.html" >2018-02-28</a> <a href="blog-cn_2016_04_13_pay-blog_20180319.html" >2018-03-19</a> <a href="blog-cn_2016_04_13_pay-blog_20181129.html" >2018-11-29</a> <a href="blog-cn_2016_04_13_pay-blog_20181230.html" >2018-12-30</a> <a href="blog-cn_2016_04_13_pay-blog_20191009.html" >2019-10-09</a> <a href="blog-cn_2016_04_13_pay-blog_20200130.html" class="current">2020-01-30</a> <a href="blog-cn_2016_04_13_pay-blog_20200228.html" >2020-02-28</a> <a href="blog-cn_2016_04_13_pay-blog_20200406.html" >2020-04-06</a> <a href="blog-cn_2016_04_13_pay-blog_20210507.html" >2021-05-07</a> <a href="blog-cn_2016_04_13_pay-blog_20240416.html" >2024-04-16</a></div>
-        <script>
-            if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent))
-            {
-               document.body.classList.add('mobile');
-            }
-        </script>
 
-        <!--
-        <div class="ad-banner">
-            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <ins class="adsbygoogle"
-                    data-ad-client="ca-pub-1331524016319584"
-                    data-ad-slot="6657867155"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-        </div>
-        -->
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_04_13_pay-blog_20240416.html">2024-04-16</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2Ff5fd31297aa81682.json&amp;to=blog-cn_2016_04_13_pay-blog_20240416.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_04_13_pay-blog_20210507.html">2021-05-07</a></div><p class="version-diff-summary">较前版：+0 −1 修改 0</p><p class="version-preview">支付宝（1024 元）：</p><a class="version-diff-link" href="diff.html?data=diffs%2Ff5fd31297aa81682.json&amp;to=blog-cn_2016_04_13_pay-blog_20210507.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_04_13_pay-blog_20200406.html">2020-04-06</a></div><p class="version-diff-summary">较前版：+0 −4 修改 1</p><p class="version-preview">喜欢我的文章的人，可以自愿付费。你可以使用以下方式付款。为了防止有人滥用这些付款方式，我给它们设置了固定的金额。</p><a class="version-diff-link" href="diff.html?data=diffs%2Ff5fd31297aa81682.json&amp;to=blog-cn_2016_04_13_pay-blog_20200406.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_04_13_pay-blog_20200228.html">2020-02-28</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2Ff5fd31297aa81682.json&amp;to=blog-cn_2016_04_13_pay-blog_20200228.html">查看差异</a></li><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2020-01-30</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">较前版：+2 −0 修改 2</p><p class="version-preview">喜欢我的文章的人，可以自愿付费赞助。你的支持将会帮助我的博客保持独立和自由，不受控制的发表真实的见解。</p><a class="version-diff-link" href="diff.html?data=diffs%2Ff5fd31297aa81682.json&amp;to=blog-cn_2016_04_13_pay-blog_20200130.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_04_13_pay-blog_20191009.html">2019-10-09</a></div><p class="version-diff-summary">较前版：+2 −0 修改 0</p><p class="version-preview">BitCoin：1K3eF2YK3B4NvV9UddsBstXjaKYM93KjYZ</p><a class="version-diff-link" href="diff.html?data=diffs%2Ff5fd31297aa81682.json&amp;to=blog-cn_2016_04_13_pay-blog_20191009.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_04_13_pay-blog_20181230.html">2018-12-30</a></div><p class="version-diff-summary">较前版：+0 −4 修改 1</p><p class="version-preview">微信：由于微信付款经常出问题，暂时停止使用。</p><a class="version-diff-link" href="diff.html?data=diffs%2Ff5fd31297aa81682.json&amp;to=blog-cn_2016_04_13_pay-blog_20181230.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_04_13_pay-blog_20181129.html">2018-11-29</a></div><p class="version-diff-summary">较前版：+0 −1 修改 0</p><p class="version-preview">我为这些付款方式固定了金额，原因是偶尔会有人利用付款金额或者留言来传达他们的不健康心态。所以为了卫生和品牌形象，我设置了固定金额（30 人民币）作为“过滤器”，这对于普通工作的人应该不是问题。如果你觉得这金额有困难的话，你的付款就免了…</p><a class="version-diff-link" href="diff.html?data=diffs%2Ff5fd31297aa81682.json&amp;to=blog-cn_2016_04_13_pay-blog_20181129.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_04_13_pay-blog_20180319.html">2018-03-19</a></div><p class="version-diff-summary">较前版：+3 −0 修改 2</p><p class="version-preview">喜欢我的文章的人，可以自愿付费购买。你可以使用以下方式付款。</p><a class="version-diff-link" href="diff.html?data=diffs%2Ff5fd31297aa81682.json&amp;to=blog-cn_2016_04_13_pay-blog_20180319.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_04_13_pay-blog_20180228.html">2018-02-28</a></div><p class="version-diff-summary">较前版：+3 −2 修改 1</p><p class="version-preview">喜欢我的文章的人，可以自愿付费购买。你可以使用以下方式付款：</p><a class="version-diff-link" href="diff.html?data=diffs%2Ff5fd31297aa81682.json&amp;to=blog-cn_2016_04_13_pay-blog_20180228.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_04_13_pay-blog_20171216.html">2017-12-16</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2Ff5fd31297aa81682.json&amp;to=blog-cn_2016_04_13_pay-blog_20171216.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_04_13_pay-blog_20171202.html">2017-12-02</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2Ff5fd31297aa81682.json&amp;to=blog-cn_2016_04_13_pay-blog_20171202.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_04_13_pay-blog_20171101.html">2017-11-01</a></div><p class="version-diff-summary">较前版：+0 −1 修改 0</p><p class="version-preview">微信支付：</p><a class="version-diff-link" href="diff.html?data=diffs%2Ff5fd31297aa81682.json&amp;to=blog-cn_2016_04_13_pay-blog_20171101.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_04_13_pay-blog_20170721.html">2017-07-21</a></div><p class="version-diff-summary">较前版：+2 −2 修改 0</p><p class="version-preview">微信支付：</p><a class="version-diff-link" href="diff.html?data=diffs%2Ff5fd31297aa81682.json&amp;to=blog-cn_2016_04_13_pay-blog_20170721.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_04_13_pay-blog_20170531.html">2017-05-31</a></div><p class="version-diff-summary">较前版：+1 −0 修改 3</p><p class="version-preview">有很多人建议我在博文里加上付款方式，这样我花费的时间可以得到一些回报。我一直不愿意为此收费，然而后来我发现，根据经济学的原理，这是有害社会的。原理是这样，有价值的事物，就应该在经济上受到相应的回报，这样好的东西才能发扬光大。</p><a class="version-diff-link" href="diff.html?data=diffs%2Ff5fd31297aa81682.json&amp;to=blog-cn_2016_04_13_pay-blog_20170531.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_04_13_pay-blog_20170516.html">2017-05-16</a></div><p class="version-diff-summary">较前版：+0 −0 修改 5</p><p class="version-preview">有很多人建议我在博文里加上付款方式，这样我花费的时间可以得到一些回报。我一直不愿意为此收费，然而后来我发现，根据经济学的原理，这是有害社会的。原理是这样，有价值的事物，就应该在经济上受到相应的回报，这样好的东西才能受到鼓励，发扬光大，…</p><a class="version-diff-link" href="diff.html?data=diffs%2Ff5fd31297aa81682.json&amp;to=blog-cn_2016_04_13_pay-blog_20170516.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_04_13_pay-blog_20170506.html">2017-05-06</a></div><p class="version-diff-summary">较前版：+0 −0 修改 1</p><p class="version-preview">支付宝二维码（收款人是我家人的账号 mantianxing）：</p><a class="version-diff-link" href="diff.html?data=diffs%2Ff5fd31297aa81682.json&amp;to=blog-cn_2016_04_13_pay-blog_20170506.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_04_13_pay-blog_20161003.html">2016-10-03</a></div><p class="version-diff-summary">较前版：+0 −0 修改 4</p><p class="version-preview">曾经有很多人跟我建议，给我的博文里面加上付款的链接，这样我花费的时间可以得到一些回报。我一直很高尚的样子，不愿意为此收费。然而，根据经济学的原理，这是有害社会的 :P 经济的原理是这样，有价值的事物，应该在经济上受到相应的支持，这样好…</p><a class="version-diff-link" href="diff.html?data=diffs%2Ff5fd31297aa81682.json&amp;to=blog-cn_2016_04_13_pay-blog_20161003.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_04_13_pay-blog_20160418.html">2016-04-18</a></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
 
         <div>
-            <h2>博文的自愿付费方式</h2>
+            <h1 class="article-title">博文的自愿付费方式</h1>
             <p>喜欢我的文章的人，可以自愿付费赞助。你的支持将会帮助我的博客保持独立和自由，不受控制的发表真实的见解。</p>
 
 <p>你可以使用以下方式付款。为了防止有人滥用这些付款方式，我给它们设置了固定的金额。</p>
@@ -108,15 +91,16 @@
 
 
         </div>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

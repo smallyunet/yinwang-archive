@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">8</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,9 +46,20 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2014_03_24_academic-corruption_20140328.html" class="current">2014-03-28</a> <a href="blog-cn_2014_03_24_academic-corruption_20140804.html" >2014-08-04</a> <a href="blog-cn_2014_03_24_academic-corruption_20150101.html" >2015-01-01</a> <a href="blog-cn_2014_03_24_academic-corruption_20150202.html" >2015-02-02</a> <a href="blog-cn_2014_03_24_academic-corruption_20160929.html" >2016-09-29</a> <a href="blog-cn_2014_03_24_academic-corruption_20171206.html" >2017-12-06</a> <a href="blog-cn_2014_03_24_academic-corruption_20180329.html" >2018-03-29</a> <a href="blog-cn_2014_03_24_academic-corruption_20200228.html" >2020-02-28</a></div>
-        <h2>学术腐败是历史的必然</h2>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_03_24_academic-corruption_20200228.html">2020-02-28</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2Ff833281d64fca4b2.json&amp;to=blog-cn_2014_03_24_academic-corruption_20200228.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_03_24_academic-corruption_20180329.html">2018-03-29</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2Ff833281d64fca4b2.json&amp;to=blog-cn_2014_03_24_academic-corruption_20180329.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_03_24_academic-corruption_20171206.html">2017-12-06</a></div><p class="version-diff-summary">较前版：+0 −0 修改 3</p><p class="version-preview">最开头教职岗位还比较好找，所以这批人就跟真正优秀的研究者一起，升到了终身教授的职位。可是他们的本性是不会改的 ，他们对研究不感兴趣，只是想混口饭吃，所以他们就给同类的，以混饭吃为目的的人大开绿灯。为了提高自己的学术地位，尽管知道是扯淡…</p><a class="version-diff-link" href="diff.html?data=diffs%2Ff833281d64fca4b2.json&amp;to=blog-cn_2014_03_24_academic-corruption_20171206.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_03_24_academic-corruption_20160929.html">2016-09-29</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2Ff833281d64fca4b2.json&amp;to=blog-cn_2014_03_24_academic-corruption_20160929.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_03_24_academic-corruption_20150202.html">2015-02-02</a></div><p class="version-diff-summary">较前版：+0 −1 修改 0</p><p class="version-preview">（王垠 yinwang.org 版权所有，未经许可，请勿转载）</p><a class="version-diff-link" href="diff.html?data=diffs%2Ff833281d64fca4b2.json&amp;to=blog-cn_2014_03_24_academic-corruption_20150202.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_03_24_academic-corruption_20150101.html">2015-01-01</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2Ff833281d64fca4b2.json&amp;to=blog-cn_2014_03_24_academic-corruption_20150101.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_03_24_academic-corruption_20140804.html">2014-08-04</a></div><p class="version-diff-summary">较前版：+6 −0 修改 8</p><p class="version-preview">（王垠 yinwang.org 版权所有，未经许可，请勿转载）</p><a class="version-diff-link" href="diff.html?data=diffs%2Ff833281d64fca4b2.json&amp;to=blog-cn_2014_03_24_academic-corruption_20140804.html">查看差异</a></li><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2014-03-28</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
+
+        <h1 class="article-title">学术腐败是历史的必然</h1>
 
 <p>（王垠 yinwang.org 版权所有，未经许可请勿转载）</p>
 
@@ -102,15 +102,16 @@
 <p>中国人太多，而且虽然口头上说是什么“有中国特色的稀里糊涂主义”，其实实行的是比资本主义还要不合理的分配制度，社会的资源越来越集中到极少数人手里或者被浪费掉，导致极度的贫富分化。再加上自古以来的科举制度和“书中自有……”的误导，绝大多数人涌向大学，涌向研究生院。所以学术腐败虽然是世界范围的现象，但在中国就更加厉害一些。</p>
 
 <p>关于这种“生产力”和“社会生产关系”的冲突，我们从小上政治课就背过了，不是吗？虽然政治课本大部分是扯淡的教条，但极少数几条不是中国人又不是俄国人发明的理论还真是管用的。死记硬背的东西人是永远不会理解的，只有切合实际才会发现，某些德国大胡子说的其实是真话，是科学道理。</p>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

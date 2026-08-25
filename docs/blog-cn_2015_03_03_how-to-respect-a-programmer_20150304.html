@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">12</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,9 +46,20 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2015_03_03_how-to-respect-a-programmer_20090101.html" >2009-01-01</a> <a href="blog-cn_2015_03_03_how-to-respect-a-programmer_20150304.html" class="current">2015-03-04</a> <a href="blog-cn_2015_03_03_how-to-respect-a-programmer_20150307.html" >2015-03-07</a> <a href="blog-cn_2015_03_03_how-to-respect-a-programmer_20150314.html" >2015-03-14</a> <a href="blog-cn_2015_03_03_how-to-respect-a-programmer_20150321.html" >2015-03-21</a> <a href="blog-cn_2015_03_03_how-to-respect-a-programmer_20161001.html" >2016-10-01</a> <a href="blog-cn_2015_03_03_how-to-respect-a-programmer_20170506.html" >2017-05-06</a> <a href="blog-cn_2015_03_03_how-to-respect-a-programmer_20171216.html" >2017-12-16</a> <a href="blog-cn_2015_03_03_how-to-respect-a-programmer_20180302.html" >2018-03-02</a> <a href="blog-cn_2015_03_03_how-to-respect-a-programmer_20200122.html" >2020-01-22</a> <a href="blog-cn_2015_03_03_how-to-respect-a-programmer_20200221.html" >2020-02-21</a> <a href="blog-cn_2015_03_03_how-to-respect-a-programmer_20240602.html" >2024-06-02</a></div>
-        <h2>怎样尊重一个程序员</h2>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_03_03_how-to-respect-a-programmer_20240602.html">2024-06-02</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F6d202938ab5e53b9.json&amp;to=blog-cn_2015_03_03_how-to-respect-a-programmer_20240602.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_03_03_how-to-respect-a-programmer_20200221.html">2020-02-21</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F6d202938ab5e53b9.json&amp;to=blog-cn_2015_03_03_how-to-respect-a-programmer_20200221.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_03_03_how-to-respect-a-programmer_20200122.html">2020-01-22</a></div><p class="version-diff-summary">较前版：+3 −0 修改 8</p><p class="version-preview">得知一位久违的同学来到了旧金山湾区，然而我见到他时，这人正处于一生中最痛苦的时期。他告诉我，自己任职的公司在他加入之前和之后，判若两人。录取的时候公司对他说，我们对你在实习期间的表现和学术背景非常满意，你不用面试，甚至不用毕业拿学位，…</p><a class="version-diff-link" href="diff.html?data=diffs%2F6d202938ab5e53b9.json&amp;to=blog-cn_2015_03_03_how-to-respect-a-programmer_20200122.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_03_03_how-to-respect-a-programmer_20180302.html">2018-03-02</a></div><p class="version-diff-summary">较前版：+0 −1 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F6d202938ab5e53b9.json&amp;to=blog-cn_2015_03_03_how-to-respect-a-programmer_20180302.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_03_03_how-to-respect-a-programmer_20171216.html">2017-12-16</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F6d202938ab5e53b9.json&amp;to=blog-cn_2015_03_03_how-to-respect-a-programmer_20171216.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_03_03_how-to-respect-a-programmer_20170506.html">2017-05-06</a></div><p class="version-diff-summary">较前版：+0 −0 修改 2</p><p class="version-preview">Git并不像很多人吹嘘的那么好用，其中有明显的蹩脚设计。跟Unix的传统一脉相承，Git没有一个良好的包装，设计者把自己的内部实现细节无情地泄露给了用户，让用户需要琢磨者设计者内部到底怎么实现的，否则很多时候不知道该怎么办。用户被迫需…</p><a class="version-diff-link" href="diff.html?data=diffs%2F6d202938ab5e53b9.json&amp;to=blog-cn_2015_03_03_how-to-respect-a-programmer_20170506.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_03_03_how-to-respect-a-programmer_20161001.html">2016-10-01</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F6d202938ab5e53b9.json&amp;to=blog-cn_2015_03_03_how-to-respect-a-programmer_20161001.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_03_03_how-to-respect-a-programmer_20150321.html">2015-03-21</a></div><p class="version-diff-summary">较前版：+0 −1 修改 1</p><p class="version-preview">我的这位同学也算得上本领域顶尖的专家了。如此的践踏一个专家的价值，用肤浅的标准来评判和对待他们，Google并不是唯一一个这样的公司。我之前任职的好几个公司，或多或少都存在类似的问题。很多时候也不一定是公司管理层无端施加压力，而是程序…</p><a class="version-diff-link" href="diff.html?data=diffs%2F6d202938ab5e53b9.json&amp;to=blog-cn_2015_03_03_how-to-respect-a-programmer_20150321.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_03_03_how-to-respect-a-programmer_20150314.html">2015-03-14</a></div><p class="version-diff-summary">较前版：+26 −0 修改 3</p><p class="version-preview">我的这位同学也算得上本领域顶尖的专家了。如此的践踏一个专家的价值，用肤浅的标准来评判和对待他们，Google并不是唯一一个这样的公司。我之前任职的好几个公司，或多或少都存在类似的问题。很多时候也不一定是公司管理层无端施加压力，而是程序…</p><a class="version-diff-link" href="diff.html?data=diffs%2F6d202938ab5e53b9.json&amp;to=blog-cn_2015_03_03_how-to-respect-a-programmer_20150314.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_03_03_how-to-respect-a-programmer_20150307.html">2015-03-07</a></div><p class="version-diff-summary">较前版：+7 −0 修改 17</p><p class="version-preview">得知一位久违的同学来到了旧金山湾区，然而我见到他时，这人正处于一生中最痛苦的时期。他告诉我，自己任职的公司在他加入之前和之后，判若两人。录取的时候公司对他说，我们对你在实习期间的表现和学术背景非常满意，你不用面试，甚至不用毕业拿学位，…</p><a class="version-diff-link" href="diff.html?data=diffs%2F6d202938ab5e53b9.json&amp;to=blog-cn_2015_03_03_how-to-respect-a-programmer_20150307.html">查看差异</a></li><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2015-03-04</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">较前版：+2 −33 修改 18</p><p class="version-preview">得知一位久违的同学来到了湾区，然而我见到他时，这人正处于一生中最痛苦的时期。他告诉我，自己任职的公司在他加入之前和之后，判若两人。录取的时候公司对他说，我们对你在实习期间的表现和学术背景非常满意，你不用面试，甚至不用毕业拿学位，直接就…</p><a class="version-diff-link" href="diff.html?data=diffs%2F6d202938ab5e53b9.json&amp;to=blog-cn_2015_03_03_how-to-respect-a-programmer_20150304.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_03_03_how-to-respect-a-programmer_20090101.html">2009-01-01</a></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
+
+        <h1 class="article-title">怎样尊重一个程序员</h1>
 
     <p>得知一位久违的同学来到了湾区，然而我见到他时，这人正处于一生中最痛苦的时期。他告诉我，自己任职的公司在他加入之前和之后，判若两人。录取的时候公司对他说，我们对你在实习期间的表现和学术背景非常满意，你不用面试，甚至不用毕业拿学位，直接就可以加入我们公司成为正式员工。然而短短一年后的今天，这位同学已经完全感觉不到公司对自己技能的尊重。Manager让他做一些乱七八糟没技术含量的事情，还抱怨说他做事太慢，并且在他的evaluation上很是写了一笔。在人格尊严和生活安全感的双重打击之下，这位同学压力非常大，周末经常偷偷地加班，仍然无法让manager满意。</p>
 
@@ -122,15 +122,16 @@
 <p>这个我已经在一篇专门的<a href="http://www.yinwang.org/blog-cn/2015/02/20/other-peoples-bug">文章</a>里讨论过。让一个程序员修补另外一个程序员的BUG，不但是效率低下，而且是不尊重程序员个人价值的作法，应该尽量避免。</p>
 
 <p>如果有人离开公司，必须要有人修补他遗留下来的BUG，那么说话应该特别特别的小心。你必须指出需要他帮忙的特殊原因，强调这件事本来不是他的错，本来是不应该他来做的，但是有人走了，没有办法，并且诚恳的为此类事情的发生表示歉意。只有这样，程序员才会心甘情愿的在这种特殊关头，修补另外一个人的BUG。</p>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">3</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,17 +46,21 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2021_07_12_einstein-relativity_20210712.html" >2021-07-12</a> <a href="blog-cn_2021_07_12_einstein-relativity_20210713.html" >2021-07-13</a> <a href="blog-cn_2021_07_12_einstein-relativity_20210730.html" class="current">2021-07-30</a></div>
-        <script>
-            if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent))
-            {
-               document.body.classList.add('mobile');
-            }
-        </script>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2021-07-30</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">较前版：+10 −0 修改 19</p><p class="version-preview">不要忘了，在此之前爱因斯坦是一个在专利办公室工作的小职员。如果你没有怀疑的态度，这往往被当成励志的事迹。一个默默无闻的小职员，居然可以在这么短时间内发表好几篇开天辟地，轰动世界的论文。你就会以为只要努力，一切奇迹都可能发生。可是一旦开…</p><a class="version-diff-link" href="diff.html?data=diffs%2F5d3e4434041986b4.json&amp;to=blog-cn_2021_07_12_einstein-relativity_20210730.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2021_07_12_einstein-relativity_20210713.html">2021-07-13</a></div><p class="version-diff-summary">较前版：+11 −1 修改 10</p><p class="version-preview">其实自从爱因斯坦发表相对论以来，就有很多争议。极少人能真的理解相对论，用来证明它的那些“科学实验”，也是普通人无法亲自证实，甚至难以复现的。相对论的实际效果，普通人无法直接体会和验证，只能相信权威描述。爱因斯坦的论文几乎没有任何引用，…</p><a class="version-diff-link" href="diff.html?data=diffs%2F5d3e4434041986b4.json&amp;to=blog-cn_2021_07_12_einstein-relativity_20210713.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2021_07_12_einstein-relativity_20210712.html">2021-07-12</a></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
 
         <div>
-            <h2>对爱因斯坦和相对论的怀疑</h2>
+            <h1 class="article-title">对爱因斯坦和相对论的怀疑</h1>
             <p>最近研究了一些历史，忽然对爱因斯坦和相对论产生了怀疑，结果昨天就有人告诉我，有中国学者声称“推翻”了相对论。我的直觉是，这值得大家重视。不管这个中国学者是对还是错，总的说来，对爱因斯坦和相对论的怀疑值得重视，而不应该盲目否定和嘲笑。</p>
 
 <p>其实自从爱因斯坦发表相对论以来，就有很多争议。极少人能真的理解相对论，用来证明它的那些“科学实验”，也是普通人无法亲自证实，甚至难以复现的。相对论的实际效果，普通人无法直接体会和验证，只能相信权威描述。爱因斯坦的论文几乎没有任何引用，违反了科学发表的一般规则，有抄袭的嫌疑。相对论能起到的实际作用难以体现，却被媒体大肆炒作，被捧成超越哥白尼，开普勒，伽利略和牛顿的“天才”。被很多人质疑，却一直拒绝与质疑他的人公开答辩。所以我感觉爱因斯坦可能不仅不是天才，而且是否真懂物理都值得怀疑。</p>
@@ -147,29 +140,16 @@
 <p>所以我之前说世界上不存在天才，恐怕确实如此。现在每当听说”天才“这个词，我都会产生怀疑，是不是又是媒体的炒作。</p>
 
         </div>
+    </main>
 
-        <!--
-        <div class="ad-banner">
-            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <ins class="adsbygoogle"
-                    data-ad-client="ca-pub-1331524016319584"
-                    data-ad-slot="6657867155"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-        </div>
 
-        <script data-ad-client="ca-pub-1331524016319584" async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
-        </script>
-        -->
-    </div>
-
-    
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

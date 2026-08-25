@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">5</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,17 +46,21 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2021_09_25_science-and-pseudoscience_20210925.html" >2021-09-25</a> <a href="blog-cn_2021_09_25_science-and-pseudoscience_20210926.html" class="current">2021-09-26</a> <a href="blog-cn_2021_09_25_science-and-pseudoscience_20211006.html" >2021-10-06</a> <a href="blog-cn_2021_09_25_science-and-pseudoscience_20211008.html" >2021-10-08</a> <a href="blog-cn_2021_09_25_science-and-pseudoscience_20211010.html" >2021-10-10</a></div>
-        <script>
-            if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent))
-            {
-               document.body.classList.add('mobile');
-            }
-        </script>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2021_09_25_science-and-pseudoscience_20211010.html">2021-10-10</a></div><p class="version-diff-summary">较前版：+1 −0 修改 3</p><p class="version-preview">这篇文章是我近一个月对于医学阴暗面的研究。我花费了大量的时间和精力，查阅和分析了很多文章，书籍和视频，提取了其中精华的部分。虽然探索的过程很辛苦，但我清楚地知道，这些信息非常重要，它可能改变我的一生。虽然主题看似阴暗，却蕴含着获得真正…</p><a class="version-diff-link" href="diff.html?data=diffs%2Fc2a77fe7116d9579.json&amp;to=blog-cn_2021_09_25_science-and-pseudoscience_20211010.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2021_09_25_science-and-pseudoscience_20211008.html">2021-10-08</a></div><p class="version-diff-summary">较前版：+0 −0 修改 1</p><p class="version-preview">今天的某些“科学家”，把无法（或只是没有）用他们的狭隘方式证明的做法，一概叫做“伪科学”，然而他们所谓“科学证实”的理论，很多却缺乏确切的“因果关系”证明，甚至可以是彻底的骗局。艾滋病（AIDS）的研究就是这样一个例子。</p><a class="version-diff-link" href="diff.html?data=diffs%2Fc2a77fe7116d9579.json&amp;to=blog-cn_2021_09_25_science-and-pseudoscience_20211008.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2021_09_25_science-and-pseudoscience_20211006.html">2021-10-06</a></div><p class="version-diff-summary">较前版：+13 −0 修改 17</p><p class="version-preview">这篇文章是我近一个月对于医学阴暗面的研究。我花费了大量的时间和精力，查阅和分析了很多文章，书籍和视频，提取了其中精华的部分。我清楚地知道，这些信息对我的启示，将守护我的一生。虽然主题看似阴暗，却蕴含着获得真正光明的希望。我不指望很多人…</p><a class="version-diff-link" href="diff.html?data=diffs%2Fc2a77fe7116d9579.json&amp;to=blog-cn_2021_09_25_science-and-pseudoscience_20211006.html">查看差异</a></li><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2021-09-26</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">较前版：+3 −0 修改 13</p><p class="version-preview">HIV =&gt; AIDS，被传染了 HIV 病毒，就会得 AIDS。人们以为就是这么简单的逻辑。然而医学界研究了这么多年，消耗了巨额的资金，却从未证实过“HIV =&gt; AIDS”这个至关重要的因果关系。AIDS 的症状是实际存在的，但医…</p><a class="version-diff-link" href="diff.html?data=diffs%2Fc2a77fe7116d9579.json&amp;to=blog-cn_2021_09_25_science-and-pseudoscience_20210926.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2021_09_25_science-and-pseudoscience_20210925.html">2021-09-25</a></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
 
         <div>
-            <h2>科学和伪科学</h2>
+            <h1 class="article-title">科学和伪科学</h1>
             <p>今天的所谓“科学家”，把无法（或只是没有）用他们的狭隘方式证明的做法，一概叫做“伪科学”，然而他们所谓“科学证实”的理论，很多却缺乏确切的“因果关系”证明。艾滋病（AIDS）的研究就是这样一个例子。</p>
 
 <h3 id="艾滋病aids研究是科学">艾滋病（AIDS）研究是科学？</h3>
@@ -151,29 +144,16 @@
 <p>真正的科学仍然是值得尊敬和追求的，只是“科学”一词已经被严重歪曲了。在我的头脑里，科学已经被正名，它不再受权威和媒体操纵。不因为别人说这是“科学”而简单的相信它，不因为别人说这是“伪科学”而盲目的否定它。一切都应该自己去实践，因为实践出真知。</p>
 
         </div>
+    </main>
 
-        <!--
-        <div class="ad-banner">
-            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <ins class="adsbygoogle"
-                    data-ad-client="ca-pub-1331524016319584"
-                    data-ad-slot="6657867155"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-        </div>
 
-        <script data-ad-client="ca-pub-1331524016319584" async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
-        </script>
-        -->
-    </div>
-
-    
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

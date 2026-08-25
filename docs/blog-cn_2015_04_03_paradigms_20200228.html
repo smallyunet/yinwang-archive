@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">12</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,17 +46,21 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2015_04_03_paradigms_20090101.html" >2009-01-01</a> <a href="blog-cn_2015_04_03_paradigms_20150406.html" >2015-04-06</a> <a href="blog-cn_2015_04_03_paradigms_20150416.html" >2015-04-16</a> <a href="blog-cn_2015_04_03_paradigms_20150617.html" >2015-06-17</a> <a href="blog-cn_2015_04_03_paradigms_20160922.html" >2016-09-22</a> <a href="blog-cn_2015_04_03_paradigms_20170507.html" >2017-05-07</a> <a href="blog-cn_2015_04_03_paradigms_20170606.html" >2017-06-06</a> <a href="blog-cn_2015_04_03_paradigms_20171025.html" >2017-10-25</a> <a href="blog-cn_2015_04_03_paradigms_20171216.html" >2017-12-16</a> <a href="blog-cn_2015_04_03_paradigms_20191206.html" >2019-12-06</a> <a href="blog-cn_2015_04_03_paradigms_20200228.html" class="current">2020-02-28</a> <a href="blog-cn_2015_04_03_paradigms_20240508.html" >2024-05-08</a></div>
-        <script>
-            if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent))
-            {
-               document.body.classList.add('mobile');
-            }
-        </script>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_04_03_paradigms_20240508.html">2024-05-08</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F5da66ea869bd84b6.json&amp;to=blog-cn_2015_04_03_paradigms_20240508.html">查看差异</a></li><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2020-02-28</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">较前版：+7 −1 修改 31</p><p class="version-preview">如果你看透了表面现象就会发现，其实“面向对象编程”本身没有引入很多新东西。所谓“面向对象语言”，就是经典的“过程式语言”（比如 Pascal），加上一点抽象能力。所谓“类”和“对象”，基本是过程式语言里面的记录（record，或者叫结…</p><a class="version-diff-link" href="diff.html?data=diffs%2F5da66ea869bd84b6.json&amp;to=blog-cn_2015_04_03_paradigms_20200228.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_04_03_paradigms_20191206.html">2019-12-06</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F5da66ea869bd84b6.json&amp;to=blog-cn_2015_04_03_paradigms_20191206.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_04_03_paradigms_20171216.html">2017-12-16</a></div><p class="version-diff-summary">较前版：+15 −1 修改 11</p><p class="version-preview">作者:王垠</p><a class="version-diff-link" href="diff.html?data=diffs%2F5da66ea869bd84b6.json&amp;to=blog-cn_2015_04_03_paradigms_20171216.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_04_03_paradigms_20171025.html">2017-10-25</a></div><p class="version-diff-summary">较前版：+1 −15 修改 11</p><p class="version-preview">作者:王垠</p><a class="version-diff-link" href="diff.html?data=diffs%2F5da66ea869bd84b6.json&amp;to=blog-cn_2015_04_03_paradigms_20171025.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_04_03_paradigms_20170606.html">2017-06-06</a></div><p class="version-diff-summary">较前版：+0 −0 修改 1</p><p class="version-preview">在我的心目中其实只有一个概念，它叫做“编程”（programming），它不带有任何附加的限定词（比如“函数式”或者“面向对象”）。我研究的领域称叫做“Programming Languages”，它研究的内容不局限于某一个语言，也不…</p><a class="version-diff-link" href="diff.html?data=diffs%2F5da66ea869bd84b6.json&amp;to=blog-cn_2015_04_03_paradigms_20170606.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_04_03_paradigms_20170507.html">2017-05-07</a></div><p class="version-diff-summary">较前版：+0 −0 修改 1</p><p class="version-preview">函数式编程当然提供了它自己的价值。函数式编程相对于面向对象最大的价值，莫过于对于函数的正确理解。在函数式语言里面，函数是“一类公民”（first-class）。它们可以像1, 2, “hello”，true，对象…… 之类的“值”一样…</p><a class="version-diff-link" href="diff.html?data=diffs%2F5da66ea869bd84b6.json&amp;to=blog-cn_2015_04_03_paradigms_20170507.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_04_03_paradigms_20160922.html">2016-09-22</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F5da66ea869bd84b6.json&amp;to=blog-cn_2015_04_03_paradigms_20160922.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_04_03_paradigms_20150617.html">2015-06-17</a></div><p class="version-diff-summary">较前版：+15 −11 修改 15</p><p class="version-preview">总是有人喜欢争论这类问题，到底是“函数式编程”（FP）好，还是“面向对象编程”（OOP）好。既然出了两个帮派，就有人积极地做它们的帮众，互相唾骂和鄙视。然后呢又出了一个“好好先生帮”，这个帮的人喜欢说，管它什么范式呢，能解决问题的工具…</p><a class="version-diff-link" href="diff.html?data=diffs%2F5da66ea869bd84b6.json&amp;to=blog-cn_2015_04_03_paradigms_20150617.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_04_03_paradigms_20150416.html">2015-04-16</a></div><p class="version-diff-summary">较前版：+16 −0 修改 14</p><p class="version-preview">如果你看透了表面现象就会发现，其实“面向对象编程”本身没有引入很多新东西。所谓“面向对象语言”，其实就是经典的“过程式语言”（比如Pascal），加上一点点抽象能力。所谓“类”和“对象”，基本是过程式语言里面的记录（record，或者…</p><a class="version-diff-link" href="diff.html?data=diffs%2F5da66ea869bd84b6.json&amp;to=blog-cn_2015_04_03_paradigms_20150416.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_04_03_paradigms_20150406.html">2015-04-06</a></div><p class="version-diff-summary">较前版：+2 −8 修改 25</p><p class="version-preview">总是有人喜欢争论这类问题，到底是“函数式编程”（FP）好，还是“面向对象编程”（OOP）好。既然现在出了两个帮派，就有人积极地做它们的帮众，互相唾骂和残杀。然后呢，又出了一个“好好先生帮”，这个帮的人喜欢说，管它什么范式呢，能解决问题…</p><a class="version-diff-link" href="diff.html?data=diffs%2F5da66ea869bd84b6.json&amp;to=blog-cn_2015_04_03_paradigms_20150406.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_04_03_paradigms_20090101.html">2009-01-01</a></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
 
         <div>
-            <h2>编程的宗派</h2>
+            <h1 class="article-title">编程的宗派</h1>
             <p>总是有人喜欢争论这类问题，到底是“函数式编程”（FP）好，还是“面向对象编程”（OOP）好。既然出了两个帮派，就有人积极地做它们的帮众，互相唾骂和鄙视。然后呢又出了一个“好好先生帮”，这个帮的人喜欢说，管它什么范式呢，能解决问题的工具就是好工具！我个人其实不属于这三帮人中的任何一个。</p>
 
 <h3 id="面向对象编程object-oriented-programming">面向对象编程（Object-Oriented Programming）</h3>
@@ -216,29 +209,16 @@
 
 
         </div>
+    </main>
 
-        <!--
-        <div class="ad-banner">
-            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <ins class="adsbygoogle"
-                    data-ad-client="ca-pub-1331524016319584"
-                    data-ad-slot="6657867155"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-        </div>
 
-        <script data-ad-client="ca-pub-1331524016319584" async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
-        </script>
-        -->
-    </div>
-
-    
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">11</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,9 +46,20 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2017_05_25_dsl_20170525.html" class="current">2017-05-25</a> <a href="blog-cn_2017_05_25_dsl_20170527.html" >2017-05-27</a> <a href="blog-cn_2017_05_25_dsl_20170608.html" >2017-06-08</a> <a href="blog-cn_2017_05_25_dsl_20171101.html" >2017-11-01</a> <a href="blog-cn_2017_05_25_dsl_20171202.html" >2017-12-02</a> <a href="blog-cn_2017_05_25_dsl_20171216.html" >2017-12-16</a> <a href="blog-cn_2017_05_25_dsl_20180224.html" >2018-02-24</a> <a href="blog-cn_2017_05_25_dsl_20190716.html" >2019-07-16</a> <a href="blog-cn_2017_05_25_dsl_20191206.html" >2019-12-06</a> <a href="blog-cn_2017_05_25_dsl_20200225.html" >2020-02-25</a> <a href="blog-cn_2017_05_25_dsl_20240416.html" >2024-04-16</a></div>
-        <h1>DSL 的误区</h1>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2017_05_25_dsl_20240416.html">2024-04-16</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F897062f7ee69b631.json&amp;to=blog-cn_2017_05_25_dsl_20240416.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2017_05_25_dsl_20200225.html">2020-02-25</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F897062f7ee69b631.json&amp;to=blog-cn_2017_05_25_dsl_20200225.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2017_05_25_dsl_20191206.html">2019-12-06</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F897062f7ee69b631.json&amp;to=blog-cn_2017_05_25_dsl_20191206.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2017_05_25_dsl_20190716.html">2019-07-16</a></div><p class="version-diff-summary">较前版：+0 −1 修改 0</p><p class="version-preview">title: DSL 的误区 date: 2017-05-25 00:00:00 -0700</p><a class="version-diff-link" href="diff.html?data=diffs%2F897062f7ee69b631.json&amp;to=blog-cn_2017_05_25_dsl_20190716.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2017_05_25_dsl_20180224.html">2018-02-24</a></div><p class="version-diff-summary">较前版：+8 −7 修改 9</p><p class="version-preview">title: DSL 的误区 date: 2017-05-25 00:00:00 -0700</p><a class="version-diff-link" href="diff.html?data=diffs%2F897062f7ee69b631.json&amp;to=blog-cn_2017_05_25_dsl_20180224.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2017_05_25_dsl_20171216.html">2017-12-16</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F897062f7ee69b631.json&amp;to=blog-cn_2017_05_25_dsl_20171216.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2017_05_25_dsl_20171202.html">2017-12-02</a></div><p class="version-diff-summary">较前版：+17 −0 修改 0</p><p class="version-preview">看明白了吗？这个看得人眼睛发涨的 XML，表达的不过是普通语言里面的 if (size &gt; 1000) block()。为了理解这一点，你可以把这个 XML 所表示的“数据结构”，想象成编译器里面的“抽象语法树”（AST）。所以写这个…</p><a class="version-diff-link" href="diff.html?data=diffs%2F897062f7ee69b631.json&amp;to=blog-cn_2017_05_25_dsl_20171202.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2017_05_25_dsl_20171101.html">2017-11-01</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F897062f7ee69b631.json&amp;to=blog-cn_2017_05_25_dsl_20171101.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2017_05_25_dsl_20170608.html">2017-06-08</a></div><p class="version-diff-summary">较前版：+0 −0 修改 1</p><p class="version-preview">在我曾经工作过的某公司，有两个很喜欢捣鼓 PL，却没有受过正规 PL 教育的人。说得不好听一点，他们就是“PL 民科”。然而正是这种民科，最喜欢显示自己牛逼，喜欢显示自己有能力实现新的语言，以至于真正的专家只好在旁边静静地看着他们装逼 :P</p><a class="version-diff-link" href="diff.html?data=diffs%2F897062f7ee69b631.json&amp;to=blog-cn_2017_05_25_dsl_20170608.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2017_05_25_dsl_20170527.html">2017-05-27</a></div><p class="version-diff-summary">较前版：+7 −24 修改 9</p><p class="version-preview">DSL 也就是 Domain Specific Language 的简称，是指为某些特定领域（domain）设计的专用语言。举个例子，Linux 系统下有很多配置文件，每个配置文件格式都不大一样，它们可以被看成是多种 DSL。IP T…</p><a class="version-diff-link" href="diff.html?data=diffs%2F897062f7ee69b631.json&amp;to=blog-cn_2017_05_25_dsl_20170527.html">查看差异</a></li><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2017-05-25</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
+
+        <h1 class="article-title">DSL 的误区</h1>
 <div class="date">2017-05-25</div>
 <p>DSL 时不时地会成为一个话题，所以今天想专门说一下。</p>
 <p>DSL 也就是 Domain Specific Language 的简称，是指为特定领域（domain）设计的专用语言。举个例子，Linux 系统下有很多配置文件，每个配置文件格式都不大一样，它们可以被看成是多种 DSL。IP Tables 的规则是一种 DSL，FVWM 窗口管理器的配置文件是一种 DSL，VIM 和 Emacs 的配置文件，当然也是 DSL。Makefile 是 DSL。CSS 是 DSL。JSON 是 DSL。SQL 也可以被看成是数据库领域的 DSL。也有很多人在自己的工作中创造 DSL，用它们来解决一些实际问题。</p>
@@ -147,15 +147,16 @@
 <li>大部分 DSL 要解决的问题，不过是“动态逻辑加载”。为了这个目的，你完全可以利用已有的语言（比如 JavaScript），或者取其中一部分构造，通过动态调用它的解释器（编译器）来达到这个目的，而不需要创造新的 DSL。</li>
 </ol>
 <p>（本文建议零售价 ￥30，如果它让你的团队或者公司幸免落坑，请付款 ￥1000000 :）</p>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

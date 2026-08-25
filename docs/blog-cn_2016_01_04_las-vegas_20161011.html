@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">2</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,10 +46,21 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2016_01_04_las-vegas_20160116.html" >2016-01-16</a> <a href="blog-cn_2016_01_04_las-vegas_20161011.html" class="current">2016-10-11</a></div>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2016-10-11</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2Fe29b4d17671e1b98.json&amp;to=blog-cn_2016_01_04_las-vegas_20161011.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_01_04_las-vegas_20160116.html">2016-01-16</a></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
+
         <div>
-                            <h2>给Las Vegas的差评</h2>
+                            <h1 class="article-title">给Las Vegas的差评</h1>
                             <p>新年的旅行，大部分是浪漫而快乐的，然而也有不如人意的一两天。这一两天的不如意，来自于一个错误的，类似“朝圣”的理念：要去赌城Las Vegas看看，人生才算完整。其实本来没什么兴趣的，但因为一路开车观光，欣赏风景和美食，走得比较近了，就想顺路去Vegas看看也无妨，不看也许会后悔。哪知道这一失足，差点毁了整个旅行的心情。旅程完成之后，我只有一个遗憾——我希望自己没去过Vegas这鬼地方。</p>
 
 <p>不知道为什么，Vegas仿佛是很多中国人在美国旅游，必去的一个“胜地”。对于在国内从没见过赌场的人，它充满了神秘。对于在美国的各种小村子里面（比如大学啊，硅谷啊）待久了，无聊了，想去“城里逛逛”的中国人，它充满了魅力。电视上总是看到这里灯红酒绿，街上熙熙攘攘的人群，club里激情洋溢的艳影，疯狂的party，各种“有名”的show，遍地散发漂亮小姐的广告，甚至还可以去赌场里感受一下……</p>
@@ -193,15 +193,16 @@
 <p>如果说去Vegas旅行有它的价值的话，那就是它给了我一个反面的教材，一场心灵的洗礼。我亲眼看见并且经历了人类文明最没落地方。我清楚地知道，我不希望我的国家，我的人民变成那个样子。我不再对赌场之类的“成人游戏”有好奇心，我更加珍惜自己身边美好的人和事物。这是我第一次，也是最后一次，来Las Vegas旅行。我想它还是值得的。</p>
 
                         </div>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

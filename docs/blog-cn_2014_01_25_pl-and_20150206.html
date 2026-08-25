@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">12</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,9 +46,20 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2014_01_25_pl-and_20140129.html" >2014-01-29</a> <a href="blog-cn_2014_01_25_pl-and_20140208.html" >2014-02-08</a> <a href="blog-cn_2014_01_25_pl-and_20140620.html" >2014-06-20</a> <a href="blog-cn_2014_01_25_pl-and_20140701.html" >2014-07-01</a> <a href="blog-cn_2014_01_25_pl-and_20150107.html" >2015-01-07</a> <a href="blog-cn_2014_01_25_pl-and_20150206.html" class="current">2015-02-06</a> <a href="blog-cn_2014_01_25_pl-and_20160929.html" >2016-09-29</a> <a href="blog-cn_2014_01_25_pl-and_20170510.html" >2017-05-10</a> <a href="blog-cn_2014_01_25_pl-and_20171124.html" >2017-11-24</a> <a href="blog-cn_2014_01_25_pl-and_20180406.html" >2018-04-06</a> <a href="blog-cn_2014_01_25_pl-and_20200217.html" >2020-02-17</a> <a href="blog-cn_2014_01_25_pl-and_20210304.html" >2021-03-04</a></div>
-        <h2>程序语言与……</h2>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_01_25_pl-and_20210304.html">2021-03-04</a></div><p class="version-diff-summary">较前版：+0 −0 修改 3</p><p class="version-preview">&lt;img src=”http://www.yinwang.org/images/goldberg.png” width=200&gt;</p><a class="version-diff-link" href="diff.html?data=diffs%2F69f599a24592ba12.json&amp;to=blog-cn_2014_01_25_pl-and_20210304.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_01_25_pl-and_20200217.html">2020-02-17</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F69f599a24592ba12.json&amp;to=blog-cn_2014_01_25_pl-and_20200217.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_01_25_pl-and_20180406.html">2018-04-06</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F69f599a24592ba12.json&amp;to=blog-cn_2014_01_25_pl-and_20180406.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_01_25_pl-and_20171124.html">2017-11-24</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F69f599a24592ba12.json&amp;to=blog-cn_2014_01_25_pl-and_20171124.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_01_25_pl-and_20170510.html">2017-05-10</a></div><p class="version-diff-summary">较前版：+0 −0 修改 11</p><p class="version-preview">虽然美国人在这些硬件上非常精明，可是在软件上还没发展到那种地步，很多时候对一些不可救药的软件技术寄予太多的希望。左边的微波炉就好像某些程序语言，本来当初设计就是给标准没那么高的人用来处理很简单的网页的。可是后来有人忽然想让它成为一个“…</p><a class="version-diff-link" href="diff.html?data=diffs%2F69f599a24592ba12.json&amp;to=blog-cn_2014_01_25_pl-and_20170510.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_01_25_pl-and_20160929.html">2016-09-29</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F69f599a24592ba12.json&amp;to=blog-cn_2014_01_25_pl-and_20160929.html">查看差异</a></li><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2015-02-06</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">较前版：+0 −1 修改 0</p><p class="version-preview">（王垠 yinwang.org 版权所有，未经许可，请勿转载）</p><a class="version-diff-link" href="diff.html?data=diffs%2F69f599a24592ba12.json&amp;to=blog-cn_2014_01_25_pl-and_20150206.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_01_25_pl-and_20150107.html">2015-01-07</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F69f599a24592ba12.json&amp;to=blog-cn_2014_01_25_pl-and_20150107.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_01_25_pl-and_20140701.html">2014-07-01</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F69f599a24592ba12.json&amp;to=blog-cn_2014_01_25_pl-and_20140701.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_01_25_pl-and_20140620.html">2014-06-20</a></div><p class="version-diff-summary">较前版：+4 −14 修改 0</p><p class="version-preview">（王垠 yinwang.org 版权所有，未经许可，请勿转载）</p><a class="version-diff-link" href="diff.html?data=diffs%2F69f599a24592ba12.json&amp;to=blog-cn_2014_01_25_pl-and_20140620.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_01_25_pl-and_20140208.html">2014-02-08</a></div><p class="version-diff-summary">较前版：+10 −0 修改 1</p><p class="version-preview">中国的微波炉厂商之所以放上这么多的花样，是因为商家抓住了中国人的贪便宜心理。看，一个微波炉可以煮米饭，烤肉串，还可以蒸排骨，那其他的厨具都可以不用买啦！可惜因为所以，科学道理，微波就是微波。加热牛奶剩饭之类的事它做得很好，可是要做美味…</p><a class="version-diff-link" href="diff.html?data=diffs%2F69f599a24592ba12.json&amp;to=blog-cn_2014_01_25_pl-and_20140208.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_01_25_pl-and_20140129.html">2014-01-29</a></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
+
+        <h1 class="article-title">程序语言与……</h1>
 
     <p>程序语言的设计类似于其它很多东西的设计。有些微妙的地方只有用过更好的设计的人才能明白。现在我就简要介绍一下我自己的体会。</p>
 
@@ -174,15 +174,16 @@
 <blockquote><p>直到被更好的东西取代，AK 会继续和我们在一起。什么才是“更好”，这是由历史和民族来定义的，而不是枪支设计专家。</p></blockquote>
 
 <p>在计算机的世界里也是一样，程序语言，操作系统，数据库…… 它们的好坏不应该是由它们的设计者决定的，而是看它们是否经得起时间的考验。很多几十年前以为是好的设计，到现在已经很明显的显示出了它们的缺点。这就是为什么我喜欢批评一些语言，操作系统和数据库的设计，因为我看到了它们在历史的长河中已经快要到达终点。自欺欺人的掩盖这些缺陷只会让我们输掉战争。</p>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

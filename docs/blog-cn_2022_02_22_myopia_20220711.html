@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">10</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,17 +46,21 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2022_02_22_myopia_20220707.html" >2022-07-07</a> <a href="blog-cn_2022_02_22_myopia_20220710.html" >2022-07-10</a> <a href="blog-cn_2022_02_22_myopia_20220711.html" class="current">2022-07-11</a> <a href="blog-cn_2022_02_22_myopia_20220712.html" >2022-07-12</a> <a href="blog-cn_2022_02_22_myopia_20220713.html" >2022-07-13</a> <a href="blog-cn_2022_02_22_myopia_20220805.html" >2022-08-05</a> <a href="blog-cn_2022_02_22_myopia_20220910.html" >2022-09-10</a> <a href="blog-cn_2022_02_22_myopia_20221009.html" >2022-10-09</a> <a href="blog-cn_2022_02_22_myopia_20230704.html" >2023-07-04</a> <a href="blog-cn_2022_02_22_myopia_20240405.html" >2024-04-05</a></div>
-        <script>
-            if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent))
-            {
-               document.body.classList.add('mobile');
-            }
-        </script>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2022_02_22_myopia_20240405.html">2024-04-05</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F8450172073a2f213.json&amp;to=blog-cn_2022_02_22_myopia_20240405.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2022_02_22_myopia_20230704.html">2023-07-04</a></div><p class="version-diff-summary">较前版：+1 −0 修改 0</p><p class="version-preview">（由于主页从国内访问不方便，如需分享，可以下载本文的 PDF 版。网页版生成的 PDF 排版不大好，建议下载专门拍版的 PDF。）</p><a class="version-diff-link" href="diff.html?data=diffs%2F8450172073a2f213.json&amp;to=blog-cn_2022_02_22_myopia_20230704.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2022_02_22_myopia_20221009.html">2022-10-09</a></div><p class="version-diff-summary">较前版：+0 −2 修改 0</p><p class="version-preview">视力改善聊天群</p><a class="version-diff-link" href="diff.html?data=diffs%2F8450172073a2f213.json&amp;to=blog-cn_2022_02_22_myopia_20221009.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2022_02_22_myopia_20220910.html">2022-09-10</a></div><p class="version-diff-summary">较前版：+1 −0 修改 0</p><p class="version-preview">看东西有双影</p><a class="version-diff-link" href="diff.html?data=diffs%2F8450172073a2f213.json&amp;to=blog-cn_2022_02_22_myopia_20220910.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2022_02_22_myopia_20220805.html">2022-08-05</a></div><p class="version-diff-summary">较前版：+11 −0 修改 0</p><p class="version-preview">自然很重要</p><a class="version-diff-link" href="diff.html?data=diffs%2F8450172073a2f213.json&amp;to=blog-cn_2022_02_22_myopia_20220805.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2022_02_22_myopia_20220713.html">2022-07-13</a></div><p class="version-diff-summary">较前版：+3 −0 修改 10</p><p class="version-preview">几个月之后，会发现视力变好，度数降低了。当度数降低了 50 度左右，就去换一副新的镜片，保持比实际度数低 100 度。如此循环，直到视力恢复到 1.0。</p><a class="version-diff-link" href="diff.html?data=diffs%2F8450172073a2f213.json&amp;to=blog-cn_2022_02_22_myopia_20220713.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2022_02_22_myopia_20220712.html">2022-07-12</a></div><p class="version-diff-summary">较前版：+16 −1 修改 6</p><p class="version-preview">防止和逆转近视是一个相当简单的事情，理解其中的原理只需要高中光学知识，具体操作方法只需要另外配一副眼镜，然而我也是最近才发现。</p><a class="version-diff-link" href="diff.html?data=diffs%2F8450172073a2f213.json&amp;to=blog-cn_2022_02_22_myopia_20220712.html">查看差异</a></li><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2022-07-11</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">较前版：+34 −0 修改 13</p><p class="version-preview">防止和逆转近视是一个相当简单的事情，理解其中的原理只需要一点高中光学知识就行，然而我也是最近才发现。</p><a class="version-diff-link" href="diff.html?data=diffs%2F8450172073a2f213.json&amp;to=blog-cn_2022_02_22_myopia_20220711.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2022_02_22_myopia_20220710.html">2022-07-10</a></div><p class="version-diff-summary">较前版：+1 −0 修改 1</p><p class="version-preview">另外需要注意的是，屏幕的字体不要设置得太大。很多人误以为大字可以保护视力，其实正好相反。大字的视角太大，相当于是在看更加近的物体。把屏幕字体设置为正常大小，或者稍小一些，这样视角变小，就相当于在看更远的物体。久而久之，视力就改善了。</p><a class="version-diff-link" href="diff.html?data=diffs%2F8450172073a2f213.json&amp;to=blog-cn_2022_02_22_myopia_20220710.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2022_02_22_myopia_20220707.html">2022-07-07</a></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
 
         <div>
-            <h2>近视防治指南</h2>
+            <h1 class="article-title">近视防治指南</h1>
             <p>防止和逆转近视是一个相当简单的事情，理解其中的原理只需要一点高中光学知识就行，然而我也是最近才发现。</p>
 
 <h3 id="眼球外部肌肉的秘密">眼球外部肌肉的秘密</h3>
@@ -170,29 +163,16 @@
 
 
         </div>
+    </main>
 
-        <!--
-        <div class="ad-banner">
-            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <ins class="adsbygoogle"
-                    data-ad-client="ca-pub-1331524016319584"
-                    data-ad-slot="6657867155"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-        </div>
 
-        <script data-ad-client="ca-pub-1331524016319584" async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
-        </script>
-        -->
-    </div>
-
-    
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

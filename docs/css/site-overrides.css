@@ -1,0 +1,242 @@
+body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
+        /* Removed .inner/.outer overrides to respect theme post.css */
+        
+        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
+        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
+        .version-switcher a.current { font-weight: bold; color: #333; }
+
+        h1.article-title {
+            width: auto;
+            margin: 0 0 1.15em;
+            padding: 0;
+            border: 0;
+            color: #555;
+            font-size: clamp(1.55em, 4vw, 2em);
+            line-height: 1.35;
+            overflow-wrap: anywhere;
+            text-wrap: balance;
+        }
+        h1.article-title + .date,
+        h1.article-title + .time {
+            margin-top: -1.2em;
+            margin-bottom: 2em;
+            color: #777;
+            text-align: center;
+            font-size: .85em;
+        }
+
+        .version-nav { margin-right: 8px; }
+        .skip-link {
+            position: fixed;
+            top: 8px;
+            left: 8px;
+            z-index: 1100;
+            padding: 9px 12px;
+            border-radius: 4px;
+            background: #fff;
+            color: #222;
+            transform: translateY(-150%);
+        }
+        .skip-link:focus { transform: translateY(0); }
+        .version-menu-trigger {
+            min-height: 44px;
+            margin: 3px 0;
+            padding: 8px 14px;
+            border: 1px solid #cfcfcf;
+            border-radius: 6px;
+            background: #fff;
+            color: #444;
+            font-size: 16px;
+            line-height: 24px;
+            cursor: pointer;
+            touch-action: manipulation;
+        }
+        .version-menu-trigger:hover { background: #f3f3f3; }
+        .version-menu-trigger:active { background: #e8e8e8; }
+        .version-menu-trigger:focus-visible,
+        .version-panel a:focus-visible,
+        .version-panel button:focus-visible {
+            outline: 2px solid #555;
+            outline-offset: 2px;
+        }
+        .version-count {
+            display: inline-block;
+            min-width: 22px;
+            margin-left: 5px;
+            padding: 0 6px;
+            border-radius: 999px;
+            background: #ececec;
+            text-align: center;
+            font-size: 13px;
+        }
+        .version-panel-backdrop {
+            position: fixed;
+            inset: 0;
+            z-index: 1040;
+            background: transparent;
+        }
+        .version-panel {
+            position: fixed;
+            top: 62px;
+            right: 16px;
+            z-index: 1050;
+            width: min(360px, calc(100vw - 32px));
+            max-height: calc(100vh - 80px);
+            overflow: hidden;
+            border: 1px solid #d8d8d8;
+            border-radius: 10px;
+            background: #fff;
+            box-shadow: 0 14px 38px rgba(0, 0, 0, .18);
+            color: #333;
+            font-size: 15px;
+        }
+        .version-panel[hidden],
+        .version-panel-backdrop[hidden] { display: none !important; }
+        body.version-panel-open { overflow: hidden; }
+        .version-panel-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 16px;
+            border-bottom: 1px solid #e5e5e5;
+        }
+        .version-panel-title {
+            width: auto;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            color: #333;
+            text-align: left;
+            font-family: inherit;
+            font-size: 17px;
+            font-weight: 600;
+            line-height: 1.35;
+        }
+        .version-panel-close {
+            width: 44px;
+            height: 44px;
+            padding: 0;
+            border: 0;
+            border-radius: 50%;
+            background: transparent;
+            color: #555;
+            font-size: 24px;
+            line-height: 44px;
+            cursor: pointer;
+            touch-action: manipulation;
+        }
+        .version-panel-close:hover { background: #eee; }
+        .version-list {
+            max-height: calc(100vh - 145px);
+            margin: 0;
+            padding: 8px;
+            overflow-y: auto;
+            list-style: none;
+        }
+        .version-item {
+            margin: 0;
+            padding: 10px 11px;
+            border-left: 3px solid transparent;
+            border-radius: 6px;
+            transition: background-color .16s ease, border-color .16s ease;
+        }
+        .version-item:hover,
+        .version-item:focus-within { background: #f5f5f5; }
+        .version-item.current { border-left-color: #555; background: #f1f1f1; }
+        .version-item-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+        .version-date-link,
+        .version-current-label { color: #333; font-weight: 600; text-decoration: none; }
+        .version-date-link { display: inline-flex; min-height: 44px; align-items: center; }
+        .version-panel a { cursor: pointer; }
+        .version-date-link:hover { background: transparent; text-decoration: underline; }
+        .version-current-badge {
+            padding: 2px 7px;
+            border-radius: 999px;
+            background: #dedede;
+            color: #555;
+            font-size: 12px;
+            font-weight: 400;
+        }
+        .version-diff-summary { margin: 5px 0 0; color: #666; font-size: 13px; line-height: 1.5; }
+        .version-preview {
+            max-height: 0;
+            margin: 0;
+            overflow: hidden;
+            color: #666;
+            opacity: 0;
+            font-size: 13px;
+            line-height: 1.55;
+            transition: max-height .18s ease, margin .18s ease, opacity .18s ease;
+        }
+        .version-item:hover .version-preview,
+        .version-item:focus-within .version-preview {
+            max-height: 7em;
+            margin-top: 6px;
+            opacity: 1;
+        }
+        .version-diff-link { display: inline-flex; min-height: 44px; margin-top: 3px; align-items: center; color: #555; text-decoration: underline; touch-action: manipulation; }
+        .version-diff-link:hover { background: transparent; color: #111; }
+
+        .diff-header { margin-bottom: 28px; text-align: center; }
+        .diff-header h1 { margin-bottom: 12px; }
+        .diff-range { color: #666; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+        .diff-summary { margin: 10px 0; color: #555; }
+        .diff-actions { margin: 18px 0 0; }
+        .diff-actions a { display: inline-block; padding: 8px 12px; border: 1px solid #ccc; border-radius: 6px; color: #444; }
+        .diff-actions a:hover { background: #f2f2f2; }
+        .diff-legend { display: flex; justify-content: center; gap: 16px; margin: 20px 0 30px; color: #555; font-size: 14px; }
+        .diff-legend span::before { display: inline-block; width: 10px; height: 10px; margin-right: 6px; border-radius: 2px; content: ""; }
+        .diff-legend .added::before { background: #b9dfc6; }
+        .diff-legend .removed::before { background: #efc0bd; }
+        .diff-legend .changed::before { background: #ead89c; }
+        .diff-context { margin: 34px 0 12px; color: #666; font-weight: 600; }
+        .diff-block { position: relative; margin: 10px 0; padding: 12px 14px 12px 34px; border-left: 4px solid; border-radius: 4px; }
+        .diff-block > :first-child:not(.diff-marker) { margin-top: 0; }
+        .diff-block > :last-child { margin-bottom: 0; }
+        .diff-added { border-color: #4e9565; background: #eef8f1; }
+        .diff-removed { border-color: #bb615b; background: #fff1f0; }
+        .diff-changed { border-color: #aa8b2c; background: #fff9e6; }
+        .diff-marker { position: absolute; top: 12px; left: 11px; color: #555; font-family: monospace; font-weight: 700; }
+        .diff-inline { line-height: 1.8; white-space: pre-wrap; }
+        .diff-inline del { background: #f1b8b5; color: #632c28; text-decoration-thickness: 1px; }
+        .diff-inline ins { background: #bce3c8; color: #245d35; text-decoration: none; }
+        .diff-preformatted .diff-inline { font-family: Inconsolata, Consolas, monospace; font-size: 90%; }
+        .diff-empty, .diff-loading, .diff-error { padding: 24px; border: 1px solid #ddd; border-radius: 6px; text-align: center; }
+        .diff-error { border-color: #d7aaa7; background: #fff4f3; color: #7d302b; }
+        
+        .navbar-brand { font-size: 20px; font-weight: bold; }
+        .navbar-nav > li > a { font-size: 20px; }
+        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
+        
+        /* Reduce gap between navbar and content */
+        div.outer { margin-top: 30px; }
+
+        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
+        .site-footer a { color: inherit; text-decoration: underline; }
+
+        @media (max-width: 767px) {
+            .version-nav { margin: 0; }
+            .version-menu-trigger { display: block; width: 100%; margin: 4px 0; text-align: left; }
+            .version-panel-backdrop { background: rgba(0, 0, 0, .28); }
+            .version-panel {
+                top: auto;
+                right: 0;
+                bottom: 0;
+                width: 100%;
+                max-height: min(76vh, 680px);
+                border-right: 0;
+                border-bottom: 0;
+                border-left: 0;
+                border-radius: 14px 14px 0 0;
+            }
+            .version-list { max-height: calc(min(76vh, 680px) - 65px); padding-bottom: max(12px, env(safe-area-inset-bottom)); }
+            .version-preview { display: none; }
+            .diff-legend { flex-wrap: wrap; gap: 8px 16px; }
+            .diff-block { padding-right: 10px; padding-left: 30px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .version-item, .version-preview { transition: none; }
+        }
+        
+        /* Removed custom flexbox list styling to match demo vertical style */

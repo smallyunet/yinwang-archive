@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">8</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,10 +46,21 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2016_03_31_no-longer-pl_20160404.html" >2016-04-04</a> <a href="blog-cn_2016_03_31_no-longer-pl_20161001.html" class="current">2016-10-01</a> <a href="blog-cn_2016_03_31_no-longer-pl_20170503.html" >2017-05-03</a> <a href="blog-cn_2016_03_31_no-longer-pl_20170604.html" >2017-06-04</a> <a href="blog-cn_2016_03_31_no-longer-pl_20171205.html" >2017-12-05</a> <a href="blog-cn_2016_03_31_no-longer-pl_20180329.html" >2018-03-29</a> <a href="blog-cn_2016_03_31_no-longer-pl_20200228.html" >2020-02-28</a> <a href="blog-cn_2016_03_31_no-longer-pl_20200428.html" >2020-04-28</a></div>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_03_31_no-longer-pl_20200428.html">2020-04-28</a></div><p class="version-diff-summary">较前版：+2 −0 修改 28</p><p class="version-preview">我不做程序语言（PL）的工作已经半年了。在这半年里，我变得快乐了很多，对世界也有了新的观点。现在我想来讲一讲，我为什么不想再做 PL 的工作和研究。我只希望这些观点可以给正在做 PL，或者考虑进入这个领域的人们，作为一份参考。</p><a class="version-diff-link" href="diff.html?data=diffs%2Fd110fb54b9c9d950.json&amp;to=blog-cn_2016_03_31_no-longer-pl_20200428.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_03_31_no-longer-pl_20200228.html">2020-02-28</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2Fd110fb54b9c9d950.json&amp;to=blog-cn_2016_03_31_no-longer-pl_20200228.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_03_31_no-longer-pl_20180329.html">2018-03-29</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2Fd110fb54b9c9d950.json&amp;to=blog-cn_2016_03_31_no-longer-pl_20180329.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_03_31_no-longer-pl_20171205.html">2017-12-05</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2Fd110fb54b9c9d950.json&amp;to=blog-cn_2016_03_31_no-longer-pl_20171205.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_03_31_no-longer-pl_20170604.html">2017-06-04</a></div><p class="version-diff-summary">较前版：+0 −0 修改 3</p><p class="version-preview">很多研究 PL 的人喜欢看低其它程序员，认为自己能设计实现程序语言，就是天之骄子。我之所以从 Dan Friedman 那里学到了好东西，却没有成为他的 PhD 学生，一方面就是因为看不惯围绕在他身边那些自认为是“天才”的人。</p><a class="version-diff-link" href="diff.html?data=diffs%2Fd110fb54b9c9d950.json&amp;to=blog-cn_2016_03_31_no-longer-pl_20170604.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_03_31_no-longer-pl_20170503.html">2017-05-03</a></div><p class="version-diff-summary">较前版：+0 −0 修改 2</p><p class="version-preview">由于TAPL这本书，以及ML，Haskell等语言在PL界的“白象”地位，于是很多人又对Hindley-Milner类型系统（HM）充满了崇敬之情，以为HM系统的发明者Robin Milner是最厉害的PL学者。他的确不错，然而等你随…</p><a class="version-diff-link" href="diff.html?data=diffs%2Fd110fb54b9c9d950.json&amp;to=blog-cn_2016_03_31_no-longer-pl_20170503.html">查看差异</a></li><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2016-10-01</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2Fd110fb54b9c9d950.json&amp;to=blog-cn_2016_03_31_no-longer-pl_20161001.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_03_31_no-longer-pl_20160404.html">2016-04-04</a></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
+
         <div>
-                            <h2>我为什么不再做PL人</h2>
+                            <h1 class="article-title">我为什么不再做PL人</h1>
                             <p>我不做程序语言（PL）的工作已经半年了。在这半年里，我变得快乐了很多，对世界也有了新的观点。现在我想来讲一讲，我为什么不想再做PL的工作和研究。我只希望这些观点可以给正在做PL，或者考虑进入这个领域的人们，作为一份参考。</p>
 
 <h3>学校里的PL人</h3>
@@ -140,15 +140,16 @@
 <p>这些所谓天才，看不到简单直观的解决方案，为了显示自己的聪明而采用繁复的抽象，其实是一种愚蠢。真正的天才，必须能够让事情变得简单。</p>
 
                         </div>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

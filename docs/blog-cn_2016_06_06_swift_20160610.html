@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">12</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,9 +46,20 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2016_06_06_swift_20160606.html" >2016-06-06</a> <a href="blog-cn_2016_06_06_swift_20160608.html" >2016-06-08</a> <a href="blog-cn_2016_06_06_swift_20160610.html" class="current">2016-06-10</a> <a href="blog-cn_2016_06_06_swift_20160918.html" >2016-09-18</a> <a href="blog-cn_2016_06_06_swift_20161001.html" >2016-10-01</a> <a href="blog-cn_2016_06_06_swift_20170506.html" >2017-05-06</a> <a href="blog-cn_2016_06_06_swift_20170709.html" >2017-07-09</a> <a href="blog-cn_2016_06_06_swift_20171118.html" >2017-11-18</a> <a href="blog-cn_2016_06_06_swift_20171216.html" >2017-12-16</a> <a href="blog-cn_2016_06_06_swift_20191118.html" >2019-11-18</a> <a href="blog-cn_2016_06_06_swift_20200217.html" >2020-02-17</a> <a href="blog-cn_2016_06_06_swift_20240416.html" >2024-04-16</a></div>
-        <h2>Swift 语言的设计错误</h2>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_06_06_swift_20240416.html">2024-04-16</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2Fae610a242c91f1c3.json&amp;to=blog-cn_2016_06_06_swift_20240416.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_06_06_swift_20200217.html">2020-02-17</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2Fae610a242c91f1c3.json&amp;to=blog-cn_2016_06_06_swift_20200217.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_06_06_swift_20191118.html">2019-11-18</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2Fae610a242c91f1c3.json&amp;to=blog-cn_2016_06_06_swift_20191118.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_06_06_swift_20171216.html">2017-12-16</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2Fae610a242c91f1c3.json&amp;to=blog-cn_2016_06_06_swift_20171216.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_06_06_swift_20171118.html">2017-11-18</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2Fae610a242c91f1c3.json&amp;to=blog-cn_2016_06_06_swift_20171118.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_06_06_swift_20170709.html">2017-07-09</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2Fae610a242c91f1c3.json&amp;to=blog-cn_2016_06_06_swift_20170709.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_06_06_swift_20170506.html">2017-05-06</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2Fae610a242c91f1c3.json&amp;to=blog-cn_2016_06_06_swift_20170506.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_06_06_swift_20161001.html">2016-10-01</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2Fae610a242c91f1c3.json&amp;to=blog-cn_2016_06_06_swift_20161001.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_06_06_swift_20160918.html">2016-09-18</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2Fae610a242c91f1c3.json&amp;to=blog-cn_2016_06_06_swift_20160918.html">查看差异</a></li><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2016-06-10</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">较前版：+2 −0 修改 1</p><p class="version-preview">Swift 团队不像 Go 语言团队完全是一知半解的外行，他们在语言方面确实有一定的基础，所以 Swift 在大体上不会有特别严重的问题。然而可以看出来这些人功力还不够深厚，略带年轻人的自负，浮躁，盲目的创新和借鉴精神。有些设计并不是…</p><a class="version-diff-link" href="diff.html?data=diffs%2Fae610a242c91f1c3.json&amp;to=blog-cn_2016_06_06_swift_20160610.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_06_06_swift_20160608.html">2016-06-08</a></div><p class="version-diff-summary">较前版：+6 −1 修改 7</p><p class="version-preview">Swift 1.0 试图利用 var 和 let 的区别来指定 array 成员的可变性，然而其实 var 和 let 只能指定 array reference 的可变性，而不能指定 array 成员的可变性。举个例子，Swift 1…</p><a class="version-diff-link" href="diff.html?data=diffs%2Fae610a242c91f1c3.json&amp;to=blog-cn_2016_06_06_swift_20160608.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_06_06_swift_20160606.html">2016-06-06</a></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
+
+        <h1 class="article-title">Swift 语言的设计错误</h1>
 
     <p>在『<a href="http://www.yinwang.org/blog-cn/2015/11/21/programming-philosophy">编程的智慧</a>』一文中，我分析和肯定了 Swift 语言的 optional type 设计，但这并不等于 Swift 语言的整体设计是完美没有问题的。其实 Swift 1.0 刚出来的时候，我就发现它的 array 可变性设计存在严重的错误。Swift 2.0 修正了这个问题，然而他们的修正方法却没有击中要害，所以导致了其它的问题。这个错误一直延续到今天。</p>
 
@@ -135,15 +135,16 @@ var b = a
 <h3>Java 有 value type 吗？</h3>
 
 <p>有人看了以上的内容，问我：“你说 Java 只有 reference type，但是根据 Java 的<a href="http://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html">官方文档</a>，Java 也有 value type 和 reference type 的区别的。” 由于这个问题相当的有趣，我另外写了一篇<a href="http://www.yinwang.org/blog-cn/2016/06/08/java-value-type">文章</a>来回答这个问题。</p>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

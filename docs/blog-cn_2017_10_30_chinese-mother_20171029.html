@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">4</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,10 +46,21 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2017_10_30_chinese-mother_20171029.html" class="current">2017-10-29</a> <a href="blog-cn_2017_10_30_chinese-mother_20171030.html" >2017-10-30</a> <a href="blog-cn_2017_10_30_chinese-mother_20171115.html" >2017-11-15</a> <a href="blog-cn_2017_10_30_chinese-mother_20180418.html" >2018-04-18</a></div>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2017_10_30_chinese-mother_20180418.html">2018-04-18</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F5c4d7389f77b86d1.json&amp;to=blog-cn_2017_10_30_chinese-mother_20180418.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2017_10_30_chinese-mother_20171115.html">2017-11-15</a></div><p class="version-diff-summary">较前版：+13 −0 修改 4</p><p class="version-preview">在很小的时候，中国式母亲教育你，要诚实，不要撒谎，对人要真诚。你听了她的话，决定做一个正直的人。等你上了中学，却发现她开始自相矛盾，她对你说：“看你们班上的小强，情商多高啊，见人说人话，见鬼说鬼话，将来一定是当官的料。你为什么不能向人…</p><a class="version-diff-link" href="diff.html?data=diffs%2F5c4d7389f77b86d1.json&amp;to=blog-cn_2017_10_30_chinese-mother_20171115.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2017_10_30_chinese-mother_20171030.html">2017-10-30</a></div><p class="version-diff-summary">较前版：+0 −0 修改 6</p><p class="version-preview">很多人都告诉你，中国女人很为孩子奉献。一旦有了孩子，就把心思都放在孩子身上了。她们可以为了孩子而忽略丈夫，为了孩子，她们可以对丈夫指手画脚。在她的心里面，两个人都应该是孩子的奴仆。如果孩子他爹要有自己的生活，偶尔忽视了孩子的需求，那就…</p><a class="version-diff-link" href="diff.html?data=diffs%2F5c4d7389f77b86d1.json&amp;to=blog-cn_2017_10_30_chinese-mother_20171030.html">查看差异</a></li><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2017-10-29</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
+
         <div>
-                            <h2>中国式母亲</h2>
+                            <h1 class="article-title">中国式母亲</h1>
                             <p>并非每个中国人的母亲都是“中国式母亲”，但大部分的都是。并非每个中国式母亲都跟我感觉到的一样，但也八九不离十。中国式的母亲造就出中国式的孩子，中国式的孩子又有一半成为中国式的母亲，这是一个循环…… 直到有一天，你接触到很不一样的文化。</p>
 
 <p>在很小的时候，中国式母亲教育你，要诚实，不要撒谎，对人要真诚。你听了她的话，决定做一个正直的人。等你上了中学，却发现她开始自相矛盾，她对你说：“看你们班上的小强，情商多高啊，见人说人话，见鬼说鬼话，将来一定是当官的料。你为什么不能向人家学习一下呢？智商不是一切。” 然后跟你讲三国演义，尔虞我诈，中庸之道…… 你本来想告诉她，小强今天抢了你的作业去抄，还欺负了女同学。可是面对这么多对他的褒扬，你也不好说什么了。</p>
@@ -109,15 +109,16 @@
 
 
                         </div>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

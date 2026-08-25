@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">13</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,9 +46,20 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2013_04_17_languages_20090101.html" >2009-01-01</a> <a href="blog-cn_2013_04_17_languages_20111111.html" class="current">2011-11-11</a> <a href="blog-cn_2013_04_17_languages_20130420.html" >2013-04-20</a> <a href="blog-cn_2013_04_17_languages_20140701.html" >2014-07-01</a> <a href="blog-cn_2013_04_17_languages_20150421.html" >2015-04-21</a> <a href="blog-cn_2013_04_17_languages_20160929.html" >2016-09-29</a> <a href="blog-cn_2013_04_17_languages_20170508.html" >2017-05-08</a> <a href="blog-cn_2013_04_17_languages_20171025.html" >2017-10-25</a> <a href="blog-cn_2013_04_17_languages_20171116.html" >2017-11-16</a> <a href="blog-cn_2013_04_17_languages_20180319.html" >2018-03-19</a> <a href="blog-cn_2013_04_17_languages_20191027.html" >2019-10-27</a> <a href="blog-cn_2013_04_17_languages_20200225.html" >2020-02-25</a> <a href="blog-cn_2013_04_17_languages_20240421.html" >2024-04-21</a></div>
-        <h1>关于语言的思考</h1>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_04_17_languages_20240421.html">2024-04-21</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F25840bc6cb40688f.json&amp;to=blog-cn_2013_04_17_languages_20240421.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_04_17_languages_20200225.html">2020-02-25</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F25840bc6cb40688f.json&amp;to=blog-cn_2013_04_17_languages_20200225.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_04_17_languages_20191027.html">2019-10-27</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F25840bc6cb40688f.json&amp;to=blog-cn_2013_04_17_languages_20191027.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_04_17_languages_20180319.html">2018-03-19</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F25840bc6cb40688f.json&amp;to=blog-cn_2013_04_17_languages_20180319.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_04_17_languages_20171116.html">2017-11-16</a></div><p class="version-diff-summary">较前版：+6 −0 修改 10</p><p class="version-preview">之前写了那么多 Haskell 的不好的地方，却没有提到它好的地方，其实我必须承认我从 Haskell 身上学到了非常重要的东西，那就是对于“类型”的思考。虽然 Haskell 的类型系统有过于强烈的约束性，从一种“哲学”的角度（不是…</p><a class="version-diff-link" href="diff.html?data=diffs%2F25840bc6cb40688f.json&amp;to=blog-cn_2013_04_17_languages_20171116.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_04_17_languages_20171025.html">2017-10-25</a></div><p class="version-diff-summary">较前版：+16 −0 修改 5</p><p class="version-preview">作者：王垠</p><a class="version-diff-link" href="diff.html?data=diffs%2F25840bc6cb40688f.json&amp;to=blog-cn_2013_04_17_languages_20171025.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_04_17_languages_20170508.html">2017-05-08</a></div><p class="version-diff-summary">较前版：+0 −22 修改 0</p><p class="version-preview">Scheme 停止把 nil 作为“假”，却仍然把不是 #f 的值全都作为“真”。Scheme 的崇拜者一般都告诉你，这样做的好处是，你可以使用</p><a class="version-diff-link" href="diff.html?data=diffs%2F25840bc6cb40688f.json&amp;to=blog-cn_2013_04_17_languages_20170508.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_04_17_languages_20160929.html">2016-09-29</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F25840bc6cb40688f.json&amp;to=blog-cn_2013_04_17_languages_20160929.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_04_17_languages_20150421.html">2015-04-21</a></div><p class="version-diff-summary">较前版：+0 −1 修改 1</p><p class="version-preview">（王垠 yinwang.org 版权所有，未经许可，请勿转载）</p><a class="version-diff-link" href="diff.html?data=diffs%2F25840bc6cb40688f.json&amp;to=blog-cn_2013_04_17_languages_20150421.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_04_17_languages_20140701.html">2014-07-01</a></div><p class="version-diff-summary">较前版：+1 −0 修改 0</p><p class="version-preview">（王垠 yinwang.org 版权所有，未经许可，请勿转载）</p><a class="version-diff-link" href="diff.html?data=diffs%2F25840bc6cb40688f.json&amp;to=blog-cn_2013_04_17_languages_20140701.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_04_17_languages_20130420.html">2013-04-20</a></div><p class="version-diff-summary">较前版：+6 −0 修改 9</p><p class="version-preview">之前写了那么多 Haskell 的不好的地方，却没有提到它好的地方，其实我必须承认我从 Haskell 身上学到了非常重要的东西，那就是对于“类型”的思考。虽然 Haskell 的类型系统有过于强烈的约束性，从一种“哲学”的角度（不是…</p><a class="version-diff-link" href="diff.html?data=diffs%2F25840bc6cb40688f.json&amp;to=blog-cn_2013_04_17_languages_20130420.html">查看差异</a></li><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2011-11-11</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F25840bc6cb40688f.json&amp;to=blog-cn_2013_04_17_languages_20111111.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_04_17_languages_20090101.html">2009-01-01</a></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
+
+        <h1 class="article-title">关于语言的思考</h1>
 <div class="date">2011-11-11</div>
 <p>作者：王垠</p>
 <p>之前写了那么多 Haskell 的不好的地方，却没有提到它好的地方，其实我必须承认我从 Haskell 身上学到了非常重要的东西，那就是对于“类型”的思考。虽然 Haskell 的类型系统有过于强烈的约束性，从一种“哲学”的角度（不是数学的角度）来看非常“不自然”，但如果一个程序员从来没学过 Haskell，那么他的脑子里就会缺少一种重要的东西。这种东西很难从除 Haskell，ML，Clean，Coq，Agda 以外的其它语言身上学到。
@@ -89,15 +89,16 @@ int i = 0;......if (i++) { ...}</p>
 <p>那么 C++ 有什么其他语言没有的好东西呢？其实非常少。我还是有空再讲吧。
 多学几种语言</p>
 <p>我今天想说其实就是，没有任何一种语言值得你用毕生的精力去“精通”它。“精通”其实代表着“脑残”——你成为了一个高效的机器，而不是一个有自己头脑的人。你必须对每种语言都带有一定的怀疑态度，而不是完全的拥抱它。每个人都应该学习多种语言，这样才不至于让自己的思想受到单一语言的约束，而没法接受新的，更加先进的思想。这就像每个人都应该学会至少一门外语一样，否则你就深陷于自己民族的思维方式。有时候这种民族传统的思想会让你深陷无须有的痛苦却无法自拔。</p>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

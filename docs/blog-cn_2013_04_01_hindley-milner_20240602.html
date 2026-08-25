@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">5</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,17 +46,21 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2013_04_01_hindley-milner_20090101.html" >2009-01-01</a> <a href="blog-cn_2013_04_01_hindley-milner_20130421.html" >2013-04-21</a> <a href="blog-cn_2013_04_01_hindley-milner_20171025.html" >2017-10-25</a> <a href="blog-cn_2013_04_01_hindley-milner_20230313.html" >2023-03-13</a> <a href="blog-cn_2013_04_01_hindley-milner_20240602.html" class="current">2024-06-02</a></div>
-        <script>
-            if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent))
-            {
-               document.body.classList.add('mobile');
-            }
-        </script>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2024-06-02</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F5eda07e0ce652ad3.json&amp;to=blog-cn_2013_04_01_hindley-milner_20240602.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_04_01_hindley-milner_20230313.html">2023-03-13</a></div><p class="version-diff-summary">较前版：+0 −2 修改 1</p><p class="version-preview">作者：王垠</p><a class="version-diff-link" href="diff.html?data=diffs%2F5eda07e0ce652ad3.json&amp;to=blog-cn_2013_04_01_hindley-milner_20230313.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_04_01_hindley-milner_20171025.html">2017-10-25</a></div><p class="version-diff-summary">较前版：+2 −0 修改 1</p><p class="version-preview">作者：王垠</p><a class="version-diff-link" href="diff.html?data=diffs%2F5eda07e0ce652ad3.json&amp;to=blog-cn_2013_04_01_hindley-milner_20171025.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_04_01_hindley-milner_20130421.html">2013-04-21</a></div><p class="version-diff-summary">较前版：+0 −2 修改 1</p><p class="version-preview">作者：王垠</p><a class="version-diff-link" href="diff.html?data=diffs%2F5eda07e0ce652ad3.json&amp;to=blog-cn_2013_04_01_hindley-milner_20130421.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_04_01_hindley-milner_20090101.html">2009-01-01</a></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
 
         <div>
-            <h2>Hindley-Milner 类型系统的根本性错误</h2>
+            <h1 class="article-title">Hindley-Milner 类型系统的根本性错误</h1>
             <p>之前的一个时间，我曾经公开过这样一段<a href="http://www.tudou.com/programs/view/GU9GtDuWSMk">幻灯片</a>，它是2012年10月的时候，我在 Indiana 大学做的最后一次演讲。由于当时的委婉，我并没有直接说出这些结论的重要性。其实它揭示了 ML 和 Haskell 这类基于 Hindley-Milner 类型系统的语言的一个根本性的错误。</p>
 
 <p>这个错误来源于对一阶逻辑的“全称量词”（universal quantifier，通常写作∀）与程序函数之间关系的误解。在 HM 系统里面，多态（polymorphic）的函数能够被推导为含有全称量词的类型，比如 <code class="language-plaintext highlighter-rouge">\x-&gt;x</code> 的类型被推导为 <code class="language-plaintext highlighter-rouge">∀a.a-&gt;a</code>，但 HM 系统决定这个全称量词的位置的方式，却是没有原则的。这就导致了类型变量（type variable）的作用域（scope）的偏差。</p>
@@ -87,15 +80,16 @@
 <p>为了达到完全通用的模块化类型检查，却又允许多态函数的存在，我们终究会需要在函数的参数位置手工写上类型，这样我们就完全的丧失了 HM 系统设计的初衷。</p>
 
         </div>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">4</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,27 +46,21 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2019_07_31_human-quality_20190802.html" >2019-08-02</a> <a href="blog-cn_2019_07_31_human-quality_20190804.html" >2019-08-04</a> <a href="blog-cn_2019_07_31_human-quality_20190815.html" class="current">2019-08-15</a> <a href="blog-cn_2019_07_31_human-quality_20200228.html" >2020-02-28</a></div>
-        <script>
-            if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent))
-            {
-               document.body.classList.add('mobile');
-            }
-        </script>
 
-        <!--
-        <div class="ad-banner">
-            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <ins class="adsbygoogle"
-                    data-ad-client="ca-pub-1331524016319584"
-                    data-ad-slot="6657867155"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-        </div>
-        -->
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2019_07_31_human-quality_20200228.html">2020-02-28</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F870b9cdc93aeb250.json&amp;to=blog-cn_2019_07_31_human-quality_20200228.html">查看差异</a></li><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2019-08-15</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">较前版：+1 −0 修改 0</p><p class="version-preview">另一个例子，看电影或者看演出的时候，我发现如果前面或者旁边有人用手机，会晃到我的眼睛，分散注意力，这对于欣赏节目非常不好。所以我自己在电影院和演出时，从来不掏手机出来。很多演出场所工作人员在演出前都举个牌子跟你说不要拍照，很多人不理解…</p><a class="version-diff-link" href="diff.html?data=diffs%2F870b9cdc93aeb250.json&amp;to=blog-cn_2019_07_31_human-quality_20190815.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2019_07_31_human-quality_20190804.html">2019-08-04</a></div><p class="version-diff-summary">较前版：+0 −0 修改 3</p><p class="version-preview">最近上海开始实行垃圾分类，有些人就开始把“能否准确分类垃圾”跟“素质”这个词挂钩，从道德高度鄙视那些不认真分类垃圾，或者不按规定投放垃圾的人。有些小区门口每周都要张榜，公开表扬和批评各楼层的垃圾分类情况。某些人很是有种给人发小红花的快感。</p><a class="version-diff-link" href="diff.html?data=diffs%2F870b9cdc93aeb250.json&amp;to=blog-cn_2019_07_31_human-quality_20190804.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2019_07_31_human-quality_20190802.html">2019-08-02</a></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
 
         <div>
-            <h2>关于人的素质</h2>
+            <h1 class="article-title">关于人的素质</h1>
             <p>最近上海开始实行垃圾分类，有些人就开始把“能否准确分类垃圾”跟“素质”这个词挂钩，从道德高度鄙视那些不认真分类垃圾，或者不按规定投放垃圾的人。有些小区门口每周都要张榜，公开表扬和批评各楼层的垃圾分类情况。某些人很是有种给人发小红花的快感。</p>
 
 <p>且不说上海的垃圾分类方法和执行方式是否合理（比如湿垃圾破袋扔之类的奇葩做法）…… 这些战战兢兢指手画脚，使我想起一些关于“素质”一词的事情来……</p>
@@ -108,15 +91,16 @@
 
 
         </div>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

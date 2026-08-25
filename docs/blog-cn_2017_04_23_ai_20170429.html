@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">11</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,10 +46,21 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2017_04_23_ai_20090101.html" >2009-01-01</a> <a href="blog-cn_2017_04_23_ai_20170429.html" class="current">2017-04-29</a> <a href="blog-cn_2017_04_23_ai_20170510.html" >2017-05-10</a> <a href="blog-cn_2017_04_23_ai_20171202.html" >2017-12-02</a> <a href="blog-cn_2017_04_23_ai_20171216.html" >2017-12-16</a> <a href="blog-cn_2017_04_23_ai_20180224.html" >2018-02-24</a> <a href="blog-cn_2017_04_23_ai_20180305.html" >2018-03-05</a> <a href="blog-cn_2017_04_23_ai_20191215.html" >2019-12-15</a> <a href="blog-cn_2017_04_23_ai_20200114.html" >2020-01-14</a> <a href="blog-cn_2017_04_23_ai_20200228.html" >2020-02-28</a> <a href="blog-cn_2017_04_23_ai_20240416.html" >2024-04-16</a></div>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2017_04_23_ai_20240416.html">2024-04-16</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F35d65f5562112083.json&amp;to=blog-cn_2017_04_23_ai_20240416.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2017_04_23_ai_20200228.html">2020-02-28</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F35d65f5562112083.json&amp;to=blog-cn_2017_04_23_ai_20200228.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2017_04_23_ai_20200114.html">2020-01-14</a></div><p class="version-diff-summary">较前版：+0 −0 修改 8</p><p class="version-preview">纵观历史上机器学习能够做到的事情，都是一些字符识别（OCR），语音识别，人脸识别一类的，我把这些统称为“识别系统”。当然，识别系统是有价值的，OCR 是有用的，我经常用手机上的语音输入法，人脸识别对于公安机关显然意义很大。然而很多人因…</p><a class="version-diff-link" href="diff.html?data=diffs%2F35d65f5562112083.json&amp;to=blog-cn_2017_04_23_ai_20200114.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2017_04_23_ai_20191215.html">2019-12-15</a></div><p class="version-diff-summary">较前版：+8 −13 修改 0</p><p class="version-preview">机器一样的心</p><a class="version-diff-link" href="diff.html?data=diffs%2F35d65f5562112083.json&amp;to=blog-cn_2017_04_23_ai_20191215.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2017_04_23_ai_20180305.html">2018-03-05</a></div><p class="version-diff-summary">较前版：+9 −0 修改 1</p><p class="version-preview">我想看照片</p><a class="version-diff-link" href="diff.html?data=diffs%2F35d65f5562112083.json&amp;to=blog-cn_2017_04_23_ai_20180305.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2017_04_23_ai_20180224.html">2018-02-24</a></div><p class="version-diff-summary">较前版：+0 −9 修改 2</p><p class="version-preview">我谢谢这些人的关心，然而其实人工智能的能力被严重的夸大了。现在我简单的讲一下我的看法。</p><a class="version-diff-link" href="diff.html?data=diffs%2F35d65f5562112083.json&amp;to=blog-cn_2017_04_23_ai_20180224.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2017_04_23_ai_20171216.html">2017-12-16</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F35d65f5562112083.json&amp;to=blog-cn_2017_04_23_ai_20171216.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2017_04_23_ai_20171202.html">2017-12-02</a></div><p class="version-diff-summary">较前版：+29 −0 修改 15</p><p class="version-preview">故事要从十多年前讲起，那时候人工智能正处于它的冬天。在清华大学的图书馆，我偶然地发现了一本尘封已久的 『Paradigms of Artificial Intelligence Programming』（PAIP），作者是 Peter…</p><a class="version-diff-link" href="diff.html?data=diffs%2F35d65f5562112083.json&amp;to=blog-cn_2017_04_23_ai_20171202.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2017_04_23_ai_20170510.html">2017-05-10</a></div><p class="version-diff-summary">较前版：+2 −0 修改 1</p><p class="version-preview">很多人被“微软小冰”忽悠过，咋一看这家伙真能理解你说的话呢！然而聊一会你就发现，小冰不过是一个“网络句子搜索引擎”。它只是按照你句子里的关键字，随机搜出网上已有的句子。大部分这类句子出自问答类网站，比如百度知道，知乎。一个很简单的实验…</p><a class="version-diff-link" href="diff.html?data=diffs%2F35d65f5562112083.json&amp;to=blog-cn_2017_04_23_ai_20170510.html">查看差异</a></li><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2017-04-29</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">较前版：+1 −23 修改 15</p><p class="version-preview">我谢谢这些人的关心，然而其实我并不在乎，也不看好人工智能。现在我简单的讲一下我的看法。</p><a class="version-diff-link" href="diff.html?data=diffs%2F35d65f5562112083.json&amp;to=blog-cn_2017_04_23_ai_20170429.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2017_04_23_ai_20090101.html">2009-01-01</a></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
+
         <div>
-                            <h2>我为什么不在乎人工智能</h2>
+                            <h1 class="article-title">我为什么不在乎人工智能</h1>
                             <p>有人听说我想创业，给我提出了一些“忽悠”的办法。他们说，既然你是程序语言专家，而现在人工智能（AI）又非常热，那你其实可以搞一个“自动编程系统”，号称可以自动生成程序，取代程序员的工作，节省许许多多的人力支出，这样就可以趁着“AI 热”拉到投资。</p>
 
 <p>有人甚至把名字都给我想好了，叫“深度程序员”（DeepCoder = Deep Learning + Coder）。口号是：“有了 DeepCoder，不用 Top Coder！” 还有人给我指出了这方向最新的，吹得神乎其神的研究，比如微软的 <a href="http://www.jiqizhixin.com/article/2691">Robust Fill</a>……</p>
@@ -166,15 +166,16 @@
 <p>（如果你喜欢这篇文章，欢迎<a href="http://www.yinwang.org/blog-cn/2016/04/13/pay-blog">付款</a>，数量随意）</p>
 
                         </div>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

@@ -2,6 +2,9 @@ import shutil
 import os
 import re
 import hashlib
+import html as html_lib
+import difflib
+import urllib.parse
 from datetime import datetime
 import json
 from collections import Counter
@@ -76,6 +79,22 @@ def inject_footer_before_body_close(html: str, footer_html: str) -> str:
         return re.sub(r"</html\\s*>", footer_html + "</html>", html, count=1, flags=re.IGNORECASE)
     return html + footer_html
 
+
+def normalize_generated_html(html: str) -> str:
+    """Trim template/prose whitespace without changing preformatted source text."""
+    lines = []
+    in_pre = False
+    for line in html.splitlines():
+        lowered = line.lower()
+        starts_pre = '<pre' in lowered
+        preserve = in_pre or starts_pre
+        lines.append(line if preserve else line.rstrip())
+        if starts_pre and '</pre>' not in lowered:
+            in_pre = True
+        if in_pre and '</pre>' in lowered:
+            in_pre = False
+    return "\n".join(lines) + "\n"
+
 def parse_article_date(filename):
     """
     Parses the article date (publication date) from the filename.
@@ -134,6 +153,82 @@ def extract_title(content, filename):
     
     return "Untitled"
 
+
+def extract_article_title(content, filename):
+    """Prefer the visible article heading over generic document metadata."""
+    match = re.search(
+        r'<h(?P<level>[12])\b[^>]*>(?P<inner>.*?)</h(?P=level)>',
+        content,
+        re.IGNORECASE | re.DOTALL,
+    )
+    if match:
+        title = html_lib.unescape(strip_tags(match.group('inner'))).strip()
+        if title:
+            return title
+    return extract_title(content, filename)
+
+
+def normalize_title_key(text):
+    text = html_lib.unescape(strip_tags(text or ""))
+    return re.sub(r'[\s（）()·:：—–-]+', '', text).lower()
+
+
+def clean_archived_page_chrome(raw_body):
+    """Remove duplicated analytics/mobile/ad chrome while preserving article scripts."""
+    removable_markers = (
+        'GoogleAnalyticsObject',
+        'google-analytics.com',
+        'adsbygoogle',
+        'navigator.userAgent',
+        'document.body.classList.add',
+    )
+
+    def clean_script(match):
+        script = match.group(0)
+        return '' if any(marker in script for marker in removable_markers) else script
+
+    raw_body = re.sub(
+        r'<script\b[^>]*>.*?</script>',
+        clean_script,
+        raw_body,
+        flags=re.IGNORECASE | re.DOTALL,
+    )
+
+    def clean_comment(match):
+        comment = match.group(0)
+        lowered = comment.lower()
+        if 'ad-banner' in lowered or 'adsbygoogle' in lowered:
+            return ''
+        return comment
+
+    raw_body = re.sub(r'<!--.*?-->', clean_comment, raw_body, flags=re.DOTALL)
+    raw_body = re.sub(
+        r'<div\b[^>]*class=["\'][^"\']*\bad-banner\b[^"\']*["\'][^>]*>\s*</div>',
+        '',
+        raw_body,
+        flags=re.IGNORECASE | re.DOTALL,
+    )
+    return raw_body.strip()
+
+
+def normalize_article_title(raw_body, title):
+    """Give confirmed article-title headings one consistent semantic style."""
+    heading = re.search(
+        r'<h(?P<level>[12])\b[^>]*>(?P<inner>.*?)</h(?P=level)>',
+        raw_body,
+        re.IGNORECASE | re.DOTALL,
+    )
+    escaped_title = html_lib.escape(title)
+    if not heading:
+        return f'<h1 class="article-title">{escaped_title}</h1>\n{raw_body}'
+
+    visible_heading = html_lib.unescape(strip_tags(heading.group('inner'))).strip()
+    if normalize_title_key(visible_heading) != normalize_title_key(title):
+        return f'<h1 class="article-title">{escaped_title}</h1>\n{raw_body}'
+
+    normalized_heading = f'<h1 class="article-title">{heading.group("inner").strip()}</h1>'
+    return raw_body[:heading.start()] + normalized_heading + raw_body[heading.end():]
+
 def get_base_name_and_version(filename):
     """
     Returns (base_name, version_date_str)
@@ -184,6 +279,177 @@ def format_version_date(date_str):
     if len(date_str) == 8:
         return f"{date_str[:4]}-{date_str[4:6]}-{date_str[6:]}"
     return date_str
+
+
+DIFF_BLOCK_RE = re.compile(
+    r'<(?P<tag>h[1-6]|p|li|pre|blockquote)\b[^>]*>.*?</(?P=tag)>',
+    re.IGNORECASE | re.DOTALL,
+)
+
+
+def prepare_diff_body(content, title):
+    body = get_body_content(content)
+    body = re.sub(r'<!--.*?-->', '', body, flags=re.DOTALL)
+    body = re.sub(r'<(?:script|style)\b.*?</(?:script|style)>', '', body, flags=re.IGNORECASE | re.DOTALL)
+
+    heading = re.search(
+        r'<h(?P<level>[12])\b[^>]*>(?P<inner>.*?)</h(?P=level)>',
+        body,
+        re.IGNORECASE | re.DOTALL,
+    )
+    if heading:
+        visible_heading = html_lib.unescape(strip_tags(heading.group('inner'))).strip()
+        if normalize_title_key(visible_heading) == normalize_title_key(title):
+            body = body[:heading.start()] + body[heading.end():]
+
+    # Publication metadata is not an editorial content change.
+    body = re.sub(
+        r'<(?P<tag>div|p)\b[^>]*class=["\'][^"\']*\b(?:date|time)\b[^"\']*["\'][^>]*>.*?</(?P=tag)>',
+        '',
+        body,
+        count=1,
+        flags=re.IGNORECASE | re.DOTALL,
+    )
+    return body
+
+
+def extract_diff_blocks(content, title):
+    body = prepare_diff_body(content, title)
+    blocks = []
+    for match in DIFF_BLOCK_RE.finditer(body):
+        raw_html = match.group(0).strip()
+        text = html_lib.unescape(strip_tags(raw_html))
+        text = re.sub(r'\s+', ' ', text).strip()
+        key = text or normalize_html(raw_html)
+        blocks.append({
+            'tag': match.group('tag').lower(),
+            'html': raw_html,
+            'text': text,
+            'key': key,
+        })
+    return blocks
+
+
+def tokenize_diff_text(text):
+    return re.findall(r'[\u3400-\u9fff]|[A-Za-z0-9_]+|\s+|.', text or '', re.DOTALL)
+
+
+def render_inline_diff(before, after):
+    before_tokens = tokenize_diff_text(before)
+    after_tokens = tokenize_diff_text(after)
+    matcher = difflib.SequenceMatcher(None, before_tokens, after_tokens, autojunk=False)
+    rendered = []
+    for op, i1, i2, j1, j2 in matcher.get_opcodes():
+        old = html_lib.escape(''.join(before_tokens[i1:i2]))
+        new = html_lib.escape(''.join(after_tokens[j1:j2]))
+        if op == 'equal':
+            rendered.append(new)
+        elif op == 'delete':
+            rendered.append(f'<del>{old}</del>')
+        elif op == 'insert':
+            rendered.append(f'<ins>{new}</ins>')
+        else:
+            rendered.append(f'<del>{old}</del><ins>{new}</ins>')
+    return ''.join(rendered)
+
+
+def nearest_diff_heading(blocks, index):
+    for block in reversed(blocks[:index]):
+        if block['tag'].startswith('h') and block['text']:
+            return block['text']
+    return ''
+
+
+def build_semantic_diff(before_content, after_content, before_title, after_title):
+    before_blocks = extract_diff_blocks(before_content, before_title)
+    after_blocks = extract_diff_blocks(after_content, after_title)
+    matcher = difflib.SequenceMatcher(
+        None,
+        [block['key'] for block in before_blocks],
+        [block['key'] for block in after_blocks],
+        autojunk=False,
+    )
+
+    counts = {'added': 0, 'removed': 0, 'changed': 0}
+    changes = []
+    preview = ''
+    last_context = None
+
+    def add_context(label):
+        nonlocal last_context
+        if label and label != last_context:
+            changes.append(
+                f'<div class="diff-context">{html_lib.escape(label)}</div>'
+            )
+            last_context = label
+
+    def add_removed(block):
+        nonlocal preview
+        counts['removed'] += 1
+        if not preview:
+            preview = block['text']
+        changes.append(
+            '<div class="diff-block diff-removed">'
+            '<span class="diff-marker" aria-hidden="true">−</span>'
+            f'{block["html"]}</div>'
+        )
+
+    def add_added(block):
+        nonlocal preview
+        counts['added'] += 1
+        if not preview:
+            preview = block['text']
+        changes.append(
+            '<div class="diff-block diff-added">'
+            '<span class="diff-marker" aria-hidden="true">+</span>'
+            f'{block["html"]}</div>'
+        )
+
+    def add_changed(old_block, new_block):
+        nonlocal preview
+        counts['changed'] += 1
+        if not preview:
+            preview = new_block['text'] or old_block['text']
+        rendered = render_inline_diff(old_block['text'], new_block['text'])
+        pre_class = ' diff-preformatted' if new_block['tag'] == 'pre' else ''
+        changes.append(
+            f'<div class="diff-block diff-changed{pre_class}">'
+            '<span class="diff-marker" aria-hidden="true">±</span>'
+            f'<div class="diff-inline">{rendered}</div></div>'
+        )
+
+    for op, i1, i2, j1, j2 in matcher.get_opcodes():
+        if op == 'equal':
+            continue
+
+        context = nearest_diff_heading(after_blocks, j1) or nearest_diff_heading(before_blocks, i1)
+        add_context(context)
+
+        if op == 'delete':
+            for block in before_blocks[i1:i2]:
+                add_removed(block)
+        elif op == 'insert':
+            for block in after_blocks[j1:j2]:
+                add_added(block)
+        else:
+            old_slice = before_blocks[i1:i2]
+            new_slice = after_blocks[j1:j2]
+            paired = min(len(old_slice), len(new_slice))
+            for offset in range(paired):
+                add_changed(old_slice[offset], new_slice[offset])
+            for block in old_slice[paired:]:
+                add_removed(block)
+            for block in new_slice[paired:]:
+                add_added(block)
+
+    preview = re.sub(r'\s+', ' ', preview).strip()
+    if len(preview) > 120:
+        preview = preview[:117].rstrip() + '…'
+    return {
+        'counts': counts,
+        'preview': preview,
+        'html': '\n'.join(changes) or '<p class="diff-empty">两个版本的正文没有可见差异。</p>',
+    }
 
 
 
@@ -333,6 +599,11 @@ def process_archives():
                 shutil.rmtree(dst)
             shutil.copytree(src, dst)
 
+    diff_output_dir = os.path.join(OUTPUT_DIR, "diffs")
+    if os.path.exists(diff_output_dir):
+        shutil.rmtree(diff_output_dir)
+    os.makedirs(diff_output_dir)
+
     # 2. Group files
     article_groups = {} 
     page_groups = {}    
@@ -411,7 +682,8 @@ def process_archives():
             if unique_versions:
                 latest = unique_versions[-1]
                 # Pre-calculate title for layout
-                title = extract_title(latest['content'], latest['filename'])
+                title_extractor = extract_article_title if type_label == 'article' else extract_title
+                title = title_extractor(latest['content'], latest['filename'])
                 processed_groups[base_name] = {
                     'type': type_label,
                     'versions': unique_versions,
@@ -531,7 +803,7 @@ def process_archives():
     navbar_html = build_nav_html()
 
     # Shared CSS Overrides
-    custom_css = """
+    site_overrides_style = """
     <style>
         body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
         /* Removed .inner/.outer overrides to respect theme post.css */
@@ -539,6 +811,205 @@ def process_archives():
         .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
         .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
         .version-switcher a.current { font-weight: bold; color: #333; }
+
+        h1.article-title {
+            width: auto;
+            margin: 0 0 1.15em;
+            padding: 0;
+            border: 0;
+            color: #555;
+            font-size: clamp(1.55em, 4vw, 2em);
+            line-height: 1.35;
+            overflow-wrap: anywhere;
+            text-wrap: balance;
+        }
+        h1.article-title + .date,
+        h1.article-title + .time {
+            margin-top: -1.2em;
+            margin-bottom: 2em;
+            color: #777;
+            text-align: center;
+            font-size: .85em;
+        }
+
+        .version-nav { margin-right: 8px; }
+        .skip-link {
+            position: fixed;
+            top: 8px;
+            left: 8px;
+            z-index: 1100;
+            padding: 9px 12px;
+            border-radius: 4px;
+            background: #fff;
+            color: #222;
+            transform: translateY(-150%);
+        }
+        .skip-link:focus { transform: translateY(0); }
+        .version-menu-trigger {
+            min-height: 44px;
+            margin: 3px 0;
+            padding: 8px 14px;
+            border: 1px solid #cfcfcf;
+            border-radius: 6px;
+            background: #fff;
+            color: #444;
+            font-size: 16px;
+            line-height: 24px;
+            cursor: pointer;
+            touch-action: manipulation;
+        }
+        .version-menu-trigger:hover { background: #f3f3f3; }
+        .version-menu-trigger:active { background: #e8e8e8; }
+        .version-menu-trigger:focus-visible,
+        .version-panel a:focus-visible,
+        .version-panel button:focus-visible {
+            outline: 2px solid #555;
+            outline-offset: 2px;
+        }
+        .version-count {
+            display: inline-block;
+            min-width: 22px;
+            margin-left: 5px;
+            padding: 0 6px;
+            border-radius: 999px;
+            background: #ececec;
+            text-align: center;
+            font-size: 13px;
+        }
+        .version-panel-backdrop {
+            position: fixed;
+            inset: 0;
+            z-index: 1040;
+            background: transparent;
+        }
+        .version-panel {
+            position: fixed;
+            top: 62px;
+            right: 16px;
+            z-index: 1050;
+            width: min(360px, calc(100vw - 32px));
+            max-height: calc(100vh - 80px);
+            overflow: hidden;
+            border: 1px solid #d8d8d8;
+            border-radius: 10px;
+            background: #fff;
+            box-shadow: 0 14px 38px rgba(0, 0, 0, .18);
+            color: #333;
+            font-size: 15px;
+        }
+        .version-panel[hidden],
+        .version-panel-backdrop[hidden] { display: none !important; }
+        body.version-panel-open { overflow: hidden; }
+        .version-panel-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 16px;
+            border-bottom: 1px solid #e5e5e5;
+        }
+        .version-panel-title {
+            width: auto;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            color: #333;
+            text-align: left;
+            font-family: inherit;
+            font-size: 17px;
+            font-weight: 600;
+            line-height: 1.35;
+        }
+        .version-panel-close {
+            width: 44px;
+            height: 44px;
+            padding: 0;
+            border: 0;
+            border-radius: 50%;
+            background: transparent;
+            color: #555;
+            font-size: 24px;
+            line-height: 44px;
+            cursor: pointer;
+            touch-action: manipulation;
+        }
+        .version-panel-close:hover { background: #eee; }
+        .version-list {
+            max-height: calc(100vh - 145px);
+            margin: 0;
+            padding: 8px;
+            overflow-y: auto;
+            list-style: none;
+        }
+        .version-item {
+            margin: 0;
+            padding: 10px 11px;
+            border-left: 3px solid transparent;
+            border-radius: 6px;
+            transition: background-color .16s ease, border-color .16s ease;
+        }
+        .version-item:hover,
+        .version-item:focus-within { background: #f5f5f5; }
+        .version-item.current { border-left-color: #555; background: #f1f1f1; }
+        .version-item-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+        .version-date-link,
+        .version-current-label { color: #333; font-weight: 600; text-decoration: none; }
+        .version-date-link { display: inline-flex; min-height: 44px; align-items: center; }
+        .version-panel a { cursor: pointer; }
+        .version-date-link:hover { background: transparent; text-decoration: underline; }
+        .version-current-badge {
+            padding: 2px 7px;
+            border-radius: 999px;
+            background: #dedede;
+            color: #555;
+            font-size: 12px;
+            font-weight: 400;
+        }
+        .version-diff-summary { margin: 5px 0 0; color: #666; font-size: 13px; line-height: 1.5; }
+        .version-preview {
+            max-height: 0;
+            margin: 0;
+            overflow: hidden;
+            color: #666;
+            opacity: 0;
+            font-size: 13px;
+            line-height: 1.55;
+            transition: max-height .18s ease, margin .18s ease, opacity .18s ease;
+        }
+        .version-item:hover .version-preview,
+        .version-item:focus-within .version-preview {
+            max-height: 7em;
+            margin-top: 6px;
+            opacity: 1;
+        }
+        .version-diff-link { display: inline-flex; min-height: 44px; margin-top: 3px; align-items: center; color: #555; text-decoration: underline; touch-action: manipulation; }
+        .version-diff-link:hover { background: transparent; color: #111; }
+
+        .diff-header { margin-bottom: 28px; text-align: center; }
+        .diff-header h1 { margin-bottom: 12px; }
+        .diff-range { color: #666; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+        .diff-summary { margin: 10px 0; color: #555; }
+        .diff-actions { margin: 18px 0 0; }
+        .diff-actions a { display: inline-block; padding: 8px 12px; border: 1px solid #ccc; border-radius: 6px; color: #444; }
+        .diff-actions a:hover { background: #f2f2f2; }
+        .diff-legend { display: flex; justify-content: center; gap: 16px; margin: 20px 0 30px; color: #555; font-size: 14px; }
+        .diff-legend span::before { display: inline-block; width: 10px; height: 10px; margin-right: 6px; border-radius: 2px; content: ""; }
+        .diff-legend .added::before { background: #b9dfc6; }
+        .diff-legend .removed::before { background: #efc0bd; }
+        .diff-legend .changed::before { background: #ead89c; }
+        .diff-context { margin: 34px 0 12px; color: #666; font-weight: 600; }
+        .diff-block { position: relative; margin: 10px 0; padding: 12px 14px 12px 34px; border-left: 4px solid; border-radius: 4px; }
+        .diff-block > :first-child:not(.diff-marker) { margin-top: 0; }
+        .diff-block > :last-child { margin-bottom: 0; }
+        .diff-added { border-color: #4e9565; background: #eef8f1; }
+        .diff-removed { border-color: #bb615b; background: #fff1f0; }
+        .diff-changed { border-color: #aa8b2c; background: #fff9e6; }
+        .diff-marker { position: absolute; top: 12px; left: 11px; color: #555; font-family: monospace; font-weight: 700; }
+        .diff-inline { line-height: 1.8; white-space: pre-wrap; }
+        .diff-inline del { background: #f1b8b5; color: #632c28; text-decoration-thickness: 1px; }
+        .diff-inline ins { background: #bce3c8; color: #245d35; text-decoration: none; }
+        .diff-preformatted .diff-inline { font-family: Inconsolata, Consolas, monospace; font-size: 90%; }
+        .diff-empty, .diff-loading, .diff-error { padding: 24px; border: 1px solid #ddd; border-radius: 6px; text-align: center; }
+        .diff-error { border-color: #d7aaa7; background: #fff4f3; color: #7d302b; }
         
         .navbar-brand { font-size: 20px; font-weight: bold; }
         .navbar-nav > li > a { font-size: 20px; }
@@ -549,16 +1020,212 @@ def process_archives():
 
         .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
         .site-footer a { color: inherit; text-decoration: underline; }
+
+        @media (max-width: 767px) {
+            .version-nav { margin: 0; }
+            .version-menu-trigger { display: block; width: 100%; margin: 4px 0; text-align: left; }
+            .version-panel-backdrop { background: rgba(0, 0, 0, .28); }
+            .version-panel {
+                top: auto;
+                right: 0;
+                bottom: 0;
+                width: 100%;
+                max-height: min(76vh, 680px);
+                border-right: 0;
+                border-bottom: 0;
+                border-left: 0;
+                border-radius: 14px 14px 0 0;
+            }
+            .version-list { max-height: calc(min(76vh, 680px) - 65px); padding-bottom: max(12px, env(safe-area-inset-bottom)); }
+            .version-preview { display: none; }
+            .diff-legend { flex-wrap: wrap; gap: 8px 16px; }
+            .diff-block { padding-right: 10px; padding-left: 30px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .version-item, .version-preview { transition: none; }
+        }
         
         /* Removed custom flexbox list styling to match demo vertical style */
     </style>
     """
+
+    site_overrides_css = re.sub(
+        r'^\s*<style>\s*|\s*</style>\s*$',
+        '',
+        site_overrides_style,
+        flags=re.DOTALL,
+    )
+    with open(os.path.join(OUTPUT_DIR, 'css', 'site-overrides.css'), 'w', encoding='utf-8') as css_file:
+        css_file.write(site_overrides_css.strip() + '\n')
+    custom_css = '<link rel="stylesheet" href="css/site-overrides.css">'
+
+    def prepare_group_diffs(base_name, versions, canonical_title):
+        diff_id = hashlib.sha256(base_name.encode('utf-8')).hexdigest()[:16]
+        relative_path = f"diffs/{diff_id}.json"
+        comparisons = {}
+        by_current = {}
+
+        for index in range(1, len(versions)):
+            before = versions[index - 1]
+            after = versions[index]
+            before_title = extract_article_title(before['content'], before['filename'])
+            after_title = extract_article_title(after['content'], after['filename'])
+            result = build_semantic_diff(
+                before['content'],
+                after['content'],
+                before_title,
+                after_title,
+            )
+            comparison = {
+                'from': before['filename'],
+                'to': after['filename'],
+                'from_date': before['formatted_date'],
+                'to_date': after['formatted_date'],
+                'counts': result['counts'],
+                'preview': result['preview'],
+                'html': result['html'],
+            }
+            comparisons[after['filename']] = comparison
+            query = urllib.parse.urlencode({
+                'data': relative_path,
+                'to': after['filename'],
+            })
+            by_current[after['filename']] = {
+                **comparison,
+                'url': f'diff.html?{query}',
+            }
+
+        payload = {
+            'title': canonical_title,
+            'comparisons': comparisons,
+        }
+        with open(os.path.join(OUTPUT_DIR, relative_path), 'w', encoding='utf-8') as diff_file:
+            json.dump(payload, diff_file, ensure_ascii=False, separators=(',', ':'))
+        return by_current
+
+    def build_version_ui(versions, current, diff_by_current):
+        count = len(versions)
+        trigger = f"""
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">{count}</span>
+                </button>
+            </li>
+        </ul>
+        """
+
+        items = []
+        for version in reversed(versions):
+            is_current = version['filename'] == current['filename']
+            safe_filename = html_lib.escape(version['filename'], quote=True)
+            safe_date = html_lib.escape(version['formatted_date'])
+            if is_current:
+                date_control = f'<span class="version-current-label" aria-current="page">{safe_date}</span>'
+                badge = '<span class="version-current-badge">当前</span>'
+            else:
+                date_control = f'<a class="version-date-link" href="{safe_filename}">{safe_date}</a>'
+                badge = ''
+
+            diff_info = diff_by_current.get(version['filename'])
+            if diff_info:
+                counts = diff_info['counts']
+                summary = (
+                    f'较前版：+{counts["added"]} −{counts["removed"]} '
+                    f'修改 {counts["changed"]}'
+                )
+                preview = ''
+                if diff_info['preview']:
+                    preview = f'<p class="version-preview">{html_lib.escape(diff_info["preview"])}</p>'
+                diff_url = html_lib.escape(diff_info['url'], quote=True)
+                diff_link = f'<a class="version-diff-link" href="{diff_url}">查看差异</a>'
+            else:
+                summary = '最早保留版本'
+                preview = ''
+                diff_link = ''
+
+            current_class = ' current' if is_current else ''
+            items.append(
+                f'<li class="version-item{current_class}">'
+                f'<div class="version-item-row">{date_control}{badge}</div>'
+                f'<p class="version-diff-summary">{summary}</p>'
+                f'{preview}{diff_link}</li>'
+            )
+
+        panel = f"""
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list">{''.join(items)}</ol>
+        </section>
+        """
+        return trigger, panel
+
+    diff_shell = f"""<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <title>版本差异</title>
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/post.css">
+    {custom_css}
+</head>
+<body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
+    <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-bs">
+                    <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="./">Wang Yin's Blog</a>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">{navbar_html}</div>
+        </div>
+    </nav>
+    <main class="inner diff-page" id="main-content">
+        <header class="diff-header">
+            <h1 class="article-title" id="diff-title">版本差异</h1>
+            <div class="diff-range" id="diff-range"></div>
+            <p class="diff-summary" id="diff-summary"></p>
+            <p class="diff-actions"><a id="diff-back-link" href="./">返回文章</a></p>
+        </header>
+        <div class="diff-legend" aria-label="差异图例">
+            <span class="added">新增</span><span class="removed">删除</span><span class="changed">修改</span>
+        </div>
+        <p class="diff-loading" id="diff-loading" role="status">正在载入差异…</p>
+        <p class="diff-error" id="diff-error" role="alert" hidden></p>
+        <div id="diff-content"></div>
+    </main>
+    {build_disclaimer_footer_html("templated")}
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/diff-view.js"></script>
+</body>
+</html>"""
+    with open(os.path.join(OUTPUT_DIR, 'diff.html'), 'w', encoding='utf-8') as diff_shell_file:
+        diff_shell_file.write(normalize_generated_html(diff_shell))
 
 
     # 5. Generate Content
     for base_name, data in processed_groups.items():
         versions = data['versions']
         has_multiple = len(versions) > 1
+        is_article = data['type'] == 'article'
+        diff_by_current = {}
+        if is_article and has_multiple:
+            diff_by_current = prepare_group_diffs(
+                base_name,
+                versions,
+                data['latest_meta']['title'],
+            )
 
         # Check if it is a resource page and skip templating
         if base_name.startswith('resources_'):
@@ -568,16 +1235,6 @@ def process_archives():
                      f.write(inject_footer_before_body_close(ver['content'], build_disclaimer_footer_html("raw")))
              continue
 
-        # Generate version switcher for history pages (homepage/index) or normal pages
-        switcher_html = ""
-        if has_multiple:
-            links = []
-            for other_ver in versions:
-                is_current = (other_ver['filename'] == versions[-1]['filename']) # Default to latest? No, need current iter context, but here we don't have 'ver' in loop yet.
-                # Actually we need to generate switcher inside the loop or per version.
-                # But to avoid re-generating for every version if it's identical list, we can gen list first.
-                pass 
-                
         # Special handling for history pages: Inject switcher into raw content
         if base_name.startswith('homepage') or base_name.startswith('index'):
             for ver in versions:
@@ -661,16 +1318,28 @@ def process_archives():
                     # Fallback if no .tweet div found, just wrap raw body
                      raw_body = f'<div class="micro-blog">{raw_body}</div>'
 
-            title = extract_title(content, ver['filename'])
+            title = extract_article_title(content, ver['filename']) if is_article else extract_title(content, ver['filename'])
+            if is_article:
+                raw_body = clean_archived_page_chrome(raw_body)
+                raw_body = normalize_article_title(raw_body, title)
             
             switcher_html = ""
-            if has_multiple:
+            if has_multiple and not is_article:
                 links = []
                 for other_ver in versions:
                     is_current = (other_ver['filename'] == ver['filename'])
                     cls = 'class="current"' if is_current else ''
                     links.append(f'<a href="{other_ver["filename"]}" {cls}>{other_ver["formatted_date"]}</a>')
                 switcher_html = f'<div class="version-switcher"><span>Versions:</span>{" ".join(links)}</div>'
+
+            version_nav_html = ""
+            version_panel_html = ""
+            if is_article and has_multiple:
+                version_nav_html, version_panel_html = build_version_ui(
+                    versions,
+                    ver,
+                    diff_by_current,
+                )
 
             # Template
             disclaimer_footer_html = build_disclaimer_footer_html("templated")
@@ -690,6 +1359,7 @@ def process_archives():
     {custom_css}
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -699,21 +1369,25 @@ def process_archives():
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+                {version_nav_html}
                 {navbar_html}
             </div>
         </div>
     </nav>
 
-    <div class="inner">
+    {version_panel_html}
+
+    <main class="inner" id="main-content">
         {switcher_html}
         {raw_body}
-    </div>
+    </main>
 
     {disclaimer_footer_html}
     
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {{
             document.body.classList.add('mobile');
@@ -725,7 +1399,7 @@ def process_archives():
 </html>"""
             
             with open(os.path.join(OUTPUT_DIR, ver['filename']), 'w', encoding='utf-8') as f:
-                f.write(new_html)
+                f.write(normalize_generated_html(new_html))
 
     # Preserve published archive URLs when correcting imported metadata.
     for old_filename, new_filename in LEGACY_REDIRECTS.items():
@@ -806,6 +1480,23 @@ def process_archives():
         'dropped_duplicates_count': len(dropped_duplicates),
         'dropped_duplicates': [d['title'] for d in dropped_duplicates],
         'processed_groups_total': len(processed_groups),
+        'style_and_diff': {
+            'normalized_article_versions': sum(
+                len(group['versions'])
+                for group in processed_groups.values()
+                if group['type'] == 'article'
+            ),
+            'multi_version_article_groups': sum(
+                1
+                for group in processed_groups.values()
+                if group['type'] == 'article' and len(group['versions']) > 1
+            ),
+            'adjacent_diff_comparisons': sum(
+                len(group['versions']) - 1
+                for group in processed_groups.values()
+                if group['type'] == 'article' and len(group['versions']) > 1
+            ),
+        },
         'skipped_invalid_reason_counts': dict(skipped_invalid_reason_counts),
         'skipped_invalid_examples': skipped_invalid_files,
         'dropped_groups_count': len(dropped_groups),

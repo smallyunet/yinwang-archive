@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">3</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,24 +46,36 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2013_10_06_sourcegraph_20131006.html" >2013-10-06</a> <a href="blog-cn_2013_10_06_sourcegraph_20131023.html" class="current">2013-10-23</a> <a href="blog-cn_2013_10_06_sourcegraph_20140513.html" >2014-05-13</a></div>
-        <h2>PySonar 的第二个用户</h2>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_10_06_sourcegraph_20140513.html">2014-05-13</a></div><p class="version-diff-summary">较前版：+1 −0 修改 0</p><p class="version-preview">（王垠 yinwang.org 版权所有，未经许可，请勿转载）</p><a class="version-diff-link" href="diff.html?data=diffs%2F3b7435f390cb6a17.json&amp;to=blog-cn_2013_10_06_sourcegraph_20140513.html">查看差异</a></li><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2013-10-23</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">较前版：+0 −0 修改 1</p><p class="version-preview">湾区的世界真是机缘巧合众多。最近有人联系我，说他们做了一个代码搜索公司叫 sourcegraph.com，其中的 Python 检索部分使用了 PySonar 的第一版开源代码。于是我很高兴的发现 PySonar 有了第二个用户（当然…</p><a class="version-diff-link" href="diff.html?data=diffs%2F3b7435f390cb6a17.json&amp;to=blog-cn_2013_10_06_sourcegraph_20131023.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_10_06_sourcegraph_20131006.html">2013-10-06</a></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
+
+        <h1 class="article-title">PySonar 的第二个用户</h1>
 
 <p>湾区的世界真是机缘巧合众多。最近有人联系我，说他们做了一个代码搜索公司叫 <a href="http://sourcegraph.com">sourcegraph.com</a>，其中的 Python 检索部分使用了 <a href="http://yinwang0.wordpress.com/2010/09/12/pysonar">PySonar</a> 的<a href="http://hg.python.org/jython/file/11776cd9765b/src/org/python/indexer">第一版开源代码</a>。于是我很高兴的发现 PySonar 有了第二个用户（当然，Google 是第一个）。</p>
 
 <p>Sourcegraph 的两位创始人 Quinn 和 Beyang 告诉我，PySonar 是他们试过的最精确，也是最友好的 Python 静态分析。这虽然是意料当中的，但是我还是很高兴有人发现了这一点。其实在设计 PySonar 之前我试过十多个 Python 分析器和 IDE，发现它们并不能真正的分析 Python 的语义，所以才开始从头发明。而 PySonar 的第二版采用的我自己发明的 "abstract interpretation" 超越了现有的所有静态分析器（包括所有语言的分析器在内，比如 Coverity 和 PL 学术界的 control-flow analysis 技术）。PySonar 第二版已经很接近理论的极限，所以基本不大可能有其它工具可以超过它。那里面说去说来就那么点东西，但是我刚发现很多人其实都不理解 ;-)</p>
 
 <p>我也很欣赏 Quinn 和 Beyang 的聪明才智和雄心壮志。我希望 sourcegraph 发展壮大，成为世界上最优秀的代码搜索和分析网站。</p>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

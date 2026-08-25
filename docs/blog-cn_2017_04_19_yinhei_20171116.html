@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">5</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,10 +46,21 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2017_04_19_yinhei_20170421.html" >2017-04-21</a> <a href="blog-cn_2017_04_19_yinhei_20170507.html" >2017-05-07</a> <a href="blog-cn_2017_04_19_yinhei_20170523.html" >2017-05-23</a> <a href="blog-cn_2017_04_19_yinhei_20171116.html" class="current">2017-11-16</a> <a href="blog-cn_2017_04_19_yinhei_20180310.html" >2018-03-10</a></div>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2017_04_19_yinhei_20180310.html">2018-03-10</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2Fb4f4856ad994ee84.json&amp;to=blog-cn_2017_04_19_yinhei_20180310.html">查看差异</a></li><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2017-11-16</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2Fb4f4856ad994ee84.json&amp;to=blog-cn_2017_04_19_yinhei_20171116.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2017_04_19_yinhei_20170523.html">2017-05-23</a></div><p class="version-diff-summary">较前版：+6 −1 修改 12</p><p class="version-preview">有朋友跟我说，在网上看到这些黑我的人，都帮我骂回去。其实逐一的反击这些垠黑，完全是浪费时间。不但不起作用，反倒坏了自己的心情。对这些人，最好的办法是忽略他们。不去看他们说什么，不去访问他们聚集的网站（比如知乎）。虽然我根本不在乎这种人…</p><a class="version-diff-link" href="diff.html?data=diffs%2Fb4f4856ad994ee84.json&amp;to=blog-cn_2017_04_19_yinhei_20170523.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2017_04_19_yinhei_20170507.html">2017-05-07</a></div><p class="version-diff-summary">较前版：+3 −0 修改 4</p><p class="version-preview">所谓“老同学”</p><a class="version-diff-link" href="diff.html?data=diffs%2Fb4f4856ad994ee84.json&amp;to=blog-cn_2017_04_19_yinhei_20170507.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2017_04_19_yinhei_20170421.html">2017-04-21</a></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
+
         <div>
-                            <h2>那些垠黑们</h2>
+                            <h1 class="article-title">那些垠黑们</h1>
                             <p>我知道有许多人喜欢看我的博客，因为我擦亮了他们的眼睛，给了他们智慧和力量。我也知道有很多人喜欢“黑”我，我曾经在意过这些“垠黑”，甚至亲自跟他们吵。然而逐渐的，我发现了这些垠黑们的一些特征。有些是闲的无聊，有的是心理不正常，有些则是因为我批判的东西，正好伤到了他耐以生存的幌子。所以这些人开始在网上黑我，甚至自己立个靶子，杜撰我从来没有说过的话，然后进行反驳，以此攻击我本人。</p>
 
 <p>有朋友跟我说，在网上看到这些黑我的人，都帮我骂回去。其实逐一的反击这些垠黑，完全是浪费时间。不但不起作用，反倒坏了自己的心情。对这些人，最好的办法是忽略他们。不去看他们说什么，不去访问他们聚集的网站（比如知乎）。虽然我根本不在乎这种人，然而由于他们在网络上的行为可能引起我的朋友们不必要的烦扰，我觉得还是有必要统一对他们进行披露和鄙视。</p>
@@ -123,15 +123,16 @@
 
 
                         </div>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

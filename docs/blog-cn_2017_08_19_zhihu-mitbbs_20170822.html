@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">4</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,10 +46,21 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2017_08_19_zhihu-mitbbs_20170822.html" class="current">2017-08-22</a> <a href="blog-cn_2017_08_19_zhihu-mitbbs_20180406.html" >2018-04-06</a> <a href="blog-cn_2017_08_19_zhihu-mitbbs_20200119.html" >2020-01-19</a> <a href="blog-cn_2017_08_19_zhihu-mitbbs_20200228.html" >2020-02-28</a></div>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2017_08_19_zhihu-mitbbs_20200228.html">2020-02-28</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F4a71c136e970168b.json&amp;to=blog-cn_2017_08_19_zhihu-mitbbs_20200228.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2017_08_19_zhihu-mitbbs_20200119.html">2020-01-19</a></div><p class="version-diff-summary">较前版：+1 −2 修改 6</p><p class="version-preview">十多年前，当我离开清华的时候，网络上有人说：“支持王垠的也就只有国内屌丝，看看海外华人居多的 MITBBS，评价就很不一样。” 后来的很多博文，也经常会上 MITBBS 的“十大头条”。这些都是别人告诉我的，因为我根本不上 MITBBS。</p><a class="version-diff-link" href="diff.html?data=diffs%2F4a71c136e970168b.json&amp;to=blog-cn_2017_08_19_zhihu-mitbbs_20200119.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2017_08_19_zhihu-mitbbs_20180406.html">2018-04-06</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F4a71c136e970168b.json&amp;to=blog-cn_2017_08_19_zhihu-mitbbs_20180406.html">查看差异</a></li><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2017-08-22</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
+
         <div>
-                            <h2>知乎和 MITBBS</h2>
+                            <h1 class="article-title">知乎和 MITBBS</h1>
                             <p>十多年前，当我离开清华的时候，有媒体报道说：“支持王垠的也就只有国内屌丝，看看海外华人居多的 MITBBS，评价就很不一样。” 后来的很多博文，也经常会上 MITBBS 的“十大头条”。这些都是别人告诉我的，因为我根本不上 MITBBS。</p>
 
 <p>清华的那一次，也就是我第一次听说 MITBBS。似乎一个很高大上的名字，然而等你真正成为了“海外华人”，注册了 MITBBS 的账号，才发现它不但跟 MIT （麻省理工学院）没有任何关系，而且并不是心理正常的海外华人会出没的地方。我认识的友好的，有水平的人，没有一个上 MITBBS。MITBBS 称自己是海外华人的家园，还不如叫做“心理不正常华人的家园”。</p>
@@ -83,15 +83,16 @@
 
 
                         </div>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

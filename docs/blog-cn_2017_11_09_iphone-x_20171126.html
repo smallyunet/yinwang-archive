@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">4</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,25 +46,29 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2017_11_09_iphone-x_20171112.html" >2017-11-12</a> <a href="blog-cn_2017_11_09_iphone-x_20171126.html" class="current">2017-11-26</a> <a href="blog-cn_2017_11_09_iphone-x_20180302.html" >2018-03-02</a> <a href="blog-cn_2017_11_09_iphone-x_20200221.html" >2020-02-21</a></div>
-        <script>
-            if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent))
-            {
-               document.body.classList.add('mobile');
-            }
-        </script>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2017_11_09_iphone-x_20200221.html">2020-02-21</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2Fe8aacc79cceb2486.json&amp;to=blog-cn_2017_11_09_iphone-x_20200221.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2017_11_09_iphone-x_20180302.html">2018-03-02</a></div><p class="version-diff-summary">较前版：+0 −0 修改 1</p><p class="version-preview">在 CIIA 第一期报告中，我剖析了 iPhone 从诞生以来就存在的，以及后来产生的一些设计问题。昨天在苹果店里玩了一下 iPhone X，发现它不但继承了以往的 iPhone 的设计问题，把它们加深加重了，而且具有一些它特有的问题。</p><a class="version-diff-link" href="diff.html?data=diffs%2Fe8aacc79cceb2486.json&amp;to=blog-cn_2017_11_09_iphone-x_20180302.html">查看差异</a></li><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2017-11-26</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">较前版：+2 −0 修改 1</p><p class="version-preview">另外，屏幕真有必要做成圆角的吗？说实话，圆角的屏幕没有直角的好看。iPhone 已经有太多圆角的元素，机身是圆角的，图标是圆角的，按钮是圆角的。现在连屏幕也要变成圆角，就过分了，缺乏几何的对比。像 iPhone 6 那样圆角机身里面套…</p><a class="version-diff-link" href="diff.html?data=diffs%2Fe8aacc79cceb2486.json&amp;to=blog-cn_2017_11_09_iphone-x_20171126.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2017_11_09_iphone-x_20171112.html">2017-11-12</a></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
 
         <div class="ad-banner">
-            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
             <ins class="adsbygoogle"
                     data-ad-client="ca-pub-1331524016319584"
                     data-ad-slot="6657867155"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
         </div>
 
         <div>
-            <h2>iPhone X</h2>
+            <h1 class="article-title">iPhone X</h1>
             <p>在 CIIA <a href="http://www.yinwang.org/blog-cn/2017/10/22/double11">第一期报告</a>（现在优惠价热卖中）中，我剖析了 iPhone 从诞生以来就存在的，以及后来产生的一些设计问题。昨天在苹果店里玩了一下 iPhone X，发现它不但继承了以往的 iPhone 的设计问题，把它们加深加重了，而且具有一些它特有的问题。</p>
 
 <p>最初看到 iPhone X 的设计，我就猜到它可能存在这些问题。但由于没有亲自试过，所以报告没有包含关于 iPhone X 的内容。现在亲自实测，发现问题确实存在，所以我想把这些问题简要的描述一下。</p>
@@ -188,15 +181,16 @@
 <p>（如果你喜欢这篇文章，可以考虑<a href="http://www.yinwang.org/blog-cn/2016/04/13/pay-blog">付款购买</a>它，或者你可以购买 <a href="http://www.yinwang.org/blog-cn/2017/10/22/double11">CIIA 一号报告</a>。）</p>
 
         </div>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

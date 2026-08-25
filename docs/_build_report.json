@@ -1,11 +1,16 @@
 {
-  "generated_at": "2026-08-25T13:30:11",
+  "generated_at": "2026-08-25T13:48:34",
   "archives_dir": "archives",
   "output_dir": "docs",
   "articles_in_index": 335,
   "dropped_duplicates_count": 0,
   "dropped_duplicates": [],
   "processed_groups_total": 356,
+  "style_and_diff": {
+    "normalized_article_versions": 1680,
+    "multi_version_article_groups": 259,
+    "adjacent_diff_comparisons": 1345
+  },
   "skipped_invalid_reason_counts": {
     "empty-app-shell": 37,
     "empty": 1

@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">4</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,17 +46,21 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2020_03_04_changes_20200304.html" >2020-03-04</a> <a href="blog-cn_2020_03_04_changes_20200305.html" >2020-03-05</a> <a href="blog-cn_2020_03_04_changes_20200307.html" >2020-03-07</a> <a href="blog-cn_2020_03_04_changes_20200312.html" class="current">2020-03-12</a></div>
-        <script>
-            if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent))
-            {
-               document.body.classList.add('mobile');
-            }
-        </script>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2020-03-12</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">较前版：+0 −0 修改 1</p><p class="version-preview">如果你已经写了申请，可以补充需要的材料（特别是简历）。我会根据申请者的背景择优录取。为了课堂气氛的融洽，所有人要经过面试之后才能开始。如果中途发现有性格不合适的人，我会劝其退出。</p><a class="version-diff-link" href="diff.html?data=diffs%2F7dc5c6ff10e29ad9.json&amp;to=blog-cn_2020_03_04_changes_20200312.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2020_03_04_changes_20200307.html">2020-03-07</a></div><p class="version-diff-summary">较前版：+7 −0 修改 3</p><p class="version-preview">中国所谓“尊师重教”，结果人民教师就是这种待遇。</p><a class="version-diff-link" href="diff.html?data=diffs%2F7dc5c6ff10e29ad9.json&amp;to=blog-cn_2020_03_04_changes_20200307.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2020_03_04_changes_20200305.html">2020-03-05</a></div><p class="version-diff-summary">较前版：+6 −0 修改 22</p><p class="version-preview">所以我觉得这个聊天室已经不大安全了，开放聊天室登录是一个错误的决定。我知道很多人在聊天室旁听也很有收获，之前的 Matrix 聊天室，虽然我们撤走了，仍然有很多人从旧的聊天记录里面学到东西。只要他们不做声也许无所谓，但我仍然希望大家有…</p><a class="version-diff-link" href="diff.html?data=diffs%2F7dc5c6ff10e29ad9.json&amp;to=blog-cn_2020_03_04_changes_20200305.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2020_03_04_changes_20200304.html">2020-03-04</a></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
 
         <div>
-            <h2>课程计划变动</h2>
+            <h1 class="article-title">课程计划变动</h1>
             <p>昨天宣布准备开课，开放聊天室的登录，结果聊天室在很短时间内加入了很多新人。关闭开放登录时已经超过了 1000 人。这不但大大超出了我的预期，而且带来了一些比较严重的问题，以至于我不得不对开课的计划作出一些调整。</p>
 
 <p>我昨天处理这些问题已经很累了，需要休息。本来以为可以在 3 月 5 号进行第一次讲课，可能需要解决这些问题之后才能进行了。</p>
@@ -158,29 +151,16 @@
 
 
         </div>
+    </main>
 
-        <!--
-        <div class="ad-banner">
-            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <ins class="adsbygoogle"
-                    data-ad-client="ca-pub-1331524016319584"
-                    data-ad-slot="6657867155"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-        </div>
 
-        <script data-ad-client="ca-pub-1331524016319584" async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
-        </script>
-        -->
-    </div>
-
-    
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

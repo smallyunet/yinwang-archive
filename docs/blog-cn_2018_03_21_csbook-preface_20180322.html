@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">2</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,27 +46,21 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2018_03_21_csbook-preface_20180322.html" class="current">2018-03-22</a> <a href="blog-cn_2018_03_21_csbook-preface_20180405.html" >2018-04-05</a></div>
-        <script>
-            if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent))
-            {
-               document.body.classList.add('mobile');
-            }
-        </script>
 
-        <!--
-        <div class="ad-banner">
-            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <ins class="adsbygoogle"
-                    data-ad-client="ca-pub-1331524016319584"
-                    data-ad-slot="6657867155"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-        </div>
-        -->
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2018_03_21_csbook-preface_20180405.html">2018-04-05</a></div><p class="version-diff-summary">较前版：+1 −0 修改 0</p><p class="version-preview">很多计算机书籍都喜欢从“数学基础”开始，一开头就是长篇累牍的数学公式，定理，证明…… 结果读者还没读完数学基础就倒下睡着了，再也不想打开这本书。所以我不从数学基础开始，而是从最简单的生活常识。在认识发展的过程中，你会自己去创造出所需要…</p><a class="version-diff-link" href="diff.html?data=diffs%2Fd65e07da2f9adef0.json&amp;to=blog-cn_2018_03_21_csbook-preface_20180405.html">查看差异</a></li><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2018-03-22</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
 
         <div>
-            <h2>解谜计算机科学（前言）</h2>
+            <h1 class="article-title">解谜计算机科学（前言）</h1>
             <p>计算机科学直到今天仍然是一个谜。它简单而美丽的精华，被压在沉重的历史包袱和功利诱惑之下。纷繁复杂的 IT 技术充斥着各种浮夸和忽悠，变成一本本大部头“圣经”，让人不知所措，头脑发涨，让外行尤其是女性望而却步。她们说，学计算机能赚钱，可是计算机知识淘汰速度太快，需要不断学习才能跟上，计算机工作枯燥，伤眼睛，伤皮肤，老得快！去看看各位计算机界前辈的照片，你会发现她们说的好像是对的 :)</p>
 
 <p>“IT 男”和“极客”的苦逼名声，来源于这个领域创造者们的自大和虚伪。他们认为自己是天才，能够理解复杂的理论，所以他们喜欢把简单的问题搞复杂，然后告诉你“只有天才才能理解这种简单”。最后这种自大蔓延到整个领域。计算机科学虽然名字叫“科学”，但它的从业人员在很大程度上是宗教化的。不同信仰的教徒们盲目轻信，跟风拍马，互相鄙视，甚至掀起圣战。进入这个领域面临的，不仅是高度近视，不修边幅的同事，而且很多还很自大，喜欢显示自己聪明，觉得自己了不起。他们所谓的“聪明”，也就是能折腾那些纷繁复杂的理论和代码。发表论文来显示自己解决了一个问题，但别人看了仍然摸不着头脑。这种不健康的心理，进入了计算机科学的基因，完全违背了科学的精神。</p>
@@ -106,15 +89,16 @@
 
 
         </div>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

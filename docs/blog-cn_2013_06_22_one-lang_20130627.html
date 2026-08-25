@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">2</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,9 +46,20 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2013_06_22_one-lang_20130623.html" >2013-06-23</a> <a href="blog-cn_2013_06_22_one-lang_20130627.html" class="current">2013-06-27</a></div>
-        <h2>“One语言”的设计理念</h2>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2013-06-27</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">较前版：+1 −1 修改 1</p><p class="version-preview">虽然离“终极”的目标还差一截，但是我还是把这种语言暂时称为 One。如果写一本书，就应该叫：The One Programming Language。THE ONE — 让我想起了骇客帝国的 Neo 哈哈…… 也许可以把用这个语言写出…</p><a class="version-diff-link" href="diff.html?data=diffs%2Ff565d2c067d1eebf.json&amp;to=blog-cn_2013_06_22_one-lang_20130627.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_06_22_one-lang_20130623.html">2013-06-23</a></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
+
+        <h1 class="article-title">“One语言”的设计理念</h1>
 
 <p>上文提到我下一篇博客要讲静态分析的原理，但是睡了一晚上之后，觉得更有动力先讲一下我的语言的设计，以后再讲静态分析的事情。当然这篇文章里面也会涉及到静态分析的一些东西。以后我应该尽量避免谈到“下一篇博客”要讲什么，因为我总是喜欢改变主意。</p>
 
@@ -300,15 +300,16 @@
 <p>由于 One 语言写出来的所有函数和表达式都有可能成为 Neo 操作系统的一个“线程”，当已有的线程仍然在运行的时候，我们有可能写出新的代码，编译然后执行。所以模块化的编译似乎是一个必须的东西。也就是说，进行全局数据流分析貌似开销太大，因为这种流分析可能需要分析系统里正在运行的所有进程的所有代码。</p>
 
 <p>以上就是我能想到的 One 语言里比较有特色的地方。具体的设计和实现，还有待多方面的调查和讨论才能最后决定。关于 Neo 操作系统的设计，可以参考我以前的一篇<a href="http://www.yinwang.org/blog-cn/2013/04/14/os-design">博文</a>。当然，虽然我搞定语言的类型系统和编译器没问题，运行时系统（操作系统）的设计，我肯定需要更有经验的人帮忙。所以欢迎大家跟我切磋。</p>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

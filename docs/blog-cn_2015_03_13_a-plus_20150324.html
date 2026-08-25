@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">4</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,9 +46,20 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2015_03_13_a-plus_20150314.html" >2015-03-14</a> <a href="blog-cn_2015_03_13_a-plus_20150324.html" class="current">2015-03-24</a> <a href="blog-cn_2015_03_13_a-plus_20160922.html" >2016-09-22</a> <a href="blog-cn_2015_03_13_a-plus_20170506.html" >2017-05-06</a></div>
-        <h2>我为什么在乎这一个A+</h2>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_03_13_a-plus_20170506.html">2017-05-06</a></div><p class="version-diff-summary">较前版：+0 −0 修改 1</p><p class="version-preview">你觉得世界上有几个人能够在B521上得A+呢？谦虚是一种美德，不要随便评判别人，然而当看到这么多大牛都那么不谦虚，耀武扬威的，很多人用他们作为评判其他人的依据，所以我只好冒着评判他们的风险，告诉你一些事实。其实Donald Knuth…</p><a class="version-diff-link" href="diff.html?data=diffs%2F7f6edf7fa00aeea2.json&amp;to=blog-cn_2015_03_13_a-plus_20170506.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_03_13_a-plus_20160922.html">2016-09-22</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F7f6edf7fa00aeea2.json&amp;to=blog-cn_2015_03_13_a-plus_20160922.html">查看差异</a></li><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2015-03-24</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">较前版：+3 −0 修改 5</p><p class="version-preview">我知道有些人至今仍然嘲笑和鄙视我，因为我曾经说过，我在Dan Friedman的两门课程B521（程序语言理论)和B621（高级程序语言理论）都得了A+。只要提到我，他们就会拿出这个把柄来，好像我是一个只在乎分数的肤浅的人。实际上我觉…</p><a class="version-diff-link" href="diff.html?data=diffs%2F7f6edf7fa00aeea2.json&amp;to=blog-cn_2015_03_13_a-plus_20150324.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_03_13_a-plus_20150314.html">2015-03-14</a></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
+
+        <h1 class="article-title">我为什么在乎这一个A+</h1>
 
     <p>我知道有些人至今仍然嘲笑和鄙视我，因为我曾经说过，我在Dan Friedman的两门课程B521（程序语言理论)和B621（高级程序语言理论）都得了A+。只要提到我，他们就会拿出这个把柄来，好像我是一个只在乎分数的肤浅的人。实际上我觉得这些人只是为了鄙视而鄙视，所以他们发现貌似一个把柄，也不搞清楚Dan Friedman是谁，也不搞清楚这个A+的分量，拿着半截就开跑，抓住不放了。所以即使我没提过这分数的事情，他们一样会找到其它话题来损我。我一直都懒得回应这些人的言论，不过今天我有兴致显示一下自己的价值，所以想花点时间告诉你，这个A+到底意味着什么。</p>
 
@@ -84,15 +84,16 @@
 <p>本来不想这么赤裸裸的跟人比较的，然而我发现我的话语权和我对事物的认识深度比起来，实在相差太多。当我说到一些事情的时候，经常有人抬出这些人的语录来压制，说得好像圣经似的，对我各种评判，所以觉得有必要特此说明一下。这些大牛在我心目中真的一点权威都没有的，我反而清楚他们肚子里到底有多少货，思维方式有哪些误区和局限性。</p>
 
 <p>也许我现在可以毫不担心的告诉你了，我在<a href="http://en.wikipedia.org/wiki/R._Kent_Dybvig">Kent Dybvig</a>的编译器课程上得的也是A+。Kent恐怕是世界上最厉害的编译器作者，他几乎从来不给人A+，而我恐怕是他20多年来最厉害的一个学生。我们做了一个Scheme编译器，它的难度和工作量，是C语言编译器的两倍以上。由于我喜欢别出心裁，不按他的写法，我的课堂编译器的某些方面，其实超越了他的Chez Scheme。比如，我的编译器曾一度生成比他更高效的X64机器指令。然而Kent很会背地里偷学武功，闷声发大财。据课程助教说，Kent有几次偷偷在我的代码上做“侦探工作”挺久…… 再加上他几十年深藏不露的<a href="http://www.cs.indiana.edu/~dyb/pubs/hocs.pdf">经验</a>，所以他现在恐怕仍然比我强 :)</p>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

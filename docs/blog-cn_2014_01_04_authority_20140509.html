@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">14</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,9 +46,20 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2014_01_04_authority_20140109.html" >2014-01-09</a> <a href="blog-cn_2014_01_04_authority_20140111.html" >2014-01-11</a> <a href="blog-cn_2014_01_04_authority_20140113.html" >2014-01-13</a> <a href="blog-cn_2014_01_04_authority_20140117.html" >2014-01-17</a> <a href="blog-cn_2014_01_04_authority_20140509.html" class="current">2014-05-09</a> <a href="blog-cn_2014_01_04_authority_20141226.html" >2014-12-26</a> <a href="blog-cn_2014_01_04_authority_20150119.html" >2015-01-19</a> <a href="blog-cn_2014_01_04_authority_20150206.html" >2015-02-06</a> <a href="blog-cn_2014_01_04_authority_20161001.html" >2016-10-01</a> <a href="blog-cn_2014_01_04_authority_20170506.html" >2017-05-06</a> <a href="blog-cn_2014_01_04_authority_20171205.html" >2017-12-05</a> <a href="blog-cn_2014_01_04_authority_20180307.html" >2018-03-07</a> <a href="blog-cn_2014_01_04_authority_20200217.html" >2020-02-17</a> <a href="blog-cn_2014_01_04_authority_20240524.html" >2024-05-24</a></div>
-        <h2>我和权威的故事</h2>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_01_04_authority_20240524.html">2024-05-24</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2Fe0976806dca0d65b.json&amp;to=blog-cn_2014_01_04_authority_20240524.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_01_04_authority_20200217.html">2020-02-17</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2Fe0976806dca0d65b.json&amp;to=blog-cn_2014_01_04_authority_20200217.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_01_04_authority_20180307.html">2018-03-07</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2Fe0976806dca0d65b.json&amp;to=blog-cn_2014_01_04_authority_20180307.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_01_04_authority_20171205.html">2017-12-05</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2Fe0976806dca0d65b.json&amp;to=blog-cn_2014_01_04_authority_20171205.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_01_04_authority_20170506.html">2017-05-06</a></div><p class="version-diff-summary">较前版：+0 −0 修改 22</p><p class="version-preview">Donald Knuth, Dennis Ritchie, Ken Thompson, Rob Pike, … 就是通过这些途径成为了很多计算机学生的权威。以至于几十年以后，他们的一些历史遗留下来的糟糕设计和错误思想还被很多人奉为神圣。</p><a class="version-diff-link" href="diff.html?data=diffs%2Fe0976806dca0d65b.json&amp;to=blog-cn_2014_01_04_authority_20170506.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_01_04_authority_20161001.html">2016-10-01</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2Fe0976806dca0d65b.json&amp;to=blog-cn_2014_01_04_authority_20161001.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_01_04_authority_20150206.html">2015-02-06</a></div><p class="version-diff-summary">较前版：+0 −1 修改 0</p><p class="version-preview">（王垠 yinwang.org 版权所有，未经许可，请勿转载）</p><a class="version-diff-link" href="diff.html?data=diffs%2Fe0976806dca0d65b.json&amp;to=blog-cn_2014_01_04_authority_20150206.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_01_04_authority_20150119.html">2015-01-19</a></div><p class="version-diff-summary">较前版：+1 −0 修改 1</p><p class="version-preview">师兄师姐看到我用 TeX，说怎么折腾这么过时的玩意儿。我很气愤他们以及国内学术界居然都用 Word 排版论文，就开始针锋相对，写出一系列煽动文章鼓吹 TeX 的种种好处，打击“所见即所得”这种低智商玩意儿。这还不够，又开始折腾 Knu…</p><a class="version-diff-link" href="diff.html?data=diffs%2Fe0976806dca0d65b.json&amp;to=blog-cn_2014_01_04_authority_20150119.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_01_04_authority_20141226.html">2014-12-26</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2Fe0976806dca0d65b.json&amp;to=blog-cn_2014_01_04_authority_20141226.html">查看差异</a></li><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2014-05-09</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">较前版：+37 −3 修改 20</p><p class="version-preview">（王垠 yinwang.org 版权所有，未经许可，请勿转载）</p><a class="version-diff-link" href="diff.html?data=diffs%2Fe0976806dca0d65b.json&amp;to=blog-cn_2014_01_04_authority_20140509.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_01_04_authority_20140117.html">2014-01-17</a></div><p class="version-diff-summary">较前版：+2 −0 修改 5</p><p class="version-preview">评论 Unix 和它的后裔们总是一件尴尬的事情，因为你提到它们的任何一个缺点，都会被很多人认为是优点。GNU 的含义是“GNU is Not Unix”，但很可惜的是 GNU 和 Linux 的设计从来没有摆脱过 Unix 思想的束缚…</p><a class="version-diff-link" href="diff.html?data=diffs%2Fe0976806dca0d65b.json&amp;to=blog-cn_2014_01_04_authority_20140117.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_01_04_authority_20140113.html">2014-01-13</a></div><p class="version-diff-summary">较前版：+8 −0 修改 9</p><p class="version-preview">上大学以前的人因为没有专业，所以还不怎么崇拜权威，大不了追追歌星，影星，球星啥的。而进了大学之后，就会开始对本领域的权威耳濡目染。一遍，两遍，一千遍的听到同学们仰慕某“牛人”或者“大师”的名字，虽然从来没亲身见过，不知不觉就对这人产生…</p><a class="version-diff-link" href="diff.html?data=diffs%2Fe0976806dca0d65b.json&amp;to=blog-cn_2014_01_04_authority_20140113.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_01_04_authority_20140111.html">2014-01-11</a></div><p class="version-diff-summary">较前版：+0 −0 修改 1</p><p class="version-preview">Cornell 的研究可以用“与时俱进”来形容，什么热门搞什么。当时 Facebook 和社交网络正在“崛起”，所以系里最热门的一个教授就是研究社交网络的。我去听过他几堂课，他用最容易的图论算法分析一些社交网络数据，然后得出一些“理论…</p><a class="version-diff-link" href="diff.html?data=diffs%2Fe0976806dca0d65b.json&amp;to=blog-cn_2014_01_04_authority_20140111.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_01_04_authority_20140109.html">2014-01-09</a></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
+
+        <h1 class="article-title">我和权威的故事</h1>
 
 <p>（王垠 yinwang.org 版权所有，未经许可，请勿转载）</p>
 
@@ -245,15 +245,16 @@
 <h3>后记（关于 IU）</h3>
 
 <p>有些人看了我的文章介绍在 IU 的经历，告诉我他们申请了 IU。我觉得有必要免责声明一下：我没想到，也不希望有人因为我的文章而去 IU，<a href="http://en.wiktionary.org/wiki/your_mileage_may_vary">YMMV</a> (your mileage may vary)。由于我有所准备，所以对于 Friedman 的教学如鱼得水。很多同学也说学到很多，可是有一些其他人告诉我他们觉得 Friedman 的课他们听起来很吃力，只能说是勉强过关。而且我只介绍了 IU 好的方面，却把不大好的地方一笔带过了。我在 IU 也有很艰难的时候。现在的情况是 Kent Dybvig 已经离开了 IU，加入了 Cisco。他的公司 Cadence Research Systems 和 Chez Scheme 也并入了 Cisco。Dan Friedman 由于年纪原因说不准还带不带学生。最近引进了一些貌似不错的助理教授，但是我跟他们都不熟。我的经验是助理教授一般都会为了研究资金，为了升为正教授而做一些身不由己的事情。其他的 CS 方向我都说不准 IU 是什么水平，所以还请同学们自己斟酌。我可以毫无疑问的一点是，IU 有非常美丽的校园，大大的超过清华，北大，Cornell，Stanford，MIT。</p>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

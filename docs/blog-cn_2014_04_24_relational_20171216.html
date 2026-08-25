@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">11</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,27 +46,21 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2014_04_24_relational_20090101.html" >2009-01-01</a> <a href="blog-cn_2014_04_24_relational_20151214.html" >2015-12-14</a> <a href="blog-cn_2014_04_24_relational_20160926.html" >2016-09-26</a> <a href="blog-cn_2014_04_24_relational_20170510.html" >2017-05-10</a> <a href="blog-cn_2014_04_24_relational_20171025.html" >2017-10-25</a> <a href="blog-cn_2014_04_24_relational_20171203.html" >2017-12-03</a> <a href="blog-cn_2014_04_24_relational_20171216.html" class="current">2017-12-16</a> <a href="blog-cn_2014_04_24_relational_20190703.html" >2019-07-03</a> <a href="blog-cn_2014_04_24_relational_20191031.html" >2019-10-31</a> <a href="blog-cn_2014_04_24_relational_20200228.html" >2020-02-28</a> <a href="blog-cn_2014_04_24_relational_20240416.html" >2024-04-16</a></div>
-        <script>
-            if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent))
-            {
-               document.body.classList.add('mobile');
-            }
-        </script>
 
-        <!--
-        <div class="ad-banner">
-            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <ins class="adsbygoogle"
-                    data-ad-client="ca-pub-1331524016319584"
-                    data-ad-slot="6657867155"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-        </div>
-        -->
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_04_24_relational_20240416.html">2024-04-16</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2Fc2fd13a7a8845964.json&amp;to=blog-cn_2014_04_24_relational_20240416.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_04_24_relational_20200228.html">2020-02-28</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2Fc2fd13a7a8845964.json&amp;to=blog-cn_2014_04_24_relational_20200228.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_04_24_relational_20191031.html">2019-10-31</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2Fc2fd13a7a8845964.json&amp;to=blog-cn_2014_04_24_relational_20191031.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_04_24_relational_20190703.html">2019-07-03</a></div><p class="version-diff-summary">较前版：+10 −0 修改 17</p><p class="version-preview">每当我调侃关系式数据库，就会有人说，SQL 和关系式数据库的设计偏离了 E. F. Codd 最初的关系式理论，关系式理论和关系式模型本身还是很先进的，只不过实现的时候被人搞砸了。</p><a class="version-diff-link" href="diff.html?data=diffs%2Fc2fd13a7a8845964.json&amp;to=blog-cn_2014_04_24_relational_20190703.html">查看差异</a></li><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2017-12-16</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2Fc2fd13a7a8845964.json&amp;to=blog-cn_2014_04_24_relational_20171216.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_04_24_relational_20171203.html">2017-12-03</a></div><p class="version-diff-summary">较前版：+7 −2 修改 6</p><p class="version-preview">作者:王垠</p><a class="version-diff-link" href="diff.html?data=diffs%2Fc2fd13a7a8845964.json&amp;to=blog-cn_2014_04_24_relational_20171203.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_04_24_relational_20171025.html">2017-10-25</a></div><p class="version-diff-summary">较前版：+13 −1 修改 3</p><p class="version-preview">作者:王垠</p><a class="version-diff-link" href="diff.html?data=diffs%2Fc2fd13a7a8845964.json&amp;to=blog-cn_2014_04_24_relational_20171025.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_04_24_relational_20170510.html">2017-05-10</a></div><p class="version-diff-summary">较前版：+0 −17 修改 0</p><p class="version-preview">其实相当于以下C语言的结构数组：</p><a class="version-diff-link" href="diff.html?data=diffs%2Fc2fd13a7a8845964.json&amp;to=blog-cn_2014_04_24_relational_20170510.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_04_24_relational_20160926.html">2016-09-26</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2Fc2fd13a7a8845964.json&amp;to=blog-cn_2014_04_24_relational_20160926.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_04_24_relational_20151214.html">2015-12-14</a></div><p class="version-diff-summary">较前版：+7 −2 修改 6</p><p class="version-preview">作者:王垠</p><a class="version-diff-link" href="diff.html?data=diffs%2Fc2fd13a7a8845964.json&amp;to=blog-cn_2014_04_24_relational_20151214.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_04_24_relational_20090101.html">2009-01-01</a></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
 
         <div>
-            <h2>关系模型的实质</h2>
+            <h1 class="article-title">关系模型的实质</h1>
             <p>每当我批评关系式数据库，就会有人说，SQL和关系式数据库的设计，其实偏离了E.F.Codd最初的关系式理论。关系式理论和关系式模型，本身还是很好的，只不过被人实现的时候搞砸了。如果你看透了本质，就会发现这只是一个托词。关系式数据库的问题是根源性的，这个问题其实源自关系式理论本身，而不只是具体的实现。</p>
 
 <p>人们总是喜欢制造这些概念上的壁垒，用以防止自己的理论受到攻击。把过错推到SQL或者IBM身上，是关系式数据库领域常见的托词，用以掩盖其本质上的空洞和设计上的失误。在下面的讨论里为了方便，我会使用少量SQL来表示关系模型里面对应的概念，但这并不削弱我对关系模型的批评，因为它们表示的是关系式模型里面的核心概念。</p>
@@ -142,15 +125,16 @@
 <p>其实数据库的问题哪有那么困难，它其实跟“远过程调用”（RPC）没什么两样。只要你有一个程序语言，你就可以发送这语言的代码，到一个“数据服务器”。服务器接受并执行这代码，对数据进行索引，查询和重构，最后返回结果给客户端。如果你看清了SQL的实质，就会发现这样的“过程式设计”，其实并不会损失SQL的“描述”能力。反而由于过程式语言的简单，直接和普遍，使得开发效率大大提高。NoSQL数据库比起SQL和关系式数据库，存在某种优势，也就是因为它们在朦胧中朝着这个“RPC”的方向发展。</p>
 
         </div>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

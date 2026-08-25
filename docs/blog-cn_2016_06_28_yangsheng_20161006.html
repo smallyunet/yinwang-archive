@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">7</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,10 +46,21 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2016_06_28_yangsheng_20160701.html" >2016-07-01</a> <a href="blog-cn_2016_06_28_yangsheng_20161006.html" class="current">2016-10-06</a> <a href="blog-cn_2016_06_28_yangsheng_20170504.html" >2017-05-04</a> <a href="blog-cn_2016_06_28_yangsheng_20171203.html" >2017-12-03</a> <a href="blog-cn_2016_06_28_yangsheng_20180305.html" >2018-03-05</a> <a href="blog-cn_2016_06_28_yangsheng_20200217.html" >2020-02-17</a> <a href="blog-cn_2016_06_28_yangsheng_20240416.html" >2024-04-16</a></div>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_06_28_yangsheng_20240416.html">2024-04-16</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F199bc582db4326d4.json&amp;to=blog-cn_2016_06_28_yangsheng_20240416.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_06_28_yangsheng_20200217.html">2020-02-17</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F199bc582db4326d4.json&amp;to=blog-cn_2016_06_28_yangsheng_20200217.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_06_28_yangsheng_20180305.html">2018-03-05</a></div><p class="version-diff-summary">较前版：+1 −0 修改 5</p><p class="version-preview">第一类理论，就是把人们早已熟悉的，久经考验的常识，比如早晚要刷牙之类的，拿来包装成“新理论”。这些理论当然错不到哪里去，然而却是每个人从小都已熟知的。现在挂着“专家”头衔的人出来一宣传，这些斯通见惯的常识，忽然间被老人家们当成了最新的…</p><a class="version-diff-link" href="diff.html?data=diffs%2F199bc582db4326d4.json&amp;to=blog-cn_2016_06_28_yangsheng_20180305.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_06_28_yangsheng_20171203.html">2017-12-03</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F199bc582db4326d4.json&amp;to=blog-cn_2016_06_28_yangsheng_20171203.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_06_28_yangsheng_20170504.html">2017-05-04</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F199bc582db4326d4.json&amp;to=blog-cn_2016_06_28_yangsheng_20170504.html">查看差异</a></li><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2016-10-06</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F199bc582db4326d4.json&amp;to=blog-cn_2016_06_28_yangsheng_20161006.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_06_28_yangsheng_20160701.html">2016-07-01</a></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
+
         <div>
-                            <h2>养生节目带来的危害</h2>
+                            <h1 class="article-title">养生节目带来的危害</h1>
                             <p>国内总是流行各种各样的“养生节目”，深受中老年人的欢迎。比如我爸妈，有时无聊了，就会转发给我一些养生节目，比如这个：『<a href="http://v.qq.com/x/cover/kieigw8nv6q7fj0/b0016b9qoy1.html">多喝白开水带来的危害</a>』。这节目说，有人得了过敏性鼻炎，喷嚏鼻涕不断，严重脱发，头都半秃了，虚弱无力，性能力衰退…… 最后专家得出结论，是因为他每天早上喝一杯凉水导致的！</p>
 
 <p>据我观察，这些养生节目里面的理论，基本可以归为两种：好的和新的。可惜好的理论都不新，新的理论都不好。</p>
@@ -86,15 +86,16 @@
 <p>这些养生节目，经常把严重身体问题的起因，归结为某些生活上的小习惯，吃什么，不吃什么之类，很容易让人忽略真正的起因，更加严重的因素，这属于一种误导。中老年人看了这些节目，往往盲目的认为坚持或者改变生活上的一些小习惯，就可以避免或者修正一些严重的身体疾患，结果耽误了真正科学研究出来的补救办法。在这种意义上，养生节目是有危害性的。我建议中老年人少看这种节目，多跟真正的医生了解科学的医疗知识。</p>
 
                         </div>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

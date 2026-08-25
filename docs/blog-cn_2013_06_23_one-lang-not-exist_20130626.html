@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,7 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,9 +38,11 @@
         </div>
     </nav>
 
-    <div class="inner">
-        
-        <h2>“One语言”是不存在的</h2>
+
+
+    <main class="inner" id="main-content">
+
+        <h1 class="article-title">“One语言”是不存在的</h1>
 
 <p>昨天心血来潮，把我对一种“终极语言”的很多方面想法记录了下来。然而事后我却发现挺多矛盾的地方，现在我已经很难想象这样的语言能够成为“唯一”的程序语言。对人脑的工作原理也纯属我自己的臆测，没有经过任何科学实验的检验。</p>
 
@@ -88,15 +71,16 @@
 <p>Haskell 有一个 EDSL 叫 Accelerate 就是这样实现的，它使用 type class 来重载操作符，用于 GPU 的操作。然而我却发现使用它的时候，有时候我必须打进一些莫名其妙的，跟我想要表达的概念毫无关系东西。这是因为重载的能力是有限的，它并不能像宏一样，可以任意的拆解和拼装整个表达式。所以 Accelerate 在很多时候需要你写一些特定的东西，这样它才能避免歧义，实现正确的重载操作。到后来，我发现这些多余的符号成为了非常碍眼的东西，让我无法直接的看到我所要表达的概念。</p>
 
 <p>所以我觉得 Lisp 和 Scheme 的宏是很重要的东西。然而有一个前提：宏一定要少用，要在非常有必要的时候才定义宏。否则你的语言里就会出现很多奇怪的结构，这些结构没法用函数调用的语义来理解，这样就造成了程序员之间交流的障碍。在 Common Lisp 里面有多种很炫的 looping macro 就这样的例子，它们让 Common Lisp 的程序难以理解。</p>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

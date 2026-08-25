@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">8</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,9 +46,20 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2019_12_24_compilers_20090101.html" class="current">2009-01-01</a> <a href="blog-cn_2019_12_24_compilers_20191225.html" >2019-12-25</a> <a href="blog-cn_2019_12_24_compilers_20191227.html" >2019-12-27</a> <a href="blog-cn_2019_12_24_compilers_20200103.html" >2020-01-03</a> <a href="blog-cn_2019_12_24_compilers_20200225.html" >2020-02-25</a> <a href="blog-cn_2019_12_24_compilers_20200326.html" >2020-03-26</a> <a href="blog-cn_2019_12_24_compilers_20200418.html" >2020-04-18</a> <a href="blog-cn_2019_12_24_compilers_20240416.html" >2024-04-16</a></div>
-        <h1>我不是编译器专家</h1>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2019_12_24_compilers_20240416.html">2024-04-16</a></div><p class="version-diff-summary">较前版：+0 −1 修改 0</p><p class="version-preview">作者：王垠</p><a class="version-diff-link" href="diff.html?data=diffs%2Fb117870bfead3d5b.json&amp;to=blog-cn_2019_12_24_compilers_20240416.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2019_12_24_compilers_20200418.html">2020-04-18</a></div><p class="version-diff-summary">较前版：+1 −0 修改 0</p><p class="version-preview">作者：王垠</p><a class="version-diff-link" href="diff.html?data=diffs%2Fb117870bfead3d5b.json&amp;to=blog-cn_2019_12_24_compilers_20200418.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2019_12_24_compilers_20200326.html">2020-03-26</a></div><p class="version-diff-summary">较前版：+18 −0 修改 2</p><p class="version-preview">在《Chez Scheme 的传说》一文中，我提到在 Cornell 的时候选过一门编译器课程，后来在半学期的时候 drop 掉了。现在回想起这段历史，发现它对“教育理念”这件事挺有启发意义。教育是什么，是为了什么？Cornell 的…</p><a class="version-diff-link" href="diff.html?data=diffs%2Fb117870bfead3d5b.json&amp;to=blog-cn_2019_12_24_compilers_20200326.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2019_12_24_compilers_20200225.html">2020-02-25</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2Fb117870bfead3d5b.json&amp;to=blog-cn_2019_12_24_compilers_20200225.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2019_12_24_compilers_20200103.html">2020-01-03</a></div><p class="version-diff-summary">较前版：+9 −0 修改 21</p><p class="version-preview">我曾经提到的 DSL 例子，就是这样的两个人。他们都自称做过编译器，成天在我面前高谈阔论，甚至在最基础的概念上班门弄斧，显示出一副“教育”其他人的姿态。其实他们只有一个人做过 parser，还不算是真正的编译器工作，却总显示出高深莫测…</p><a class="version-diff-link" href="diff.html?data=diffs%2Fb117870bfead3d5b.json&amp;to=blog-cn_2019_12_24_compilers_20200103.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2019_12_24_compilers_20191227.html">2019-12-27</a></div><p class="version-diff-summary">较前版：+13 −0 修改 16</p><p class="version-preview">工作多年以来，我深刻体会到一个现象，那就是做过“编译器”工作的人，哪怕只做了点皮毛，都容易产生高人一等的心理，以至于在与人合作中出现各种问题。由于他们往往也存在偏执心理和理想主义，所以在恶化人际关系的同时，也可能设计出非常不合理的软件…</p><a class="version-diff-link" href="diff.html?data=diffs%2Fb117870bfead3d5b.json&amp;to=blog-cn_2019_12_24_compilers_20191227.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2019_12_24_compilers_20191225.html">2019-12-25</a></div><p class="version-diff-summary">较前版：+0 −41 修改 19</p><p class="version-preview">工作多年以来，我深刻的体会到一个规律，那就是做过编译器工作的人，似乎很容易产生高人一等的心理，以至于在与人合作中出现各种问题。由于他们往往也存在偏执心理和理想主义，所以在恶化人际关系的同时，也可能设计出非常不合理的软件构架，浪费大量的…</p><a class="version-diff-link" href="diff.html?data=diffs%2Fb117870bfead3d5b.json&amp;to=blog-cn_2019_12_24_compilers_20191225.html">查看差异</a></li><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2009-01-01</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
+
+        <h1 class="article-title">我不是编译器专家</h1>
 <div class="date">2009-01-01</div>
 <p>作者：王垠</p>
 <p>工作多年以来，我深刻体会到一个现象，那就是做过“编译器”工作的人，哪怕只做了点皮毛，都容易产生高人一等的心理，以至于在与人合作中出现各种问题。由于他们往往也存在偏执心理和理想主义，所以在恶化人际关系的同时，也可能设计出非常不合理的软件构架，浪费大量的人力物力。</p>
@@ -130,15 +130,16 @@
 <p>由于编译器人的性格特征，除非一个公司专门要做编译器，否则对于曾经做过编译器，想换个方向的求职者，在面试的时候最好深刻了解他们的性格，态度和做事方式，看他们是否能看淡这些，能否平等对待其他人，能否理性而实在的对待工程。否则自视很高的“编译器人”进了公司，很可能对团队成为一种灾难。</p>
 <p>我写这篇文章是为了警醒广大 IT 公司，也是为了在精神上支持其它程序员。我希望他们不要被编译器的“难度”迷惑了，不要被编译器人吓唬和打压。你们做的并不是更低级，更无聊的工作。正好相反，真正可以发挥创造力的空间并不在底层的编译器一类的东西，而在更接近应用和现实的地方。</p>
 <p>每当有人向我表示编译器高深莫测，向往却又高攀不上，我都会给他打一个比方：做编译器就像做菜刀。你可以做出非常好的菜刀，然而你终究只是一个铁匠。铁匠不知道如何用这菜刀做出五花八门，让人心旷神怡，米其林级别的菜肴，因为那是大厨的工作。要做菜还是要打铁，那是你自己的选择，并没有贵贱之分。</p>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

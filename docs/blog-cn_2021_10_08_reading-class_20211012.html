@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">5</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,17 +46,21 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2021_10_08_reading-class_20211008.html" >2021-10-08</a> <a href="blog-cn_2021_10_08_reading-class_20211009.html" >2021-10-09</a> <a href="blog-cn_2021_10_08_reading-class_20211010.html" >2021-10-10</a> <a href="blog-cn_2021_10_08_reading-class_20211012.html" class="current">2021-10-12</a> <a href="blog-cn_2021_10_08_reading-class_20211013.html" >2021-10-13</a></div>
-        <script>
-            if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent))
-            {
-               document.body.classList.add('mobile');
-            }
-        </script>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2021_10_08_reading-class_20211013.html">2021-10-13</a></div><p class="version-diff-summary">较前版：+4 −0 修改 1</p><p class="version-preview">报名细节</p><a class="version-diff-link" href="diff.html?data=diffs%2F7e55eef7191b5002.json&amp;to=blog-cn_2021_10_08_reading-class_20211013.html">查看差异</a></li><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2021-10-12</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">较前版：+0 −1 修改 1</p><p class="version-preview">今年上海房租整体上涨超过 10%，有朋友建议我的课程涨价，但我觉得疫情已经影响了很多人的生活，还是不要给大家雪上加霜了。世界最严重的问题是愚民化，只有知识的普及才能改变这种现状，所以决定课程价格暂时保持不变。虽然这还是可能给一些人造成…</p><a class="version-diff-link" href="diff.html?data=diffs%2F7e55eef7191b5002.json&amp;to=blog-cn_2021_10_08_reading-class_20211012.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2021_10_08_reading-class_20211010.html">2021-10-10</a></div><p class="version-diff-summary">较前版：+3 −0 修改 2</p><p class="version-preview">课程内容按照传统的教育模式，是大学一直到博士才可能掌握的，而我的教学用了仅仅 7 节课，已经让一个 13 岁少年深入地掌握了这些，这是让我都惊讶的事情。所以我觉得内容无需贪多，而是着重于深刻理解。类型系统的内容，我决定放到将来的“高级…</p><a class="version-diff-link" href="diff.html?data=diffs%2F7e55eef7191b5002.json&amp;to=blog-cn_2021_10_08_reading-class_20211010.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2021_10_08_reading-class_20211009.html">2021-10-09</a></div><p class="version-diff-summary">较前版：+0 −1 修改 2</p><p class="version-preview">接下来的阅读班会有少许改动。随着教学的进行，我会逐渐把中文版的练习翻译成英文，加入合理的提示，一起写进书里。另外，根据实际经验，我决定去掉最后一课“类型系统”，因为大部分入门者并不需要深入理解类型系统，能掌握解释器的原理就已经很出色了…</p><a class="version-diff-link" href="diff.html?data=diffs%2F7e55eef7191b5002.json&amp;to=blog-cn_2021_10_08_reading-class_20211009.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2021_10_08_reading-class_20211008.html">2021-10-08</a></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
 
         <div>
-            <h2>计算机科学阅读班继续招生</h2>
+            <h1 class="article-title">计算机科学阅读班继续招生</h1>
             <p>每一期的计算机科学基础班，在教别人的同时，似乎都会伴随着我自己新一轮的探索。不仅在于改进教学质量，而且通过学习和研究新的东西，进一步理解知识和教育到底是怎么回事。从计算机科学，到艺术，外语，音乐，科学…… 每一个领域的教育，我都发现很多的误区和可以改进的地方，最后被我挖掘出鲜为人知的核心基础知识。</p>
 
 <p>真正的知识是什么，它在哪里，似乎总是一个问题。不真正重要的标准，经常掩盖了核心的知识，使得人们从小学到老，居然都没能掌握一个领域关键的基础。这就是我这一年多以来反复发现的问题。同样的问题，我已经在二十多年的计算机科学生涯中深刻体会到，然后花了一年的时间，发现了其他领域的类似问题。</p>
@@ -93,29 +86,16 @@
 <p>我感谢所有参加了“计算机科学基础班”和“计算机科学阅读班”的同学，是你们让过去的一年成为了我人生中最充实，最有价值的一年，超越了以往的任何时候，是你们帮助了改善教育的目标一步步走向实现。希望你们继续进步！</p>
 
         </div>
+    </main>
 
-        <!--
-        <div class="ad-banner">
-            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <ins class="adsbygoogle"
-                    data-ad-client="ca-pub-1331524016319584"
-                    data-ad-slot="6657867155"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-        </div>
 
-        <script data-ad-client="ca-pub-1331524016319584" async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
-        </script>
-        -->
-    </div>
-
-    
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

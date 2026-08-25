@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">8</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,27 +46,21 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2016_03_19_self-driving-car-liability_20090101.html" >2009-01-01</a> <a href="blog-cn_2016_03_19_self-driving-car-liability_20160322.html" >2016-03-22</a> <a href="blog-cn_2016_03_19_self-driving-car-liability_20160919.html" >2016-09-19</a> <a href="blog-cn_2016_03_19_self-driving-car-liability_20171123.html" >2017-11-23</a> <a href="blog-cn_2016_03_19_self-driving-car-liability_20171216.html" class="current">2017-12-16</a> <a href="blog-cn_2016_03_19_self-driving-car-liability_20180302.html" >2018-03-02</a> <a href="blog-cn_2016_03_19_self-driving-car-liability_20200228.html" >2020-02-28</a> <a href="blog-cn_2016_03_19_self-driving-car-liability_20240421.html" >2024-04-21</a></div>
-        <script>
-            if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent))
-            {
-               document.body.classList.add('mobile');
-            }
-        </script>
 
-        <!--
-        <div class="ad-banner">
-            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <ins class="adsbygoogle"
-                    data-ad-client="ca-pub-1331524016319584"
-                    data-ad-slot="6657867155"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-        </div>
-        -->
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_03_19_self-driving-car-liability_20240421.html">2024-04-21</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2Ff39b48200346c5b5.json&amp;to=blog-cn_2016_03_19_self-driving-car-liability_20240421.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_03_19_self-driving-car-liability_20200228.html">2020-02-28</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2Ff39b48200346c5b5.json&amp;to=blog-cn_2016_03_19_self-driving-car-liability_20200228.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_03_19_self-driving-car-liability_20180302.html">2018-03-02</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2Ff39b48200346c5b5.json&amp;to=blog-cn_2016_03_19_self-driving-car-liability_20180302.html">查看差异</a></li><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2017-12-16</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2Ff39b48200346c5b5.json&amp;to=blog-cn_2016_03_19_self-driving-car-liability_20171216.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_03_19_self-driving-car-liability_20171123.html">2017-11-23</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2Ff39b48200346c5b5.json&amp;to=blog-cn_2016_03_19_self-driving-car-liability_20171123.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_03_19_self-driving-car-liability_20160919.html">2016-09-19</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2Ff39b48200346c5b5.json&amp;to=blog-cn_2016_03_19_self-driving-car-liability_20160919.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_03_19_self-driving-car-liability_20160322.html">2016-03-22</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2Ff39b48200346c5b5.json&amp;to=blog-cn_2016_03_19_self-driving-car-liability_20160322.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_03_19_self-driving-car-liability_20090101.html">2009-01-01</a></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
 
         <div>
-            <h2>为什么自动车完全不可以犯错误</h2>
+            <h1 class="article-title">为什么自动车完全不可以犯错误</h1>
             <p>有人跟我讲，我对Google的自动车要求太苛刻了。人无完人，所以Google的产品也不需要是完美的，只要“够好用”就有市场。世界上有那么多糟糕的司机，酒后驾车的，开车时发短信的，打瞌睡的，判断失误的…… 导致了那么多的车祸，可比Google的自动车差多了。所以自动车不需要完美，只要99.9%的情况下可以正确工作，能大幅度减少车祸率，就是人类的福气了。</p>
 
 <p>首先，现在的情况是，Google自动车现在只能在非常局限的情况下出来：白天，天气好，交通简单，而且就算是这样理想的条件下，一年之中仍然会发生270多起需要“<a href="http://www.forbes.com/sites/brookecrothers/2016/01/13/google-self-driving-car-failures-total-272-over-one-year-but-improvement-seen">人工干预</a>”的事件，所以自动车的“驾驶技术”最后能不能超过最低级别的人类驾驶员，其实还很值得怀疑。其次，就算我们抛开这个问题不谈，假设自动车能够超过绝大部分人类驾驶员，能在99.9%的情况下判断正确，那么它也是不可行的。其实自动车必须能在100%的情况下做出正确的判断，不能犯任何错误，才有可能被人接受。这是为什么呢？</p>
@@ -91,15 +74,16 @@
 <p>明白了吗？只是能从宏观上减少车祸是不够的。自动车的驾驶技术，必须超越世界上最安全的驾驶员，它完全不可以犯错误。现在世界上虽然有许多的车祸，可是因为人是驾驶员，所以责任分摊在很多当事人的头上，谁犯错误谁负责。可是如果Google的自动车进入市场，代替了大部分的驾驶员，以后自动车引起的车祸的责任，全都会落到Google的头上。所以这样的生意，是非常困难而不切实际的。</p>
 
         </div>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

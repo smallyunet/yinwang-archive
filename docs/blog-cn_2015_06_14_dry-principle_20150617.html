@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">10</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,9 +46,20 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2015_06_14_dry-principle_20090101.html" >2009-01-01</a> <a href="blog-cn_2015_06_14_dry-principle_20150617.html" class="current">2015-06-17</a> <a href="blog-cn_2015_06_14_dry-principle_20161008.html" >2016-10-08</a> <a href="blog-cn_2015_06_14_dry-principle_20170510.html" >2017-05-10</a> <a href="blog-cn_2015_06_14_dry-principle_20171025.html" >2017-10-25</a> <a href="blog-cn_2015_06_14_dry-principle_20171216.html" >2017-12-16</a> <a href="blog-cn_2015_06_14_dry-principle_20191019.html" >2019-10-19</a> <a href="blog-cn_2015_06_14_dry-principle_20191206.html" >2019-12-06</a> <a href="blog-cn_2015_06_14_dry-principle_20200228.html" >2020-02-28</a> <a href="blog-cn_2015_06_14_dry-principle_20240416.html" >2024-04-16</a></div>
-        <h2>DRY原则的误区</h2>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_06_14_dry-principle_20240416.html">2024-04-16</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F7b1566358261f6e1.json&amp;to=blog-cn_2015_06_14_dry-principle_20240416.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_06_14_dry-principle_20200228.html">2020-02-28</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F7b1566358261f6e1.json&amp;to=blog-cn_2015_06_14_dry-principle_20200228.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_06_14_dry-principle_20191206.html">2019-12-06</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F7b1566358261f6e1.json&amp;to=blog-cn_2015_06_14_dry-principle_20191206.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_06_14_dry-principle_20191019.html">2019-10-19</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F7b1566358261f6e1.json&amp;to=blog-cn_2015_06_14_dry-principle_20191019.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_06_14_dry-principle_20171216.html">2017-12-16</a></div><p class="version-diff-summary">较前版：+3 −1 修改 4</p><p class="version-preview">很多编程的人，喜欢鼓吹各种各样的“原则”，比如KISS原则，DRY原则…… 总有人把这些所谓原则奉为教条或者秘方，以为兢兢业业地遵循这些，空喊几个口号，就可以写出好的代码。同时，他们对违反这些原则的人嗤之以鼻——你不知道，不遵循或者藐…</p><a class="version-diff-link" href="diff.html?data=diffs%2F7b1566358261f6e1.json&amp;to=blog-cn_2015_06_14_dry-principle_20171216.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_06_14_dry-principle_20171025.html">2017-10-25</a></div><p class="version-diff-summary">较前版：+10 −0 修改 3</p><p class="version-preview">作者:王垠</p><a class="version-diff-link" href="diff.html?data=diffs%2F7b1566358261f6e1.json&amp;to=blog-cn_2015_06_14_dry-principle_20171025.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_06_14_dry-principle_20170510.html">2017-05-10</a></div><p class="version-diff-summary">较前版：+0 −12 修改 1</p><p class="version-preview">很多编程的人，喜欢鼓吹各种各样的“原则”，比如KISS原则，DRY原则…… 总有人把这些所谓原则奉为教条或者秘方，以为兢兢业业地遵循这些，空喊几个口号，就可以写出好的代码。同时，他们对违反这些原则的人嗤之以鼻——你不知道，不遵循或者藐…</p><a class="version-diff-link" href="diff.html?data=diffs%2F7b1566358261f6e1.json&amp;to=blog-cn_2015_06_14_dry-principle_20170510.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_06_14_dry-principle_20161008.html">2016-10-08</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F7b1566358261f6e1.json&amp;to=blog-cn_2015_06_14_dry-principle_20161008.html">查看差异</a></li><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2015-06-17</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">较前版：+3 −1 修改 3</p><p class="version-preview">作者:王垠</p><a class="version-diff-link" href="diff.html?data=diffs%2F7b1566358261f6e1.json&amp;to=blog-cn_2015_06_14_dry-principle_20150617.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_06_14_dry-principle_20090101.html">2009-01-01</a></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
+
+        <h1 class="article-title">DRY原则的误区</h1>
 
     <p>很多编程的人，喜欢鼓吹各种各样的“原则”，比如KISS原则，DRY原则…… 总有人把这些所谓原则奉为教条或者秘方，以为兢兢业业地遵循这些，空喊几个口号，就可以写出好的代码。同时，他们对违反这些原则的人嗤之以鼻——你不知道，不遵循或者藐视这些原则，那么你就是菜鸟。所谓“<a href="http://en.wikipedia.org/wiki/Don%27t_repeat_yourself">DRY原则</a>”（Don't Repeat Yourself，不要重复你自己）就是这些教条其中之一。盲目的迷信DRY原则，在实际的工程中带来了各种各样的问题，却经常被忽视。</p>
 
@@ -120,15 +120,16 @@ class B extends C {
 <p>说了这么多，我是在支持DRY，还是反对DRY呢？其实不管是支持还是反对它，都会表示我在乎它，而其实呢，我完全不在乎这类原则，因为它们非常的肤浅。这就像你告诉我说你有一个重大的发现，那就是“1+1=2”，我该支持你还是反对你呢？我才懒得跟你说话。人们写程序，本来自然而然就会在合适的时候进行抽象，避免重复，怎么过了几十年后，某个菜鸟给我们的做法起了个名字叫DRY，反而他成了“大师”一样的人物，我倒要用“DRY”这个词来描述我一直在干的事情呢？所以我根本不愿意提起“DRY”这个名字。</p>
 
 <p>所以我觉得这个DRY原则根本就不应该存在，它是一个根本没有资格提出“原则”的人提出来的。看看他鼓吹的其它低劣东西（比如Agile，Ruby），你就会发现，他是一个兜售减肥药的“软件工程专家”。世界上有太多这样的肤浅的所谓原则，我不想对它们一一进行评价，这是在浪费我的时间。世界上有比这些喜欢提出“原则”的软件工程专家深邃很多的人，他们懂得真正根本的原理。</p>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

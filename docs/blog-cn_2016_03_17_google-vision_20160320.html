@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">7</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,9 +46,20 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2016_03_17_google-vision_20160320.html" class="current">2016-03-20</a> <a href="blog-cn_2016_03_17_google-vision_20160322.html" >2016-03-22</a> <a href="blog-cn_2016_03_17_google-vision_20160330.html" >2016-03-30</a> <a href="blog-cn_2016_03_17_google-vision_20161008.html" >2016-10-08</a> <a href="blog-cn_2016_03_17_google-vision_20170504.html" >2017-05-04</a> <a href="blog-cn_2016_03_17_google-vision_20171124.html" >2017-11-24</a> <a href="blog-cn_2016_03_17_google-vision_20180311.html" >2018-03-11</a></div>
-        <h2>Google的眼光</h2>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_03_17_google-vision_20180311.html">2018-03-11</a></div><p class="version-diff-summary">较前版：+0 −0 修改 35</p><p class="version-preview">你知道吗，Google（Alphabet）要卖掉 Boston Dynamics，一个它收购才没多久的机器人公司。这也意味着，Google 准备完全退出机器人的领域。新闻传言说，是因为 Google 觉得这些机器人太吓人了，把它踢倒在…</p><a class="version-diff-link" href="diff.html?data=diffs%2F2f4516abcb9b192a.json&amp;to=blog-cn_2016_03_17_google-vision_20180311.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_03_17_google-vision_20171124.html">2017-11-24</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F2f4516abcb9b192a.json&amp;to=blog-cn_2016_03_17_google-vision_20171124.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_03_17_google-vision_20170504.html">2017-05-04</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F2f4516abcb9b192a.json&amp;to=blog-cn_2016_03_17_google-vision_20170504.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_03_17_google-vision_20161008.html">2016-10-08</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F2f4516abcb9b192a.json&amp;to=blog-cn_2016_03_17_google-vision_20161008.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_03_17_google-vision_20160330.html">2016-03-30</a></div><p class="version-diff-summary">较前版：+1 −0 修改 3</p><p class="version-preview">Go语言，也是Google最爱炫耀的技术之一。我之前的文章已经分析的很清楚了，Go语言就是一坨屎。每个研究过PL的人，都在嘲笑Go语言的设计，笑掉了大牙。</p><a class="version-diff-link" href="diff.html?data=diffs%2F2f4516abcb9b192a.json&amp;to=blog-cn_2016_03_17_google-vision_20160330.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_03_17_google-vision_20160322.html">2016-03-22</a></div><p class="version-diff-summary">较前版：+0 −0 修改 1</p><p class="version-preview">Google声称D-Wave的机器比普通计算机快一亿倍，用的是什么样的测试呢？他们的测试并不是一个全面的benchmark，它其实只包括一个问题：模拟退火。望文生义你就可以知道，退火这问题，本来就是非常适合用模拟计算机来解决的。D-W…</p><a class="version-diff-link" href="diff.html?data=diffs%2F2f4516abcb9b192a.json&amp;to=blog-cn_2016_03_17_google-vision_20160322.html">查看差异</a></li><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2016-03-20</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
+
+        <h1 class="article-title">Google的眼光</h1>
 
     <p>你知道吗，Google（Alphabet）要卖掉<a href="http://www.bloomberg.com/news/articles/2016-03-17/google-is-said-to-put-boston-dynamics-robotics-unit-up-for-sale">Boston Dynamics</a>，一个它收购才没多久的机器人公司。这也意味着，Google准备完全退出机器人的领域。新闻传言说，是因为Google觉得这些机器人太吓人了，把它踢倒在地，居然能像终结者一样爬起来！还有舆论说Google研究机器人，是想抢走人类的饭碗，所以现在Google为了人类的幸福，放弃了这个计划。呵呵，这借口多么美妙呀！你们真以为Google有这么好心，会为你们的生存着想吗？</p>
 
@@ -140,15 +140,16 @@
 <p>所以总的来说，Google有它的特长。它是一个不错的互联网公司，Google的搜索引擎做得很好，Gmail，收购来的YouTube，地图，Android什么的，也比较好用。但是Google的特长，也就停留在那里了。做其他事情，几乎全都是业余水准，却自以为了不起，喜欢宣传自己，制造高大形象。最近AlphaGo搞得沸沸扬扬，也是一样的用意，煽风造势，以此吸引懵懂没经验的年轻人，进去为它做一些琐碎的杂活，帮助它赚更多的广告钱。</p>
 
 <p>这就是我眼里的Google。</p>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">11</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,9 +46,20 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2014_11_12_interstellar_20150110.html" >2015-01-10</a> <a href="blog-cn_2014_11_12_interstellar_20150127.html" class="current">2015-01-27</a> <a href="blog-cn_2014_11_12_interstellar_20151231.html" >2015-12-31</a> <a href="blog-cn_2014_11_12_interstellar_20161008.html" >2016-10-08</a> <a href="blog-cn_2014_11_12_interstellar_20170510.html" >2017-05-10</a> <a href="blog-cn_2014_11_12_interstellar_20171124.html" >2017-11-24</a> <a href="blog-cn_2014_11_12_interstellar_20180311.html" >2018-03-11</a> <a href="blog-cn_2014_11_12_interstellar_20200228.html" >2020-02-28</a> <a href="blog-cn_2014_11_12_interstellar_20210507.html" >2021-05-07</a> <a href="blog-cn_2014_11_12_interstellar_20230927.html" >2023-09-27</a> <a href="blog-cn_2014_11_12_interstellar_20240602.html" >2024-06-02</a></div>
-        <h2>恶评《星际穿越》</h2>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_11_12_interstellar_20240602.html">2024-06-02</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F200958680445a544.json&amp;to=blog-cn_2014_11_12_interstellar_20240602.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_11_12_interstellar_20230927.html">2023-09-27</a></div><p class="version-diff-summary">较前版：+0 −0 修改 1</p><p class="version-preview">严重的“常理漏洞”。有物理民科朋友看了此片之后兴奋的叫好：片子里的物理学，黑洞原理，居然没有破绽！可是这位朋友虽然了解高深的物理学原理，却缺乏一种重要的，普通人都明白的道理，叫做“常理”。常理决定了特定的人在特定的时候该说什么话，该有…</p><a class="version-diff-link" href="diff.html?data=diffs%2F200958680445a544.json&amp;to=blog-cn_2014_11_12_interstellar_20230927.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_11_12_interstellar_20210507.html">2021-05-07</a></div><p class="version-diff-summary">较前版：+0 −0 修改 1</p><p class="version-preview">&lt;img src=”http://www.yinwang.org/images/interstellar.png” height=400&gt;</p><a class="version-diff-link" href="diff.html?data=diffs%2F200958680445a544.json&amp;to=blog-cn_2014_11_12_interstellar_20210507.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_11_12_interstellar_20200228.html">2020-02-28</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F200958680445a544.json&amp;to=blog-cn_2014_11_12_interstellar_20200228.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_11_12_interstellar_20180311.html">2018-03-11</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F200958680445a544.json&amp;to=blog-cn_2014_11_12_interstellar_20180311.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_11_12_interstellar_20171124.html">2017-11-24</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F200958680445a544.json&amp;to=blog-cn_2014_11_12_interstellar_20171124.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_11_12_interstellar_20170510.html">2017-05-10</a></div><p class="version-diff-summary">较前版：+0 −0 修改 1</p><p class="version-preview">&lt;img src=”http://www.yinwang.org/images/interstellar.png” height=400&gt;</p><a class="version-diff-link" href="diff.html?data=diffs%2F200958680445a544.json&amp;to=blog-cn_2014_11_12_interstellar_20170510.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_11_12_interstellar_20161008.html">2016-10-08</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F200958680445a544.json&amp;to=blog-cn_2014_11_12_interstellar_20161008.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_11_12_interstellar_20151231.html">2015-12-31</a></div><p class="version-diff-summary">较前版：+0 −0 修改 1</p><p class="version-preview">上周末受朋友之邀，去看了红极一时的《星际穿越》（Interstellar）。因为是在首映的第二天，人多不说，票价也贵一些。可惜开演没多久，我就发现这片子简直跟新闻联播一般味同嚼蜡，好不容易熬过那漫长的三个小时，到后面几乎是睁一只眼闭一…</p><a class="version-diff-link" href="diff.html?data=diffs%2F200958680445a544.json&amp;to=blog-cn_2014_11_12_interstellar_20151231.html">查看差异</a></li><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2015-01-27</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">较前版：+0 −1 修改 0</p><p class="version-preview">（王垠 yinwang.org 版权所有，未经许可，请勿转载）</p><a class="version-diff-link" href="diff.html?data=diffs%2F200958680445a544.json&amp;to=blog-cn_2014_11_12_interstellar_20150127.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_11_12_interstellar_20150110.html">2015-01-10</a></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
+
+        <h1 class="article-title">恶评《星际穿越》</h1>
 
     <p><img src="images/interstellar.png" height=400></p>
 
@@ -84,15 +84,16 @@
 
 
 <p>最后，我对观看此片之后深入探讨第一个星球上的大水如何可以弄死人以及最后女宇航员去了哪个星球之类“学术问题”的朋友表示崇高的敬意和深切的慰问！我对此类问题统一的终极答案为：导演的安排！</p>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

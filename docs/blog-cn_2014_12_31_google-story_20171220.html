@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">7</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,27 +46,21 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2014_12_31_google-story_20150104.html" >2015-01-04</a> <a href="blog-cn_2014_12_31_google-story_20150116.html" >2015-01-16</a> <a href="blog-cn_2014_12_31_google-story_20150124.html" >2015-01-24</a> <a href="blog-cn_2014_12_31_google-story_20161001.html" >2016-10-01</a> <a href="blog-cn_2014_12_31_google-story_20170504.html" >2017-05-04</a> <a href="blog-cn_2014_12_31_google-story_20171120.html" >2017-11-20</a> <a href="blog-cn_2014_12_31_google-story_20171220.html" class="current">2017-12-20</a></div>
-        <script>
-            if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent))
-            {
-               document.body.classList.add('mobile');
-            }
-        </script>
 
-        <!--
-        <div class="ad-banner">
-            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <ins class="adsbygoogle"
-                    data-ad-client="ca-pub-1331524016319584"
-                    data-ad-slot="6657867155"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-        </div>
-        -->
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2017-12-20</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F8582c74c640590d4.json&amp;to=blog-cn_2014_12_31_google-story_20171220.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_12_31_google-story_20171120.html">2017-11-20</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F8582c74c640590d4.json&amp;to=blog-cn_2014_12_31_google-story_20171120.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_12_31_google-story_20170504.html">2017-05-04</a></div><p class="version-diff-summary">较前版：+0 −0 修改 3</p><p class="version-preview">总之他们就是用这种奉承，利诱，竞争，加威胁的方式，想方设法让我多做事情。可是我心里想的是，Google 老爹，您就给了那么点钱，您想买多少东西啊？本来这系统能做出来就不错了，一个组员却一直催着我写 test。她根本不明白，一个程序并不…</p><a class="version-diff-link" href="diff.html?data=diffs%2F8582c74c640590d4.json&amp;to=blog-cn_2014_12_31_google-story_20170504.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_12_31_google-story_20161001.html">2016-10-01</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F8582c74c640590d4.json&amp;to=blog-cn_2014_12_31_google-story_20161001.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_12_31_google-story_20150124.html">2015-01-24</a></div><p class="version-diff-summary">较前版：+0 −1 修改 0</p><p class="version-preview">（王垠 yinwang.org 版权所有，未经许可，请勿转载）</p><a class="version-diff-link" href="diff.html?data=diffs%2F8582c74c640590d4.json&amp;to=blog-cn_2014_12_31_google-story_20150124.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_12_31_google-story_20150116.html">2015-01-16</a></div><p class="version-diff-summary">较前版：+0 −0 修改 2</p><p class="version-preview">这种检索不是像 ctags, etags 那种简单的正则表达式匹配，而是像 Eclipse 和 Visual Studio 那样的准确的“语义检索”，所以它必须真正的理解程序语言的语义。在 Grok 诞生以前，市面上和 Google…</p><a class="version-diff-link" href="diff.html?data=diffs%2F8582c74c640590d4.json&amp;to=blog-cn_2014_12_31_google-story_20150116.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2014_12_31_google-story_20150104.html">2015-01-04</a></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
 
         <div>
-            <h2>我和 Google 的故事（2015 修订版）</h2>
+            <h1 class="article-title">我和 Google 的故事（2015 修订版）</h1>
             <p>2009 和 2010 年，两年的夏天我都在 Google 实习，然而最后毕业的时候我却没有为 Google 工作。虽然我心里很清楚这里面的原因，可总有些人觉得不解，为什么居然有人不想为 Google 工作？如果你是这些人其中之一，那你可能想知道我在 Google 时的切身感受。</p>
 
 <p>直到将近 2015 年新年的今天，我发现这篇文章仍然具有普遍的意义。面对 Google 的员工，我仍然是同样的感觉。他们很多人太拿自己的公司当回事了，自高自大，放弃自己的尊严来舔这个公司的屁股。这些人总觉得好像所有人都希望为 Google 工作，即使进不了 Google，都想去 Google “蹭饭”似的。如果一个人说“我很厉害”，我也许会尊敬他，可是如果他说“我为 Google 工作”，以此来显得厉害，我就会鄙视他。我只尊敬那些尊敬他们自己的人。以自己的公司名声来抬高自己的人，是最被我瞧不起的，因为他们跟仗着人势的狗没什么区别。</p>
@@ -156,15 +139,16 @@
 <p>如果你想从另一个角度看看 Google 的问题，可以参考一下 James Whittaker 的博文《<a href="http://blogs.msdn.com/b/jw_on_tech/archive/2012/03/13/why-i-left-google.aspx">Why I left Google</a>》。这个 James 当时是 Google 的一个 director，是 Steve 的老板。我从来没跟他仔细说过话，所以我不能对他做出任何评价。这个文章仅供参考。</p>
 
         </div>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

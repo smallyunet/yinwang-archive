@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">16</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,9 +46,20 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2013_07_13_church-turing_20090101.html" >2009-01-01</a> <a href="blog-cn_2013_07_13_church-turing_20130718.html" >2013-07-18</a> <a href="blog-cn_2013_07_13_church-turing_20130803.html" >2013-08-03</a> <a href="blog-cn_2013_07_13_church-turing_20140129.html" >2014-01-29</a> <a href="blog-cn_2013_07_13_church-turing_20140507.html" >2014-05-07</a> <a href="blog-cn_2013_07_13_church-turing_20140701.html" class="current">2014-07-01</a> <a href="blog-cn_2013_07_13_church-turing_20150101.html" >2015-01-01</a> <a href="blog-cn_2013_07_13_church-turing_20160922.html" >2016-09-22</a> <a href="blog-cn_2013_07_13_church-turing_20170506.html" >2017-05-06</a> <a href="blog-cn_2013_07_13_church-turing_20170608.html" >2017-06-08</a> <a href="blog-cn_2013_07_13_church-turing_20170707.html" >2017-07-07</a> <a href="blog-cn_2013_07_13_church-turing_20171025.html" >2017-10-25</a> <a href="blog-cn_2013_07_13_church-turing_20171208.html" >2017-12-08</a> <a href="blog-cn_2013_07_13_church-turing_20180222.html" >2018-02-22</a> <a href="blog-cn_2013_07_13_church-turing_20200228.html" >2020-02-28</a> <a href="blog-cn_2013_07_13_church-turing_20240416.html" >2024-04-16</a></div>
-        <h2>丘奇和图灵</h2>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_07_13_church-turing_20240416.html">2024-04-16</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F48745534642cd580.json&amp;to=blog-cn_2013_07_13_church-turing_20240416.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_07_13_church-turing_20200228.html">2020-02-28</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F48745534642cd580.json&amp;to=blog-cn_2013_07_13_church-turing_20200228.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_07_13_church-turing_20180222.html">2018-02-22</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F48745534642cd580.json&amp;to=blog-cn_2013_07_13_church-turing_20180222.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_07_13_church-turing_20171208.html">2017-12-08</a></div><p class="version-diff-summary">较前版：+1 −2 修改 4</p><p class="version-preview">作者：王垠</p><a class="version-diff-link" href="diff.html?data=diffs%2F48745534642cd580.json&amp;to=blog-cn_2013_07_13_church-turing_20171208.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_07_13_church-turing_20171025.html">2017-10-25</a></div><p class="version-diff-summary">较前版：+2 −1 修改 4</p><p class="version-preview">作者：王垠</p><a class="version-diff-link" href="diff.html?data=diffs%2F48745534642cd580.json&amp;to=blog-cn_2013_07_13_church-turing_20171025.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_07_13_church-turing_20170707.html">2017-07-07</a></div><p class="version-diff-summary">较前版：+19 −0 修改 0</p><p class="version-preview">丘奇（Alonzo Church）和图灵（Alan Turing）是两位对计算机科学具有最大影响力的人物，然而他们却具有非常对立的观点和相差很多的名气。在我长达16年的计算机科学生涯中，总是感觉到自己的思想反反复复的徘徊于这两个“阵营…</p><a class="version-diff-link" href="diff.html?data=diffs%2F48745534642cd580.json&amp;to=blog-cn_2013_07_13_church-turing_20170707.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_07_13_church-turing_20170608.html">2017-06-08</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F48745534642cd580.json&amp;to=blog-cn_2013_07_13_church-turing_20170608.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_07_13_church-turing_20170506.html">2017-05-06</a></div><p class="version-diff-summary">较前版：+0 −19 修改 0</p><p class="version-preview">丘奇（Alonzo Church）和图灵（Alan Turing）是两位对计算机科学具有最大影响力的人物，然而他们却具有非常对立的观点和相差很多的名气。在我长达16年的计算机科学生涯中，总是感觉到自己的思想反反复复的徘徊于这两个“阵营…</p><a class="version-diff-link" href="diff.html?data=diffs%2F48745534642cd580.json&amp;to=blog-cn_2013_07_13_church-turing_20170506.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_07_13_church-turing_20160922.html">2016-09-22</a></div><p class="version-diff-summary">较前版：+0 −1 修改 0</p><p class="version-preview">（王垠 yinwang.org 版权所有，未经许可，请勿转载）</p><a class="version-diff-link" href="diff.html?data=diffs%2F48745534642cd580.json&amp;to=blog-cn_2013_07_13_church-turing_20160922.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_07_13_church-turing_20150101.html">2015-01-01</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F48745534642cd580.json&amp;to=blog-cn_2013_07_13_church-turing_20150101.html">查看差异</a></li><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2014-07-01</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F48745534642cd580.json&amp;to=blog-cn_2013_07_13_church-turing_20140701.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_07_13_church-turing_20140507.html">2014-05-07</a></div><p class="version-diff-summary">较前版：+1 −0 修改 0</p><p class="version-preview">（王垠 yinwang.org 版权所有，未经许可，请勿转载）</p><a class="version-diff-link" href="diff.html?data=diffs%2F48745534642cd580.json&amp;to=blog-cn_2013_07_13_church-turing_20140507.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_07_13_church-turing_20140129.html">2014-01-29</a></div><p class="version-diff-summary">较前版：+0 −0 修改 2</p><p class="version-preview">后来从 CMU 的教授 Robert Harper 的一篇博文《Languages and Machines》中，我也发现 Harper 跟我具有类似的观点，甚至更加极端一些。他强烈的支持使用 lambda calculus，反对图灵…</p><a class="version-diff-link" href="diff.html?data=diffs%2F48745534642cd580.json&amp;to=blog-cn_2013_07_13_church-turing_20140129.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_07_13_church-turing_20130803.html">2013-08-03</a></div><p class="version-diff-summary">较前版：+0 −0 修改 1</p><p class="version-preview">所以到最后，丘奇和图灵这两种看似矛盾的思想，在我的脑海里得到了和谐的统一。这些精髓的思想帮助我解决了许多的问题。感谢你们，计算机科学的两位鼻祖。</p><a class="version-diff-link" href="diff.html?data=diffs%2F48745534642cd580.json&amp;to=blog-cn_2013_07_13_church-turing_20130803.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_07_13_church-turing_20130718.html">2013-07-18</a></div><p class="version-diff-summary">较前版：+1 −2 修改 1</p><p class="version-preview">作者：王垠</p><a class="version-diff-link" href="diff.html?data=diffs%2F48745534642cd580.json&amp;to=blog-cn_2013_07_13_church-turing_20130718.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_07_13_church-turing_20090101.html">2009-01-01</a></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
+
+        <h1 class="article-title">丘奇和图灵</h1>
 
     <p>（王垠 yinwang.org 版权所有，未经许可，请勿转载）</p>
 
@@ -105,23 +105,21 @@
 <p>所以到最后，丘奇和图灵这两种看似矛盾的思想，在我的脑海里得到了和谐的统一。这些精髓的思想帮助我解决了许多的问题。感谢你们，计算机科学的两位鼻祖。</p>
 
 
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
     <!-- bottom -->
     <ins class="adsbygoogle"
          data-ad-client="ca-pub-1331524016319584"
          data-ad-slot="6657867155"></ins>
-    <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

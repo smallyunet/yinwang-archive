@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">2</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,10 +46,21 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2016_11_13_hillary-supporter_20161117.html" class="current">2016-11-17</a> <a href="blog-cn_2016_11_13_hillary-supporter_20161119.html" >2016-11-19</a></div>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_11_13_hillary-supporter_20161119.html">2016-11-19</a></div><p class="version-diff-summary">较前版：+0 −0 修改 4</p><p class="version-preview">而希拉里呢？我推荐你们看看这篇文章，以及这些视频：视频1，视频2，视频3，视频4。我半夜看了这些，不寒而栗，身上的毛都竖起来了！这些都揭示出希拉里这个人的本性。文章中提到的民主党 email，我已经去维基解密（WikiLeaks）搜索…</p><a class="version-diff-link" href="diff.html?data=diffs%2F03208da016716318.json&amp;to=blog-cn_2016_11_13_hillary-supporter_20161119.html">查看差异</a></li><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2016-11-17</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
+
         <div>
-                            <h2>与希拉里支持者的对话</h2>
+                            <h1 class="article-title">与希拉里支持者的对话</h1>
                             <p>加州可谓是希拉里和民主党的天下，大选时希拉里支持率高达 62%。民主党在加州尽做恶心事，什么 AA 法案啊，厕所法案啊…… 希拉里被曝那么严重的绯闻，加州人还对她执迷不悟，真是让我匪夷所思。现在我来记录一下我跟一些希拉里支持者的对话。这些人基本上是美籍华裔女性，在美国念的高中和本科。她们的信息来源，主要是美国各大媒体，以及微信朋友圈之类。大部分人从来没有上 YouTube 直接看过各个竞选人完整的言论，没有亲自做过调查，光靠道听途说和媒体宣传，就做出投票选择。</p>
 
 <h3>对话一</h3>
@@ -136,15 +136,16 @@
 <p>由于 Trump 已经当选，也没必要多说了。我只是想告诉这些不经大脑就接受信息的人，Trump 上台后，中国人在美国的生活状况不可能是你想的那么差，反而可能会比现在更好，因为很显然 Trump 比奥巴马和希拉里都要好，他跟这些战争贩子没有瓜葛，他真的想改造社会。希拉里上台，你们的生活只会每况愈下，走向毁灭。Trump 的胜利也许是美国历史的转折点，美国也许从此不再是一个战争贩子的国家，世界从此走向更加和平的方向…… 这都是有希望的，但这肯定需要大家的支持。所以请不要看到未经考证的关于 Trump 的负面新闻就到处转。</p>
 
                         </div>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

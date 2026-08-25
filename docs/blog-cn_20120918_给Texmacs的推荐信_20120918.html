@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,7 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,9 +38,11 @@
         </div>
     </nav>
 
-    <div class="inner">
-        
-        <h1>给Texmacs的推荐信</h1>
+
+
+    <main class="inner" id="main-content">
+
+        <h1 class="article-title">给Texmacs的推荐信</h1>
 <div class="date">2012-09-18</div>
 <p>作者：王垠</p>
 <p>好久没有推荐过自己喜欢的软件了，现在推荐一款我在美国写数学文档的私家法宝，来自法国的 TeXmacs。我恐怕不可能跟以前那么有闲心写个长篇的说明文档了，不过这东西如此的简单好用，所以基本上不用我写什么文档了。鉴于知道的人很少，不理解的人很多，这里只是帮它打个广告，吊一下胃口。</p>
@@ -75,15 +58,16 @@
 <p>9.作为计算机代数系统（CAS）和各种交互式程序的前端。支持 Axiom, MAXIMA，Giac, Sage, Yacas, Octave, R, …… 这些系统返回的数学公式会直接被 TeXmacs 显示为“TeX 效果”。</p>
 <p>10.使用 Scheme 作为嵌入式语言，并且可以使用它来扩展系统。这比起 TeX 的语言是非常大的进步。</p>
 <p>目前由于 TeX 的“垄断地位”，这个系统在美国还不是很流行，很多人都没听说过有这种东西存在。美国学术圈的很多人由于受到像我这样的人的洗脑，都不理解这种图形化编辑软件的价值，并且继续对下一代进行洗脑（比如要求他们用 LaTeX 写作业）。现在当年的“教主”开始推广 WYSIWYG，试图解除 TeX 的魔咒，居然经常被人当成菜鸟，真是无语啊 。不过我相信真金不怕火炼的，TeXmacs 这样的软件总有一天会成为主流。</p>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

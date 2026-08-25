@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">16</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,9 +46,20 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2013_03_08_on-syntax_20090101.html" >2009-01-01</a> <a href="blog-cn_2013_03_08_on-syntax_20130418.html" >2013-04-18</a> <a href="blog-cn_2013_03_08_on-syntax_20130425.html" >2013-04-25</a> <a href="blog-cn_2013_03_08_on-syntax_20131125.html" >2013-11-25</a> <a href="blog-cn_2013_03_08_on-syntax_20140419.html" >2014-04-19</a> <a href="blog-cn_2013_03_08_on-syntax_20140701.html" >2014-07-01</a> <a href="blog-cn_2013_03_08_on-syntax_20150408.html" >2015-04-08</a> <a href="blog-cn_2013_03_08_on-syntax_20160919.html" >2016-09-19</a> <a href="blog-cn_2013_03_08_on-syntax_20170506.html" >2017-05-06</a> <a href="blog-cn_2013_03_08_on-syntax_20171025.html" class="current">2017-10-25</a> <a href="blog-cn_2013_03_08_on-syntax_20171113.html" >2017-11-13</a> <a href="blog-cn_2013_03_08_on-syntax_20171214.html" >2017-12-14</a> <a href="blog-cn_2013_03_08_on-syntax_20180317.html" >2018-03-17</a> <a href="blog-cn_2013_03_08_on-syntax_20191121.html" >2019-11-21</a> <a href="blog-cn_2013_03_08_on-syntax_20200220.html" >2020-02-20</a> <a href="blog-cn_2013_03_08_on-syntax_20240416.html" >2024-04-16</a></div>
-        <h1>谈语法</h1>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_03_08_on-syntax_20240416.html">2024-04-16</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F3f6023d1a4059ed8.json&amp;to=blog-cn_2013_03_08_on-syntax_20240416.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_03_08_on-syntax_20200220.html">2020-02-20</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F3f6023d1a4059ed8.json&amp;to=blog-cn_2013_03_08_on-syntax_20200220.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_03_08_on-syntax_20191121.html">2019-11-21</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F3f6023d1a4059ed8.json&amp;to=blog-cn_2013_03_08_on-syntax_20191121.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_03_08_on-syntax_20180317.html">2018-03-17</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F3f6023d1a4059ed8.json&amp;to=blog-cn_2013_03_08_on-syntax_20180317.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_03_08_on-syntax_20171214.html">2017-12-14</a></div><p class="version-diff-summary">较前版：+20 −0 修改 0</p><p class="version-preview">看到了吗？微分不过是一个用于处理符号的函数 D，输入一个表达式和另一个符号，输出一个新的表达式。</p><a class="version-diff-link" href="diff.html?data=diffs%2F3f6023d1a4059ed8.json&amp;to=blog-cn_2013_03_08_on-syntax_20171214.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_03_08_on-syntax_20171113.html">2017-11-13</a></div><p class="version-diff-summary">较前版：+13 −0 修改 2</p><p class="version-preview">作者：王垠</p><a class="version-diff-link" href="diff.html?data=diffs%2F3f6023d1a4059ed8.json&amp;to=blog-cn_2013_03_08_on-syntax_20171113.html">查看差异</a></li><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2017-10-25</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">较前版：+0 −13 修改 2</p><p class="version-preview">作者：王垠</p><a class="version-diff-link" href="diff.html?data=diffs%2F3f6023d1a4059ed8.json&amp;to=blog-cn_2013_03_08_on-syntax_20171025.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_03_08_on-syntax_20170506.html">2017-05-06</a></div><p class="version-diff-summary">较前版：+0 −20 修改 2</p><p class="version-preview">自己想一下，如果要表达一颗“树”，最简单的编码方式是什么？就是用括号把每个节点的“数据”和“子节点”都括起来放在一起。Lisp 的设计者们就是这样想的。他们把这种完全用括号括起来的表达式，叫做“S表达式”（S 代表 “symbolic…</p><a class="version-diff-link" href="diff.html?data=diffs%2F3f6023d1a4059ed8.json&amp;to=blog-cn_2013_03_08_on-syntax_20170506.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_03_08_on-syntax_20160919.html">2016-09-19</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F3f6023d1a4059ed8.json&amp;to=blog-cn_2013_03_08_on-syntax_20160919.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_03_08_on-syntax_20150408.html">2015-04-08</a></div><p class="version-diff-summary">较前版：+0 −1 修改 0</p><p class="version-preview">（王垠 yinwang.org 版权所有，未经许可，请勿转载）</p><a class="version-diff-link" href="diff.html?data=diffs%2F3f6023d1a4059ed8.json&amp;to=blog-cn_2013_03_08_on-syntax_20150408.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_03_08_on-syntax_20140701.html">2014-07-01</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F3f6023d1a4059ed8.json&amp;to=blog-cn_2013_03_08_on-syntax_20140701.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_03_08_on-syntax_20140419.html">2014-04-19</a></div><p class="version-diff-summary">较前版：+2 −0 修改 1</p><p class="version-preview">（王垠 yinwang.org 版权所有，未经许可，请勿转载）</p><a class="version-diff-link" href="diff.html?data=diffs%2F3f6023d1a4059ed8.json&amp;to=blog-cn_2013_03_08_on-syntax_20140419.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_03_08_on-syntax_20131125.html">2013-11-25</a></div><p class="version-diff-summary">较前版：+1 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F3f6023d1a4059ed8.json&amp;to=blog-cn_2013_03_08_on-syntax_20131125.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_03_08_on-syntax_20130425.html">2013-04-25</a></div><p class="version-diff-summary">较前版：+1 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F3f6023d1a4059ed8.json&amp;to=blog-cn_2013_03_08_on-syntax_20130425.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_03_08_on-syntax_20130418.html">2013-04-18</a></div><p class="version-diff-summary">较前版：+31 −1 修改 0</p><p class="version-preview">作者：王垠</p><a class="version-diff-link" href="diff.html?data=diffs%2F3f6023d1a4059ed8.json&amp;to=blog-cn_2013_03_08_on-syntax_20130418.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_03_08_on-syntax_20090101.html">2009-01-01</a></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
+
+        <h1 class="article-title">谈语法</h1>
 <div class="date">2017-10-25</div>
 <p>作者：王垠</p>
 <p>使用和研究过这么多程序语言之后，我觉得几乎不包含多余功能的语言，只有一个：Scheme。所以我觉得它是学习程序设计最好的入手点和进阶工具。当然 Scheme 也有少数的问题，而且缺少一些我想要的功能，但这些都瑕不掩瑜。在用了很多其它的语言之后，我觉得 Scheme 真的是非常优美的语言。</p>
@@ -69,15 +69,16 @@
 <p>为什么我喜欢这样一个“全是括号，前缀表达式”的语言呢？这是出于对语言结构本质的考虑。其实，我觉得语法是完全不应该存在的东西。即使存在，也应该非常的简单。因为语法其实只是对语言的本质结构，“抽象语法树”（abstract syntax tree，AST），的一种编码。一个良好的编码，应该极度简单，不引起歧义，而且应该容易解码。在程序语言里，这个“解码”的过程叫做“语法分析”（parse）。</p>
 <p>为什么我们却又需要语法呢？因为受到现有工具（操作系统，文本编辑器）的限制，到目前为止，几乎所有语言的程序都是用字符串的形式存放在文件里的。为了让字符串能够表示“树”这种结构，人们才给程序语言设计了“语法”这种东西。但是人们喜欢耍小聪明，在有了基本的语法之后，他们开始在这上面大做文章，使得简单的问题变得无比复杂。</p>
 <p>Lisp （Scheme 的前身）是世界上第二老的程序语言。最老的是 Fortran。Fortran 的程序，最早的时候都是用打孔机打在卡片上的，所以它其实是几乎没有语法可言的。</p>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

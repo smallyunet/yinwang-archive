@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">9</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,9 +46,20 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2013_04_03_einstein-on-education_20130422.html" >2013-04-22</a> <a href="blog-cn_2013_04_03_einstein-on-education_20140619.html" >2014-06-19</a> <a href="blog-cn_2013_04_03_einstein-on-education_20140701.html" class="current">2014-07-01</a> <a href="blog-cn_2013_04_03_einstein-on-education_20150107.html" >2015-01-07</a> <a href="blog-cn_2013_04_03_einstein-on-education_20160929.html" >2016-09-29</a> <a href="blog-cn_2013_04_03_einstein-on-education_20170506.html" >2017-05-06</a> <a href="blog-cn_2013_04_03_einstein-on-education_20171129.html" >2017-11-29</a> <a href="blog-cn_2013_04_03_einstein-on-education_20171230.html" >2017-12-30</a> <a href="blog-cn_2013_04_03_einstein-on-education_20200228.html" >2020-02-28</a></div>
-        <h2>爱因斯坦谈教育</h2>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_04_03_einstein-on-education_20200228.html">2020-02-28</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F31097e40b38bb11f.json&amp;to=blog-cn_2013_04_03_einstein-on-education_20200228.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_04_03_einstein-on-education_20171230.html">2017-12-30</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F31097e40b38bb11f.json&amp;to=blog-cn_2013_04_03_einstein-on-education_20171230.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_04_03_einstein-on-education_20171129.html">2017-11-29</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F31097e40b38bb11f.json&amp;to=blog-cn_2013_04_03_einstein-on-education_20171129.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_04_03_einstein-on-education_20170506.html">2017-05-06</a></div><p class="version-diff-summary">较前版：+6 −0 修改 1</p><p class="version-preview">我在我的老师手里遭受了同样的待遇。因为我的独立，他们不喜欢我。当他们需要助教的时候，他们没有选择我。</p><a class="version-diff-link" href="diff.html?data=diffs%2F31097e40b38bb11f.json&amp;to=blog-cn_2013_04_03_einstein-on-education_20170506.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_04_03_einstein-on-education_20160929.html">2016-09-29</a></div><p class="version-diff-summary">较前版：+0 −1 修改 0</p><p class="version-preview">（王垠 yinwang.org 版权所有，未经许可，请勿转载）</p><a class="version-diff-link" href="diff.html?data=diffs%2F31097e40b38bb11f.json&amp;to=blog-cn_2013_04_03_einstein-on-education_20160929.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_04_03_einstein-on-education_20150107.html">2015-01-07</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F31097e40b38bb11f.json&amp;to=blog-cn_2013_04_03_einstein-on-education_20150107.html">查看差异</a></li><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2014-07-01</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F31097e40b38bb11f.json&amp;to=blog-cn_2013_04_03_einstein-on-education_20140701.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_04_03_einstein-on-education_20140619.html">2014-06-19</a></div><p class="version-diff-summary">较前版：+1 −0 修改 0</p><p class="version-preview">（王垠 yinwang.org 版权所有，未经许可，请勿转载）</p><a class="version-diff-link" href="diff.html?data=diffs%2F31097e40b38bb11f.json&amp;to=blog-cn_2013_04_03_einstein-on-education_20140619.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_04_03_einstein-on-education_20130422.html">2013-04-22</a></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
+
+        <h1 class="article-title">爱因斯坦谈教育</h1>
 
     <p>（王垠 yinwang.org 版权所有，未经许可，请勿转载）</p>
 
@@ -82,23 +82,21 @@
 <p>教育应该是这样：被传授的知识应该被当成宝贵的礼物，而不是沉重的任务。</p></blockquote>
 
 
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
     <!-- bottom -->
     <ins class="adsbygoogle"
          data-ad-client="ca-pub-1331524016319584"
          data-ad-slot="6657867155"></ins>
-    <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

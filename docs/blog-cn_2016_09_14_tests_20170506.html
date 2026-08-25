@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">11</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,10 +46,21 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2016_09_14_tests_20090101.html" >2009-01-01</a> <a href="blog-cn_2016_09_14_tests_20160917.html" >2016-09-17</a> <a href="blog-cn_2016_09_14_tests_20160923.html" >2016-09-23</a> <a href="blog-cn_2016_09_14_tests_20170506.html" class="current">2017-05-06</a> <a href="blog-cn_2016_09_14_tests_20170628.html" >2017-06-28</a> <a href="blog-cn_2016_09_14_tests_20171111.html" >2017-11-11</a> <a href="blog-cn_2016_09_14_tests_20171216.html" >2017-12-16</a> <a href="blog-cn_2016_09_14_tests_20171220.html" >2017-12-20</a> <a href="blog-cn_2016_09_14_tests_20191206.html" >2019-12-06</a> <a href="blog-cn_2016_09_14_tests_20200228.html" >2020-02-28</a> <a href="blog-cn_2016_09_14_tests_20240416.html" >2024-04-16</a></div>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_09_14_tests_20240416.html">2024-04-16</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F07d1dbae0ee4cdb1.json&amp;to=blog-cn_2016_09_14_tests_20240416.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_09_14_tests_20200228.html">2020-02-28</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F07d1dbae0ee4cdb1.json&amp;to=blog-cn_2016_09_14_tests_20200228.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_09_14_tests_20191206.html">2019-12-06</a></div><p class="version-diff-summary">较前版：+19 −1 修改 8</p><p class="version-preview">作者：王垠</p><a class="version-diff-link" href="diff.html?data=diffs%2F07d1dbae0ee4cdb1.json&amp;to=blog-cn_2016_09_14_tests_20191206.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_09_14_tests_20171220.html">2017-12-20</a></div><p class="version-diff-summary">较前版：+1 −19 修改 8</p><p class="version-preview">作者：王垠</p><a class="version-diff-link" href="diff.html?data=diffs%2F07d1dbae0ee4cdb1.json&amp;to=blog-cn_2016_09_14_tests_20171220.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_09_14_tests_20171216.html">2017-12-16</a></div><p class="version-diff-summary">较前版：+8 −0 修改 0</p><p class="version-preview">查看代码之后我发现，代码其实没有进入“死循环”，而是进入了指数复杂度的计算，所以很久都不能完成。这是因为写这函数的人不小心，或者没有理解 C++ 的函数参数缺省是传值（做拷贝）而不是传引用，所以他忘了打那个“&amp;”，所以函数被递归调用的…</p><a class="version-diff-link" href="diff.html?data=diffs%2F07d1dbae0ee4cdb1.json&amp;to=blog-cn_2016_09_14_tests_20171216.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_09_14_tests_20171111.html">2017-11-11</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F07d1dbae0ee4cdb1.json&amp;to=blog-cn_2016_09_14_tests_20171111.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_09_14_tests_20170628.html">2017-06-28</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F07d1dbae0ee4cdb1.json&amp;to=blog-cn_2016_09_14_tests_20170628.html">查看差异</a></li><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2017-05-06</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">较前版：+0 −8 修改 1</p><p class="version-preview">在程序和算法定型之前，不要写测试。TDD 的教条者喜欢跟你说，在写程序之前就应该先写测试。为什么写代码之前要写测试呢？这只是一种教条。这些人其实没有用自己的脑子思考过这个问题，而只是人云亦云，觉得这样“很酷”，符合潮流，或者以为这样做…</p><a class="version-diff-link" href="diff.html?data=diffs%2F07d1dbae0ee4cdb1.json&amp;to=blog-cn_2016_09_14_tests_20170506.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_09_14_tests_20160923.html">2016-09-23</a></div><p class="version-diff-summary">较前版：+2 −0 修改 4</p><p class="version-preview">“测试能帮助后来人”的误区。每当指出测试教条主义的错误，就会有人出来说：“测试不是为了你自己，而是为了你走了以后，以后进来的人不犯错误。” 首先，这种人根本没有看清楚我在说什么，因为我从来没有反对过合理的测试。其次，这种“测试能帮助后…</p><a class="version-diff-link" href="diff.html?data=diffs%2F07d1dbae0ee4cdb1.json&amp;to=blog-cn_2016_09_14_tests_20160923.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_09_14_tests_20160917.html">2016-09-17</a></div><p class="version-diff-summary">较前版：+17 −1 修改 11</p><p class="version-preview">作者：王垠</p><a class="version-diff-link" href="diff.html?data=diffs%2F07d1dbae0ee4cdb1.json&amp;to=blog-cn_2016_09_14_tests_20160917.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_09_14_tests_20090101.html">2009-01-01</a></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
+
         <div>
-                            <h2>测试的道理</h2>
+                            <h1 class="article-title">测试的道理</h1>
                             <p>在长期的程序语言研究和实际工作中，我摸索出了一些关于测试的道理。然而在我工作过的每一个公司，我发现绝大多数人都不明白这些道理，很多团队集体性的采用错误的做法而不自知。很多人把测试当成一种主义和教条，进行过度的测试，不必要的测试，不可靠的测试，并且把这些错误的做法传授给新手，造成恶性循环。本来目的是提高代码质量，结果不但没能达到目的，反而降低了代码质量，增大了工作量，大幅度延缓工程进度。</p>
 
 <p>我也写测试，但我的测试方式比“测试教条主义者”们的方式聪明很多。在我心目中，代码本身的地位大大的高于测试。我不忽视测试，但我不会本末倒置，过分强调测试，我并不推崇测试驱动开发（TDD）。我知道该测试什么，不该测试什么，什么时候该写测试，什么时候不该写，什么时候应该推迟测试，什么时候完全不需要测试。因为这个原因，再加上高强的编程能力，我多次完成别人认为在短时间不可能完成的任务，并且制造出质量非常高的代码。</p>
@@ -177,15 +177,16 @@
 }
 </code></pre>
 </div>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

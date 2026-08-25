@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">12</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,17 +46,21 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2015_12_12_tesla-model-s_20151214.html" >2015-12-14</a> <a href="blog-cn_2015_12_12_tesla-model-s_20151215.html" >2015-12-15</a> <a href="blog-cn_2015_12_12_tesla-model-s_20151219.html" >2015-12-19</a> <a href="blog-cn_2015_12_12_tesla-model-s_20151229.html" >2015-12-29</a> <a href="blog-cn_2015_12_12_tesla-model-s_20160118.html" >2016-01-18</a> <a href="blog-cn_2015_12_12_tesla-model-s_20160214.html" >2016-02-14</a> <a href="blog-cn_2015_12_12_tesla-model-s_20160919.html" >2016-09-19</a> <a href="blog-cn_2015_12_12_tesla-model-s_20170510.html" >2017-05-10</a> <a href="blog-cn_2015_12_12_tesla-model-s_20171202.html" >2017-12-02</a> <a href="blog-cn_2015_12_12_tesla-model-s_20180305.html" >2018-03-05</a> <a href="blog-cn_2015_12_12_tesla-model-s_20191009.html" >2019-10-09</a> <a href="blog-cn_2015_12_12_tesla-model-s_20200217.html" class="current">2020-02-17</a></div>
-        <script>
-            if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent))
-            {
-               document.body.classList.add('mobile');
-            }
-        </script>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2020-02-17</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F9e2eb8098c34239e.json&amp;to=blog-cn_2015_12_12_tesla-model-s_20200217.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_12_12_tesla-model-s_20191009.html">2019-10-09</a></div><p class="version-diff-summary">较前版：+0 −0 修改 28</p><p class="version-preview">这幅美丽的图片，就是红极一时的 Tesla 电动车 Model S 的内景。然而你有没有发现，其中有一些不大对劲的地方？虽然我看好电动汽车，它们环保，安静，运动敏捷，然而我发现 Tesla 的这款 Model S，其实有一些严重的设计失误。</p><a class="version-diff-link" href="diff.html?data=diffs%2F9e2eb8098c34239e.json&amp;to=blog-cn_2015_12_12_tesla-model-s_20191009.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_12_12_tesla-model-s_20180305.html">2018-03-05</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F9e2eb8098c34239e.json&amp;to=blog-cn_2015_12_12_tesla-model-s_20180305.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_12_12_tesla-model-s_20171202.html">2017-12-02</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F9e2eb8098c34239e.json&amp;to=blog-cn_2015_12_12_tesla-model-s_20171202.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_12_12_tesla-model-s_20170510.html">2017-05-10</a></div><p class="version-diff-summary">较前版：+0 −0 修改 12</p><p class="version-preview">… …</p><a class="version-diff-link" href="diff.html?data=diffs%2F9e2eb8098c34239e.json&amp;to=blog-cn_2015_12_12_tesla-model-s_20170510.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_12_12_tesla-model-s_20160919.html">2016-09-19</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F9e2eb8098c34239e.json&amp;to=blog-cn_2015_12_12_tesla-model-s_20160919.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_12_12_tesla-model-s_20160214.html">2016-02-14</a></div><p class="version-diff-summary">较前版：+0 −13 修改 4</p><p class="version-preview">2016年1月1号，在挪威的一个Tesla充电站，有一台Model S在充电的时候，莫名其妙起火燃烧（见新闻和视频）。由于着火的材料是锂金属，消防队无法用水控制火势，只能用泡沫覆盖隔离，等待烈火把车子完全融化。最后这台车被完全烧毁，幸…</p><a class="version-diff-link" href="diff.html?data=diffs%2F9e2eb8098c34239e.json&amp;to=blog-cn_2015_12_12_tesla-model-s_20160214.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_12_12_tesla-model-s_20160118.html">2016-01-18</a></div><p class="version-diff-summary">较前版：+37 −0 修改 4</p><p class="version-preview">没有任何其它牌子的汽车采用像这样的门把设计。从丰田一直到Bugatti，它们的门把全都是机械的，粗壮的，直接就可以拉的。没人在这上面耍花样。你想这应该有原因的吧？由于人的生命安全，在事故的时候依赖于快速地打开车门，门把的设计需要是坚固…</p><a class="version-diff-link" href="diff.html?data=diffs%2F9e2eb8098c34239e.json&amp;to=blog-cn_2015_12_12_tesla-model-s_20160118.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_12_12_tesla-model-s_20151229.html">2015-12-29</a></div><p class="version-diff-summary">较前版：+8 −0 修改 1</p><p class="version-preview">没有任何其它牌子的汽车采用像这样的门把设计。从丰田一直到法拉利，它们的门把全都是机械的，粗壮的，直接就可以拉的。没人在这上面耍花样。你想这应该有原因的吧？由于人的生命安全，在事故的时候依赖于快速地打开车门，门把的设计需要是坚固而可靠的。</p><a class="version-diff-link" href="diff.html?data=diffs%2F9e2eb8098c34239e.json&amp;to=blog-cn_2015_12_12_tesla-model-s_20151229.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_12_12_tesla-model-s_20151219.html">2015-12-19</a></div><p class="version-diff-summary">较前版：+7 −0 修改 22</p><p class="version-preview">有些人可能觉得这样的设计，比其它车子更加美观，简洁。然而你可能没想到，这种“美观”其实是有代价的。一个很简单的问题是：你怎么打开天窗？答案：你必须使用触摸屏！</p><a class="version-diff-link" href="diff.html?data=diffs%2F9e2eb8098c34239e.json&amp;to=blog-cn_2015_12_12_tesla-model-s_20151219.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_12_12_tesla-model-s_20151215.html">2015-12-15</a></div><p class="version-diff-summary">较前版：+20 −0 修改 10</p><p class="version-preview">这幅美丽的图片，就是红极一时的Tesla电动车Model S的内景。然而你有没有发现，其中有一些不大对劲的地方？虽然我看好电动汽车，它们环保，安静，运动敏捷，然而我发现Tesla的这款Model S，其实有一些严重的设计失误。</p><a class="version-diff-link" href="diff.html?data=diffs%2F9e2eb8098c34239e.json&amp;to=blog-cn_2015_12_12_tesla-model-s_20151215.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_12_12_tesla-model-s_20151214.html">2015-12-14</a></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
 
         <div>
-            <h2>Tesla Model S 的设计失误</h2>
+            <h1 class="article-title">Tesla Model S 的设计失误</h1>
             <p><img src="images/model-s-interior.jpg" width="90%" /></p>
 
 <p>这幅美丽的图片，就是红极一时的 Tesla 电动车 Model S 的内景。然而你有没有发现，其中有一些不大对劲的地方？虽然我看好电动汽车，它们环保，安静，运动敏捷，然而我发现 Tesla 的这款 Model S，其实有一些严重的设计失误。</p>
@@ -308,29 +301,16 @@
 <p>有些设计貌似很新，很酷，很未来，像科幻电影里面的一样。直到你开始用它，才发现是有问题的。很多人把Elon Musk比作<a href="http://www.imdb.com/title/tt0371746">钢铁侠</a>，然而他们没有意识到，科幻和现实是有很大区别的。Elon Musk的背景（物理系PhD辍学），也许可以做出高性能的电动机，然而一辆汽车除了发动机，还有很多关键的方面。忘记历史就等于毁灭未来，标新立异，不吸取前人的经验教训，把好的东西学过来，这样做设计是很难成功的。</p>
 
         </div>
+    </main>
 
-        <!--
-        <div class="ad-banner">
-            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <ins class="adsbygoogle"
-                    data-ad-client="ca-pub-1331524016319584"
-                    data-ad-slot="6657867155"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-        </div>
 
-        <script data-ad-client="ca-pub-1331524016319584" async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
-        </script>
-        -->
-    </div>
-
-    
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

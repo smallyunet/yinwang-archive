@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">6</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,9 +46,20 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2016_06_14_information-inequality_20090101.html" class="current">2009-01-01</a> <a href="blog-cn_2016_06_14_information-inequality_20160618.html" >2016-06-18</a> <a href="blog-cn_2016_06_14_information-inequality_20161011.html" >2016-10-11</a> <a href="blog-cn_2016_06_14_information-inequality_20180302.html" >2018-03-02</a> <a href="blog-cn_2016_06_14_information-inequality_20180311.html" >2018-03-11</a> <a href="blog-cn_2016_06_14_information-inequality_20200228.html" >2020-02-28</a></div>
-        <h1>美国社会的信息不平等现象</h1>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_06_14_information-inequality_20200228.html">2020-02-28</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F5ebafe9dfb87cff1.json&amp;to=blog-cn_2016_06_14_information-inequality_20200228.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_06_14_information-inequality_20180311.html">2018-03-11</a></div><p class="version-diff-summary">较前版：+2 −0 修改 1</p><p class="version-preview">Coverity 故意对任务设置过短的时间，然后通过解雇相威胁，导致员工严重超时工作，无耻剥夺员工的休息时间。</p><a class="version-diff-link" href="diff.html?data=diffs%2F5ebafe9dfb87cff1.json&amp;to=blog-cn_2016_06_14_information-inequality_20180311.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_06_14_information-inequality_20180302.html">2018-03-02</a></div><p class="version-diff-summary">较前版：+0 −2 修改 1</p><p class="version-preview">1. Coverity 故意对任务设置过短的时间，然后通过解雇相威胁，导致员工严重超时工作，无耻剥夺员工的休息时间。 2. Sourcegraph 在员工短时间完成重大贡献之后，使用无理借口解雇，收回早期员工的大额股票份额。这是相当于…</p><a class="version-diff-link" href="diff.html?data=diffs%2F5ebafe9dfb87cff1.json&amp;to=blog-cn_2016_06_14_information-inequality_20180302.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_06_14_information-inequality_20161011.html">2016-10-11</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F5ebafe9dfb87cff1.json&amp;to=blog-cn_2016_06_14_information-inequality_20161011.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2016_06_14_information-inequality_20160618.html">2016-06-18</a></div><p class="version-diff-summary">较前版：+2 −0 修改 1</p><p class="version-preview">Coverity 故意对任务设置过短的时间，然后通过解雇相威胁，导致员工严重超时工作，无耻剥夺员工的休息时间。</p><a class="version-diff-link" href="diff.html?data=diffs%2F5ebafe9dfb87cff1.json&amp;to=blog-cn_2016_06_14_information-inequality_20160618.html">查看差异</a></li><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2009-01-01</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
+
+        <h1 class="article-title">美国社会的信息不平等现象</h1>
 <div class="date">2009-01-01</div>
 <p>在美国工作过的人都知道，进入一个公司之前，雇员都要经过一种“背景调查”（background check）。这种调查一般由专门的“背景调查公司”来协助进行，他们可以通过各种渠道来获取你的信息，包括身份，住址，犯罪记录，学位信息，之前雇主信息，职位，工资，工作时间，离职原因等等。很多公司还要求你提供几个“联系人”（reference）和他们的联系方式，有些甚至要求其中有一个是你之前的 manager，这样他们可以去询问你的表现……</p>
 <p>在美国大学读研究生，进去之前都需要找几个认识的教授写推荐信。进去之后每隔一段时间，教授们会召开一种八卦会议，讨论各个学生的表现。你之前对任何一个教授说的话，都可能传到别的教授耳朵里。教授们用这种机制来打探学生的底细，所以如果你在一个教授那里表现不好（当然其实可能是教授的人品问题）或者发生了矛盾，去找另一个教授的时候很可能立即吃闭门羹，或者找借口回避。在这种会议上，教授们还会决定哪些学生会被“请离学校”……</p>
@@ -82,15 +82,16 @@
 </code></pre>
 <p>有人跟我说我这么曝光以前的雇主，新的公司会对我有所顾忌，这样的行为等于自杀。我其实一点都不担心这个事情。虽然恶劣的行径是一定会被揭穿的，然而胸怀坦荡，对人友好，心里没有鬼的公司却大可不必担心。对我有所顾忌是应该的，我理所应当有自己的威严——公司都应该知道，王垠不是好惹的，但他却是非常讲理的。你可以看到，被曝光的雇主都有非常严重的恶劣行为，甚至可以告上法庭，要求赔偿。我对这样的公司躲都来不及，如果类似的不地道的公司看到了我的文章而回避我，那正好！因为我正想很有效的过滤掉这样的公司，省得浪费时间去跟他们聊。剩下的有良心的公司，自然会发现我是朋友，而且是非常有价值的人，从而愿意跟我合作。</p>
 <p>如果你被公司欺负了，却担心曝光了公司的恶劣行为会导致以后找不到工作，那你就助长了这种公司的气焰。他们就会打着假面具继续害人，把大家都蒙在鼓里。这样坏人就会横行霸道，导致整个社会环境的恶化。所以这些人对我的做法的担心，说我是在自杀，不但是多余的，而且是有害的，甚至可以被视为一种恐吓行为。我希望广大的劳动群众都能有如此的勇气，勇于站出来说真话，世界才能得到信息的平等。只有在信息上平等，公司的不良行为才能受到节制，有良心的公司才能得以发扬光大，人类才有可能得到物质上平等的机会，最终消灭人压迫人，人剥削人的制度。</p>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

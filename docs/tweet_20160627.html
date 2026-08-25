@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,7 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,24 +38,26 @@
         </div>
     </nav>
 
-    <div class="inner">
+
+
+    <main class="inner" id="main-content">
         <div class="version-switcher"><span>Versions:</span><a href="tweet_20160528.html" >2016-05-28</a> <a href="tweet_20160608.html" >2016-06-08</a> <a href="tweet_20160617.html" >2016-06-17</a> <a href="tweet_20160627.html" class="current">2016-06-27</a> <a href="tweet_20160706.html" >2016-07-06</a> <a href="tweet_20160716.html" >2016-07-16</a> <a href="tweet_20160726.html" >2016-07-26</a> <a href="tweet_20160918.html" >2016-09-18</a> <a href="tweet_20160929.html" >2016-09-29</a> <a href="tweet_20161013.html" >2016-10-13</a> <a href="tweet_20161029.html" >2016-10-29</a> <a href="tweet_20161116.html" >2016-11-16</a> <a href="tweet_20161127.html" >2016-11-27</a> <a href="tweet_20161208.html" >2016-12-08</a> <a href="tweet_20161215.html" >2016-12-15</a> <a href="tweet_20170308.html" >2017-03-08</a></div>
         <div class="micro-blog">
                         <div class="list-group-item">
                             <div class="date">2016.06.24</div>
                             <div class="content">在48%投票人的反对下，英国决定离开欧盟，这种牵连许多人命运的决定，是否应该以“投票超过一半”这么简单的方式来决定？到底什么叫做民主？民主是否一定会带来好的结果。这些都是值得深思的问题……</div>
                         </div>
-                        
+
                         <div class="list-group-item">
                             <div class="date">2016.06.23</div>
                             <div class="content">Silicon Valley 第三季，从第8，9集开始逐渐在走下坡路了。主题越来越不好笑，倒像是严肃的“设计学”教材，就像我一直推荐的『The Design of Everyday Things』……</div>
                         </div>
-                        
+
                         <div class="list-group-item">
                             <div class="date">2016.06.21</div>
                             <div class="content">Silicon Valley 爆笑片段：两个码农约会，男的用tab缩进，女的用space，男的用VIM，女的用Emacs，然后就没有然后了……</div>
                         </div>
-                        
+
                         <div class="list-group-item">
                             <div class="date">2016.06.15</div>
                             <div class="content">这首根据 Gotye 的 Somebody I used to know 改编的歌曲 <a href="https://www.youtube.com/watch?v=Ba6Igu1MvE0">Some Recruiter I Used To Know</a> 非常好笑。简直就是我前些年对 LinkedIn 上 recruiter 的亲身体会啊 :P 所以这些年 recruiter 找我都完全不理了。</p>
@@ -85,37 +68,37 @@ Asked myself if you were right for me<br>
 But you said that we should have coffee...﻿
 </p></div>
                         </div>
-                        
+
                         <div class="list-group-item">
                             <div class="date">2016.06.15</div>
                             <div class="content">太爱省钱是一种非常不好的习惯，甚至是一种邪恶。世界已经快被这些美国，中国的省钱狂们给毁掉了。</div>
                         </div>
-                        
+
                         <div class="list-group-item">
                             <div class="date">2016.06.15</div>
                             <div class="content">当我批评美国的资本主义压迫和剥削的时候，有人喜欢把我当成所谓的“社会主义者”（其实那叫斯大林主义），会嘲讽我说“朝鲜人民欢迎你”之类的。很多人不理解美国社会，以为美国已经进化到超越资本主义，达到了为人民谋福利的阶段，其实它远远没有，反而对人民越来越残酷了。喜欢提朝鲜的人们不理解的是，世界上其实有很多比美国制度友好先进的国家，但朝鲜当然不在其中。很多欧洲国家，以及美国的邻居加拿大，在社会制度上都比美国要好。</div>
                         </div>
-                        
+
                         <div class="list-group-item">
                             <div class="date">2016.06.14</div>
                             <div class="content">偶然在朋友圈发现一个百度自动车项目研究员的讲座，里面出现了我在博文『<a href="http://www.yinwang.org/blog-cn/2016/02/12/self-driving-car">我看自动驾驶技术</a>』里面提到的自动车将会遇到的各种难题，例子都几乎一模一样。他的讲座比我的博文晚了两个月的样子，看来我的看法还是引起了自动车研究者们的高度重视的 :P</div>
                         </div>
-                        
+
                         <div class="list-group-item">
                             <div class="date">2016.06.07</div>
                             <div class="content">有人看了我最新的『Swift 语言的设计错误』，问我：“你说 Java 只有 reference type，但是根据 Java 的官方文档，Java 也有 value type 和 reference type 的区别的。” 由于这个问题相当的有趣，我另外写了一篇<a href="http://www.yinwang.org/blog-cn/2016/06/08/java-value-type">文章</a>来回答这个问题。</div>
                         </div>
-                        
+
                         <div class="list-group-item">
                             <div class="date">2016.06.07</div>
                             <div class="content">有不止一个人指出我文章里有错别字，说“拥鳖”应该写成“拥趸”。可是如果你把“拥鳖”和“拥趸”输入到 Google 会发现“拥鳖”得到比“拥趸”多十倍的结果。俗话说，文字无所谓对错，错别字用的人多了，就成了对的 :P 而且我很喜欢“拥鳖”里面的“鳖”的发音和它包含的贬义，所以就留着继续用了。</div>
                         </div>
-                        
+
                         <div class="list-group-item">
                             <div class="date">2016.06.06</div>
                             <div class="content">资本主义如何阻碍技术的发展：1）由于公司都是唯利是图，在市场上胜者为王，所以可以肆意吹嘘自己本来很蹩脚的技术，甚至用蹩脚的东西统治技术领域。优秀的技术失去市场，难以抬头。 2）由于人们需要所谓“事业”来养活自己，也有些人贪得无厌，所以总想占据公司里的高层职位，然后瞎指挥。把自己不好的技术吹成好的，起一些高大空的新名词，让真正的专家为自己的想法服务。</div>
                         </div>
-                        
+
                         <div class="list-group-item">
                             <div class="date">2016.06.01</div>
                             <div class="content">一直觉得以下的格言，对于看透一个人的本质有重大的指导意义。我的一生中遇到了挺多第一类人，这类人进入领导岗位，会造成很大的危害。我希望在将来遇到更多的另外三种人。</p>
@@ -127,46 +110,47 @@ But you said that we should have coffee...﻿
   He who knows and knows he knows, he is wise—follow him!<br>
 </p></div>
                         </div>
-                        
+
                         <div class="list-group-item">
                             <div class="date">2016.05.29</div>
                             <div class="content">我知道有些人在背地里议论我，说我没有“成功”。其实我根本就没有在乎过所谓的“成功”。就像爱因斯坦说的：“Try not to become a man of success, but rather try to become a man of value.” 不要试图做一个成功的人，做一个有价值的人。显然，我是有价值的。</div>
                         </div>
-                        
+
                         <div class="list-group-item">
                             <div class="date">2016.05.26</div>
                             <div class="content">等了一年多，HBO 的电视剧 『<a href="http://www.hbo.com/silicon-valley">Silicon Valley</a>』 第三季终于上映了。跟前两季一样扣人心弦。把硅谷公司的各种穷形尽相，职场纠葛，都表现讽刺得淋漓尽致，却又幽默得让人哈哈大笑。我感觉编剧和导演的价值观跟我非常接近，而且非常有才，强烈推荐这部电视剧。</div>
                         </div>
-                        
+
                         <div class="list-group-item">
                             <div class="date">2016.05.26</div>
                             <div class="content">某大银行的一个 director 发 email 跟我说：“你要想让程序员们听你说话，你必须自己首先在商业上成功。” 换句话他的意思就是让我闭嘴，因为程序员只听有钱人的话。这显然不是事实，因为虽然我的银行总资产仍然是负数，很多高明的程序员却一直在听我说什么，并且从中汲取养分和力量，他们很尊敬我。这位 director 没有明白，一个人的价值不是看他得到了多少，而是他付出了多少。</div>
                         </div>
-                        
+
                         <div class="list-group-item">
                             <div class="date">2016.05.25</div>
                             <div class="content">有时候有人问，为什么我不让人评论我的博客或者微博？我正直仗义，说的都是实话，怕谁呢？可是你想想，Knuth，Friedman 等人的书和主页，为什么他们不让你评论呢？某人甚至连 email 都不看的 ;) 所以我不开评论的原因也是类似的。</div>
                         </div>
-                        
+
                         <div class="list-group-item">
                             <div class="date">2016.05.25</div>
                             <div class="content">是谁提出了 pair programming 这种做法，是谁在某些公司推广并且强制执行它，我想揍他一顿。</div>
                         </div>
-                        
+
                         <div class="list-group-item">
                             <div class="date">2016.05.25</div>
                             <div class="content">带妹纸一起看了『美国队长』。不幸的是没有买到小场的宽敞豪华座，只好去看了大场的 3D IMAX 版。3D 电影看起来其实不如普通的，画面感觉不真实，动作快了就看不清楚。而且塑料眼镜材料很次，各种扭曲反光，眼睛挺不舒服。最后我完全不知道这个片讲了什么故事，只觉得貌似一伙超人，因为某种误会打起来了，还挺好玩的。妹纸听了我的观后感，笑了 :)</div>
                         </div>
                         </div>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

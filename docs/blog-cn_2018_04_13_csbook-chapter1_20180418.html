@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=0.5">
-    <title>第一章 - 初识计算</title>
+    <title>解谜计算机科学（1）</title>
     <link rel="stylesheet" href="css/highlight/xcode.min.css">
     <link rel="stylesheet" href="css/bootstrap/bootstrap-tooltips.css">
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">6</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,27 +46,21 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2018_04_13_csbook-chapter1_20180415.html" >2018-04-15</a> <a href="blog-cn_2018_04_13_csbook-chapter1_20180418.html" class="current">2018-04-18</a> <a href="blog-cn_2018_04_13_csbook-chapter1_20180426.html" >2018-04-26</a> <a href="blog-cn_2018_04_13_csbook-chapter1_20180627.html" >2018-06-27</a> <a href="blog-cn_2018_04_13_csbook-chapter1_20180714.html" >2018-07-14</a> <a href="blog-cn_2018_04_13_csbook-chapter1_20181010.html" >2018-10-10</a></div>
-        <script>
-            if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent))
-            {
-               document.body.classList.add('mobile');
-            }
-        </script>
 
-        <!--
-        <div class="ad-banner">
-            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <ins class="adsbygoogle"
-                    data-ad-client="ca-pub-1331524016319584"
-                    data-ad-slot="6657867155"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-        </div>
-        -->
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2018_04_13_csbook-chapter1_20181010.html">2018-10-10</a></div><p class="version-diff-summary">较前版：+2 −2 修改 8</p><p class="version-preview">要掌握一个学科的精髓，不能从细枝末节开始。人脑的能力很大程度上受限于信念。一个人不相信自己的时候，他就做不到本来可能的事。信心是很重要的，信心却容易被挫败。如果只见树木不见森林，人会失去信心，以为要到猴年马月才能掌握一个学科。</p><a class="version-diff-link" href="diff.html?data=diffs%2F77abcd1b092e6cef.json&amp;to=blog-cn_2018_04_13_csbook-chapter1_20181010.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2018_04_13_csbook-chapter1_20180714.html">2018-07-14</a></div><p class="version-diff-summary">较前版：+0 −0 修改 22</p><p class="version-preview">（本书版权归王垠所有，禁止转载。请认准 yinwang.org 为唯一的阅读地址，以获得最近更新。）</p><a class="version-diff-link" href="diff.html?data=diffs%2F77abcd1b092e6cef.json&amp;to=blog-cn_2018_04_13_csbook-chapter1_20180714.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2018_04_13_csbook-chapter1_20180627.html">2018-06-27</a></div><p class="version-diff-summary">较前版：+0 −0 修改 4</p><p class="version-preview">要完全掌握一个学科的精髓，不能从细枝末节开始。人的信心是很重要的，它却是脆弱的，容易被挫败。如果人看到很多细节却看不到全景，他会很快失去信心，他会觉得要到猴年马月才能掌握一个学科。所以这本书不从细节开始，它也不会给你一个笼统的学科框架…</p><a class="version-diff-link" href="diff.html?data=diffs%2F77abcd1b092e6cef.json&amp;to=blog-cn_2018_04_13_csbook-chapter1_20180627.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2018_04_13_csbook-chapter1_20180426.html">2018-04-26</a></div><p class="version-diff-summary">较前版：+0 −0 修改 3</p><p class="version-preview">你也许从小学数学的规则得知“括号内的内容要先计算”，可是括号其实只是“符号”那层的东西，它并不存在于计算图里面。我这里讲的“基于计算图的规则”，其实才是本质的规则，数学的那些括号之类的东西，只是表象而已。从某种意义上讲，计算图才是表达…</p><a class="version-diff-link" href="diff.html?data=diffs%2F77abcd1b092e6cef.json&amp;to=blog-cn_2018_04_13_csbook-chapter1_20180426.html">查看差异</a></li><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2018-04-18</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">较前版：+0 −0 修改 6</p><p class="version-preview">（本书版权归王垠所有，禁止转载。请认准 yinwang.org 为唯一的阅读地址，以获得最近更新。本章处于 beta 测试阶段，已通过文科小白鼠的 alpha 测试。如果你有不理解的地方，可以跟我联系。）</p><a class="version-diff-link" href="diff.html?data=diffs%2F77abcd1b092e6cef.json&amp;to=blog-cn_2018_04_13_csbook-chapter1_20180418.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2018_04_13_csbook-chapter1_20180415.html">2018-04-15</a></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
 
         <div>
-            <h2>解谜计算机科学（1）</h2>
+            <h1 class="article-title">解谜计算机科学（1）</h1>
             <h1 id="第一章---初识计算">第一章 - 初识计算</h1>
 
 <p>（本书版权归王垠所有，禁止转载。请认准 yinwang.org 为唯一的阅读地址，以获得最近更新。本章处于 beta 测试阶段，已通过文科小白鼠的 alpha 测试。如果你有不理解的地方，可以跟我联系。）</p>
@@ -530,15 +513,16 @@
 
 
         </div>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

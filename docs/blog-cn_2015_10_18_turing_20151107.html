@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">11</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,9 +46,20 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2015_10_18_turing_20151022.html" >2015-10-22</a> <a href="blog-cn_2015_10_18_turing_20151107.html" class="current">2015-11-07</a> <a href="blog-cn_2015_10_18_turing_20161006.html" >2016-10-06</a> <a href="blog-cn_2015_10_18_turing_20170504.html" >2017-05-04</a> <a href="blog-cn_2015_10_18_turing_20171116.html" >2017-11-16</a> <a href="blog-cn_2015_10_18_turing_20171216.html" >2017-12-16</a> <a href="blog-cn_2015_10_18_turing_20190815.html" >2019-08-15</a> <a href="blog-cn_2015_10_18_turing_20190927.html" >2019-09-27</a> <a href="blog-cn_2015_10_18_turing_20191025.html" >2019-10-25</a> <a href="blog-cn_2015_10_18_turing_20200223.html" >2020-02-23</a> <a href="blog-cn_2015_10_18_turing_20240416.html" >2024-04-16</a></div>
-        <h2>图灵的光环</h2>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_10_18_turing_20240416.html">2024-04-16</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F73e2f419a1d500d8.json&amp;to=blog-cn_2015_10_18_turing_20240416.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_10_18_turing_20200223.html">2020-02-23</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F73e2f419a1d500d8.json&amp;to=blog-cn_2015_10_18_turing_20200223.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_10_18_turing_20191025.html">2019-10-25</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F73e2f419a1d500d8.json&amp;to=blog-cn_2015_10_18_turing_20191025.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_10_18_turing_20190927.html">2019-09-27</a></div><p class="version-diff-summary">较前版：+0 −0 修改 1</p><p class="version-preview">仿佛全世界的人都知道，图灵（Alan Turing）是个天才，是他创造了计算机科学，是他破解了德国纳粹的 Enigma 密码。他被叫做“计算机之父”。由于他的杰出贡献，计算机科学的最高荣誉，被叫做“图灵奖”。然而根据自己一直以来对图灵…</p><a class="version-diff-link" href="diff.html?data=diffs%2F73e2f419a1d500d8.json&amp;to=blog-cn_2015_10_18_turing_20190927.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_10_18_turing_20190815.html">2019-08-15</a></div><p class="version-diff-summary">较前版：+0 −5 修改 49</p><p class="version-preview">仿佛全世界的人都知道，图灵（Alan Turing）是个天才，是他创造了计算机科学，是他破解了德国纳粹的 Enigma 密码。由于他的杰出贡献，计算机科学的最高荣誉，被叫做“图灵奖”。然而根据自己一直以来对图灵机等计算模型的看法，加上…</p><a class="version-diff-link" href="diff.html?data=diffs%2F73e2f419a1d500d8.json&amp;to=blog-cn_2015_10_18_turing_20190815.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_10_18_turing_20171216.html">2017-12-16</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F73e2f419a1d500d8.json&amp;to=blog-cn_2015_10_18_turing_20171216.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_10_18_turing_20171116.html">2017-11-16</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F73e2f419a1d500d8.json&amp;to=blog-cn_2015_10_18_turing_20171116.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_10_18_turing_20170504.html">2017-05-04</a></div><p class="version-diff-summary">较前版：+0 −0 修改 7</p><p class="version-preview">计算理论（Theory of Computation）这个领域，其实是被图灵机给复杂化了。图灵机的设计是丑陋，复杂，缺乏原则的。它的读写头，纸带，状态，操作，把本来很简单的语义搞得异常复杂。图灵机的读写两种操作同时发生，这恰好是编程上…</p><a class="version-diff-link" href="diff.html?data=diffs%2F73e2f419a1d500d8.json&amp;to=blog-cn_2015_10_18_turing_20170504.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_10_18_turing_20161006.html">2016-10-06</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F73e2f419a1d500d8.json&amp;to=blog-cn_2015_10_18_turing_20161006.html">查看差异</a></li><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2015-11-07</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">较前版：+16 −3 修改 44</p><p class="version-preview">仿佛全世界的人都知道，图灵（Alan Turing）是个天才，是他创造了计算机科学，是他破解了德国纳粹的Enigma密码，是他拯救了全人类。然而根据自己一直以来对图灵机等计算模型的看法，加上一些最近解密的二战历史资料，我发现图灵本人的…</p><a class="version-diff-link" href="diff.html?data=diffs%2F73e2f419a1d500d8.json&amp;to=blog-cn_2015_10_18_turing_20151107.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_10_18_turing_20151022.html">2015-10-22</a></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
+
+        <h1 class="article-title">图灵的光环</h1>
 
     <p><img src="http://upload-images.jianshu.io/upload_images/68562-5e4e06e891dfddfa.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
 
@@ -196,15 +196,16 @@
 <p>我觉得很多后人给图灵带上的光环，掩盖了太多其它值得我们学习和尊敬的人，给人们对于计算机科学的概念造成了误导。计算机科学不是图灵一个人造出来的，图灵并不是计算机科学的鼻祖，他甚至不是在破解Enigma密码和电子计算机诞生过程中起最重要作用的人。</p>
 
 <p>许许多多的计算机科学家和电子工程师们，是他们造就了今天的计算科学。他们的聪明才智和贡献，不应该被图灵的光环所掩盖，他们应该受到像跟图灵一样的尊敬。希望大家不要再神化图灵，不要再神化任何人。不要因为膜拜某些人，而失去向另一些人学习的机会。</p>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,7 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,9 +38,11 @@
         </div>
     </nav>
 
-    <div class="inner">
-        
-        <h1>什么是程序语言研究</h1>
+
+
+    <main class="inner" id="main-content">
+
+        <h1 class="article-title">什么是程序语言研究</h1>
 <div class="date">2009-01-01</div>
 <p>作者：王垠</p>
 <p>介绍一下我的研究方向吧。我的领域叫“程序语言”(programming languages)。世界上只有很少数人真正在做这方面的研究，所以很少有人理解这个专业是干什么的，就连我身边的朋友同学也几乎不知道。但是其实这是一个非常重要的领域。在我看来，它就是计算机科学的精髓所在。</p>
@@ -70,15 +53,16 @@
 <p>这个例子并不是程序语言研究最高精尖的应用。很多研究程序语言的人也进行一些程序验证和机器定理证明研究。简而言之，程序验证就是用机械化的逻辑来证明程序的正确性。这种证明与通常的单元测试(unit test)很不一样，在于它能 100% 的保证程序的正确，而测试的方法几乎总是会漏掉一些情况。这种研究在关键性的领域很有应用，比如航空航天，核电，武器，芯片设计等等。因为没有任何人愿意因为程序出错而坠毁一架飞机或者发射一颗核弹，所以他们愿意花很大的工夫保证控制程序的绝对正确。Intel的浮点运算bug当年导致好几亿美元的经济损失，所以在那以后很多芯片厂商都开始使用定理证明程序（比如 ACL2）来彻底的消灭某些芯片模块里可能存在的bug。这些定理证明程序里面的关键部分，就是程序语言的一些重要理论。当然必须指出，程序的很多性质是不可证明的，所以很多时候测试还是有必要的。</p>
 <p>有些定理证明程序（比如 Coq，Isabelle, HOL）已经开始被应用于数学的证明。最著名的例子就是四色定理，被人重新用 Coq 证明了一次，从而完全的确保这个定理的正确性。有些数学家也开始使用这些工具。比如 Thomas Hales，他当年证明了开普勒猜想 (Kepler conjecture)，提交了一份 250 页的论文（外加 3GB 的程序，数据和结果）给数学界的权威期刊 Annals of Mathematics。经过一个由 12 位数学家组成的评委四年的验证工作，没能完全确定证明的正确性。虽然论文最后还是发表了，但是被评委们添了一行注释：“我们只有 99% 的把握相信他的证明。”这使得这个证明几乎完去了数学的意义。所以 Thomas Hales 很恼火，最后决定用一种机器定理证明程序来重新证明开普勒猜想。</p>
 <p>其它重要的应用真是举不胜举。其实这个领域对我最重要的吸引力是它的思维方式。它让我透过现象看到本质，从而能够从根本上解决问题。至于我自己，故事还真多。在教授们的指导下，我做过各种各样有趣的东西，从逻辑式语言(logic programming)到编译器。现在我比较感兴趣的东西是类型系统 (type system)，supercompilation，自动定理证明和并行语言设计。我也利用程序语言的知识来思索其它领域的东西，或者做别的好玩的东西。具体的我以后再慢慢介绍。</p>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

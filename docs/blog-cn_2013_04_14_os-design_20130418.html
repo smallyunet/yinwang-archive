@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">11</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,9 +46,20 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2013_04_14_os-design_20130418.html" class="current">2013-04-18</a> <a href="blog-cn_2013_04_14_os-design_20140204.html" >2014-02-04</a> <a href="blog-cn_2013_04_14_os-design_20140507.html" >2014-05-07</a> <a href="blog-cn_2013_04_14_os-design_20140701.html" >2014-07-01</a> <a href="blog-cn_2013_04_14_os-design_20150320.html" >2015-03-20</a> <a href="blog-cn_2013_04_14_os-design_20161016.html" >2016-10-16</a> <a href="blog-cn_2013_04_14_os-design_20170708.html" >2017-07-08</a> <a href="blog-cn_2013_04_14_os-design_20171127.html" >2017-11-27</a> <a href="blog-cn_2013_04_14_os-design_20180311.html" >2018-03-11</a> <a href="blog-cn_2013_04_14_os-design_20200217.html" >2020-02-17</a> <a href="blog-cn_2013_04_14_os-design_20240417.html" >2024-04-17</a></div>
-        <h2>一种新的操作系统设计</h2>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_04_14_os-design_20240417.html">2024-04-17</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F5d05a52a471bbfdb.json&amp;to=blog-cn_2013_04_14_os-design_20240417.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_04_14_os-design_20200217.html">2020-02-17</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F5d05a52a471bbfdb.json&amp;to=blog-cn_2013_04_14_os-design_20200217.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_04_14_os-design_20180311.html">2018-03-11</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F5d05a52a471bbfdb.json&amp;to=blog-cn_2013_04_14_os-design_20180311.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_04_14_os-design_20171127.html">2017-11-27</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F5d05a52a471bbfdb.json&amp;to=blog-cn_2013_04_14_os-design_20171127.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_04_14_os-design_20170708.html">2017-07-08</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F5d05a52a471bbfdb.json&amp;to=blog-cn_2013_04_14_os-design_20170708.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_04_14_os-design_20161016.html">2016-10-16</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F5d05a52a471bbfdb.json&amp;to=blog-cn_2013_04_14_os-design_20161016.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_04_14_os-design_20150320.html">2015-03-20</a></div><p class="version-diff-summary">较前版：+0 −1 修改 0</p><p class="version-preview">（王垠 yinwang.org 版权所有，未经许可，请勿转载）</p><a class="version-diff-link" href="diff.html?data=diffs%2F5d05a52a471bbfdb.json&amp;to=blog-cn_2013_04_14_os-design_20150320.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_04_14_os-design_20140701.html">2014-07-01</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F5d05a52a471bbfdb.json&amp;to=blog-cn_2013_04_14_os-design_20140701.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_04_14_os-design_20140507.html">2014-05-07</a></div><p class="version-diff-summary">较前版：+3 −0 修改 12</p><p class="version-preview">（王垠 yinwang.org 版权所有，未经许可，请勿转载）</p><a class="version-diff-link" href="diff.html?data=diffs%2F5d05a52a471bbfdb.json&amp;to=blog-cn_2013_04_14_os-design_20140507.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2013_04_14_os-design_20140204.html">2014-02-04</a></div><p class="version-diff-summary">较前版：+0 −0 修改 4</p><p class="version-preview">这种系统里面的程序间通信不使用无结构的字符串，而是使用带有类型和结构的数据。在这样的系统里面，Unix 和其它类似操作系统（比如 Windows）里的所谓“应用程序”的概念基本上完全消失。系统由一个个很小的“函数”组成，每个函数都可以…</p><a class="version-diff-link" href="diff.html?data=diffs%2F5d05a52a471bbfdb.json&amp;to=blog-cn_2013_04_14_os-design_20140204.html">查看差异</a></li><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2013-04-18</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
+
+        <h1 class="article-title">一种新的操作系统设计</h1>
 
 <p>我一直在试图利用程序语言的设计原理，设计一种超越“Unix 哲学”的操作系统。这里是我的设想：</p>
 
@@ -80,15 +80,16 @@
 
 
 <p>我曾经以为我是第一个想到这个做法的人。可惜的是，调查之后发现，很多人早就已经做出了类似的系统（虽然缺少对把它用于分布式计算的设想）。Lisp Machine 似乎是其中最接近的一个。Oberon 是另外一个。我只能说，英雄所见略同。</p>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">11</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,17 +46,21 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2012_07_04_dan-friedman_20130418.html" >2013-04-18</a> <a href="blog-cn_2012_07_04_dan-friedman_20130426.html" >2013-04-26</a> <a href="blog-cn_2012_07_04_dan-friedman_20150101.html" >2015-01-01</a> <a href="blog-cn_2012_07_04_dan-friedman_20150206.html" >2015-02-06</a> <a href="blog-cn_2012_07_04_dan-friedman_20161011.html" >2016-10-11</a> <a href="blog-cn_2012_07_04_dan-friedman_20170506.html" >2017-05-06</a> <a href="blog-cn_2012_07_04_dan-friedman_20180329.html" >2018-03-29</a> <a href="blog-cn_2012_07_04_dan-friedman_20191025.html" >2019-10-25</a> <a href="blog-cn_2012_07_04_dan-friedman_20200223.html" >2020-02-23</a> <a href="blog-cn_2012_07_04_dan-friedman_20211205.html" class="current">2021-12-05</a> <a href="blog-cn_2012_07_04_dan-friedman_20240421.html" >2024-04-21</a></div>
-        <script>
-            if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent))
-            {
-               document.body.classList.add('mobile');
-            }
-        </script>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2012_07_04_dan-friedman_20240421.html">2024-04-21</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2Fbc38cbc1eb0a5968.json&amp;to=blog-cn_2012_07_04_dan-friedman_20240421.html">查看差异</a></li><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2021-12-05</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">较前版：+0 −0 修改 1</p><p class="version-preview">俗话说“给人以鱼，不如授人以渔。” 就是这个道理吧。Dan Friedman，谢谢你教会我钓鱼。</p><a class="version-diff-link" href="diff.html?data=diffs%2Fbc38cbc1eb0a5968.json&amp;to=blog-cn_2012_07_04_dan-friedman_20211205.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2012_07_04_dan-friedman_20200223.html">2020-02-23</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2Fbc38cbc1eb0a5968.json&amp;to=blog-cn_2012_07_04_dan-friedman_20200223.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2012_07_04_dan-friedman_20191025.html">2019-10-25</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2Fbc38cbc1eb0a5968.json&amp;to=blog-cn_2012_07_04_dan-friedman_20191025.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2012_07_04_dan-friedman_20180329.html">2018-03-29</a></div><p class="version-diff-summary">较前版：+8 −0 修改 1</p><p class="version-preview">你永远想象不到 Dan Friedman 的思维的极限在哪里。当你认为他是一个函数式语言专家的时候，他设计了 miniKanren，一种逻辑式编程语言 (logic programming language)，并且写出 《The Re…</p><a class="version-diff-link" href="diff.html?data=diffs%2Fbc38cbc1eb0a5968.json&amp;to=blog-cn_2012_07_04_dan-friedman_20180329.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2012_07_04_dan-friedman_20170506.html">2017-05-06</a></div><p class="version-diff-summary">较前版：+0 −8 修改 2</p><p class="version-preview">miniCoq… 听到这个词全场都笑翻了。为什么呢？自己去联想吧。从此，“Dan Friedman 的 miniCoq” 成为了 IU 的程序语言学生茶余饭后的笑话。</p><a class="version-diff-link" href="diff.html?data=diffs%2Fbc38cbc1eb0a5968.json&amp;to=blog-cn_2012_07_04_dan-friedman_20170506.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2012_07_04_dan-friedman_20161011.html">2016-10-11</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2Fbc38cbc1eb0a5968.json&amp;to=blog-cn_2012_07_04_dan-friedman_20161011.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2012_07_04_dan-friedman_20150206.html">2015-02-06</a></div><p class="version-diff-summary">较前版：+0 −1 修改 1</p><p class="version-preview">（王垠 yinwang.org 版权所有，未经许可，请勿转载）</p><a class="version-diff-link" href="diff.html?data=diffs%2Fbc38cbc1eb0a5968.json&amp;to=blog-cn_2012_07_04_dan-friedman_20150206.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2012_07_04_dan-friedman_20150101.html">2015-01-01</a></div><p class="version-diff-summary">较前版：+1 −0 修改 0</p><p class="version-preview">（王垠 yinwang.org 版权所有，未经许可，请勿转载）</p><a class="version-diff-link" href="diff.html?data=diffs%2Fbc38cbc1eb0a5968.json&amp;to=blog-cn_2012_07_04_dan-friedman_20150101.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2012_07_04_dan-friedman_20130426.html">2013-04-26</a></div><p class="version-diff-summary">较前版：+6 −1 修改 23</p><p class="version-preview">Friedman 对程序语言的理解可以说是世界的最高标准，很可惜的是，由于他个人的低调，他受到很多人的误解。很多人以为他只懂得 Scheme 这种“类型系统落后的语言”。有些人觉得他只顾自己玩，不求“上进”，觉得他的研究闭门造车，不“…</p><a class="version-diff-link" href="diff.html?data=diffs%2Fbc38cbc1eb0a5968.json&amp;to=blog-cn_2012_07_04_dan-friedman_20130426.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2012_07_04_dan-friedman_20130418.html">2013-04-18</a></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
 
         <div>
-            <h2>GTF - Great Teacher Friedman</h2>
+            <h1 class="article-title">GTF - Great Teacher Friedman</h1>
             <h3 id="写小人书的老顽童">写小人书的老顽童</h3>
 
 <p>Dan Friedman 是 Indiana 大学的教授，程序语言领域的创始人之一。他主要的著作《The Little Schemer》（前身叫《The Little Lisper》) 是程序语言界最具影响力的书籍之一。现在很多程序语言界的元老级人物，当年都是看这本“小人书”学会了 Lisp/Scheme，才决心进入这一领域。</p>
@@ -201,29 +194,16 @@
 <p>俗话说“给人以鱼，不如授人以渔。” 就是这个道理吧。Dan Friedman，谢谢你教会我钓鱼。</p>
 
         </div>
+    </main>
 
-        <!--
-        <div class="ad-banner">
-            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <ins class="adsbygoogle"
-                    data-ad-client="ca-pub-1331524016319584"
-                    data-ad-slot="6657867155"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-        </div>
 
-        <script data-ad-client="ca-pub-1331524016319584" async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
-        </script>
-        -->
-    </div>
-
-    
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

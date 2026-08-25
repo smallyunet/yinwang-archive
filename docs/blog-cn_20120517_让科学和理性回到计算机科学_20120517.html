@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,7 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,9 +38,11 @@
         </div>
     </nav>
 
-    <div class="inner">
-        
-        <h1>让科学和理性回到计算机科学</h1>
+
+
+    <main class="inner" id="main-content">
+
+        <h1 class="article-title">让科学和理性回到计算机科学</h1>
 <div class="date">2012-05-17</div>
 <p>作者：王垠</p>
 <p>想写点有用的文章，可是又不知道从哪里开始写。看过我曾经的文章的人，到现在还在给我来信，表达他们的欣喜。我觉得他们很可爱，我理解他们对真知的渴望，但是也深深的认识到我从前的文章对人的误导作用。我很想告诉他们我对这些事物现在的认识，却无法开口，怕给人泼凉水，怕被认为是对我以前“信仰”的倒戈。</p>
@@ -67,15 +50,16 @@
 我隐藏了好几年的真实想法，一直没有足够的信心说出来。因为我怕自己是错的，我不想给人错误的思想。直到现在，我终于有了足够的证据，证明我的一些想法的正确。我蓄积了足够的勇气，可以直抒己见，不再怕误导人。是科学和理性给了我这种勇气，所以我决定写一些文章。它们虽然可能会对你现在的思维方式带来冲击，但是我写作的初衷是给人以帮助，客观的分析问题。不过必须随时记住，我说的话都有可能是错的，你需要用自己的实践去检验。</p>
 <p>话说对Linux的看法，从实用角度上讲，它是一个挺不错的东西。然而从理论角度上讲，它并不是最先进的。从应用的角度上讲，它对用户确实非常不友好。我其实早就不是Linux，TeX，Emacs，或者别的稀奇古怪工具的忠实“信徒”或者用户。虽然我随时可以用Linux做一些事情，但是用Linux还是Windows已经没有太大关系。操作系统其实不是高深莫测的神物，只要你明白它们的本质是什么。会像“高手”一样的使用Linux或者Windows其实并不能说明什么问题。</p>
 <p>由于我受到的教育，我能设计各种各样的程序语言和编译器，我也在构想一个跟Unix非常不同的操作系统。我不满足于成为一个合格的“用户”，而总是试图成为一个创造者和改良者。我清楚的看到几乎所有操作系统，数据库和各种编程工具存在的缺点，我总是发现它们有可以改进的地方。它们总是可以变得更精悍，更高效，更方便。在不久的将来我会介绍一些我的设计和构想，你会发现它们与Unix工具的设计原则很不一样。我也会介绍一些新的程序语言，编程工具等等。希望这能帮助大家提高对操作系统（包括Unix），程序语言，数据库和各种工具的理解。我虽然可能会批评某些东西，可是这些批评都是经过理性的分析得出的结论，而并不针对它们的设计者个人。</p>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

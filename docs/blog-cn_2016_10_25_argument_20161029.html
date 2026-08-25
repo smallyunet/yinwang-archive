@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,7 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,10 +38,12 @@
         </div>
     </nav>
 
-    <div class="inner">
-        
+
+
+    <main class="inner" id="main-content">
+
         <div>
-                            <h2>如何赢得技术争论</h2>
+                            <h1 class="article-title">如何赢得技术争论</h1>
                             <p>做技术的人，经常遇到这样的面试问题：“工作中如果遇到技术上的意见不一致，有人说要这么做，你却觉得应该那么做，该怎么办？” 我对此的回答一般是，友好地说出自己的看法，理由和证据，大家一起分析，找到最好的方案。</p>
 
 <p>这似乎是一个非常文明而合理的做法，然而在实行的时候，就发现我的这种做法几乎每次都失败。我亲眼看见，项目代码被固执己见的人加入越来越多不必要的东西，变得越来越乱。我亲眼看见，工作的流程被自以为是的领导改得无比繁琐，以至于大家效率减半，甚至没法工作。我预见到项目甚至整个企业的最终失败，可是我对此无能为力，只好听之任之。我对自己说，他们只付给我这么点钱，我这种没有话语权的人，就不要试图去做什么大贡献了……</p>
@@ -80,15 +63,16 @@
 <p>我看见满载希望的列车，冲向悬崖的尽头，然而我却只能保全自己，因为我无法拯救愚昧。愚昧是无敌的。有个古人说得好，理性和智慧从来就没有战胜过愚昧，只有等愚昧的人都死去，它们才有被人看见的希望……</p>
 
                         </div>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

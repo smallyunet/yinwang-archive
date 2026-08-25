@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">21</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,27 +46,21 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2015_11_21_programming-philosophy_20090101.html" >2009-01-01</a> <a href="blog-cn_2015_11_21_programming-philosophy_20151124.html" >2015-11-24</a> <a href="blog-cn_2015_11_21_programming-philosophy_20151127.html" >2015-11-27</a> <a href="blog-cn_2015_11_21_programming-philosophy_20151207.html" >2015-12-07</a> <a href="blog-cn_2015_11_21_programming-philosophy_20160416.html" >2016-04-16</a> <a href="blog-cn_2015_11_21_programming-philosophy_20160515.html" >2016-05-15</a> <a href="blog-cn_2015_11_21_programming-philosophy_20160903.html" >2016-09-03</a> <a href="blog-cn_2015_11_21_programming-philosophy_20160927.html" >2016-09-27</a> <a href="blog-cn_2015_11_21_programming-philosophy_20170503.html" >2017-05-03</a> <a href="blog-cn_2015_11_21_programming-philosophy_20170510.html" >2017-05-10</a> <a href="blog-cn_2015_11_21_programming-philosophy_20170602.html" >2017-06-02</a> <a href="blog-cn_2015_11_21_programming-philosophy_20170709.html" >2017-07-09</a> <a href="blog-cn_2015_11_21_programming-philosophy_20171020.html" >2017-10-20</a> <a href="blog-cn_2015_11_21_programming-philosophy_20171120.html" >2017-11-20</a> <a href="blog-cn_2015_11_21_programming-philosophy_20171216.html" >2017-12-16</a> <a href="blog-cn_2015_11_21_programming-philosophy_20171220.html" >2017-12-20</a> <a href="blog-cn_2015_11_21_programming-philosophy_20191009.html" class="current">2019-10-09</a> <a href="blog-cn_2015_11_21_programming-philosophy_20191031.html" >2019-10-31</a> <a href="blog-cn_2015_11_21_programming-philosophy_20200228.html" >2020-02-28</a> <a href="blog-cn_2015_11_21_programming-philosophy_20200323.html" >2020-03-23</a> <a href="blog-cn_2015_11_21_programming-philosophy_20240416.html" >2024-04-16</a></div>
-        <script>
-            if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent))
-            {
-               document.body.classList.add('mobile');
-            }
-        </script>
 
-        <!--
-        <div class="ad-banner">
-            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <ins class="adsbygoogle"
-                    data-ad-client="ca-pub-1331524016319584"
-                    data-ad-slot="6657867155"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-        </div>
-        -->
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_11_21_programming-philosophy_20240416.html">2024-04-16</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F4b3f103dfb7b055b.json&amp;to=blog-cn_2015_11_21_programming-philosophy_20240416.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_11_21_programming-philosophy_20200323.html">2020-03-23</a></div><p class="version-diff-summary">较前版：+2 −0 修改 1</p><p class="version-preview">完。</p><a class="version-diff-link" href="diff.html?data=diffs%2F4b3f103dfb7b055b.json&amp;to=blog-cn_2015_11_21_programming-philosophy_20200323.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_11_21_programming-philosophy_20200228.html">2020-02-28</a></div><p class="version-diff-summary">较前版：+0 −0 修改 1</p><p class="version-preview">由于 Shell 语言的逻辑操作a &amp;&amp; b具有“短路”的特性，如果a等于false，那么b就没必要执行了。这就是为什么当 command1 成功，才会执行 command2，当 command2 成功，才会执行 command3。同样，</p><a class="version-diff-link" href="diff.html?data=diffs%2F4b3f103dfb7b055b.json&amp;to=blog-cn_2015_11_21_programming-philosophy_20200228.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_11_21_programming-philosophy_20191031.html">2019-10-31</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F4b3f103dfb7b055b.json&amp;to=blog-cn_2015_11_21_programming-philosophy_20191031.html">查看差异</a></li><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2019-10-09</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">较前版：+68 −3 修改 37</p><p class="version-preview">编程是一种创造性的工作，是一门艺术。精通任何一门艺术，都需要很多的练习和领悟，所以这里提出的“智慧”，并不是号称一天瘦十斤的减肥药，它并不能代替你自己的勤奋。然而由于软件行业喜欢标新立异，喜欢把简单的事情搞复杂，我希望这些文字能给迷惑…</p><a class="version-diff-link" href="diff.html?data=diffs%2F4b3f103dfb7b055b.json&amp;to=blog-cn_2015_11_21_programming-philosophy_20191009.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_11_21_programming-philosophy_20171220.html">2017-12-20</a></div><p class="version-diff-summary">较前版：+3 −68 修改 37</p><p class="version-preview">编程的智慧</p><a class="version-diff-link" href="diff.html?data=diffs%2F4b3f103dfb7b055b.json&amp;to=blog-cn_2015_11_21_programming-philosophy_20171220.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_11_21_programming-philosophy_20171216.html">2017-12-16</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F4b3f103dfb7b055b.json&amp;to=blog-cn_2015_11_21_programming-philosophy_20171216.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_11_21_programming-philosophy_20171120.html">2017-11-20</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F4b3f103dfb7b055b.json&amp;to=blog-cn_2015_11_21_programming-philosophy_20171120.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_11_21_programming-philosophy_20171020.html">2017-10-20</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F4b3f103dfb7b055b.json&amp;to=blog-cn_2015_11_21_programming-philosophy_20171020.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_11_21_programming-philosophy_20170709.html">2017-07-09</a></div><p class="version-diff-summary">较前版：+0 −8 修改 2</p><p class="version-preview">尽量不要产生null指针。尽量不要用null来初始化变量，函数尽量不要返回null。如果你的函数要返回“没有”，“出错了”之类的结果，尽量使用Java的异常机制。虽然写法上有点别扭，然而Java的异常，和函数的返回值合并在一起，基本上…</p><a class="version-diff-link" href="diff.html?data=diffs%2F4b3f103dfb7b055b.json&amp;to=blog-cn_2015_11_21_programming-philosophy_20170709.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_11_21_programming-philosophy_20170602.html">2017-06-02</a></div><p class="version-diff-summary">较前版：+8 −2 修改 3</p><p class="version-preview">有些人喜欢炫耀自己写了多少多少万行的代码，仿佛代码的数量是衡量编程水平的标准。然而，如果你总是匆匆写出代码，却从来不回头去推敲，修改和提炼，其实是不可能提高编程水平的。你会制造出越来越多平庸甚至糟糕的代码。在这种意义上，很多人所谓的“…</p><a class="version-diff-link" href="diff.html?data=diffs%2F4b3f103dfb7b055b.json&amp;to=blog-cn_2015_11_21_programming-philosophy_20170602.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_11_21_programming-philosophy_20170510.html">2017-05-10</a></div><p class="version-diff-summary">较前版：+38 −0 修改 1</p><p class="version-preview">RETURN VALUE On success, the number of bytes read is returned... On error, -1 is returned, and errno is set appropria…</p><a class="version-diff-link" href="diff.html?data=diffs%2F4b3f103dfb7b055b.json&amp;to=blog-cn_2015_11_21_programming-philosophy_20170510.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_11_21_programming-philosophy_20170503.html">2017-05-03</a></div><p class="version-diff-summary">较前版：+0 −38 修改 10</p><p class="version-preview">在IU的时候，由于Dan Friedman的严格教导，我们以写出冗长复杂的代码为耻。如果你代码多写了几行，这老顽童就会大笑，说：“当年我解决这个问题，只写了5行代码，你回去再想想吧……” 当然，有时候他只是夸张一下，故意刺激你的，其…</p><a class="version-diff-link" href="diff.html?data=diffs%2F4b3f103dfb7b055b.json&amp;to=blog-cn_2015_11_21_programming-philosophy_20170503.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_11_21_programming-philosophy_20160927.html">2016-09-27</a></div><p class="version-diff-summary">较前版：+0 −0 修改 1</p><p class="version-preview">创造这样的精品文章需要很多的精力和咖啡 ;) 如果你喜欢这篇文章，请付款支持。建议金额$5美元或者30人民币。付款方式请参考这里。</p><a class="version-diff-link" href="diff.html?data=diffs%2F4b3f103dfb7b055b.json&amp;to=blog-cn_2015_11_21_programming-philosophy_20160927.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_11_21_programming-philosophy_20160903.html">2016-09-03</a></div><p class="version-diff-summary">较前版：+1 −132 修改 33</p><p class="version-preview">编程是一种创造性的工作，是一门艺术。精通任何一门艺术，都需要很多的练习和领悟，所以这里提出的“智慧”，并不是号称一天瘦十斤的减肥药，它并不能代替你自己的勤奋。然而由于软件行业喜欢标新立异，喜欢把简单的事情搞复杂，我希望这些文字能给迷惑…</p><a class="version-diff-link" href="diff.html?data=diffs%2F4b3f103dfb7b055b.json&amp;to=blog-cn_2015_11_21_programming-philosophy_20160903.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_11_21_programming-philosophy_20160515.html">2016-05-15</a></div><p class="version-diff-summary">较前版：+132 −1 修改 33</p><p class="version-preview">编程是一种创造性的工作，是一门艺术。精通任何一门艺术，都需要很多的练习和领悟，所以这里提出的“智慧”，并不是号称一天瘦十斤的减肥药，它并不能代替你自己的勤奋。然而由于软件行业喜欢标新立异，把简单的事情搞复杂，我希望能给迷惑中的人们指出…</p><a class="version-diff-link" href="diff.html?data=diffs%2F4b3f103dfb7b055b.json&amp;to=blog-cn_2015_11_21_programming-philosophy_20160515.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_11_21_programming-philosophy_20160416.html">2016-04-16</a></div><p class="version-diff-summary">较前版：+2 −0 修改 4</p><p class="version-preview">局部变量名字应该简短。这貌似跟第一点相冲突，简短的变量名怎么可能有意义呢？注意我这里说的是局部变量，因为它们处于局部，再加上第2点已经把它放到离使用位置尽量近的地方，所以根据上下文你就会容易知道它的意思： 比如，你有一个局部变量，表示…</p><a class="version-diff-link" href="diff.html?data=diffs%2F4b3f103dfb7b055b.json&amp;to=blog-cn_2015_11_21_programming-philosophy_20160416.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_11_21_programming-philosophy_20151207.html">2015-12-07</a></div><p class="version-diff-summary">较前版：+15 −2 修改 9</p><p class="version-preview">编程是一种创造性的工作，是一门艺术。精通任何一门艺术，都需要很多的练习和领悟，所以这里提出的“智慧”，并不是号称一天瘦十斤的减肥药，它并不能代替你自己的勤奋。然而由于软件行业喜欢标新立异，喜欢把简单的事情搞复杂，我希望这些文字能给迷惑…</p><a class="version-diff-link" href="diff.html?data=diffs%2F4b3f103dfb7b055b.json&amp;to=blog-cn_2015_11_21_programming-philosophy_20151207.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_11_21_programming-philosophy_20151127.html">2015-11-27</a></div><p class="version-diff-summary">较前版：+36 −8 修改 20</p><p class="version-preview">编程是创造性的工作，是一门艺术。精通任何一门艺术，都需要很多的练习和领悟，所以这里提出的“智慧”，并不是号称一天瘦十斤的减肥药，它并不能代替你自己的勤奋。然而我希望它能给迷惑中的人们指出一些正确的方向，让他们少走一些弯路，基本做到一分…</p><a class="version-diff-link" href="diff.html?data=diffs%2F4b3f103dfb7b055b.json&amp;to=blog-cn_2015_11_21_programming-philosophy_20151127.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_11_21_programming-philosophy_20151124.html">2015-11-24</a></div><p class="version-diff-summary">较前版：+33 −9 修改 40</p><p class="version-preview">编程是一件创造性的工作，是一门艺术。精通任何一门艺术，都需要很多的练习和领悟，所以这里提出的“智慧”，并不是号称三天瘦二十斤的减肥药，它并不能代替你自己的勤奋。然而我希望它能给迷惑中的人们指出一些正确的方向，让他们少走一些弯路，基本做…</p><a class="version-diff-link" href="diff.html?data=diffs%2F4b3f103dfb7b055b.json&amp;to=blog-cn_2015_11_21_programming-philosophy_20151124.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2015_11_21_programming-philosophy_20090101.html">2009-01-01</a></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
 
         <div>
-            <h2>编程的智慧</h2>
+            <h1 class="article-title">编程的智慧</h1>
             <p>编程是一种创造性的工作，是一门艺术。精通任何一门艺术，都需要很多的练习和领悟，所以这里提出的“智慧”，并不是号称一天瘦十斤的减肥药，它并不能代替你自己的勤奋。然而由于软件行业喜欢标新立异，喜欢把简单的事情搞复杂，我希望这些文字能给迷惑中的人们指出一些正确的方向，让他们少走一些弯路，基本做到一分耕耘一分收获。</p>
 
 <h3 id="反复推敲代码">反复推敲代码</h3>
@@ -993,15 +976,16 @@ if (found.isPresent()) {
 </blockquote>
 
         </div>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

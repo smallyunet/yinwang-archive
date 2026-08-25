@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">3</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,9 +46,20 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2018_10_14_update_20090101.html" class="current">2009-01-01</a> <a href="blog-cn_2018_10_14_update_20181015.html" >2018-10-15</a> <a href="blog-cn_2018_10_14_update_20181016.html" >2018-10-16</a></div>
-        <h1>更新一下</h1>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2018_10_14_update_20181016.html">2018-10-16</a></div><p class="version-diff-summary">较前版：+3 −0 修改 5</p><p class="version-preview">因此写书这个事就被我一拖再拖。我的生活应该更加有趣，我想研究一下人的心理，我想成为更好的人。只有当我成为一个很好的人，看我的书的人才会成为更好的人。</p><a class="version-diff-link" href="diff.html?data=diffs%2F556770c62ebd5031.json&amp;to=blog-cn_2018_10_14_update_20181016.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2018_10_14_update_20181015.html">2018-10-15</a></div><p class="version-diff-summary">较前版：+0 −0 修改 0</p><a class="version-diff-link" href="diff.html?data=diffs%2F556770c62ebd5031.json&amp;to=blog-cn_2018_10_14_update_20181015.html">查看差异</a></li><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2009-01-01</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
+
+        <h1 class="article-title">更新一下</h1>
 <div class="date">2009-01-01</div>
 <p>我好像正好半年没有写东西了。哦不，我其实写了一些。仔细看我的书的人可能发现，那第一章其实悄悄更新了很多次。但我意识到了问题，我似乎没有动力完成这本书。嗯，我似乎是一个以半途而废著称的人。我从来不觉得必须从头到尾做完什么，除非我一直认为那是正确的方向。</p>
 <p>首先的问题是，写作这本书起初并没有良好的动机。我的意思是，当初想写这本书是出于对现状的“不满”，或者说是：恨。相对于爱，恨不是一个好的动机。</p>
@@ -84,15 +84,16 @@
 <p>虽然不再继续写那本书，我肯定会写技术方面的博文，而且更新会比书频繁很多。写书让我犯困，几个月写不出来一章，还不如写点短的文章分享一下。所以不用为书遗憾，因为专注于一个主题的短文是更加有效而有价值的东西。</p>
 <p>上海是一个神奇的城市。这里有很多我喜欢的故事，是一个人杰地灵的地方。自从民国年代，许许多多的传奇故事发生在上海。我希望我在上海也有美好的故事。</p>
 <p>最后再次感谢大家的支持。</p>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');

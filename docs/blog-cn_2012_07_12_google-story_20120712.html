@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/post.css">
     <script src="js/jquery.min.js"></script>
-    
-    <style>
-        body { padding-top: 70px; } /* Fix fixed-top navbar overlap */
-        /* Removed .inner/.outer overrides to respect theme post.css */
-        
-        .version-switcher { padding: 10px 15px; margin: 20px 0; border: 1px solid #e9ecef; background: #f8f9fa; border-radius: 4px; font-family: monospace; }
-        .version-switcher a { margin-right: 10px; color: #888; text-decoration: none; }
-        .version-switcher a.current { font-weight: bold; color: #333; }
-        
-        .navbar-brand { font-size: 20px; font-weight: bold; }
-        .navbar-nav > li > a { font-size: 20px; }
-        body.mobile .navbar-nav > li > a { font-size: 17px; line-height: 24px; }
-        
-        /* Reduce gap between navbar and content */
-        div.outer { margin-top: 30px; }
-
-        .site-footer { margin: 50px 0 30px; padding: 0 15px; font-size: 14px; line-height: 1.6; }
-        .site-footer a { color: inherit; text-decoration: underline; }
-        
-        /* Removed custom flexbox list styling to match demo vertical style */
-    </style>
-    
+    <link rel="stylesheet" href="css/site-overrides.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">跳到正文</a>
     <nav class="navbar navbar-default navbar-fixed-top" style="opacity:.9" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,6 +24,15 @@
                 <a class="navbar-brand" href="./" title="" data-toggle="tooltip" data-placement="right">Wang Yin's Blog</a>
             </div>
             <div class="navbar-collapse collapse" id="navbar-bs" style="height:1px">
+
+        <ul class="nav navbar-nav navbar-right version-nav">
+            <li>
+                <button class="version-menu-trigger" type="button" aria-expanded="false" aria-controls="version-panel">
+                    版本 <span class="version-count">5</span>
+                </button>
+            </li>
+        </ul>
+
                 <ul class='nav navbar-nav navbar-right'><li class='active'><a href='./'>首页 (Home)</a></li><li><a href='tweet_20170308.html'>Tweets</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">History <span class="caret"></span></a>
@@ -57,9 +46,20 @@
         </div>
     </nav>
 
-    <div class="inner">
-        <div class="version-switcher"><span>Versions:</span><a href="blog-cn_2012_07_12_google-story_20120712.html" class="current">2012-07-12</a> <a href="blog-cn_2012_07_12_google-story_20141229.html" >2014-12-29</a> <a href="blog-cn_2012_07_12_google-story_20150116.html" >2015-01-16</a> <a href="blog-cn_2012_07_12_google-story_20150206.html" >2015-02-06</a> <a href="blog-cn_2012_07_12_google-story_20180329.html" >2018-03-29</a></div>
-        <h1>我和谷歌的故事</h1>
+
+        <div class="version-panel-backdrop" hidden></div>
+        <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
+            <div class="version-panel-header">
+                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
+            </div>
+            <ol class="version-list"><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2012_07_12_google-story_20180329.html">2018-03-29</a></div><p class="version-diff-summary">较前版：+0 −0 修改 1</p><p class="version-preview">总之他们就是用这种奉承，利诱，竞争，加威胁的方式，想方设法让我多做事情。可是我心里想的是，Google 老爹，您就给了那么点钱，您想买多少东西啊？本来这系统能做出来就不错了，一个组员却一直催着我写 test。她根本不明白，一个程序并不…</p><a class="version-diff-link" href="diff.html?data=diffs%2Fb805986ba30e820d.json&amp;to=blog-cn_2012_07_12_google-story_20180329.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2012_07_12_google-story_20150206.html">2015-02-06</a></div><p class="version-diff-summary">较前版：+0 −1 修改 0</p><p class="version-preview">（王垠 yinwang.org 版权所有，未经许可，请勿转载）</p><a class="version-diff-link" href="diff.html?data=diffs%2Fb805986ba30e820d.json&amp;to=blog-cn_2012_07_12_google-story_20150206.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2012_07_12_google-story_20150116.html">2015-01-16</a></div><p class="version-diff-summary">较前版：+0 −1 修改 1</p><p class="version-preview">也许有人觉得作为一个读了这么多年的 PhD 去给别人做实习生（intern）是一种耻辱，但是我亲眼看到，从一些名校比如 Yale 毕业的 PhD，在 Google 混了好几年，也不过是过着差不多的生活。只不过做了 intern 之后我…</p><a class="version-diff-link" href="diff.html?data=diffs%2Fb805986ba30e820d.json&amp;to=blog-cn_2012_07_12_google-story_20150116.html">查看差异</a></li><li class="version-item"><div class="version-item-row"><a class="version-date-link" href="blog-cn_2012_07_12_google-story_20141229.html">2014-12-29</a></div><p class="version-diff-summary">较前版：+1 −3 修改 24</p><p class="version-preview">（王垠 yinwang.org 版权所有，未经许可，请勿转载）</p><a class="version-diff-link" href="diff.html?data=diffs%2Fb805986ba30e820d.json&amp;to=blog-cn_2012_07_12_google-story_20141229.html">查看差异</a></li><li class="version-item current"><div class="version-item-row"><span class="version-current-label" aria-current="page">2012-07-12</span><span class="version-current-badge">当前</span></div><p class="version-diff-summary">最早保留版本</p></li></ol>
+        </section>
+
+
+    <main class="inner" id="main-content">
+
+        <h1 class="article-title">我和谷歌的故事</h1>
 <div class="date">2012-07-12</div>
 <p>作者：王垠</p>
 <p>也许有人看见过我批判 Google 的那篇英文文章。它有一部分片面性，所以被我从英文
@@ -72,7 +72,7 @@
 <p>这里我就讲述一下我在 Google 的实习经历吧，也许对人有参考作用。</p>
 <h3>受命于危难</h3>
 <p>先说说我的项目是怎么开始的吧。当我加入的时候，我的老板 Steve Yegge 的小组试图制造一个跨语言的“服务式”的编程工具，叫做 Grok。你可以把它想象成 Eclipse,
-但是 Grok 的设计目标不只是像 Eclipse 那样检索和分析本机的某一种语言的代码，而是大规模的检索和分析 Google 的所有项目，所有语言，所有代码。这包括 Google 
+但是 Grok 的设计目标不只是像 Eclipse 那样检索和分析本机的某一种语言的代码，而是大规模的检索和分析 Google 的所有项目，所有语言，所有代码。这包括 Google
 的“四大语言”：C++, Java, JavaScript, Python，一些工具性的语言：Sawzall，protobuf 等，还有一些“build file”和所有第三方的库。Grok 的初期设计目标是一
 个静态的代码索引服务，只要程序员点击任何一个变量或者函数名，就能“准确”的跳转到它定义的位置。动态的编辑功能稍后也在陆续加入。</p>
 <p>这种检索不是像 ctags, etags 那种简单的正则表达式匹配，而是像 Eclipse 和 Visual Studio 那样的准确的“语义检索”，所以它必须真正的理解程序语言的语义。
@@ -84,7 +84,7 @@
 我当然没蠢到会自己进入这样一个组，但是 Steve 在电话面试时把一切都说得很美好的样子。当时小组里只有三个人：Steve 和另外两个组员。</p>
 <h3>恐惧和疑惑</h3>
 <p>当我开始的时候，Grok 小组已经初步完成了 Java 和 JavaScript 的检索模块。但是他们的检索并不是从头设计的，而是从 Eclipse (JDT) 和 JSCompiler 里面分别“挖
-取”了对 Java 和 JavaScript 语义检索的部分，修改之后插入到项目里的。Eclipse 的设计非常的不模块化，以至于项目进行了一年多，大家还在忙着解决它带来的各种 
+取”了对 Java 和 JavaScript 语义检索的部分，修改之后插入到项目里的。Eclipse 的设计非常的不模块化，以至于项目进行了一年多，大家还在忙着解决它带来的各种
 bug。</p>
 <p>最开头的时候 Steve 给了我两个选择：检索 C++ 或者是 Python。我觉得 C++ 的设计太繁琐，所以就选择了看起来好一点的 Python。Steve 就让我去找一个好一点的开源
 的 Python IDE，然后把里面的语义检索部分挖出来插入到项目里面。可是在看过十个左右的“Python IDE”之后，我发现它们没有一个能够正确的“跳转到定义”。分析其
@@ -95,13 +95,13 @@ bug。</p>
 计上的简洁，我的代码的维护代价会比使用一个开源项目小很多。他没有说话。我同时也在进行一些内部培训，看一些视频，折腾 MapReduce 一类的内部工具教程，就这样
 过了一个星期。我隐约的感觉到 Steve 的不快，因为他不怎么说话了，可是我也没有太在意，仍然傻乎乎的到处凑热闹。到了周五的时候，Steve 下午很早就回家了。另一
 个组员还待在哪里，不时的叹气。我对她说：“Steve 是不是不高兴了？我知道我说话有点太自信，可能打击到他了。”她好像打满的气球被开了一个洞：“他怎么会被你打
-击到？你知道他以前做的项目有多厉害吗？他是怕你做不出来。之前有一些 intern 设的目标太高，以至于到最后没有完成他们的项目。”于是她打开 Eclipse，把 
+击到？你知道他以前做的项目有多厉害吗？他是怕你做不出来。之前有一些 intern 设的目标太高，以至于到最后没有完成他们的项目。”于是她打开 Eclipse，把
 JSCompiler 的代码给我看。“你知道我们以前一个类似的项目 JSCompiler，花了多少时间才完成吗？一个小组的人，四年的时间！”她打开其中一个文件，也就是处理符号
 表的那个模块，说：“看这一个文件就有 9000 多行代码。你三个月能写出这么多代码吗？”我翻了一下白眼，搞笑似地说：“啊～ 怎么可能有 9000 多行？这些人真的知
 道怎么写这种代码吗……”</p>
 <p>后来具体的对话我忘记了，但是她说得那么神乎其神，确实给了我一些压力。再加上 Steve 那个闷声子，真是不好受。所以那个周末我没有出去玩，我下载了一个 Jython
 ，把它的 parser 文件 (ANTLR) 拿出来。自己设计了一个更简单的 AST 数据结构，把这个 parser 生成的 AST 转换成我的结构。然后就开始在上面写一个抽象解释器。由
-于 Java 的限制，我想出了一个更简洁的用 Java 实现解释器的方法，从而避免了使用繁琐的 visitor pattern。一个周末之后，我做出了一个基本的原型。当然因为 
+于 Java 的限制，我想出了一个更简洁的用 Java 实现解释器的方法，从而避免了使用繁琐的 visitor pattern。一个周末之后，我做出了一个基本的原型。当然因为
 Python 语言的复杂性，有很多细节的东西到后来才完全的实现。</p>
 <p>等到星期一的时候，我告诉 Steve 我做了一个原型出来，而且因为我拿了 Jython 的 parser，我们以后可以用这个理由把这代码 merge 回 Jython，给他们提供功能，让他
 们帮我们维护代码，对两方都有好处。他居然一点也不高兴，把我叫到一个白板前面，板着脸说：“来，给我讲一下你打算怎么做。”我就画了一个 AST 的类关系图，在里
@@ -121,7 +121,7 @@ C++ 设计实在是太繁琐了，其实很多简单的语言效率并不比 C++
 <p>最搞笑的其实是 Google 总喜欢故弄玄虚，把一些微不足道的东西说得很玄乎。很多文档，视频，活动都挂着“Google Confidential”的标签。等你去看了，却发现其实是
 众所皆知的东西，没有什么机密可言。可是大部分的实习生们却有一种受宠若惊的感觉，以至于产生优越感。每个星期五，都会有一个“TGIF”，两个创始人会像主持人一样
 组织一个大会。本来无可非议，但是总感觉气氛过于群情激昂了，有点像小学的时候升国旗开大会的感觉。好不容易大家聚在一起，总是在听新闻发布，不然就是谈工作进度
-，不然就是表彰某些人。总之，你总是感觉到虚荣心或者自尊心在受到某种挑拨，有一种传销公司大会的感觉。真正大家轻轻松松一起玩的 party，却非常稀少。你总感觉 
+，不然就是表彰某些人。总之，你总是感觉到虚荣心或者自尊心在受到某种挑拨，有一种传销公司大会的感觉。真正大家轻轻松松一起玩的 party，却非常稀少。你总感觉
 Google 在你的生活里无所不在。所以一些别的公司的人（比如我寄宿的房子主人）都在疑惑，Google 的员工到底有没有下班的时间。</p>
 <p>我就是这样度过在 Google 的每一天，以至于后来我都不怎么在饭桌上吃饭了。自己把饭端到靠墙的吧台去吃，或者坐在“冰激凌吧”跟里面的厨师聊天，省得遇到一些高谈
 阔论的人无语。我发现自己跟打扫卫生的大妈小妹们也谈得来，她们也喜欢跟我说话。后来我发现有这种感觉的不只是我，另外两个比较厉害的博士生也懒的在那边吃饭了。
@@ -167,15 +167,16 @@ up”，但是看来真正能做到的人没有几个。反倒你真想要“从
 才的机器，而它的“创造性”的名声，却让越来越多的人才被埋没。主动找上门的人才被埋没了不说，还吞并其它公司，并且对他们施行同样的“Google 文化”，埋没更多
 的人才。</p>
 <p>所以我建议有志气的人们，选择公司的时候不要看一个公司多么强大，雇了多少牛人，而要看它是否真的赏识和尊重你，因为你自己才是最重要的。</p>
-    </div>
+    </main>
 
-    
+
 <div class="site-footer">  <p class="text-center text-muted">声明：本项目仅出于个人兴趣对网络历史内容进行备份与学习，无任何商业用途。原文作者：王垠；原博客：<a href="https://www.yinwang.org/" target="_blank" rel="noopener noreferrer">https://www.yinwang.org/</a>  </p></div>
 
-    
+
     <script src="js/highlight.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/version-menu.js"></script>
     <script>
         if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
             document.body.classList.add('mobile');
