@@ -877,18 +877,18 @@ def process_archives():
         }
         .version-panel {
             position: fixed;
-            top: 62px;
-            right: 16px;
+            top: 64px;
+            right: 14px;
             z-index: 1050;
-            width: min(360px, calc(100vw - 32px));
-            max-height: calc(100vh - 80px);
+            width: min(320px, calc(100vw - 28px));
+            max-height: min(70vh, 640px);
             overflow: hidden;
             border: 1px solid #d8d8d8;
-            border-radius: 10px;
+            border-radius: 8px;
             background: #fff;
-            box-shadow: 0 14px 38px rgba(0, 0, 0, .18);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, .16);
             color: #333;
-            font-size: 15px;
+            font-size: 14px;
         }
         .version-panel[hidden],
         .version-panel-backdrop[hidden] { display: none !important; }
@@ -897,7 +897,8 @@ def process_archives():
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 14px 16px;
+            min-height: 52px;
+            padding: 6px 8px 6px 14px;
             border-bottom: 1px solid #e5e5e5;
         }
         .version-panel-title {
@@ -908,74 +909,107 @@ def process_archives():
             color: #333;
             text-align: left;
             font-family: inherit;
-            font-size: 17px;
+            font-size: 16px;
             font-weight: 600;
             line-height: 1.35;
         }
+        .version-panel-title span { margin-left: 5px; color: #666; font-size: 12px; font-weight: 400; }
         .version-panel-close {
-            width: 44px;
-            height: 44px;
+            width: 36px;
+            height: 36px;
             padding: 0;
             border: 0;
             border-radius: 50%;
             background: transparent;
             color: #555;
-            font-size: 24px;
-            line-height: 44px;
+            font-size: 22px;
+            line-height: 36px;
             cursor: pointer;
             touch-action: manipulation;
         }
         .version-panel-close:hover { background: #eee; }
         .version-list {
-            max-height: calc(100vh - 145px);
+            position: relative;
+            max-height: calc(min(70vh, 640px) - 53px);
             margin: 0;
-            padding: 8px;
+            padding: 6px 8px;
             overflow-y: auto;
             list-style: none;
         }
+        .version-list::before {
+            position: absolute;
+            top: 20px;
+            bottom: 20px;
+            left: 19px;
+            width: 1px;
+            background: #dedede;
+            content: "";
+        }
         .version-item {
+            position: relative;
             margin: 0;
-            padding: 10px 11px;
-            border-left: 3px solid transparent;
-            border-radius: 6px;
-            transition: background-color .16s ease, border-color .16s ease;
+            padding: 8px 9px 8px 30px;
+            border-radius: 5px;
+            transition: background-color .14s ease;
+        }
+        .version-item::before {
+            position: absolute;
+            top: 19px;
+            left: 7px;
+            z-index: 1;
+            width: 9px;
+            height: 9px;
+            border: 2px solid #aaa;
+            border-radius: 50%;
+            background: #fff;
+            content: "";
         }
         .version-item:hover,
-        .version-item:focus-within { background: #f5f5f5; }
-        .version-item.current { border-left-color: #555; background: #f1f1f1; }
+        .version-item:focus-within { background: #f6f6f6; }
+        .version-item.current { background: #f2f2f2; }
+        .version-item.current::before { border-color: #555; background: #555; }
         .version-item-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
         .version-date-link,
-        .version-current-label { color: #333; font-weight: 600; text-decoration: none; }
-        .version-date-link { display: inline-flex; min-height: 44px; align-items: center; }
+        .version-current-label { color: #333; font-weight: 600; line-height: 28px; text-decoration: none; }
+        .version-date-link { display: inline-flex; min-height: 28px; align-items: center; }
         .version-panel a { cursor: pointer; }
         .version-date-link:hover { background: transparent; text-decoration: underline; }
         .version-current-badge {
-            padding: 2px 7px;
+            padding: 1px 6px;
             border-radius: 999px;
-            background: #dedede;
-            color: #555;
-            font-size: 12px;
+            background: #e0e0e0;
+            color: #4f4f4f;
+            font-size: 11px;
             font-weight: 400;
         }
-        .version-diff-summary { margin: 5px 0 0; color: #666; font-size: 13px; line-height: 1.5; }
+        .version-item-meta { display: flex; min-height: 28px; align-items: center; justify-content: space-between; gap: 8px; }
+        .version-diff-summary { display: inline-flex; min-width: 0; align-items: center; gap: 6px; color: #737373; font-size: 12px; line-height: 1.4; white-space: nowrap; }
+        .version-change-label { color: #666; }
+        .version-change { font-variant-numeric: tabular-nums; }
+        .version-change.added { color: #3f7650; }
+        .version-change.removed { color: #99524e; }
+        .version-change.changed { color: #80691f; }
+        .version-no-change, .version-earliest { color: #666; }
         .version-preview {
             max-height: 0;
             margin: 0;
             overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
             color: #666;
             opacity: 0;
-            font-size: 13px;
+            font-size: 12px;
             line-height: 1.55;
             transition: max-height .18s ease, margin .18s ease, opacity .18s ease;
         }
         .version-item:hover .version-preview,
         .version-item:focus-within .version-preview {
-            max-height: 7em;
-            margin-top: 6px;
+            max-height: 1.6em;
+            margin: 3px 0 2px;
             opacity: 1;
         }
-        .version-diff-link { display: inline-flex; min-height: 44px; margin-top: 3px; align-items: center; color: #555; text-decoration: underline; touch-action: manipulation; }
-        .version-diff-link:hover { background: transparent; color: #111; }
+        .version-diff-link { display: inline-flex; min-height: 28px; flex: 0 0 auto; align-items: center; gap: 3px; color: #555; font-size: 12px; font-weight: 500; text-decoration: none; touch-action: manipulation; }
+        .version-diff-link:hover { background: transparent; color: #111; text-decoration: underline; }
 
         .diff-header { margin-bottom: 28px; text-align: center; }
         .diff-header h1 { margin-bottom: 12px; }
@@ -1023,13 +1057,15 @@ def process_archives():
                 right: 0;
                 bottom: 0;
                 width: 100%;
-                max-height: min(76vh, 680px);
+                max-height: min(72dvh, 640px);
                 border-right: 0;
                 border-bottom: 0;
                 border-left: 0;
                 border-radius: 14px 14px 0 0;
             }
-            .version-list { max-height: calc(min(76vh, 680px) - 65px); padding-bottom: max(12px, env(safe-area-inset-bottom)); }
+            .version-panel-close { width: 44px; height: 44px; line-height: 44px; }
+            .version-list { max-height: calc(min(72dvh, 640px) - 53px); padding-bottom: max(12px, env(safe-area-inset-bottom)); }
+            .version-date-link, .version-diff-link { min-height: 36px; }
             .version-preview { display: none; }
             .diff-legend { flex-wrap: wrap; gap: 8px 16px; }
             .diff-block { padding-right: 10px; padding-left: 30px; }
@@ -1124,17 +1160,29 @@ def process_archives():
             diff_info = diff_by_current.get(version['filename'])
             if diff_info:
                 counts = diff_info['counts']
-                summary = (
-                    f'较前版：+{counts["added"]} −{counts["removed"]} '
-                    f'修改 {counts["changed"]}'
-                )
+                change_total = counts['added'] + counts['removed'] + counts['changed']
+                if change_total:
+                    summary = (
+                        '<span class="version-change-label">较前版</span>'
+                        f'<span class="version-change added">+{counts["added"]}</span>'
+                        f'<span class="version-change removed">−{counts["removed"]}</span>'
+                        f'<span class="version-change changed">改 {counts["changed"]}</span>'
+                    )
+                else:
+                    summary = '<span class="version-no-change">正文无变化</span>'
                 preview = ''
-                if diff_info['preview']:
+                if change_total and diff_info['preview']:
                     preview = f'<p class="version-preview">{html_lib.escape(diff_info["preview"])}</p>'
-                diff_url = html_lib.escape(diff_info['url'], quote=True)
-                diff_link = f'<a class="version-diff-link" href="{diff_url}">查看差异</a>'
+                if change_total:
+                    diff_url = html_lib.escape(diff_info['url'], quote=True)
+                    diff_link = (
+                        f'<a class="version-diff-link" href="{diff_url}">'
+                        '对比 <span aria-hidden="true">→</span></a>'
+                    )
+                else:
+                    diff_link = ''
             else:
-                summary = '最早保留版本'
+                summary = '<span class="version-earliest">最早保留版本</span>'
                 preview = ''
                 diff_link = ''
 
@@ -1142,15 +1190,15 @@ def process_archives():
             items.append(
                 f'<li class="version-item{current_class}">'
                 f'<div class="version-item-row">{date_control}{badge}</div>'
-                f'<p class="version-diff-summary">{summary}</p>'
-                f'{preview}{diff_link}</li>'
+                f'<div class="version-item-meta"><span class="version-diff-summary">{summary}</span>'
+                f'{diff_link}</div>{preview}</li>'
             )
 
         panel = f"""
         <div class="version-panel-backdrop" hidden></div>
         <section class="version-panel" id="version-panel" role="dialog" aria-modal="true" aria-labelledby="version-panel-title" hidden>
             <div class="version-panel-header">
-                <h2 class="version-panel-title" id="version-panel-title">文章版本</h2>
+                <h2 class="version-panel-title" id="version-panel-title">文章版本 <span>{count} 个</span></h2>
                 <button class="version-panel-close" type="button" aria-label="关闭版本列表">×</button>
             </div>
             <ol class="version-list">{''.join(items)}</ol>
